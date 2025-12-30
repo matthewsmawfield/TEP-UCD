@@ -1,0 +1,18 @@
+# TEP-UCD: Universal Critical Density Analysis
+# Core stack for SPARC galaxy analysis and screening hierarchy
+
+# Astronomical computing
+astropy>=5.0.0
+
+# Scientific computing
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Utilities
+tqdm>=4.65.0
+

@@ -1,0 +1,27 @@
+Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales
+
+This paper establishes a universal saturation density scale, rho_c ~ 20 g/cm^3, that organizes gravitational anomalies across 40 orders of magnitude in mass, from atomic scales to galaxy clusters. The central claim is that a single density parameter, calibrated from terrestrial atomic clock coherence limits, unifies the phenomenology of dark matter halos, compact object boundaries, and quantum-gravitational crossover scales.
+
+Terrestrial calibration from GNSS atomic clock correlations yields a characteristic length L_c ~ 4200 km for Earth, implying rho_c ~ 20 g/cm^3. This density is independently consistent with atomic-scale constraints: the soliton radius at the proton mass reproduces the Bohr radius (R_sol(m_p) ~ a_0). The SPARC galaxy database confirms the predicted R_DM ∝ M^(1/3) scaling law, yielding a threshold-marginalized exponent alpha = 0.354 ± 0.014, consistent with the TEP prediction of 1/3.
+
+A Vainshtein screening analysis of 26 astrophysical objects (from laboratory tests to galaxy clusters) confirms an empirical scaling law S ∝ rho^(1/3) (R^2 = 0.9999), explaining why precision GR tests pass while galactic dynamics show deviations. The model correctly predicts the critical anti-glitch period for magnetars (P_crit ~ 6.8 s) and the Milky Way's Keplerian transition radius (~19 kpc, Gaia DR3) at the few-percent level.
+
+This calibration provides the foundation for testing the soliton hypothesis on the runaway black hole candidate RBH-1 (Paper 8: TEP-RBH).
+
+Key Findings:
+1. **Terrestrial Calibration**: GNSS atomic clock coherence limits yield rho_c ~ 20 g/cm^3, establishing the fundamental density scale.
+2. **Atomic Constraint**: The soliton radius at proton mass reproduces the Bohr radius, connecting quantum and gravitational scales.
+3. **Galactic Validation**: SPARC database confirms R_DM ∝ M^(1/3) scaling (alpha = 0.354 ± 0.014).
+4. **Screening Hierarchy**: Vainshtein screening analysis (S ∝ rho^(1/3), 26 objects, R^2 = 0.9999) explains GR test success vs. galactic anomalies.
+5. **Compact Object Test**: Correctly predicts magnetar anti-glitch period (~6.8 s) and Milky Way Keplerian transition (~19 kpc).
+
+This work establishes the universal critical density as the organizing principle for gravitational phenomenology across all scales.
+
+Related Work:
+- TEP Theory: Smawfield, M. L. (2025). Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed (v0.6 (Jakarta)). Zenodo. https://doi.org/10.5281/zenodo.16921911
+- Paper 8 (TEP-RBH): Smawfield, M. L. (2025). The Soliton Wake: Identifying the Runaway Object RBH-1 as a Gravitational Soliton. Zenodo. https://doi.org/10.5281/zenodo.18059251
+
+Keywords: critical density, dark matter, SPARC galaxies, GNSS atomic clocks, Vainshtein screening, magnetars, anti-glitches, scaling laws, galaxy rotation curves, temporal equivalence principle, modified gravity, scalar-tensor theories, Bohr radius, quantum gravity, compact objects, neutron stars, Milky Way, Gaia DR3, Keplerian decline, halo boundary, proper time, gravitational solitons, conformal coupling
+
+Website: https://matthewsmawfield.github.io/TEP-UCD/
+Code Availability: https://github.com/matthewsmawfield/TEP-UCD

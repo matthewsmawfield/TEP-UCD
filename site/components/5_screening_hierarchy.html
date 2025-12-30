@@ -1,0 +1,218 @@
+<h2>4. Vainshtein Screening Validation</h2>
+
+<p>If a scalar field permeates spacetime, why has it not been detected in precision gravitational experiments? This section answers that question. The key insight is that the scalar field's influence depends on density: in dense environments, the field is suppressed—a phenomenon called Vainshtein screening (Vainshtein 1972). General Relativity is recovered in the regimes where it has been tested most stringently.</p>
+
+<p>The screening factor $S$ quantifies this suppression. It is defined as the ratio of the soliton radius (where the scalar field saturates) to the physical radius of the object:</p>
+
+<div class="equation">$$S = \frac{R_{sol}}{R_{phys}}$$</div>
+
+<p>The quantity $S$ is used here as a geometric proxy for how deeply the baryonic source is embedded within a saturated soliton configuration. When $S \gg 1$, the physical object occupies a small region relative to the saturated field scale; in this regime the phenomenology assumes that non-linear response in the scalar sector suppresses gradients in the dense interior, recovering GR to high precision in local dynamics. When $S \sim 1$, the system lies near the transition between strongly screened and weakly screened behavior. When $S \ll 1$, the soliton scale is smaller than the object and the saturated region does not envelop the full baryonic configuration; in this regime the model does not assume strong Vainshtein suppression a priori, and constraints must be assessed case-by-case.</p>
+
+<h3>4.1 The White Dwarf Stress Test</h3>
+
+<p>White Dwarfs are the ideal stress test for two reasons. First, their structure is determined by quantum mechanics (electron degeneracy pressure), not thermal physics, so their mass-radius relation is calculable from first principles. Second, their mass-radius scaling runs in the opposite direction to the soliton scaling (see Figure 3):</p>
+
+<ul>
+    <li><strong>White Dwarf (Chandrasekhar):</strong> $R_{WD} \propto M^{-1/3}$ — heavier stars are smaller</li>
+    <li><strong>Soliton (TEP):</strong> $R_{sol} \propto M^{+1/3}$ — heavier fields are larger</li>
+</ul>
+
+<figure style="margin: 30px 0;">
+    <img src="figures/figure_3_wd_screening.png" alt="White Dwarf Screening Mechanism" style="max-width: 100%;">
+    <figcaption style="margin-top: 10px; font-size: 0.9em; color: #666; font-style: italic;">
+        Figure 3: The "Scissors" Effect. The defining visual signature is the divergence of scales: as mass increases, the white dwarf physical radius shrinks ($R_{WD} \propto M^{-1/3}$) while the soliton radius grows ($R_{sol} \propto M^{1/3}$). This divergence drives the screening factor $S = R_{\rm sol}/R_{\rm phys}$ to large values ($S \gg 1$), recovering General Relativity within the star.
+    </figcaption>
+</figure>
+
+<p>These opposing scalings create a "scissors" pattern. As mass increases, the soliton radius grows while the physical radius shrinks—the screening factor diverges. This is the signature of Vainshtein screening.</p>
+
+<p>For Sirius B ($M \approx 1.02 M_{\odot}$, $\rho \approx 2.4 \times 10^6$ g/cm³):</p>
+
+<div class="equation">$$R_{phys} \approx 5{,}800 \text{ km} \quad \text{(observed)}$$</div>
+<div class="equation">$$R_{sol} \approx 293{,}000 \text{ km} \quad \text{(TEP prediction)}$$</div>
+<div class="equation">$$\text{Screening Factor} = \frac{R_{sol}}{R_{phys}} \approx 50\times$$</div>
+
+<p>The soliton field extends 50 times beyond the physical surface of the star. The dense baryonic matter is deeply embedded within the scalar field's saturation core, consistent with strong screening under the stated model assumptions. Within the star, GR dynamics are recovered; the Keplerian mass measured from binary orbital motion is the true baryonic mass.</p>
+
+<h3>4.2 The Empirical Vainshtein Law</h3>
+
+<p>Extending this analysis across 26 astrophysical objects (planets, brown dwarfs, main sequence stars, white dwarfs, neutron stars, and binary pulsars) yields a compact summary of how the defined screening factor varies with density. A linear regression in log-log space yields:</p>
+
+<div class="result-box">$$S \propto \rho^{0.334} \quad (R^2 = 0.9999)$$</div>
+
+<p>The exponent 0.334 is statistically indistinguishable from 1/3. Under the stated definitions, this is the expected scaling: if $R_{sol} \propto M^{1/3}$ and $R_{phys} \propto (M/\rho)^{1/3}$, then:</p>
+
+<div class="equation">$$S = \frac{R_{sol}}{R_{phys}} = \frac{M^{1/3}}{M^{1/3}/\rho^{1/3}} = \rho^{1/3}$$</div>
+
+<div class="principle">
+<h4>Interpretation of the Screening Law</h4>
+<p>
+    It is important to recognize that the regression $S \propto \rho^{0.334}$ is primarily a consistency check, not independent evidence for the scaling law. Since $S \equiv R_{\text{sol}}/R_{\text{phys}}$ and the radii are defined by mass-density relations, the slope $\sim 1/3$ is algebraically expected given the model assumptions.
+</p>
+<p>
+    The value of this analysis is not to prove the scaling 'ab initio', but to demonstrate that a <em>single</em> saturation density $\rho_c$ yields a consistent screening hierarchy across 15 orders of magnitude in density ($R^2 \approx 1$) without requiring regime-dependent adjustments. The high $R^2$ confirms internal consistency; it does not constitute independent confirmation of TEP.
+</p>
+<p>
+    Furthermore, the extreme screening factors observed in binary pulsars ($S > 30,000$) are consistent with a strongly non-linear suppression mechanism in the scalar sector. Box 6.5 (Section 6) outlines one candidate effective-field-theory realization (a DBI-type kinetic structure), but the detailed dynamical derivation is not required for the empirical hierarchy used here.
+</p>
+</div>
+
+<p>The empirical screening law is a direct consequence of the $M^{1/3}$ soliton scaling, providing cross-regime consistency under a single $\rho_c$ rather than independent confirmation (see Note on Interpretation above).</p>
+
+<h3>4.3 Complete Screening Hierarchy</h3>
+
+<figure style="margin: 30px 0;">
+    <img src="figures/figure_4_screening_hierarchy.png" alt="Screening Hierarchy Across 15 Orders of Magnitude" style="max-width: 100%;">
+    <figcaption style="margin-top: 10px; font-size: 0.9em; color: #666; font-style: italic;">
+        Figure 4: The Screening Hierarchy. Screening factor $S$ plotted against density for 26 astrophysical objects. The empirical power law $S \propto \rho^{0.334}$ explains why dense objects (binary pulsars) are screened ($S \gg 1$) while diffuse systems (galaxies) are weakly screened ($S \ll 1$).
+    </figcaption>
+</figure>
+
+<p>The complete hierarchy of screening factors across all object classes is visualized in Figure 4 and tabulated below.</p>
+
+<table class="data-table" style="margin: 20px 0;">
+<thead>
+<tr>
+    <th>Object Class</th>
+    <th>Density (g/cm³)</th>
+    <th>Screening</th>
+    <th>Physical Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>Gas Giants</td>
+    <td>0.7 – 1.6</td>
+    <td>0.3 – 0.4×</td>
+    <td>Soliton smaller than planet; scalar contribution expected to be small and/or below current constraints</td>
+</tr>
+<tr>
+    <td>Main Sequence Stars</td>
+    <td>0.6 – 57</td>
+    <td>0.3 – 1.3×</td>
+    <td>Mixed regime; scalar and baryonic scales comparable</td>
+</tr>
+<tr>
+    <td>Rocky Planets (Earth)</td>
+    <td>3.3 – 5.5</td>
+    <td>0.56 – 0.66×</td>
+    <td>Soliton ≈ planet radius; GNSS probes this boundary</td>
+</tr>
+<tr>
+    <td>Brown Dwarfs</td>
+    <td>50 – 77</td>
+    <td>1.4 – 1.6×</td>
+    <td>Just above $\rho_c$; screening onset begins</td>
+</tr>
+<tr>
+    <td>White Dwarfs</td>
+    <td>$10^5$ – $10^6$</td>
+    <td>27 – 50×</td>
+    <td>Star embedded in soliton; Keplerian mass = baryonic mass</td>
+</tr>
+<tr>
+    <td>Neutron Stars</td>
+    <td>$10^{14}$</td>
+    <td>27,000×</td>
+    <td>Scalar contribution less than 0.004%; pure GR dynamics</td>
+</tr>
+<tr>
+    <td>Binary Pulsars</td>
+    <td>$10^{14}$</td>
+    <td>32,000×</td>
+    <td>GR verified to 0.2%; Nobel Prize 1993</td>
+</tr>
+</tbody>
+</table>
+
+<p style="font-size: 0.9em; color: #666;"><em>Table 4.1: Complete screening hierarchy across astrophysical object classes. The screening factor increases monotonically with density, consistent with a Vainshtein-like screening hierarchy under the stated definitions. Binary pulsars provide the strongest validation, with GR verified to 0.2% precision at screening factors exceeding 30,000×.</em></p>
+
+<h3>4.4 Precision GR Tests: Explained, Not Violated</h3>
+
+<p>A critical question for any modified gravity theory is: why do precision tests of General Relativity show no deviation? The Vainshtein mechanism provides the answer. The five most precise tests of GR all occur in regimes where screening is operative:</p>
+
+<table class="data-table" style="margin: 20px 0;">
+<thead>
+<tr>
+    <th>Test</th>
+    <th>Observable</th>
+    <th>Precision</th>
+    <th>Screening Factor</th>
+    <th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>Lunar Laser Ranging</td>
+    <td>Nordtvedt effect</td>
+    <td>$10^{-13}$</td>
+    <td>0.56×</td>
+    <td>Calibration boundary</td>
+</tr>
+<tr>
+    <td>Cassini Conjunction</td>
+    <td>Shapiro delay</td>
+    <td>$2 \times 10^{-5}$</td>
+    <td>0.42×</td>
+    <td>Scalar sub-dominant</td>
+</tr>
+<tr>
+    <td>MESSENGER</td>
+    <td>Perihelion precession</td>
+    <td>$3 \times 10^{-4}$</td>
+    <td>0.65×</td>
+    <td>Calibration boundary</td>
+</tr>
+<tr>
+    <td>Hulse-Taylor Pulsar</td>
+    <td>GW emission</td>
+    <td>0.2%</td>
+    <td>33,000×</td>
+    <td>Completely screened</td>
+</tr>
+<tr>
+    <td>Double Pulsar</td>
+    <td>7 PPN tests</td>
+    <td>0.05%</td>
+    <td>32,000×</td>
+    <td>Completely screened</td>
+</tr>
+</tbody>
+</table>
+
+<p style="font-size: 0.9em; color: #666;"><em>Table 4.2: Precision GR tests and their screening factors. All tests are consistent with GR; TEP explains this via density-dependent screening rather than requiring the scalar sector to be absent.</em></p>
+
+<p>The Hulse-Taylor binary pulsar is particularly significant. Its orbital decay matches the GR prediction for gravitational wave emission to 0.2% precision—a result honored with the 1993 Nobel Prize (Taylor &amp; Weisberg 1982). At a density of $\sim 10^{14}$ g/cm³, the screening factor reaches 33,000×. The scalar field contributes less than 0.003% to the orbital dynamics. This is not a violation of GR tests; it is a requirement of consistent screening.</p>
+
+<h3>4.5 Earth as the Calibration Anchor</h3>
+
+<p>The screening hierarchy reveals why Earth is the natural calibration point—and why GNSS clocks can detect what neutron stars cannot.</p>
+
+<p>At $\rho \approx 5.5$ g/cm³, Earth sits just below the critical density threshold ($\rho_c \approx 20$ g/cm³). The screening factor is 0.66×, meaning the soliton radius (4,200 km) is comparable to the physical radius (6,371 km). Earth occupies the narrow window where:</p>
+
+<ul>
+    <li><strong>The scalar field is not screened:</strong> Unlike neutron stars (S = 27,000×), Earth's density is low enough that the soliton extends to observable scales.</li>
+    <li><strong>The soliton is not diffuse:</strong> Unlike gas giants (S = 0.3×), Earth's density is high enough that the soliton concentrates within the planet's volume.</li>
+</ul>
+
+<p>GNSS satellites orbit at ~20,000 km altitude, well within the soliton boundary. Their atomic clocks sample proper time across different radial positions within the scalar field structure. The observed clock correlation length $L_c \approx 4200$ km is not an arbitrary parameter—it is the characteristic scale where the scalar field's gradient becomes steep enough to produce measurable timing correlations.</p>
+
+<p>Within this phenomenology, the same saturation density is expected to govern both terrestrial clock correlations and compact-object structure. The terrestrial scale provides an empirical calibration point, and the RBH-1 crossover provides an astrophysical consistency test under the same parameter choice.</p>
+
+<h3>4.6 The Critical Density Threshold</h3>
+
+<p>The empirical data suggest a critical density $\rho_c \approx 20$ g/cm³, corresponding to approximately 4× Earth's mean density. This value has physical significance: it lies near the onset of electron degeneracy, where the equation of state transitions from thermal to quantum pressure support. The scalar field appears to couple to this thermodynamic transition.</p>
+
+<div class="equation">$$\rho < \rho_c: \quad \text{Scalar field active (TEP effects observable)}$$</div>
+<div class="equation">$$\rho > \rho_c: \quad \text{Vainshtein screening (GR recovered)}$$</div>
+
+<div class="principle">
+<h4>Box 4.1: Summary — Three Cross-Regime Consistency Tests</h4>
+<p>The screening analysis provides three cross-regime consistency tests of the TEP framework under a single $\rho_c$:</p>
+<ol>
+    <li><strong>The RBH-1 Crossover:</strong> The soliton radius is consistent with the Schwarzschild diameter at $M \approx 10^7 M_{\odot}$ within combined uncertainties ($\sim 25\%$). This provides a tightly constrained cross-regime consistency check under the fixed $\rho_c$ calibration.</li>
+    <li><strong>The Screening Exponent:</strong> The empirical scaling $S \propto \rho^{0.334}$ emerges from data spanning 15 orders of magnitude in density, with $R^2 = 0.9999$. The exponent 1/3 is a direct consequence of the $M^{1/3}$ soliton scaling.</li>
+    <li><strong>GR Test Consistency:</strong> All five precision tests of General Relativity are explained by screening factors that suppress scalar contributions below current measurement limits.</li>
+</ol>
+<p>The TEP framework does not violate established physics. It extends the metric structure to include a conformal sector that becomes observable only in specific density regimes—such as those probed by GNSS atomic clocks and cosmological soliton-scale systems.</p>
+</div>

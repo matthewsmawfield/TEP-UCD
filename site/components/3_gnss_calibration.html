@@ -1,0 +1,73 @@
+<h2>2. Terrestrial Calibration: GNSS Atomic Clock Correlations</h2>
+
+<h2>Distance-Structured Correlations in Atomic Clocks</h2>
+
+<p>The first empirical constraint on $\rho_c$ comes from terrestrial atomic clock networks. Multi-center analysis of GNSS (Global Navigation Satellite System) clock products reveals distance-structured correlations with a characteristic length scale $L_c \approx 4200$ km for Earth's mass. Operationally, $L_c$ denotes the best-fit exponential decay length recovered by fitting clock-residual covariance versus inter-station separation (see Appendix A). Recent analysis of GNSS products (Smawfield 2025b, Paper 1; Smawfield 2025c, Paper 2) reports this correlation across multiple processing centers.</p>
+
+<p>These correlations exhibit seven independent signatures:</p>
+<ul>
+    <li><strong>Distance structure:</strong> Correlation amplitude scales with inter-station separation.</li>
+    <li><strong>Directional anisotropy:</strong> Stronger correlations along Earth's orbital velocity vector.</li>
+    <li><strong>Orbital velocity coupling:</strong> Annual modulation consistent with $v_\oplus \approx 30$ km/s.</li>
+    <li><strong>CMB-frame alignment:</strong> Dipole structure aligns with CMB rest frame.</li>
+    <li><strong>Multi-center consistency:</strong> CODE, IGS, and ESA products show identical patterns.</li>
+    <li><strong>25-year stability:</strong> Correlation structure persists across 1998–2023 (Smawfield 2025c, Paper 2).</li>
+    <li><strong>Raw RINEX validation:</strong> Pattern survives in unprocessed Single Point Positioning (SPP) analysis, strongly constraining processing artifacts (Smawfield 2025d, Paper 3).</li>
+</ul>
+
+<h2>Derivation of $\rho_c$ from $L_c$</h2>
+
+<p>The characteristic length $L_c$ is interpreted as the soliton radius for Earth's mass. For a spherical mass distribution, the soliton radius is:</p>
+
+<div>
+    $$ R_{\text{sol}} = \left( \frac{3M}{4\pi \rho_c} \right)^{1/3} $$
+</div>
+
+<p>Solving for $\rho_c$:</p>
+
+<div>
+    $$ \rho_c = \frac{3M}{4\pi R_{\text{sol}}^3} $$
+</div>
+
+<p>Substituting $M_\oplus \approx 6 \times 10^{27}$ g and $L_c \approx 4200$ km $\approx 4.2 \times 10^8$ cm:</p>
+
+<div>
+    $$ \rho_c = \frac{3 \times (6 \times 10^{27}\,\text{g})}{4\pi \times (4.2 \times 10^8\,\text{cm})^3} \approx 20\,\text{g/cm}^3 $$
+</div>
+
+<h2>Systematic Uncertainties</h2>
+
+<p>The primary systematic uncertainties are:</p>
+<ul>
+    <li><strong>Length scale determination:</strong> $L_c = 4200 \pm 500$ km (12% uncertainty from correlation structure fitting).</li>
+    <li><strong>Geometric factor:</strong> Assumption of spherical symmetry introduces $\sim$10% uncertainty.</li>
+    <li><strong>Mass distribution:</strong> Earth's density profile (core vs. mantle) may affect effective $M$ by $\sim$5%.</li>
+</ul>
+
+<p>Combining in quadrature: $\rho_c = 20 \pm 8$ g/cm³ (40% systematic uncertainty). This range is consistent with independent constraints from atomic physics (Section 5) and provides the calibration scale for all subsequent tests.</p>
+
+<h2>Discrimination from Geophysical Signals</h2>
+
+<p>A critical objection to long-range clock correlations is the presence of tropospheric and ionospheric delays. However, spectral power analysis reveals distinct scale separation:</p>
+
+<ul>
+    <li><strong>Tropospheric covariance:</strong> Decays at ~100–500 km (weather systems)</li>
+    <li><strong>Ionospheric covariance:</strong> Decays at ~500–2000 km (TEC structures)</li>
+    <li><strong>Scalar field signature:</strong> Persists as a covariance floor at ~4200 km</li>
+</ul>
+
+<p>The 4200 km feature shows no counterpart in ionospheric or tropospheric delay products. Furthermore, the signal aligns with the CMB rest frame (reported at 3.8σ significance in the companion analysis)—a directional dependence absent in atmospheric models. Power spectral analysis across GPS, Galileo, and GLONASS confirms this as a persistent background covariance floor, not a geophysical artifact.</p>
+
+<h2>Null Tests and Robustness</h2>
+
+<p>The GNSS correlation pattern survives multiple null tests:</p>
+<ul>
+    <li><strong>Geophysical coupling:</strong> Correlations persist after removing tidal, atmospheric, and ionospheric signals.</li>
+    <li><strong>Orbital mechanics:</strong> Pattern is independent of satellite constellation geometry.</li>
+    <li><strong>Processing artifacts:</strong> Raw RINEX analysis (Paper 3) strongly constrains "black box" concerns.</li>
+    <li><strong>Temporal stability:</strong> 25-year consistency (Paper 2) strongly disfavors transient instrumental effects.</li>
+</ul>
+
+<p>The convergence of multi-center, multi-decade, and raw-data analyses establishes $L_c \approx 4200$ km as a robust empirical finding, independent of theoretical interpretation.</p>
+
+<p><em>For detailed methodology and validation, see Appendix A and Papers 1–3.</em></p>

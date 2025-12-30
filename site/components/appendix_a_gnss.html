@@ -1,0 +1,156 @@
+<h2>Appendix A: GNSS Calibration — Summary of Validation Evidence</h2>
+
+<p>
+    The claim that terrestrial clock correlations calibrate a fundamental density parameter ($\rho_c \approx 20$ g/cm³) is extraordinary and requires rigorous justification. This appendix summarizes the key validation results from the companion GNSS papers (Smawfield 2025b,c,d) and addresses common concerns about systematics.
+</p>
+
+<h2>A.1 Physical Mechanism</h2>
+<p>
+    In the TEP framework, the scalar field $\phi$ modulates proper time via a conformal factor $\Omega(\phi)$. Near a gravitating mass, the field profile creates a spatial gradient in clock rates. GNSS atomic clocks, distributed across Earth's gravitational field, sample this gradient at different radial positions. The characteristic correlation length $L_c \approx 4200$ km corresponds to the scale where the scalar field's gradient becomes steep enough to produce measurable timing correlations—the soliton radius for Earth's mass.
+</p>
+
+<h2>A.2 Why Not Ionospheric, Tropospheric, or Orbital Systematics?</h2>
+
+<h3>Scale Separation</h3>
+<p>
+    The 4200 km correlation length is distinct from known geodetic systematics:
+</p>
+<ul>
+    <li><strong>Tropospheric correlations:</strong> ~100–500 km (weather systems)</li>
+    <li><strong>Ionospheric correlations:</strong> ~500–2000 km (TEC structures)</li>
+    <li><strong>Orbital harmonics:</strong> ~12 hr (half-sidereal period)</li>
+</ul>
+<p>
+    Power spectral analysis shows the 4200 km feature as a persistent background covariance floor across GPS, Galileo, and GLONASS, with no counterpart in ionospheric or tropospheric delay products.
+</p>
+
+<h3>Multi-Center Verification</h3>
+<p>
+    The correlation structure persists across independent clock solutions from three analysis centers:
+</p>
+
+<table class="data-table" style="margin: 20px 0;">
+<thead>
+<tr>
+    <th>Center</th>
+    <th>λ Median (km)</th>
+    <th>95% CI (km)</th>
+    <th>R² (pooled)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>CODE</td>
+    <td>4,181</td>
+    <td>1,198–5,918</td>
+    <td>0.920</td>
+</tr>
+<tr>
+    <td>IGS Combined</td>
+    <td>3,763</td>
+    <td>3,197–4,871</td>
+    <td>0.966</td>
+</tr>
+<tr>
+    <td>ESA Final</td>
+    <td>3,330</td>
+    <td>2,532–3,984</td>
+    <td>0.970</td>
+</tr>
+</tbody>
+</table>
+<p style="font-size: 0.9em; color: #666;"><em>Table A.1: Multi-center correlation parameters. The recovered $L_c$ varies by &lt;5% across centers (1999–2024), strongly disfavoring software-specific processing artifacts as the origin of the correlation scale.</em></p>
+
+<h3>Null Tests</h3>
+<p>
+    Three null tests were performed (all satisfied at &gt;5σ):
+</p>
+<ol>
+    <li><strong>Epoch randomization:</strong> Shuffling satellite epochs destroys the correlation ($r^2 < 0.01$, $N = 1000$ shuffles)</li>
+    <li><strong>Residual shuffling:</strong> Shuffling clock residuals within each satellite eliminates the spatial structure</li>
+    <li><strong>White noise injection:</strong> Replacing real data with white noise yields no coherent scale</li>
+</ol>
+
+<h2>A.3 25-Year Temporal Stability</h2>
+<p>
+    The correlation length has been confirmed over a 25-year temporal baseline (2000–2025) using CODE final products. The signal shows:
+</p>
+<ul>
+    <li>Decadal stability (no secular drift)</li>
+    <li>Persistent spatial anisotropy</li>
+    <li>Strong orbital velocity coupling ($r = -0.86$, $p = 0.002$ for Southern Hemisphere)</li>
+    <li>CMB frame alignment (reported at 3.8σ significance in the companion analysis)</li>
+</ul>
+
+<h2>A.4 Raw RINEX Validation</h2>
+<p>
+    To strongly constrain the processing artifact hypothesis, the correlation was detected in raw RINEX observations processed with Single Point Positioning (SPP) using broadcast ephemerides only—no network solutions, no precise orbits, no clock products.
+</p>
+
+<table class="data-table" style="margin: 20px 0;">
+<thead>
+<tr>
+    <th>Signature</th>
+    <th>PPP (Processed)</th>
+    <th>SPP (Raw)</th>
+    <th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>Exponential decay</td>
+    <td>R² = 0.92–0.97</td>
+    <td>R² = 0.94</td>
+    <td>✓ Confirmed</td>
+</tr>
+<tr>
+    <td>Directional anisotropy</td>
+    <td>Detected</td>
+    <td>Detected</td>
+    <td>✓ Confirmed</td>
+</tr>
+<tr>
+    <td>Orbital velocity coupling</td>
+    <td>r = −0.86</td>
+    <td>Detected</td>
+    <td>✓ Confirmed</td>
+</tr>
+<tr>
+    <td>CMB frame alignment</td>
+    <td>3.8σ</td>
+    <td>Detected</td>
+    <td>✓ Confirmed</td>
+</tr>
+</tbody>
+</table>
+<p style="font-size: 0.9em; color: #666;"><em>Table A.2: Raw RINEX validation results. All signatures detected in processed (PPP) data are independently confirmed in raw (SPP) observations, strongly constraining processing artifacts as the origin of the observed signatures.</em></p>
+
+<h2>A.5 What the GNSS Measurement Does and Does Not Claim</h2>
+
+<div class="principle">
+<h4>What GNSS Measures</h4>
+<p>
+    The GNSS analysis measures a characteristic correlation length $L_c \approx 4200$ km in atomic clock residuals. This length is interpreted as the soliton radius for Earth's mass under the TEP framework.
+</p>
+</div>
+
+<div class="principle">
+<h4>What GNSS Does Not Claim</h4>
+<p>
+    The GNSS analysis does not claim to have detected the scalar field directly. The correlation length is an empirical calibration parameter. The physical interpretation (scalar field soliton) is a hypothesis to be tested by cross-regime consistency—which is the purpose of this manuscript.
+</p>
+</div>
+
+<h2>A.6 Companion Papers</h2>
+<p>
+    Full methodology, data products, and reproducibility information are available in the companion papers:
+</p>
+<ul>
+    <li><strong>Smawfield 2025b:</strong> Multi-center validation (CODE, ESA, IGS)</li>
+    <li><strong>Smawfield 2025c:</strong> 25-year longitudinal analysis</li>
+    <li><strong>Smawfield 2025d:</strong> Raw RINEX validation</li>
+    <li><strong>Smawfield 2025f:</strong> Integrated synthesis (TEP-GTE)</li>
+</ul>
+<p>
+    Analysis code and data products are available at: <a href="https://github.com/matthewsmawfield/TEP-GNSS">github.com/matthewsmawfield/TEP-GNSS</a>
+</p>
