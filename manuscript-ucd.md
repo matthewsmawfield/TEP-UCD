@@ -4,7 +4,7 @@
 **Version:** v0.1 (New Delhi)  
 **Date:** First published: 28 December 2025 · Last updated: 28 December 2025  
 **DOI:** 10.5281/zenodo.18064366  
-**Generated:** 2025-12-29  
+**Generated:** 2025-12-31  
 **Paper Series:** TEP-UCD Paper 7 (Universal Critical Density)
 
 ---
@@ -1147,7 +1147,7 @@ Smawfield, M. L. 2025g, *Global Time Echoes: Empirical Validation of the Tempora
 
 Smawfield, M. L. 2025h, *Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales via the Temporal Equivalence Principle* (v0.1), Zenodo, DOI: 10.5281/zenodo.18064366 (Paper 7: This Work)
 
-Smawfield, M. L. 2025i, *The Soliton Wake: A Runaway Black Hole as a Gravitational Soliton* (v0.1 Blantyre), Zenodo, DOI: 10.5281/zenodo.18059251 (Paper 8: TEP-RBH Companion Paper)
+Smawfield, M. L. 2025i, *The Soliton Wake: A Runaway Black Hole as a Gravitational Soliton* (v0.1), Zenodo, DOI: 10.5281/zenodo.18059251 (Paper 8: TEP-RBH Companion Paper)
 
 Stevenson, S. D., et al. 2025, *MNRAS* (DOI: 10.1093/mnras/staf2087; arXiv:2509.06913)
 
@@ -1351,6 +1351,8 @@ Olausen, S. A., & Kaspi, V. M. 2014, *ApJS*, 212, 6 (DOI: 10.1088/0067-0049/212/
         - [Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales 28 Dec 2025](/tep/ucd/)
 
         - [The Soliton Wake: Identifying RBH-1 as a Gravitational Soliton 28 Dec 2025](/tep/rbh/)
+
+        - [Global Time Echoes: Optical Validation of TEP via Satellite Laser Ranging 30 Dec 2025](/tep/slr/)
 
         ← Previous
         Next →

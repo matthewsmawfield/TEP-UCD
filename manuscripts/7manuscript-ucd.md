@@ -1145,7 +1145,7 @@ Smawfield, M. L. 2025f, *Global Time Echoes: Empirical Validation of the Tempora
 
 Smawfield, M. L. 2025g, *Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales via the Temporal Equivalence Principle* (v0.1), Zenodo, DOI: 10.5281/zenodo.18064366 (Paper 7: This Work)
 
-Smawfield, M. L. 2025h, *The Soliton Wake: A Runaway Black Hole as a Gravitational Soliton* (v0.1 Blantyre), Zenodo, DOI: 10.5281/zenodo.18059251 (Paper 8: TEP-RBH Companion Paper)
+Smawfield, M. L. 2025h, *The Soliton Wake: A Runaway Black Hole as a Gravitational Soliton* (v0.1), Zenodo, DOI: 10.5281/zenodo.18059251 (Paper 8: TEP-RBH Companion Paper)
 
 Stevenson, S. D., et al. 2025, *MNRAS* (DOI: 10.1093/mnras/staf2087; arXiv:2509.06913)
 

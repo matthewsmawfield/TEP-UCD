@@ -6,7 +6,7 @@
 ![Universal Critical Density](site/public/og-image.jpg)
 
 **Author:** Matthew Lukin Smawfield  
-**Version:** v0.1 (Blantyre)  
+**Version:** v0.1 (New Delhi)  
 **Date:** 28 December 2025  
 **Status:** Preprint  
 **DOI:** [10.5281/zenodo.18064366](https://doi.org/10.5281/zenodo.18064366)  
@@ -75,7 +75,7 @@ The saturation density ρ_c ≈ 20 g/cm³ is proposed as a physical organizing p
   journal={Zenodo},
   year={2025},
   doi={10.5281/zenodo.18064366},
-  note={Preprint v0.1 (Blantyre)}
+  note={Preprint v0.1 (New Delhi)}
 }
 ```
 
