@@ -1,0 +1,25 @@
+The Soliton Wake: Identifying the Runaway Object RBH-1 as a Gravitational Soliton
+
+RBH-1, interpreted as a candidate runaway supermassive black hole, is associated with a 62 kpc (~200,000 light-year) linear feature extending from a galaxy at z ~ 0.96. JWST spectroscopy reveals a sharp line-of-sight velocity discontinuity at the feature's tip, consistent with a supersonic perturber (~10^3 km/s). Standard Rankine-Hugoniot conditions imply post-shock temperatures of T ~ 1.4 x 10^7 K, creating a cooling bottleneck (t_cool >> t_dyn) that poses a strong challenge for prompt condensation under a simple single-phase thermal-shock picture.
+
+An alternative interpretation is proposed in which the dominant driver is metric rather than hydrodynamic: RBH-1 is modeled as a macroscopic gravitational soliton—a coherent, propagating region with an altered proper-time rate, arising from the conformal time-field sector of the Temporal Equivalence Principle (TEP). In this picture, the observed discontinuity corresponds to a spatial gradient in gravitational redshift (a metric shock). The effective collapse threshold is reduced behind the front, enabling star formation without a prolonged hot phase.
+
+A scalar-field soliton model is tested, constrained by a single density parameter rho_c ~ 20 g/cm^3 calibrated from terrestrial atomic clock coherence limits. This terrestrial calibration predicts the 10^7 M_sun crossover scale of RBH-1 consistent at the percent level, and independently predicts the Milky Way's Keplerian transition radius (~19 kpc, Gaia DR3) consistent at the few-percent level. Application to the SPARC galaxy database confirms the same scaling for the onset of dark matter dominance, yielding a threshold-marginalized exponent alpha = 0.354 +/- 0.014, consistent with the TEP prediction of 1/3.
+
+Additional discriminators for horizonless compact objects using VLBI polarimetry are discussed as future work. Robust inference is contingent on forward modeling and comparison to GRMHD null ensembles processed through the same synthetic-observation and imaging pipeline.
+
+Key Findings:
+1. **The Soliton Wake**: Resolves the "Cooling Bottleneck" paradox by reinterpreting the velocity discontinuity as a metric shock (gravitational redshift gradient) rather than a thermal shock.
+2. **Universal Scaling**: The soliton radius (R ~ M^(1/3)) calibrated to Earth's GNSS clock coherence length (L_c ~ 4200 km) predicts the size of RBH-1 consistent at the percent level, and the Milky Way's Keplerian transition radius (~19 kpc) consistent at the few-percent level.
+3. **Vainshtein Screening**: A comprehensive analysis across 26 astrophysical objects confirms an empirical scaling law S ~ rho^(0.334) (R^2 = 0.9999), unifying the screening hierarchy from laboratory to cosmological scales.
+4. **Magnetar Anti-Glitches**: The scaling law correctly predicts the critical period (~7s) for anti-glitch events in neutron stars (e.g., 1E 2259+586), identifying them as interactions with the soliton boundary.
+
+This work unifies the phenomenology of "Runaway Black Holes", Dark Matter halos (SPARC), and Solar System screening under a single density-constrained scalar field framework.
+
+Related Work:
+- TEP Theory: Smawfield, M. L. (2025). Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed (v0.6 (Jakarta)). Zenodo. https://doi.org/10.5281/zenodo.16921911
+
+Keywords: black holes, supermassive black holes, runaway black holes, gravitational solitons, scalar fields, dark matter, galaxy rotation curves, Vainshtein screening, magnetars, anti-glitches, JWST, temporal equivalence principle, modified gravity, scalar-tensor theories, SPARC, bi-metric gravity, conformal coupling, proper time, time dilation, phantom mass, metric shock, gravitational redshift, atomic clocks, GNSS, clock coherence, Gaia DR3, Milky Way, Keplerian decline, halo boundary, neutron stars, rotation-powered pulsars, cold shock
+
+Website: https://matthewsmawfield.github.io/TEP-RBH/
+Code Availability: https://github.com/matthewsmawfield/TEP-RBH

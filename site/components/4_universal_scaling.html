@@ -1,0 +1,161 @@
+<h1>3. The Universal Density Constraint</h1>
+
+<p>
+    A key test of the soliton interpretation is whether it yields quantitative predictions for otherwise free scales. If RBH-1 corresponds to a gravitational soliton, its characteristic radius should be constrained by the soliton physics rather than introduced as an adjustable parameter.
+</p>
+
+<h2>The Saturation Density as Fundamental Parameter</h2>
+<p>
+    If the scalar sector saturates at a critical energy density $\rho_c$, dimensional analysis requires a universal mass–radius relation:
+</p>
+
+<div class="equation">$$R_{\rm sol}(M) = \left( \frac{3M}{4\pi \rho_c} \right)^{1/3}$$</div>
+
+<p>
+    The saturation density $\rho_c$ is determined empirically from the most accessible high-precision laboratory: Earth's gravitational field. Terrestrial GNSS data reveal a characteristic correlation length $L_{c,\oplus} \approx 4200$ km (Smawfield 2025a), derived specifically from the magnitude-weighted Phase Alignment metric on geomagnetically quiet days to isolate the underlying scalar field structure from tropospheric noise. Interpreting this length as the soliton radius for Earth's mass yields:
+</p>
+
+<div class="equation">$$\rho_c = \frac{3 M_\oplus}{4\pi L_{c,\oplus}^3} \approx 19\text{–}20 \text{ g/cm}^3$$</div>
+
+<p>
+    This value is not arbitrary. As discussed in Section 3c, $\rho_c \approx 20$ g/cm$^3$ coincides with the onset of electron degeneracy and is constrained by the requirement that the scaling reproduce the Bohr radius at the proton mass. The central question is whether this same density constraint holds for RBH-1.
+</p>
+
+<div class="principle">
+    <h4>Box 3.2: Robustness of the GNSS Calibration (Systematics Check)</h4>
+    <p>
+        The terrestrial calibration length $L_c \approx 4200$ km is an extraordinary claim requiring rigorous exclusion of geodetic systematics. The following tests support its physical origin (full methodology in Smawfield 2025a):
+    </p>
+    <ul>
+        <li><strong>Multi-Center Verification:</strong> The correlation structure persists across independent clock solutions from CODE, ESA, and IGS (1999–2024), ruling out software-specific processing artifacts (e.g., Bernese vs. GIPSY). The recovered $L_c$ varies by $<5\%$ across centers.</li>
+        <li><strong>Null Tests:</strong> (i) Randomizing satellite epochs destroys the correlation ($r^2 < 0.01$, $N = 1000$ shuffles); (ii) shuffling clock residuals within each satellite eliminates the spatial structure; (iii) replacing real data with white noise yields no coherent scale. All three nulls are satisfied at $>5\sigma$.</li>
+        <li><strong>Scale Separation:</strong> The 4200 km scale is distinct from tropospheric correlation lengths (~100–500 km) and orbital period harmonics (half-sidereal, ~12 hr). Power spectral analysis shows the 4200 km feature as a persistent background covariance floor across GPS, Galileo, and GLONASS, with no counterpart in ionospheric or tropospheric delay products.</li>
+        <li><strong>Dataset:</strong> IGS final clock products (CLK files), 30-second sampling, 1999–2024. Preprocessing: removal of satellite/receiver clock offsets, relativistic corrections (Sagnac, gravitational redshift), and reference frame alignment to ITRF2020.</li>
+    </ul>
+    <p style="font-size: 0.9em; color: #666;">
+        <em>Limitation:</em> The present analysis treats $L_c$ as an empirical calibration parameter. A complete derivation from first principles—linking $L_c$ to the scalar field mass $m_\phi$ and coupling constants—remains a target for future theoretical work.
+    </p>
+</div>
+
+<div class="principle">
+    <h4>Box 3.1: Derivation of the Scaling Law</h4>
+    <p>
+        The $R \propto M^{1/3}$ scaling is not an ad hoc ansatz but a direct consequence of saturation in the scalar sector. Consider a scalar field $\phi$ coupled to matter density $\rho$ with a potential $V(\phi)$ that enforces a maximum gradient or energy density.
+    </p>
+    <p>
+        In the high-density limit (compact objects), the scalar field profile saturates to a core of constant effective energy density $\rho_c$. For a self-gravitating configuration of total mass $M$, the volume of this saturated core is constrained by mass conservation:
+        $$M \approx \frac{4}{3}\pi R_{\rm sol}^3 \rho_c$$
+        Solving for the radius yields the characteristic scaling:
+        $$R_{\rm sol} \propto \left(\frac{M}{\rho_c}\right)^{1/3}$$
+    </p>
+    <p>
+        This relation describes the boundary of the saturated "soliton" region. Outside this radius, the field decays, recovering Newtonian gravity (Vainshtein screening). Inside, the field is phase-locked, modifying the effective metric (proper time). The "Universal Scaling" is thus simply the statement that the vacuum has a maximum capacity to support scalar gradients before saturating at $\rho_c$.
+    </p>
+</div>
+
+<h2>Testing the Density Constraint at Cosmological Scales</h2>
+<p>
+    The saturation density $\rho_c$ determined from terrestrial clocks is now tested against RBH-1. Using the best-fit mass estimate of $M \approx 1.1 \times 10^7 M_{\odot}$ (van Dokkum et al. 2025), the predicted soliton radius is:
+</p>
+
+<div class="equation">$$R_{\rm sol} = \left( \frac{3M}{4\pi \rho_c} \right)^{1/3} \approx 6.5 \times 10^7 \text{ km}$$</div>
+
+<p>
+    In General Relativity, the characteristic size of a black hole is the Schwarzschild diameter ($D_{\rm BH} = 2R_{\rm S} \approx 6.5\times 10^7$ km for this mass). The density-constrained scaling predicts a soliton radius that matches the Schwarzschild diameter to within 1%. This correspondence, obtained without introducing an astrophysical size parameter, places RBH-1 near the crossover regime where horizon and saturated-soliton interpretations are maximally degenerate.
+</p>
+
+<p>
+    In the TEP interpretation, what is conventionally called a "black hole" at this mass scale is a saturated soliton core—a region where the conformal time-field has reached its maximum gradient. The object is not a singularity surrounded by an event horizon, but a coherent temporal structure whose characteristic radius is set by the saturation density $\rho_c$. The apparent "darkness" arises from extreme time dilation (photons are maximally redshifted), not from causal disconnection.
+</p>
+
+<p>
+    A further structural implication follows from the different mass scalings. The soliton relation predicts $R_{\rm sol} \propto M^{1/3}$, whereas the Schwarzschild diameter scales as $D_{\rm BH} \propto M$. These opposing scalings intersect at a unique crossover mass $M_{\times}$ where the two radii coincide (see Figure 2). Empirically, the terrestrial calibration places this crossover near $M_{\times} \approx 10^7\,M_{\odot}$—precisely where RBH-1 resides. Objects near $M_{\times}$ are expected to be maximally degenerate between horizon and soliton interpretations, making RBH-1 an unusually diagnostic system.
+</p>
+
+<h2>Status of the Scaling Law</h2>
+<p>
+    The relation $R \propto M^{1/3}$ is a density-limited scaling expected for compact, self-bound field configurations whose cores approach a finite saturation density. Such behavior is familiar in non-topological solitons and bosonic compact objects (Coleman 1985; Seidel &amp; Suen 1991; Gleiser 1994; Hui et al. 2017).
+</p>
+
+<p>
+    The central claim is not that terrestrial clocks "predict" black hole sizes, but that a fundamental density constant $\rho_c$ appears across scales. The saturation density is determined empirically from Earth—the most accessible high-precision gravitational laboratory—and then tested for consistency at cosmological scales. The present analysis should be read as a phenomenological identification of an unexpected regularity: the same density constraint that governs clock correlations in Earth's gravitational field also governs the characteristic size of a $10^7 M_\odot$ compact object.
+</p>
+
+<h2>Astrophysical Verification (Magnetars)</h2>
+<p>
+    The Galactic magnetar population provides an additional cross-check. Applying the same scaling to a neutron star ($1.4\,M_{\odot}$) yields a field boundary at $R \approx 325{,}000$ km. Identifying this with the light-cylinder radius, $R_{LC} = cP/2\pi$, gives $P = 2\pi R/c \approx 6.8$ s, comparable to the observed clustering of magnetar periods near a few seconds (Colpi et al. 2000).
+</p>
+
+<h3>Anti-Glitch Events: A Growing Census</h3>
+<p>
+    Anti-glitches—sudden spin-down events—are exceptionally rare among neutron stars, with only a handful confirmed across the magnetar population. The table below summarizes the known events.
+</p>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Source</th>
+            <th>Period (s)</th>
+            <th>Event Date</th>
+            <th>$\Delta\nu/\nu$</th>
+            <th>Reference</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1E 2259+586</td>
+            <td>6.98</td>
+            <td>April 2012</td>
+            <td>$-3 \times 10^{-7}$</td>
+            <td>Archibald et al. 2013</td>
+        </tr>
+        <tr>
+            <td>1E 2259+586</td>
+            <td>6.98</td>
+            <td>April 2019</td>
+            <td>$-5.8 \times 10^{-7}$</td>
+            <td>Younes et al. 2020</td>
+        </tr>
+        <tr>
+            <td>SGR 1935+2154</td>
+            <td>3.25</td>
+            <td>October 2020</td>
+            <td>—</td>
+            <td>Younes et al. 2022</td>
+        </tr>
+        <tr>
+            <td>4U 0142+61</td>
+            <td>8.69</td>
+            <td>February 2015</td>
+            <td>$-3.22(9) \times 10^{-7}$ (over-recovery; $Q \approx 3.6$, $\tau_d \approx 57$ d)</td>
+            <td>Archibald et al. 2017</td>
+        </tr>
+        <tr>
+            <td>XTE J1810-197</td>
+            <td>5.54</td>
+            <td>—</td>
+            <td>—</td>
+            <td>Pintore et al. 2016</td>
+        </tr>
+    </tbody>
+</table>
+<p class="table-caption">
+    Confirmed magnetar anti-glitch events. The period $P$ is the spin period at the time of the event; $\Delta\nu/\nu$ is the fractional frequency change (negative indicates spin-down). The TEP-predicted critical period for a $1.4\,M_{\odot}$ neutron star is $P_{\rm crit} \approx 6.8$ s.
+</p>
+
+<p>
+    Note on scope: the 4U 0142+61 entry corresponds to a net spin-down via over-recovery (Q &gt; 1) during the 2015 outburst (Archibald et al. 2017). A candidate archival anti-glitch in 1E 1841-045 (P ≈ 11.78 s) has been reported (Şaşmaz Muş et al. 2014) but is disputed by a reanalysis (Dib & Kaspi 2014); it is therefore not tabulated among confirmed events.
+</p>
+
+<p>
+    Period distribution context: the McGill Online Magnetar Catalog (Olausen & Kaspi 2014; updated) lists spin periods clustered in the ~2–12 s range with a concentration near 6–9 s, consistent with the TEP-predicted crossover P<sub>crit</sub> ≈ 6.8 s.
+</p>
+
+<div>
+    <p>
+        The magnetar 1E 2259+586 ($P \approx 7.0$ s) is particularly significant: its period matches the TEP prediction to within 3%, and it has exhibited two confirmed anti-glitches (2012, 2019). The 2012 event was accompanied by X-ray bursting activity, while the 2019 event was radiatively quiet (Younes et al. 2020), demonstrating that anti-glitches can occur both with and without magnetospheric disturbances.
+    </p>
+    <p>
+        In the soliton-wall picture, such braking events occur when the light-cylinder radius $R_{LC} = cP/2\pi$ approaches the soliton boundary $R_{\rm sol}$. For a $1.4\,M_\odot$ neutron star, the TEP scaling predicts $R_{\rm sol} \approx 325{,}000$ km. Setting $R_{LC} = R_{\rm sol}$ yields the critical period $P_{\rm crit} = 2\pi R_{\rm sol}/c \approx 6.8$ s. When the magnetosphere expands to intersect this boundary, the scalar field gradient exerts a transient back-reaction torque, producing the observed spin-down. The clustering of anti-glitch events in magnetars with periods near $P_{\rm crit}$ provides independent support for the TEP scaling law.
+    </p>
+</div>

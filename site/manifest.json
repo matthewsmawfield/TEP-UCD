@@ -1,0 +1,77 @@
+{
+  "title": "The Soliton Wake Manuscript",
+  "sections": [
+    {
+      "id": "section-abstract",
+      "title": "Abstract",
+      "file": "1_abstract.html",
+      "order": 1
+    },
+    {
+      "id": "section-intro",
+      "title": "1. Introduction: The RBH-1 Anomaly",
+      "file": "2_introduction.html",
+      "order": 2
+    },
+    {
+      "id": "section-theory",
+      "title": "2. Theoretical Framework: The Gravitational Soliton",
+      "file": "3_theoretical_framework.html",
+      "order": 3
+    },
+    {
+      "id": "section-scaling",
+      "title": "3. The Universal Density Constraint",
+      "file": "4_universal_scaling.html",
+      "order": 4
+    },
+    {
+      "id": "section-screening",
+      "title": "3b. Vainshtein Screening Validation",
+      "file": "4b_screening_validation.html",
+      "order": 5
+    },
+    {
+      "id": "section-saturation",
+      "title": "3c. Theoretical Origin of the Saturation Density",
+      "file": "4c_saturation_origin.html",
+      "order": 6
+    },
+    {
+      "id": "section-polarized-heart",
+      "title": "3d. The \"Polarized Heart\" Test (VLBI Imaging)",
+      "file": "4d_polarized_heart.html",
+      "order": 7
+    },
+    {
+      "id": "section-rbh1-confrontation",
+      "title": "3e. Direct Confrontation with RBH-1 Data",
+      "file": "4e_rbh1_confrontation.html",
+      "order": 8
+    },
+    {
+      "id": "section-sparc",
+      "title": "4. The SPARC Galaxy Analysis",
+      "file": "4f_sparc_analysis.html",
+      "order": 9
+    },
+    {
+      "id": "section-figures",
+      "title": "5. Visual Evidence",
+      "file": "5_visual_evidence.html",
+      "order": 10
+    },
+    {
+      "id": "section-discussion",
+      "title": "6. Discussion: Implications for Dark Matter",
+      "file": "6_discussion.html",
+      "order": 11
+    },
+    {
+      "id": "section-references",
+      "title": "References",
+      "file": "7_references.html",
+      "order": 12
+    }
+  ]
+}

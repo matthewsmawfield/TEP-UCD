@@ -1,0 +1,89 @@
+{
+  "title": "Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales",
+  "sections": [
+    {
+      "id": "section-abstract",
+      "title": "Abstract",
+      "file": "1_abstract.html",
+      "order": 1
+    },
+    {
+      "id": "section-intro",
+      "title": "1. Introduction: Dark Matter as Temporal Structure",
+      "file": "2_introduction.html",
+      "order": 2
+    },
+    {
+      "id": "section-gnss-calibration",
+      "title": "2. GNSS Calibration: Terrestrial Derivation of ρ_c",
+      "file": "3_gnss_calibration.html",
+      "order": 3
+    },
+    {
+      "id": "section-sparc",
+      "title": "3. SPARC Validation: Galactic Rotation Curves",
+      "file": "4_sparc_validation.html",
+      "order": 4
+    },
+    {
+      "id": "section-screening",
+      "title": "4. Screening Hierarchy: Vainshtein Mechanism",
+      "file": "5_screening_hierarchy.html",
+      "order": 5
+    },
+    {
+      "id": "section-atomic-boundary",
+      "title": "5. Atomic Boundary: Quantum-Gravitational Crossover",
+      "file": "6_atomic_boundary.html",
+      "order": 6
+    },
+    {
+      "id": "section-universal-scaling",
+      "title": "6. Universal Scaling: The M^(1/3) Law",
+      "file": "7_universal_scaling.html",
+      "order": 7
+    },
+    {
+      "id": "section-magnetar-test",
+      "title": "7. Magnetar Test: Anti-Glitch Prediction",
+      "file": "8_magnetar_test.html",
+      "order": 8
+    },
+    {
+      "id": "section-milky-way-test",
+      "title": "8. Milky Way Test: Keplerian Decline",
+      "file": "9_milky_way_test.html",
+      "order": 9
+    },
+    {
+      "id": "section-discussion",
+      "title": "9. Discussion: Cosmological Implications",
+      "file": "10_discussion.html",
+      "order": 10
+    },
+    {
+      "id": "section-conclusion",
+      "title": "10. Conclusion",
+      "file": "11_conclusion.html",
+      "order": 11
+    },
+    {
+      "id": "section-figures",
+      "title": "Appendix B: Visual Evidence",
+      "file": "12_visual_evidence.html",
+      "order": 14
+    },
+    {
+      "id": "section-references",
+      "title": "References",
+      "file": "13_references.html",
+      "order": 12
+    },
+    {
+      "id": "appendix-gnss",
+      "title": "Appendix A: GNSS Validation Summary",
+      "file": "appendix_a_gnss.html",
+      "order": 13
+    }
+  ]
+}
