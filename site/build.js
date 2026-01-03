@@ -191,6 +191,10 @@ function copyRecursiveSync(src, dest) {
             );
         });
     } else {
+        // Filter out raw data files
+        if (src.endsWith('.csv') || src.endsWith('.dat') || src.endsWith('.nc')) {
+            return;
+        }
         fs.copyFileSync(src, dest);
     }
 }
