@@ -4,7 +4,7 @@
 **Version:** v0.1 (New Delhi)  
 **Date:** First published: 28 December 2025 · Last updated: 28 December 2025  
 **DOI:** 10.5281/zenodo.18064366  
-**Generated:** 2026-01-07  
+**Generated:** 2026-03-13  
 **Paper Series:** TEP-UCD Paper 7 (Universal Critical Density)
 
 ---
