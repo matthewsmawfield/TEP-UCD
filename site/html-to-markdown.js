@@ -17,6 +17,16 @@ class HTMLToMarkdownConverter {
     /**
      * Convert HTML string to markdown with proper academic formatting
      */
+    cleanContentIndentation(content) {
+        // Split into lines and remove leading indentation from each line
+        return content
+            .split('\n')
+            .map(line => line.replace(/^[ \t]+/, ''))
+            .join('\n')
+            .replace(/\n{3,}/g, '\n\n')  // Remove excessive blank lines
+            .trim();
+    }
+
     htmlToMarkdown(html) {
         // Remove script tags and their content
         html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
@@ -248,6 +258,14 @@ class HTMLToMarkdownConverter {
             // Extract metadata
             const metadata = this.extractMetadata(html);
             
+            // Load version info from VERSION.json
+            const versionPath = path.join(__dirname, '..', 'VERSION.json');
+            let versionInfo = { version: '0.2', codename: 'NewDelhi' };
+            if (fs.existsSync(versionPath)) {
+                const versionData = JSON.parse(fs.readFileSync(versionPath, 'utf8'));
+                versionInfo = versionData;
+            }
+            
             // Extract main content
             const mainContent = this.extractMainContent(html);
             
@@ -257,8 +275,10 @@ class HTMLToMarkdownConverter {
             // Build the complete markdown document
             const markdown = this.buildMarkdownDocument(metadata, markdownContent);
             
-            // Write to file
-            const outputPath = path.join(__dirname, '..', 'manuscript-ucd.md');
+            // Generate filename: 6-TEP-UCD-v{version}-{codename}.md
+            const safeCodename = versionInfo.codename.replace(/\s+/g, '');
+            const filename = `6-TEP-UCD-v${versionInfo.version}-${safeCodename}.md`;
+            const outputPath = path.join(__dirname, '..', filename);
             fs.writeFileSync(outputPath, markdown, 'utf8');
             
             console.log('✅ Markdown conversion complete!');
@@ -279,23 +299,21 @@ class HTMLToMarkdownConverter {
      * Build the complete markdown document with metadata
      */
     buildMarkdownDocument(metadata, content) {
-        const timestamp = new Date().toISOString().split('T')[0];
-        
         // Clean up the title to remove the author part
         const cleanTitle = metadata.title.replace(' | Matthew Lukin Smawfield', '');
         
+        // Clean up content - remove excessive indentation
+        const cleanedContent = this.cleanContentIndentation(content);
+        
         return `# ${cleanTitle}
-
-**Author:** ${metadata.author}  
-**Version:** ${metadata.version}  
-**Date:** ${metadata.date}  
-**DOI:** ${metadata.doi}  
-**Generated:** ${timestamp}  
-**Paper Series:** TEP-UCD Paper 7 (Universal Critical Density)
+${metadata.author}
+Version: ${metadata.version}
+${metadata.date}
+DOI: ${metadata.doi}
 
 ---
 
-${content}
+${cleanedContent}
 
 ---
 
@@ -303,7 +321,7 @@ ${content}
 
 *Related Work:*
 - [**TEP Theory**](https://doi.org/10.5281/zenodo.16921911) (Foundational framework)
-- [**TEP-RBH Paper 8**](https://doi.org/10.5281/zenodo.18059251) (RBH-1 Application)
+- [**TEP-RBH Paper 7**](https://doi.org/10.5281/zenodo.18059251) (RBH-1 Application)
 
 *Source code and data available at: https://github.com/matthewsmawfield/TEP-UCD*
 `;

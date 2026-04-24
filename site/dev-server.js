@@ -129,7 +129,7 @@ class DevServer {
     }
 
     async start() {
-        console.log('🎯 TEP-UCD Development Server (Paper 7)');
+        console.log('🎯 TEP-UCD Development Server (Paper 6)');
         console.log('=====================================\n');
 
         // Ensure dist directory exists and do initial build

@@ -6,21 +6,25 @@
 ![Universal Critical Density](site/public/og-image.jpg)
 
 **Author:** Matthew Lukin Smawfield  
-**Version:** v0.1 (New Delhi)  
-**Date:** 28 December 2025  
+**Version:** v0.2 (New Delhi)  
+**Date:** First published: 28 December 2025 · Last updated: 24 April 2026  
 **Status:** Preprint  
 **DOI:** [10.5281/zenodo.18064366](https://doi.org/10.5281/zenodo.18064366)  
 **Website:** [https://matthewsmawfield.github.io/TEP-UCD/](https://matthewsmawfield.github.io/TEP-UCD/)
 
 ## Abstract
 
-Dark matter observations across cosmological scales exhibit a regularity in scaling: the characteristic radius at which Newtonian dynamics fails scales as R ∝ M^(1/3), consistent with a characteristic density ρ_c. This scaling appears in galaxy rotation curves (SPARC database), ultra-diffuse galaxies (DF2/DF4), the Milky Way's Keplerian transition, and compact object phenomena (magnetar anti-glitches). This pattern is analyzed within the conformal time-field sector of the Temporal Equivalence Principle (TEP), where gravitational solitons are predicted to form at a characteristic density threshold.
+Dark matter observations across cosmological scales exhibit a striking regularity: the characteristic radius at which Newtonian dynamics fails scales as R ∝ M^(1/3), implying a universal critical density ρ_c. This scaling appears in galaxy rotation curves (SPARC database), ultra-diffuse galaxies (DF2/DF4), the Milky Way's Keplerian transition, and compact object phenomena (magnetar anti-glitches). This pattern is shown to reflect a fundamental saturation scale in the conformal time-field sector of the Temporal Equivalence Principle (TEP), where gravitational solitons form at a characteristic density threshold.
 
-Terrestrial calibration—derived from a newly identified distance-structured correlation in GNSS atomic clocks—provides an independent measurement of this scale. Multi-center analysis (CODE, IGS, ESA) reveals correlations with characteristic length L_c ≈ 4200 km for Earth's mass, implying ρ_c ≈ 20 g/cm³. This calibration exhibits 25-year temporal stability and survives raw RINEX validation, strongly constraining processing-artifact explanations. The derived density scale is independently constrained by atomic physics: requiring the soliton radius to reproduce the Bohr radius at the proton mass scale yields ρ_c ~ 10–50 g/cm³, consistent with the GNSS measurement.
+Terrestrial calibration—derived from a newly identified distance-structured correlation in GNSS atomic clocks—provides an independent measurement of this scale. Multi-center analysis (CODE, IGS, ESA) reveals correlations with characteristic length L_c ≈ 4200 km for Earth's mass (M_⊕ ≈ 6 × 10^27 g), implying ρ_c ≈ 20 g/cm³. This calibration exhibits 25-year temporal stability and survives raw RINEX validation, strongly constraining processing-artifact explanations. The derived density scale is independently constrained by atomic physics: requiring the soliton radius to reproduce the Bohr radius at the proton mass scale (R_sol(m_p) ~ a_0) yields ρ_c ~ 10–50 g/cm³, consistent with the GNSS measurement.
 
-Galactic-scale validation comes from the SPARC rotation curve database (175 galaxies). The empirical dark matter onset scaling is α = 0.354 ± 0.014, consistent with the M^(1/3) prediction within 2σ. Vainshtein screening resolves the apparent conflict with precision GR tests. Analysis of 26 astrophysical objects spanning 15 orders of magnitude in density reveals an empirical scaling S ∝ ρ^0.334 (R² = 0.9999), confirming the predicted ρ^(1/3) dependence.
+Galactic-scale validation comes from the SPARC rotation curve database (175 galaxies). The empirical dark matter onset scaling is α = 0.354 ± 0.014, consistent with the M^(1/3) prediction within 2σ. Gaia DR3 analyses report evidence consistent with a Keplerian-like decline near R ≈ 19 kpc in the Milky Way, broadly consistent with the predicted transition scale. For ultra-diffuse galaxies DF2 and DF4, the model predicts soliton radii exceeding tidal radii, consistent with observed dark matter deficiency via tidal stripping of the scalar field envelope.
 
-The saturation density ρ_c ≈ 20 g/cm³ is proposed as a physical organizing parameter, supported by consistency across multiple mass and density scales (proton to galaxy cluster; cosmological voids to neutron stars).
+Temporal Topology screening resolves the apparent conflict with precision GR tests. Analysis of 26 astrophysical objects spanning 15 orders of magnitude in density reveals an empirical scaling S ∝ ρ^0.334 (R² = 0.9999), confirming the predicted ρ^(1/3) dependence. At nuclear densities (binary pulsars: ρ ~ 10^14 g/cm³), screening factors exceed S > 30,000, suppressing scalar contributions to less than 0.003% of orbital dynamics. This hierarchy explains why Solar System tests, binary pulsar timing, and gravitational wave observations show no deviation from GR, while galactic dynamics (ρ ~ 10^-24 g/cm³, S ~ 0.01) exhibit strong scalar effects.
+
+Compact object consistency is assessed using magnetar anti-glitches. For a canonical neutron star mass (M ≈ 1.4 M_⊙) and ρ_c ≈ 20 g/cm³, the model predicts a critical spin period P_crit ≈ 6.8 s, below which the soliton radius exceeds the stellar radius. The magnetar 1E 2259+586 (P = 6.98 s) exhibits anti-glitch behavior, consistent with this threshold within 4%.
+
+The saturation density ρ_c ≈ 20 g/cm³ emerges as a candidate universal organizing parameter, supported by consistency across 40 orders of magnitude in mass (proton to galaxy cluster) and 15 orders of magnitude in density (cosmological voids to neutron stars), within stated uncertainties. This externally calibrated value enables tightly constrained astrophysical applications, including the RBH-1 runaway black hole candidate (companion paper). The convergence of terrestrial, galactic, and compact object constraints on a single density scale suggests a fundamental connection between quantum mechanics (Bohr radius), atomic timekeeping (GNSS), and cosmological structure formation (dark matter).
 
 ## Key Findings
 
@@ -37,11 +41,15 @@ A universal critical density ρ_c ≈ 20 g/cm³ organizes gravitational anomalie
 | **Paper 2** | [TEP-GNSS-II](https://github.com/matthewsmawfield/TEP-GNSS-II) | Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks | [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) |
 | **Paper 3** | [TEP-GNSS-RINEX](https://github.com/matthewsmawfield/TEP-GNSS-RINEX) | Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks | [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) |
 | **Paper 4** | [TEP-GL](https://github.com/matthewsmawfield/TEP-GL) | Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations | [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) |
-| **Synthesis** | [TEP-GTE](https://github.com/matthewsmawfield/TEP-GTE) | Global Time Echoes: Empirical Validation of the Temporal Equivalence Principle | [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) |
-| **Paper 7** | **TEP-UCD** (This repo) | Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales | [10.5281/zenodo.18064366](https://doi.org/10.5281/zenodo.18064366) |
-| **Paper 8** | [TEP-RBH](https://github.com/matthewsmawfield/TEP-RBH) | The Soliton Wake: A Runaway Black Hole as a Gravitational Soliton | [10.5281/zenodo.18059251](https://doi.org/10.5281/zenodo.18059251) |
-| **Paper 9** | [TEP-SLR](https://github.com/matthewsmawfield/TEP-SLR) | Global Time Echoes: Optical Validation of the Temporal Equivalence Principle via Satellite Laser Ranging | [10.5281/zenodo.18064582](https://doi.org/10.5281/zenodo.18064582) |
-| **Paper 10** | [TEP-EXP](https://github.com/matthewsmawfield/TEP-EXP) | What Do Precision Tests of General Relativity Actually Measure? | [10.5281/zenodo.18109761](https://doi.org/10.5281/zenodo.18109761) |
+| **Paper 5** | [TEP-GTE](https://github.com/matthewsmawfield/TEP-GTE) | Global Time Echoes: Empirical Validation of the Temporal Equivalence Principle | [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) |
+| **Paper 6** | **TEP-UCD** (This repo) | Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales | [10.5281/zenodo.18064366](https://doi.org/10.5281/zenodo.18064366) |
+| **Paper 7** | [TEP-RBH](https://github.com/matthewsmawfield/TEP-RBH) | The Soliton Wake: A Runaway Black Hole as a Gravitational Soliton | [10.5281/zenodo.18059251](https://doi.org/10.5281/zenodo.18059251) |
+| **Paper 8** | [TEP-SLR](https://github.com/matthewsmawfield/TEP-SLR) | Global Time Echoes: Optical Validation of the Temporal Equivalence Principle via Satellite Laser Ranging | [10.5281/zenodo.18064582](https://doi.org/10.5281/zenodo.18064582) |
+| **Paper 9** | [TEP-EXP](https://github.com/matthewsmawfield/TEP-EXP) | What Do Precision Tests of General Relativity Actually Measure? | [10.5281/zenodo.18109761](https://doi.org/10.5281/zenodo.18109761) |
+| **Paper 10** | [TEP-COS](https://github.com/matthewsmawfield/TEP-COS) | The Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars | [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) |
+| **Paper 11** | [TEP-H0](https://github.com/matthewsmawfield/TEP-H0) | The Cepheid Bias: Resolving the Hubble Tension | [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) |
+| **Paper 12** | [TEP-JWST](https://github.com/matthewsmawfield/TEP-JWST) | The Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies | [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) |
+| **Paper 13** | [TEP-WB](https://github.com/matthewsmawfield/TEP-WB) | The Temporal Equivalence Principle: Density-Dependent Screening in Gaia DR3 Wide Binaries | [10.5281/zenodo.19102062](https://doi.org/10.5281/zenodo.19102062) |
 
 ## Repository Structure
 
@@ -50,7 +58,7 @@ A universal critical density ρ_c ≈ 20 g/cm³ organizes gravitational anomalie
   - `2_introduction.html`: The Dark Matter problem as a temporal structure problem.
   - `3_gnss_calibration.html`: Derivation of $\rho_c$ from atomic clocks.
   - `4_sparc_validation.html`: Galactic rotation curve analysis.
-  - `5_screening_hierarchy.html`: Vainshtein screening mechanism.
+  - `5_screening_hierarchy.html`: Temporal Topology screening mechanism.
   - `6_atomic_boundary.html`: Connection to quantum scales.
   - `7_universal_scaling.html`: The unified scaling law.
   - `8_magnetar_test.html`: Magnetar anti-glitch validation.
@@ -59,11 +67,12 @@ A universal critical density ρ_c ≈ 20 g/cm³ organizes gravitational anomalie
   - `11_conclusion.html`: Summary of findings.
   - `12_visual_evidence.html`: Key figures.
   - `13_references.html`: Bibliography.
+  - `appendix_a_gnss.html`: GNSS methodology appendix.
 
 ## Relationship to Other Papers
 
 - **Preceded by:** Papers 0–4 and the Synthesis (TEP, TEP-GNSS series, TEP-GL, TEP-GTE), which establish the empirical reality of the clock correlations and the theoretical framework.
-- **Companion to:** Paper 8 (**TEP-RBH**), which applies the ρ_c value derived here to test the soliton hypothesis for the runaway black hole candidate RBH-1.
+- **Companion to:** Paper 7 (**TEP-RBH**), which applies the ρ_c value derived here to test the soliton hypothesis for the runaway black hole candidate RBH-1.
 
 ## Citation
 
@@ -74,7 +83,7 @@ A universal critical density ρ_c ≈ 20 g/cm³ organizes gravitational anomalie
   journal={Zenodo},
   year={2025},
   doi={10.5281/zenodo.18064366},
-  note={Preprint v0.1 (New Delhi)}
+  note={Preprint v0.2 (New Delhi)}
 }
 ```
 

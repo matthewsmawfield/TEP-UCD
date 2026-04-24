@@ -1,0 +1,9 @@
+v0.2.1 (New Delhi) - LaTeX Notation Fix
+
+- Fixed Planck mass notation: M_{\rm Pl} → M_{\text{Pl}} (8 instances across 5 component files)
+
+v0.2 (New Delhi) - Topology Nomenclature Update
+
+- Adopted continuous Temporal Topology framework (replaces discrete screening terminology)
+- Formalized Temporal Shear nomenclature for field gradient superposition
+- Aligned screening descriptions with continuous geometric profiles per theory paper v0.7
