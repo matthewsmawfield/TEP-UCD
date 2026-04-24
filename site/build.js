@@ -162,9 +162,18 @@ async function buildStaticSite() {
         const converter = new HTMLToMarkdownConverter();
         await converter.convertSiteToMarkdown();
         
+        // Load version info for filename
+        const versionPath = path.join(__dirname, '..', 'VERSION.json');
+        let versionInfo = { version: '0.2', codename: 'NewDelhi' };
+        if (fs.existsSync(versionPath)) {
+            versionInfo = JSON.parse(fs.readFileSync(versionPath, 'utf8'));
+        }
+        const safeCodename = versionInfo.codename.replace(/\s+/g, '');
+        const markdownFilename = `6-TEP-UCD-v${versionInfo.version}-${safeCodename}.md`;
+        
         console.log('✅ Static site built successfully!');
         console.log(`📁 Output: ${outputPath}`);
-        console.log('📄 Markdown: manuscript-ucd.md (in root)');
+        console.log(`📄 Markdown: ${markdownFilename} (in root)`);
         console.log(`📊 Generated ${manifest.sections.length} sections`);
         console.log('🚀 Ready for deployment');
         

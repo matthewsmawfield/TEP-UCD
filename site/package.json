@@ -1,8 +1,8 @@
 {
   "name": "tep-ucd-site",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales",
-  "comment": "Package version matches manuscript version v0.1 (New Delhi)",
+  "comment": "Package version matches manuscript version v0.2 (New Delhi)",
   "main": "index.html",
   "scripts": {
     "dev": "node dev-server.js",
@@ -20,7 +20,7 @@
     "critical density",
     "SPARC galaxies",
     "dark matter",
-    "Vainshtein screening",
+    "Temporal Topology screening",
     "GNSS atomic clocks",
     "magnetars",
     "scaling laws"
