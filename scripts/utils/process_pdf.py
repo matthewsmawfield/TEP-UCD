@@ -106,7 +106,7 @@ def main():
         help="Compression quality (default: ebook)",
     )
     parser.add_argument(
-        "--doi", default="10.5281/zenodo.18064366", help="DOI to embed in metadata"
+        "--doi", default="10.5281/zenodo.18064365", help="DOI to embed in metadata"
     )
 
     args = parser.parse_args()
@@ -147,10 +147,10 @@ def main():
     print("Step 2: Embedding metadata...")
 
     metadata = {
-        "Title": "Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales",
+        "Title": "Universal Critical Density: Unifying Scales",
         "Author": "Matthew Lukin Smawfield",
-        "Subject": f"A universal saturation density scale (ρ_c ≈ 20 g/cm³) organizes gravitational anomalies across 40 orders of magnitude. Calibrated from GNSS atomic clocks, validated by SPARC galaxies, and tested on magnetars and the Milky Way. Explains dark matter phenomenology through Temporal Topology screening. DOI: {args.doi}",
-        "Keywords": "Universal Critical Density; TEP; Temporal Equivalence Principle; Dark Matter; Gravitational Solitons; GNSS Atomic Clocks; SPARC Galaxies; Temporal Topology; Temporal Shear; Magnetars; Anti-Glitches; Milky Way; Gaia DR3; Bohr Radius; Quantum Gravity",
+        "Subject": f"A universal saturation density scale (ρ_T ≈ 20 g/cm³) organizes gravitational anomalies across 40 orders of magnitude. Calibrated from GNSS atomic clocks, validated by SPARC galaxies, and tested on magnetars and the Milky Way. Explains dark matter phenomenology through Temporal Topology screening. DOI: {args.doi}",
+        "Keywords": "Universal Critical Density; TEP; Temporal Equivalence Principle; Dark Matter; Gravitational Solitons; GNSS Atomic Clocks; SPARC Galaxies; Temporal Topology; Temporal Shear; Magnetars; Anti-Glitches; Milky Way; Gaia DR3; Quantum Gravity",
         "Creator": "Matthew Lukin Smawfield",
         "Producer": "TEP-UCD Research Project",
         "Copyright": "Creative Commons Attribution 4.0 International License (CC BY 4.0)",

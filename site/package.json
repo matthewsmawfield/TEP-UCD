@@ -1,8 +1,8 @@
 {
   "name": "tep-ucd-site",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales",
-  "comment": "Package version matches manuscript version v0.2 (New Delhi)",
+  "comment": "Package version matches manuscript version v0.3 (New Delhi)",
   "main": "index.html",
   "scripts": {
     "dev": "node dev-server.js",
@@ -25,7 +25,7 @@
     "magnetars",
     "scaling laws"
   ],
-  "author": "Matthew Lukin Smawfield <matthewsmawfield@gmail.com>",
+  "author": "Matthew Lukin Smawfield <matthew@mlsmawfield.com>",
   "license": "CC-BY-4.0",
   "repository": {
     "type": "git",

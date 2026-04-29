@@ -42,7 +42,7 @@ If you use this code, please cite:
   author = {Smawfield, Matthew Lukin},
   title = {Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales},
   year = {2025},
-  doi = {10.5281/zenodo.18064366}
+  doi = {10.5281/zenodo.18064365}
 }
 ```
 

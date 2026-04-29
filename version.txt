@@ -1,3 +1,12 @@
+v0.3 (New Delhi) - Title and Terminology Refinement
+
+- Revised title: "Cross-Scale Consistency of ρ_T" (was "Unifying Atomic, Galactic, and Compact Object Scales")
+- Replaced soliton-centric language with Temporal Topology saturation framework
+- Added "soliton interpretation is one candidate microscopic realization" qualifier throughout
+- Updated screening hierarchy discussion with refined field gradient suppression language
+- Added DOI badge and PDF download link to manuscript header
+- Synchronized abstract across all citation files and zenodo.txt
+
 v0.2.1 (New Delhi) - LaTeX Notation Fix
 
 - Fixed Planck mass notation: M_{\rm Pl} → M_{\text{Pl}} (8 instances across 5 component files)

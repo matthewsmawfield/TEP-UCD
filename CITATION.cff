@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+title: "Universal Critical Density: Cross-Scale Consistency of ρ_T"
+message: "If you use this software, please cite it as below."
+type: article
+authors:
+  - family-names: "Smawfield"
+    given-names: "Matthew Lukin"
+    orcid: "https://orcid.org/0009-0003-8219-3159"
+license: CC-BY-4.0
+repository-code: "https://github.com/matthewsmawfield/TEP-UCD"
+url: "https://matthewsmawfield.github.io/TEP-UCD/"
+doi: 10.5281/zenodo.18064365
+
+preferred-citation:
+  type: article
+  title: "Universal Critical Density: Cross-Scale Consistency of ρ_T"
+  authors:
+    - family-names: Smawfield
+      given-names: Matthew Lukin
+      orcid: "https://orcid.org/0009-0003-8219-3159"
+  year: 2025
+  journal: Zenodo
+  doi: 10.5281/zenodo.18064365
+  identifiers:
+  - type: doi
+    value: 10.5281/zenodo.18064365
+    description: Pre-print DOI
+  url: "https://doi.org/10.5281/zenodo.18064365"
+  notes: "Preprint"

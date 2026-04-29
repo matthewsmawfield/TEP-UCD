@@ -26,7 +26,7 @@ M_sun = 1.989e30     # kg
 R_sun = 6.96e8       # meters
 R_earth = 6.371e6    # meters
 R_TEP_earth = 4200e3  # meters
-rho_c = 20  # g/cm³ (saturation threshold)
+rho_T = 20  # g/cm³ (saturation scale of temporal-field topology; not an on/off switch)
 
 # --- Data Objects ---
 objects = {
@@ -41,9 +41,9 @@ objects = {
 
 # Calculations
 for name, obj in objects.items():
-    R_sol = R_TEP_earth * (obj['M'] / M_earth)**(1/3) / 1000  # km
-    obj['R_sol'] = R_sol
-    obj['screening'] = R_sol / obj['R']
+    R_T = R_TEP_earth * (obj['M'] / M_earth)**(1/3) / 1000  # km
+    obj['R_T'] = R_T
+    obj['screening'] = R_T / obj['R']
 
 # --- Plotting ---
 fig, axes = plt.subplots(1, 2, figsize=FIG_SIZE[FIG_PRESET], constrained_layout=True)
@@ -84,8 +84,8 @@ for name, obj in objects.items():
                      textcoords='offset points', ha='center')
 
 # Theoretical lines
-ax1.axvline(x=rho_c, color='k', linestyle='--', alpha=0.5)
-ax1.text(rho_c*1.5, 0.6, r'$\rho_c \approx 20$ g/cm³', rotation=90, va='bottom')
+ax1.axvline(x=rho_T, color='k', linestyle='--', alpha=0.5)
+ax1.text(rho_T*1.5, 0.6, r'$\rho_T \approx 20$ g/cm³', rotation=90, va='bottom')
 
 # Unity Line
 ax1.axhline(y=1, color='gray', linestyle=':', alpha=0.5)
@@ -94,7 +94,7 @@ ax1.text(1e-1, 1.1, 'No Screening', color='gray')
 ax1.set_xscale('log')
 ax1.set_yscale('log')
 ax1.set_xlabel(r'Mean Density $\rho$ (g/cm³)')
-ax1.set_ylabel(r'Screening Factor $S = R_{sol}/R_{phys}$')
+ax1.set_ylabel(r'Screening Factor $S = R_T/R_{phys}$')
 ax1.set_xlim(1e-1, 1e16)
 ax1.set_ylim(0.5, 1e8)
 ax1.grid(True, which='major', alpha=0.3)
@@ -104,27 +104,27 @@ for t in colors:
     ax1.scatter([], [], color=colors[t], marker=markers[t], label=labels[t], edgecolors='k')
 ax1.legend(loc='upper left', frameon=False)
 
-# --- Panel B: Physical vs Soliton Radius ---
+# --- Panel B: Physical vs TEP Radius ---
 ax2 = axes[1]
 ax2.set_title(r"$\bf{b)}$ Physical vs Scalar Radius", loc='left')
 
 for name, obj in objects.items():
     t = obj['type']
-    ax2.scatter(obj['R'], obj['R_sol'], color=colors[t], marker=markers[t], 
+    ax2.scatter(obj['R'], obj['R_T'], color=colors[t], marker=markers[t], 
                 s=80, edgecolors='k', lw=0.5, zorder=5)
     
     if name in ['Earth', 'Sirius B', 'Typical NS']:
-        ax2.annotate(name, (obj['R'], obj['R_sol']), xytext=(5, -5), 
+        ax2.annotate(name, (obj['R'], obj['R_T']), xytext=(5, -5), 
                      textcoords='offset points')
 
 # Unity Line
 r_line = np.logspace(0, 6, 10)
-ax2.plot(r_line, r_line, 'k--', alpha=0.5, label='Unity ($R_{sol}=R_{phys}$)')
+ax2.plot(r_line, r_line, 'k--', alpha=0.5, label='Unity ($R_T=R_{phys}$)')
 
 ax2.set_xscale('log')
 ax2.set_yscale('log')
 ax2.set_xlabel(r'Physical Radius $R_{phys}$ (km)')
-ax2.set_ylabel(r'Soliton Radius $R_{sol}$ (km)')
+ax2.set_ylabel(r'TEP Radius $R_T$ (km)')
 ax2.grid(True, which='major', alpha=0.3)
 
 # Annotations

@@ -2,7 +2,7 @@
 
 <h2>Distance-Structured Correlations in Atomic Clocks</h2>
 
-<p>The first empirical constraint on $\rho_c$ comes from terrestrial atomic clock networks. Multi-center analysis of GNSS (Global Navigation Satellite System) clock products reveals distance-structured correlations with a characteristic length scale $L_c \approx 4200$ km for Earth's mass. Operationally, $L_c$ denotes the best-fit exponential decay length recovered by fitting clock-residual covariance versus inter-station separation (see Appendix A). Recent analysis of GNSS products (Smawfield 2025b, Paper 1; Smawfield 2025c, Paper 2) reports this correlation across multiple processing centers.</p>
+<p>The first empirical constraint on $\rho_T$ comes from terrestrial atomic clock networks. Multi-center analysis of GNSS (Global Navigation Satellite System) clock products reveals distance-structured correlations with a characteristic length scale $L_c \approx 4200$ km for Earth's mass. Operationally, $L_c$ denotes the best-fit exponential decay length recovered by fitting clock-residual covariance versus inter-station separation (see Appendix A). Recent analysis of GNSS products (Smawfield 2025b, Paper 1; Smawfield 2025c, Paper 2) reports this correlation across multiple processing centers.</p>
 
 <p>These correlations exhibit seven independent signatures:</p>
 <ul>
@@ -15,24 +15,24 @@
     <li><strong>Raw RINEX validation:</strong> Pattern survives in unprocessed Single Point Positioning (SPP) analysis, strongly constraining processing artifacts (Smawfield 2025d, Paper 3).</li>
 </ul>
 
-<h2>Derivation of $\rho_c$ from $L_c$</h2>
+<h2>Derivation of $\rho_T$ from $L_c$</h2>
 
-<p>The characteristic length $L_c$ is interpreted as the soliton radius for Earth's mass. For a spherical mass distribution, the soliton radius is:</p>
+<p>The characteristic length $L_c$ is interpreted as the Temporal Topology saturation radius for Earth's mass. For a spherical mass distribution, the saturation radius is:</p>
 
 <div>
-    $$ R_{\text{sol}} = \left( \frac{3M}{4\pi \rho_c} \right)^{1/3} $$
+    $$ R_T = \left( \frac{3M}{4\pi \rho_T} \right)^{1/3} $$
 </div>
 
-<p>Solving for $\rho_c$:</p>
+<p>Solving for $\rho_T$:</p>
 
 <div>
-    $$ \rho_c = \frac{3M}{4\pi R_{\text{sol}}^3} $$
+    $$ \rho_T = \frac{3M}{4\pi R_T^3} $$
 </div>
 
 <p>Substituting $M_\oplus \approx 6 \times 10^{27}$ g and $L_c \approx 4200$ km $\approx 4.2 \times 10^8$ cm:</p>
 
 <div>
-    $$ \rho_c = \frac{3 \times (6 \times 10^{27}\,\text{g})}{4\pi \times (4.2 \times 10^8\,\text{cm})^3} \approx 20\,\text{g/cm}^3 $$
+    $$ \rho_T = \frac{3 \times (6 \times 10^{27}\,\text{g})}{4\pi \times (4.2 \times 10^8\,\text{cm})^3} \approx 20\,\text{g/cm}^3 $$
 </div>
 
 <h2>Systematic Uncertainties</h2>
@@ -44,7 +44,7 @@
     <li><strong>Mass distribution:</strong> Earth's density profile (core vs. mantle) may affect effective $M$ by $\sim$5%.</li>
 </ul>
 
-<p>Combining in quadrature: $\rho_c = 20 \pm 8$ g/cm³ (40% systematic uncertainty). This range is consistent with independent constraints from atomic physics (Section 5) and provides the calibration scale for all subsequent tests.</p>
+<p>Combining in quadrature: $\rho_T = 20 \pm 8$ g/cm³ (40% systematic uncertainty). This range is consistent with electron degeneracy thresholds (Section 5.2) and provides the calibration scale for all subsequent tests.</p>
 
 <h2>Discrimination from Geophysical Signals</h2>
 

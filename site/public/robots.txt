@@ -1,4 +1,4 @@
-# robots.txt for TEP-UCD: Universal Critical Density
+# robots.txt for TEP-UCD: Temporal Topology Saturation Density
 User-agent: *
 Allow: /
 

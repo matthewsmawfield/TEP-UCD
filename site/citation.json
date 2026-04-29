@@ -1,7 +1,7 @@
 {
   "id": "smawfield2025ucd",
   "type": "article",
-  "title": "Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales",
+  "title": "Universal Critical Density: Cross-Scale Consistency of ρ_T",
   "author": [
     {
       "family": "Smawfield",
@@ -9,10 +9,10 @@
     }
   ],
   "issued": {
-    "date-parts": [[2025, 12, 26]]
+    "date-parts": [[2025, 12, 28]]
   },
-  "doi": "10.5281/zenodo.18064366",
+  "doi": "10.5281/zenodo.18064365",
   "URL": "https://mlsmawfield.com/tep/ucd/",
   "publisher": "Zenodo",
-  "note": "Preprint, Version 0.2 (New Delhi)"
+  "note": "Preprint, Version 0.3 (New Delhi)"
 }
