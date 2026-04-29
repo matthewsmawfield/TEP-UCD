@@ -41,22 +41,22 @@ R_WD_solar = 0.01 * masses_solar ** (-1 / 3)  # in solar radii
 R_WD_km = R_WD_solar * R_sun / 1000  # convert to km
 
 # --- Line B: TEP Soliton Radius (Scalar Field Extent) ---
-# R_sol = 4200 km * (M / M_⊕)^{1/3}
-R_sol_m = R_TEP_earth * (masses_kg / M_earth) ** (1 / 3)
-R_sol_km = R_sol_m / 1000
+# R_T = 4200 km * (M / M_⊕)^{1/3}
+R_T_m = R_TEP_earth * (masses_kg / M_earth) ** (1 / 3)
+R_T_km = R_T_m / 1000
 
 # --- Key Reference Points ---
 # Sirius B
 sirius_b_mass = 1.018
 sirius_b_radius = 5800  # km
-sirius_b_soliton = (R_TEP_earth * ((sirius_b_mass * M_sun) / M_earth) ** (1 / 3)) / 1000
-screening_factor_sirius = sirius_b_soliton / sirius_b_radius
+sirius_b_R_T = (R_TEP_earth * ((sirius_b_mass * M_sun) / M_earth) ** (1 / 3)) / 1000
+screening_factor_sirius = sirius_b_R_T / sirius_b_radius
 
 # Chandrasekhar Limit
 chandra_mass = 1.44
 chandra_radius = 0.01 * chandra_mass ** (-1 / 3) * R_sun / 1000
-chandra_soliton = (R_TEP_earth * ((chandra_mass * M_sun) / M_earth) ** (1 / 3)) / 1000
-screening_factor_chandra = chandra_soliton / chandra_radius
+chandra_R_T = (R_TEP_earth * ((chandra_mass * M_sun) / M_earth) ** (1 / 3)) / 1000
+screening_factor_chandra = chandra_R_T / chandra_radius
 
 # --- Plotting ---
 fig, ax = plt.subplots(figsize=FIG_SIZE[FIG_PRESET])
@@ -70,7 +70,7 @@ c_fill = COLORS["accent"]
 ax.fill_between(
     masses_solar,
     R_WD_km,
-    R_sol_km,
+    R_T_km,
     alpha=0.06,
     color=c_fill,
     label="Screened Regime (Shear Suppressed)",
@@ -85,11 +85,11 @@ ax.semilogy(
     linewidth=2.5,
 )
 
-# Line B: Soliton Radius
+# Line B: TEP Radius
 ax.semilogy(
     masses_solar,
-    R_sol_km,
-    label=r"Soliton Radius ($R_{sol} \propto M^{1/3}$)",
+    R_T_km,
+    label=r"$R_T$ Radius ($R_T \propto M^{1/3}$)",
     color=c_sol,
     linewidth=2.5,
     linestyle="--",
@@ -108,7 +108,7 @@ ax.scatter(
 )
 ax.scatter(
     [sirius_b_mass],
-    [sirius_b_soliton],
+    [sirius_b_R_T],
     color=c_sol,
     s=100,
     zorder=10,
@@ -121,7 +121,7 @@ ax.scatter(
 ax.vlines(
     sirius_b_mass,
     sirius_b_radius,
-    sirius_b_soliton,
+    sirius_b_R_T,
     colors="black",
     linestyles=":",
     linewidth=1.5,
@@ -130,7 +130,7 @@ ax.vlines(
 
 ax.text(
     sirius_b_mass + 0.02,
-    (sirius_b_radius * sirius_b_soliton) ** 0.5,
+    (sirius_b_radius * sirius_b_R_T) ** 0.5,
     f"Sirius B\nScreening: {screening_factor_sirius:.0f}×",
     fontsize=10,
     color="black",

@@ -31,7 +31,7 @@ R_earth = 6.371e6
 G = 6.674e-11
 c = 2.998e8
 R_TEP_earth = 4200e3
-rho_c = 20
+rho_T = 20  # g/cm^3 (saturation scale; not an on/off switch)
 
 # --- Data Objects ---
 # Full 26-object dataset (consistent with manuscript claims)
@@ -82,9 +82,9 @@ objects = {
 
 # Derived Metrics
 for name, obj in objects.items():
-    R_sol = R_TEP_earth * (obj["M"] / M_earth) ** (1 / 3) / 1000
-    obj["R_sol"] = R_sol
-    obj["screening"] = R_sol / obj["R"]
+    R_T = R_TEP_earth * (obj["M"] / M_earth) ** (1 / 3) / 1000
+    obj["R_T"] = R_T
+    obj["screening"] = R_T / obj["R"]
     obj["M_solar"] = obj["M"] / M_sun
 
 # --- Plotting ---
@@ -128,18 +128,12 @@ for name, obj in objects.items():
         zorder=5,
     )
 
-ax1.axhline(rho_c, color="k", ls="--", alpha=0.5)
-ax1.text(1e-7, rho_c * 2, r"$\rho_c \approx 20$ g/cm³", fontsize=8)
-ax1.axhspan(rho_c, 1e17, color="gray", alpha=0.1)
-ax1.text(
-    1e-5,
-    1e12,
-    "Screened\n(GR)",
-    ha="center",
-    fontsize=9,
-    fontweight="bold",
-    color="gray",
-)
+# Mark the saturation scale rho_T as a reference line only.
+# NOTE: rho_T is a saturation scale of the temporal-field topology,
+# not an ambient-density switch. GR recovery is controlled by suppression
+# of the observable shear/source-charge sector, not by rho > rho_T alone.
+ax1.axhline(rho_T, color="k", ls="--", alpha=0.5)
+ax1.text(1e-7, rho_T * 2, r"$\rho_T \approx 20$ g/cm³ (saturation)", fontsize=8)
 
 ax1.set_xscale("log")
 ax1.set_yscale("log")
@@ -153,13 +147,15 @@ ax1.grid(True, which="major", alpha=0.3)
 ax2 = fig.add_subplot(gs[0, 1])
 ax2.set_title(r"$\bf{b)}$ Empirical Screening Law", loc="left")
 
+# Sample selection for the empirical fit: dense objects (excluding BHs).
+# The rho > rho_T cut is a sample-selection choice, not a physical threshold.
 rho_vals = [
-    obj["rho"] for obj in objects.values() if obj["rho"] > rho_c and obj["type"] != "bh"
+    obj["rho"] for obj in objects.values() if obj["rho"] > rho_T and obj["type"] != "bh"
 ]
 scr_vals = [
     obj["screening"]
     for obj in objects.values()
-    if obj["rho"] > rho_c and obj["type"] != "bh"
+    if obj["rho"] > rho_T and obj["type"] != "bh"
 ]
 slope, intercept, r_val, _, _ = stats.linregress(np.log10(rho_vals), np.log10(scr_vals))
 
@@ -214,23 +210,23 @@ ax4 = fig.add_subplot(gs[1, 0])
 ax4.set_title(r"$\bf{d)}$ RBH-1 Crossover", loc="left")
 
 m_range = np.logspace(-6, 11, 100)
-r_sol = (R_TEP_earth / 1000) * (m_range * M_sun / M_earth) ** (1 / 3)
+r_T = (R_TEP_earth / 1000) * (m_range * M_sun / M_earth) ** (1 / 3)
 r_sch = 2 * G * (m_range * M_sun) / c**2 / 1000
 
-ax4.loglog(m_range, r_sol, "-", color=COLORS["accent"], label=r"Soliton ($M^{1/3}$)")
+ax4.loglog(m_range, r_T, "-", color=COLORS["accent"], label=r"$R_T$ ($M^{1/3}$)")
 ax4.loglog(m_range, r_sch, "k--", label=r"Schwarzschild ($M$)")
 
 rbh = objects["RBH-1"]
 ax4.scatter(
     rbh["M_solar"],
-    rbh["R_sol"],
+    rbh["R_T"],
     marker="*",
     s=200,
     c=COLORS["highlight"],
     edgecolors="k",
     zorder=10,
 )
-ax4.text(rbh["M_solar"] * 3, rbh["R_sol"], "RBH-1\nCrossover", va="center", fontsize=8)
+ax4.text(rbh["M_solar"] * 3, rbh["R_T"], "RBH-1\nCrossover", va="center", fontsize=8)
 
 ax4.set_xlabel(r"Mass ($M_{\odot}$)")
 ax4.set_ylabel(r"Radius (km)")

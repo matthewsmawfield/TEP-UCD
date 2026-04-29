@@ -318,7 +318,7 @@ def run_enhanced_analysis():
     print("\n### ENHANCEMENT 4: Connection to MOND Acceleration Scale ###")
     
     # The TEP screening density implies a characteristic acceleration
-    # At R_sol, g = GM/R^2 = GM / (k M^(1/3))^2 = G M^(1/3) / k^2
+    # At R_T, g = GM/R^2 = GM / (k M^(1/3))^2 = G M^(1/3) / k^2
     # For M = 10^10 M_sun: g = G * (10^10)^(1/3) / k^2
     
     M_typical = 1e10 * M_sun_kg  # kg

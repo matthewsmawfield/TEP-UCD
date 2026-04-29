@@ -1,5 +1,8 @@
 {
-  "title": "Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales",
+  "title": "Universal Critical Density: Cross-Scale Consistency of ρ_T",
+  "version": "v0.3 (New Delhi)",
+  "last_updated": "29 April 2026",
+  "description": "A universal saturation density scale (ρ_T ≈ 20 g/cm³) organizes gravitational anomalies across 40 orders of magnitude in mass.",
   "sections": [
     {
       "id": "section-abstract",
@@ -15,7 +18,7 @@
     },
     {
       "id": "section-gnss-calibration",
-      "title": "2. GNSS Calibration: Terrestrial Derivation of ρ_c",
+      "title": "2. GNSS Calibration: Terrestrial Derivation of ρ_T",
       "file": "3_gnss_calibration.html",
       "order": 3
     },

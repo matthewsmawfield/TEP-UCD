@@ -4,16 +4,13 @@
 
 <p>
     The central result of this work is the identification of a single density
-    scale, $\rho_c \approx 20$ g/cm³, that organizes gravitational anomalies
+    scale, $\rho_T \approx 20$ g/cm³, that organizes gravitational anomalies
     across 40 orders of magnitude in mass. This scale, originally calibrated
     from terrestrial GNSS atomic clock correlations ($L_c \approx 4200$ km), is
     consistent with:
 </p>
 
 <ul>
-    <li>
-        The atomic scale boundary condition ($R_{\text{sol}}(m_p) \sim a_0$).
-    </li>
     <li>
         The critical spin period of magnetars ($P_{\text{crit}} \approx 6.8$ s).
     </li>
@@ -31,7 +28,7 @@
 </ul>
 
 <p>
-    The convergence of these independent constraints suggests that $\rho_c$ is
+    The convergence of these independent constraints suggests that $\rho_T$ is
     not merely a fitting parameter for a specific system, but a candidate
     universal parameter of the effective description of the dark sector, within
     the stated uncertainties.
@@ -49,12 +46,12 @@
             <strong>Level 1 (Empirical regularities):</strong> The existence of
             approximate $M^{1/3}$ scaling features in rotation-curve onset
             radii, and the density-ordered screening hierarchy summarized by $S
-            = R_{\text{sol}}/R_{\text{phys}}$.
+            = R_T/R_{\text{phys}}$.
         </li>
         <li>
             <strong>Level 2 (Universal-density soliton model):</strong> The
-            hypothesis that a single saturation density $\rho_c$ organizes these
-            regularities via $R_{\text{sol}}(M) = (3M/4\pi\rho_c)^{1/3}$, with
+            hypothesis that a single saturation density $\rho_T$ organizes these
+            regularities via $R_T(M) = (3M/4\pi\rho_T)^{1/3}$, with
             GNSS providing an empirical calibration (subject to independent
             replication) and cross-regime consistency tests (SPARC ensemble,
             magnetars, Milky Way, RBH-1 crossover).
@@ -62,12 +59,90 @@
         <li>
             <strong>Level 3 (TEP microphysics):</strong> The full dynamical
             realization in which temporal shear and a conformal time field
-            $A(\phi) = \exp(2\beta\phi/M_{\text{Pl}})$ generate the effective soliton/screening
+            $A(\phi) = \exp(\beta\phi/M_{\text{Pl}})$ generate the effective soliton/screening
             phenomenology. Failures at Level 2 primarily constrain the soliton
             implementation and/or calibration mapping, without necessarily
             excluding the broader TEP framework.
         </li>
     </ul>
+</div>
+
+<h2>Numerology Firewall: Which Agreements Were Predicted?</h2>
+
+<p>
+    The elegance of cross-scale agreement is vulnerable to the accusation of
+    "curve-fitting across scales." This section provides a candid assessment
+    of which constraints were predicted <em>a priori</em> and which were
+    identified <em>post hoc</em>.
+</p>
+
+<table class="data-table" style="margin: 20px 0; font-size: 0.9em;">
+    <thead>
+        <tr>
+            <th>Comparison</th>
+            <th>Before/after GNSS calibration?</th>
+            <th>Free parameters?</th>
+            <th>Independent?</th>
+            <th>Weight</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Earth GNSS $L_c$</strong></td>
+            <td>Calibration anchor</td>
+            <td>yes/no (fit to correlation)</td>
+            <td>no — defines scale</td>
+            <td>Calibration</td>
+        </tr>
+        <tr>
+            <td><strong>SPARC $M^{1/3}$ scaling</strong></td>
+            <td>Independent dataset</td>
+            <td>Yes (normalization $k$)</td>
+            <td>Medium</td>
+            <td>Moderate</td>
+        </tr>
+        <tr>
+            <td><strong>DF2/DF4 UDGs</strong></td>
+            <td>After</td>
+            <td>Yes (extrapolation)</td>
+            <td>Weak</td>
+            <td>Illustrative</td>
+        </tr>
+        <tr>
+            <td><strong>Magnetar anti-glitch</strong></td>
+            <td>After</td>
+            <td>No/limited (single parameter)</td>
+            <td>Weak ($N=1$)</td>
+            <td>Suggestive only</td>
+        </tr>
+        <tr>
+            <td><strong>Milky Way Keplerian decline</strong></td>
+            <td>After</td>
+            <td>Yes (uncertain boundary)</td>
+            <td>Weak</td>
+            <td>Illustrative</td>
+        </tr>
+        <tr>
+            <td><strong>Wide binaries (if tested)</strong></td>
+            <td>Before/after</td>
+            <td>Yes</td>
+            <td>Stronger (if replicated)</td>
+            <td><strong>High if replicated</strong></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="principle">
+    <h4>Honesty Principle: The Value of $\rho_T$</h4>
+    <p>
+        The value of $\rho_T$ should be treated as a <strong>candidate organizing
+        scale</strong> until at least one <strong>held-out mass regime</strong> is
+        predicted <em>before</em> analysis and recovered without refitting.
+        Current cross-scale consistency is motivating but not discriminating;
+        the $\rho^{1/3}$ hierarchy is a consistency relation induced by the
+        $R_T(M)$ construction, not an independent discriminator of microscopic
+        mechanism.
+    </p>
 </div>
 
 <h2>Dark Matter as Phantom Mass</h2>
@@ -76,8 +151,8 @@
     In the TEP framework, "dark matter" is reinterpreted not as a particle
     species, but as "phantom mass"—an apparent excess inferred when a geometry
     with temporal shear (two metrics) is analyzed under the assumption of
-    isochrony (single metric). The saturation density $\rho_c$ represents the
-    scale at which the conformal factor $A(\phi) = \exp(2\beta\phi/M_{\text{Pl}})$ enters a non-linear,
+    isochrony (single metric). The saturation density $\rho_T$ represents the
+    scale at which the conformal factor $A(\phi) = \exp(\beta\phi/M_{\text{Pl}})$ enters a non-linear,
     self-supporting phase (the soliton).
 </p>
 
@@ -88,7 +163,7 @@
     core-cusp problem). In the soliton picture, the core is a distinct physical
     state—a Bose-Einstein condensate-like configuration of the scalar field—that
     naturally supports a flat density profile with a characteristic radius
-    $R_{\text{sol}}$.
+    $R_T$.
 </p>
 
 <h2>Comparison with Alternative Frameworks</h2>
@@ -119,13 +194,13 @@
             <td><strong>Fundamental Scale</strong></td>
             <td>Acceleration $a_0 \approx 1.2 \times 10^{-10}$ m/s²</td>
             <td>Particle Mass $m_\psi$</td>
-            <td>Saturation Density $\rho_c \approx 20$ g/cm³</td>
+            <td>Saturation Density $\rho_T \approx 20$ g/cm³</td>
         </tr>
         <tr>
             <td><strong>Galactic Scaling</strong></td>
             <td>Fits RAR ($a_0$ is free parameter)</td>
             <td>$M_c \propto M_h^{1/3}$ (Core-Halo)</td>
-            <td>$R \propto M^{1/3}$ (derived from $\rho_c$)</td>
+            <td>$R \propto M^{1/3}$ (derived from $\rho_T$)</td>
         </tr>
         <tr>
             <td><strong>Screening</strong></td>
@@ -162,7 +237,7 @@
     Standard FDM predicts solitonic cores but struggles with "catching" the
     right scale for both dwarf galaxies and the Milky Way simultaneously without
     fine-tuning the particle mass. TEP naturally links the core scale to the
-    saturation density, which is independently constrained by atomic physics.
+    saturation density, which is empirically anchored by GNSS measurements.
 </p>
 
 <h2>Resolving Galactic Anomalies</h2>
@@ -196,8 +271,8 @@
     The primary uncertainty in the global fit remains the GNSS calibration
     length $L_c$. While the value $4200 \pm 500$ km is robust across analysis
     centers and time, the geometric factor relating this length to the spherical
-    soliton radius depends on the Earth's precise mass distribution and the
-    scalar coupling strength. The adopted value $\rho_c \approx 20$ g/cm³
+    Temporal Topology saturation radius depends on the Earth's precise mass distribution and the
+    scalar coupling strength. The adopted value $\rho_T \approx 20$ g/cm³
     carries a $\sim 50\%$ systematic uncertainty. Importantly, this uncertainty
     is far smaller than the 15-order-of-magnitude dynamic range over which the
     model is tested, preserving the falsifiability of the scaling law.
@@ -215,14 +290,14 @@
 <h3>Specific Testable Predictions</h3>
 <p>
     For a target galaxy with stellar mass $M_* = 10^{10} M_\odot$ (typical of
-    LRDs), assuming $\rho_c = 20 \pm 8$ g/cm³, the TEP model predicts:
+    LRDs), assuming $\rho_T = 20 \pm 8$ g/cm³, the TEP model predicts:
 </p>
 
 <div class="result-box">
     <h4>1. Soliton Radius (Emission Extent)</h4>
     <p>
-        The characteristic radius of the scalar envelope is: $$ R_{\text{sol}} =
-        \left( \frac{3(10^{10} M_\odot)}{4\pi \rho_c} \right)^{1/3} \approx 8.4
+        The characteristic radius of the scalar envelope is: $$ R_T =
+        \left( \frac{3(10^{10} M_\odot)}{4\pi \rho_T} \right)^{1/3} \approx 8.4
         \pm 2.8 \text{ kpc} $$
         <strong>Prediction:</strong> The observed half-light radius (or emission
         extent of gas tracers like H$\alpha$) should correlate with mass as $R
@@ -237,7 +312,7 @@
     <h4>2. Velocity Dispersion</h4>
     <p>
         The dynamical support speed is set by the soliton potential: $$ \sigma_v
-        \approx \sqrt{\frac{G M}{R_{\text{sol}}}} \approx 160 \pm 40 \text{
+        \approx \sqrt{\frac{G M}{R_T}} \approx 160 \pm 40 \text{
         km/s} $$
         <strong>Prediction:</strong> Integrated velocity dispersions should
         cluster around this value, independent of the apparent compactness of
@@ -274,14 +349,14 @@
 <h2>Implications for Paper 7 (RBH-1)</h2>
 
 <p>
-    The universality of $\rho_c$ established here provides the foundation for
+    The universality of $\rho_T$ established here provides the foundation for
     the analysis of RBH-1 in the companion paper (Smawfield 2025h). By adopting
-    $\rho_c \approx 20$ g/cm³ (with stated uncertainty), the soliton
+    $\rho_T \approx 20$ g/cm³ (with stated uncertainty), the soliton
     interpretation for RBH-1 becomes tightly constrained. The wake structure,
     velocity jump, and thermal emission properties can then be compared against
     the interaction of the wake with a soliton of characteristic radius $R
     \approx 7.8 \times 10^7$ km. Deviations would primarily constrain the
     object-specific soliton interpretation and/or the assumed mapping between
-    $\rho_c$ and the effective radius in this environment, rather than the
+    $\rho_T$ and the effective radius in this environment, rather than the
     broader TEP framework.
 </p>

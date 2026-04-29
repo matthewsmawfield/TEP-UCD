@@ -9,7 +9,7 @@ M_sun = 1.989e30  # kg
 R_sun = 6.96e8  # meters
 R_earth = 6.371e6  # meters
 R_TEP_earth = 4200e3  # meters (calibration)
-rho_c = 20  # g/cm^3
+rho_T = 20  # g/cm^3 (saturation scale of temporal-field topology)
 
 # --- 1. Aggregating all distinct objects found in the codebase ---
 # Sources: 04_screening_hierarchy.py, 06_ultimate_screening.py
@@ -60,16 +60,16 @@ objects = {
 print(f"Loaded {len(objects)} objects.")
 
 # --- 2. Calculate Screening Factors ---
-# R_sol = (3 M / 4 pi rho_c)^(1/3)  OR calibrated from Earth Lc
-# From manuscript: R_sol(M) = Lc * (M/M_earth)^(1/3)
-# S = R_sol / R_phys
+# R_T = (3 M / 4 pi rho_T)^(1/3)  OR calibrated from Earth Lc
+# From manuscript: R_T(M) = Lc * (M/M_earth)^(1/3)
+# S = R_T / R_phys
 
 rho_vals = []
 s_vals = []
 names = []
 
 print(
-    f"\n{'Object':<15} | {'Rho (g/cc)':<12} | {'R_phys (km)':<12} | {'R_sol (km)':<12} | {'S (Screening)':<10}"
+    f"\n{'Object':<15} | {'Rho (g/cc)':<12} | {'R_phys (km)':<12} | {'R_T (km)':<12} | {'S (Screening)':<10}"
 )
 print("-" * 75)
 
@@ -77,18 +77,18 @@ for name, obj in objects.items():
     if name == "RBH-1":
         continue  # Exclude BH from screening fit
 
-    # Calculate R_sol based on Earth calibration
-    r_sol_km = (R_TEP_earth / 1000) * (obj["M"] / M_earth) ** (1 / 3)
+    # Calculate R_T based on Earth calibration
+    r_T_km = (R_TEP_earth / 1000) * (obj["M"] / M_earth) ** (1 / 3)
 
     # Calculate screening
-    s = r_sol_km / obj["R"]
+    s = r_T_km / obj["R"]
 
     rho_vals.append(obj["rho"])
     s_vals.append(s)
     names.append(name)
 
     print(
-        f"{name:<15} | {obj['rho']:<12.2e} | {obj['R']:<12.1f} | {r_sol_km:<12.1f} | {s:<10.2f}"
+        f"{name:<15} | {obj['rho']:<12.2e} | {obj['R']:<12.1f} | {r_T_km:<12.1f} | {s:<10.2f}"
     )
 
 # --- 3. Perform Regression ---
@@ -109,9 +109,9 @@ print("-" * 60)
 
 # --- 4. Algebraic Check ---
 # Theoretical expectation:
-# R_sol ~ M^(1/3)
+# R_T ~ M^(1/3)
 # R_phys ~ (M/rho)^(1/3)
-# S = R_sol/R_phys ~ M^(1/3) / (M^(1/3) * rho^(-1/3)) ~ rho^(1/3)
+# S = R_T/R_phys ~ M^(1/3) / (M^(1/3) * rho^(-1/3)) ~ rho^(1/3)
 # So slope should be exactly 1/3 if density definition is consistent.
 
 print(f"Consistency with 1/3: {abs(slope - 1 / 3) / std_err:.1f} sigma")
