@@ -1,6 +1,9 @@
 {
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
-  "@type": "ScholarlyArticle",
+  "@type": [
+    "ScholarlyArticle",
+    "SoftwareSourceCode"
+  ],
   "identifier": "https://doi.org/10.5281/zenodo.18064365",
   "name": "Universal Critical Density: Cross-Scale Consistency of ρ_T",
   "description": "A universal saturation density scale (ρ_T ≈ 20 g/cm³) organizes gravitational anomalies across 40 orders of magnitude. Calibrated from GNSS atomic clocks, validated by SPARC galaxies, and tested on magnetars and the Milky Way. Explains dark matter phenomenology through Temporal Topology screening.",
@@ -17,7 +20,7 @@
   "version": "0.3",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "codeRepository": "https://github.com/matthewsmawfield/TEP-UCD",
-  "url": "https://matthewsmawfield.github.io/TEP-UCD/",
+  "url": "https://mlsmawfield.com/tep/ucd/",
   "keywords": [
     "critical density",
     "SPARC galaxies",
@@ -32,5 +35,8 @@
     "quantum gravity",
     "Milky Way",
     "Gaia DR3"
-  ]
+  ],
+  "developmentStatus": "active",
+  "runtimePlatform": "Python",
+  "applicationCategory": "Scientific/Research"
 }
