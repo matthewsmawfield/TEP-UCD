@@ -59,7 +59,7 @@ crit} \approx 6.8$ s, below which the saturation radius exceeds the stellar
 radius. The magnetar 1E 2259+586 ($P = 6.98$ s) exhibits anti-glitch
 behavior, consistent with this threshold within 4%.
 
-The saturation density $\rho_T \approx 20$ g/cm³ emerges as a candidate
+The saturation proximity scale $\rho_T \approx 20$ g/cm³ emerges as a candidate
 universal saturation scale of the temporal-field topology — not an
 ambient-density switch — supported by cross-scale consistency across 40
 orders of magnitude in mass (proton to galaxy cluster), within
@@ -105,7 +105,7 @@ When this axiom is relaxed, gravitational lensing and dynamical mass estimates d
 
 †*Note: This geometric "phantom mass" from temporal shear differs from cosmological "phantom energy" (dark energy with $w < -1$). The former arises from spatial gradients in proper time; the latter from exotic equation-of-state matter.*
 
-The characteristic scale at which this temporal structure becomes significant is set by the saturation density $\rho_T$, where the scalar field $\phi$ reaches its self-interaction threshold and saturates—forming a stable, localized configuration (a soliton under that interpretation) with radius:
+The characteristic scale at which this temporal structure becomes significant is set by the saturation proximity scale $\rho_T$, where the scalar field $\phi$ reaches its self-interaction threshold and saturates—forming a stable, localized configuration (a soliton under that interpretation) with radius:
 
 $ R_T = \left( \frac{3M}{4\pi \rho_T} \right)^{1/3} $
 
@@ -1038,7 +1038,7 @@ the universal density \(\rho_T\) rather than introduced as an adjustable paramet
 ## The Universal Density Hypothesis
 
 The Temporal Topology framework rests on a single empirical claim: there exists a
-fundamental saturation density $\rho_T \approx 20$ g/cm³ that governs
+fundamental saturation proximity scale $\rho_T \approx 20$ g/cm³ that governs
 compact-object structure across all mass scales. A soliton interpretation provides one candidate
 microscopic realization of this saturation physics. This hypothesis is testable
 via two independent windows:
@@ -1312,7 +1312,7 @@ unusually diagnostic system.
 
 The relation $R \propto M^{1/3}$ is a density-limited scaling expected for
 compact, self-bound field configurations whose cores approach a finite
-saturation density. Such behavior is familiar in non-topological solitons
+saturation proximity scale. Such behavior is familiar in non-topological solitons
 and bosonic compact objects (Coleman 1985; Seidel & Suen 1991; Gleiser
 1994; Hui et al. 2017).
 
