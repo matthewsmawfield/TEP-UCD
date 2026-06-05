@@ -1115,7 +1115,7 @@ replication by other groups is required before the terrestrial
 constraint can be treated as established. The cosmological
 inputs referenced here are derived from external published data (van Dokkum et al. 2025).
 
-The saturation density $\rho_T$ is calibrated using terrestrial geodetic
+The saturation proximity scale $\rho_T$ is calibrated using terrestrial geodetic
 constraints. Analysis of GNSS atomic clock data (Smawfield 2025b,c,d)
 identifies a characteristic correlation length $L_{c,\oplus} \approx 4200$
 km, interpreted within the TEP framework as the Temporal Topology saturation radius for Earth's
@@ -1231,7 +1231,7 @@ the field reaches an equilibrium value $\phi_{\rm min}(\rho) \propto
 \rho^{-1/(n+1)}$. The energy density in the saturated core is:
 $\rho_{\rm eff} \sim V(\phi_{\rm min}) + \frac{1}{2}(\nabla\phi)^2
 \sim \Lambda^4 \equiv \rho_T \approx 20 \text{ g/cm}^3$
-This identifies the empirical saturation density $\rho_T$ with the
+This identifies the empirical saturation proximity scale $\rho_T$ with the
 potential scale $\Lambda$.
 
 **3. Temporal Topology Screening**
@@ -1256,7 +1256,7 @@ Energy Condition for physically realizing solutions.
 
 ## Testing the Density Constraint at Cosmological Scales
 
-The saturation density $\rho_T$ determined from terrestrial clocks is now
+The saturation proximity scale $\rho_T$ determined from terrestrial clocks is now
 tested against RBH-1. Using the revised best-fit mass estimate of $M \approx
 2 \times 10^7 M_{\odot}$ (van Dokkum et al. 2025), the predicted Temporal Topology
 saturation radius is:
@@ -1286,7 +1286,7 @@ This geometric match is the primary prediction of the scaling law. While the
 velocity discontinuity ($\Delta v \sim 650$ km/s) provides a secondary
 constraint on the *amplitude* of the screening (see Smawfield 2025h,
 Paper 7), the *scale* of the object is set fundamentally by the
-saturation density $\rho_T$. The correspondence suggests that what is
+saturation proximity scale $\rho_T$. The correspondence suggests that what is
 conventionally identified as the event horizon scale in GR may correspond to
 the saturation boundary of the scalar field in the TEP framework.
 
@@ -1294,7 +1294,7 @@ In the TEP interpretation, what is conventionally called a "black hole" at
 this mass scale is modeled as a saturated soliton core, i.e., a region where
 the conformal time-field approaches a maximum gradient set by $\rho_T$. In
 this phenomenology, the characteristic radius is set by the saturation
-density rather than by horizon formation. The observed central dimming is
+proximity scale rather than by horizon formation. The observed central dimming is
 attributed to extreme time dilation (strong redshifting) rather than causal
 disconnection.
 
@@ -1318,7 +1318,7 @@ and bosonic compact objects (Coleman 1985; Seidel & Suen 1991; Gleiser
 
 The central claim is not that terrestrial clocks "predict" black hole sizes,
 but that a fundamental density constant $\rho_T$ appears across scales. The
-saturation density is determined empirically from Earth—the most accessible
+saturation proximity scale is determined empirically from Earth—the most accessible
 high-precision gravitational laboratory—and then tested for consistency at
 cosmological scales. The present analysis should be read as a
 phenomenological identification of an unexpected regularity: the same
@@ -1376,7 +1376,7 @@ narrow density window.
 The convergence is not a trivial post-hoc fit. Multiple
 physically distinct systems—the Earth (geodesy), magnetars (compact objects),
 and galactic black holes (cosmology)—are mutually
-consistent with the same saturation density $\rho_T \approx 20$ g/cm³.
+consistent with the same saturation proximity scale $\rho_T \approx 20$ g/cm³.
 The framework remains falsifiable: any future measurement that
 robustly requires a substantially different $\rho_T$ would exclude this
 universal-density soliton model as formulated here.
@@ -1532,7 +1532,7 @@ radii, and the density-ordered screening hierarchy summarized by $S
 = R_T/R_{\text{phys}}$.
 
 **Level 2 (Universal-density soliton model):** The
-hypothesis that a single saturation density $\rho_T$ organizes these
+hypothesis that a single saturation proximity scale $\rho_T$ organizes these
 regularities via $R_T(M) = (3M/4\pi\rho_T)^{1/3}$, with
 GNSS providing an empirical calibration (subject to independent
 replication) and cross-regime consistency tests (SPARC ensemble,
@@ -1578,7 +1578,7 @@ mechanism.
 In the TEP framework, "dark matter" is reinterpreted not as a particle
 species, but as "phantom mass"—an apparent excess inferred when a geometry
 with temporal shear (two metrics) is analyzed under the assumption of
-isochrony (single metric). The saturation density $\rho_T$ represents the
+isochrony (single metric). The saturation proximity scale $\rho_T$ represents the
 scale at which the conformal factor $A(\phi) = \exp(\beta_A\phi/M_{\text{Pl}})$ enters a non-linear,
 self-supporting phase (the soliton).
 
@@ -1618,7 +1618,7 @@ environment-dependent suppression required for precision GR tests.
 Standard FDM predicts solitonic cores but struggles with "catching" the
 right scale for both dwarf galaxies and the Milky Way simultaneously without
 fine-tuning the particle mass. TEP naturally links the core scale to the
-saturation density, which is empirically anchored by GNSS measurements.
+saturation proximity scale, which is empirically anchored by GNSS measurements.
 
 ## Resolving Galactic Anomalies
 
