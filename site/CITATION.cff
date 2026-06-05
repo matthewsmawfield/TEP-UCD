@@ -1,41 +1,37 @@
 cff-version: 1.2.0
-title: "Universal Critical Density: Cross-Scale Consistency of ρ_T"
-message: "If you use this software, please cite it as below."
+title: 'Universal Critical Density: Cross-Scale Consistency of ρ_T'
+message: If you use this software, please cite it as below.
 type: article
+version: v0.4 (New Delhi)
+date-released: 2026-06-05
 authors:
-  - family-names: "Smawfield"
-    given-names: "Matthew Lukin"
-    orcid: "https://orcid.org/0009-0003-8219-3159"
-abstract: >
-  This paper establishes a universal saturation density scale, rho_T ~ 20 g/cm^3 (a saturation scale of the temporal-field topology, not an ambient-density switch), that organizes gravitational anomalies across 40 orders of magnitude in mass. Terrestrial calibration from GNSS atomic clock coherence limits yields a characteristic length L_c ~ 4200 km for Earth. This density is externally calibrated from GNSS atomic clock measurements. The SPARC galaxy database confirms the predicted R_DM ∝ M^(1/3) scaling law (alpha = 0.354 ± 0.014). A Temporal Topology screening analysis of 26 objects (S ∝ rho^(1/3)) explains why precision GR tests pass while galactic dynamics show deviations. The model correctly predicts the critical anti-glitch period for magnetars (~6.8 s) and provides the calibration for testing the soliton hypothesis on RBH-1 (Paper 7).
-license: CC-BY-4.0
-version: 0.3
-date-released: 2025-12-28
-keywords:
-  - physics
-  - cosmology
-  - dark matter
-  - critical density
-  - gravitation
-  - temporal equivalence principle
-  - SPARC galaxies
-  - GNSS atomic clocks
-  - Temporal Topology screening
-  - magnetars
-  - scaling laws
-  - rotation curves
-  - neutron stars
-repository-code: "https://github.com/matthewsmawfield/TEP-UCD"
-url: "https://github.com/matthewsmawfield/TEP-UCD"
-doi: 10.5281/zenodo.18064365
+- family-names: Smawfield
+  given-names: Matthew Lukin
+  orcid: https://orcid.org/0009-0003-8219-3159
+abstract: 'This paper establishes a universal saturation density scale, rho_T ~ 20
+  g/cm^3 (a saturation scale of the temporal-field topology, not an ambient-density
+  switch), that organizes gravitational anomalies across 40 orders of magnitude in
+  mass. Terrestrial calibration from GNSS atomic clock coherence limits yields a characteristic
+  length L_c ~ 4200 km for Earth. This density is externally calibrated from GNSS
+  atomic clock measurements. The SPARC galaxy database confirms the predicted R_DM
+  ∝ M^(1/3) scaling law (alpha = 0.354 ± 0.014). A Temporal Topology screening analysis
+  of 26 objects (S ∝ rho^(1/3)) explains why precision GR tests pass while galactic
+  dynamics show deviations. The model correctly predicts the critical anti-glitch
+  period for magnetars (~6.8 s) and provides the calibration for testing the soliton
+  hypothesis on RBH-1 (Paper 7).
 
+  '
+license: CC-BY-4.0
+repository-code: https://github.com/matthewsmawfield/TEP-UCD
+url: https://matthewsmawfield.github.io/TEP-UCD/
+doi: 10.5281/zenodo.18064365
 preferred-citation:
   type: article
-  title: "Universal Critical Density: Cross-Scale Consistency of ρ_T (New Delhi v0.3)"
+  title: 'Universal Critical Density: Cross-Scale Consistency of ρ_T'
   authors:
-    - family-names: Smawfield
-      given-names: Matthew Lukin
-      orcid: "https://orcid.org/0009-0003-8219-3159"
+  - family-names: Smawfield
+    given-names: Matthew Lukin
+    orcid: https://orcid.org/0009-0003-8219-3159
   year: 2025
   journal: Zenodo
   doi: 10.5281/zenodo.18064365
@@ -43,5 +39,15 @@ preferred-citation:
   - type: doi
     value: 10.5281/zenodo.18064365
     description: Pre-print DOI
-  url: "https://doi.org/10.5281/zenodo.18064365"
-  notes: "Preprint"
+  url: https://doi.org/10.5281/zenodo.18064365
+  notes: Preprint
+keywords:
+- Temporal Equivalence Principle
+- Temporal Shear
+- Temporal Topology
+- proper time
+- conformal metric
+- disformal metric
+- synchronization holonomy
+- clock-sector gravity
+- scalar-tensor theory

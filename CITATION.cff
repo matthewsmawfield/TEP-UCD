@@ -2,6 +2,8 @@ cff-version: 1.2.0
 title: 'Universal Critical Density: Cross-Scale Consistency of ρ_T'
 message: If you use this software, please cite it as below.
 type: article
+version: v0.4 (New Delhi)
+date-released: 2026-06-05
 authors:
 - family-names: Smawfield
   given-names: Matthew Lukin
