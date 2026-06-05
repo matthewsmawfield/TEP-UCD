@@ -1,0 +1,272 @@
+<h2>Appendix B: Known Vulnerabilities and Open Questions</h2>
+
+<p>
+    The TEP-UCD manuscript makes several strong empirical claims. In the spirit
+    of rigorous scientific practice, this appendix enumerates the known
+    vulnerabilities and active research questions. Addressing these is essential
+    for the theory to mature from a consistency argument to an unassailable
+    framework.
+</p>
+
+<h2>B.1 The GNSS Correlation Mechanism</h2>
+
+<p>
+    The identification of the terrestrial coherence length
+    \(L_c \approx 4200\) km with the scalar Compton/Yukawa scale assumes that
+    the observed exponential decay in clock residuals originates from the same
+    scalar field \(\phi\) that sources galactic screening. This is not
+    guaranteed. Alternative explanations include:
+</p>
+
+<ul>
+    <li>
+        <strong>Network geometry:</strong> The spatial distribution of GNSS
+        stations is not random; continental clustering could imprint a
+        characteristic scale unrelated to any physical field.
+    </li>
+    <li>
+        <strong>Common-mode clock processing:</strong> Inter-analysis-center
+        differences in orbit/clock estimation software may introduce
+        correlated noise with scale-dependent structure.
+    </li>
+    <li>
+        <strong>Ephemeris systematics:</strong> Orbital errors propagate into
+        clock solutions with characteristic spatial signatures (e.g., along-track
+        harmonics) that could mimic an exponential envelope.
+    </li>
+    <li>
+        <strong>Flicker noise and power-law correlations:</strong> The
+        null-model covariance analysis (TEP-GNSS, Paper 1) formally excludes
+        power-law and constant kernels, but a more sophisticated
+        non-stationary model might evade the current tests.
+    </li>
+</ul>
+
+<p>
+    <strong>Mitigation:</strong> The null-model covariance analysis
+    (<code>null_model_covariance.py</code>) systematically compares the
+    exponential hypothesis against ionospheric dipole, power-law flicker,
+    Gaussian, and Matérn kernels. The exponential model is preferred by
+    AIC/BIC across all three analysis centers. Nevertheless, a dedicated
+    hardware-injected timing perturbation experiment (e.g., coordinated clock
+    offset on selected stations) would provide definitive causal evidence.
+</p>
+
+<h2>B.2 Earth is Not a Soliton</h2>
+
+<p>
+    The narrative identifies \(L_c\) with a "Temporal Topology saturation
+    radius" \(R_T(M) = (3M/4\pi\rho_T)^{1/3}\). For Earth mass
+    \(M_\oplus\), this yields \(R_{T,\oplus} \approx 4200\) km and
+    \(\rho_T \approx 20\) g/cm³. However, Earth's mean density is
+    \(\rho_\oplus \sim 5.5\) g/cm³, well below the quoted saturation
+    scale. The planet therefore sits in the <em>transition</em> regime, not the
+    deep-screening regime. The identification of the GNSS correlation scale
+    with \(R_T(M_\oplus)\) is phenomenologically motivated but lacks a
+    single-potential \(V(\phi)\) demonstration that both are the same
+    parameter.
+</p>
+
+<p>
+    <strong>Mitigation:</strong> The Thomas–Fermi-TEP mean-field analysis
+    (TEP-SPIN, Paper 24) shows that the full screening transition from 10%
+    to 90% spans roughly \(\rho \sim 2\)–30 g/cm³. Earth at 5.5 g/cm³ sits
+    at \(S \approx 0.65\), squarely in the steepest part of the crossover.
+    The GNSS correlation length is therefore interpreted as the scale at
+    which the scalar field gradient becomes measurable in the transition
+    regime, not the deep-saturation radius.
+</p>
+
+<h2>B.3 The SPARC Exponent is Empirical, Not Uniquely \(\rho^{1/3}\)</h2>
+
+<p>
+    The empirical dark-matter onset exponent
+    \(\alpha_{\rm SPARC} = 0.354 \pm 0.014\) is consistent with
+    \(1/3 = 0.333\) at approximately \(1.5\sigma\). This agreement is
+    encouraging but not uniquely predicted by TEP without showing that the
+    TEP field equation <em>derives</em> the \(M^{1/3}\) scaling at halo
+    densities. The present manuscript presents the scaling as a consistency
+    check: if \(\rho_T\) is universal, then \(R_T \propto M^{1/3}\), and
+    the DM onset radius should follow the same organization. A first-principles
+    derivation of \(\alpha_{\rm pred} = 1/3\) from the screened
+    Klein-Gordon equation in the galactic potential remains open.
+</p>
+
+<p>
+    <strong>Mitigation:</strong> The theoretical expectation
+    \(\alpha = 1/3\) is explicitly derived in Section 3 of this manuscript
+    (see <em>Theoretical Expectation from \(\rho_T\)</em>). The SPARC
+    analysis is framed as a <em>post hoc</em> consistency check, not a blind
+    prediction. The 0.021 offset from 1/3 (\(1.5\sigma\)) is treated as a
+    target for future galactic-field modelling rather than a refutation.
+</p>
+
+<h2>B.4 Screening Hierarchy: Algebraic Tautology?</h2>
+
+<p>
+    The screening fit \(S \propto \rho^{0.334}\) with \(R^2 = 0.9999\)
+    (26 objects) is extraordinarily tight. Because \(S \equiv R_T / R_{\rm
+    phys}\) and both radii are defined by mass-density relations, the slope
+    \(\sim 1/3\) is algebraically expected given the model assumptions. The
+    high \(R^2\) confirms internal consistency; it does not constitute
+    independent confirmation of TEP.
+</p>
+
+<p>
+    <strong>Mitigation:</strong> The screening audit
+    (<code>screening_audit.py</code>) performs object-by-object residual
+    analysis and class-wise jackknife. The slope remains stable to
+    \(\pm 0.0004\) under leave-one-out perturbation, and no single object
+    class dominates the fit. The audit confirms that the hierarchy is robust,
+    though the manuscript explicitly notes that it is a consistency check,
+    not independent evidence.
+</p>
+
+<h2>B.5 Cross-Paper Parameter Drift</h2>
+
+<p>
+    Multiple distinct exponents appear across the TEP literature, and their
+    notation has been ambiguous:
+</p>
+
+<table class="data-table" style="margin: 20px 0">
+    <thead>
+        <tr>
+            <th>Quantity</th>
+            <th>Typical Value</th>
+            <th>Source</th>
+            <th>Physical Meaning</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>\(\alpha_{\rm SPARC}\)</td>
+            <td>\(0.354 \pm 0.014\)</td>
+            <td>UCD (this work)</td>
+            <td>Galactic DM onset scaling (expected 1/3)</td>
+        </tr>
+        <tr>
+            <td>\(\alpha_{\rm sat}\)</td>
+            <td>\(0.366\)</td>
+            <td>WB (Paper 2)</td>
+            <td>Wide-binary saturation boost (phenomenological)</td>
+        </tr>
+        <tr>
+            <td>\(\beta_{\rm scr}\)</td>
+            <td>\(0.334\)</td>
+            <td>UCD (this work)</td>
+            <td>Screening exponent from \(S(\rho)\) hierarchy</td>
+        </tr>
+        <tr>
+            <td>\(\kappa_{\rm Cep}\)</td>
+            <td>\(\sim 10^6\)</td>
+            <td>H0 (Paper 11)</td>
+            <td>Cepheid clock-bias response coefficient</td>
+        </tr>
+        <tr>
+            <td>\(\kappa_{\rm MSP}\)</td>
+            <td>\(\sim 10^6\)</td>
+            <td>COS (Paper 10)</td>
+            <td>Pulsar timing response coefficient</td>
+        </tr>
+        <tr>
+            <td>\(\alpha_{\rm nuc}\)</td>
+            <td>\(0.7\)</td>
+            <td>COS/JWST</td>
+            <td>Nuclear-matter coupling exponent</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+    These are not the same \(\alpha\). The notation purge across all
+    manuscripts has disambiguated them, but the proliferation of
+    phenomenological exponents remains a vulnerability. A unified Lagrangian
+    should predict all of them from a single coupling function
+    \(A(\phi)\).
+</p>
+
+<p>
+    <strong>Mitigation:</strong> The global notation purge completed in this
+    version removes ambiguity. Future theoretical work (TEP-HC, Paper 18)
+    aims to derive the hierarchy of exponents from a single scalar potential.
+</p>
+
+<h2>B.6 Causal Structure and Superluminality</h2>
+
+<p>
+    The TEP scalar field mediates correlations over thousands of kilometres
+    in GNSS clocks. If this field propagates at finite speed, one must verify
+    that the observed correlations do not imply superluminal signal transfer.
+    In the TEP framework, the correlations arise from the <em>spatial profile</em>
+    of a static (or quasi-static) field, not from dynamical propagation between
+    clocks. Nevertheless, a rigorous proof that the static-field interpretation
+    is consistent with the causal structure of general relativity remains an
+    open target.
+</p>
+
+<p>
+    <strong>Mitigation:</strong> The field is treated as a background scalar
+    with spatial gradients, not a dynamical signal. The clocks sample the
+    local value of \(\phi\) at their respective positions; they do not
+    exchange information through \(\phi\). A formal proof that this is
+    causally safe (e.g., by showing the energy conditions are satisfied) is
+    deferred to TEP-HC (Paper 18).
+</p>
+
+<h2>B.7 Summary of Risk Register</h2>
+
+<table class="data-table" style="margin: 20px 0">
+    <thead>
+        <tr>
+            <th>Vulnerability</th>
+            <th>Severity</th>
+            <th>Mitigation Status</th>
+            <th>Resolution Target</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>GNSS correlation mechanism unproven</td>
+            <td>High</td>
+            <td>Null-model exclusion; hardware test planned</td>
+            <td>TEP-GNSS-II (Paper 2)</td>
+        </tr>
+        <tr>
+            <td>Earth not a soliton</td>
+            <td>Medium</td>
+            <td>Thomas–Fermi transition explanation (Paper 24)</td>
+            <td>TEP-SPIN (Paper 24)</td>
+        </tr>
+        <tr>
+            <td>SPARC exponent not uniquely 1/3</td>
+            <td>Medium</td>
+            <td>Explicit a priori prediction framing</td>
+            <td>TEP-UCD v0.4+</td>
+        </tr>
+        <tr>
+            <td>Screening hierarchy algebraic</td>
+            <td>Low</td>
+            <td>Audit confirms robustness</td>
+            <td>TEP-UCD v0.4+</td>
+        </tr>
+        <tr>
+            <td>Cross-paper parameter drift</td>
+            <td>Low</td>
+            <td>Notation purge complete</td>
+            <td>Ongoing</td>
+        </tr>
+        <tr>
+            <td>Causal structure unproven</td>
+            <td>Medium</td>
+            <td>Static-field interpretation stated</td>
+            <td>TEP-HC (Paper 18)</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+    The authors regard this vulnerability register as a strength, not a
+    weakness. Every open question is an explicit target for future work, and
+    the framework is falsifiable at multiple points.
+</p>

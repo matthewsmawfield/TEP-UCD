@@ -14,7 +14,7 @@
     apparent dark matter phenomenology.
 </p>
 
-<h2>Theoretical Expectation</h2>
+<h2>Phantom Mass Interpretation</h2>
 <p>
     In the TEP framework, the apparent "dark matter" observed in galaxy rotation
     curves is identified as <em>Phantom Mass</em>—defined as the apparent mass
@@ -48,9 +48,10 @@
 <p>
     If this interpretation is correct, the radius at which rotation curves
     diverge from Newtonian prediction should scale as $R_{\rm DM} \propto M_{\rm
-    bar}^{1/3}$. While the fundamental core saturation occurs at $\rho_T \approx
-    20$ g/cm³, the halo transition is governed by a much lower density threshold
-    $\rho_{\rm trans}$ characteristic of the diffuse field tail.
+    bar}^{1/3}$. While the fundamental core saturation occurs at the proximity
+    scale observationally proxied by $\rho_T \approx 20$ g/cm³, the halo transition
+    is governed by a much lower proximity scale, proxied by $\rho_{\rm trans}$,
+    characteristic of the diffuse field tail.
 </p>
 <p>
     <strong>Invariant:</strong> $\rho_T$ denotes the universal saturation
@@ -59,6 +60,40 @@
     an <em>emergent</em> screening threshold for the onset of halo phenomenology
     in diffuse environments; it is not treated as a second fundamental constant
     and can depend on coupling, geometry, and baryonic structure.
+</p>
+
+<h2>Theoretical Expectation from \(\rho_T\)</h2>
+
+<p>
+    The TEP scaling law \(R_T \propto M^{1/3}\), anchored by the GNSS
+    calibration \(\rho_T \approx 20\) g/cm³, has a direct consequence for
+    galactic structure. In the TEP framework, the dark-matter onset radius
+    \(R_{\rm DM}\) is identified with the radius at which the local density
+    drops below the emergent halo threshold \(\rho_{\rm trans}\). Because
+    \(\rho_{\rm trans}\) is not an independent fundamental constant but an
+    emergent threshold tied to the same scalar potential that fixes
+    \(\rho_T\), dimensional analysis yields the same mass scaling:
+</p>
+
+<div class="equation">
+    $$R_{\rm DM} \propto \left(\frac{M_{\rm bar}}{\rho_{\rm trans}}\right)^{1/3}
+    \propto M_{\rm bar}^{1/3}.$$
+</div>
+
+<p>
+    Thus the TEP framework <em>expects</em> \(\alpha = 1/3\) for the DM onset
+    scaling. This is a theoretical consequence of the same saturation density
+    that fixes the terrestrial correlation length, not a new free parameter.
+    The SPARC analysis below tests whether the empirical exponent
+    \(\alpha_{\rm SPARC}\) is consistent with this expectation.
+</p>
+
+<p>
+    The analysis was performed <em>post hoc</em>: the SPARC data were examined
+    after the TEP framework was established, so the comparison is a
+    consistency check rather than a blind prediction. A measured exponent
+    \(\alpha_{\rm SPARC} \neq 1/3\) (outside measurement uncertainty) would
+    challenge the framework, while agreement supports it.
 </p>
 
 <h2>Methodology</h2>
@@ -94,8 +129,8 @@
 <p>
     To address concerns that the "onset radius" is a noise-sensitive functional,
     a rigorous bootstrap analysis (1000 resamples) was performed across multiple
-    definition criteria. The scaling exponent $\alpha$ remains consistent with
-    the TEP prediction ($\alpha = 1/3$) across a wide range of velocity ratio
+    definition criteria. The scaling exponent $\alpha_{\rm SPARC}$ remains consistent with
+    the TEP expectation ($\alpha_{\rm SPARC} = 1/3$) across a wide range of velocity ratio
     thresholds:
 </p>
 
@@ -103,7 +138,7 @@
     <thead>
         <tr>
             <th>Definition (Threshold)</th>
-            <th>Fitted Exponent ($\alpha$)</th>
+            <th>Fitted Exponent ($\alpha_{\rm SPARC}$)</th>
             <th>Consistency with 1/3</th>
         </tr>
     </thead>
@@ -128,19 +163,19 @@
 
 <p>
     While individual definitions shift the normalization, the slope consistently
-    clusters around the $M^{1/3}$ prediction. An alternative definition based on
-    acceleration thresholds ($a < a_0$) yields a steeper slope ($\alpha \approx
+    clusters around the $M^{1/3}$ expectation. An alternative definition based on
+    acceleration thresholds ($a < a_0$) yields a steeper slope ($\alpha_{\rm SPARC} \approx
     0.5$), but this method is known to be degenerate with the MOND acceleration
     scale itself and is less direct than the kinematic divergence test.
 </p>
 
 <div class="result-box">
-    $$R_{\rm DM} = k \cdot M_{\rm bar}^\alpha$$ $$\alpha \approx 0.35 \pm 0.04
+    $$R_{\rm DM} = k \cdot M_{\rm bar}^{\alpha_{\rm SPARC}}$$ $$\alpha_{\rm SPARC} \approx 0.35 \pm 0.04
     \text{ (Robust Estimate)}$$
 </div>
 
 <p>
-    The marginalized exponent deviates from the TEP prediction of $\alpha = 1/3
+    The marginalized exponent deviates from the TEP expectation of $\alpha_{\rm SPARC} = 1/3
     = 0.333$ by approximately 1.0–1.5 standard deviations (depending on
     definition)—consistent within typical statistical tolerance. The correlation
     coefficient $r \approx 0.6$ indicates a significant relationship.
@@ -163,7 +198,7 @@
     modeling remain.
 </p>
 <p>
-    Combined with the SPARC galaxy scaling ($\alpha = 0.354 \pm 0.014$), the
+    Combined with the SPARC galaxy scaling ($\alpha_{\rm SPARC} = 0.354 \pm 0.014$), the
     RBH-1 crossover consistency (within $\sim 25\%$ combined uncertainty), and
     the Milky Way Keplerian transition (few-percent level), these results
     suggest a universal density-limited structure may span 41 orders of
@@ -180,7 +215,7 @@
     $$R_{\rm trans} \sim \left( \frac{M}{\rho_{\rm trans}} \right)^{1/3}$$
 </div>
 <p>
-    Fixing $\alpha = 1/3$ and fitting only the normalization yields $k \approx
+    Fixing $\alpha_{\rm SPARC} = 1/3$ and fitting only the normalization yields $k \approx
     7.9 \times 10^{-4}\,{\rm kpc}/M_\odot^{1/3}$, corresponding to an effective
     screening density $\rho_{\rm trans} \approx 0.5\,M_\odot/{\rm pc}^3$ ($\sim
     3 \times 10^{-23}$ g/cm³). This value is within an order of magnitude of
@@ -191,10 +226,10 @@
 <p>
     <em>Note:</em> This galactic transition density $\rho_{\rm trans}$ is
     distinct from the fundamental core saturation density $\rho_T \approx 20$
-    g/cm³ derived in Section 5. The core density $\rho_T$ governs the compact
+    g/cm³ calibrated in Section 2 and cross-checked in Section 5. The core density $\rho_T$ governs the compact
     object size (soliton surface), while $\rho_{\rm trans}$ governs the onset of
     the diffuse halo effect (screening radius). Both scales follow the same
-    $M^{1/3}$ structural form, consistent with the density-dependent nature of the
+    $M^{1/3}$ structural form, consistent with the environment-dependent nature of the
     theory across 40 orders of magnitude in density.
 </p>
 
@@ -227,7 +262,7 @@
 </p>
 <p>
     The TEP framework offers a third interpretation: the RAR emerges naturally
-    from the density-dependent screening of the proper-time field. At high
+    from the environment-dependent screening of the proper-time field. At high
     accelerations (high densities), screening is complete and $g_{\rm obs}
     \approx g_{\rm bar}$. At low accelerations (low densities), the unscreened
     time-field gradient contributes additional apparent gravity, producing the
@@ -272,7 +307,7 @@
     Both phenomena obey the same $M^{1/3}$ scaling law, calibrated from
     terrestrial GNSS observations. The universality of this scaling across
     planetary, stellar, galactic, and cosmological mass scales constitutes a
-    central prediction of the Temporal Equivalence Principle.
+    central theoretical consequence of the Temporal Equivalence Principle.
 </p>
 
 <h2>Residual Analysis: Discriminating Baryonic Feedback vs Field Theory</h2>
@@ -287,8 +322,8 @@
 <h3>Methodology</h3>
 <p>
     For each of the 167 SPARC galaxies with valid mass discrepancy radii, the
-    residual from the $M^{1/3}$ prediction is calculated as: $$\text{Residual} =
-    \log_{10}(R_{\rm DM} / R_{\rm pred})$$ where $R_{\rm pred} = k \cdot M_{\rm
+    residual from the $M^{1/3}$ expectation is calculated as: $$\text{Residual} =
+    \log_{10}(R_{\rm DM} / R_{\rm exp})$$ where $R_{\rm exp} = k \cdot M_{\rm
     bar}^{1/3}$ with $k = 7.86 \times 10^{-4}$ kpc/$M_\odot^{1/3}$. These
     residuals are then correlated with:
 </p>

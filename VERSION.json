@@ -1,8 +1,9 @@
 {
-  "version": "0.3",
+  "version": "0.4",
   "codename": "New Delhi",
   "description": "Paper 6: Universal Critical Density: Cross-Scale Consistency of \u03c1_T",
   "date_published": "2025-12-28",
   "date_updated": "2026-04-29",
-  "date": "2026-04-29"
+  "date": "2026-06-05",
+  "previous_version": "0.3"
 }

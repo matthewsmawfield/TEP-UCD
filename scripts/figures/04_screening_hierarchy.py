@@ -28,6 +28,15 @@ R_earth = 6.371e6    # meters
 R_TEP_earth = 4200e3  # meters
 rho_T = 20  # g/cm³ (saturation scale of temporal-field topology; not an on/off switch)
 
+# Physical constants for proximity axis
+M_E = 9.1093837015e-31     # kg
+HBAR = 1.054571817e-34      # J s
+C = 299792458.0             # m/s
+M_PROTON = 1.67262192369e-27  # kg
+Z_OVER_A = 0.5
+R_C = HBAR / (M_E * C)      # Compton radius ~ 3.86e-13 m
+LAMBDA_SCR = 2**0.5 * R_C   # Yukawa screening length
+
 # --- Data Objects ---
 objects = {
     'Earth': {'M': 1 * M_earth, 'R': 6371, 'type': 'planet', 'rho': 5.5},
@@ -68,24 +77,44 @@ labels = {
     'ns': 'Neutron Stars'
 }
 
-# --- Panel A: Screening Factor vs Density ---
+# --- Proximity helper ---
+def fermi_wavelength(rho_kg_m3):
+    n_e = rho_kg_m3 * Z_OVER_A / M_PROTON
+    k_F = (3.0 * np.pi**2 * n_e) ** (1.0 / 3.0)
+    return 2.0 * np.pi / k_F
+
+def lambda_F_from_rho_g_cm3(rho_g_cm3):
+    return fermi_wavelength(rho_g_cm3 * 1000.0)
+
+# --- Panel A: Screening Factor vs Density (with Proximity Axis) ---
 ax1 = axes[0]
 ax1.set_title(r"$\bf{a)}$ Screening Factor vs Density", loc='left')
 
 # Plot Objects
 for name, obj in objects.items():
     t = obj['type']
-    ax1.scatter(obj['rho'], obj['screening'], color=colors[t], marker=markers[t], 
+    ax1.scatter(obj['rho'], obj['screening'], color=colors[t], marker=markers[t],
                 s=80, edgecolors='k', lw=0.5, zorder=5)
-    
+
     # Annotations
     if name in ['Earth', 'Sirius B', 'Typical NS']:
-        ax1.annotate(name, (obj['rho'], obj['screening']), xytext=(0, 5), 
+        ax1.annotate(name, (obj['rho'], obj['screening']), xytext=(0, 5),
                      textcoords='offset points', ha='center')
 
 # Theoretical lines
 ax1.axvline(x=rho_T, color='k', linestyle='--', alpha=0.5)
 ax1.text(rho_T*1.5, 0.6, r'$\rho_T \approx 20$ g/cm³', rotation=90, va='bottom')
+
+# Proximity regime bands (vertical, on primary axis)
+# Core overlap: lambda_F < r_c  =>  rho > ~10^4 g/cm³
+# Transition: r_c < lambda_F < 10*r_c
+# Dilute: lambda_F > 10*r_c
+rho_core = 1e4   # g/cm³ where lambda_F ~ r_c
+rho_trans_hi = rho_core
+rho_trans_lo = rho_core / 1000.0  # ~10 g/cm³ where lambda_F ~ 10*r_c
+ax1.axvspan(rho_trans_hi, 1e16, color='red', alpha=0.06, label='Core overlap')
+ax1.axvspan(rho_trans_lo, rho_trans_hi, color='orange', alpha=0.06, label='Transition')
+ax1.axvspan(1e-1, rho_trans_lo, color='green', alpha=0.06, label='Dilute')
 
 # Unity Line
 ax1.axhline(y=1, color='gray', linestyle=':', alpha=0.5)
@@ -93,16 +122,33 @@ ax1.text(1e-1, 1.1, 'No Screening', color='gray')
 
 ax1.set_xscale('log')
 ax1.set_yscale('log')
-ax1.set_xlabel(r'Mean Density $\rho$ (g/cm³)')
+ax1.set_xlabel(r'Mean Density $\rho$ (g/cm³)  (observable proxy for proximity)')
 ax1.set_ylabel(r'Screening Factor $S = R_T/R_{phys}$')
 ax1.set_xlim(1e-1, 1e16)
 ax1.set_ylim(0.5, 1e8)
 ax1.grid(True, which='major', alpha=0.3)
 
+# Secondary x-axis: Fermi wavelength (top)
+ax1_top = ax1.twiny()
+ax1_top.set_xscale('log')
+ax1_top.set_xlim(ax1.get_xlim())
+
+# Map density ticks to lambda_F values
+tick_rhos = np.array([1e-1, 1e0, 1e1, 1e2, 1e4, 1e8, 1e12, 1e16])
+tick_lams = [lambda_F_from_rho_g_cm3(r) for r in tick_rhos]
+ax1_top.set_xticks(tick_rhos)
+ax1_top.set_xticklabels([f'{lam:.0e}' for lam in tick_lams])
+ax1_top.set_xlabel(r'Fermi wavelength $\lambda_F$ (m)')
+
+# Mark r_c and lambda_scr on top axis
+for x_rho, label, color in [(rho_core, r'$r_c$', 'red'),
+                               (rho_core/100, r'$\sqrt{2}r_c$', 'blue')]:
+    ax1_top.axvline(x=x_rho, color=color, linestyle=':', alpha=0.4)
+
 # Dummy points for legend
 for t in colors:
     ax1.scatter([], [], color=colors[t], marker=markers[t], label=labels[t], edgecolors='k')
-ax1.legend(loc='upper left', frameon=False)
+ax1.legend(loc='upper left', frameon=False, fontsize=7)
 
 # --- Panel B: Physical vs TEP Radius ---
 ax2 = axes[1]
