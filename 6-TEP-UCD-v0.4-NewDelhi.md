@@ -296,7 +296,7 @@ $R_{\rm DM} \propto \left(\frac{M_{\rm bar}}{\rho_{\rm trans}}\right)^{1/3}
 \propto M_{\rm bar}^{1/3}.$
 
 Thus the TEP framework *expects* \(\alpha = 1/3\) for the DM onset
-scaling. This is a theoretical consequence of the same saturation density
+scaling. This is a theoretical consequence of the same saturation proximity scale
 that fixes the terrestrial correlation length, not a new free parameter.
 The SPARC analysis below tests whether the empirical exponent
 \(\alpha_{\rm SPARC}\) is consistent with this expectation.
@@ -397,7 +397,7 @@ pc}^3$), providing a physically reasonable anchor for the screening
 mechanism.
 
 *Note:* This galactic transition density $\rho_{\rm trans}$ is
-distinct from the fundamental core saturation density $\rho_T \approx 20$
+distinct from the fundamental core saturation proximity scale $\rho_T \approx 20$
 g/cm³ calibrated in Section 2 and cross-checked in Section 5. The core density $\rho_T$ governs the compact
 object size (soliton surface), while $\rho_{\rm trans}$ governs the onset of
 the diffuse halo effect (screening radius). Both scales follow the same
@@ -724,7 +724,7 @@ the radii are defined by mass-density relations, the slope $\sim 1/3$ is
 algebraically expected given the model assumptions.
 
 The value of this analysis is not to prove the scaling 'ab initio', but
-to demonstrate that a *single* saturation density $\rho_T$ yields
+to demonstrate that a *single* saturation proximity scale $\rho_T$ yields
 a consistent screening hierarchy across 15 orders of magnitude in
 density ($R^2 \approx 1$) without requiring regime-dependent
 adjustments. The high $R^2$ confirms internal consistency; it does not
@@ -829,7 +829,7 @@ length $L_c \approx 4200$ km is not an arbitrary parameter—it is the
 characteristic scale where the scalar field's gradient becomes steep enough
 to produce measurable timing correlations.
 
-Within this phenomenology, the same saturation density is expected to govern
+Within this phenomenology, the same saturation proximity scale is expected to govern
 both terrestrial clock correlations and compact-object structure. The
 terrestrial scale provides an empirical calibration point, and the RBH-1
 crossover provides an astrophysical consistency test under the same
@@ -959,7 +959,7 @@ at \(\rho \approx 15\) g/cm³ (where the screening transition is steepest,
 spans roughly \(\rho \sim 2\)–30 g/cm³, reflecting the smooth, continuous
 nature of the many-body saturation slope. This derivation is the
 definitive theoretical bridge between the microscopic Compton scale and the
-macroscopic saturation density; the simpler dimensional estimate presented
+macroscopic saturation proximity scale; the simpler dimensional estimate presented
 below (Section 5.4) is retained as an order-of-magnitude consistency check.
 
 ### 5.4 Dimensional Analysis: The Scalar Coupling Scale
@@ -982,7 +982,7 @@ g/cm}^3$
 The order-of-magnitude agreement with \(\rho_T \approx 20\) g/cm³ is
 encouraging, though it is now superseded by the Thomas–Fermi-TEP derivation
 (Section 5.3). This dimensional scaling is retained as an independent
-consistency check, confirming that the saturation density emerges from
+consistency check, confirming that the saturation proximity scale emerges from
 fundamental quantum scales rather than cosmological coincidence.
 
 ### 5.5 Status: Phenomenological Constraint with Theoretical Foundation
@@ -1011,11 +1011,11 @@ anchored by a first-principles many-body calculation.
 
 **Principle:**
 
-#### Box 5.1: Summary — The Saturation Density is Not a Free Parameter
+#### Box 5.1: Summary — The Saturation Proximity Scale is Not a Free Parameter
 
 The GNSS coherence length \(L_c \approx 4200\) km is often cited as the
 calibration input for the TEP scaling law. This framing obscures the
-underlying physics. The fundamental parameter is the saturation density
+underlying physics. The fundamental parameter is the saturation proximity scale
 \(\rho_T \approx 20\) g/cm³, which is constrained by:
 
 - The electron degeneracy threshold (equation of state physics)
@@ -1187,7 +1187,7 @@ consequence of saturation in the scalar sector. Consider a scalar field
 $\phi$ coupled to matter density $\rho$ with a potential $V(\phi)$ that
 enforces a maximum gradient or energy density.
 
-In the high-density limit (compact objects), the scalar field profile
+In the dense limit (compact objects), the scalar field profile
 saturates to a core of constant effective energy density $\rho_T$. For a
 self-gravitating configuration of total mass $M$, the volume of this
 saturated core is constrained by mass conservation: $M \approx
@@ -1219,7 +1219,7 @@ For a static, spherically symmetric configuration, the scalar field
 equation is:
 $\nabla^2 \phi = V'(\phi) - \alpha(\phi)\rho$
 where $\alpha(\phi) \equiv d\ln A/d\phi$ and $\rho$ is the ambient
-matter density. In the high-density limit, the effective potential
+matter density. In the dense limit, the effective potential
 $V_{\rm eff}(\phi; \rho) = V(\phi) + [A(\phi)-1]\rho$ develops a
 minimum at $\phi_{\rm min}(\rho)$ with effective mass
 $m_{\rm eff}^2(\rho) = V''(\phi_{\rm min})$.
@@ -1437,7 +1437,7 @@ Unlike crustal starquakes (which can occur at any period), soliton destabilizati
 
 Other slowly rotating magnetars near $P \sim 7$ s may exhibit similar behavior. Future timing campaigns targeting objects in the 6–8 s period range could test whether anti-glitch activity clusters near $P_{\text{crit}}$, providing additional constraints on the soliton interpretation.
 
-The magnetar test probes the *high-density* regime where screening is strong ($S \gg 1$, see Section 4), yet the Temporal Topology saturation radius is still large enough to affect stellar structure. This provides a bridge between terrestrial calibration (Earth) and cosmological applications (galaxies).
+The magnetar test probes the *high-proximity* regime where screening is strong ($S \gg 1$, see Section 4), yet the Temporal Topology saturation radius is still large enough to affect stellar structure. This provides a bridge between terrestrial calibration (Earth) and cosmological applications (galaxies).
 
 ## 8. Milky Way Test: Keplerian Transition
 
@@ -1724,7 +1724,7 @@ broader TEP framework.
 
 ## A Universal Organizing Parameter
 
-This paper identifies the saturation density $\rho_T \approx 20$ g/cm³ as a candidate organizing parameter for gravitational phenomena across cosmological scales. The convergence of five macroscopic constraints—terrestrial (GNSS), compact (magnetars), galactic (SPARC), local (Milky Way), and screening (26 objects)—spanning 40 orders of magnitude in mass and 15 orders of magnitude in density, motivates the hypothesis that $\rho_T$ reflects a candidate physical scale, pending full dependency audit.
+This paper identifies the saturation proximity scale $\rho_T \approx 20$ g/cm³ as a candidate organizing parameter for gravitational phenomena across cosmological scales. The convergence of five macroscopic constraints—terrestrial (GNSS), compact (magnetars), galactic (SPARC), local (Milky Way), and screening (26 objects)—spanning 40 orders of magnitude in mass and 15 orders of magnitude in density, motivates the hypothesis that $\rho_T$ reflects a candidate physical scale, pending full dependency audit.
 
 ## Key Results
 
@@ -1776,7 +1776,7 @@ $ S = \int d^4x \sqrt{-g} \left[ \frac{M_{\text{Pl}}^2}{2} R - \frac{1}{2}(\part
 
 where $\tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu}$ and $A(\phi) = \exp(\beta_A\phi/M_{\text{Pl}})$ in the late-time conformal limit.
 
-The saturation density $\rho_T$ emerges as the scale at which the scalar field $\phi$ reaches its self-interaction threshold, saturating the field. Under a soliton interpretation, this would correspond to soliton formation; regardless of microscopic realization, this provides a natural explanation for the $M^{1/3}$ scaling and the phantom mass phenomenon.
+The saturation proximity scale $\rho_T$ emerges as the scale at which the scalar field $\phi$ reaches its self-interaction threshold, saturating the field. Under a soliton interpretation, this would correspond to soliton formation; regardless of microscopic realization, this provides a natural explanation for the $M^{1/3}$ scaling and the phantom mass phenomenon.
 
 ## Systematic Uncertainties and Robustness
 
@@ -1808,7 +1808,7 @@ The establishment of $\rho_T \approx 20$ g/cm³ as a universal parameter opens s
 
 ## Concluding Remarks
 
-The saturation density $\rho_T \approx 20$ g/cm³ represents a fundamental scale in gravitational physics, organizing phenomena from planetary to galactic scales. Its derivation from terrestrial calibration (GNSS), validation across cosmological scales (SPARC, Milky Way), and consistency with compact objects (magnetars) suggest that dark matter observations may reflect temporal structure in spacetime rather than non-baryonic particles.
+The saturation proximity scale $\rho_T \approx 20$ g/cm³ represents a fundamental scale in gravitational physics, organizing phenomena from planetary to galactic scales. Its derivation from terrestrial calibration (GNSS), validation across cosmological scales (SPARC, Milky Way), and consistency with compact objects (magnetars) suggest that dark matter observations may reflect temporal structure in spacetime rather than non-baryonic particles.
 
 This paradigm shift—from dark matter as substance to dark matter as temporal shear—provides a unified explanation for the $M^{1/3}$ scaling, screening hierarchy, and phantom mass phenomenon. The externally calibrated value of $\rho_T$ enables specific testable applications, including the RBH-1 case study (Paper 7), positioning the Temporal Equivalence Principle as an empirically grounded alternative to the particle dark matter paradigm.
 
