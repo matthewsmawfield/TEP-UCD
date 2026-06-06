@@ -43,7 +43,7 @@ stripping of the scalar field envelope.
 Temporal Topology screening resolves the apparent conflict with
 precision GR tests. Analysis of 26 astrophysical objects spanning 15
 orders of magnitude in density reveals a consistency relation $S \propto
-\rho^{0.334}$ ($R^2 = 0.9999$), algebraically expected from the
+\rho^{0.334}$ ($R^2 = 0.99995$), algebraically expected from the
 $R_T(M)$ construction; it explains why GR tests pass (binary pulsars:
 $S > 30{,}000$) while galactic dynamics ($\rho \sim 10^{-24}$ g/cm³,
 $S \sim 0.01$) exhibit strong scalar effects.
@@ -55,7 +55,7 @@ radius exceeds the stellar radius. The magnetar 1E 2259+586 ($P = 6.98$
 s) exhibits anti-glitch behavior, consistent with this threshold within
 4% ($N=1$, suggestive only).
 
-The value $\rho_T \approx 20$ g/cm³ emerges as a candidate
+The saturation density $\rho_T \approx 20$ g/cm³ emerges as a candidate
 universal saturation scale of the temporal-field topology — not an
 ambient-density switch — supported by cross-scale consistency across 40
 orders of magnitude in mass (proton to galaxy cluster), within
@@ -119,7 +119,7 @@ This paper establishes $\rho_T$ through a convergent multi-scale approach:
 | **Compact** | Magnetars | $M \sim 1.4$–$2.0\,M_\odot$ | $\rho \sim 10^{14}$ g/cm³ | $P_{\text{crit}} \approx 6.8$ s (universal) | 1E 2259+586: 4% match ($N=1$) |
 | **Galactic** | SPARC Galaxies | $10^9$–$10^{12} M_\odot$ | $\rho \sim 10^{-24}$ g/cm³ | $R_{\text{DM}} \propto M^{\alpha_{\rm SPARC}}$ | $\alpha_{\rm SPARC} = 0.355 \pm 0.043$ |
 | **Local** | Milky Way | $M \sim 10^{12} M_\odot$ | $\rho \sim 10^{-24}$ g/cm³ | Keplerian transition | $R \approx 19$ kpc (scale-consistency check) |
-| **Screening** | 26 Objects | $10^{-24}$–$10^{33}$ g | $10^{-24}$–$10^{14}$ g/cm³ | $S \propto \rho^{\beta_{\rm scr}}$ | $\beta_{\rm scr} = 0.334$ ($R^2 = 0.9999$) |
+| **Screening** | 26 Objects | $10^{-24}$–$10^{33}$ g | $10^{-24}$–$10^{14}$ g/cm³ | $S \propto \rho^{\beta_{\rm scr}}$ | $\beta_{\rm scr} = 0.334$ ($R^2 = 0.99995$) |
 
 *Note: The convergence of constraints across 40 orders of magnitude in mass motivates $\rho_T$ as a candidate saturation scale; full dependency audit pending.*
 
@@ -360,7 +360,7 @@ exponents ranging from 0.28 to 0.42, but the ensemble average converges near
 
 The significance of this result emerges when combined with the Temporal
 Topology screening analysis (Section 4). The empirical screening law $S
-\propto \rho^{0.334}$ ($R^2 = 0.9999$) spans 15 orders of magnitude in
+\propto \rho^{0.334}$ ($R^2 = 0.99995$) spans 15 orders of magnitude in
 density—from gas giants ($\rho \sim 1$ g/cm³) to binary pulsars ($\rho \sim
 10^{14}$ g/cm³). The consistency of this exponent across such a range is
 suggestive, though the high $R^2$ is partly a consequence of the definitions
@@ -1763,7 +1763,7 @@ The primary findings are:
 
 - **Galactic Scaling:** SPARC rotation curves yield $\alpha_{\rm SPARC} = 0.355 \pm 0.043$ (bootstrap, 1000 resamples), consistent with the $M^{1/3}$ expectation within $\sim$0.5$\sigma$.
 
-- **Screening Hierarchy:** 26 objects spanning 15 orders of magnitude in density reveal $S \propto \rho^{0.334}$ ($R^2 = 0.9999$), explaining why GR tests pass (binary pulsars: $S > 30{,}000$) while galactic dynamics show scalar effects ($S \sim 0.01$).
+- **Screening Hierarchy:** 26 objects spanning 15 orders of magnitude in density reveal $S \propto \rho^{0.334}$ ($R^2 = 0.99995$), explaining why GR tests pass (binary pulsars: $S > 30{,}000$) while galactic dynamics show scalar effects ($S \sim 0.01$).
 
 - **Magnetar Test:** Expected $P_{\text{crit}} \approx 6.8$ s matches 1E 2259+586 ($P = 6.98$ s) within 4%, providing a compact-object scale-consistency check of the $\rho_T$ extrapolation, while remaining statistically limited by a single-object sample.
 
