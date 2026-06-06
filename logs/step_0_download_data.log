@@ -1,0 +1,17 @@
+[02:05:27] [INFO] Already exists: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/data/sparc/Table1.mrt
+[02:05:27] [INFO] Already exists: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/data/sparc/Table2.mrt
+[02:05:27] [SUCCESS] All data files present.
+[02:05:27] [SUCCESS] Completed in 0.0s
+[02:05:27] [INFO] 
+[02:05:27] [INFO] ================================================================================
+[02:05:27] [INFO] STEP: step_1_scaling
+[02:05:27] [INFO] ================================================================================
+[02:05:27] [INFO] 
+[02:05:29] [SUCCESS] Figure saved to results/figures/figure_2_scaling.png
+[02:05:29] [SUCCESS] Numerical outputs saved to results/outputs/step_1_scaling.json
+[02:05:29] [SUCCESS] Figure saved to results/figures/figure_3_wd_screening.png
+[02:05:29] [SUCCESS] Numerical outputs saved to results/outputs/step_2_wd_screening.json
+[02:05:29] [SUCCESS] Numerical outputs saved to results/outputs/step_3_screening_hierarchy.json
+[02:05:33] [SUCCESS] Numerical outputs saved to results/outputs/step_4_sparc_analysis.json
+[02:05:34] [SUCCESS] Numerical outputs saved to results/outputs/step_4b_sparc_examples.json
+[02:05:34] [SUCCESS] Numerical outputs saved to results/outputs/step_5_ultimate_screening.json

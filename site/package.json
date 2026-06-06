@@ -1,8 +1,8 @@
 {
   "name": "tep-ucd-site",
   "version": "0.4.0",
-  "description": "Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales",
-  "comment": "Package version matches manuscript version v0.3 (New Delhi)",
+  "description": "Universal Critical Density: Cross-Scale Consistency of ρ_T",
+  "comment": "Package version matches manuscript version v0.4 (New Delhi)",
   "main": "index.html",
   "scripts": {
     "dev": "node dev-server.js",

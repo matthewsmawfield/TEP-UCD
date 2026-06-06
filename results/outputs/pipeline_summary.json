@@ -1,0 +1,167 @@
+{
+  "pipeline": "TEP-UCD",
+  "version": "v0.4 (New Delhi)",
+  "date": "2026-06-07T02:05:20",
+  "elapsed_seconds": 7.36,
+  "steps": {
+    "step_0_download_data": {
+      "status": "completed",
+      "outputs": {
+        "status": "ok",
+        "dir": "/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/data/sparc"
+      }
+    },
+    "step_1_scaling": {
+      "status": "completed",
+      "outputs": {
+        "M_earth_kg": 5.972e+24,
+        "R_TEP_earth_m": 4200000.0,
+        "M_rbh_solar": 20000000.0,
+        "R_rbh_km": 79017940.04341884,
+        "mass_range_solar": [
+          3.0033141058200587e-06,
+          100000000000.00005
+        ],
+        "radius_tep_range_km": [
+          4200.000000000003,
+          1351187768.301876
+        ]
+      }
+    },
+    "step_2_wd_screening": {
+      "status": "completed",
+      "outputs": {
+        "sirius_b_mass": 1.018,
+        "sirius_b_radius_km": 5800.0,
+        "sirius_b_R_T_km": 292840.8313496635,
+        "screening_factor_sirius": 50.48979850856267,
+        "chandra_mass": 1.44,
+        "chandra_radius_km": 6163.419701259145,
+        "chandra_R_T_km": 328727.87763040175,
+        "screening_factor_chandra": 53.335306301345156
+      }
+    },
+    "step_3_screening_hierarchy": {
+      "status": "completed",
+      "outputs": {
+        "objects": 7,
+        "rho_T_g_cm3": 20.0,
+        "R_TEP_earth_km": 4200.0,
+        "screening_data": {
+          "Earth": {
+            "M_kg": 5.972e+24,
+            "R_km": 6371.0,
+            "rho_g_cm3": 5.5,
+            "R_T_km": 4200.0,
+            "screening": 0.6592371684194004,
+            "type": "planet"
+          },
+          "Jupiter": {
+            "M_kg": 1.8979016000000002e+27,
+            "R_km": 69911.0,
+            "rho_g_cm3": 1.33,
+            "R_T_km": 28661.610381575538,
+            "screening": 0.4099728280467385,
+            "type": "planet"
+          },
+          "Sun": {
+            "M_kg": 1.98847e+30,
+            "R_km": 696340.0,
+            "rho_g_cm3": 1.41,
+            "R_T_km": 291104.5800776326,
+            "screening": 0.4180494874308996,
+            "type": "ms"
+          },
+          "Proxima": {
+            "M_kg": 2.4259333999999997e+29,
+            "R_km": 107236.36,
+            "rho_g_cm3": 56.8,
+            "R_T_km": 144378.43014440668,
+            "screening": 1.3463570578524549,
+            "type": "ms"
+          },
+          "Sirius B": {
+            "M_kg": 2.02426246e+30,
+            "R_km": 5800.0,
+            "rho_g_cm3": 2380000.0,
+            "R_T_km": 292840.8313496635,
+            "screening": 50.48979850856267,
+            "type": "wd"
+          },
+          "Procyon B": {
+            "M_kg": 1.19705894e+30,
+            "R_km": 8600.0,
+            "rho_g_cm3": 550000.0,
+            "R_T_km": 245799.61719868446,
+            "screening": 28.58135083705633,
+            "type": "wd"
+          },
+          "Typical NS": {
+            "M_kg": 2.783858e+30,
+            "R_km": 12.0,
+            "rho_g_cm3": 400000000000000.0,
+            "R_T_km": 325655.4747220961,
+            "screening": 27137.956226841343,
+            "type": "ns"
+          }
+        }
+      }
+    },
+    "step_4_sparc_analysis": {
+      "status": "completed",
+      "outputs": {
+        "alpha_marginalized": 0.35445136840579006,
+        "alpha_err_marginalized": 0.01350495321917755,
+        "alpha_boot": 0.35490227449393696,
+        "alpha_boot_err": 0.04279143798578596,
+        "k": 0.0007860216159370755,
+        "rho_screen_pc3": 0.4915955265614741,
+        "rms_scatter_dex": 0.47971316578890383,
+        "g_transition": 4.859563682425492e-10,
+        "a0_MOND": 1.2e-10,
+        "n_galaxies": 167
+      }
+    },
+    "step_4b_sparc_examples": {
+      "status": "completed",
+      "outputs": {
+        "figure": "figure_5_sparc_examples.png",
+        "K_TEP": 0.0007860216159370755
+      }
+    },
+    "step_5_ultimate_screening": {
+      "status": "completed",
+      "outputs": {
+        "objects": 26,
+        "screening_slope": 0.3337735867180422,
+        "screening_intercept": -0.44332081604069673,
+        "screening_r2": 0.9999495157538255,
+        "screening_r": 0.9999747575583223,
+        "screening_std_err": 0.0007905322861102757
+      }
+    },
+    "step_6_sensitivity": {
+      "status": "completed",
+      "outputs": {
+        "grid_size": 200,
+        "figure": "figure_8_sensitivity.png"
+      }
+    },
+    "step_7_sparc_residuals": {
+      "status": "completed",
+      "outputs": {
+        "n_galaxies": 167,
+        "rms_scatter": 0.47971316578890383,
+        "r_gas": -0.16393626580461215,
+        "p_gas": 0.0342636658119509,
+        "r_sigma": -0.1290659982947543,
+        "p_sigma": 0.09644602479272722,
+        "r_inc": 0.2966111028330125,
+        "p_inc": 9.93274233755627e-05,
+        "r_rho": -0.10810055472014986,
+        "p_rho": 0.16436105565563863,
+        "interpretation": "TEP (Field Theory)"
+      }
+    }
+  }
+}

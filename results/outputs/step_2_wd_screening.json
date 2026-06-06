@@ -1,0 +1,10 @@
+{
+  "sirius_b_mass": 1.018,
+  "sirius_b_radius_km": 5800.0,
+  "sirius_b_R_T_km": 292840.8313496635,
+  "screening_factor_sirius": 50.48979850856267,
+  "chandra_mass": 1.44,
+  "chandra_radius_km": 6163.419701259145,
+  "chandra_R_T_km": 328727.87763040175,
+  "screening_factor_chandra": 53.335306301345156
+}

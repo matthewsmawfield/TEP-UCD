@@ -4,14 +4,14 @@
     The claim that terrestrial clock correlations calibrate a fundamental density parameter ($\rho_T \approx 20$ g/cm³) is extraordinary and requires rigorous justification. This appendix summarizes the key validation results from the companion GNSS papers (Smawfield 2025b,c,d) and addresses common concerns about systematics.
 </p>
 
-<h2>A.1 Physical Mechanism</h2>
+<h3>A.1 Physical Mechanism</h3>
 <p>
     In the TEP framework, the scalar field $\phi$ modulates proper time via a conformal factor $A(\phi) = \exp(\beta_A\phi/M_{\text{Pl}})$. Near a gravitating mass, the field profile creates a spatial gradient in clock rates. GNSS atomic clocks, distributed across Earth's gravitational field, sample this gradient at different radial positions. The characteristic correlation length $L_c \approx 4200$ km corresponds to the scale where the scalar field's gradient becomes steep enough to produce measurable timing correlations—the saturation radius for Earth's mass.
 </p>
 
-<h2>A.2 Why Not Ionospheric, Tropospheric, or Orbital Systematics?</h2>
+<h3>A.2 Why Not Ionospheric, Tropospheric, or Orbital Systematics?</h3>
 
-<h3>Scale Separation</h3>
+<h4>Scale Separation</h4>
 <p>
     The 4200 km correlation length is distinct from known geodetic systematics:
 </p>
@@ -24,7 +24,7 @@
     Power spectral analysis shows the 4200 km feature as a persistent background covariance floor across GPS, Galileo, and GLONASS, with no counterpart in ionospheric or tropospheric delay products.
 </p>
 
-<h3>Multi-Center Verification</h3>
+<h4>Multi-Center Verification</h4>
 <p>
     The correlation structure persists across independent clock solutions from three analysis centers:
 </p>
@@ -61,7 +61,7 @@
 </table>
 <p style="font-size: 0.9em; color: #666;"><em>Table A.1: Multi-center correlation parameters. The recovered $L_c$ varies by &lt;5% across centers (1999–2024), strongly disfavoring software-specific processing artifacts as the origin of the correlation scale.</em></p>
 
-<h3>Null Tests</h3>
+<h4>Null Tests</h4>
 <p>
     Three null tests were performed (all satisfied at &gt;5σ):
 </p>
@@ -71,7 +71,7 @@
     <li><strong>White noise injection:</strong> Replacing real data with white noise yields no coherent scale</li>
 </ol>
 
-<h2>A.3 25-Year Temporal Stability</h2>
+<h3>A.3 25-Year Temporal Stability</h3>
 <p>
     The correlation length has been confirmed over a 25-year temporal baseline (2000–2025) using CODE final products. The signal shows:
 </p>
@@ -82,7 +82,7 @@
     <li>CMB frame alignment (reported at 3.8σ significance in the companion analysis)</li>
 </ul>
 
-<h2>A.4 Raw RINEX Validation</h2>
+<h3>A.4 Raw RINEX Validation</h3>
 <p>
     To strongly constrain the processing artifact hypothesis, the correlation was detected in raw RINEX observations processed with Single Point Positioning (SPP) using broadcast ephemerides only—no network solutions, no precise orbits, no clock products.
 </p>
@@ -125,23 +125,23 @@
 </table>
 <p style="font-size: 0.9em; color: #666;"><em>Table A.2: Raw RINEX validation results. All signatures detected in processed (PPP) data are independently confirmed in raw (SPP) observations, strongly constraining processing artifacts as the origin of the observed signatures.</em></p>
 
-<h2>A.5 What the GNSS Measurement Does and Does Not Claim</h2>
+<h3>A.5 What the GNSS Measurement Does and Does Not Claim</h3>
 
-<div class="principle">
+<div class="callout">
 <h4>What GNSS Measures</h4>
 <p>
     The GNSS analysis measures a characteristic correlation length $L_c \approx 4200$ km in atomic clock residuals. This length is interpreted as the Temporal Topology saturation radius for Earth's mass under the TEP framework.
 </p>
 </div>
 
-<div class="principle">
+<div class="callout">
 <h4>What GNSS Does Not Claim</h4>
 <p>
     The GNSS analysis does not claim to have detected the scalar field directly. The correlation length is an empirical calibration parameter. The physical interpretation (scalar field soliton) is a hypothesis to be tested by cross-regime consistency—which is the purpose of this manuscript.
 </p>
 </div>
 
-<h2>A.6 Companion Papers</h2>
+<h3>A.6 Companion Papers</h3>
 <p>
     Full methodology, data products, and reproducibility information are available in the companion papers:
 </p>

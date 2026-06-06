@@ -131,10 +131,21 @@ async function buildStaticSite() {
             }
         }
         
-        // Copy citation files to dist root
+        // Copy manuscript PDF to dist/public/docs/
+        const docsDir = path.join(distDir, 'public', 'docs');
+        if (!fs.existsSync(docsDir)) {
+            fs.mkdirSync(docsDir, { recursive: true });
+        }
+        const repoPdf = path.join(__dirname, '..', '6-TEP-UCD-v0.4-NewDelhi.pdf');
+        if (fs.existsSync(repoPdf)) {
+            fs.copyFileSync(repoPdf, path.join(docsDir, '6-TEP-UCD-v0.4-NewDelhi.pdf'));
+            console.log('📁 Copied manuscript PDF to dist/public/docs/');
+        }
+        
+        // Copy citation files to dist root (from repo root, not site/)
         const citationFiles = ['CITATION.cff', 'CITATION.bib', 'citation.json', 'codemeta.json'];
         for (const file of citationFiles) {
-            const src = path.join(__dirname, file);
+            const src = path.join(__dirname, '..', file);
             const dest = path.join(distDir, file);
             if (fs.existsSync(src)) {
                 fs.copyFileSync(src, dest);

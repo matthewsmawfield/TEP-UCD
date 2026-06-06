@@ -32,7 +32,7 @@ from html_to_pdf import HTMLToPDFConverter, create_preset_configs
 def load_citation_metadata():
     """Load version and codename from CITATION.cff."""
     base_dir = Path(__file__).parent.parent
-    citation_file = base_dir / 'site' / 'CITATION.cff'
+    citation_file = base_dir / 'CITATION.cff'
     
     if not citation_file.exists():
         print("⚠️  CITATION.cff not found, using defaults")

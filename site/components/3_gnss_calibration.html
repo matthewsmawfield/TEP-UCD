@@ -1,6 +1,6 @@
 <h2>2. Terrestrial Calibration: GNSS Atomic Clock Correlations</h2>
 
-<h2>Distance-Structured Correlations in Atomic Clocks</h2>
+<h3>Distance-Structured Correlations in Atomic Clocks</h3>
 
 <p>The first empirical constraint on $\rho_T$ comes from terrestrial atomic clock networks. Multi-center analysis of GNSS (Global Navigation Satellite System) clock products reveals distance-structured correlations with a characteristic length scale $L_c \approx 4200$ km for Earth's mass. Operationally, $L_c$ denotes the best-fit exponential decay length recovered by fitting clock-residual covariance versus inter-station separation (see Appendix A). Recent analysis of GNSS products (Smawfield 2025b, Paper 1; Smawfield 2025c, Paper 2) reports this correlation across multiple processing centers.</p>
 
@@ -15,7 +15,7 @@
     <li><strong>Raw RINEX validation:</strong> Pattern survives in unprocessed Single Point Positioning (SPP) analysis, strongly constraining processing artifacts (Smawfield 2025d, Paper 3).</li>
 </ul>
 
-<h2>Derivation of $\rho_T$ from $L_c$</h2>
+<h3>Derivation of $\rho_T$ from $L_c$</h3>
 
 <p>The characteristic length $L_c$ is interpreted as the Temporal Topology saturation radius for Earth's mass. For a spherical mass distribution, the saturation radius is:</p>
 
@@ -35,7 +35,7 @@
     $$ \rho_T = \frac{3 \times (6 \times 10^{27}\,\text{g})}{4\pi \times (4.2 \times 10^8\,\text{cm})^3} \approx 20\,\text{g/cm}^3 $$
 </div>
 
-<h2>Systematic Uncertainties</h2>
+<h3>Systematic Uncertainties</h3>
 
 <p>The primary systematic uncertainties are:</p>
 <ul>
@@ -46,7 +46,7 @@
 
 <p>Combining in quadrature: $\rho_T = 20 \pm 8$ g/cm³ (40% systematic uncertainty). This range is consistent with electron degeneracy thresholds (Section 5.2) and provides the calibration scale for all subsequent tests.</p>
 
-<h2>Discrimination from Geophysical Signals</h2>
+<h3>Discrimination from Geophysical Signals</h3>
 
 <p>A critical objection to long-range clock correlations is the presence of tropospheric and ionospheric delays. However, spectral power analysis reveals distinct scale separation:</p>
 
@@ -58,7 +58,7 @@
 
 <p>The 4200 km feature shows no counterpart in ionospheric or tropospheric delay products. Furthermore, the signal aligns with the CMB rest frame (reported at 3.8σ significance in the companion analysis)—a directional dependence absent in atmospheric models. Power spectral analysis across GPS, Galileo, and GLONASS confirms this as a persistent background covariance floor, not a geophysical artifact.</p>
 
-<h2>Null Tests and Robustness</h2>
+<h3>Null Tests and Robustness</h3>
 
 <p>The GNSS correlation pattern survives multiple null tests:</p>
 <ul>
@@ -68,6 +68,6 @@
     <li><strong>Temporal stability:</strong> 25-year consistency (Paper 2) strongly disfavors transient instrumental effects.</li>
 </ul>
 
-<p>The convergence of multi-center, multi-decade, and raw-data analyses establishes $L_c \approx 4200$ km as the canonical terrestrial screening length, independent of theoretical interpretation. A shorter MGEX held-out verification run (Paper 14) yields $\lambda_T \approx 1{,}396 \pm 90$ km (exponential fit, $R^2 \approx 0.49$); this short-baseline estimand is not interchangeable with the canonical multi-center baseline, and we adopt $L_c \approx 4200$ km as the terrestrial screening length for cross-regime calibration.</p>
+<p>The convergence of multi-center, multi-decade, and raw-data analyses establishes $L_c \approx 4200$ km as the canonical terrestrial screening length from the 25-year GNSS baseline (Papers 1–2, 6), independent of theoretical interpretation. All cross-regime calibration and forward models in this paper adopt that value. Paper 14 provides an independent MGEX held-out verification on a ~1 yr combined-clock span ($\lambda_T \approx 1{,}396 \pm 90$ km, $R^2 \approx 0.49$), confirming signal presence on a shorter baseline and different product; it is cited as verification only, not as the dimensional scale for $\rho_T$ extrapolation.</p>
 
 <p><em>For detailed methodology and validation, see Appendix A and Papers 1–3.</em></p>

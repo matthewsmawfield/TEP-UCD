@@ -27,38 +27,33 @@ credentials.json
 site/node_modules/
 site/dist/
 
-# Editor files
+# Editor / IDE files
 *.swp
 *.swo
 *~
 .vscode/
 .idea/
-.DS_Store
+*.code-workspace
+.cursor/
+.windsurf/
+.devin/
 
 # Temporary files
 *.tmp
 *.temp
-
 tmp/
 
-# Data & Large Results
-# data/  # Uncommented - SPARC data is small and needed for reproducibility
-# results/
-# logs/
+# Private research notes
+private/
+research/
+
+
 
 # Ignore massive data files
 results/**/*.fits
 results/**/*.hdf5
 
-# Allow keeping the directory structure (optional)
-# !data/.gitkeep
-# !results/.gitkeep
-# !logs/.gitkeep
-
-# Private research notes (should never be committed)
-research
-.windsurf
-# IDE files
-*.code-workspace
-
-.devin
+# Allow keeping the directory structure
+!data/.gitkeep
+!results/.gitkeep
+!logs/.gitkeep

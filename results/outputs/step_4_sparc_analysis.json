@@ -1,0 +1,12 @@
+{
+  "alpha_marginalized": 0.35445136840579006,
+  "alpha_err_marginalized": 0.01350495321917755,
+  "alpha_boot": 0.35490227449393696,
+  "alpha_boot_err": 0.04279143798578596,
+  "k": 0.0007860216159370755,
+  "rho_screen_pc3": 0.4915955265614741,
+  "rms_scatter_dex": 0.47971316578890383,
+  "g_transition": 4.859563682425492e-10,
+  "a0_MOND": 1.2e-10,
+  "n_galaxies": 167
+}

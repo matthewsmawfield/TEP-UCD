@@ -19,7 +19,7 @@
 
 ### Usage
 
-These data files are used by `scripts/figure_5_sparc_analysis.py` to test the TEP prediction that the dark matter onset radius scales as $R_{\rm DM} \propto M_{\rm bar}^{1/3}$.
+These data files are used by `scripts/steps/step_4_sparc_analysis.py` to test the TEP prediction that the dark matter onset radius scales as $R_{\rm DM} \propto M_{\rm bar}^{1/3}$.
 
 ### Attribution
 

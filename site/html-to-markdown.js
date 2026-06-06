@@ -61,9 +61,9 @@ class HTMLToMarkdownConverter {
         
         // Convert images
         html = html.replace(/<img[^>]*src=["']([^"']*)["'][^>]*alt=["']([^"']*)["'][^>]*>/gi, (match, src, alt) => {
-            // Fix path for root-level markdown
+            // Fix path for root-level markdown: figures are generated into results/figures/
             if (src.startsWith('figures/')) {
-                src = 'site/' + src;
+                src = 'results/' + src;
             }
             return `\n![${alt}](${src})\n`;
         });

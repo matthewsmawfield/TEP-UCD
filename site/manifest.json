@@ -1,7 +1,7 @@
 {
   "title": "Universal Critical Density: Cross-Scale Consistency of \u03c1_T",
   "version": "v0.4 (New Delhi)",
-  "last_updated": "05 June 2026",
+  "last_updated": "7 June 2026",
   "description": "A universal saturation density scale (\u03c1_T \u2248 20 g/cm\u00b3) organizes gravitational anomalies across 40 orders of magnitude in mass.",
   "sections": [
     {
@@ -39,6 +39,12 @@
       "title": "5. Atomic Boundary: Quantum-Gravitational Crossover",
       "file": "6_atomic_boundary.html",
       "order": 6
+    },
+    {
+      "id": "section-sensitivity",
+      "title": "6b. Sensitivity and Feasibility: EHT Soliton Detection",
+      "file": "6b_sensitivity.html",
+      "order": 6.5
     },
     {
       "id": "section-universal-scaling",

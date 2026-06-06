@@ -3,7 +3,7 @@ title: 'Universal Critical Density: Cross-Scale Consistency of ρ_T'
 message: If you use this software, please cite it as below.
 type: article
 version: v0.4 (New Delhi)
-date-released: 2026-06-05
+date-released: 2026-06-07
 authors:
 - family-names: Smawfield
   given-names: Matthew Lukin
@@ -14,7 +14,7 @@ abstract: 'This paper establishes a universal saturation density scale, rho_T ~ 
   mass. Terrestrial calibration from GNSS atomic clock coherence limits yields a characteristic
   length L_c ~ 4200 km for Earth. This density is externally calibrated from GNSS
   atomic clock measurements. The SPARC galaxy database confirms the predicted R_DM
-  ∝ M^(1/3) scaling law (alpha = 0.354 ± 0.014). A Temporal Topology screening analysis
+  ∝ M^(1/3) scaling law (alpha = 0.355 ± 0.043 (bootstrap, 1000 resamples)). A Temporal Topology screening analysis
   of 26 objects (S ∝ rho^(1/3)) explains why precision GR tests pass while galactic
   dynamics show deviations. The model correctly predicts the critical anti-glitch
   period for magnetars (~6.8 s) and provides the calibration for testing the soliton
