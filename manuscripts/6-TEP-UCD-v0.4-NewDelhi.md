@@ -42,24 +42,20 @@ stripping of the scalar field envelope.
 
 Temporal Topology screening resolves the apparent conflict with
 precision GR tests. Analysis of 26 astrophysical objects spanning 15
-orders of magnitude in density reveals an empirical scaling $S \propto
-\rho^{0.334}$ ($R^2 = 0.9999$), consistent with the predicted $\rho^{1/3}$
-organization. At nuclear densities (binary pulsars: $\rho \sim 10^{14}$
-g/cm³), screening factors exceed $S > 30{,}000$, suppressing scalar
-contributions to less than 0.003% of orbital dynamics. This hierarchy
-explains why Solar System tests, binary pulsar timing, and gravitational
-wave observations show no deviation from GR, while galactic dynamics
-($\rho \sim 10^{-24}$ g/cm³, $S \sim 0.01$) exhibit strong scalar
-effects.
+orders of magnitude in density reveals a consistency relation $S \propto
+\rho^{0.334}$ ($R^2 = 0.9999$), algebraically expected from the
+$R_T(M)$ construction; it explains why GR tests pass (binary pulsars:
+$S > 30{,}000$) while galactic dynamics ($\rho \sim 10^{-24}$ g/cm³,
+$S \sim 0.01$) exhibit strong scalar effects.
 
-Compact object consistency is assessed using magnetar anti-glitches. For
-a canonical neutron star mass ($M \approx 1.4 M_\odot$) and $\rho_T
-\approx 20$ g/cm³, the model predicts a critical spin period $P_{\rm
-crit} \approx 6.8$ s, below which the saturation radius exceeds the stellar
-radius. The magnetar 1E 2259+586 ($P = 6.98$ s) exhibits anti-glitch
-behavior, consistent with this threshold within 4%.
+Compact object consistency is assessed using magnetar anti-glitches.
+The model predicts a universal critical spin period $P_{\rm crit}
+\approx 6.8$ s (independent of stellar mass), below which the saturation
+radius exceeds the stellar radius. The magnetar 1E 2259+586 ($P = 6.98$
+s) exhibits anti-glitch behavior, consistent with this threshold within
+4% ($N=1$, suggestive only).
 
-The saturation scale $\rho_T \approx 20$ g/cm³ emerges as a candidate
+The value $\rho_T \approx 20$ g/cm³ emerges as a candidate
 universal saturation scale of the temporal-field topology — not an
 ambient-density switch — supported by cross-scale consistency across 40
 orders of magnitude in mass (proton to galaxy cluster), within
@@ -120,7 +116,7 @@ This paper establishes $\rho_T$ through a convergent multi-scale approach:
 | Scale | System | Mass Range | Density Range | Key Observable | Result |
 | --- | --- | --- | --- | --- | --- |
 | **Terrestrial** | GNSS Clocks | $M_\oplus \sim 6 \times 10^{27}$ g | $\rho_\oplus \sim 5.5$ g/cm³ | $L_c \approx 4200$ km | $\rho_T \approx 20$ g/cm³ |
-| **Compact** | Magnetars | $M \sim 1.4 M_\odot$ | $\rho \sim 10^{14}$ g/cm³ | $P_{\text{crit}} \approx 6.8$ s | 1E 2259+586: 4% match |
+| **Compact** | Magnetars | $M \sim 1.4$–$2.0\,M_\odot$ | $\rho \sim 10^{14}$ g/cm³ | $P_{\text{crit}} \approx 6.8$ s (universal) | 1E 2259+586: 4% match ($N=1$) |
 | **Galactic** | SPARC Galaxies | $10^9$–$10^{12} M_\odot$ | $\rho \sim 10^{-24}$ g/cm³ | $R_{\text{DM}} \propto M^{\alpha_{\rm SPARC}}$ | $\alpha_{\rm SPARC} = 0.355 \pm 0.043$ |
 | **Local** | Milky Way | $M \sim 10^{12} M_\odot$ | $\rho \sim 10^{-24}$ g/cm³ | Keplerian transition | $R \approx 19$ kpc (scale-consistency check) |
 | **Screening** | 26 Objects | $10^{-24}$–$10^{33}$ g | $10^{-24}$–$10^{14}$ g/cm³ | $S \propto \rho^{\beta_{\rm scr}}$ | $\beta_{\rm scr} = 0.334$ ($R^2 = 0.9999$) |
@@ -436,9 +432,9 @@ characteristic upturn in the RAR. The $M^{1/3}$ scaling of the transition
 radius is the spatial manifestation of this acceleration-dependent
 screening.
 
-![Example Rotation Curves](site/figures/figure_5_sparc_examples.png)
+![Example Rotation Curves](results/figures/figure_5_sparc_examples.png)
 
-Figure 1: Representative SPARC rotation curves. Observed velocities
+Figure 5: Representative SPARC rotation curves. Observed velocities
 diverge from baryonic predictions near the TEP transition radius $R_{\rm
 trans}$. Shaded regions indicate the screened (Newtonian) zone. The
 agreement between $R_{\rm trans}$ and the observed onset $R_{\rm DM}$
@@ -520,9 +516,9 @@ plausibly attributable to rotation-curve deprojection systematics. Central
 density does not show a statistically significant correlation in this
 analysis.
 
-![SPARC Residual Analysis](site/figures/figure_sparc_residuals.png)
+![SPARC Residual Analysis](results/figures/figure_7_sparc_residuals.png)
 
-Figure 2: Residual analysis of the SPARC $M^{1/3}$ scaling. (a) Scaling
+Figure 7: Residual analysis of the SPARC $M^{1/3}$ scaling. (a) Scaling
 relation colored by residual. (b-e) Correlations with baryonic
 properties and screening proxies. (f) Gaussian residual distribution
 ($\sigma = 0.48$ dex). (g) All correlations fall below significance
@@ -617,9 +613,12 @@ fluctuations.
 Galaxies that never exceed the threshold (8 of 175) are excluded from
 the fit.
 
-Bootstrap uncertainties (1000 resamples) account for sample variance. The
-threshold-marginalized estimate averages over loose (1.1), fiducial (1.3),
-and strict (1.5) definitions.
+The reported uncertainty ($\pm 0.043$) is the bootstrap standard deviation
+from 1000 galaxy-level resamples, computed with the fiducial threshold
+($V_{\rm obs}/V_{\rm bar} > 1.3$). This naturally incorporates both sample
+variance and the sensitivity to onset definition. Varying the threshold
+from 1.1 to 1.5 yields exponents from 0.28 to 0.42, bracketing the
+fiducial value.
 
 ## 4. Temporal Topology Screening Validation
 
@@ -669,7 +668,7 @@ to the saturation scaling (see Figure 3); a soliton interpretation is one candid
 **Soliton (TEP):** $R_{sol} \propto M^{+1/3}$ — heavier
 fields are larger
 
-![White Dwarf Screening Mechanism](site/figures/figure_3_wd_screening.png)
+![White Dwarf Screening Mechanism](results/figures/figure_3_wd_screening.png)
 
 Figure 3: The "Scissors" Effect. The defining visual signature is the
 divergence of scales: as mass increases, the white dwarf physical radius
@@ -703,7 +702,7 @@ dwarfs, main sequence stars, white dwarfs, neutron stars, and binary
 pulsars) yields a compact summary of how the defined screening factor varies
 with density. A linear regression in log-log space yields:
 
-$S \propto \rho^{\beta_{\rm scr}}, \qquad \beta_{\rm scr} = 0.334 \quad (R^2 = 0.9999)$
+$S \propto \rho^{\beta_{\rm scr}}, \qquad \beta_{\rm scr} = 0.334 \quad (R^2 = 0.99995)$
 
 The exponent $\beta_{\rm scr} = 0.334$ is statistically indistinguishable from 1/3. Under the
 stated definitions, this is the expected scaling: if $R_T \propto
@@ -745,7 +744,7 @@ than independent confirmation (see Note on Interpretation above).
 
 ### 4.3 Complete Screening Hierarchy
 
-![Screening Hierarchy Across 15 Orders of Magnitude](site/figures/figure_4_screening_hierarchy.png)
+![Screening Hierarchy Across 15 Orders of Magnitude](results/figures/figure_4_screening_hierarchy.png)
 
 Figure 4: The Screening Hierarchy. Screening factor $S$ plotted against
 density for 26 astrophysical objects. The empirical power law $S \propto
@@ -765,7 +764,7 @@ small and/or below current constraints |
 | Brown Dwarfs | 50 – 77 | 1.4 – 1.6× | Just above $\rho_T$; screening onset begins |
 | White Dwarfs | $10^5$ – $10^6$ | 27 – 50× | Star embedded in soliton; Keplerian mass = baryonic mass |
 | Neutron Stars | $10^{14}$ | 27,000× | Scalar contribution less than 0.004%; pure GR dynamics |
-| Binary Pulsars | $10^{14}$ | 32,000× | GR verified to 0.2%; Nobel Prize 1993 |
+| Binary Pulsars | $10^{14}$ | 29,000× | GR verified to 0.2%; Nobel Prize 1993 |
 
 Table 4.1: Complete screening hierarchy across astrophysical object
 classes. The screening factor increases monotonically with density,
@@ -786,8 +785,8 @@ tests of GR all occur in regimes where screening is operative:
 | Lunar Laser Ranging | Nordtvedt effect | $10^{-13}$ | 0.56× | Calibration boundary |
 | Cassini Conjunction | Shapiro delay | $2 \times 10^{-5}$ | 0.42× | Scalar sub-dominant |
 | MESSENGER | Perihelion precession | $3 \times 10^{-4}$ | 0.65× | Calibration boundary |
-| Hulse-Taylor Pulsar | GW emission | 0.2% | 33,000× | Completely screened |
-| Double Pulsar | 7 PPN tests | 0.05% | 32,000× | Completely screened |
+| Hulse-Taylor Pulsar | GW emission | 0.2% | 29,900× | Completely screened |
+| Double Pulsar | 7 PPN tests | 0.05% | 26,700× | Completely screened |
 
 Table 4.2: Precision GR tests and their screening factors. All tests
 are consistent with GR; TEP explains this via environment-dependent
@@ -843,7 +842,7 @@ The scalar field appears to couple to this thermodynamic transition.
 
 **Principle:**
 
-$\rho_T \approx 20$ g/cm³ is a saturation scale of the temporal-field topology, **not a local on/off switch**. Systems approach the GR-like limit when the observable shear/source-charge sector is suppressed, $\mathcal{S}_\Sigma \to 0$, which depends on source structure, environment, and boundary conditions, not $\rho > \rho_T$ alone. The empirical screening hierarchy $S \propto \rho^{0.334}$ (§4.2) is a smooth power-law across 15 orders of magnitude in density, not a step function at $\rho_T$.
+$\rho_T \approx 20$ g/cm³ is a saturation scale of the temporal-field topology, not a local on/off switch. Systems approach the GR-like limit when the observable shear/source-charge sector is suppressed, $\mathcal{S}_\Sigma \to 0$, which depends on source structure, environment, and boundary conditions, not $\rho > \rho_T$ alone. The empirical screening hierarchy $S \propto \rho^{0.334}$ (§4.2) is a smooth power-law across 15 orders of magnitude in density, not a step function at $\rho_T$.
 
 #### Box 4.1: Summary — Three Cross-Regime Consistency Tests
 
@@ -858,7 +857,7 @@ the fixed $\rho_T$ calibration.
 
 **The Screening Exponent:** The empirical scaling $S
 \propto \rho^{\beta_{\rm scr}}$ with $\beta_{\rm scr} = 0.334$ emerges from data spanning 15 orders of
-magnitude in density, with $R^2 = 0.9999$. The exponent 1/3 is a
+magnitude in density, with $R^2 = 0.99995$. The exponent 1/3 is a
 direct consequence of the $M^{1/3}$ saturation scaling.
 
 **GR Test Consistency:** All five precision tests of
@@ -930,8 +929,8 @@ A single-particle Compton-scale estimate yields a core density
 \(\rho_{\rm core} \sim m_e^4 c^3 / \hbar^3 \sim 10^4\) g/cm³—white-dwarf
 scale, not the observed saturation scale. The gap of roughly three orders of
 magnitude between \(\rho_{\rm core}\) and \(\rho_T \approx 20\) g/cm³ is
-closed by the many-body Thomas–Fermi-TEP mean-field analysis developed in
-TEP-SPIN (Paper 24, Smawfield 2026c).
+closed by the many-body Thomas–Fermi-TEP mean-field analysis (in
+preparation).
 
 In a degenerate electron gas the relevant exclusion length is the Fermi
 wavelength
@@ -953,7 +952,7 @@ at \(\rho \approx 15\) g/cm³ (where the screening transition is steepest,
 \(\rho_T \approx 20\) g/cm³. The full transition from 10% to 90% screened
 spans roughly \(\rho \sim 2\)–30 g/cm³, reflecting the smooth, continuous
 nature of the many-body saturation slope. This derivation is the
-definitive theoretical bridge between the microscopic Compton scale and the
+rigorous theoretical bridge between the microscopic Compton scale and the
 macroscopic saturation scale; the simpler dimensional estimate presented
 below (Section 5.4) is retained as an order-of-magnitude consistency check.
 
@@ -991,7 +990,7 @@ the quantum-classical EOS transition
 **Thomas–Fermi-TEP mean field:** The many-body Fermi
 wavelength closes the gap between the Compton-scale core density
 \(\sim 10^4\) g/cm³ and the macroscopic saturation scale \(\rho_T\)
-(Paper 24)
+(in preparation)
 
 **Dimensional analysis:** Scalar coupling at atomic scales
 yields \(\rho_\phi \sim 10^1\) g/cm³
@@ -1000,7 +999,7 @@ The Thomas–Fermi-TEP derivation provides the rigorous theoretical mechanism:
 it specifies how the scalar potential \(V(\phi)\) and the Fermi-Dirac source
 combine to produce the observed saturation. The remaining constraints are
 phenomenological—they identify what the theory must reproduce and provide
-cross-checks, but the mean-field analysis is the definitive bridge. The key
+cross-checks, but the mean-field analysis is the rigorous bridge. The key
 point for the present manuscript is that \(\rho_T\) is not arbitrary: it is
 anchored by a first-principles many-body calculation.
 
@@ -1013,13 +1012,85 @@ underlying physics. The fundamental parameter is the saturation scale
 
 - The electron degeneracy threshold (equation of state physics)
 
-- The Thomas–Fermi-TEP mean-field bridge from Compton to saturation scale (Paper 24)
+- The Thomas–Fermi-TEP mean-field bridge from Compton to saturation scale (in preparation)
 
 - Dimensional analysis of scalar field coupling (theoretical consistency)
 
 The terrestrial coherence length follows as a derived quantity. GNSS
 observations do not determine \(\rho_T\); they measure it in the most
 accessible laboratory: Earth's gravitational field.
+
+## 6b. Sensitivity and Feasibility: EHT Soliton Detection
+
+The Temporal Topology framework predicts that compact objects such as black holes may harbor
+a solitonic core whose polarization signature differs from standard GR expectations. Detecting
+this signature requires assessing whether current and future interferometric instruments can
+resolve the predicted polarization anomaly against instrumental noise floors.
+
+### Polarization Signature Model
+
+In the soliton interpretation, a black-hole-like object retains a scalar-field core
+that modifies the polarization structure of surrounding emission. The observable is the
+fractional polarization $m_{\rm obs}$ of core emission, which depends on two parameters:
+
+- **Core relative brightness** $b_{\rm rel}$: the ratio of core to ring peak intensity.
+
+- **Intrinsic core polarization** $p_{\rm int}$: the fraction of core flux that is polarized.
+
+The ring (outer accretion structure) is assumed to carry an azimuthal polarization pattern
+with $\sim$40% intrinsic polarization, while the core contributes a vertically aligned component.
+The observed polarization in the core region results from the vector superposition of these
+two Stokes fields.
+
+### Feasibility Analysis
+
+![Sensitivity analysis for soliton core polarization detection](results/figures/figure_8_sensitivity.png)
+
+**Figure 8.** Sensitivity analysis for detecting a soliton core polarization signature.
+Curves show the observed fractional polarization $m_{\rm obs}$ in the core region as a function
+of core relative brightness, for four intrinsic polarization levels (10%, 30%, 60%, 90%).
+The horizontal dashed line marks a 10% detection threshold. Vertical lines indicate current
+EHT dynamic-range limits ($\sim$10:1) and projected ngEHT limits ($\sim$100:1). Regions left
+of the current limit require future instrumentation.
+
+The analysis shows that for cores with $p_{\rm int} \gtrsim 30\%$ and relative brightness
+$b_{\rm rel} \gtrsim 0.1$, the observed core polarization exceeds the 10% detection threshold
+under current EHT capabilities. For fainter cores ($b_{\rm rel} \lesssim 0.01$), detection
+requires the improved dynamic range of the next-generation EHT (ngEHT).
+
+### Key Results
+
+#### Current EHT Feasibility
+
+With a dynamic range of approximately 10:1, the EHT can detect soliton core polarization
+signatures provided the core brightness exceeds $\sim$10% of the ring peak and the intrinsic
+polarization is at least 30%. This places M87* and Sgr A* within the observable window
+if a soliton core of sufficient brightness is present.
+
+#### Future ngEHT Reach
+
+The next-generation EHT, with a projected dynamic range of $\sim$100:1, extends detection
+to core brightnesses as low as 1% of the ring peak. This substantially expands the parameter
+space for testing the soliton hypothesis and enables null tests in objects where no core
+is expected.
+
+### Testable Predictions
+
+The sensitivity framework yields two concrete predictions that can be tested against
+forthcoming EHT data releases:
+
+**Excess core polarization:** If a soliton core is present, the core region
+should exhibit excess fractional polarization aligned vertically (perpendicular to the
+azimuthal ring polarization), exceeding standard magnetohydrodynamic expectations.
+
+**Null tests in confirmed GR objects:** For black holes where GR is known
+to hold to high precision (e.g., through binary pulsar tests), the absence of a core
+polarization anomaly constrains the scalar-field coupling strength.
+
+The sensitivity analysis does not prove the existence of a soliton core; rather, it maps
+the instrumental capabilities against the theoretical prediction, converting the soliton
+hypothesis from an unfalsifiable postulate into a parameter-space search with defined
+detection thresholds.
 
 ## 6. The Universal Density Constraint
 
@@ -1256,7 +1327,7 @@ In the TEP interpretation, what is conventionally called a "black hole" at
 this mass scale is modeled as a saturated soliton core, i.e., a region where
 the conformal time-field approaches a maximum gradient set by $\rho_T$. In
 this phenomenology, the characteristic radius is set by the saturation
-proximity scale rather than by horizon formation. The observed central dimming is
+scale rather than by horizon formation. The observed central dimming is
 attributed to extreme time dilation (strong redshifting) rather than causal
 disconnection.
 
@@ -1347,17 +1418,19 @@ universal-density soliton model as formulated here.
 
 ### Expected Critical Spin Period
 
-For compact objects at nuclear densities, the saturation radius becomes comparable to the stellar radius at a critical mass-dependent threshold. For a canonical neutron star mass $M \approx 1.4 M_\odot$ and $\rho_T \approx 20$ g/cm³, the saturation radius is:
+For compact objects at nuclear densities, the saturation radius $R_T = (3M/4\pi\rho_T)^{1/3}$ becomes comparable to the stellar radius. For a canonical neutron star mass $M \approx 1.4 M_\odot$ and $\rho_T \approx 20$ g/cm³, this yields:
 
-$ R_T = \left( \frac{3M}{4\pi \rho_T} \right)^{1/3} \approx \left( \frac{3 \times 2.8 \times 10^{33}\,\text{g}}{4\pi \times 20\,\text{g/cm}^3} \right)^{1/3} \approx 2.4 \times 10^6\,\text{cm} \approx 24\,\text{km} $
+$ R_T \approx \left( \frac{3 \times 2.8 \times 10^{33}\,\text{g}}{4\pi \times 20\,\text{g/cm}^3} \right)^{1/3} \approx 2.4 \times 10^6\,\text{cm} \approx 24\,\text{km} $
 
 For a typical neutron star radius $R_{\text{NS}} \approx 12$ km, the saturation radius exceeds the stellar radius by a factor of $\sim$2. This implies that slowly rotating neutron stars are embedded within their own scalar field envelopes.
 
 As the star spins down, centrifugal support weakens and the corotation structure of the envelope changes. Near a critical spin period, the soliton can no longer maintain a quasi-stationary configuration around the rotating star, leading to a structural transition. In this phenomenology, such a transition can manifest as an "anti-glitch"—a sudden *decrease* in spin rate, opposite to the conventional glitches caused by superfluid vortex unpinning.
 
-The critical period is estimated from the condition that the centrifugal radius equals the saturation radius:
+The critical period follows from equating the centrifugal radius to the saturation radius. Because $R_T^3 \propto M/\rho_T$, the mass cancels exactly:
 
-$ P_{\text{crit}} \approx 2\pi \sqrt{\frac{R_T^3}{GM}} \approx 2\pi \sqrt{\frac{(2.4 \times 10^6\,\text{cm})^3}{6.67 \times 10^{-8}\,\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2} \times 2.8 \times 10^{33}\,\text{g}}} \approx 6.8\,\text{s} $
+$ P_{\text{crit}} = 2\pi \sqrt{\frac{R_T^3}{GM}} = \sqrt{\frac{3\pi}{G\rho_T}} \approx 2\pi \sqrt{\frac{(2.4 \times 10^6\,\text{cm})^3}{6.67 \times 10^{-8}\,\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2} \times 2.8 \times 10^{33}\,\text{g}}} \approx 6.8\,\text{s} $
+
+**Universal threshold:** Since $P_{\text{crit}} = \sqrt{3\pi/G\rho_T}$ depends only on $\rho_T$, the critical spin period is the same for *all* neutron star masses. Any magnetar with $P \gtrsim 7$ s is a test of the $\rho_T$ extrapolation, not only $1.4\,M_\odot$ objects.
 
 ### Observational Test: 1E 2259+586
 
@@ -1381,9 +1454,9 @@ The detection of an anti-glitch in a single object (1E 2259+586), while compelli
 
 #### Prediction 1: The Critical Period Threshold
 
-Anti-glitches are expected to preferentially occur near a critical period $P_{\text{crit}}$ determined by the object's mass and radius, if the proposed soliton destabilization channel operates. The condition $R_{\text{centrifugal}} = R_T$ yields:
-$ P_{\text{crit}}(M) \approx 6.8\,\text{s} \left( \frac{M}{1.4 M_\odot} \right)^{-1/2} $
-**Test:** In a population of magnetars, anti-glitch events should cluster around this mass-dependent period line. Objects with $P \ll 6$ s (deeply screened) would be expected to be stable against this specific instability, though other mechanisms could still produce timing events.
+Anti-glitches are expected to preferentially occur near the universal critical period $P_{\text{crit}} \approx 6.8$ s, if the proposed soliton destabilization channel operates. The condition $R_{\text{centrifugal}} = R_T$ yields a mass-independent threshold:
+$ P_{\text{crit}} = \sqrt{\frac{3\pi}{G\rho_T}} \approx 6.8\,\text{s} $
+**Test:** In a population of magnetars, anti-glitch events should cluster near $P \approx 6.8$ s regardless of stellar mass. Objects with $P \ll 6$ s (deeply screened) would be expected to be stable against this specific instability, though other mechanisms could still produce timing events.
 
 #### Prediction 2: Signatures of the Transition
 
@@ -1413,7 +1486,7 @@ This radius marks the expected scale where the phantom mass effect (halo) is exp
 
 ### Gaia DR3 Observations
 
-Gaia Data Release 3 (Gaia Collaboration 2023) provides precise proper motions and radial velocities for millions of stars, enabling construction of the Milky Way rotation curve to unprecedented distances. Recent analyses (e.g., Jiao et al. 2023) report evidence consistent with a Keplerian-like decline beginning near $R \approx 19$ kpc, consistent with the expected transition. The inferred outer-disk behavior is sensitive to tracer selection, distance systematics, and modeling of non-circular motions; the comparison here is treated as a scale-consistency test rather than a definitive determination of the asymptotic halo profile.
+Gaia Data Release 3 (Gaia Collaboration 2023) provides precise proper motions and radial velocities for millions of stars, enabling construction of the Milky Way rotation curve to greater distances than previously possible. Recent analyses (e.g., Jiao et al. 2023) report evidence consistent with a Keplerian-like decline beginning near $R \approx 19$ kpc, consistent with the expected transition. The inferred outer-disk behavior is sensitive to tracer selection, distance systematics, and modeling of non-circular motions; the comparison here is treated as a scale-consistency test rather than a definitive determination of the asymptotic halo profile.
 
 Key observational features:
 
@@ -1606,7 +1679,7 @@ length $L_c$. While the value $4200 \pm 500$ km is robust across analysis
 centers and time, the geometric factor relating this length to the spherical
 Temporal Topology saturation radius depends on the Earth's precise mass distribution and the
 scalar coupling strength. The adopted value $\rho_T \approx 20$ g/cm³
-carries a $\sim 50\%$ systematic uncertainty. Importantly, this uncertainty
+carries a $40\%$ systematic uncertainty. Importantly, this uncertainty
 is far smaller than the 15-order-of-magnitude dynamic range over which the
 model is tested, preserving the falsifiability of the scaling law.
 
@@ -1896,21 +1969,21 @@ Olausen, S. A., & Kaspi, V. M. 2014, *ApJS*, 212, 6 (DOI: 10.1088/0067-0049/212/
 
 ### TEP Research Series
 
-Smawfield, M. L. (2025). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.8 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
+Smawfield, M. L. (2025a). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.8 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
 
-Smawfield, M. L. (2025). *Global Time Echoes: Distance-Structured Correlations in GNSS Clocks*. Preprint v0.25 (Jaipur). Zenodo. DOI: [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) (Paper 1)
+Smawfield, M. L. (2025b). *Global Time Echoes: Distance-Structured Correlations in GNSS Clocks*. Preprint v0.25 (Jaipur). Zenodo. DOI: [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) (Paper 1)
 
-Smawfield, M. L. (2025). *Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products*. Preprint v0.18 (Cairo). Zenodo. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) (Paper 2)
+Smawfield, M. L. (2025c). *Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products*. Preprint v0.18 (Cairo). Zenodo. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) (Paper 2)
 
-Smawfield, M. L. (2025). *Global Time Echoes: Raw RINEX Consistency Test*. Preprint v0.5 (Kathmandu). Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3)
+Smawfield, M. L. (2025d). *Global Time Echoes: Raw RINEX Consistency Test*. Preprint v0.5 (Kathmandu). Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3)
 
-Smawfield, M. L. (2025). *Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations*. Preprint v0.5 (Tortola). Zenodo. DOI: [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) (Paper 4)
+Smawfield, M. L. (2025e). *Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations*. Preprint v0.5 (Tortola). Zenodo. DOI: [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) (Paper 4)
 
-Smawfield, M. L. (2025). *Global Time Echoes: Empirical Synthesis*. Preprint v0.4 (Singapore). Zenodo. DOI: [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Paper 5)
+Smawfield, M. L. (2025f). *Global Time Echoes: Empirical Synthesis*. Preprint v0.4 (Singapore). Zenodo. DOI: [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Paper 5)
 
-Smawfield, M. L. (2025). *Universal Critical Density: Cross-Scale Consistency of ρ_T*. Preprint v0.4 (New Delhi). Zenodo. DOI: [10.5281/zenodo.18064365](https://doi.org/10.5281/zenodo.18064365) (Paper 6 — this work)
+Smawfield, M. L. (2025g). *Universal Critical Density: Cross-Scale Consistency of ρ_T*. Preprint v0.4 (New Delhi). Zenodo. DOI: [10.5281/zenodo.18064365](https://doi.org/10.5281/zenodo.18064365) (Paper 6 — this work)
 
-Smawfield, M. L. (2025). *The Soliton Wake: Exploring RBH-1 as a Temporal Topology Candidate*. Preprint v0.3 (Blantyre). Zenodo. DOI: [10.5281/zenodo.18059250](https://doi.org/10.5281/zenodo.18059250) (Paper 7)
+Smawfield, M. L. (2025h). *The Soliton Wake: Exploring RBH-1 as a Temporal Topology Candidate*. Preprint v0.3 (Blantyre). Zenodo. DOI: [10.5281/zenodo.18059250](https://doi.org/10.5281/zenodo.18059250) (Paper 7)
 
 Smawfield, M. L. (2025). *Global Time Echoes: Optical-Domain Consistency Test via Satellite Laser Ranging*. Preprint v0.3 (Mombasa). Zenodo. DOI: [10.5281/zenodo.18064581](https://doi.org/10.5281/zenodo.18064581) (Paper 8)
 
@@ -2072,7 +2145,7 @@ exponential hypothesis against ionospheric dipole, power-law flicker,
 Gaussian, and Matérn kernels. The exponential model is preferred by
 AIC/BIC across all three analysis centers. Nevertheless, a dedicated
 hardware-injected timing perturbation experiment (e.g., coordinated clock
-offset on selected stations) would provide definitive causal evidence.
+offset on selected stations) would provide conclusive causal evidence.
 
 ### B.2 Earth is Not a Soliton
 
@@ -2088,7 +2161,7 @@ single-potential \(V(\phi)\) demonstration that both are the same
 parameter.
 
 **Mitigation:** The Thomas–Fermi-TEP mean-field analysis
-(TEP-SPIN, Paper 24) shows that the full screening transition from 10%
+(in preparation) shows that the full screening transition from 10%
 to 90% spans roughly \(\rho \sim 2\)–30 g/cm³. Earth at 5.5 g/cm³ sits
 at \(S \approx 0.65\), squarely in the steepest part of the crossover.
 The GNSS correlation length is therefore interpreted as the scale at
@@ -2117,7 +2190,7 @@ target for future galactic-field modelling rather than a refutation.
 
 ### B.4 Screening Hierarchy: Algebraic Tautology?
 
-The screening fit \(S \propto \rho^{0.334}\) with \(R^2 = 0.9999\)
+The screening fit \(S \propto \rho^{0.334}\) with \(R^2 = 0.99995\)
 (26 objects) is extraordinarily tight. Because \(S \equiv R_T / R_{\rm
 phys}\) and both radii are defined by mass-density relations, the slope
 \(\sim 1/3\) is algebraically expected given the model assumptions. The
@@ -2144,7 +2217,6 @@ notation has been ambiguous:
 | \(\beta_{\rm scr}\) | \(0.334\) | UCD (this work) | Screening exponent from \(S(\rho)\) hierarchy |
 | \(\kappa_{\rm Cep}\) | \(\sim 10^6\) | H0 (Paper 11) | Cepheid clock-bias response coefficient |
 | \(\kappa_{\rm MSP}\) | \(\sim 10^6\) | COS (Paper 10) | Pulsar timing response coefficient |
-| \(\alpha_{\rm nuc}\) | \(0.7\) | COS/JWST | Nuclear-matter coupling exponent |
 
 These are not the same \(\alpha\). The notation purge across all
 manuscripts has disambiguated them, but the proliferation of
@@ -2153,7 +2225,7 @@ should predict all of them from a single coupling function
 \(A(\phi)\).
 
 **Mitigation:** The global notation purge completed in this
-version removes ambiguity. Future theoretical work (TEP-HC, Paper 18)
+version removes ambiguity. Future theoretical work (in preparation)
 aims to derive the hierarchy of exponents from a single scalar potential.
 
 ### B.6 Causal Structure and Superluminality
@@ -2172,18 +2244,18 @@ with spatial gradients, not a dynamical signal. The clocks sample the
 local value of \(\phi\) at their respective positions; they do not
 exchange information through \(\phi\). A formal proof that this is
 causally safe (e.g., by showing the energy conditions are satisfied) is
-deferred to TEP-HC (Paper 18).
+deferred to future theoretical work (in preparation).
 
 ### B.7 Summary of Risk Register
 
 | Vulnerability | Severity | Mitigation Status | Resolution Target |
 | --- | --- | --- | --- |
 | GNSS correlation mechanism unproven | High | Null-model exclusion; hardware test planned | TEP-GNSS-II (Paper 2) |
-| Earth not a soliton | Medium | Thomas–Fermi transition explanation (Paper 24) | TEP-SPIN (Paper 24) |
+| Earth not a soliton | Medium | Thomas–Fermi transition explanation (in preparation) | Future work |
 | SPARC exponent not uniquely 1/3 | Medium | Explicit a priori prediction framing | TEP-UCD v0.4+ |
 | Screening hierarchy algebraic | Low | Audit confirms robustness | TEP-UCD v0.4+ |
 | Cross-paper parameter drift | Low | Notation purge complete | Ongoing |
-| Causal structure unproven | Medium | Static-field interpretation stated | TEP-HC (Paper 18) |
+| Causal structure unproven | Medium | Static-field interpretation stated | Future work |
 
 The authors regard this vulnerability register as a strength, not a
 weakness. Every open question is an explicit target for future work, and
@@ -2191,7 +2263,9 @@ the framework is falsifiable at multiple points.
 
 ## Appendix C: Visual Evidence
 
-![The Universal Scaling Law: TEP vs. General Relativity](site/figures/figure_2_scaling.png)
+*Note: Figures in the main text are embedded in their respective sections. This appendix collects the key plots for consolidated reference; labels C.1–C.3 are independent of the main-text figure numbering.*
+
+![The Universal Scaling Law: TEP vs. General Relativity](results/figures/figure_2_scaling.png)
 
 Figure C.1: The Universal Scaling Plot. The trajectory represents the
 saturation scaling law ($R \propto M^{1/3}$), calibrated via
@@ -2200,7 +2274,7 @@ is consistent with the onset of dark matter dynamics in spiral galaxies
 (SPARC) and the critical anti-glitch period in magnetars, organizing
 phenomena across 40 orders of magnitude in mass (pending dependency audit).
 
-![SPARC Galaxy Scaling Analysis](site/figures/figure_5_sparc_enhanced.png)
+![SPARC Galaxy Scaling Analysis](results/figures/figure_5_sparc_enhanced.png)
 
 Figure C.2: SPARC Galaxy Analysis. The transition radius $R_{DM}$
 where the mass discrepancy becomes significant shows an approximate
@@ -2209,7 +2283,7 @@ M_\odot$). The bootstrap-marginalized estimate ($N = 1000$ resamples) gives
 $\alpha_{\rm SPARC} = 0.355 \pm 0.043$, consistent with the $1/3$ expectation derived from the
 soliton model.
 
-![Comprehensive Screening Analysis](site/figures/figure_6_ultimate_screening.png)
+![Comprehensive Screening Analysis](results/figures/figure_6_ultimate_screening.png)
 
 Figure C.3: Comprehensive Screening Analysis. (A) Mass-density phase
 space spanning 60 orders of magnitude. (B) Empirical screening law:

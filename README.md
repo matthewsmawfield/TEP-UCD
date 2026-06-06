@@ -24,7 +24,7 @@ Temporal Topology screening resolves the apparent conflict with precision GR tes
 
 Compact object consistency is assessed using magnetar anti-glitches. The model predicts a universal critical spin period P_crit ≈ 6.8 s (independent of stellar mass), below which the saturation radius exceeds the stellar radius. The magnetar 1E 2259+586 (P = 6.98 s) exhibits anti-glitch behavior, consistent with this threshold within 4% (N=1, suggestive only).
 
-The saturation scale ρ_T ≈ 20 g/cm³ emerges as a candidate universal saturation scale of the temporal-field topology — not an ambient-density switch — supported by cross-scale consistency across 40 orders of magnitude in mass (proton to galaxy cluster) and 15 orders of magnitude in density (cosmological voids to neutron stars), within stated uncertainties. This externally calibrated value enables tightly constrained astrophysical applications, including the RBH-1 runaway black hole candidate (companion paper).
+The value ρ_T ≈ 20 g/cm³ emerges as a candidate universal saturation scale of the temporal-field topology — not an ambient-density switch — supported by cross-scale consistency across 40 orders of magnitude in mass (proton to galaxy cluster), within stated uncertainties and pending full dependency audit. This externally calibrated value enables tightly constrained astrophysical applications, including the RBH-1 runaway black hole candidate (companion paper).
 
 ## Key Findings
 

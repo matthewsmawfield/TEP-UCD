@@ -49,7 +49,7 @@ cd site && npm run build
 | `steps/step_4b_sparc_examples.py` | `figure_5_sparc_examples.png` | Example rotation curves |
 | `steps/step_5_ultimate_screening.py` | `figure_6_ultimate_screening.png` | Comprehensive screening plot |
 | `steps/step_6_sensitivity.py` | `figure_8_sensitivity.png` | Sensitivity and feasibility analysis |
-| `steps/step_7_sparc_residuals.py` | `figure_sparc_residuals.png` | Residual analysis (baryonic vs screening proxies) |
+| `steps/step_7_sparc_residuals.py` | `figure_7_sparc_residuals.png` | Residual analysis (baryonic vs screening proxies) |
 | `verification/verify_screening_claim.py` | — | Verifies S ∝ rho^0.334 claim from object data |
 
 ## SPARC Scaling Analysis (`step_4_sparc_analysis.py`)

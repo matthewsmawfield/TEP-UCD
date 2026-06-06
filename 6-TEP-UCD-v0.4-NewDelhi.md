@@ -43,7 +43,7 @@ stripping of the scalar field envelope.
 Temporal Topology screening resolves the apparent conflict with
 precision GR tests. Analysis of 26 astrophysical objects spanning 15
 orders of magnitude in density reveals a consistency relation $S \propto
-\rho^{0.334}$ ($R^2 = 0.9999$), algebraically expected from the
+\rho^{0.334}$ ($R^2 = 0.99995$), algebraically expected from the
 $R_T(M)$ construction; it explains why GR tests pass (binary pulsars:
 $S > 30{,}000$) while galactic dynamics ($\rho \sim 10^{-24}$ g/cm³,
 $S \sim 0.01$) exhibit strong scalar effects.
@@ -55,7 +55,7 @@ radius exceeds the stellar radius. The magnetar 1E 2259+586 ($P = 6.98$
 s) exhibits anti-glitch behavior, consistent with this threshold within
 4% ($N=1$, suggestive only).
 
-The saturation scale $\rho_T \approx 20$ g/cm³ emerges as a candidate
+The value $\rho_T \approx 20$ g/cm³ emerges as a candidate
 universal saturation scale of the temporal-field topology — not an
 ambient-density switch — supported by cross-scale consistency across 40
 orders of magnitude in mass (proton to galaxy cluster), within
@@ -119,7 +119,7 @@ This paper establishes $\rho_T$ through a convergent multi-scale approach:
 | **Compact** | Magnetars | $M \sim 1.4$–$2.0\,M_\odot$ | $\rho \sim 10^{14}$ g/cm³ | $P_{\text{crit}} \approx 6.8$ s (universal) | 1E 2259+586: 4% match ($N=1$) |
 | **Galactic** | SPARC Galaxies | $10^9$–$10^{12} M_\odot$ | $\rho \sim 10^{-24}$ g/cm³ | $R_{\text{DM}} \propto M^{\alpha_{\rm SPARC}}$ | $\alpha_{\rm SPARC} = 0.355 \pm 0.043$ |
 | **Local** | Milky Way | $M \sim 10^{12} M_\odot$ | $\rho \sim 10^{-24}$ g/cm³ | Keplerian transition | $R \approx 19$ kpc (scale-consistency check) |
-| **Screening** | 26 Objects | $10^{-24}$–$10^{33}$ g | $10^{-24}$–$10^{14}$ g/cm³ | $S \propto \rho^{\beta_{\rm scr}}$ | $\beta_{\rm scr} = 0.334$ ($R^2 = 0.9999$) |
+| **Screening** | 26 Objects | $10^{-24}$–$10^{33}$ g | $10^{-24}$–$10^{14}$ g/cm³ | $S \propto \rho^{\beta_{\rm scr}}$ | $\beta_{\rm scr} = 0.334$ ($R^2 = 0.99995$) |
 
 *Note: The convergence of constraints across 40 orders of magnitude in mass motivates $\rho_T$ as a candidate saturation scale; full dependency audit pending.*
 
@@ -434,7 +434,7 @@ screening.
 
 ![Example Rotation Curves](results/figures/figure_5_sparc_examples.png)
 
-Figure 1: Representative SPARC rotation curves. Observed velocities
+Figure 5: Representative SPARC rotation curves. Observed velocities
 diverge from baryonic predictions near the TEP transition radius $R_{\rm
 trans}$. Shaded regions indicate the screened (Newtonian) zone. The
 agreement between $R_{\rm trans}$ and the observed onset $R_{\rm DM}$
@@ -516,9 +516,9 @@ plausibly attributable to rotation-curve deprojection systematics. Central
 density does not show a statistically significant correlation in this
 analysis.
 
-![SPARC Residual Analysis](results/figures/figure_sparc_residuals.png)
+![SPARC Residual Analysis](results/figures/figure_7_sparc_residuals.png)
 
-Figure 2: Residual analysis of the SPARC $M^{1/3}$ scaling. (a) Scaling
+Figure 7: Residual analysis of the SPARC $M^{1/3}$ scaling. (a) Scaling
 relation colored by residual. (b-e) Correlations with baryonic
 properties and screening proxies. (f) Gaussian residual distribution
 ($\sigma = 0.48$ dex). (g) All correlations fall below significance
@@ -702,7 +702,7 @@ dwarfs, main sequence stars, white dwarfs, neutron stars, and binary
 pulsars) yields a compact summary of how the defined screening factor varies
 with density. A linear regression in log-log space yields:
 
-$S \propto \rho^{\beta_{\rm scr}}, \qquad \beta_{\rm scr} = 0.334 \quad (R^2 = 0.9999)$
+$S \propto \rho^{\beta_{\rm scr}}, \qquad \beta_{\rm scr} = 0.334 \quad (R^2 = 0.99995)$
 
 The exponent $\beta_{\rm scr} = 0.334$ is statistically indistinguishable from 1/3. Under the
 stated definitions, this is the expected scaling: if $R_T \propto
@@ -764,7 +764,7 @@ small and/or below current constraints |
 | Brown Dwarfs | 50 – 77 | 1.4 – 1.6× | Just above $\rho_T$; screening onset begins |
 | White Dwarfs | $10^5$ – $10^6$ | 27 – 50× | Star embedded in soliton; Keplerian mass = baryonic mass |
 | Neutron Stars | $10^{14}$ | 27,000× | Scalar contribution less than 0.004%; pure GR dynamics |
-| Binary Pulsars | $10^{14}$ | 32,000× | GR verified to 0.2%; Nobel Prize 1993 |
+| Binary Pulsars | $10^{14}$ | 29,000× | GR verified to 0.2%; Nobel Prize 1993 |
 
 Table 4.1: Complete screening hierarchy across astrophysical object
 classes. The screening factor increases monotonically with density,
@@ -785,8 +785,8 @@ tests of GR all occur in regimes where screening is operative:
 | Lunar Laser Ranging | Nordtvedt effect | $10^{-13}$ | 0.56× | Calibration boundary |
 | Cassini Conjunction | Shapiro delay | $2 \times 10^{-5}$ | 0.42× | Scalar sub-dominant |
 | MESSENGER | Perihelion precession | $3 \times 10^{-4}$ | 0.65× | Calibration boundary |
-| Hulse-Taylor Pulsar | GW emission | 0.2% | 33,000× | Completely screened |
-| Double Pulsar | 7 PPN tests | 0.05% | 32,000× | Completely screened |
+| Hulse-Taylor Pulsar | GW emission | 0.2% | 29,900× | Completely screened |
+| Double Pulsar | 7 PPN tests | 0.05% | 26,700× | Completely screened |
 
 Table 4.2: Precision GR tests and their screening factors. All tests
 are consistent with GR; TEP explains this via environment-dependent
@@ -857,7 +857,7 @@ the fixed $\rho_T$ calibration.
 
 **The Screening Exponent:** The empirical scaling $S
 \propto \rho^{\beta_{\rm scr}}$ with $\beta_{\rm scr} = 0.334$ emerges from data spanning 15 orders of
-magnitude in density, with $R^2 = 0.9999$. The exponent 1/3 is a
+magnitude in density, with $R^2 = 0.99995$. The exponent 1/3 is a
 direct consequence of the $M^{1/3}$ saturation scaling.
 
 **GR Test Consistency:** All five precision tests of
@@ -1070,7 +1070,7 @@ if a soliton core of sufficient brightness is present.
 #### Future ngEHT Reach
 
 The next-generation EHT, with a projected dynamic range of $\sim$100:1, extends detection
-to core brightnesses as low as 1% of the ring peak. This dramatically expands the parameter
+to core brightnesses as low as 1% of the ring peak. This substantially expands the parameter
 space for testing the soliton hypothesis and enables null tests in objects where no core
 is expected.
 
@@ -1327,7 +1327,7 @@ In the TEP interpretation, what is conventionally called a "black hole" at
 this mass scale is modeled as a saturated soliton core, i.e., a region where
 the conformal time-field approaches a maximum gradient set by $\rho_T$. In
 this phenomenology, the characteristic radius is set by the saturation
-proximity scale rather than by horizon formation. The observed central dimming is
+scale rather than by horizon formation. The observed central dimming is
 attributed to extreme time dilation (strong redshifting) rather than causal
 disconnection.
 
@@ -1486,7 +1486,7 @@ This radius marks the expected scale where the phantom mass effect (halo) is exp
 
 ### Gaia DR3 Observations
 
-Gaia Data Release 3 (Gaia Collaboration 2023) provides precise proper motions and radial velocities for millions of stars, enabling construction of the Milky Way rotation curve to unprecedented distances. Recent analyses (e.g., Jiao et al. 2023) report evidence consistent with a Keplerian-like decline beginning near $R \approx 19$ kpc, consistent with the expected transition. The inferred outer-disk behavior is sensitive to tracer selection, distance systematics, and modeling of non-circular motions; the comparison here is treated as a scale-consistency test rather than a definitive determination of the asymptotic halo profile.
+Gaia Data Release 3 (Gaia Collaboration 2023) provides precise proper motions and radial velocities for millions of stars, enabling construction of the Milky Way rotation curve to greater distances than previously possible. Recent analyses (e.g., Jiao et al. 2023) report evidence consistent with a Keplerian-like decline beginning near $R \approx 19$ kpc, consistent with the expected transition. The inferred outer-disk behavior is sensitive to tracer selection, distance systematics, and modeling of non-circular motions; the comparison here is treated as a scale-consistency test rather than a definitive determination of the asymptotic halo profile.
 
 Key observational features:
 
@@ -2145,7 +2145,7 @@ exponential hypothesis against ionospheric dipole, power-law flicker,
 Gaussian, and Matérn kernels. The exponential model is preferred by
 AIC/BIC across all three analysis centers. Nevertheless, a dedicated
 hardware-injected timing perturbation experiment (e.g., coordinated clock
-offset on selected stations) would provide definitive causal evidence.
+offset on selected stations) would provide conclusive causal evidence.
 
 ### B.2 Earth is Not a Soliton
 
@@ -2190,7 +2190,7 @@ target for future galactic-field modelling rather than a refutation.
 
 ### B.4 Screening Hierarchy: Algebraic Tautology?
 
-The screening fit \(S \propto \rho^{0.334}\) with \(R^2 = 0.9999\)
+The screening fit \(S \propto \rho^{0.334}\) with \(R^2 = 0.99995\)
 (26 objects) is extraordinarily tight. Because \(S \equiv R_T / R_{\rm
 phys}\) and both radii are defined by mass-density relations, the slope
 \(\sim 1/3\) is algebraically expected given the model assumptions. The

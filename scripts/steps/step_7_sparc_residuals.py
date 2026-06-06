@@ -470,8 +470,8 @@ def run_residual_analysis():
     ax7.legend(frameon=False)
     ax7.grid(True, axis='y', alpha=0.3)
     
-    plt.savefig(os.path.join(output_dir, 'figure_sparc_residuals.png'))
-    print(f"\nSaved: figure_sparc_residuals.png")
+    plt.savefig(os.path.join(output_dir, 'figure_7_sparc_residuals.png'))
+    print(f"\nSaved: figure_7_sparc_residuals.png")
     
     # --- SUMMARY ---
     print("\n" + "="*80)
