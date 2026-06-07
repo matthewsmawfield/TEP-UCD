@@ -1,3 +1,25 @@
+v0.5 (New Delhi) — 07 June 2026 — Post-feedback integrity revision
+
+- Removed magnetar claims; tightened all claims to empirically supported systems only
+- Corrected §5.3 Thomas–Fermi electron-density formula and exposed naive analytical closure failure
+- Removed "anchored by a mean-field calculation" overclaim (§5.5); elevated dimensional estimate (§5.4) as strongest surviving analytical argument
+- Replaced "Earth to galaxy cluster" with "Earth to galaxy" throughout (no cluster datapoint in analysis)
+- Various language tightening: Milky Way mass label, conclusion framing, discussion table upgrades
+- Structural: moved EHT content to Appendix D; equation formatting cleanup
+
+v0.4 (New Delhi) — 07 June 2026 — Editorial refinement: appendix restructure, equation punctuation, factual corrections, and precise wording
+
+- Elevated EHT Soliton Detection from Appendix C subsection to standalone Appendix D
+- Moved References section before Appendices in document ordering
+- Added grammatical punctuation to 21+ display equations across 8 component files
+- Fixed GNSS multi-center claim: replaced false "<5%" precision with defensible range statement
+- Fixed Milky Way table mass: $M \sim 10^{12} M_\odot$ → $M_{\rm bar} \sim 6 \times 10^{10} M_\odot$
+- Clarified abstract RBH-1 cross-reference: "(companion paper)" → "(Smawfield 2025h, Paper 7)"
+- Rewrote conclusion opening to clarify screening hierarchy is consistency check, not independent discovery
+- Changed "independent constraints" → "mutually reinforcing constraints" in Discussion
+- Fixed Numerology Firewall Milky Way row: "Keplerian decline" → "inner mass-discrepancy onset"
+- Adjusted LRD language: "dominated by the soliton core" → "scalar-envelope effects"
+
 v0.4 (New Delhi) — 05 June 2026 — Content revision: proximity scale terminology, alpha_SPARC notation, and cross-paper consistency
 
 v0.3 (New Delhi) - Title and Terminology Refinement

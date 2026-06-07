@@ -56,6 +56,9 @@ def run_download_data():
     sparc_dir = project_root / "data" / "sparc"
     sparc_dir.mkdir(parents=True, exist_ok=True)
 
+    print_status(f"SPARC data directory: {sparc_dir}", "INFO")
+    print_status(f"Required files: {SPARC_FILES}", "INFO")
+
     all_ok = True
     for fname in SPARC_FILES:
         url = f"{SPARC_BASE_URL}{fname}"

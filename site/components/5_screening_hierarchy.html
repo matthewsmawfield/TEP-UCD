@@ -21,7 +21,9 @@
     physical radius of the object:
 </p>
 
-<div class="equation">$$S = \frac{R_T}{R_{phys}}$$</div>
+<div class="equation">
+    \begin{equation} \label{eq:screening_factor} S = \frac{R_T}{R_{phys}}. \end{equation}
+</div>
 
 <p>
     The quantity $S$ is used here as a geometric proxy for how deeply the
@@ -93,13 +95,13 @@
 </p>
 
 <div class="equation">
-    $$R_{phys} \approx 5{,}800 \text{ km} \quad \text{(observed)}$$
+    \begin{equation} \label{eq:jupiter_radius} R_{phys} \approx 5{,}800 \text{ km} \quad \text{(observed)} \end{equation}
 </div>
 <div class="equation">
-    $$R_{sol} \approx 293{,}000 \text{ km} \quad \text{(TEP expectation)}$$
+    \begin{equation} \label{eq:jupiter_soliton} R_{sol} \approx 293{,}000 \text{ km} \quad \text{(TEP expectation)} \end{equation}
 </div>
 <div class="equation">
-    $$\text{Screening Factor} = \frac{R_T}{R_{phys}} \approx 50\times$$
+    \begin{equation} \label{eq:jupiter_screening} \text{Screening Factor} = \frac{R_T}{R_{phys}} \approx 50\times. \end{equation}
 </div>
 
 <p>
@@ -116,10 +118,13 @@
     Extending this analysis across 26 astrophysical objects (planets, brown
     dwarfs, main sequence stars, white dwarfs, neutron stars, and binary
     pulsars) yields a compact summary of how the defined screening factor varies
-    with density. A linear regression in log-log space yields:
+    with density. Restricting the regression fit to the 11 dense objects
+    ($\rho > \rho_T$, excluding planets and black holes) gives:
 </p>
 
-<div class="result-box">$$S \propto \rho^{\beta_{\rm scr}}, \qquad \beta_{\rm scr} = 0.334 \quad (R^2 = 0.99995)$$</div>
+<div class="equation">
+    \begin{equation} \label{eq:screening_law} S \propto \rho^{\beta_{\rm scr}}, \qquad \beta_{\rm scr} = 0.334 \quad (R^2 = 0.99995). \end{equation}
+</div>
 
 <p>
     The exponent $\beta_{\rm scr} = 0.334$ is statistically indistinguishable from 1/3. Under the
@@ -128,8 +133,8 @@
 </p>
 
 <div class="equation">
-    $$S = \frac{R_T}{R_{phys}} = \frac{M^{1/3}}{M^{1/3}/\rho^{1/3}} =
-    \rho^{1/3}$$
+    \begin{equation} \label{eq:screening_derivation} S = \frac{R_T}{R_{phys}} = \frac{M^{1/3}}{M^{1/3}/\rho^{1/3}} =
+    \rho^{1/3}. \end{equation}
 </div>
 
 <div class="callout">
@@ -151,7 +156,7 @@
     </p>
     <p>
         Furthermore, the extreme screening factors observed in binary pulsars
-        ($S > 30,000$) are consistent with a strongly non-linear suppression
+        ($S \sim 29{,}000$) are consistent with a strongly non-linear suppression
         mechanism in the scalar sector. The empirical screening hierarchy
         ($S$ vs $\rho$) derives from the canonical Temporal Topology mechanism
         (Paper 0), where screening operates via the continuous spatial profile
@@ -232,8 +237,8 @@
         </tr>
         <tr>
             <td>Brown Dwarfs</td>
-            <td>50 – 77</td>
-            <td>1.4 – 1.6×</td>
+            <td>~100</td>
+            <td>~1.7×</td>
             <td>Just above $\rho_T$; screening onset begins</td>
         </tr>
         <tr>
@@ -263,7 +268,7 @@
         classes. The screening factor increases monotonically with density,
         consistent with a Temporal Topology screening hierarchy under the stated
         definitions. Binary pulsars provide the strongest validation, with GR
-        verified to 0.2% precision at screening factors exceeding 30,000×.</em
+        verified to 0.2% precision at screening factors exceeding 29,000×.</em
     >
 </p>
 
@@ -339,7 +344,7 @@
     decay matches the GR prediction for gravitational wave emission to 0.2%
     precision—a result honored with the 1993 Nobel Prize (Taylor &amp; Weisberg
     1982). At a density of $\sim 10^{14}$ g/cm³, the screening factor reaches
-    33,000×. The scalar field contributes less than 0.003% to the orbital
+    29,900×. The scalar field contributes less than 0.003% to the orbital
     dynamics. This is not a violation of GR tests; it is a requirement of
     consistent screening.
 </p>
@@ -412,8 +417,8 @@
     <ol>
         <li>
             <strong>The RBH-1 Crossover:</strong> The saturation radius is
-            consistent with the Schwarzschild diameter at $M \approx 10^7
-            M_{\odot}$ within combined uncertainties ($\sim 25\%$). This
+            consistent with the Schwarzschild radius at $M \approx 10^7
+            M_{\odot}$ within combined uncertainties ($R_T/R_S \approx 1.3$). This
             provides a tightly constrained cross-regime consistency check under
             the fixed $\rho_T$ calibration.
         </li>

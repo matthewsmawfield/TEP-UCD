@@ -25,14 +25,12 @@ def set_pub_style():
 
 def run_scaling_analysis():
     """Generate Figure 1: Universal mass-radius scaling law."""
-    logger = None
-    try:
-        logger = TEPLogger("step_1_scaling", log_file_path=os.path.join(os.path.dirname(__file__), '..', '..', 'logs', 'step_1_scaling.log'))
-        set_step_logger(logger)
-    except Exception:
-        pass
+    logger = TEPLogger("step_1_scaling", log_file_path=os.path.join(os.path.dirname(__file__), '..', '..', 'logs', 'step_1_scaling.log'))
+    set_step_logger(logger)
 
     set_pub_style()
+
+    print_status("Initializing scaling law analysis", "PROCESS")
 
     # Ensure output directories exist
     output_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'results', 'figures')
@@ -48,33 +46,38 @@ def run_scaling_analysis():
 
     # --- The TEP Parameter (GNSS Derived) ---
     R_TEP_earth = SCREENING_LENGTH_KM * 1000  # meters
+    print_status(f"TEP screening length (Earth): R_T = {R_TEP_earth:.1f} m", "INFO")
 
     # --- Mass Range ---
     masses_kg = np.logspace(np.log10(M_earth), np.log10(1e11 * M_sun), 500)
     masses_solar = masses_kg / M_sun
+    print_status(f"Mass range: {masses_solar[0]:.2e} to {masses_solar[-1]:.2e} M_sun ({len(masses_kg)} points)", "INFO")
 
     # --- Theoretical Curves ---
-    # 1. Soliton Radius: R ~ M^(1/3)
+    print_status("Computing soliton radius R ~ M^(1/3)", "PROCESS")
     radius_tep_m = R_TEP_earth * (masses_kg / M_earth)**(1/3)
     radius_tep_km = radius_tep_m / 1000
 
-    # 2. Schwarzschild Diameter: D = 4GM/c^2
-    diameter_sch_m = 4 * G * masses_kg / (c**2)
-    diameter_sch_km = diameter_sch_m / 1000
+    print_status("Computing Schwarzschild radius R_S = 2GM/c^2", "PROCESS")
+    radius_sch_m = 2 * G * masses_kg / (c**2)
+    radius_sch_km = radius_sch_m / 1000
 
     # --- RBH-1 Point ---
     M_rbh_solar = 2.0e7
     R_rbh_km = (R_TEP_earth * ((M_rbh_solar * M_sun) / M_earth)**(1/3)) / 1000
+    print_status(f"RBH-1 crossover: M = {M_rbh_solar:.1e} M_sun, R_T = {R_rbh_km:.2e} km", "INFO")
 
     # --- Earth Anchor ---
     M_earth_solar = M_earth / M_sun
     R_earth_km = 4200
+    print_status(f"Earth anchor: M = {M_earth_solar:.2e} M_sun, R_T = {R_earth_km} km", "INFO")
 
     # --- Plotting ---
+    print_status("Generating scaling law figure", "PROCESS")
     fig, ax = plt.subplots(figsize=FIG_SIZE[FIG_PRESET])
 
     ax.loglog(masses_solar, radius_tep_km, color=COLORS['accent'], label=r'Soliton Scale ($R \propto M^{1/3}$)')
-    ax.loglog(masses_solar, diameter_sch_km, color='black', linestyle='--', label=r'Event Horizon ($D \propto M$)')
+    ax.loglog(masses_solar, radius_sch_km, color='black', linestyle='--', label=r'Schwarzschild Radius ($R_S \propto M$)')
 
     ax.scatter([M_rbh_solar], [R_rbh_km], color=COLORS['highlight'], s=100, zorder=5, marker='D', edgecolors='white', linewidth=0.8)
     ax.scatter([M_earth_solar], [R_earth_km], color=COLORS['primary'], s=80, zorder=5, marker='o', edgecolors='white', linewidth=0.8)

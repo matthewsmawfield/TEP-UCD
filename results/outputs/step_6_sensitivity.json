@@ -1,4 +1,17 @@
 {
   "grid_size": 200,
-  "figure": "figure_8_sensitivity.png"
+  "figure": "figure_8_sensitivity.png",
+  "rho_T_g_cm3": 20.0,
+  "M87_star": {
+    "M_kg": 1.2925054999999999e+40,
+    "M_solar": 6499999999.999999,
+    "R_T_km": 536337213.866173,
+    "R_T_AU": 3.585141803918269
+  },
+  "Sgr_A_star": {
+    "M_kg": 8.550421e+36,
+    "M_solar": 4300000.0,
+    "R_T_km": 46732925.03867125,
+    "R_T_AU": 0.3123858625579629
+  }
 }

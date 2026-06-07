@@ -6,7 +6,8 @@
   ],
   "identifier": "https://doi.org/10.5281/zenodo.18064365",
   "name": "Universal Critical Density: Cross-Scale Consistency of \u03c1_T",
-  "description": "A universal saturation density scale (\u03c1_T \u2248 20 g/cm\u00b3) organizes gravitational anomalies across 40 orders of magnitude. Calibrated from GNSS atomic clocks, validated by SPARC galaxies, and tested on magnetars and the Milky Way. Explains dark matter phenomenology through Temporal Topology screening.",
+  "description": "A universal saturation density scale (\u03c1_T \u2248 20 g/cm\u00b3) organizes gravitational anomalies across 18 orders of magnitude in mass (Earth to galaxy). Calibrated from GNSS atomic clocks, validated by SPARC galaxies, and tested on the Milky Way. Explains dark matter phenomenology through Temporal Topology screening.",
+
   "author": [
     {
       "@type": "Person",
@@ -27,7 +28,6 @@
     "GNSS atomic clocks",
     "Temporal Topology screening",
     "dark matter",
-    "magnetars",
     "TEP",
     "temporal equivalence principle",
     "scaling laws",

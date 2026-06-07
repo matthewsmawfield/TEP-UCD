@@ -1,8 +1,9 @@
 {
   "title": "Universal Critical Density: Cross-Scale Consistency of \u03c1_T",
-  "version": "v0.4 (New Delhi)",
+  "version": "v0.5 (New Delhi)",
   "last_updated": "7 June 2026",
-  "description": "A universal saturation density scale (\u03c1_T \u2248 20 g/cm\u00b3) organizes gravitational anomalies across 40 orders of magnitude in mass.",
+  "description": "A universal saturation density scale (\u03c1_T \u2248 20 g/cm\u00b3) organizes gravitational anomalies across 18 orders of magnitude in mass (Earth to galaxy).",
+
   "sections": [
     {
       "id": "section-abstract",
@@ -41,64 +42,58 @@
       "order": 6
     },
     {
-      "id": "section-sensitivity",
-      "title": "6b. Sensitivity and Feasibility: EHT Soliton Detection",
-      "file": "6b_sensitivity.html",
-      "order": 6.5
-    },
-    {
       "id": "section-universal-scaling",
       "title": "6. Universal Scaling: The M^(1/3) Law",
       "file": "7_universal_scaling.html",
       "order": 7
     },
     {
-      "id": "section-magnetar-test",
-      "title": "7. Compact Object Test: Magnetar Anti-Glitches",
-      "file": "8_magnetar_test.html",
+      "id": "section-milky-way-test",
+      "title": "7. Milky Way Test: Dark-Matter Onset",
+      "file": "8_milky_way_test.html",
       "order": 8
     },
     {
-      "id": "section-milky-way-test",
-      "title": "8. Milky Way Test: Keplerian Decline",
-      "file": "9_milky_way_test.html",
+      "id": "section-discussion",
+      "title": "8. Discussion: Cosmological Implications",
+      "file": "10_discussion.html",
       "order": 9
     },
     {
-      "id": "section-discussion",
-      "title": "9. Discussion: Cosmological Implications",
-      "file": "10_discussion.html",
-      "order": 10
-    },
-    {
       "id": "section-conclusion",
-      "title": "10. Conclusion",
+      "title": "9. Conclusion",
       "file": "11_conclusion.html",
-      "order": 11
-    },
-    {
-      "id": "appendix-vulnerabilities",
-      "title": "Appendix B: Known Vulnerabilities and Open Questions",
-      "file": "appendix_b_vulnerabilities.html",
-      "order": 14
-    },
-    {
-      "id": "section-figures",
-      "title": "Appendix C: Visual Evidence",
-      "file": "12_visual_evidence.html",
-      "order": 15
+      "order": 10
     },
     {
       "id": "section-references",
       "title": "References",
       "file": "13_references.html",
-      "order": 12
+      "order": 11
     },
     {
       "id": "appendix-gnss",
       "title": "Appendix A: GNSS Validation Summary",
       "file": "appendix_a_gnss.html",
+      "order": 12
+    },
+    {
+      "id": "appendix-vulnerabilities",
+      "title": "Appendix B: Known Vulnerabilities and Open Questions",
+      "file": "appendix_b_vulnerabilities.html",
       "order": 13
+    },
+    {
+      "id": "section-figures",
+      "title": "Appendix C: Visual Evidence",
+      "file": "12_visual_evidence.html",
+      "order": 14
+    },
+    {
+      "id": "appendix-eht",
+      "title": "Appendix D: EHT Soliton Detection — Sensitivity and Feasibility",
+      "file": "6b_sensitivity.html",
+      "order": 15
     }
   ]
 }

@@ -114,30 +114,27 @@ def find_rdm_for_threshold(R, Vobs, Vbar, threshold):
 
 def run_enhanced_analysis():
     """Main SPARC enhanced analysis function."""
-    logger = None
-    try:
-        logger = TEPLogger("step_4_sparc_analysis", log_file_path=os.path.join(os.path.dirname(__file__), '..', '..', 'logs', 'step_4_sparc_analysis.log'))
-        set_step_logger(logger)
-    except Exception:
-        pass
+    logger = TEPLogger("step_4_sparc_analysis", log_file_path=os.path.join(os.path.dirname(__file__), '..', '..', 'logs', 'step_4_sparc_analysis.log'))
+    set_step_logger(logger)
 
     data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'sparc')
     output_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'results', 'figures')
     os.makedirs(output_dir, exist_ok=True)
     outputs_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'results', 'outputs')
     os.makedirs(outputs_dir, exist_ok=True)
-    
-    print("="*80)
-    print("SPARC ENHANCED ANALYSIS: Robust TEP Test")
-    print("="*80)
-    
+
+    print_status("SPARC Enhanced Analysis: Robust TEP Test", "TITLE")
+
     # Parse data
     try:
+        print_status("Parsing SPARC Table1 (galaxy properties)", "PROCESS")
         galaxy_props = parse_table1(os.path.join(data_dir, 'Table1.mrt'))
+        print_status("Parsing SPARC Table2 (rotation curves)", "PROCESS")
         rotation_curves = parse_table2(os.path.join(data_dir, 'Table2.mrt'))
         using_synthetic = False
+        print_status(f"Loaded {len(galaxy_props)} galaxies with rotation curves", "SUCCESS")
     except FileNotFoundError:
-        print("Data files not found. Generating synthetic SPARC-like data for visualization.")
+        print_status("Data files not found. Generating synthetic SPARC-like data for visualization.", "WARNING")
         using_synthetic = True
         # Generate synthetic galaxies scaling roughly as M ~ R^3 with scatter
         # and R_dm ~ M^(1/3)
@@ -187,7 +184,7 @@ def run_enhanced_analysis():
             }
 
     # --- ENHANCEMENT 1: Marginalize over thresholds ---
-    print("\n### ENHANCEMENT 1: Threshold-Marginalized Exponent ###")
+    print_status("ENHANCEMENT 1: Threshold-Marginalized Exponent", "PROCESS")
     
     thresholds = np.linspace(1.1, 1.5, 9)  # 1.1, 1.15, 1.2, ..., 1.5
     all_results = {t: [] for t in thresholds}
@@ -225,7 +222,17 @@ def run_enhanced_analysis():
     
     exponents = np.array(exponents)
     std_errs = np.array(std_errs)
-    
+
+    # Build per-threshold results dict before filtering
+    threshold_exponents = {}
+    for i, thresh in enumerate(thresholds):
+        if i < len(exponents) and np.isfinite(exponents[i]) and std_errs[i] > 1e-9 and np.isfinite(std_errs[i]):
+            threshold_exponents[f"{thresh:.2f}"] = {
+                "alpha": float(exponents[i]),
+                "std_err": float(std_errs[i]),
+                "n_galaxies": int(n_gals[i])
+            }
+
     # Filter out NaNs or zeros in std_errs
     valid_mask = (std_errs > 1e-9) & np.isfinite(std_errs) & np.isfinite(exponents)
     if np.any(valid_mask):
@@ -239,14 +246,14 @@ def run_enhanced_analysis():
         alpha_marginalized = np.mean(exponents) if len(exponents) > 0 else 0.333
         alpha_err_marginalized = np.std(exponents) if len(exponents) > 0 else 0.05
 
-    print(f"Threshold range: {thresholds[0]:.2f} - {thresholds[-1]:.2f}")
-    print(f"Exponent range: {exponents.min():.3f} - {exponents.max():.3f}")
-    print(f"Weighted-average exponent: α = {alpha_marginalized:.4f} ± {alpha_err_marginalized:.4f}")
-    print(f"TEP prediction: α = 1/3 = 0.3333")
-    print(f"Deviation: {abs(alpha_marginalized - 1/3)/alpha_err_marginalized:.1f}σ")
+    print_status(f"Threshold range: {thresholds[0]:.2f} - {thresholds[-1]:.2f}", "INFO")
+    print_status(f"Exponent range: {exponents.min():.3f} - {exponents.max():.3f}", "INFO")
+    print_status(f"Weighted-average exponent: α = {alpha_marginalized:.4f} ± {alpha_err_marginalized:.4f}", "SUCCESS")
+    print_status(f"TEP prediction: α = 1/3 = 0.3333", "INFO")
+    print_status(f"Deviation: {abs(alpha_marginalized - 1/3)/alpha_err_marginalized:.1f}σ", "INFO")
     
     # --- BOOTSTRAP UNCERTAINTY (1000 resamples) ---
-    print("\n### BOOTSTRAP: 1000 Resamples Across Thresholds ###")
+    print_status("BOOTSTRAP: 1000 Resamples Across Thresholds", "PROCESS")
     
     n_bootstrap = 1000
     bootstrap_alphas = []
@@ -308,12 +315,12 @@ def run_enhanced_analysis():
     alpha_boot_ci_lo = np.percentile(bootstrap_alphas, 2.5)
     alpha_boot_ci_hi = np.percentile(bootstrap_alphas, 97.5)
     
-    print(f"Bootstrap alpha: {alpha_boot:.4f} ± {alpha_boot_err:.4f} (std)")
-    print(f"Bootstrap 95% CI: [{alpha_boot_ci_lo:.4f}, {alpha_boot_ci_hi:.4f}]")
-    print(f"Deviation from 1/3: {abs(alpha_boot - 1/3)/alpha_boot_err:.1f}σ")
+    print_status(f"Bootstrap alpha: {alpha_boot:.4f} ± {alpha_boot_err:.4f} (std)", "INFO")
+    print_status(f"Bootstrap 95% CI: [{alpha_boot_ci_lo:.4f}, {alpha_boot_ci_hi:.4f}]", "INFO")
+    print_status(f"Deviation from 1/3: {abs(alpha_boot - 1/3)/alpha_boot_err:.1f}σ", "INFO")
     
     # --- ENHANCEMENT 2: RAR-Based Transition ---
-    print("\n### ENHANCEMENT 2: RAR-Based Transition Radius ###")
+    print_status("ENHANCEMENT 2: RAR-Based Transition Radius", "PROCESS")
     
     # The RAR transition occurs at g_bar ≈ a0 (MOND scale)
     # g_bar = V_bar^2 / R, so R_transition = V_bar^2 / a0
@@ -360,13 +367,13 @@ def run_enhanced_analysis():
         M_rar = np.array([r['M_bar'] for r in rar_results])
         R_rar = np.array([r['R_rar'] for r in rar_results])
         slope_rar, _, r_rar, _, se_rar = stats.linregress(np.log10(M_rar), np.log10(R_rar))
-        print(f"RAR-based transition (g_bar < a0):")
-        print(f"  Exponent: α = {slope_rar:.4f} ± {se_rar:.4f}")
-        print(f"  Correlation: r = {r_rar:.3f}")
-        print(f"  N galaxies: {len(rar_results)}")
+        print_status(f"RAR-based transition (g_bar < a0):", "INFO")
+        print_status(f"  Exponent: α = {slope_rar:.4f} ± {se_rar:.4f}", "INFO")
+        print_status(f"  Correlation: r = {r_rar:.3f}", "INFO")
+        print_status(f"  N galaxies: {len(rar_results)}", "INFO")
     
     # --- ENHANCEMENT 3: Fix α = 1/3, Fit Normalization ---
-    print("\n### ENHANCEMENT 3: Fixed α = 1/3, Fit Screening Density ###")
+    print_status("ENHANCEMENT 3: Fixed α = 1/3, Fit Screening Density", "PROCESS")
     
     # Use threshold = 1.3 results for this
     results_13 = all_results[1.3] if 1.3 in all_results else all_results[thresholds[4]]
@@ -387,20 +394,20 @@ def run_enhanced_analysis():
     # Convert to more intuitive units
     rho_screen_pc3 = rho_screen / 1e9  # M_sun / pc^3
     
-    print(f"Normalization k = {k:.4e} kpc / M_sun^(1/3)")
-    print(f"Implied screening density: ρ_screen = {rho_screen:.2e} M_sun/kpc^3")
-    print(f"                         = {rho_screen_pc3:.4f} M_sun/pc^3")
-    print(f"Typical disk density at optical radius: ~0.01-0.1 M_sun/pc^3")
-    print(f"Is ρ_screen physically reasonable? {0.001 < rho_screen_pc3 < 1.0}")
-    
+    print_status(f"Normalization k = {k:.4e} kpc / M_sun^(1/3)", "INFO")
+    print_status(f"Implied screening density: ρ_screen = {rho_screen:.2e} M_sun/kpc^3", "INFO")
+    print_status(f"                         = {rho_screen_pc3:.4f} M_sun/pc^3", "INFO")
+    print_status(f"Typical disk density at optical radius: ~0.01-0.1 M_sun/pc^3", "INFO")
+    print_status(f"Is ρ_screen physically reasonable? {0.001 < rho_screen_pc3 < 1.0}", "INFO")
+
     # Calculate residuals with fixed 1/3
     R_pred = k * M_arr**(1/3)
     residuals = np.log10(R_arr / R_pred)
     rms_scatter = np.std(residuals)
-    print(f"RMS scatter with α = 1/3: {rms_scatter:.3f} dex")
+    print_status(f"RMS scatter with α = 1/3: {rms_scatter:.3f} dex", "INFO")
     
     # --- ENHANCEMENT 4: Connection to MOND ---
-    print("\n### ENHANCEMENT 4: Connection to MOND Acceleration Scale ###")
+    print_status("ENHANCEMENT 4: Connection to MOND Acceleration Scale", "PROCESS")
     
     # The TEP screening density implies a characteristic acceleration
     # At R_T, g = GM/R^2 = GM / (k M^(1/3))^2 = G M^(1/3) / k^2
@@ -410,10 +417,10 @@ def run_enhanced_analysis():
     k_SI = k * kpc_to_m / M_sun_kg**(1/3)  # m / kg^(1/3)
     g_transition = G * M_typical**(1/3) / k_SI**2
     
-    print(f"Characteristic transition acceleration:")
-    print(f"  g_TEP = {g_transition:.2e} m/s^2")
-    print(f"  a0_MOND = {a0_MOND:.2e} m/s^2")
-    print(f"  Ratio g_TEP / a0_MOND = {g_transition / a0_MOND:.2f}")
+    print_status(f"Characteristic transition acceleration:", "INFO")
+    print_status(f"  g_TEP = {g_transition:.2e} m/s^2", "INFO")
+    print_status(f"  a0_MOND = {a0_MOND:.2e} m/s^2", "INFO")
+    print_status(f"  Ratio g_TEP / a0_MOND = {g_transition / a0_MOND:.2f}", "INFO")
     
     # --- GENERATE ENHANCED FIGURE ---
     fig, axes = plt.subplots(2, 2, figsize=FIG_SIZE[FIG_PRESET], constrained_layout=True)
@@ -486,39 +493,24 @@ def run_enhanced_analysis():
     ax4.grid(True, which='major', alpha=0.3)
     
     plt.savefig(os.path.join(output_dir, 'figure_5_sparc_enhanced.png'))
-    print(f"\nSaved: figure_5_sparc_enhanced.png")
+    print_status("Saved: figure_5_sparc_enhanced.png", "SUCCESS")
     
     # --- SUMMARY ---
-    print("\n" + "="*80)
-    print("ENHANCED ANALYSIS SUMMARY")
-    print("="*80)
-    print(f"""
-METHODOLOGY IMPROVEMENTS:
-1. Threshold-marginalized exponent: α = {alpha_marginalized:.3f} ± {alpha_err_marginalized:.3f}
-   - Removes cherry-picking concern
-   - TEP prediction (1/3) within {abs(alpha_marginalized - 1/3)/alpha_err_marginalized:.1f}σ
+    print_status("ENHANCED ANALYSIS SUMMARY", "TITLE")
+    print_status(f"Threshold-marginalized exponent: α = {alpha_marginalized:.3f} ± {alpha_err_marginalized:.3f}", "INFO")
+    print_status(f"  TEP prediction (1/3) within {abs(alpha_marginalized - 1/3)/alpha_err_marginalized:.1f}σ", "INFO")
+    print_status(f"Bootstrap (1000 resamples): α = {alpha_boot:.3f} ± {alpha_boot_err:.3f}", "INFO")
+    print_status(f"  95% CI: [{alpha_boot_ci_lo:.3f}, {alpha_boot_ci_hi:.3f}]", "INFO")
+    print_status(f"Fixed α = 1/3 analysis: ρ = {rho_screen_pc3:.3f} M_sun/pc^3, RMS = {rms_scatter:.2f} dex", "INFO")
+    print_status(f"Connection to MOND: g_TEP / a0 = {g_transition/a0_MOND:.1f}x", "INFO")
+    print_status("Analysis confirms M^(1/3) scaling is robust across thresholds", "SUCCESS")
 
-1b. Bootstrap (1000 resamples): α = {alpha_boot:.3f} ± {alpha_boot_err:.3f}
-   - 95% CI: [{alpha_boot_ci_lo:.3f}, {alpha_boot_ci_hi:.3f}]
-   - TEP prediction (1/3) within {abs(alpha_boot - 1/3)/alpha_boot_err:.1f}σ
+    # --- MILKY WAY PREDICTION ---
+    M_mw = 6.0e10  # M_sun (Bland-Hawthorn & Gerhard 2016)
+    R_dm_mw = k * (M_mw ** (1/3))
+    print_status(f"Milky Way prediction: R_DM = k * M^(1/3) = {R_dm_mw:.1f} kpc", "INFO")
+    print_status(f"  (M_bar = {M_mw:.1e} M_sun, k = {k:.4e})", "INFO")
 
-2. Fixed α = 1/3 analysis:
-   - Implied screening density: ρ = {rho_screen_pc3:.3f} M_sun/pc^3
-   - Physically reasonable (typical disk densities: 0.01-0.1 M_sun/pc^3)
-   - RMS scatter: {rms_scatter:.2f} dex
-
-3. Connection to MOND:
-   - TEP transition acceleration: g_TEP ≈ {g_transition:.1e} m/s^2
-   - MOND acceleration: a0 ≈ {a0_MOND:.1e} m/s^2
-   - Ratio: {g_transition/a0_MOND:.1f}x (same order of magnitude)
-
-CONCLUSION:
-The enhanced analysis confirms that the M^(1/3) scaling is robust across
-threshold choices. The marginalized exponent {alpha_marginalized:.3f} ± {alpha_err_marginalized:.3f}
-is consistent with TEP (1/3) and the implied screening density is physically
-reasonable. The connection to the MOND scale suggests a deeper relationship.
-""")
-    
     # Save numerical outputs
     output_data = {
         "alpha_marginalized": float(alpha_marginalized),
@@ -530,7 +522,12 @@ reasonable. The connection to the MOND scale suggests a deeper relationship.
         "rms_scatter_dex": float(rms_scatter),
         "g_transition": float(g_transition),
         "a0_MOND": float(a0_MOND),
-        "n_galaxies": int(len(galaxy_names))
+        "n_galaxies": int(len(galaxy_names)),
+        "threshold_exponents": threshold_exponents,
+        "milky_way": {
+            "M_bar_Msun": float(M_mw),
+            "R_dm_kpc": float(R_dm_mw)
+        }
     }
     with open(os.path.join(outputs_dir, 'step_4_sparc_analysis.json'), 'w') as f:
         json.dump(output_data, f, indent=2)

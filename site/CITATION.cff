@@ -2,7 +2,7 @@ cff-version: 1.2.0
 title: 'Universal Critical Density: Cross-Scale Consistency of ρ_T'
 message: If you use this software, please cite it as below.
 type: article
-version: v0.4 (New Delhi)
+version: v0.5 (New Delhi)
 date-released: 2026-06-07
 authors:
 - family-names: Smawfield
@@ -10,15 +10,14 @@ authors:
   orcid: https://orcid.org/0009-0003-8219-3159
 abstract: 'This paper establishes a universal saturation density scale, rho_T ~ 20
   g/cm^3 (a saturation scale of the temporal-field topology, not an ambient-density
-  switch), that organizes gravitational anomalies across 40 orders of magnitude in
+  switch), that organizes gravitational anomalies across 18 orders of magnitude in
   mass. Terrestrial calibration from GNSS atomic clock coherence limits yields a characteristic
   length L_c ~ 4200 km for Earth. This density is externally calibrated from GNSS
   atomic clock measurements. The SPARC galaxy database confirms the predicted R_DM
   ∝ M^(1/3) scaling law (alpha = 0.355 ± 0.043 (bootstrap, 1000 resamples)). A Temporal Topology screening analysis
   of 26 objects (S ∝ rho^(1/3)) explains why precision GR tests pass while galactic
-  dynamics show deviations. The model correctly predicts the critical anti-glitch
-  period for magnetars (~6.8 s) and provides the calibration for testing the soliton
-  hypothesis on RBH-1 (Paper 7).
+  dynamics show deviations. The externally calibrated value enables tightly constrained
+  astrophysical applications, including testing the soliton hypothesis on RBH-1 (Paper 7).
 
   '
 license: CC-BY-4.0

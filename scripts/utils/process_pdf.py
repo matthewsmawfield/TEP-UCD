@@ -41,7 +41,7 @@ def _extract_yaml_value(content, key):
 
 def parse_citation_cff():
     """Parse CITATION.cff for PDF metadata."""
-    base_dir = Path(__file__).parent.parent
+    base_dir = Path(__file__).parent.parent.parent
     citation_file = base_dir / 'CITATION.cff'
 
     if not citation_file.exists():
@@ -117,7 +117,7 @@ def build_metadata(cff_data):
 
     date = cff_data.get('date-released', '')
     if date:
-        date_pdf = date.replace('-', ':')
+        date_pdf = str(date).replace('-', ':')
     else:
         date_pdf = ''
 
@@ -139,8 +139,7 @@ def build_metadata(cff_data):
     metadata = {
         'Title': title,
         'Author': author_name,
-        'Creator': author_name,
-        'Subject': abstract,
+        'Subject': keywords,
         'Keywords': keywords,
         'Producer': producer_label,
         'Copyright': f'Creative Commons Attribution 4.0 International License ({license_str})',
@@ -152,7 +151,7 @@ def build_metadata(cff_data):
 
     metadata['XMP-dc:Creator'] = author_name
     metadata['XMP-dc:Title'] = title
-    metadata['XMP-dc:Description'] = abstract[:500] if abstract else ''
+    metadata['XMP-dc:Description'] = abstract if abstract else ''
     metadata['XMP-dc:Rights'] = license_str
     metadata['XMP-dc:Publisher'] = 'Zenodo'
     metadata['XMP-dc:Type'] = 'Preprint'
@@ -248,7 +247,7 @@ def main():
         metadata = {
             'Title': 'TEP Manuscript',
             'Author': 'Matthew Lukin Smawfield',
-            'Creator': 'Matthew Lukin Smawfield',
+            'Subject': 'Temporal Equivalence Principle',
         }
     print()
 
@@ -285,7 +284,7 @@ def main():
     print("Step 3: Verifying metadata...")
     verification = verify_metadata(
         str(input_path),
-        ['Title', 'Author', 'Subject', 'Keywords', 'Creator', 'Copyright']
+        ['Title', 'Author', 'Subject', 'Keywords', 'Copyright']
     )
 
     if verification:

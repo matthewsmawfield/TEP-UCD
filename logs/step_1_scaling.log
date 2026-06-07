@@ -1,0 +1,11 @@
+[03:18:32] [PROCESS] Initializing scaling law analysis
+[03:18:32] [INFO] TEP screening length (Earth): R_T = 4200000.0 m
+[03:18:32] [INFO] Mass range: 3.00e-06 to 1.00e+11 M_sun (500 points)
+[03:18:32] [PROCESS] Computing soliton radius R ~ M^(1/3)
+[03:18:32] [PROCESS] Computing Schwarzschild radius R_S = 2GM/c^2
+[03:18:32] [INFO] RBH-1 crossover: M = 2.0e+07 M_sun, R_T = 7.90e+07 km
+[03:18:32] [INFO] Earth anchor: M = 3.00e-06 M_sun, R_T = 4200 km
+[03:18:32] [PROCESS] Generating scaling law figure
+[03:18:33] [SUCCESS] Figure saved to results/figures/figure_2_scaling.png
+[03:18:33] [SUCCESS] Numerical outputs saved to results/outputs/step_1_scaling.json
+[03:18:33] [SUCCESS] Completed in 1.6s

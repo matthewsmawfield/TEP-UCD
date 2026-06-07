@@ -22,12 +22,11 @@ set_shared_style(scale=FIG_SCALE[FIG_PRESET])
 
 def run_sensitivity_analysis():
     """Generate Figure 8: Sensitivity and feasibility analysis."""
-    logger = None
-    try:
-        logger = TEPLogger("step_6_sensitivity", log_file_path=os.path.join(os.path.dirname(__file__), '..', '..', 'logs', 'step_6_sensitivity.log'))
-        set_step_logger(logger)
-    except Exception:
-        pass
+    logger = TEPLogger("step_6_sensitivity", log_file_path=os.path.join(os.path.dirname(__file__), '..', '..', 'logs', 'step_6_sensitivity.log'))
+    set_step_logger(logger)
+
+    print_status("Initializing sensitivity and feasibility analysis", "PROCESS")
+
     # Grid
     N = 200
     x = np.linspace(-2, 2, N)
@@ -49,9 +48,10 @@ def run_sensitivity_analysis():
     
     colors = [COLORS['secondary'], COLORS['accent'], COLORS['primary'], COLORS['highlight']]
     
-    print("Running sensitivity analysis...")
-    print(f"{'Int. Pol':<10} | {'Min Brightness for Detection (m>10%)':<40}")
-    print("-" * 55)
+    print_status("Running sensitivity analysis", "PROCESS")
+    print_status(f"Grid size: {N}x{N}, core pol fractions: {core_pol_fractions}, brightness levels: {len(core_brightness_levels)}", "INFO")
+    print_status(f"{'Int. Pol':<10} | {'Min Brightness for Detection (m>10%)':<40}", "INFO")
+    print_status("-" * 55, "INFO")
 
     for i, p_int in enumerate(core_pol_fractions):
         m_core_curve = []
@@ -99,7 +99,7 @@ def run_sensitivity_analysis():
         plt.plot(core_brightness_levels, m_core_curve, label=label_str, color=colors[i], linewidth=2.5)
         
         thresh_str = f"{threshold_brightness:.3f} x Ring Peak" if threshold_brightness else "Not Detected"
-        print(f"{p_int*100:<9.0f}% | {thresh_str}")
+        print_status(f"{p_int*100:<9.0f}% | {thresh_str}", "INFO")
         
     # --- Empirical Limits (EHT Data) ---
     # Current EHT (2017/2021): Dynamic Range ~10:1 (conservative) to ~20:1
@@ -139,11 +139,39 @@ def run_sensitivity_analysis():
     os.makedirs(outputs_dir, exist_ok=True)
     save_path = os.path.join(output_dir, 'figure_8_sensitivity.png')
     plt.savefig(save_path, dpi=300, facecolor=plt.gcf().get_facecolor())
-    print("-" * 55)
-    print(f"Sensitivity plot saved to {save_path}")
+    print_status("-" * 55, "INFO")
+    print_status(f"Sensitivity plot saved to {save_path}", "SUCCESS")
+
+    # EHT target predictions from rho_T
+    rho_T = 20.0  # g/cm^3
+    rho_T_kg_km3 = rho_T * 1e12  # kg/km^3
+
+    M_m87 = 6.5e9 * M_SUN
+    R_T_m87 = ((3 * M_m87) / (4 * np.pi * rho_T_kg_km3)) ** (1/3)
+    print_status(f"M87* soliton core prediction: R_T = {R_T_m87:.2e} km ({R_T_m87/1.496e8:.2f} AU)", "INFO")
+
+    M_sgr = 4.3e6 * M_SUN
+    R_T_sgr = ((3 * M_sgr) / (4 * np.pi * rho_T_kg_km3)) ** (1/3)
+    print_status(f"Sgr A* soliton core prediction: R_T = {R_T_sgr:.2e} km ({R_T_sgr/1.496e8:.2f} AU)", "INFO")
 
     # Save numerical outputs
-    output_data = {"grid_size": int(N), "figure": "figure_8_sensitivity.png"}
+    output_data = {
+        "grid_size": int(N),
+        "figure": "figure_8_sensitivity.png",
+        "rho_T_g_cm3": float(rho_T),
+        "M87_star": {
+            "M_kg": float(M_m87),
+            "M_solar": float(M_m87 / M_SUN),
+            "R_T_km": float(R_T_m87),
+            "R_T_AU": float(R_T_m87 / 1.496e8)
+        },
+        "Sgr_A_star": {
+            "M_kg": float(M_sgr),
+            "M_solar": float(M_sgr / M_SUN),
+            "R_T_km": float(R_T_sgr),
+            "R_T_AU": float(R_T_sgr / 1.496e8)
+        }
+    }
     with open(os.path.join(outputs_dir, 'step_6_sensitivity.json'), 'w') as f:
         json.dump(output_data, f, indent=2)
     try:

@@ -17,13 +17,13 @@
 </p>
 
 <div class="equation">
-    $$\rho_T = \frac{M}{\frac{4}{3}\pi R_T^3} = \text{constant}$$
+    \begin{equation} \label{eq:rho_t_constant} \rho_T = \frac{M}{\frac{4}{3}\pi R_T^3} = \text{constant}. \end{equation}
 </div>
 
 <p>For any object of mass \(M\), the saturation radius is determined by:</p>
 
 <div class="equation">
-    $$R_T(M) = \left(\frac{3M}{4\pi \rho_T}\right)^{1/3}$$
+    \begin{equation} \label{eq:rt_mass} R_T(M) = \left(\frac{3M}{4\pi \rho_T}\right)^{1/3}. \end{equation}
 </div>
 
 <p>
@@ -32,9 +32,9 @@
 </p>
 
 <div class="equation">
-    $$L_{c,\oplus} = \left(\frac{3 M_\oplus}{4\pi \rho_T}\right)^{1/3} \approx
+    \begin{equation} \label{eq:lc_earth} L_{c,\oplus} = \left(\frac{3 M_\oplus}{4\pi \rho_T}\right)^{1/3} \approx
     4200 \text{ km} \quad \text{for } \rho_T \approx 19\text{–}20 \text{
-    g/cm}^3$$
+    g/cm}^3. \end{equation}
 </div>
 
 <p>The question thus reduces to: what physical considerations constrain \(\rho_T\)?</p>
@@ -85,7 +85,7 @@
 </p>
 
 <p>
-    This coincidence is unlikely to be accidental; rather, it suggests that the
+    This coincidence suggests that the
     scalar sector may couple fundamentally to the Pauli exclusion principle or
     the quantum state of matter, rather than bulk mass density alone. Temporal
     Topology screening becomes relevant where quantum effects begin to dominate
@@ -99,9 +99,9 @@
     A single-particle Compton-scale estimate yields a core density
     \(\rho_{\rm core} \sim m_e^4 c^3 / \hbar^3 \sim 10^4\) g/cm³—white-dwarf
     scale, not the observed saturation scale. The gap of roughly three orders of
-    magnitude between \(\rho_{\rm core}\) and \(\rho_T \approx 20\) g/cm³ is
-    closed by the many-body Thomas–Fermi-TEP mean-field analysis (in
-    preparation).
+    magnitude between \(\rho_{\rm core}\) and \(\rho_T \approx 20\) g/cm³
+    motivates a many-body correction. The Thomas–Fermi-TEP mean-field analysis
+    (in preparation) provides a candidate bridge.
 </p>
 
 <p>
@@ -110,18 +110,23 @@
 </p>
 
 <div class="equation">
-    $$\lambda_F(\rho) = \frac{2\pi}{(3\pi^2 \rho / m_e)^{1/3}},$$
+    \begin{equation} \label{eq:fermi_wavelength} \lambda_F(n_e) = \frac{2\pi}{(3\pi^2 n_e)^{1/3}}, \end{equation}
 </div>
 
 <p>
-    not the Compton radius \(r_c = \hbar/(m_e c)\). At
-    \(\rho \approx 20\) g/cm³, \(\lambda_F \approx 7 \times 10^{-12}\) m,
-    which is \(\sim 20\times\) larger than the Yukawa screening length
-    \(\lambda_{\rm scr} = \sqrt{2}\,r_c \approx 5.5 \times 10^{-13}\) m.
-    Because the packing volume scales as \(\lambda_F^3\), the corrected
-    many-body density is lower by \(20^3 \sim 8000\times\), bringing the
-    predicted saturation scale into the same order of magnitude as the
-    empirical \(\rho_T\).
+    where the electron number density for typical condensed matter is
+    \(n_e = \rho Z/(A m_u) \approx \rho/(2 m_u)\) with \(Z/A \approx 0.5\),
+    not the free-electron approximation \(n_e = \rho/m_e\) that treats every
+    gram of matter as an electron. At \(\rho \approx 20\) g/cm³, the
+    correct electron density gives \(\lambda_F \approx 1.1 \times 10^{-10}\) m,
+    roughly \(200\times\) larger than the Compton radius
+    \(r_c = \hbar/(m_e c) \approx 3.9 \times 10^{-13}\) m. The simple
+    packing-volume argument (\(\lambda_F^3\)) then predicts a density
+    \(\sim 10^6\)–\(10^7\) lower than the single-particle estimate, well
+    below the observed saturation scale. This shows that the naive analytical
+    closure is an artifact of using the incorrect electron number density;
+    the full Thomas–Fermi-TEP treatment, which includes the self-consistent
+    potential and Fermi-Dirac source coupling, is required.
 </p>
 
 <p>
@@ -130,10 +135,11 @@
     \(S \approx 0.65\)), within \(\sim 25\%\) of the empirical
     \(\rho_T \approx 20\) g/cm³. The full transition from 10% to 90% screened
     spans roughly \(\rho \sim 2\)–30 g/cm³, reflecting the smooth, continuous
-    nature of the many-body saturation slope. This derivation is the
-    rigorous theoretical bridge between the microscopic Compton scale and the
-    macroscopic saturation scale; the simpler dimensional estimate presented
-    below (Section 5.4) is retained as an order-of-magnitude consistency check.
+    nature of the many-body saturation slope. This numerical result provides a
+    candidate theoretical bridge between the microscopic Compton scale and the
+    macroscopic saturation scale. The dimensional estimate presented in
+    Section 5.4 is retained as an independent order-of-magnitude consistency
+    check.
 </p>
 
 <h3>5.4 Dimensional Analysis: The Scalar Coupling Scale</h3>
@@ -145,7 +151,9 @@
     (characterizing the screened matter sector):
 </p>
 
-<div class="equation">$$\rho_\phi \sim \frac{m_\phi c^2}{\lambda_\phi^3}$$</div>
+<div class="equation">
+    \begin{equation} \label{eq:phi_density} \rho_\phi \sim \frac{m_\phi c^2}{\lambda_\phi^3}. \end{equation}
+</div>
 
 <p>
     For a scalar field coupling at length scale \(\lambda_\phi\),
@@ -155,16 +163,15 @@
 </p>
 
 <div class="equation">
-    $$\rho_\phi \sim \frac{(\alpha m_e)^4 c^5}{\hbar^3} \sim 10^1 \text{
-    g/cm}^3$$
+    \begin{equation} \label{eq:alpha_density} \rho_\phi \sim \frac{(\alpha m_e)^4 c^5}{\hbar^3} \sim 10^1 \text{
+    g/cm}^3. \end{equation}
 </div>
 
 <p>
     The order-of-magnitude agreement with \(\rho_T \approx 20\) g/cm³ is
-    encouraging, though it is now superseded by the Thomas–Fermi-TEP derivation
-    (Section 5.3). This dimensional scaling is retained as an independent
-    consistency check, confirming that the saturation scale emerges from
-    fundamental quantum scales rather than cosmological coincidence.
+    encouraging. This dimensional scaling is retained as the strongest
+    surviving analytical argument, confirming that the saturation scale emerges
+    from fundamental quantum scales rather than cosmological coincidence.
 </p>
 
 <h3>5.5 Status: Phenomenological Constraint with Theoretical Foundation</h3>
@@ -192,13 +199,15 @@
 </ol>
 
 <p>
-    The Thomas–Fermi-TEP derivation provides the rigorous theoretical mechanism:
+    The Thomas–Fermi-TEP derivation provides a candidate theoretical mechanism:
     it specifies how the scalar potential \(V(\phi)\) and the Fermi-Dirac source
     combine to produce the observed saturation. The remaining constraints are
     phenomenological—they identify what the theory must reproduce and provide
-    cross-checks, but the mean-field analysis is the rigorous bridge. The key
+    cross-checks, but the mean-field analysis provides a candidate bridge. The key
     point for the present manuscript is that \(\rho_T\) is not arbitrary: it is
-    anchored by a first-principles many-body calculation.
+    constrained by multiple independent considerations, and we conjecture that a
+    mean-field analysis may ultimately bridge the microscopic and macroscopic
+    scales.
 </p>
 
 <div class="callout">

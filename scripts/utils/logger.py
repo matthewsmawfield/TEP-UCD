@@ -114,13 +114,13 @@ class TEPFileFormatter(logging.Formatter):
         return f"[{timestamp}] [{level_name}] {message}"
 
 class TEPLogger:
-    def __init__(self, name: str = "tep_gnss", level: str = "INFO", log_file_path: Optional[Path] = None, reset_log: bool = True):
+    def __init__(self, name: str = "tep_gnss", level: str = "INFO", log_file_path = None, reset_log: bool = True):
         self.logger = logging.getLogger(name)
         self.logger.setLevel(self._get_log_level(level))
-        
+
         # Clear any existing handlers to prevent duplication
         self.logger.handlers.clear()
-        
+
         # Create a console handler with immediate flushing
         ch = logging.StreamHandler(sys.stdout)
         ch.setLevel(logging.DEBUG)  # Allow all custom levels
@@ -130,7 +130,7 @@ class TEPLogger:
         # Create formatters
         console_formatter = TEPFormatter()  # With colors for console
         file_formatter = TEPFileFormatter()  # Clean format for file
-        
+
         ch.setFormatter(console_formatter)
 
         self.logger.addHandler(ch)
@@ -143,9 +143,11 @@ class TEPLogger:
             default_log_dir.mkdir(parents=True, exist_ok=True)
             log_file_path = default_log_dir / "general_tep_gnss.log"
             reset_log = False  # Don't reset the general log file
+        else:
+            log_file_path = Path(log_file_path)
 
         log_file_path.parent.mkdir(parents=True, exist_ok=True) # Ensure directory exists
-        
+
         # Reset log file if requested (default for step-specific loggers)
         if reset_log:
             try:
@@ -153,7 +155,7 @@ class TEPLogger:
                     f.write("")  # Clear the log file
             except Exception as e:
                 print(f"Warning: Could not reset log file {log_file_path}: {e}")
-        
+
         fh = logging.FileHandler(log_file_path, mode='a', encoding='utf-8')  # Use append mode after reset
         fh.setLevel(logging.DEBUG)
         fh.setFormatter(file_formatter)  # Use clean formatter for file
@@ -164,15 +166,27 @@ class TEPLogger:
 
     def info(self, message: str):
         self.logger.info(message)
+        for handler in self.logger.handlers:
+            if hasattr(handler, 'stream') and hasattr(handler.stream, 'flush'):
+                handler.stream.flush()
 
     def warning(self, message: str):
         self.logger.warning(message)
+        for handler in self.logger.handlers:
+            if hasattr(handler, 'stream') and hasattr(handler.stream, 'flush'):
+                handler.stream.flush()
 
     def error(self, message: str):
         self.logger.error(message)
+        for handler in self.logger.handlers:
+            if hasattr(handler, 'stream') and hasattr(handler.stream, 'flush'):
+                handler.stream.flush()
 
     def debug(self, message: str):
         self.logger.debug(message)
+        for handler in self.logger.handlers:
+            if hasattr(handler, 'stream') and hasattr(handler.stream, 'flush'):
+                handler.stream.flush()
         
     def process(self, message: str):
         # Use a custom logging level for PROCESS messages
@@ -185,10 +199,16 @@ class TEPLogger:
     def success(self, message: str):
         # Use a custom logging level for SUCCESS messages
         self.logger.log(26, message)  # 26 is between INFO(20) and WARNING(30)
+        for handler in self.logger.handlers:
+            if hasattr(handler, 'stream') and hasattr(handler.stream, 'flush'):
+                handler.stream.flush()
 
     def test(self, message: str):
         # Use a custom logging level for TEST messages
         self.logger.log(27, message)  # 27 is between INFO(20) and WARNING(30)
+        for handler in self.logger.handlers:
+            if hasattr(handler, 'stream') and hasattr(handler.stream, 'flush'):
+                handler.stream.flush()
 
     def debug_msg(self, message: str):
         self.logger.debug(message)

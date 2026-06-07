@@ -160,25 +160,29 @@ def calculate_central_density(M_bar, R_eff):
 
 def run_residual_analysis():
     """Main residual analysis function."""
+    from scripts.utils.logger import TEPLogger, set_step_logger, print_status
+    logger = TEPLogger("step_7_sparc_residuals", log_file_path=os.path.join(os.path.dirname(__file__), '..', '..', 'logs', 'step_7_sparc_residuals.log'))
+    set_step_logger(logger)
+
     data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'sparc')
     output_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'results', 'figures')
     os.makedirs(output_dir, exist_ok=True)
     outputs_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'results', 'outputs')
     os.makedirs(outputs_dir, exist_ok=True)
-    
-    print("="*80)
-    print("SPARC RESIDUAL ANALYSIS: Baryonic Feedback vs Field Theory")
-    print("="*80)
-    
+
+    print_status("SPARC RESIDUAL ANALYSIS: Baryonic Feedback vs Field Theory", "TITLE")
+
     # Parse data
     try:
+        print_status("Parsing SPARC Table1 (galaxy properties)", "PROCESS")
         galaxy_props = parse_table1(os.path.join(data_dir, 'Table1.mrt'))
+        print_status("Parsing SPARC Table2 (rotation curves)", "PROCESS")
         rotation_curves = parse_table2(os.path.join(data_dir, 'Table2.mrt'))
         using_synthetic = False
-        print(f"\nLoaded {len(galaxy_props)} galaxies from SPARC database")
+        print_status(f"Loaded {len(galaxy_props)} galaxies from SPARC database", "SUCCESS")
     except FileNotFoundError:
-        print("\nWARNING: SPARC data files not found.")
-        print("Generating synthetic data for demonstration...")
+        print_status("WARNING: SPARC data files not found.", "WARNING")
+        print_status("Generating synthetic data for demonstration...", "PROCESS")
         using_synthetic = True
         
         # Generate synthetic galaxies with realistic correlations
@@ -232,7 +236,7 @@ def run_residual_analysis():
             }
     
     # --- STEP 1: Calculate M^(1/3) Fit and Residuals ---
-    print("\n### STEP 1: Calculate Residuals from M^(1/3) Scaling ###")
+    print_status("STEP 1: Calculate Residuals from M^(1/3) Scaling", "PROCESS")
     
     threshold = 1.3
     results = []
@@ -267,91 +271,91 @@ def run_residual_analysis():
                 'inc': inc
             })
     
-    print(f"Valid galaxies: {len(results)}")
-    
+    print_status(f"Valid galaxies: {len(results)}", "INFO")
+
     # Fit M^(1/3) scaling
     M_arr = np.array([r['M_bar'] for r in results])
     R_arr = np.array([r['R_dm'] for r in results])
-    
+
     # Fix α = 1/3, fit normalization
     log_k = np.mean(np.log10(R_arr) - (1/3) * np.log10(M_arr))
     k = 10**log_k
-    
+
     # Calculate residuals
     R_pred = k * M_arr**(1/3)
     residuals = np.log10(R_arr / R_pred)  # in dex
     rms_scatter = np.std(residuals)
-    
-    print(f"Normalization: k = {k:.4e} kpc/M_sun^(1/3)")
-    print(f"RMS scatter: {rms_scatter:.3f} dex")
+
+    print_status(f"Normalization: k = {k:.4e} kpc/M_sun^(1/3)", "INFO")
+    print_status(f"RMS scatter: {rms_scatter:.3f} dex", "INFO")
     
     # Add residuals to results
     for i, r in enumerate(results):
         r['residual'] = residuals[i]
     
     # --- STEP 2: Correlate Residuals with Baryonic Properties ---
-    print("\n### STEP 2: Correlate Residuals with Baryonic Properties ###")
-    
+    print_status("STEP 2: Correlate Residuals with Baryonic Properties", "PROCESS")
+
     gas_frac_arr = np.array([r['gas_frac'] for r in results])
     Sigma_arr = np.array([r['Sigma'] for r in results])
     inc_arr = np.array([r['inc'] for r in results])
-    
+
     # Remove NaNs
     valid_gas = ~np.isnan(gas_frac_arr) & ~np.isnan(residuals)
     valid_sigma = ~np.isnan(Sigma_arr) & ~np.isnan(residuals)
     valid_inc = ~np.isnan(inc_arr) & ~np.isnan(residuals)
-    
+
     # Correlations
     r_gas, p_gas = stats.pearsonr(gas_frac_arr[valid_gas], residuals[valid_gas])
     r_sigma, p_sigma = stats.pearsonr(np.log10(Sigma_arr[valid_sigma]), residuals[valid_sigma])
     r_inc, p_inc = stats.pearsonr(inc_arr[valid_inc], residuals[valid_inc])
-    
-    print(f"\nBaryonic Property Correlations:")
-    print(f"  Gas Fraction:       r = {r_gas:+.3f}, p = {p_gas:.4f}")
-    print(f"  Surface Brightness: r = {r_sigma:+.3f}, p = {p_sigma:.4f}")
-    print(f"  Inclination:        r = {r_inc:+.3f}, p = {p_inc:.4f}")
+
+    print_status("Baryonic Property Correlations:", "INFO")
+    print_status(f"  Gas Fraction:       r = {r_gas:+.3f}, p = {p_gas:.4f}", "INFO")
+    print_status(f"  Surface Brightness: r = {r_sigma:+.3f}, p = {p_sigma:.4f}", "INFO")
+    print_status(f"  Inclination:        r = {r_inc:+.3f}, p = {p_inc:.4f}", "INFO")
     
     # --- STEP 3: Correlate Residuals with Screening Proxies ---
-    print("\n### STEP 3: Correlate Residuals with Screening Proxies (Density) ###")
-    
+    print_status("STEP 3: Correlate Residuals with Screening Proxies (Density)", "PROCESS")
+
     rho_arr = np.array([r['rho_central'] for r in results])
     valid_rho = ~np.isnan(rho_arr) & ~np.isnan(residuals) & (rho_arr > 0)
-    
+
     r_rho, p_rho = stats.pearsonr(np.log10(rho_arr[valid_rho]), residuals[valid_rho])
-    
-    print(f"\nScreening Proxy Correlations:")
-    print(f"  Central Density:    r = {r_rho:+.3f} (p = {p_rho:.4f})")
+
+    print_status("Screening Proxy Correlations:", "INFO")
+    print_status(f"  Central Density:    r = {r_rho:+.3f} (p = {p_rho:.4f})", "INFO")
     
     # --- STEP 4: Statistical Assessment ---
-    print("\n### STEP 4: Statistical Assessment ###")
-    
+    print_status("STEP 4: Statistical Assessment", "PROCESS")
+
     # Define significance threshold
     sig_threshold = 0.3  # |r| > 0.3 considered meaningful
-    
+
     baryonic_correlations = [abs(r_gas), abs(r_sigma), abs(r_inc)]
     screening_correlations = [abs(r_rho)]
-    
+
     max_baryonic = max(baryonic_correlations)
     max_screening = max(screening_correlations)
-    
-    print(f"\nMaximum Baryonic Correlation: |r| = {max_baryonic:.3f}")
-    print(f"Maximum Screening Correlation: |r| = {max_screening:.3f}")
-    
+
+    print_status(f"Maximum Baryonic Correlation: |r| = {max_baryonic:.3f}", "INFO")
+    print_status(f"Maximum Screening Correlation: |r| = {max_screening:.3f}", "INFO")
+
     if max_baryonic > sig_threshold:
-        print(f"\n⚠️  INTERPRETATION: Residuals show significant correlation with baryonic properties.")
-        print(f"    This suggests the M^(1/3) scaling may be a baryonic feedback artifact.")
-        print(f"    FAVORS: Standard Model (baryonic physics)")
+        print_status("INTERPRETATION: Residuals show significant correlation with baryonic properties.", "WARNING")
+        print_status("  This suggests the M^(1/3) scaling may be a baryonic feedback artifact.", "WARNING")
+        print_status("  FAVORS: Standard Model (baryonic physics)", "WARNING")
     elif max_screening > sig_threshold:
-        print(f"\n✓  INTERPRETATION: Residuals correlate with density (screening proxy).")
-        print(f"    This supports a density-dependent field theory mechanism.")
-        print(f"    FAVORS: TEP (Field Theory)")
+        print_status("INTERPRETATION: Residuals correlate with density (screening proxy).", "INFO")
+        print_status("  This supports a density-dependent field theory mechanism.", "INFO")
+        print_status("  FAVORS: TEP (Field Theory)", "SUCCESS")
     else:
-        print(f"\n✓  INTERPRETATION: Residuals are largely random (no strong correlations).")
-        print(f"    This suggests the M^(1/3) scaling is fundamental, not a feedback artifact.")
-        print(f"    FAVORS: TEP (Field Theory)")
+        print_status("INTERPRETATION: Residuals are largely random (no strong correlations).", "INFO")
+        print_status("  This suggests the M^(1/3) scaling is fundamental, not a feedback artifact.", "INFO")
+        print_status("  FAVORS: TEP (Field Theory)", "SUCCESS")
     
     # --- STEP 5: Generate Diagnostic Plots ---
-    print("\n### STEP 5: Generate Diagnostic Plots ###")
+    print_status("STEP 5: Generate Diagnostic Plots", "PROCESS")
     
     fig = plt.figure(figsize=FIG_SIZE[FIG_PRESET])
     gs = fig.add_gridspec(3, 3, hspace=0.55, wspace=0.45)
@@ -471,43 +475,19 @@ def run_residual_analysis():
     ax7.grid(True, axis='y', alpha=0.3)
     
     plt.savefig(os.path.join(output_dir, 'figure_7_sparc_residuals.png'))
-    print(f"\nSaved: figure_7_sparc_residuals.png")
-    
+    print_status("Saved: figure_7_sparc_residuals.png", "SUCCESS")
+
     # --- SUMMARY ---
-    print("\n" + "="*80)
-    print("RESIDUAL ANALYSIS SUMMARY")
-    print("="*80)
-    
+    print_status("RESIDUAL ANALYSIS SUMMARY", "TITLE")
+
     interpretation = "TEP (Field Theory)"
     if max_baryonic > sig_threshold:
         interpretation = "Standard Model (Baryonic Feedback)"
-    
-    print(f"""
-DATASET:
-- Valid galaxies: {len(results)}
-- RMS scatter: {rms_scatter:.3f} dex
 
-BARYONIC PROPERTY CORRELATIONS:
-- Gas Fraction:       r = {r_gas:+.3f} (p = {p_gas:.4f})
-- Surface Brightness: r = {r_sigma:+.3f} (p = {p_sigma:.4f})
-- Inclination:        r = {r_inc:+.3f} (p = {p_inc:.4f})
-- Maximum:            |r| = {max_baryonic:.3f}
-
-SCREENING PROXY CORRELATIONS:
-- Mean Density:       r = {r_rho:+.3f} (p = {p_rho:.4f})
-- Maximum:            |r| = {max_screening:.3f}
-
-INTERPRETATION:
-The residuals from the M^(1/3) scaling show {'STRONG' if max_baryonic > sig_threshold else 'WEAK'}
-correlation with baryonic properties and {'STRONG' if max_screening > sig_threshold else 'WEAK'}
-correlation with density (screening proxy).
-
-VERDICT: FAVORS {interpretation}
-
-This analysis provides a critical discriminant between baryonic feedback
-(which should correlate with gas physics) and field theory (which should
-correlate with density or be random).
-""")
+    print_status(f"Dataset: {len(results)} galaxies, RMS scatter = {rms_scatter:.3f} dex", "INFO")
+    print_status(f"Max baryonic correlation: |r| = {max_baryonic:.3f}", "INFO")
+    print_status(f"Max screening correlation: |r| = {max_screening:.3f}", "INFO")
+    print_status(f"VERDICT: FAVORS {interpretation}", "SUCCESS")
     
     # Save numerical outputs
     with open(os.path.join(outputs_dir, 'step_7_sparc_residuals.json'), 'w') as f:

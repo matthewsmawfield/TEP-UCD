@@ -51,12 +51,12 @@ def run_step(step_name, step_module_path, func_name, skip=False):
         print_status(f"Skipping {step_name}", "WARNING")
         return None
 
-    print_status(f"STEP: {step_name}", "TITLE")
     logger = TEPLogger(
         step_name.lower().replace(" ", "_").replace("-", "_"),
         log_file_path=PROJECT_ROOT / "logs" / f"{step_name.lower().replace(' ', '_').replace('-', '_')}.log"
     )
     set_step_logger(logger)
+    print_status(f"STEP: {step_name}", "TITLE")
 
     start = time.time()
     try:

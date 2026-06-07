@@ -136,9 +136,16 @@ async function buildStaticSite() {
         if (!fs.existsSync(docsDir)) {
             fs.mkdirSync(docsDir, { recursive: true });
         }
-        const repoPdf = path.join(__dirname, '..', '6-TEP-UCD-v0.4-NewDelhi.pdf');
+        const versionPath = path.join(__dirname, '..', 'VERSION.json');
+        let versionInfo = { version: '0.5', codename: 'New Delhi' };
+        if (fs.existsSync(versionPath)) {
+            versionInfo = JSON.parse(fs.readFileSync(versionPath, 'utf8'));
+        }
+        const safeCodename = versionInfo.codename.replace(/\s+/g, '');
+        const pdfName = `6-TEP-UCD-v${versionInfo.version}-${safeCodename}.pdf`;
+        const repoPdf = path.join(__dirname, '..', pdfName);
         if (fs.existsSync(repoPdf)) {
-            fs.copyFileSync(repoPdf, path.join(docsDir, '6-TEP-UCD-v0.4-NewDelhi.pdf'));
+            fs.copyFileSync(repoPdf, path.join(docsDir, pdfName));
             console.log('📁 Copied manuscript PDF to dist/public/docs/');
         }
         
@@ -173,13 +180,7 @@ async function buildStaticSite() {
         const converter = new HTMLToMarkdownConverter();
         await converter.convertSiteToMarkdown();
         
-        // Load version info for filename
-        const versionPath = path.join(__dirname, '..', 'VERSION.json');
-        let versionInfo = { version: '0.2', codename: 'NewDelhi' };
-        if (fs.existsSync(versionPath)) {
-            versionInfo = JSON.parse(fs.readFileSync(versionPath, 'utf8'));
-        }
-        const safeCodename = versionInfo.codename.replace(/\s+/g, '');
+        // Reuse versionInfo and safeCodename loaded earlier for markdown filename
         const markdownFilename = `6-TEP-UCD-v${versionInfo.version}-${safeCodename}.md`;
         
         console.log('✅ Static site built successfully!');

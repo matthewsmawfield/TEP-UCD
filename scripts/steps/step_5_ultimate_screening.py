@@ -28,14 +28,11 @@ def set_pub_style():
 
 def run_ultimate_screening():
     """Generate Figure 6: Comprehensive screening analysis."""
-    logger = None
-    try:
-        logger = TEPLogger("step_5_ultimate_screening", log_file_path=os.path.join(os.path.dirname(__file__), '..', '..', 'logs', 'step_5_ultimate_screening.log'))
-        set_step_logger(logger)
-    except Exception:
-        pass
+    logger = TEPLogger("step_5_ultimate_screening", log_file_path=os.path.join(os.path.dirname(__file__), '..', '..', 'logs', 'step_5_ultimate_screening.log'))
+    set_step_logger(logger)
 
     set_pub_style()
+    print_status("Initializing ultimate screening analysis (26-object dataset)", "PROCESS")
 
     output_dir = os.path.join(os.path.dirname(__file__), "..", "..", "results", "figures")
     os.makedirs(output_dir, exist_ok=True)
@@ -51,9 +48,11 @@ def run_ultimate_screening():
     c = C_LIGHT
     R_TEP_earth = SCREENING_LENGTH_KM * 1000
     rho_T = RHO_C  # g/cm^3 (saturation scale; not an on/off switch)
+    print_status(f"R_TEP (Earth) = {R_TEP_earth:.1f} m, rho_T = {rho_T:.2f} g/cm^3", "INFO")
 
     # --- Data Objects ---
     # Full 26-object dataset (consistent with manuscript claims)
+    print_status("Loading 26-object dataset", "PROCESS")
     objects = {
         # Planets
         "Mercury": {"M": 0.055 * M_earth, "R": 2439, "type": "planet", "rho": 5.43},
@@ -100,6 +99,7 @@ def run_ultimate_screening():
     }
 
     # Derived Metrics
+    print_status("Computing screening factors and derived metrics", "PROCESS")
     for name, obj in objects.items():
         R_T = R_TEP_earth * (obj["M"] / M_earth) ** (1 / 3) / 1000
         obj["R_T"] = R_T
@@ -292,7 +292,8 @@ def run_ultimate_screening():
     plt.savefig(
         os.path.join(output_dir, "figure_6_ultimate_screening.png"), transparent=True
     )
-    print(f"Figure saved to {os.path.join(output_dir, 'figure_6_ultimate_screening.png')}")
+    print_status(f"Figure saved to {os.path.join(output_dir, 'figure_6_ultimate_screening.png')}", "SUCCESS")
+    print_status(f"Screening law fit: S ~ rho^{slope:.2f}, R^2 = {r_val**2:.2f}", "INFO")
 
     # Save numerical outputs
     output_data = {

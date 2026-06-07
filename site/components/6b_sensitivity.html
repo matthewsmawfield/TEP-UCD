@@ -1,10 +1,71 @@
-<h2>6b. Sensitivity and Feasibility: EHT Soliton Detection</h2>
+<h2>Appendix D: EHT Soliton Detection — Sensitivity and Feasibility</h2>
 
 <p>
     The Temporal Topology framework predicts that compact objects such as black holes may harbor
     a solitonic core whose polarization signature differs from standard GR expectations. Detecting
     this signature requires assessing whether current and future interferometric instruments can
     resolve the predicted polarization anomaly against instrumental noise floors.
+</p>
+
+<h3>ρ_T Constraint on the Soliton Core Size</h3>
+
+<p>
+    The central constant of this paper, $\rho_T \approx 20$ g/cm³, sets the physical scale of the
+    soliton core directly via the saturation radius:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:eht_radius} R_T = \left(\frac{3M}{4\pi\rho_T}\right)^{1/3}. \end{equation}
+</div>
+
+<p>
+    For the two primary EHT targets, this yields:
+</p>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Target</th>
+            <th>Mass</th>
+            <th>Predicted $R_T$</th>
+            <th>Physical Size ($R_{\rm phys}$)</th>
+            <th>Screening $S = R_T/R_{\rm phys}$</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>M87*</strong></td>
+            <td>$\sim 6.5 \times 10^9\,M_\odot$</td>
+            <td>$\approx 3.6$ AU ($5.4 \times 10^8$ km)</td>
+            <td>$\approx 1.9 \times 10^{10}$ km</td>
+            <td>$\sim 0.03$ (unscreened)</td>
+        </tr>
+        <tr>
+            <td><strong>Sgr A*</strong></td>
+            <td>$\sim 4.3 \times 10^6\,M_\odot$</td>
+            <td>$\approx 0.3$ AU ($4.7 \times 10^7$ km)</td>
+            <td>$\sim 10^7$ km</td>
+            <td>$\sim 4.7$ (screened)</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+    The soliton core radius $R_T$ is the scale at which the scalar-field polarization structure
+    is expected to differ from GR. For <strong>M87*</strong>, the predicted $R_T \approx 3.6$ AU
+    corresponds to an angular scale of $\sim 4\,\mu$as at 16 Mpc — well below the EHT's
+    $\sim$20 $\mu$as spatial resolution at 230 GHz, but potentially accessible through the
+    polarization signal described below. The small screening factor ($S \sim 0.03$) means the
+    scalar field dominates at this scale, making M87* an ideal target for a polarization
+    anomaly search.
+</p>
+
+<p>
+    For <strong>Sgr A*</strong>, the predicted $R_T \approx 0.3$ AU corresponds to
+    $\sim 4\,\mu$as at 8 kpc, also below the EHT beam. However, the screening factor is
+    substantially larger ($S \sim 4.7$), meaning the scalar contribution is partially suppressed.
+    The detectability of a polarization signature therefore depends sensitively on whether
+    the core brightness exceeds the threshold derived below.
 </p>
 
 <h3>Polarization Signature Model</h3>

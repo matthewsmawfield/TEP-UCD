@@ -8,8 +8,7 @@
 <ul>
     <li><strong>Galaxy rotation curves:</strong> SPARC database analysis yields $R_{\text{DM}} \propto M^{\alpha_{\rm SPARC}}$ with $\alpha_{\rm SPARC} = 0.355 \pm 0.043$ (bootstrap, 1000 resamples; Lelli et al. 2016; this work).</li>
     <li><strong>Ultra-diffuse galaxies:</strong> DF2 and DF4 exhibit dark matter deficiency consistent with saturation radii exceeding tidal radii (van Dokkum et al. 2018, 2019).</li>
-    <li><strong>Milky Way:</strong> Gaia DR3 analyses report evidence consistent with a Keplerian-like decline at $R \approx 19$ kpc, consistent with $M^{1/3}$ scaling (Gaia Collaboration 2023).</li>
-    <li><strong>Compact objects:</strong> Magnetar anti-glitches occur near a critical spin period $P_{\text{crit}} \sim 7$ s, consistent with field saturation at neutron star densities (Archibald et al. 2013).</li>
+    <li><strong>Milky Way:</strong> The SPARC-calibrated $M^{1/3}$ relation predicts a dark-matter onset at $R_{\text{DM}} \approx 3$ kpc for the Milky Way, consistent with the observed transition from baryonic to dark-matter-dominated rotation at $R \sim 3$–5 kpc (Gaia Collaboration 2023; Sofue 2020).</li>
 </ul>
 
 <p>The persistence of this $M^{1/3}$ scaling across 6 orders of magnitude in mass and 15 orders of magnitude in density suggests a fundamental physical scale, not a coincidence of baryonic feedback or halo assembly.</p>
@@ -18,8 +17,8 @@
 
 <p>The Temporal Equivalence Principle (TEP) proposes that gravitational phenomena arise from a conformal time field $\phi(x^\mu)$ that modulates proper time rates. This phenomenology arises from the TEP action (Smawfield 2025a, Paper 0):</p>
 
-<div>
-    $$ S = \int d^4x \sqrt{-g} \left[ \frac{M_{\text{Pl}}^2}{2} R - \frac{1}{2}(\partial \phi)^2 - V(\phi) \right] + S_m[\tilde{g}_{\mu\nu}] $$
+<div class="equation">
+    \begin{equation} \label{eq:tep_action} S = \int d^4x \sqrt{-g} \left[ \frac{M_{\text{Pl}}^2}{2} R - \frac{1}{2}(\partial \phi)^2 - V(\phi) \right] + S_m[\tilde{g}_{\mu\nu}] \end{equation}
 </div>
 
 <p>where matter couples to the Jordan frame metric $\tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu} + B(\phi) \nabla_\mu\phi \nabla_\nu\phi$. At late times, $B(\phi)$ is strongly constrained by multi-messenger observations and can be neglected, yielding $\tilde{g}_{\mu\nu} \approx A^2(\phi) g_{\mu\nu}$ with $A(\phi) = \exp(\beta_A \phi/M_{\text{Pl}})$. The scalar saturation potential $V(\phi)$ prevents the gradient from diverging, leading to field saturation at characteristic density $\rho_T$. In this framework, the "dark matter" problem is reinterpreted as a violation of the <em>isochrony axiom</em>—the assumption that clocks at the same gravitational potential tick at the same rate regardless of their spatial separation or the mass distribution's history.</p>
@@ -30,8 +29,8 @@
 
 <p>The characteristic scale at which this temporal structure becomes significant is set by the saturation scale $\rho_T$, where the scalar field $\phi$ reaches its self-interaction threshold and saturates—forming a stable, localized configuration (a soliton under that interpretation) with radius:</p>
 
-<div>
-    $$ R_T = \left( \frac{3M}{4\pi \rho_T} \right)^{1/3} $$
+<div class="equation">
+    \begin{equation} \label{eq:saturation_radius} R_T = \left( \frac{3M}{4\pi \rho_T} \right)^{1/3}. \end{equation}
 </div>
 
 <p>This $M^{1/3}$ scaling is a direct consequence of the saturation condition; under a soliton interpretation, this corresponds to soliton formation.</p>
@@ -63,14 +62,6 @@
         <td>$\rho_T \approx 20$ g/cm³</td>
     </tr>
     <tr>
-        <td><strong>Compact</strong></td>
-        <td>Magnetars</td>
-        <td>$M \sim 1.4$–$2.0\,M_\odot$</td>
-        <td>$\rho \sim 10^{14}$ g/cm³</td>
-        <td>$P_{\text{crit}} \approx 6.8$ s (universal)</td>
-        <td>1E 2259+586: 4% match ($N=1$)</td>
-    </tr>
-    <tr>
         <td><strong>Galactic</strong></td>
         <td>SPARC Galaxies</td>
         <td>$10^9$–$10^{12} M_\odot$</td>
@@ -81,10 +72,10 @@
     <tr>
         <td><strong>Local</strong></td>
         <td>Milky Way</td>
-        <td>$M \sim 10^{12} M_\odot$</td>
+        <td>$M_{\rm bar} \sim 6 \times 10^{10} M_\odot$</td>
         <td>$\rho \sim 10^{-24}$ g/cm³</td>
-        <td>Keplerian transition</td>
-        <td>$R \approx 19$ kpc (scale-consistency check)</td>
+        <td>Inner mass-discrepancy onset</td>
+        <td>$R_{\text{DM}} \approx 3$ kpc (observed $\sim$3–5 kpc)</td>
     </tr>
     <tr>
         <td><strong>Screening</strong></td>
@@ -96,7 +87,7 @@
     </tr>
     </tbody>
     </table>
-    <p><em>Note: The convergence of constraints across 40 orders of magnitude in mass motivates $\rho_T$ as a candidate saturation scale; full dependency audit pending.</em></p>
+    <p><em>Note: The convergence of constraints across 18 orders of magnitude in mass (Earth to galaxy) motivates $\rho_T$ as a candidate saturation scale.</em></p>
 </div>
 
 <h3>Paper Structure</h3>
@@ -109,10 +100,9 @@
     <li><strong>Section 4:</strong> Screening hierarchy analysis, explaining why GR tests pass despite scalar field presence.</li>
     <li><strong>Section 5:</strong> Physical constraints on $\rho_T$, including electron degeneracy, the Thomas–Fermi bridge, and dimensional analysis.</li>
     <li><strong>Section 6:</strong> The Universal Scaling Law, synthesizing constraints across all regimes.</li>
-    <li><strong>Section 7:</strong> Compact object test via magnetar anti-glitches at $P_{\text{crit}} \approx 6.8$ s.</li>
-    <li><strong>Section 8:</strong> Milky Way Keplerian transition at $R \approx 19$ kpc.</li>
-    <li><strong>Section 9:</strong> Discussion of dark matter as phantom mass and cosmological implications.</li>
-    <li><strong>Section 10:</strong> Conclusion and astrophysical applications (including RBH-1, companion paper).</li>
+    <li><strong>Section 7:</strong> Milky Way dark-matter onset at $R_{\text{DM}} \approx 3$ kpc.</li>
+    <li><strong>Section 8:</strong> Discussion of dark matter as phantom mass and cosmological implications.</li>
+    <li><strong>Section 9:</strong> Conclusion and astrophysical applications (including RBH-1, companion paper).</li>
 </ul>
 
 <p>This multi-scale convergence establishes $\rho_T \approx 20$ g/cm³ as an externally calibrated parameter (with explicit systematic uncertainty), enabling sharply constrained astrophysical applications such as the RBH-1 runaway black hole candidate (Smawfield 2025h, Paper 7).</p>

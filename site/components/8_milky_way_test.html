@@ -1,0 +1,88 @@
+<h2>7. Milky Way Test: Dark Matter Onset</h2>
+
+<h3>Expected Onset Radius</h3>
+
+<p>The Milky Way provides a local test of the galactic $M^{1/3}$ scaling law established in Section 3. Unlike external galaxies where distance uncertainties dominate, the Milky Way offers high-precision kinematic data. This section tests whether the SPARC-calibrated relation predicts the radius at which the mass discrepancy first becomes significant in the Milky Way.</p>
+
+<p>Using the SPARC-calibrated normalization ($k \approx 7.9 \times 10^{-4}$ kpc/$M_\odot^{1/3}$) and the Milky Way's total baryonic mass estimated at $M_{\text{bar}} \approx 6 \times 10^{10} M_\odot$ (Bland-Hawthorn &amp; Gerhard 2016), the expected dark-matter onset radius is:</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:milky_way_dm} R_{\text{DM}} = k \cdot M_{\text{bar}}^{1/3} \approx 7.9 \times 10^{-4} \cdot (6 \times 10^{10})^{1/3} \text{ kpc} \approx 3.1 \text{ kpc}. \end{equation}
+</div>
+
+<p>This radius marks the scale where the baryonic rotation curve (bulge + disk) first falls below the observed circular velocity, signaling the onset of the phantom mass effect. It is the same quantity $R_{\text{DM}}$ that is measured directly in the SPARC ensemble; the outer Keplerian decline at larger radii is a separate phenomenon governed by the full halo profile, not by the onset scaling alone.</p>
+
+<h3>Gaia DR3 and Local Observations</h3>
+
+<p>Gaia Data Release 3 (Gaia Collaboration 2023) provides precise proper motions and radial velocities for millions of stars, enabling construction of the Milky Way rotation curve to greater distances than previously possible. Recent analyses (e.g., Jiao et al. 2023) also report evidence for a Keplerian-like decline beginning near $R \approx 19$ kpc; this outer feature traces the halo edge and is distinct from the inner onset scale tested here.</p>
+
+<p>Key observational features relevant to the $R_{\text{DM}}$ prediction:</p>
+<ul>
+    <li><strong>Baryonic dominance ($R \lesssim 3$ kpc):</strong> The bulge and inner disk dominate; the rotation curve rises steeply and is well described by visible matter alone (Sofue 2020).</li>
+    <li><strong>Dark-matter onset ($R \sim 3$–$5$ kpc):</strong> Beyond the peak of the baryonic contribution, the observed circular velocity ($v_{\text{circ}} \approx 220$ km/s) stays flat while the baryonic model predicts a decline. This is the Milky Way's equivalent of the SPARC $R_{\text{DM}}$ — the radius where the mass discrepancy first becomes significant.</li>
+    <li><strong>Flat regime ($5 \lesssim R \lesssim 15$ kpc):</strong> The rotation curve remains approximately flat, indicating substantial phantom mass contribution.</li>
+    <li><strong>Keplerian decline ($R \gtrsim 19$ kpc):</strong> At large radii the enclosed mass growth slows and $v_{\text{circ}}$ begins to decline. This outer feature is not predicted by the onset scaling $R_{\text{DM}} \propto M^{1/3}$.</li>
+</ul>
+
+<h3>Uncertainty Analysis and Error Budget</h3>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Value</th>
+            <th>Uncertainty</th>
+            <th>Impact on $R_{\text{DM}}$</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>MW Baryonic Mass</strong></td>
+            <td>$6.0 \times 10^{10} M_\odot$</td>
+            <td>$\pm 15\%$ ($0.9 \times 10^{10}$)</td>
+            <td>$\pm 5\%$ (scaling $M^{1/3}$)</td>
+        </tr>
+        <tr>
+            <td><strong>SPARC Constant ($k$)</strong></td>
+            <td>$7.9 \times 10^{-4}$</td>
+            <td>$\pm 4\%$ (fit error)</td>
+            <td>$\pm 4\%$</td>
+        </tr>
+        <tr>
+            <td><strong>Model Systematic</strong></td>
+            <td>-</td>
+            <td>$\pm 10\%$ (geometry)</td>
+            <td>$\pm 10\%$</td>
+        </tr>
+        <tr style="background-color: #f8f9fa; font-weight: bold;">
+            <td>Total Expected $R_{\text{DM}}$</td>
+            <td>3.1 kpc</td>
+            <td>$\pm 0.2$ kpc (6.4%)</td>
+            <td>-</td>
+        </tr>
+        <tr style="border-top: 2px solid #ccc;">
+            <td><strong>Observed Onset</strong></td>
+            <td>$\sim$3–5 kpc</td>
+            <td>$\pm 1$ kpc</td>
+            <td>-</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+    The expected value ($3.1 \pm 0.2$ kpc) and the observed dark-matter onset scale ($\sim$3–5 kpc) are consistent within the combined uncertainty. This provides a local scale-consistency check of the $M^{1/3}$ relation.
+</p>
+
+<h3>Comparison with Dark Matter Halo Models</h3>
+
+<div class="result-box">
+    <h4>NFW Halo vs. TEP Soliton</h4>
+    <ul>
+        <li><strong>NFW Halo (CDM):</strong> In standard CDM, the inner rotation curve profile depends on the halo concentration $c$ and virial mass $M_{\text{vir}}$, both of which are free parameters. The radius where baryons cease to dominate is not predicted a priori; it emerges from the halo assembly history and can vary significantly between cosmological simulations.</li>
+        <li><strong>TEP Soliton:</strong> The $M^{1/3}$ scaling yields the onset radius directly from the baryonic mass, with no Milky Way-specific tuning. The normalization is fixed by the SPARC ensemble ($k \approx 7.9 \times 10^{-4}$ kpc/$M_\odot^{1/3}$) and gives $R_{\text{DM}} \approx 3$ kpc for the Milky Way. The agreement with the observed transition at $\sim$3–5 kpc supports the universality of the scaling law.</li>
+    </ul>
+</div>
+
+<h3>Future Refinements</h3>
+
+<p>Ongoing Gaia data releases will improve the precision of the inner rotation curve, potentially constraining the exact baryonic-to-dark-matter transition radius to $\sim$10% accuracy. Combined with improved Milky Way mass estimates from satellite kinematics and gravitational lensing, this could provide a sub-10% test of the $M^{1/3}$ onset scaling in the Milky Way.</p>

@@ -123,12 +123,8 @@ def find_rdm_for_threshold(R, Vobs, Vbar, threshold=1.3):
 
 def run():
     """Generate Figure 5b: SPARC example rotation curves."""
-    logger = None
-    try:
-        logger = TEPLogger("step_4b_sparc_examples", log_file_path=os.path.join(os.path.dirname(__file__), '..', '..', 'logs', 'step_4b_sparc_examples.log'))
-        set_step_logger(logger)
-    except Exception:
-        pass
+    logger = TEPLogger("step_4b_sparc_examples", log_file_path=os.path.join(os.path.dirname(__file__), '..', '..', 'logs', 'step_4b_sparc_examples.log'))
+    set_step_logger(logger)
 
     repo_root = os.path.join(os.path.dirname(__file__), '..', '..')
     data_dir = os.path.join(repo_root, 'data', 'sparc')
@@ -137,11 +133,13 @@ def run():
     outputs_dir = os.path.join(repo_root, 'results', 'outputs')
     os.makedirs(outputs_dir, exist_ok=True)
 
+    print_status("SPARC Example Rotation Curves", "PROCESS")
+
     table1 = os.path.join(data_dir, 'Table1.mrt')
     table2 = os.path.join(data_dir, 'Table2.mrt')
 
     if not (os.path.exists(table1) and os.path.exists(table2)):
-        # Fallback: generate a small synthetic illustration if SPARC tables are absent.
+        print_status("SPARC tables absent; generating synthetic illustration", "WARNING")
         np.random.seed(7)
         fig, axes = plt.subplots(3, 3, figsize=FIG_SIZE[FIG_PRESET], constrained_layout=True)
         for i, ax in enumerate(axes.flat):
@@ -161,13 +159,16 @@ def run():
 
         out_path = os.path.join(output_dir, 'figure_5_sparc_examples.png')
         plt.savefig(out_path, transparent=True)
-        print(f"Saved synthetic example figure to {out_path}")
+        print_status(f"Saved synthetic example figure to {out_path}", "SUCCESS")
         return
 
+    print_status("Parsing SPARC tables", "PROCESS")
     props = parse_table1(table1)
     curves = parse_table2(table2)
+    print_status(f"Loaded {len(props)} galaxies, {len(curves)} rotation curves", "INFO")
 
     records = []
+    print_status("Computing baryonic masses and R_dm for each galaxy", "PROCESS")
     for name, rc in curves.items():
         if name not in props:
             continue
@@ -187,6 +188,7 @@ def run():
             'R_pred': K_TEP * M_bar**(1/3),
         })
 
+    print_status(f"Valid galaxies with R_dm: {len(records)}", "INFO")
     if len(records) < 9:
         raise RuntimeError(f"Not enough valid SPARC galaxies to build examples: got {len(records)}")
 
@@ -194,6 +196,7 @@ def run():
     records.sort(key=lambda r: r['M_bar'])
     idxs = np.linspace(0, len(records) - 1, 9).round().astype(int)
     selection = [records[i] for i in idxs]
+    print_status(f"Selected 9 representative galaxies (log M_bar = {np.log10(selection[0]['M_bar']):.1f} to {np.log10(selection[-1]['M_bar']):.1f})", "INFO")
 
     fig, axes = plt.subplots(3, 3, figsize=FIG_SIZE[FIG_PRESET], constrained_layout=True)
 
@@ -249,7 +252,7 @@ def run():
 
     out_path = os.path.join(output_dir, 'figure_5_sparc_examples.png')
     plt.savefig(out_path, transparent=True)
-    print(f"Saved: {out_path}")
+    print_status(f"Saved: {out_path}", "SUCCESS")
 
     # Save numerical outputs
     output_data = {"figure": "figure_5_sparc_examples.png", "K_TEP": float(K_TEP)}

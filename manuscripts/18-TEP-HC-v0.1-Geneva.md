@@ -1,7 +1,7 @@
 # Temporal Equivalence Principle: EFT Mapping and CMB Acoustic Peak Preservation
 **Matthew Lukin Smawfield**
 Version: v0.1 (Geneva)
-First published: 24 May 2026 · Last updated: 6 June 2026
+First published: 24 May 2026 · Last updated: 7 June 2026
 Paper Series: TEP Series Paper 18 (hi_class Cosmology)
 
 ---

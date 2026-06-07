@@ -27,14 +27,11 @@ def set_pub_style():
 
 def run_wd_screening():
     """Generate Figure 3: White dwarf screening test."""
-    logger = None
-    try:
-        logger = TEPLogger("step_2_wd_screening", log_file_path=os.path.join(os.path.dirname(__file__), '..', '..', 'logs', 'step_2_wd_screening.log'))
-        set_step_logger(logger)
-    except Exception:
-        pass
+    logger = TEPLogger("step_2_wd_screening", log_file_path=os.path.join(os.path.dirname(__file__), '..', '..', 'logs', 'step_2_wd_screening.log'))
+    set_step_logger(logger)
 
     set_pub_style()
+    print_status("Initializing white dwarf screening analysis", "PROCESS")
 
     output_dir = os.path.join(os.path.dirname(__file__), "..", "..", "results", "figures")
     os.makedirs(output_dir, exist_ok=True)
@@ -48,16 +45,20 @@ def run_wd_screening():
 
     # --- The TEP Parameter (Calibrated from GNSS) ---
     R_TEP_earth = SCREENING_LENGTH_KM * 1000  # meters
+    print_status(f"TEP screening length: {R_TEP_earth:.1f} m", "INFO")
 
     # --- Mass Range: White Dwarf Domain (0.1 to 1.4 Solar Masses) ---
     masses_solar = np.linspace(0.1, 1.44, 200)  # Up to Chandrasekhar limit
     masses_kg = masses_solar * M_sun
+    print_status(f"WD mass range: {masses_solar[0]:.2f} to {masses_solar[-1]:.2f} M_sun ({len(masses_solar)} points)", "INFO")
 
     # --- Line A: White Dwarf Physical Radius (Baryonic Reality) ---
+    print_status("Computing WD physical radius R_WD ~ M^(-1/3)", "PROCESS")
     R_WD_solar = 0.01 * masses_solar ** (-1 / 3)  # in solar radii
     R_WD_km = R_WD_solar * R_sun / 1000  # convert to km
 
     # --- Line B: TEP Soliton Radius (Scalar Field Extent) ---
+    print_status("Computing TEP soliton radius R_T ~ M^(1/3)", "PROCESS")
     R_T_m = R_TEP_earth * (masses_kg / M_earth) ** (1 / 3)
     R_T_km = R_T_m / 1000
 
@@ -66,13 +67,16 @@ def run_wd_screening():
     sirius_b_radius = 5800  # km
     sirius_b_R_T = (R_TEP_earth * ((sirius_b_mass * M_sun) / M_earth) ** (1 / 3)) / 1000
     screening_factor_sirius = sirius_b_R_T / sirius_b_radius
+    print_status(f"Sirius B: R_phys = {sirius_b_radius:.0f} km, R_T = {sirius_b_R_T:.2e} km, S = {screening_factor_sirius:.0f}x", "INFO")
 
     chandra_mass = 1.44
     chandra_radius = 0.01 * chandra_mass ** (-1 / 3) * R_sun / 1000
     chandra_R_T = (R_TEP_earth * ((chandra_mass * M_sun) / M_earth) ** (1 / 3)) / 1000
     screening_factor_chandra = chandra_R_T / chandra_radius
+    print_status(f"Chandrasekhar limit: R_phys = {chandra_radius:.0f} km, R_T = {chandra_R_T:.2e} km, S = {screening_factor_chandra:.0f}x", "INFO")
 
     # --- Plotting ---
+    print_status("Generating WD screening figure", "PROCESS")
     fig, ax = plt.subplots(figsize=FIG_SIZE[FIG_PRESET])
 
     c_phys = COLORS["secondary"]
@@ -180,10 +184,7 @@ def run_wd_screening():
     plt.tight_layout()
     output_path = os.path.join(output_dir, "figure_3_wd_screening.png")
     plt.savefig(output_path, transparent=True)
-    try:
-        print_status("Figure saved to results/figures/figure_3_wd_screening.png", "SUCCESS")
-    except Exception:
-        print(f"Figure saved to {output_path}")
+    print_status("Figure saved to results/figures/figure_3_wd_screening.png", "SUCCESS")
 
     # Save numerical outputs
     output_data = {

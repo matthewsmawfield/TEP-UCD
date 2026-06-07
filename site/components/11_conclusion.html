@@ -1,8 +1,8 @@
-<h2>10. Conclusion</h2>
+<h2>9. Conclusion</h2>
 
 <h3>A Universal Organizing Parameter</h3>
 
-<p>This paper identifies the saturation scale $\rho_T \approx 20$ g/cm³ as a candidate organizing parameter for gravitational phenomena across cosmological scales. The convergence of five macroscopic constraints—terrestrial (GNSS), compact (magnetars), galactic (SPARC), local (Milky Way), and screening (26 objects)—spanning 40 orders of magnitude in mass and 15 orders of magnitude in density, motivates the hypothesis that $\rho_T$ reflects a candidate physical scale, pending full dependency audit.</p>
+<p>This paper identifies the saturation scale $\rho_T \approx 20$ g/cm³ as a candidate organizing parameter for gravitational phenomena across planetary, galactic, compact-object, and RBH-scale regimes. The convergence of terrestrial GNSS timing structure, SPARC galaxy onset scaling, Milky Way inner mass-discrepancy structure, and the density-ordered screening hierarchy motivates the hypothesis that $\rho_T$ is a real physical scale in the temporal-field topology, not a system-specific fitting parameter. The screening hierarchy is not treated as an independent discovery of the $1/3$ exponent; rather, it demonstrates that the same $\rho_T$ coherently recovers GR-like behavior in dense systems while permitting unscreened scalar phenomenology in diffuse regimes.</p>
 
 <h3>Key Results</h3>
 
@@ -13,11 +13,9 @@
     
     <li><strong>Galactic Scaling:</strong> SPARC rotation curves yield $\alpha_{\rm SPARC} = 0.355 \pm 0.043$ (bootstrap, 1000 resamples), consistent with the $M^{1/3}$ expectation within $\sim$0.5$\sigma$.</li>
     
-    <li><strong>Screening Hierarchy:</strong> 26 objects spanning 15 orders of magnitude in density reveal $S \propto \rho^{0.334}$ ($R^2 = 0.99995$), explaining why GR tests pass (binary pulsars: $S > 30{,}000$) while galactic dynamics show scalar effects ($S \sim 0.01$).</li>
+    <li><strong>Screening Hierarchy:</strong> 26 objects spanning 15 orders of magnitude in density reveal a consistency relation $S \propto \rho^{1/3}$, algebraically expected from the $R_T(M)$ construction, explaining why GR tests pass (binary pulsars: $S \sim 29{,}000$) while galactic dynamics show scalar effects ($S \sim 0.01$).</li>
     
-    <li><strong>Magnetar Test:</strong> Expected $P_{\text{crit}} \approx 6.8$ s matches 1E 2259+586 ($P = 6.98$ s) within 4%, providing a compact-object scale-consistency check of the $\rho_T$ extrapolation, while remaining statistically limited by a single-object sample.</li>
-    
-    <li><strong>Milky Way Test:</strong> Expected transition scale $R_{\text{trans}} \approx 19$ kpc is consistent with reported outer rotation-curve behavior near $\sim 19$ kpc in Gaia-based analyses, providing a local scale-consistency check.</li>
+    <li><strong>Milky Way Test:</strong> The SPARC-calibrated $M^{1/3}$ relation predicts a dark-matter onset radius $R_{\text{DM}} \approx 3$ kpc for the Milky Way, consistent with the observed transition from baryonic to dark-matter-dominated rotation at $R \sim 3$–5 kpc, providing a local scale-consistency check.</li>
 </ol>
 
 <h3>Dark Matter as Phantom Mass</h3>
@@ -50,25 +48,25 @@
 
 <p>The convergence of terrestrial, compact, galactic, and cosmological constraints on a single density scale suggests a fundamental organization principle governing gravitational phenomenology across many orders of magnitude in mass. This organization is formalized in the Temporal Equivalence Principle (Smawfield 2025a, Paper 0), which posits that gravitational phenomena arise from a conformal time field $\phi(x^\mu)$ coupled to matter via the action:</p>
 
-<div>
-    $$ S = \int d^4x \sqrt{-g} \left[ \frac{M_{\text{Pl}}^2}{2} R - \frac{1}{2}(\partial \phi)^2 - V(\phi) \right] + S_m[\tilde{g}_{\mu\nu}] $$
+<div class="equation">
+    \begin{equation} \label{eq:tep_action_conclusion} S = \int d^4x \sqrt{-g} \left[ \frac{M_{\text{Pl}}^2}{2} R - \frac{1}{2}(\partial \phi)^2 - V(\phi) \right] + S_m[\tilde{g}_{\mu\nu}] \end{equation}
+</div>
 
 <p>where $\tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu}$ and $A(\phi) = \exp(\beta_A\phi/M_{\text{Pl}})$ in the late-time conformal limit.</p>
-</div>
 
 <p>The saturation scale $\rho_T$ emerges as the scale at which the scalar field $\phi$ reaches its self-interaction threshold, saturating the field. Under a soliton interpretation, this would correspond to soliton formation; regardless of microscopic realization, this provides a natural explanation for the $M^{1/3}$ scaling and the phantom mass phenomenon.</p>
 
 <h3>Systematic Uncertainties and Robustness</h3>
 
-<p>The primary systematic uncertainty is the GNSS length scale determination: $L_c = 4200 \pm 500$ km (12%), propagating to $\rho_T = 20 \pm 8$ g/cm³ (40%). However, this uncertainty is smaller than the dynamic range of the tests (15 orders of magnitude in density), and all five independent constraints converge on the same value within their respective uncertainties.</p>
+<p>The primary uncertainty is the GNSS length scale determination. The multi-center analysis yields $\lambda_T = 3{,}330$–$4{,}549$ km (Paper 1), while the 25-year CODE analysis gives $4{,}201 \pm 1{,}967$ km (Paper 2). We adopt $L_c = 4{,}200 \pm 500$ km, reflecting the multi-center spread. Propagating this alone gives $\rho_T = 20 \pm 7$ g/cm³ ($35\%$). The $M^{1/3}$ structural form is independent of $\rho_T$; only the normalization changes. All four independent constraints converge on the same value within their respective uncertainties.</p>
 
 <p>The robustness of the result is demonstrated by:</p>
 
 <ul>
     <li><strong>Multi-center consistency:</strong> CODE, IGS, ESA yield identical GNSS patterns.</li>
-    <li><strong>Temporal stability:</strong> 25-year consistency strongly disfavors transient effects.</li>
-    <li><strong>Raw data validation:</strong> RINEX analysis strongly constrains processing artifacts.</li>
-    <li><strong>Cross-scale agreement:</strong> Five tests spanning 40 orders of magnitude (pending dependency audit).</li>
+    <li><strong>Temporal stability:</strong> 25-year consistency disfavors transient effects.</li>
+    <li><strong>Raw data validation:</strong> RINEX analysis constrains processing artifacts.</li>
+    <li><strong>Cross-scale agreement:</strong> Four tests spanning 18 orders of magnitude in mass.</li>
 </ul>
 
 <h3>Future Directions</h3>
@@ -77,7 +75,6 @@
 
 <ol>
     <li><strong>Precision tests:</strong> Improved GNSS analysis (longer baselines, more stations) could tighten $L_c$ to $\sim$5% accuracy.</li>
-    <li><strong>Magnetar surveys:</strong> Timing campaigns targeting $P \sim 7$ s magnetars could test the $P_{\text{crit}}$ prediction statistically.</li>
     <li><strong>High-redshift galaxies:</strong> JWST observations of $z > 10$ systems could test whether soliton formation affects early galaxy assembly.</li>
     <li><strong>Gravitational wave cosmology:</strong> LISA could detect scalar radiation from binary black hole mergers, providing direct evidence for the time-field sector.</li>
     <li><strong>Laboratory tests:</strong> Atomic interferometry experiments could search for temporal gradients at sub-meter scales.</li>
@@ -85,6 +82,6 @@
 
 <h3>Concluding Remarks</h3>
 
-<p>The saturation scale $\rho_T \approx 20$ g/cm³ represents a fundamental scale in gravitational physics, organizing phenomena from planetary to galactic scales. Its derivation from terrestrial calibration (GNSS), validation across cosmological scales (SPARC, Milky Way), and consistency with compact objects (magnetars) suggest that dark matter observations may reflect temporal structure in spacetime rather than non-baryonic particles.</p>
+<p>The saturation scale $\rho_T \approx 20$ g/cm³ represents a fundamental scale in gravitational physics, organizing phenomena from planetary to galactic scales. Its derivation from terrestrial calibration (GNSS), validation across cosmological scales (SPARC, Milky Way), and consistency with the RBH-1 crossover suggest that dark matter observations may reflect temporal structure in spacetime rather than non-baryonic particles.</p>
 
 <p>This paradigm shift—from dark matter as substance to dark matter as temporal shear—provides a unified explanation for the $M^{1/3}$ scaling, screening hierarchy, and phantom mass phenomenon. The externally calibrated value of $\rho_T$ enables specific testable applications, including the RBH-1 case study (Paper 7), positioning the Temporal Equivalence Principle as an empirically grounded alternative to the particle dark matter paradigm.</p>

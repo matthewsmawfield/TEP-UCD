@@ -1,8 +1,8 @@
 {
   "name": "tep-ucd-site",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Universal Critical Density: Cross-Scale Consistency of ρ_T",
-  "comment": "Package version matches manuscript version v0.4 (New Delhi)",
+  "comment": "Package version matches manuscript version v0.5 (New Delhi)",
   "main": "index.html",
   "scripts": {
     "dev": "node dev-server.js",
@@ -22,7 +22,6 @@
     "dark matter",
     "Temporal Topology screening",
     "GNSS atomic clocks",
-    "magnetars",
     "scaling laws"
   ],
   "author": "Matthew Lukin Smawfield <matthew@mlsmawfield.com>",

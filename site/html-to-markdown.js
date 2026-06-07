@@ -321,7 +321,7 @@ ${cleanedContent}
 
 *Related Work:*
 - [**TEP Theory**](https://doi.org/10.5281/zenodo.16921911) (Foundational framework)
-- [**TEP-RBH Paper 7**](https://doi.org/10.5281/zenodo.18059251) (RBH-1 Application)
+- [**TEP-RBH Paper 7**](https://doi.org/10.5281/zenodo.18059250) (RBH-1 Application)
 
 *Source code and data available at: https://github.com/matthewsmawfield/TEP-UCD*
 `;
