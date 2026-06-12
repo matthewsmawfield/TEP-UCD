@@ -1,13 +1,13 @@
 # Temporal Equivalence Principle: A Topological Fermion Model for Spin and the g−2 Anomaly
 **Matthew Lukin Smawfield**
 Version: v0.1 (Paris)
-First published: 31 May 2026 · Last updated: 6 June 2026
+First published: 7 June 2026 · Last updated: 12 June 2026
 
 ---
 
 ## Abstract
 
-The zero-dimensional point-particle paradigm of Quantum Field Theory is challenged and replaced with a topological fermion: a localized topological charge in the temporal shear field whose intrinsic spin is fluid vorticity governed by local temporal shear. Three rigorous results are derived from stated axioms: (i) the conformally shifted g&#771;-Hamilton-Jacobi equation, (ii) spin as quantized fluid vorticity with a direct spin-statistics connection, and (iii) the geometric consistency condition &kappa; = r<sub>c</sub>/&lambda;<sub>scr</sub> = 1/&radic;2. The proximity-based saturation limit, observationally proxied by &rho;<sub>c</sub> &asymp; 20 g/cm<sup>3</sup> (TEP-UCD, Paper 6), marks the scale at which topological charge cores begin to overlap geometrically. A first-principles mean-field derivation from the screened Klein-Gordon equation yields &rho;<sub>c</sub><sup>(MF)</sup> = M<sub>Pl</sub>² m<sub>&phi;</sub>² / &beta;<sub>A</sub>² &approx; 10<sup>-55</sup> g/cm<sup>3</sup>, many orders of magnitude below the phenomenological value; the discrepancy is explained by non-perturbative core overlap of ~10<sup>50</sup> topological charges per terrestrial coherence volume. The Fermi wavelength of the degenerate electron gas provides the correct order-of-magnitude intuition for why the scale lies far below the single-particle Compton-scale core density (&rho;<sub>core</sub> &sim; 10<sup>4</sup> g/cm<sup>3</sup>). A model transfer function T(&rho;) connects the two limits via random-phase superposition of N<sub>eff</sub> &sim; 10<sup>50</sup> electrons per terrestrial coherence volume. This scale natively bounds the proper-time oscillator, eliminating ultraviolet divergences at their geometric origin without renormalization. A geometric consistency condition &kappa; = r<sub>c</sub>/&lambda;<sub>scr</sub> = 1/&radic;2 &approx; 0.707 follows from the known electron Compton wavelength and the Yukawa screening length of the scalar field. The empirical analysis presented here uses 1,493 data points from JLab PRad and A1 Collaboration electron-scattering cross-sections to build a conformally corrected proton form factor, yielding a testable prediction for future AMBER muon-proton scattering measurements. A planned future analysis targets the Fermilab g&minus;2 anomaly as temporal-topology drag once collaboration-internal timestamp data become available.
+The zero-dimensional point-particle paradigm of Quantum Field Theory is challenged and replaced with a topological fermion: a localized topological charge in the temporal shear field whose intrinsic spin is fluid vorticity governed by local temporal shear. Three rigorous results are derived from stated axioms: (i) the conformally shifted g&#771;-Hamilton-Jacobi equation, (ii) spin as quantized fluid vorticity with a direct spin-statistics connection, and (iii) the geometric consistency condition &kappa; = r<sub>c</sub>/&lambda;<sub>scr</sub> = 1/&radic;2. The proximity-based saturation limit, observationally proxied by &rho;<sub>T</sub> &asymp; 20 g/cm<sup>3</sup> (TEP-UCD, Paper 6), is a fundamental constant of the scalar vacuum potential V(&phi;). Under universal conformal coupling, the scalar sector is sourced by the bulk trace T = -&rho;, independent of microscopic composition. The bulk density of Thomas-Fermi condensed matter happens to coincide with this vacuum scale through a dimensional identity: for stable planetary elements (A/Z &approx; 2), the ratio &rho;<sub>CM</sub> / &rho;<sub>T</sub> = (1/2)(m<sub>p</sub>/m<sub>e</sub>)&alpha;<sup>5/3</sup> &approx; 0.25 &sim; O(1). A first-principles mean-field derivation from the screened Klein-Gordon equation yields &rho;<sub>T</sub><sup>(MF)</sup> = M<sub>Pl</sub>² m<sub>&phi;</sub>² / &beta;<sub>A</sub>² &approx; 10<sup>-55</sup> g/cm<sup>3</sup>, many orders of magnitude below the phenomenological value; the discrepancy is explained by non-perturbative core overlap of ~10<sup>50</sup> topological charges per terrestrial coherence volume. The Fermi wavelength of the degenerate electron gas provides physical intuition for the density of many-body matter in the same regime as &rho;<sub>T</sub>, not a mechanism that sets it. A model transfer function T(&rho;) connects the two limits via random-phase superposition of N<sub>eff</sub> &sim; 10<sup>50</sup> electrons per terrestrial coherence volume. This scale natively bounds the proper-time oscillator, eliminating ultraviolet divergences at their geometric origin without renormalization. A geometric consistency condition &kappa; = r<sub>c</sub>/&lambda;<sub>scr</sub> = 1/&radic;2 &approx; 0.707 follows from the known electron Compton wavelength and the Yukawa screening length of the scalar field. The empirical analysis presented here uses 1,493 data points from JLab PRad and A1 Collaboration electron-scattering cross-sections to build a conformally corrected proton form factor, yielding a testable prediction for future AMBER muon-proton scattering measurements. A planned future analysis targets the Fermilab g&minus;2 anomaly as temporal-topology drag once collaboration-internal timestamp data become available.
 
 Keywords: subatomic structure, fermion topology, spin, vorticity, renormalization, proximity screening, Fermilab g-2, AMBER, temporal equivalence principle
 
@@ -23,7 +23,7 @@ Renormalization is a mathematical workaround for the divergence; the point-parti
 
 Early attempts at a unified geometric theory sought to replace dimensionless point particles with physical &ldquo;knots&rdquo; in spatial geometry, but failed to eliminate the mathematical divergences that necessitated renormalization. The TEP framework achieves this geometric origin by shifting the topology from spatial gravity to proper time. Instead of a point particle, TEP introduces a localized topological charge embedded within the temporal shear field. Because this fermion is a physical defect in the scalar field &phi;, it carries a natural geometric boundary. Bounded natively by the local density saturation, this finite geometric structure eliminates the divergence at its origin, removing the need for artificial ultraviolet cutoffs.
 
-The Temporal Equivalence Principle (TEP) replaces the point particle with a localized topological charge in the temporal shear field. The fermion is not a mathematical singularity but a physical defect in the scalar field &phi; that defines local proper time. This topological charge carries a natural geometric boundary: the proximity-based saturation scale, observationally proxied by &rho;<sub>c</sub> &asymp; 20 g/cm<sup>3</sup> (a phenomenological scale established from terrestrial clock correlation data in TEP-UCD, Paper 6), which bounds the proper-time oscillator and eliminates the need for artificial ultraviolet cutoffs.
+The Temporal Equivalence Principle (TEP) replaces the point particle with a localized topological charge in the temporal shear field. The fermion is not a mathematical singularity but a physical defect in the scalar field &phi; that defines local proper time. This topological charge carries a natural geometric boundary: the proximity-based saturation scale, observationally proxied by &rho;<sub>T</sub> &asymp; 20 g/cm<sup>3</sup> (a phenomenological scale established from terrestrial clock correlation data in TEP-UCD, Paper 6), which bounds the proper-time oscillator and eliminates the need for artificial ultraviolet cutoffs.
 
 The TEP framework is built on three axioms. (A1) The matter-frame metric is a conformal–disformal rescaling of the gravitational metric: g&#771;<sub>&mu;&nu;</sub> = A<sup>2</sup>(&phi;) g<sub>&mu;&nu;</sub> + B(&phi;) &nabla;<sub>&mu;</sub>&phi; &nabla;<sub>&nu;</sub>&phi;. (A2) The conformal factor is exponential: A(&phi;) = exp(&beta;<sub>A</sub>&phi;/M<sub>Pl</sub>). (A3) Temporal shear is the gradient of the logarithmic conformal factor: &Sigma;<sub>&mu;</sub> = &nabla;<sub>&mu;</sub> ln A(&phi;). All results in this paper are derived from these axioms. The full causal matter metric is permanently engaged; the screened limit, where local stress forces both A(&phi;) &rarr; 1 and the observable disformal response is suppressed, recovers the standard Minkowski background and isotropic interactions. In the unscreened regime the disformal sector governs the routing of forces through the tilted light cone, as developed in TEP-KIN (Paper 25).
 
@@ -83,29 +83,35 @@ As the topological charge tightens, the conformal factor A(&phi;) mechanically f
 
 This is white-dwarf-scale density, a direct dimensional estimate from the Compton-wavelength cutoff. It is not the phenomenological saturation scale.
 
-### 3.2 The Many-Body Saturation Scale and the Fermi-Wavelength Crossover
+### 3.2 The Many-Body Saturation Scale and the Dimensional Identity
 
-The saturation scale &rho;<sub>c</sub> &asymp; 20 g/cm<sup>3</sup> is the phenomenological scale at which collective many-body screening in bulk matter suppresses observable temporal shear (TEP-UCD, Paper 6). It is determined from terrestrial clock correlation data, not derived from first principles. The goal of this section is to provide a physical interpretation for why this scale is many orders of magnitude below the single-particle core density &rho;<sub>core</sub> &sim; 10<sup>4</sup> g/cm<sup>3</sup>. The naive packing argument failed because it used the wrong length scale: fermions do not pack at their Compton wavelength r<sub>c</sub> = &hbar;/(m<sub>e</sub>c); they pack at their *Fermi wavelength* &lambda;<sub>F</sub> = 2&pi;/k<sub>F</sub>, where k<sub>F</sub> = (3&pi;<sup>2</sup>n<sub>e</sub>)<sup>1/3</sup> is the Fermi momentum and n<sub>e</sub> = (Z/A)&rho;/m<sub>p</sub> is the electron number density (Z/A &approx; 0.5 for ordinary crustal matter).
+The saturation scale &rho;<sub>T</sub> &asymp; 20 g/cm<sup>3</sup> is established in TEP-UCD (Paper 6, &sect;5.2) as a fundamental constant of the scalar vacuum potential V(&phi;), not an emergent property of local matter. Under universal conformal coupling, the scalar sector is sourced by the bulk trace T = -&rho;, independent of microscopic composition. If the electron Fermi wavelength were the causal driver of saturation, the field would require a direct, particle-specific coupling to the electron number density n<sub>e</sub>, making the field exert a different force on iron than on hydrogen at the same bulk density. This would introduce a gross Weak Equivalence Principle violation, already constrained by experiments such as the MICROSCOPE satellite.
+
+The correct interpretation, derived in Paper 6, treats &rho;<sub>T</sub> &equiv; &Lambda;<sup>4</sup> &approx; &alpha;<sup>4/3</sup> m<sub>e</sub><sup>4</sup> (natural units) as a property of the scalar potential itself. The bulk density of Thomas-Fermi condensed matter happens to coincide with this vacuum scale through a dimensional identity: for stable planetary elements (A/Z &approx; 2), the ratio
+
+&rho;<sub>CM</sub> / &rho;<sub>T</sub> = (1/2)(m<sub>p</sub>/m<sub>e</sub>)&alpha;<sup>5/3</sup> &approx; 0.246 &sim; O(1).
+
+Because of this coincidence, Earth—a condensed-matter body governed by Thomas-Fermi physics—naturally sits at the continuous screening transition boundary. The Fermi wavelength provides physical intuition for why the bulk density of degenerate matter lies in the same regime as &rho;<sub>T</sub>, not a mechanism that sets it.
 
 For a degenerate electron gas, the Fermi wavelength scales as:
 
 &lambda;<sub>F</sub>(&rho;) = 2&pi; / (3&pi;<sup>2</sup> (Z/A) &rho;/m<sub>p</sub>)<sup>1/3</sup>.
 
-At the phenomenological saturation scale &rho;<sub>c</sub> &asymp; 20 g/cm<sup>3</sup>, the Fermi wavelength is &lambda;<sub>F</sub> &approx; 10<sup>-10</sup> m, roughly *300&times; larger* than the Compton radius r<sub>c</sub> &approx; 3.9 &times; 10<sup>-13</sup> m. Because volume scales as length cubed, the packing density using &lambda;<sub>F</sub> as the exclusion scale is roughly (292)<sup>3</sup> &sim; 2.5 &times; 10<sup>7</sup> times lower than the naive Compton-scale estimate. This brings the expected crossover into the same broad density regime as the observed 20 g/cm<sup>3</sup>, though the exact factor of order unity is not predictable from the linearized theory.
+At the phenomenological saturation scale &rho;<sub>T</sub> &asymp; 20 g/cm<sup>3</sup>, the Fermi wavelength is &lambda;<sub>F</sub> &approx; 10<sup>-10</sup> m, roughly *300&times; larger* than the Compton radius r<sub>c</sub> &approx; 3.9 &times; 10<sup>-13</sup> m. Because volume scales as length cubed, the packing density using &lambda;<sub>F</sub> as the exclusion scale is roughly (292)<sup>3</sup> &sim; 2.5 &times; 10<sup>7</sup> times lower than the naive Compton-scale estimate. This brings the expected crossover into the same broad density regime as the observed 20 g/cm<sup>3</sup>, though the exact factor of order unity is not predictable from the linearized theory.
 
-The crossover is governed by the Thomas-Fermi-TEP mean-field equation. In a degenerate electron gas, the scalar field obeys the screened Klein-Gordon equation with a Fermi-Dirac source:
+The many-body crossover is a statistical-mechanics description of *how* screening operates once the local density approaches the vacuum saturation scale, not the *origin* of that scale. The crossover is governed by the screened Klein-Gordon equation with a matter source:
 
 &nabla;<sup>2</sup>&phi; &minus; V'(&phi;) = &minus;(&beta;<sub>A</sub>/M<sub>Pl</sub>) &rho;<sub>m</sub>.
 
-Screening becomes collective when the scalar interaction energy per particle becomes comparable to the Fermi energy E<sub>F</sub> = &hbar;<sup>2</sup>k<sub>F</sub><sup>2</sup>/(2m<sub>e</sub>). The conformal factor A(&phi;) is driven by the local scalar energy density &rho;<sub>&phi;</sub> = (&nabla;&phi;)<sup>2</sup>/2; saturation occurs when &rho;<sub>&phi;</sub> exceeds the critical scale set by the Fermi energy density of the degenerate gas.
+Screening becomes collective when the scalar interaction energy per particle becomes comparable to the vacuum energy density of the scalar potential. The conformal factor A(&phi;) is driven by the local scalar energy density &rho;<sub>&phi;</sub> = (&nabla;&phi;)<sup>2</sup>/2; saturation occurs when &rho;<sub>&phi;</sub> approaches the critical scale set by the vacuum potential &Lambda;<sup>4</sup> &equiv; &rho;<sub>T</sub>.
 
 The effective number of fermions per coherence volume is:
 
 N<sub>eff</sub>(&rho;) = (L<sub>c</sub> / &lambda;<sub>F</sub>(&rho;))<sup>3</sup>,
 
-where L<sub>c</sub> &approx; 4200 km is the terrestrial coherence length. At &rho; &approx; 20 g/cm<sup>3</sup>, &lambda;<sub>F</sub> &sim; 10<sup>-10</sup> m, giving N<sub>eff</sub> &sim; 5 &times; 10<sup>49</sup> &approx; 10<sup>50</sup>. This enormous number explains why the mean-field approximation is valid: the random-phase superposition of N<sub>eff</sub> uncorrelated vortices suppresses the net temporal shear by a factor &sim; 1/&radic;N<sub>eff</sub>.
+where L<sub>c</sub> &approx; 4200 km is the terrestrial coherence length. At the empirical saturation scale &rho; &approx; &rho;<sub>T</sub> &approx; 20 g/cm<sup>3</sup>, &lambda;<sub>F</sub> &sim; 10<sup>-10</sup> m, giving N<sub>eff</sub> &sim; 5 &times; 10<sup>49</sup> &approx; 10<sup>50</sup>. This enormous number explains why the mean-field approximation is valid: the random-phase superposition of N<sub>eff</sub> uncorrelated vortices suppresses the net temporal shear by a factor &sim; 1/&radic;N<sub>eff</sub>.
 
-&rho;<sub>c</sub> is therefore interpreted as a *statistical-mechanics crossover* where the Fermi wavelength of the degenerate electron gas becomes small enough that the scalar field cannot resolve individual particles. The Thomas-Fermi-TEP numerical solver (`scripts/steps/step_03_transfer_function.py`) evaluates a phenomenological screening ansatz and finds the inflection point at &rho; &approx; 15 g/cm<sup>3</sup> (where the transition is steepest, S &approx; 0.65). Screening is a *smooth slope*, not an on/off switch: the transition from 10% to 90% screened spans roughly &rho; &sim; 2–30 g/cm<sup>3</sup>. At the empirical saturation scale &rho; &approx; 20 g/cm<sup>3</sup>, the system is already &sim;75% screened. The inflection point is a structural feature of the tanh ansatz, not a derived prediction. For the screening efficiency S(&rho;) = tanh(&rho;/&rho;<sub>c</sub>), the inflection point with respect to log(&rho;) occurs at &rho; &approx; 0.77 &rho;<sub>c</sub> for small &beta;<sub>A</sub>, insensitive to the coupling. The mean-field first-principles prediction is now obtained from the screened Klein-Gordon equation (Step 04, &#167;3.4); the exact non-perturbative correction accounting for core overlap in the ~10<sup>50</sup>-body limit remains an active research direction in non-linear Temporal Topology.
+&rho;<sub>T</sub> is therefore interpreted as a *statistical-mechanics crossover* where the scalar field cannot resolve individual particles within the dense many-body environment. The Thomas-Fermi-TEP numerical solver (`scripts/steps/step_03_transfer_function.py`) evaluates a phenomenological screening ansatz and finds the inflection point at &rho; &approx; 15 g/cm<sup>3</sup> (where the transition is steepest, S &approx; 0.65). Screening is a *smooth slope*, not an on/off switch: the transition from 10% to 90% screened spans roughly &rho; &sim; 2–30 g/cm<sup>3</sup>. At the empirical saturation scale &rho; &approx; 20 g/cm<sup>3</sup>, the system is already &sim;75% screened. The inflection point is a structural feature of the tanh ansatz, not a derived prediction. For the screening efficiency S(&rho;) = tanh(&rho;/&rho;<sub>T</sub>), the inflection point with respect to log(&rho;) occurs at &rho; &approx; 0.77 &rho;<sub>T</sub> for small &beta;<sub>A</sub>, insensitive to the coupling. The mean-field first-principles prediction is now obtained from the screened Klein-Gordon equation (Step 04, &#167;3.4); the exact non-perturbative correction accounting for core overlap in the ~10<sup>50</sup>-body limit remains an active research direction in non-linear Temporal Topology.
 
 ### 3.3 Eliminating Infinite Loop Integrals
 
@@ -115,7 +121,7 @@ The finite geometric extent of the temporal topological charge natively bounds t
 
 diverges as &Lambda;<sup>2</sup> in the point-particle limit. With the TEP core geometry, the momentum-space kernel is modified by the conformal factor at k > 1/r<sub>c</sub>, introducing a natural suppression that renders the integral finite without subtraction.
 
-The Pauli exclusion principle, derived from spinorial holonomy in &#167;2.2, enforces a *minimum effective volume per fermion of &sim;&lambda;<sub>F</sub><sup>3</sup>*, not &sim;r<sub>c</sub><sup>3</sup>. This is why the naive packing argument in &#167;3.1 failed: it treated fermions as classical hard spheres of radius r<sub>c</sub>. The correct packing scale is set by quantum statistics. In dense matter, the UV cutoff in loop integrals is at k<sub>max</sub> &sim; 1/&lambda;<sub>F</sub>(&rho;), which for &rho; &sim; 20 g/cm<sup>3</sup> gives k<sub>max</sub> &sim; 10<sup>11</sup> m<sup>-1</sup>, roughly 20&times; smaller than the Compton-scale cutoff 1/r<sub>c</sub> &sim; 2.6 &times; 10<sup>12</sup> m<sup>-1</sup>. In the single-particle limit (&rho; &rarr; &rho;<sub>core</sub>), &lambda;<sub>F</sub> contracts to r<sub>c</sub> and the two scales coincide. A classical topological overlap argument provides heuristic support: two identical charge cores cannot merge because the combined winding number would violate the single-valuedness of &phi;.
+The finite geometric extent of the topological charge provides a physical UV cutoff at k<sub>max</sub> &sim; 1/r<sub>c</sub> &sim; 2.6 &times; 10<sup>12</sup> m<sup>-1</sup>. In dense matter, the scalar field is additionally screened by the non-linear saturation of A(&phi;) as the local energy density approaches &rho;<sub>T</sub>, modifying the momentum-space kernel and introducing a natural suppression that renders loop integrals finite without subtraction. A classical topological overlap argument provides heuristic support: two identical charge cores cannot merge because the combined winding number would violate the single-valuedness of &phi;.
 
 ### 3.4 The Many-Body Transfer Function
 
@@ -131,19 +137,19 @@ T(&rho;) = (&rho;/&rho;<sub>core</sub>) &times; S(&rho;),
 
 where S(&rho;) is the normalized screening efficiency from the tanh ansatz. This gives:
 
-- *Low density* (&rho; &ll; &rho;<sub>c</sub>): S &rarr; 0, so T &rarr; 0 (no collective effect).
+- *Low density* (&rho; &ll; &rho;<sub>T</sub>): S &rarr; 0, so T &rarr; 0 (no collective effect).
 
-- *Crossover* (&rho; &sim; &rho;<sub>c</sub>): T &approx; (&rho;<sub>c</sub>/&rho;<sub>core</sub>) &times; S(&rho;<sub>c</sub>) &sim; 10<sup>-3</sup>, a small but non-zero collective correction.
+- *Crossover* (&rho; &sim; &rho;<sub>T</sub>): T &approx; (&rho;<sub>T</sub>/&rho;<sub>core</sub>) &times; S(&rho;<sub>T</sub>) &sim; 10<sup>-3</sup>, a small but non-zero collective correction.
 
-- *High density* (&rho; &Gt; &rho;<sub>c</sub>): S &rarr; 1, so T &rarr; &rho;/&rho;<sub>core</sub>, reflecting the direct proportionality between matter density and scalar source strength in the screened regime.
+- *High density* (&rho; &Gt; &rho;<sub>T</sub>): S &rarr; 1, so T &rarr; &rho;/&rho;<sub>core</sub>, reflecting the direct proportionality between matter density and scalar source strength in the screened regime.
 
 The solver evaluates this across 12 orders of magnitude in density (Figures 4 and 5). The inflection point of the modelled screening curve lies at &rho; &approx; 15 g/cm<sup>3</sup> (where the screening transition is steepest). The full screening transition spans roughly &rho; &sim; 2–30 g/cm<sup>3</sup> (10% to 90% screened), reflecting the smooth, continuous nature of the many-body saturation slope.
 
 The first-principles mean-field prediction is obtained by solving the screened Klein-Gordon equation for uniform matter, which gives &phi; = -(β<sub>A</sub>/M<sub>Pl</sub>)&rho;/m<sub>&phi;</sub>² with m<sub>&phi;</sub> = &hbar;/(&radic;2 r<sub>c</sub>). The resulting screening curve S(&rho;) = 1 - exp[-β<sub>A</sub>²&rho;/(M<sub>Pl</sub>² m<sub>&phi;</sub>²)] has its inflection point at
 
-&rho;<sub>c</sub><sup>(MF)</sup> = M<sub>Pl</sub>² m<sub>&phi;</sub>² / &beta;<sub>A</sub>² &approx; 10<sup>-55</sup> g/cm<sup>3</sup>.
+&rho;<sub>T</sub><sup>(MF)</sup> = M<sub>Pl</sub>² m<sub>&phi;</sub>² / &beta;<sub>A</sub>² &approx; 10<sup>-55</sup> g/cm<sup>3</sup>.
 
-Here &beta;<sub>A</sub> is the fundamental conformal coupling appearing in the scalar field equation (the same &beta;<sub>A</sub> that governs A(&phi;) = exp(&beta;<sub>A</sub>&phi;/M<sub>Pl</sub>)), not the phenomenological screening coefficient &beta;<sub>spin</sub> = 0.01 used in the tanh ansatz. The exact numerical value of &rho;<sub>c</sub><sup>(MF)</sup> depends on &beta;<sub>A</sub>, but the qualitative conclusion is robust: the mean-field crossover lies many orders of magnitude below the phenomenological &rho;<sub>c</sub> &approx; 20 g/cm<sup>3</sup>, regardless of the precise coupling.
+Here &beta;<sub>A</sub> is the fundamental conformal coupling appearing in the scalar field equation (the same &beta;<sub>A</sub> that governs A(&phi;) = exp(&beta;<sub>A</sub>&phi;/M<sub>Pl</sub>)), not the phenomenological screening coefficient &beta;<sub>spin</sub> = 0.01 used in the tanh ansatz. The exact numerical value of &rho;<sub>T</sub><sup>(MF)</sup> depends on &beta;<sub>A</sub>, but the qualitative conclusion is robust: the mean-field crossover lies many orders of magnitude below the phenomenological &rho;<sub>T</sub> &approx; 20 g/cm<sup>3</sup>, regardless of the precise coupling.
 
 The discrepancy arises because the mean-field treats topological charges as point-like sources and therefore over-predicts the scalar field amplitude. In reality the ~10<sup>50</sup> charge cores per terrestrial coherence volume have finite size r<sub>c</sub> &approx; 3.9 &times; 10<sup>-13</sup> m; their non-perturbative overlap suppresses the coherent scalar source by a factor proportional to the packing fraction. The phenomenological tanh ansatz captures this saturation effect with the correct asymptotic limits. The physical mechanism is now identified: core overlap in the ~10<sup>50</sup>-body limit. The exact non-perturbative correction factor remains an active research direction in Temporal Topology. The Fermi-wavelength crossover (&lambda;<sub>F</sub> &approx; 10<sup>-10</sup> m at &rho; &approx; 20 g/cm<sup>3</sup>) provides the correct order-of-magnitude intuition for why the scale lies far below the single-particle core density.
 
@@ -193,7 +199,7 @@ The autonomous symbolic derivation pipeline (`scripts/utils/tep_derivations.py`)
 
 - Single-particle core density &rho;<sub>core</sub> &sim; m<sub>e</sub><sup>4</sup>c<sup>3</sup>/&hbar;<sup>3</sup> (white-dwarf-scale, ~10<sup>4</sup> g/cm<sup>3</sup>)
 
-- Many-body screening scale: phenomenological &rho;<sub>c</sub> &approx; 20 g/cm<sup>3</sup> (TEP-UCD, Paper 6); mean-field prediction &rho;<sub>c</sub><sup>(MF)</sup> = M<sub>Pl</sub>² m<sub>&phi;</sub>² / &beta;<sub>A</sub>² &approx; 10<sup>-55</sup> g/cm<sup>3</sup> from screened Klein-Gordon equation
+- Many-body screening scale: phenomenological &rho;<sub>T</sub> &approx; 20 g/cm<sup>3</sup> (TEP-UCD, Paper 6); mean-field prediction &rho;<sub>T</sub><sup>(MF)</sup> = M<sub>Pl</sub>² m<sub>&phi;</sub>² / &beta;<sub>A</sub>² &approx; 10<sup>-55</sup> g/cm<sup>3</sup> from screened Klein-Gordon equation
 
 - g&minus;2 temporal drag: a<sub>&mu;</sub><sup>TEP</sup> &approx; a<sub>&mu;</sub><sup>SM</sup> &beta;<sub>A</sub>(&phi;<sub>local</sub> &minus; &phi;<sub>&infin;</sub>)/M<sub>Pl</sub>
 
@@ -227,7 +233,7 @@ The framework suggests a physical cutoff mechanism that may eliminate ultraviole
 
 Two empirical predictions are presented. The Fermilab g&minus;2 anomaly is reinterpreted as temporal-topology drag, with a derived formula for the TEP contribution to a<sub>&mu;</sub> and a pipeline ready to search for diurnal and annual modulations in E989 data. The JLab/AMBER prediction uses a conformally corrected form factor with a physically motivated rational screening function. Q<sub>c</sub> is derived from the TEP Yukawa screening length of the proton topological charge; &delta;<sub>A</sub> is extracted from the experimentally measured proton radius discrepancy, with no parameter tuned to fit the anomaly.
 
-The proximity-based saturation scale, observationally proxied by &rho;<sub>c</sub> &asymp; 20 g/cm<sup>3</sup> (TEP-UCD, Paper 6), is interpreted within the Thomas-Fermi-TEP framework as a statistical-mechanics crossover. The first-principles mean-field prediction, obtained by solving the screened Klein-Gordon equation for uniform matter, gives &rho;<sub>c</sub><sup>(MF)</sup> = M<sub>Pl</sub>² m<sub>&phi;</sub>² / &beta;<sub>A</sub>² &approx; 10<sup>-55</sup> g/cm<sup>3</sup> (where &beta;<sub>A</sub> is the fundamental conformal coupling, not the phenomenological screening coefficient &beta;<sub>spin</sub> = 0.01). This lies many orders of magnitude below the phenomenological value because the mean-field treats topological charges as point-like sources and therefore over-predicts the scalar field amplitude. The ~10<sup>50</sup> charge cores per terrestrial coherence volume have finite size r<sub>c</sub> &approx; 3.9 &times; 10<sup>-13</sup> m; their non-perturbative overlap suppresses the coherent scalar source. The phenomenological tanh ansatz captures this saturation with the correct asymptotic limits. The physical mechanism is now identified: core overlap in the ~10<sup>50</sup>-body limit. The Fermi-wavelength argument (&lambda;<sub>F</sub> &approx; 10<sup>-10</sup> m at &rho; &approx; 20 g/cm<sup>3</sup>) provides the correct order-of-magnitude intuition for why the scale lies far below the Compton-scale core density. The model transfer function T(&rho;) = (&rho;<sub>c</sub>/&rho;<sub>core</sub>)[1 + (&rho;/&rho;<sub>c</sub>)<sup>2/3</sup>] connects the single-particle core to the many-body saturation limit. Screening is a smooth slope spanning roughly &rho; &sim; 2–30 g/cm<sup>3</sup> (10% to 90% screened), not a sharp boundary. The framework is anchored by its geometric consistency condition &kappa; = 1/&radic;2, constrained by &beta;<sub>A</sub> parameter bounds from solar-system tests, and tested by its empirical predictions.
+The proximity-based saturation scale, observationally proxied by &rho;<sub>T</sub> &asymp; 20 g/cm<sup>3</sup> (TEP-UCD, Paper 6), is interpreted within the Thomas-Fermi-TEP framework as a statistical-mechanics crossover. The first-principles mean-field prediction, obtained by solving the screened Klein-Gordon equation for uniform matter, gives &rho;<sub>T</sub><sup>(MF)</sup> = M<sub>Pl</sub>² m<sub>&phi;</sub>² / &beta;<sub>A</sub>² &approx; 10<sup>-55</sup> g/cm<sup>3</sup> (where &beta;<sub>A</sub> is the fundamental conformal coupling, not the phenomenological screening coefficient &beta;<sub>spin</sub> = 0.01). This lies many orders of magnitude below the phenomenological value because the mean-field treats topological charges as point-like sources and therefore over-predicts the scalar field amplitude. The ~10<sup>50</sup> charge cores per terrestrial coherence volume have finite size r<sub>c</sub> &approx; 3.9 &times; 10<sup>-13</sup> m; their non-perturbative overlap suppresses the coherent scalar source. The phenomenological tanh ansatz captures this saturation with the correct asymptotic limits. The physical mechanism is now identified: core overlap in the ~10<sup>50</sup>-body limit. The Fermi-wavelength argument (&lambda;<sub>F</sub> &approx; 10<sup>-10</sup> m at &rho; &approx; 20 g/cm<sup>3</sup>) provides the correct order-of-magnitude intuition for why the scale lies far below the Compton-scale core density. The model transfer function T(&rho;) = (&rho;<sub>T</sub>/&rho;<sub>core</sub>)[1 + (&rho;/&rho;<sub>T</sub>)<sup>2/3</sup>] connects the single-particle core to the many-body saturation limit. Screening is a smooth slope spanning roughly &rho; &sim; 2–30 g/cm<sup>3</sup> (10% to 90% screened), not a sharp boundary. The framework is anchored by its geometric consistency condition &kappa; = 1/&radic;2, constrained by &beta;<sub>A</sub> parameter bounds from solar-system tests, and tested by its empirical predictions.
 
 ## References
 
@@ -273,21 +279,25 @@ Quantized circulation:
 
 Vorticity &omega;<sub>z</sub> = 0 for r > 0; delta-function singularity at the core (r = 0). Integer winding n = &pm;1 in the compact phase/orientation bundle maps to spin projection S<sub>z</sub> = &pm;&hbar;/2 through the spinorial 2&pi; sign reversal and 4&pi; return.
 
-### A.3 Screening Densities and the Fermi-Wavelength Crossover
+### A.3 Screening Densities and the Dimensional Identity Bridge
 
 *Single-particle core density* from Compton-wavelength dimensional analysis:
 
 &rho;<sub>core</sub> &sim; m<sub>e</sub><sup>4</sup>c<sup>3</sup> / &hbar;<sup>3</sup> &sim; 10<sup>4</sup> g/cm<sup>3</sup>.
 
-*Naive many-body packing density* (geometric proximity, wrong length scale):
+*Fundamental vacuum saturation scale.* The saturation scale &rho;<sub>T</sub> &asymp; 20 g/cm<sup>3</sup> is a property of the scalar vacuum potential V(&phi;), not an emergent property of local matter. Under universal conformal coupling, the scalar sector is sourced by the bulk trace T = -&rho;, independent of microscopic composition. Treating &rho;<sub>T</sub> as a fundamental constant preserves the Weak Equivalence Principle: if the electron Fermi wavelength were the causal driver, the field would couple to the electron number density n<sub>e</sub>, making it composition-dependent.
 
-&rho;<sub>MB</sub> &sim; m<sub>e</sub> / &lambda;<sub>scr</sub><sup>3</sup> = m<sub>e</sub><sup>4</sup>c<sup>3</sup> / (2&radic;2 &hbar;<sup>3</sup>) &sim; 10<sup>4</sup> g/cm<sup>3</sup>.
+*Dimensional identity.* The bulk density of Thomas-Fermi condensed matter is governed by Coulomb packing. The volume per atom scales with the Bohr radius a<sub>0</sub> = (&alpha; m<sub>e</sub>)<sup>-1</sup>. In the Thomas-Fermi model, the effective atomic radius is R<sub>TF</sub> &approx; a<sub>0</sub> Z<sup>-1/3</sup>, giving a volume V &approx; (4&pi;/3) a<sub>0</sub><sup>3</sup> Z<sup>-1</sup>. With nucleon mass M &approx; A m<sub>p</sub> and A/Z &approx; 2 for stable planetary elements:
 
-Both estimates yield white-dwarf-scale density because they use the Compton radius r<sub>c</sub> as the exclusion length. The correct exclusion volume is set by the *Fermi wavelength* of the degenerate electron gas:
+&rho;<sub>CM</sub> &approx; (3/4&pi;) (A/Z) m<sub>p</sub> m<sub>e</sub><sup>3</sup> &alpha;<sup>3</sup> &approx; (3/2&pi;) m<sub>p</sub> m<sub>e</sub><sup>3</sup> &alpha;<sup>3</sup> &approx; (1/2) m<sub>p</sub> m<sub>e</sub><sup>3</sup> &alpha;<sup>3</sup>.
 
-&lambda;<sub>F</sub>(&rho;) = 2&pi; / (3&pi;<sup>2</sup> (Z/A) &rho;/m<sub>p</sub>)<sup>1/3</sup>.
+Taking the ratio of the macroscopic Thomas-Fermi density to the fundamental scalar vacuum density:
 
-At &rho; &approx; 20 g/cm<sup>3</sup>, &lambda;<sub>F</sub> &approx; 10<sup>-10</sup> m, which is &sim;300&times; larger than the Compton radius r<sub>c</sub> &approx; 3.9 &times; 10<sup>-13</sup> m. Because volume scales as length cubed, the packing density using &lambda;<sub>F</sub> as the exclusion scale is roughly (292)<sup>3</sup> &sim; 2.5 &times; 10<sup>7</sup> times lower than the naive Compton-scale estimate. This brings the expected crossover into the same broad density regime as the observed &rho;<sub>c</sub>, though the exact factor of order unity is not predictable from the linearized theory.
+&rho;<sub>CM</sub> / &rho;<sub>T</sub> = (1/2) (m<sub>p</sub>/m<sub>e</sub>) &alpha;<sup>5/3</sup> &approx; 0.246 &sim; O(1).
+
+Because geometric lattice packing factors of O(1) were ignored, the critical result is that &rho;<sub>CM</sub> &sim; O(1) &times; &rho;<sub>T</sub>. Earth does not cause the saturation scale; Earth is dimensionally bound to hover at the continuous transition boundary.
+
+*Fermi wavelength as descriptive scale.* For a degenerate electron gas, the Fermi wavelength scales as &lambda;<sub>F</sub>(&rho;) = 2&pi;/(3&pi;<sup>2</sup> (Z/A) &rho;/m<sub>p</sub>)<sup>1/3</sup>. At &rho; &approx; 20 g/cm<sup>3</sup>, &lambda;<sub>F</sub> &approx; 10<sup>-10</sup> m, roughly 300&times; larger than the Compton radius r<sub>c</sub>. This provides physical intuition for why the bulk density of many-body matter lies in the same regime as &rho;<sub>T</sub>, not a mechanism that sets it.
 
 *Transfer function.* The mean-field superposition of N<sub>eff</sub> = (L<sub>c</sub>/&lambda;<sub>F</sub>)<sup>3</sup> uncorrelated topological charges gives the collective conformal factor:
 
@@ -295,9 +305,9 @@ A<sub>collective</sub>(&phi;) = exp(&beta;<sub>A</sub><&phi;>/M<sub>Pl</sub>) &t
 
 with &delta;&phi;<sup>2</sup> &prop; 1/N<sub>eff</sub>. The transfer function mapping the single-particle to the many-body limit is:
 
-T(&rho;) = (&rho;<sub>c</sub>/&rho;<sub>core</sub>) [1 + (&rho;/&rho;<sub>c</sub>)<sup>2/3</sup>].
+T(&rho;) = (&rho;<sub>T</sub>/&rho;<sub>core</sub>) [1 + (&rho;/&rho;<sub>T</sub>)<sup>2/3</sup>].
 
-The Thomas-Fermi-TEP numerical solver (`scripts/steps/step_03_transfer_function.py`) evaluates a phenomenological screening ansatz and finds the inflection point at &rho; &approx; 15 g/cm<sup>3</sup> (where the screening transition is steepest, S &approx; 0.65). The inflection point is a structural feature of the tanh form: for S(&rho;) = tanh(&rho;/&rho;<sub>c</sub>), the maximum slope with respect to log(&rho;) occurs at &rho; &approx; 0.77 &rho;<sub>c</sub> for small &beta;<sub>A</sub>, insensitive to the coupling. It is not a derived prediction of the crossover density. The full transition from 10% to 90% screened spans roughly &rho; &sim; 2–30 g/cm<sup>3</sup>, reflecting the smooth, continuous nature of the many-body saturation slope.
+The Thomas-Fermi-TEP numerical solver (`scripts/steps/step_03_transfer_function.py`) evaluates a phenomenological screening ansatz and finds the inflection point at &rho; &approx; 15 g/cm<sup>3</sup> (where the screening transition is steepest, S &approx; 0.65). The inflection point is a structural feature of the tanh form: for S(&rho;) = tanh(&rho;/&rho;<sub>T</sub>), the maximum slope with respect to log(&rho;) occurs at &rho; &approx; 0.77 &rho;<sub>T</sub> for small &beta;<sub>A</sub>, insensitive to the coupling. It is not a derived prediction of the crossover density. The full transition from 10% to 90% screened spans roughly &rho; &sim; 2–30 g/cm<sup>3</sup>, reflecting the smooth, continuous nature of the many-body saturation slope.
 
 ### A.4 &kappa; Convergence Constant
 
@@ -339,7 +349,7 @@ This gives half-integer spin and Fermi-Dirac statistics from the topology of the
 Table A.1: Data provenance for the JLab/AMBER cross-section prediction pipeline.
 
 
-## 9. Data Availability and Reproducibility
+## 9. Data Availability & Reproducibility
 
 
 This work follows open-science practices. All theoretical derivations and numerical results
@@ -356,6 +366,24 @@ GitHub Repository: github.com/matthewsmawfield/TEP-SPIN
 
 The repository contains the analytical derivations and numerical verification scripts
 for the TEP spin-coupling framework, screening model, and empirical constraints.
+
+
+
+### Repository Structure
+
+
+TEP-SPIN/
+├── data/
+│   ├── pulsars/             # Pulsar timing data
+│   └── processed/           # Processed datasets
+├── scripts/
+│   └── steps/                # Analysis pipeline steps
+├── core/                     # TEP shared constants and parameters
+├── site/
+│   └── components/           # Manuscript HTML sections
+├── requirements.txt
+├── CITATION.bib
+└── README.md
 
 
 

@@ -1,0 +1,198 @@
+<div class="appendix">
+<h2>Appendix C: Candidate EFT Realizations of the Soliton Profile</h2>
+
+<p>
+    The empirical saturation scale $\rho_T \approx 20$ g/cm³ is established
+    phenomenologically from GNSS clock correlations and SPARC scaling. A
+    natural question is whether standard scalar-tensor Effective Field Theory
+    (EFT) machinery can generate a density-dependent screening transition at
+    this scale. This appendix presents two candidate completions—Symmetron and
+    Chameleon screening—demonstrating that the observed phenomenology is
+    <em>mechanistically possible</em> within established modified-gravity
+    frameworks, without requiring new physics beyond a self-interacting scalar
+    sector. The completions are benchmark models, not unique derivations; the
+    ultimate microscopic origin of $\rho_T$ remains an open target. In the
+    TEP framework, these mechanisms are treated as candidate microscopic
+    completions, not as the defining ontology of the theory (Paper 0, A4).
+    TEP screening is defined by the continuous spatial profile of the scalar
+    time field (Temporal Topology) and its gradient (Temporal Shear), with no
+    thin-shell boundaries.
+</p>
+
+<h3>C.1 Symmetron Screening: Density-Triggered Symmetry Breaking</h3>
+
+<p>
+    The symmetron mechanism (Hinterbichler &amp; Khoury 2010) provides a
+    natural route to density-dependent screening. The scalar potential is:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:symmetron_potential} V(\phi) = -\frac{1}{2}\mu^2 \phi^2 + \frac{1}{4}\lambda \phi^4, \end{equation}
+</div>
+
+<p>
+    and the conformal coupling to matter is:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:symmetron_coupling} A(\phi) = 1 + \frac{1}{2}\left(\frac{\phi}{M}\right)^2, \end{equation}
+</div>
+
+<p>
+    where $M$ is the symmetry-breaking scale. The effective potential in the
+    presence of ambient density $\rho$ becomes:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:symmetron_veff} V_{\rm eff}(\phi) = V(\phi) + \rho \left[A(\phi) - 1\right] = -\frac{1}{2}\mu_{\rm eff}^2 \phi^2 + \frac{1}{4}\lambda \phi^4, \end{equation}
+</div>
+
+<p>
+    with effective mass parameter:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:symmetron_meff} \mu_{\rm eff}^2 = \mu^2 - \frac{\rho}{M^2}. \end{equation}
+</div>
+
+<p>
+    The critical behavior is immediate. When $\rho > \rho_* \equiv \mu^2 M^2$,
+    the effective mass squared is negative and the field sits at the symmetric
+    minimum $\phi = 0$; the scalar is massive and screened, so fifth-force
+    effects are suppressed. When $\rho < \rho_*$, symmetry is spontaneously
+    broken, the field rolls to $\phi_0 = \mu_{\rm eff}/\sqrt{\lambda}$, and the
+    scalar becomes light—generating long-range forces. The critical density is:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:symmetron_rhostar} \rho_* = \mu^2 M^2. \end{equation}
+</div>
+
+<p>
+    Identifying $\rho_* \equiv \rho_T \approx 20$ g/cm³ fixes one relation
+    between $\mu$ and $M$. The second relation comes from demanding that the
+    Compton wavelength in the unscreened regime matches the galactic scale
+    ($\lambda_C \sim$ kpc), which yields $\mu \sim 10^{-27}$ eV and
+    $M \sim 10^{-3}$ $M_{\rm Pl}$. These values are within the
+    phenomenologically allowed window for scalar-tensor theories.
+</p>
+
+<h3>C.2 Chameleon Screening: Runaway Potential and Thin-Shell</h3>
+
+<p>
+    The chameleon mechanism (Khoury &amp; Weltman 2004) achieves screening through
+    a runaway potential that becomes steep in dense environments. A benchmark
+    choice is:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:chameleon_potential} V(\phi) = \Lambda^4 \left(1 + \frac{\Lambda^n}{\phi^n}\right), \end{equation}
+</div>
+
+<p>
+    with $n > 0$ and $\Lambda \sim \rho_T^{1/4} \approx 96$ keV (Section 5.5).
+    The conformal coupling is exponential:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:chameleon_coupling} A(\phi) = \exp\left(\frac{\beta_A \phi}{M_{\rm Pl}}\right), \end{equation}
+</div>
+
+<p>
+    The effective potential is:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:chameleon_veff} V_{\rm eff}(\phi) = V(\phi) + \frac{\beta_A \rho}{M_{\rm Pl}} \phi, \end{equation}
+</div>
+
+<p>
+    where we have linearized $A(\phi)$ for small $\phi/M_{\rm Pl}$. The field
+    equation in a static, spherically symmetric environment is:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:chameleon_eom} \frac{d^2\phi}{dr^2} + \frac{2}{r}\frac{d\phi}{dr} = V_{\rm eff}'(\phi). \end{equation}
+</div>
+
+<p>
+    The effective mass squared is:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:chameleon_meff} m_{\rm eff}^2 = V_{\rm eff}''(\phi) = V''(\phi) = n(n+1) \frac{\Lambda^{n+4}}{\phi^{n+2}}. \end{equation}
+</div>
+
+<p>
+    In dense environments ($\rho \gg \rho_T$), the field is forced to small
+    $\phi$, making $m_{\rm eff}$ large and the Compton wavelength small: the
+    scalar is screened. In dilute environments ($\rho \ll \rho_T$), the field
+    relaxes to large $\phi$, $m_{\rm eff}$ drops, and the scalar becomes
+    long-ranged. The transition density $\rho_T$ is the value at which the
+    thin-shell condition breaks down and the field begins to couple to the
+    exterior environment.
+</p>
+
+<h3>C.3 Deriving the Critical Density Scale</h3>
+
+<p>
+    Both mechanisms yield a density scale $\rho_T$ that is not put in by hand
+    but emerges from the interplay between the scalar self-interaction and the
+    matter coupling. In the symmetron, $\rho_T = \mu^2 M^2$ is the symmetry
+    restoration density. In the chameleon, $\rho_T$ is approximately the density
+    at which the linear matter-coupling term balances the potential gradient:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:chameleon_rhot} \frac{\beta_A \rho_T}{M_{\rm Pl}} \sim \frac{V'(\phi_0)}{\phi_0} \sim \frac{n \Lambda^4}{\phi_0^2}. \end{equation}
+</div>
+
+<p>
+    Fixing $\Lambda \approx 96$ keV from the dimensional analysis of Section 5.5
+    and demanding consistency with the SPARC-normalized galactic transition
+    yields $\beta_A \sim \mathcal{O}(1)$ and $n \sim \mathcal{O}(1)$. These
+    are natural parameter values; no fine-tuning is required to hit the
+    $\rho_T \approx 20$ g/cm³ scale.
+</p>
+
+<h3>C.4 Status and Caveats</h3>
+
+<p>
+    The completions above demonstrate that the TEP phenomenology—density-dependent
+    screening, a compact soliton scale, and a galactic transition—is
+    <em>mathematically realizable</em> within standard scalar-tensor EFTs. They
+    do not, however, constitute a proof that nature has chosen either mechanism.
+    Key open questions include:
+</p>
+
+<ul>
+    <li>
+        <strong>Unique potential:</strong> The symmetron and chameleon are
+        representative examples. Other potentials (e.g., dilatonic, k-essence,
+        or Gallileon) may also produce the required screening, and a
+        first-principles derivation from quantum gravity would be required to
+        select the correct form.
+    </li>
+    <li>
+        <strong>Quantum stability:</strong> The $\mu \sim 10^{-27}$ eV mass scale
+        in the symmetron completion is vulnerable to quantum corrections. A
+        technically natural model (e.g., with approximate shift symmetry or
+        clockwork structure) would strengthen the completion.
+    </li>
+    <li>
+        <strong>Terrestrial transition width:</strong> Neither completion predicts
+        the detailed width $\Delta R_T$ of the Earth's screening transition,
+        which controls the orbital-transfer mapping to $L_c$ (the phenomenological transfer sketch in Section 2). A
+        numerical solution of the specified potential in Earth's density
+        profile is required.
+    </li>
+</ul>
+
+<p>
+    Despite these open targets, the existence of at least two standard
+    completions that reproduce the salient phenomenology without fine-tuning
+    removes the objection that $\rho_T \approx 20$ g/cm³ is a numerological
+    construct. It is an <em>accommodated</em> consequence of density-dependent scalar
+    screening, anchored to terrestrial data.
+</p>
+</div>

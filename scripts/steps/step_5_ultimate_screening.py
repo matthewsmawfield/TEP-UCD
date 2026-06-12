@@ -46,8 +46,11 @@ def run_ultimate_screening():
     R_earth = R_EARTH
     G = G_NEWTON
     c = C_LIGHT
-    R_TEP_earth = SCREENING_LENGTH_KM * 1000
     rho_T = RHO_C  # g/cm^3 (saturation scale; not an on/off switch)
+    rho_T_kg_m3 = rho_T * 1000  # kg/m³
+    
+    # Compute R_T for Earth directly from rho_T for consistency with step_3 and step_6
+    R_TEP_earth = ((3 * M_earth) / (4 * np.pi * rho_T_kg_m3)) ** (1/3)  # meters
     print_status(f"R_TEP (Earth) = {R_TEP_earth:.1f} m, rho_T = {rho_T:.2f} g/cm^3", "INFO")
 
     # --- Data Objects ---
@@ -290,9 +293,9 @@ def run_ultimate_screening():
     ax6.text(0.05, 0.8, text, va="top", linespacing=1.55)
 
     plt.savefig(
-        os.path.join(output_dir, "figure_6_ultimate_screening.png"), transparent=True
+        os.path.join(output_dir, "screening_comprehensive.png"), transparent=True
     )
-    print_status(f"Figure saved to {os.path.join(output_dir, 'figure_6_ultimate_screening.png')}", "SUCCESS")
+    print_status(f"Figure saved to {os.path.join(output_dir, 'screening_comprehensive.png')}", "SUCCESS")
     print_status(f"Screening law fit: S ~ rho^{slope:.2f}, R^2 = {r_val**2:.2f}", "INFO")
 
     # Save numerical outputs

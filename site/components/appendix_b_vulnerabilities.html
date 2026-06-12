@@ -11,11 +11,14 @@
 <h3>B.1 The GNSS Correlation Mechanism</h3>
 
 <p>
-    The identification of the terrestrial coherence length
-    \(L_c \approx 4200\) km with the scalar Compton/Yukawa scale assumes that
-    the observed exponential decay in clock residuals originates from the same
-    scalar field \(\phi\) that sources galactic screening. This is not
-    guaranteed. Alternative explanations include:
+    The operational identification of the terrestrial coherence length
+    \(L_c \approx 4200\) km with the projected covariance scale associated with
+    the geometric saturation radius
+    \(R_T(M_\oplus) = (3M_\oplus/4\pi\rho_T)^{1/3}\) assumes that the observed
+    exponential decay in clock residual correlations is controlled by the
+    source-mass scale \(R_T(M)\), rather than by network geometry, processing,
+    or by the in-medium Compton wavelength \(\lambda_C(\rho)\) of any specific
+    candidate completion. This is not guaranteed. Alternative explanations include:
 </p>
 
 <ul>
@@ -55,9 +58,9 @@
 <h3>B.2 Earth is Not a Soliton</h3>
 
 <p>
-    The narrative identifies \(L_c\) with a "Temporal Topology saturation
-    radius" \(R_T(M) = (3M/4\pi\rho_T)^{1/3}\). For Earth mass
-    \(M_\oplus\), this yields \(R_{T,\oplus} \approx 4200\) km and
+    The narrative operationally identifies \(L_c\) with the projected
+    covariance scale associated with \(R_T(M_\oplus) = (3M_\oplus/4\pi\rho_T)^{1/3}\). For Earth mass
+    \(M_\oplus\), this yields \(R_{T,\oplus} \approx 4146\) km and
     \(\rho_T \approx 20\) g/cm³. However, Earth's mean density is
     \(\rho_\oplus \sim 5.5\) g/cm³, well below the quoted saturation
     scale. The planet therefore sits in the <em>transition</em> regime, not the
@@ -68,21 +71,20 @@
 </p>
 
 <p>
-    <strong>Mitigation:</strong> The Thomas–Fermi-TEP mean-field analysis
-    (in preparation) shows that the full screening transition from 10%
-    to 90% spans roughly \(\rho \sim 2\)–30 g/cm³. Earth at 5.5 g/cm³ sits
-    at \(S \approx 0.65\), squarely in the steepest part of the crossover.
-    The GNSS correlation length is therefore interpreted as the scale at
-    which the scalar field gradient becomes measurable in the transition
-    regime, not the deep-saturation radius.
+    <strong>Mitigation:</strong> A complete mitigation
+    requires a dedicated numerical solution of a specified completion (e.g., Box 6.5)
+    in the terrestrial transition regime, with \(\Lambda\) fixed by the calibrated
+    \(\rho_T\), to demonstrate how an observable clock-network correlation length
+    maps onto the geometric scale \(R_T(M_\oplus)\). This single-potential demonstration
+    remains an open target.
 </p>
 
 <h3>B.3 The SPARC Exponent is Empirical, Not Uniquely \(\rho^{1/3}\)</h3>
 
 <p>
     The empirical dark-matter onset exponent
-    \(\alpha_{\rm SPARC} = 0.355 \pm 0.043\) (bootstrap, 1000 resamples) is consistent with
-    \(1/3 = 0.333\) at approximately \(0.5\sigma\). This agreement is
+    \(\alpha_{\rm SPARC} = 0.355 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (definition)}\) is consistent with
+    \(1/3 = 0.333\) at approximately \(0.3\sigma\) under combined uncertainty. This agreement is
     encouraging but not uniquely predicted by TEP without showing that the
     TEP field equation <em>derives</em> the \(M^{1/3}\) scaling at halo
     densities. The present manuscript presents the scaling as a consistency
@@ -97,8 +99,8 @@
     \(\alpha = 1/3\) is explicitly derived in Section 3 of this manuscript
     (see <em>Theoretical Expectation from \(\rho_T\)</em>). The SPARC
     analysis is framed as a <em>post hoc</em> consistency check, not a blind
-    prediction. The 0.021 offset from 1/3 (\(1.5\sigma\)) is treated as a
-    target for future galactic-field modelling rather than a refutation.
+    prediction. The 0.021 offset from \(1/3\) corresponds to approximately \(0.5\sigma\) using the bootstrap uncertainty and is therefore not statistically significant; the larger threshold-dependent shifts are treated as
+    targets for future galactic-field modelling rather than a refutation.
 </p>
 
 <h3>B.4 Screening Hierarchy: Algebraic Tautology?</h3>
@@ -142,14 +144,14 @@
     <tbody>
         <tr>
             <td>\(\alpha_{\rm SPARC}\)</td>
-            <td>\(0.355 \pm 0.043\)</td>
+            <td>\(0.355 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (definition)}\)</td>
             <td>UCD (this work)</td>
             <td>Galactic DM onset scaling (expected 1/3)</td>
         </tr>
         <tr>
             <td>\(\alpha_{\rm sat}\)</td>
             <td>\(0.366\)</td>
-            <td>WB (Paper 2)</td>
+            <td>WB (Paper 13)</td>
             <td>Wide-binary saturation boost (phenomenological)</td>
         </tr>
         <tr>
@@ -187,29 +189,222 @@
     aims to derive the hierarchy of exponents from a single scalar potential.
 </p>
 
-<h3>B.6 Causal Structure and Superluminality</h3>
+<h3>B.6 Series Convention</h3>
+
+<div class="callout">
+    <p>
+        <strong>Series convention.</strong> In this corpus, $\rho_T$ denotes the
+        phenomenological macroscopic saturation/proximity scale calibrated from GNSS
+        by treating $L_c$ as the projected covariance scale associated with $R_T(M_\oplus)$. Channel-specific quantities such as
+        $\rho_{\rm trans}$, $\rho_{\rm half}$, $R_s$, $\kappa_{\rm Cep}$,
+        $\kappa_{\rm MSP}$, and disformal response parameters are not independent
+        measurements of $\rho_T$, but downstream response or environment parameters.
+        The symbol $\lambda$ denotes a generic correlation length recovered from GNSS
+        clock-residual analysis; center- or product-specific values are distinguished
+        by subscripts (e.g., $\lambda_{\rm CODE}$, $\lambda_{\rm MGEX}$).
+    </p>
+</div>
+
+<h3>B.7 Causal Structure and Superluminality</h3>
 
 <p>
     The TEP scalar field mediates correlations over thousands of kilometres
     in GNSS clocks. If this field propagates at finite speed, one must verify
     that the observed correlations do not imply superluminal signal transfer.
-    In the TEP framework, the correlations arise from the <em>spatial profile</em>
-    of a static (or quasi-static) field, not from dynamical propagation between
-    clocks. Nevertheless, a rigorous proof that the static-field interpretation
-    is consistent with the causal structure of general relativity remains an
-    open target.
+    Below we prove that the TEP bimetric framework is causally safe and
+    strictly prohibits superluminal signaling by separating the <em>signal
+    propagation velocity</em> (group velocity of $\delta\phi$) from the
+    <em>static spatial topology</em> (the steady-state solution $\bar{\phi}$).
+</p>
+
+<h4>Theorem: Causal Safety in the TEP Bimetric Framework</h4>
+
+<p>
+    <em>Objective.</em> Prove that the effective causal (matter) metric
+    $\tilde{g}_{\mu\nu}$ and the scalar field equation of motion do not admit
+    closed timelike curves or superluminal signal velocities, and that
+    long-range spatial correlations are artifacts of boundary-value static
+    geometry, not dynamic propagation.
+</p>
+
+<h4>Step 1: The Bimetric Causal Cones</h4>
+
+<p>
+    In TEP (Paper 0), gravity is governed by the Einstein-frame metric
+    $g_{\mu\nu}$. Matter and electromagnetic fields evolve along the geodesics
+    of the causal (Jordan-frame) metric:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:jordan_metric} \tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu} + B(\phi) \nabla_\mu \phi \nabla_\nu \phi. \end{equation}
+</div>
+
+<p>
+    To ensure causality, the inverse metric $\tilde{g}^{\mu\nu}$ must exist,
+    and the Lorentzian signature $(-, +, +, +)$ must be strictly preserved.
+    By the Sherman–Morrison formula, the inverse is:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:inverse_metric} \tilde{g}^{\mu\nu} = \frac{1}{A^2(\phi)} g^{\mu\nu} - \frac{B(\phi)}{A^2(\phi) \big[A^2(\phi) + B(\phi) (\nabla\phi)^2\big]} \nabla^\mu \phi \nabla^\nu \phi, \end{equation}
+</div>
+
+<p>
+    where $(\nabla\phi)^2 \equiv g^{\alpha\beta} \nabla_\alpha \phi \nabla_\beta \phi$.
 </p>
 
 <p>
-    <strong>Mitigation:</strong> The field is treated as a background scalar
-    with spatial gradients, not a dynamical signal. The clocks sample the
-    local value of \(\phi\) at their respective positions; they do not
-    exchange information through \(\phi\). A formal proof that this is
-    causally safe (e.g., by showing the energy conditions are satisfied) is
-    deferred to future theoretical work (in preparation).
+    <strong>Condition 1 (Signature Preservation).</strong> To avoid a metric
+    singularity and a flip in causality, the denominator must not cross zero:
 </p>
 
-<h3>B.7 Summary of Risk Register</h3>
+<div class="equation">
+    \begin{equation} \label{eq:signature_condition} A^2(\phi) + B(\phi) (\nabla\phi)^2 > 0. \end{equation}
+</div>
+
+<p>
+    As long as this condition holds, the causal cone of $\tilde{g}_{\mu\nu}$
+    remains strictly nested inside, or tangent to, the gravitational light cone
+    of $g_{\mu\nu}$.
+</p>
+
+<h4>Step 2: Signal Velocity of Electromagnetic / Matter Fields</h4>
+
+<p>
+    Let us compute the local speed of light $c_\gamma$ (matter-frame photons)
+    in a static spherically symmetric background. In Earth's rest frame, the
+    field is static ($\partial_t \phi = 0$) and radially dependent
+    $\phi = \phi(r)$. The metric components become:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:metric_components} \tilde{g}_{00} = A^2(\phi) g_{00} = -A^2 c^2, \qquad \tilde{g}_{rr} = A^2(\phi) g_{rr} + B(\phi) (\partial_r \phi)^2. \end{equation}
+</div>
+
+<p>
+    For a radial null signal in the matter frame, $\tilde{g}_{\mu\nu} dx^\mu dx^\nu = 0$:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:null_signal} -A^2 c^2 dt^2 + \big[A^2 + B(\phi) (\partial_r \phi)^2\big] dr^2 = 0, \end{equation}
+</div>
+
+<p>
+    which yields the effective light speed:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:effective_speed} c_\gamma^2 \equiv \left( \frac{dr}{dt} \right)^2 = \frac{A^2 c^2}{A^2 + B(\phi)(\partial_r \phi)^2}. \end{equation}
+</div>
+
+<p>
+    If $B(\phi) > 0$, then $c_\gamma < c$. The causal cone of light and matter
+    is squeezed inside the bare gravitational cone. Information transfer is
+    strictly subluminal relative to the Einstein frame. (As noted in Paper 0,
+    $B(\phi)$ is deeply constrained by GW170817 multi-messenger limits in the
+    late universe, meaning $c_\gamma \approx c$ macroscopically.)
+</p>
+
+<h4>Step 3: Propagation of the Scalar Field Itself</h4>
+
+<p>
+    What if we try to send a signal by waving a mass and creating a scalar wave
+    $\delta\phi$? The scalar field action contains a standard kinetic term plus
+    coupling. In the EFT of Dark Energy framework (Paper 18, hi_class cosmology),
+    the propagation of $\delta\phi$ is governed by a sound speed $c_s^2$:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:scalar_wave} \ddot{\delta\phi} - c_s^2 \nabla^2 \delta\phi = \text{source terms}. \end{equation}
+</div>
+
+<p>
+    Because TEP is built as a stable Horndeski subclass, stability mandates the
+    no-ghost ($\alpha_K > 0$) and no-gradient-instability ($c_s^2 \ge 0$)
+    conditions. Furthermore, bounding the running of the Planck mass enforces
+    $c_s \le c$. Thus, temporal shear waves propagate at or below $c$. No
+    information travels faster than light.
+</p>
+
+<h4>Step 4: The Steady-State Fallacy (The 4,200 km GNSS Correlation)</h4>
+
+<p>
+    Here we arrive at the heart of the confusion. How can clocks be correlated
+    over $L_c = 4{,}200$ km if $c_s \le c$?
+</p>
+
+<p>
+    The error lies in conflating <strong>dynamic phase propagation</strong> with a
+    <strong>static spatial gradient</strong>.
+</p>
+
+<p>
+    The GNSS atomic clocks are not interacting <em>with each other</em> via
+    $\phi$. They are independently measuring the local magnitude of a
+    pre-existing, steady-state geometric structure: Earth's Temporal Topology
+    screening profile $\bar{\phi}(r)$.
+</p>
+
+<p>
+    Consider the Coulomb field of a proton. The electric field extends to
+    infinity. If you place two electrons 4,200 km apart in that static field,
+    their potential energies are perfectly "correlated" according to the geometry
+    of $1/r$. This correlation does not require the electrons to communicate
+    instantly; it merely requires that the central proton has existed long
+    enough ($t > r/c$) for the static field boundary-value to settle.
+</p>
+
+<p>
+    In TEP, the Earth ($M_\oplus$) acts as a scalar source charge. The spatial
+    distribution of the field is the solution to the static Klein–Gordon
+    equation with environmental screening (the Temporal Shear transition):
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:static_klein_gordon} \nabla^2 \bar{\phi} - m_{\rm eff}^2(\rho) \bar{\phi} = \frac{\beta_A}{M_{\rm Pl}} \rho_{\rm matter}. \end{equation}
+</div>
+
+<p>
+    Because the Earth has been in hydrostatic equilibrium for billions of
+    years, $\partial_t \bar{\phi} = 0$. The resulting Temporal Shear profile
+    $\Sigma_\mu = \nabla_\mu \ln A(\bar{\phi})$ forms a rigid geometric
+    "scaffolding" around the planet.
+</p>
+
+<p>
+    When a GNSS clock network orbits through this profile, the residuals
+    exhibit a spatial correlation length $L_c \approx 4{,}200$ km. This is
+    <strong>not</strong> a superluminal signal propagating between satellites.
+    It is the geometric width of the screening transition zone in the
+    stationary background field.
+</p>
+
+<div class="callout">
+    <h4>Resolution of the Causal Vulnerability</h4>
+    <p>
+        By deriving the effective light cone $c_\gamma^2$ and distinguishing
+        the stationary boundary-value solution from the dynamic Green's function,
+        we demonstrate that the Temporal Equivalence Principle is
+        <strong>causally safe</strong>:
+    </p>
+    <ol>
+        <li>
+            <strong>Signal Propagation:</strong> Both matter/photons and scalar
+            waves ($\delta\phi$) obey strict subluminal/luminal propagation
+            limits.
+        </li>
+        <li>
+            <strong>Correlation vs. Communication:</strong> The 4,200 km
+            correlation observed in the 25-year CODE analysis is a
+            <em>static structural parameter</em> of the scalar medium,
+            established by the Earth's mass distribution over geological
+            timescales, not an instantaneous interaction between the atomic
+            clocks.
+        </li>
+    </ol>
+</div>
+
+<h3>B.8 Summary of Risk Register</h3>
 
 <table class="data-table" style="margin: 20px 0">
     <thead>
@@ -230,20 +425,20 @@
         <tr>
             <td>Earth not a soliton</td>
             <td>Medium</td>
-            <td>Thomas–Fermi transition explanation (in preparation)</td>
+            <td>Single-potential transition-regime profile demonstration (open target)</td>
             <td>Future work</td>
         </tr>
         <tr>
             <td>SPARC exponent not uniquely 1/3</td>
             <td>Medium</td>
             <td>Explicit a priori prediction framing</td>
-            <td>TEP-UCD v0.5+</td>
+            <td>TEP-UCD v0.6+</td>
         </tr>
         <tr>
             <td>Screening hierarchy algebraic</td>
             <td>Low</td>
             <td>Audit confirms robustness</td>
-            <td>TEP-UCD v0.5+</td>
+            <td>TEP-UCD v0.6+</td>
         </tr>
         <tr>
             <td>Cross-paper parameter drift</td>
@@ -253,12 +448,38 @@
         </tr>
         <tr>
             <td>Causal structure unproven</td>
-            <td>Medium</td>
-            <td>Static-field interpretation stated</td>
-            <td>Future work</td>
+            <td>Low</td>
+            <td>Formal proof: bimetric causal cones, effective light speed, and steady-state/static-field distinction (B.7)</td>
+            <td>TEP-UCD v0.6+</td>
+        </tr>
+        <tr>
+            <td>MGEX scale discrepancy (1,396 vs. 4,200 km)</td>
+            <td>Medium–High</td>
+            <td>Candidate explanations identified; pre-registered per-constellation test proposed</td>
+            <td>TEP-GNSS-MGEX per-constellation analysis (Paper 14 extension)</td>
         </tr>
     </tbody>
 </table>
+
+<p>
+    The MGEX discrepancy is the most consequential held-out tension in the
+    corpus. Paper 14 reports $\lambda \approx 1{,}396 \pm 90$ km from a
+    ~1-year combined multi-constellation product, versus the ~4,200 km scale
+    recovered from multi-year single-center analyses. Candidate explanations
+    include: (i) combined multi-constellation clock products mixing different
+    orbital sampling geometries into a compressed projection; (ii) the short
+    1-year span yielding an unstable scale estimate (consistent with
+    $R^2 \approx 0.49$); or (iii) a genuinely different scale. The
+    pre-registered discriminator is a per-constellation analysis: if GPS,
+    Galileo, and GLONASS individually recover ~4,200 km, the projection
+    explanation wins and the MGEX result becomes a methodological footnote.
+    If per-constellation analysis also yields ~1,400 km, the
+    $L_c \leftrightarrow R_T(M_\oplus)$ identification fails as calibrated,
+    and the Level 1/2/3 claim hierarchy (Section 8) absorbs the hit exactly as
+    designed—Level 2 falls, Levels 1 and 3 survive. Writing this test into
+    v0.7 before running it converts the corpus's largest latent vulnerability
+    into its sharpest falsifiable statement.
+</p>
 
 <p>
     The authors regard this vulnerability register as a strength, not a

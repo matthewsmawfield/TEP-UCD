@@ -42,7 +42,7 @@ BETA_A = -1.0                 # Dimensionless conformal coupling (locked lab-sca
 
 # Phenomenological screening coefficient in the TEP-SPIN tanh ansatz.
 # This is NOT the fundamental conformal coupling (BETA_A). It is a
-# calibrated parameter of the density-dependent screening model.
+# calibrated parameter of the environment-dependent screening model.
 BETA_SPIN = 0.01                 # Dimensionless; Paper 24
 
 # Solar-system PPN bound on conformal coupling from Cassini time-delay test.
@@ -90,47 +90,3 @@ GNSS_LAMBDA_T_EXPONENTIAL_BY_CENTER = {
 # metrology shifts.
 ALPHA_LOG = -7.66e-3             # Density-sector coupling (negative by field-equation sign)
 BETA_GEOM = 1.50e-4              # Mass-sector geometric coupling
-
-# =============================================================================
-# SCREENING MODEL
-# =============================================================================
-
-def universal_screening_function(rho, rho_scale, n=2.0, invert=False):
-    """
-    Universal TEP density screening function.
-
-    Replaces previously incompatible phenomenological forms across the TEP corpus.
-    Parameters match the NIST standard (Paper 21) exactly.
-
-    Parameters
-    ----------
-    rho : float or ndarray
-        Local matter density.
-    rho_scale : float
-        Transition density scale (same units as rho).
-    n : float
-        Steepness of the power-law transition. Default is 2.0.
-    invert : bool
-        If False (default): factor = 1 / [1 + (rho/rho_scale)^n].
-        Used for source and cosmology screening (suppressed at high density).
-
-        If True: factor = 1 / [1 + (rho_scale/rho)^n].
-        Used for chameleon coupling screening (suppressed at low density).
-    """
-    rho = np.asarray(rho, dtype=float)
-    if invert:
-        ratio = rho_scale / rho
-    else:
-        ratio = rho / rho_scale
-    return 1.0 / (1.0 + ratio ** n)
-
-
-def screening_factor(rho_local_g_cm3, rho_c=RHO_C):
-    """
-    Continuous Temporal Topology suppression factor for the scalar field source.
-
-    When rho_local << rho_c: suppression -> 1 (full TEP effect)
-    When rho_local -> rho_c: suppression -> 0.5 (transition)
-    When rho_local >> rho_c: suppression -> 0 (saturated, A -> 1)
-    """
-    return universal_screening_function(rho_local_g_cm3, rho_c, n=2.0, invert=False)

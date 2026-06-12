@@ -176,6 +176,9 @@ class HTMLToPDFConverter:
             
             await page.goto(file_url, wait_until='networkidle', timeout=60000)
             
+            # Force reload to bypass any image caching
+            await page.reload(wait_until='networkidle')
+            
             # Inject CSS for better PDF rendering
             css_content = self._get_css_for_pdf(options)
             await page.add_style_tag(content=css_content)

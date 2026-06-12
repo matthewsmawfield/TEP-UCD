@@ -128,7 +128,11 @@ def build_metadata(cff_data):
 
     keywords_list = cff_data.get('keywords', [])
     if isinstance(keywords_list, list):
-        keywords = '; '.join(str(k) for k in keywords_list)
+        def _format_kw(k):
+            if isinstance(k, dict):
+                return '; '.join(f'{kk}: {kv}' for kk, kv in k.items())
+            return str(k)
+        keywords = '; '.join(_format_kw(k) for k in keywords_list)
     else:
         keywords = str(keywords_list)
 

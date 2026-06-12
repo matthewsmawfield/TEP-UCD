@@ -1,29 +1,13 @@
-v0.5 (New Delhi) — 07 June 2026 — Post-feedback integrity revision
-
-- Removed magnetar claims; tightened all claims to empirically supported systems only
-- Corrected §5.3 Thomas–Fermi electron-density formula and exposed naive analytical closure failure
-- Removed "anchored by a mean-field calculation" overclaim (§5.5); elevated dimensional estimate (§5.4) as strongest surviving analytical argument
-- Replaced "Earth to galaxy cluster" with "Earth to galaxy" throughout (no cluster datapoint in analysis)
-- Various language tightening: Milky Way mass label, conclusion framing, discussion table upgrades
-- Structural: moved EHT content to Appendix D; equation formatting cleanup
-
-v0.4 (New Delhi) — 07 June 2026 — Editorial refinement: appendix restructure, equation punctuation, factual corrections, and precise wording
-
-- Elevated EHT Soliton Detection from Appendix C subsection to standalone Appendix D
-- Moved References section before Appendices in document ordering
-- Added grammatical punctuation to 21+ display equations across 8 component files
-- Fixed GNSS multi-center claim: replaced false "<5%" precision with defensible range statement
-- Fixed Milky Way table mass: $M \sim 10^{12} M_\odot$ → $M_{\rm bar} \sim 6 \times 10^{10} M_\odot$
-- Clarified abstract RBH-1 cross-reference: "(companion paper)" → "(Smawfield 2025h, Paper 7)"
-- Rewrote conclusion opening to clarify screening hierarchy is consistency check, not independent discovery
-- Changed "independent constraints" → "mutually reinforcing constraints" in Discussion
-- Fixed Numerology Firewall Milky Way row: "Keplerian decline" → "inner mass-discrepancy onset"
-- Adjusted LRD language: "dominated by the soliton core" → "scalar-envelope effects"
+v0.6 (New Delhi) — 12 June 2026 — integrity revision and consistency edits
+- Figures: renumbered (6→1, 7→2, 8→E.1), regenerated SPARC residuals with r=+0.297, softened captions, eliminated duplicate numbering
+- Abstract & metadata: synchronized across README, zenodo, CITATION.cff, citation.json, codemeta.json, manifest.json, site/index.html; SPARC uncertainty now reports combined (stat)±0.07(definition); screening hierarchy uses S~10^-9
+- Theory softening: "fundamental"→"candidate saturation scale", "establishes"→"identifies as a candidate", operational L_c framing, evidence hierarchy paragraph
+- Scope tightening: removed magnetar claims, corrected §5.3 Thomas–Fermi formula and exposed analytical closure failure, removed mean-field overclaim (§5.5), elevated dimensional estimate (§5.4), replaced "Earth to galaxy cluster" with "Earth to galaxy" throughout
+- Technical fixes: chameleon density-field relation, appendix restructure, bibliography DOIs, error budget propagation, quantum caveat in §5.5, series convention in Appendix B.6, Milky Way mass label, conclusion framing, discussion table upgrades
 
 v0.4 (New Delhi) — 05 June 2026 — Content revision: proximity scale terminology, alpha_SPARC notation, and cross-paper consistency
 
 v0.3 (New Delhi) - Title and Terminology Refinement
-
 - Revised title: "Cross-Scale Consistency of ρ_T" (was "Unifying Atomic, Galactic, and Compact Object Scales")
 - Replaced soliton-centric language with Temporal Topology saturation framework
 - Added "soliton interpretation is one candidate microscopic realization" qualifier throughout
@@ -32,11 +16,9 @@ v0.3 (New Delhi) - Title and Terminology Refinement
 - Synchronized abstract across all citation files and zenodo.txt
 
 v0.2.1 (New Delhi) - LaTeX Notation Fix
-
 - Fixed Planck mass notation: M_{\rm Pl} → M_{\text{Pl}} (8 instances across 5 component files)
 
 v0.2 (New Delhi) - Topology Nomenclature Update
-
 - Adopted continuous Temporal Topology framework (replaces discrete screening terminology)
 - Formalized Temporal Shear nomenclature for field gradient superposition
 - Aligned screening descriptions with continuous geometric profiles per theory paper v0.7

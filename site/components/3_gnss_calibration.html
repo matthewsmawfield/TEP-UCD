@@ -4,20 +4,22 @@
 
 <p>The first empirical constraint on $\rho_T$ comes from terrestrial atomic clock networks. Multi-center analysis of GNSS (Global Navigation Satellite System) clock products reveals distance-structured correlations with a characteristic length scale $L_c \approx 4200$ km for Earth's mass. Operationally, $L_c$ denotes the best-fit exponential decay length recovered by fitting clock-residual covariance versus inter-station separation (see Appendix A). Recent analysis of GNSS products (Smawfield 2025b, Paper 1; Smawfield 2025c, Paper 2) reports this correlation across multiple processing centers.</p>
 
+<p>In this corpus, the terrestrial scale $L_c$ is operationally identified with the projected covariance scale associated with the geometric Temporal Topology scale $R_T(M_\oplus)$, not with the in-medium Compton wavelength $\lambda_C(\rho)$ of a candidate completion. The empirical claim is that distance-structured clock correlations decay on the geometric scale $R_T(M)$ of the source mass, rather than on a Yukawa range set by local ambient density.</p>
+
 <p>These correlations exhibit seven independent signatures:</p>
 <ul>
     <li><strong>Distance structure:</strong> Correlation amplitude scales with inter-station separation.</li>
     <li><strong>Directional anisotropy:</strong> Stronger correlations along Earth's orbital velocity vector.</li>
     <li><strong>Orbital velocity coupling:</strong> Annual modulation consistent with $v_\oplus \approx 30$ km/s.</li>
     <li><strong>CMB-frame alignment:</strong> Dipole structure aligns with CMB rest frame.</li>
-    <li><strong>Multi-center consistency:</strong> CODE, IGS, and ESA products show identical patterns.</li>
-    <li><strong>25-year stability:</strong> Correlation structure persists across 1998–2023 (Smawfield 2025c, Paper 2).</li>
+    <li><strong>Multi-center consistency:</strong> CODE, IGS, and ESA products show consistent characteristic scales and directional structure.</li>
+    <li><strong>25-year stability:</strong> Correlation structure persists across 1999–2024 (Smawfield 2025c, Paper 2).</li>
     <li><strong>Raw RINEX validation:</strong> Pattern survives in unprocessed Single Point Positioning (SPP) analysis, constraining processing artifacts (Smawfield 2025d, Paper 3).</li>
 </ul>
 
-<h3>Derivation of $\rho_T$ from $L_c$</h3>
+<h3>Operational Calibration of $\rho_T$ from $L_c$</h3>
 
-<p>The characteristic length $L_c$ is interpreted as the Temporal Topology saturation radius for Earth's mass. For a spherical mass distribution, the saturation radius is:</p>
+<p>The characteristic length $L_c$ is used as the observed projected covariance scale associated with $R_T(M_\oplus)$. For a spherical mass distribution, the saturation radius is:</p>
 
 <div class="equation">
     \begin{equation} \label{eq:rt_definition} R_T = \left( \frac{3M}{4\pi \rho_T} \right)^{1/3}. \end{equation}
@@ -37,7 +39,7 @@
 
 <h3>Systematic Uncertainties</h3>
 
-<p>The primary uncertainty is the length scale determination. The multi-center analysis (CODE, IGS, ESA) over 2.5 years yields $\lambda_T = 3{,}330$–$4{,}549$ km (Paper 1), while the 25-year CODE single-center analysis gives $4{,}201 \pm 1{,}967$ km (Paper 2). We adopt the central value $L_c = 4{,}200$ km with a systematic range of $\pm 500$ km (12%), reflecting the multi-center spread. The geometric mapping $L_c = R_T$ and the use of total Earth mass are definitional choices within the model, not additional empirical uncertainties.</p>
+<p>The primary uncertainty is the length scale determination. We report three distinct contributions: (i) the 25-year CODE per-measurement statistical uncertainty ($4{,}201 \pm 1{,}967$ km, $\pm 47\%$; Paper 2); (ii) the inter-center systematic spread ($3{,}330$–$4{,}549$ km, $\sim \pm 12\%$; Paper 1), with the caveat that centers share largely overlapping underlying data so this spread is not an independent ensemble; and (iii) the $\mathcal{O}(1)$ prefactor in the transfer sketch (Section 2), treated as a model-defining choice. The adopted operational value is $L_c = 4{,}200$ km with $\pm 500$ km ($\pm 12\%$) reflecting the inter-center range. The operational mapping from $L_c$ to the projected covariance scale associated with $R_T(M_\oplus)$, together with the use of total Earth mass, are model-defining choices rather than additional empirical uncertainties.</p>
 
 <p>Propagating the length-scale uncertainty alone:</p>
 
@@ -45,7 +47,7 @@
     \begin{equation} \label{eq:rho_t_uncertainty} \rho_T = 20 \pm 7 \text{ g/cm}^3 \quad (35\% \text{ systematic}). \end{equation}
 </div>
 
-<p>This range is consistent with electron degeneracy thresholds (Section 5.2) and provides the calibration scale for all subsequent tests. The key point is that the $M^{1/3}$ structural form is independent of $\rho_T$; only the normalization changes. Even at the extremes ($L_c = 3{,}700$ km $\rightarrow \rho_T \approx 30$ g/cm³, or $L_c = 4{,}700$ km $\rightarrow \rho_T \approx 14$ g/cm³), the cross-scale consistency tests remain viable because the same $\rho_T$ value must describe all systems simultaneously.</p>
+<p>This range lies in the same condensed-matter density regime where electron degeneracy becomes dynamically relevant to the equation of state (Section 5.3) and provides the calibration scale for all subsequent tests. The key point is that the $M^{1/3}$ structural form is independent of $\rho_T$; only the normalization changes. Even at the extremes ($L_c = 3{,}700$ km $\rightarrow \rho_T \approx 30$ g/cm³, or $L_c = 4{,}700$ km $\rightarrow \rho_T \approx 14$ g/cm³), the cross-scale consistency tests remain viable because the same $\rho_T$ value must describe all systems simultaneously.</p>
 
 <h3>Discrimination from Geophysical Signals</h3>
 
@@ -69,6 +71,121 @@
     <li><strong>Temporal stability:</strong> 25-year consistency (Paper 2) disfavors transient instrumental effects.</li>
 </ul>
 
-<p>The convergence of multi-center, multi-decade, and raw-data analyses establishes $L_c \approx 4200$ km as the canonical terrestrial screening length from the 25-year GNSS baseline (Papers 1–2, 6), independent of theoretical interpretation. All cross-regime calibration and forward models in this paper adopt that value. Paper 14 provides an independent MGEX held-out verification on a ~1 yr combined-clock span ($\lambda_T \approx 1{,}396 \pm 90$ km, $R^2 \approx 0.49$), confirming signal presence on a shorter baseline and different product; it is cited as verification only, not as the dimensional scale for $\rho_T$ extrapolation.</p>
+<p>The convergence of multi-center, multi-decade, and raw-data analyses identifies $L_c \approx 4200$ km as the canonical terrestrial screening length from the 25-year GNSS baseline (Papers 1–2), independent of theoretical interpretation. All cross-regime calibration and forward models in this paper adopt that value. Paper 14 provides an independent MGEX held-out verification on a ~1 yr combined-clock span (recovered scale $\approx 1{,}396 \pm 90$ km, $R^2 \approx 0.49$), confirming signal presence on a shorter baseline and different product; it is cited as verification only, not as the dimensional scale for $\rho_T$ extrapolation.</p>
+
+<h3>Phenomenological Transfer Sketch: Mapping the Static Profile to Clock Covariance</h3>
+
+<p>
+    A central question is how the static Earth-sourced Temporal Topology profile
+    produces the dynamic observable recovered in GNSS clock products: a spatial
+    covariance length $L_c \approx 4200$ km. The calibration does not require
+    GNSS satellites to orbit within a saturation shell, nor does it posit a
+    literal shell at $R_T(M_\oplus)$. Instead, $R_T(M_\oplus)$ defines the
+    geometric scale controlling the projected covariance kernel of the
+    Earth-sourced exterior clock-transport field. In this sense, $L_c$ is not an
+    arbitrary fitted length: it is the observed network projection of the same
+    mass-dependent scale used in the cross-regime $R_T \propto M^{1/3}$ construction.
+    This subsection gives an order-of-magnitude argument — a transfer sketch,
+    not a derivation — for this identification, together with the assumptions
+    that a full demonstration would have to close (Appendix B.2).
+</p>
+
+<h4>What $R_T(M_\oplus)$ is, and is not</h4>
+
+<p>
+    $R_T(M) = (3M/4\pi\rho_T)^{1/3}$ is the radius a body of mass $M$ would have
+    at uniform density $\rho_T$. For Earth this is $\approx 4146$ km. It is a
+    <em>scaling variable</em>, not a location: because Earth lies in the partial-transition
+    regime, $R_T(M_\oplus)$ is used as a geometric scaling variable rather than
+    as the radius of a literal material shell (Appendix B.2). The question the
+    sketch addresses is what spatial scale governs the <em>exterior</em> field of such
+    a partially screened source.
+</p>
+
+<h4>The exterior profile scale</h4>
+
+<p>
+    In the static exterior problem, the available length scales are the source
+    radius $R_\oplus$, the geometric saturation scale $R_T(M_\oplus)$, and the
+    ambient-medium Compton wavelength $\lambda_C(\rho_{\rm amb})$ (very long in
+    the near-vacuum exterior). Under the corpus's screening ontology the
+    transition in the screening function $S(\rho)$ is <em>gradual</em>, spanning
+    $\Delta\rho/\rho_T \sim \mathcal{O}(1)$ — a continuous Temporal Topology
+    with no thin shells (Paper 0, A4). For such a gradual transition, the
+    exterior field of the partially screened source carries no structure sharper
+    than the source scale itself, and the characteristic scale over which the
+    effective source charge accumulates is $R_T(M)$: radii enclosing mean
+    density above the transition range contribute suppressed source charge,
+    radii beyond contribute unsuppressed charge, and the changeover in the
+    <em>integrated</em> source — not in any local shell — occurs over a radial span of
+    order $R_T$. (Note that a <em>steep</em> transition would instead produce
+    thin-shell behaviour with structure on scales $\ll R_T$; the gradual
+    ontology is therefore not incidental to this argument but required by it.)
+    Both $R_\oplus = 6371$ km and $R_T(M_\oplus) = 4146$ km lie within a factor
+    $\sim 1.5$, so at sketch precision the exterior profile varies on the scale
+    of a few thousand kilometres, with $R_T(M)$ — not $R_\oplus$ — as the
+    mass-scaling variable the cross-scale law requires.
+</p>
+
+<h4>From a static profile to a time-series covariance</h4>
+
+<p>
+    A deterministic static field produces constant clock offsets, which
+    clock-bias estimation absorbs; by itself it generates no time-series
+    covariance. The sketch therefore requires one explicit assumption:
+</p>
+
+<p>
+    <strong>Modulated-sampling assumption.</strong> The residual variance analysed in
+    Papers 1–3 arises from temporal modulation of each station's sampling of
+    the static exterior profile — diurnal rotation of the ground network
+    through the profile's anisotropy, satellite orbital motion, and
+    tropospheric/orientation geometry that multiplies the local conformal
+    rate $A(\bar{\phi}(\mathbf{x},t))$. Two clocks then acquire <em>correlated</em>
+    time variance to the extent that their modulated samples traverse the
+    same large-scale field structure.
+</p>
+
+<p>
+    Writing $\delta\tau_i(t) \approx \tau_0 (\beta_A/M_{\rm Pl})\,
+    \bar{\phi}(\mathbf{x}_i(t))$ for the modulated residual, the equal-time
+    network covariance $\langle \delta\tau_A\,\delta\tau_B\rangle_t$ inherits
+    its baseline dependence from the spatial structure of $\bar{\phi}$: stations
+    separated by $d$ small compared with the profile's variation scale sample
+    nearly the same field excursion and correlate strongly; stations separated
+    by $d$ large compared with that scale decorrelate. The decay length of the
+    network covariance is then set by the exterior profile scale,
+</p>
+
+<div class="equation">
+    \begin{equation} L_c \sim \mathcal{O}(1) \times R_T(M_\oplus), \end{equation}
+</div>
+
+<p>
+    with the $\mathcal{O}(1)$ factor determined by the unspecified completion
+    (profile shape, anisotropy spectrum, sampling geometry). This is the entire
+    quantitative content of the sketch: a coincidence of scales with an
+    undetermined order-unity prefactor, <em>not</em> a prediction of $L_c = R_T$ to
+    any stated precision.
+</p>
+
+<h4>Implications for the calibration</h4>
+
+<p>
+    This sketch binds the clock observable ($L_c$) to the geometric scaling
+    variable ($R_T$) at the level of dimensional analysis under two explicit
+    assumptions: the gradual-transition ontology and the modulated-sampling
+    mechanism. It does not prove that the GNSS correlation is caused by the TEP
+    scalar — that remains the empirical hypothesis tested by null-model
+    exclusion (Papers 1–3) — and it does not by itself discriminate $R_T(M)$
+    from $R_\oplus$ as the controlling scale, since the two differ by only a
+    factor $\sim 1.5$ for Earth. What <em>would</em> discriminate them is the
+    mass-scaling test: $R_T \propto M^{1/3}$ while a source-radius scale does
+    not follow that law across the astrophysical systems of Sections 3–7. The
+    single-potential numerical demonstration that would replace this sketch
+    with a derivation — an explicit exterior profile and sampling kernel under
+    a specified completion, with $\Lambda$ fixed by the calibrated $\rho_T$ —
+    remains the open target recorded in Appendix B.2.
+</p>
 
 <p><em>For detailed methodology and validation, see Appendix A and Papers 1–3.</em></p>

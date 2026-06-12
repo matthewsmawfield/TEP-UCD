@@ -16,7 +16,7 @@ try:
 except ImportError:
     pass
 
-from core.constants import M_EARTH, M_SUN, R_SUN, SCREENING_LENGTH_KM
+from core.constants import M_EARTH, M_SUN, R_SUN, SCREENING_LENGTH_KM, RHO_C
 
 FIG_PRESET = "web_tall"
 
@@ -42,10 +42,13 @@ def run_wd_screening():
     M_earth = M_EARTH
     M_sun = M_SUN
     R_sun = R_SUN
+    rho_T = RHO_C  # g/cm³
+    rho_T_kg_m3 = rho_T * 1000  # kg/m³
 
     # --- The TEP Parameter (Calibrated from GNSS) ---
-    R_TEP_earth = SCREENING_LENGTH_KM * 1000  # meters
-    print_status(f"TEP screening length: {R_TEP_earth:.1f} m", "INFO")
+    # Compute R_T for Earth directly from rho_T for consistency with step_3 and step_6
+    R_TEP_earth = ((3 * M_earth) / (4 * np.pi * rho_T_kg_m3)) ** (1/3)  # meters
+    print_status(f"TEP screening length: {R_TEP_earth:.1f} m (from rho_T = {rho_T} g/cm³)", "INFO")
 
     # --- Mass Range: White Dwarf Domain (0.1 to 1.4 Solar Masses) ---
     masses_solar = np.linspace(0.1, 1.44, 200)  # Up to Chandrasekhar limit
@@ -178,7 +181,7 @@ def run_wd_screening():
         color=COLORS["text"],
     )
     ax.text(
-        0.6, 2e5, "Scalar Field Extends Beyond Surface", ha="center", color=COLORS["text"]
+        0.6, 2e5, "Saturation scale extends beyond baryonic surface", ha="center", color=COLORS["text"]
     )
 
     plt.tight_layout()

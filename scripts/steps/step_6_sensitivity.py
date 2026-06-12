@@ -125,6 +125,11 @@ def run_sensitivity_analysis():
     plt.xscale('log')
     plt.xlim(0.005, 1.2)
     
+    # Use decimal labels instead of powers of ten for readability
+    ax = plt.gca()
+    ax.set_xticks([0.01, 0.1, 1.0])
+    ax.set_xticklabels(['0.01', '0.1', '1.0'])
+    
     plt.legend(frameon=True, fancybox=True, framealpha=0.9, facecolor='white', loc='upper left', fontsize=9)
     
     # Annotations

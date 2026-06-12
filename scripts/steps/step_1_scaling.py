@@ -14,7 +14,7 @@ try:
 except ImportError:
     pass
 
-from core.constants import M_EARTH, M_SUN, G_NEWTON, C_LIGHT, SCREENING_LENGTH_KM
+from core.constants import M_EARTH, M_SUN, G_NEWTON, C_LIGHT, SCREENING_LENGTH_KM, RHO_C
 
 FIG_PRESET = 'web_standard'
 
@@ -43,10 +43,13 @@ def run_scaling_analysis():
     M_sun = M_SUN
     G = G_NEWTON
     c = C_LIGHT
+    rho_T = RHO_C  # g/cm³
+    rho_T_kg_m3 = rho_T * 1000  # kg/m³
 
     # --- The TEP Parameter (GNSS Derived) ---
-    R_TEP_earth = SCREENING_LENGTH_KM * 1000  # meters
-    print_status(f"TEP screening length (Earth): R_T = {R_TEP_earth:.1f} m", "INFO")
+    # Compute R_T for Earth directly from rho_T for consistency with step_3 and step_6
+    R_TEP_earth = ((3 * M_earth) / (4 * np.pi * rho_T_kg_m3)) ** (1/3)  # meters
+    print_status(f"TEP screening length (Earth): R_T = {R_TEP_earth:.1f} m (from rho_T = {rho_T} g/cm³)", "INFO")
 
     # --- Mass Range ---
     masses_kg = np.logspace(np.log10(M_earth), np.log10(1e11 * M_sun), 500)
@@ -69,8 +72,8 @@ def run_scaling_analysis():
 
     # --- Earth Anchor ---
     M_earth_solar = M_earth / M_sun
-    R_earth_km = 4200
-    print_status(f"Earth anchor: M = {M_earth_solar:.2e} M_sun, R_T = {R_earth_km} km", "INFO")
+    R_earth_km = R_TEP_earth / 1000
+    print_status(f"Earth anchor: M = {M_earth_solar:.2e} M_sun, R_T = {R_earth_km:.1f} km", "INFO")
 
     # --- Plotting ---
     print_status("Generating scaling law figure", "PROCESS")

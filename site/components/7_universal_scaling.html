@@ -9,17 +9,17 @@
 
 <h3>The Universal Density Hypothesis</h3>
 <p>
-    The Temporal Topology framework rests on a single empirical claim: there exists a
-    fundamental saturation scale $\rho_T \approx 20$ g/cm³ that governs
-    compact-object structure across all mass scales. A soliton interpretation provides one candidate
+    The Temporal Topology framework tests the empirical claim that a candidate
+    saturation scale $\rho_T \approx 20$ g/cm³ governs
+    compact-object structure across mass scales. A soliton interpretation provides one candidate
     microscopic realization of this saturation physics. This hypothesis is testable
     via two independent windows:
 </p>
 <ol>
     <li>
-        <strong>Planetary Scale:</strong> The derived Temporal Topology saturation radius for
-        Earth's mass is calibrated by the observed GNSS clock coherence
-        length ($L_c \approx 4200$ km), serving as the empirical anchor.
+        <strong>Planetary Scale:</strong> The Earth-scale Temporal Topology parameter
+        $R_T(M_\oplus)$ is calibrated through the observed GNSS projected
+        covariance length ($L_c \approx 4200$ km), serving as the empirical anchor.
     </li>
     <li>
         <strong>Cosmological Scale:</strong> The extrapolated Temporal Topology saturation radius for
@@ -55,8 +55,7 @@
             <strong>Validation (Terrestrial):</strong> The GNSS analysis
             (Smawfield 2025b) serves as an empirical anchor. The
             detection of a correlation length $L_c \approx 4200$ km in atomic
-            clock data provides a direct measurement of the saturation scale
-            at planetary masses.
+            clock data provides an empirical estimate of the saturation scale, conditional on treating $L_c$ as the projected covariance scale associated with $R_T(M_\oplus)$.
         </li>
         <li>
             <strong>Application (Cosmological):</strong> The resulting $M^{1/3}$
@@ -83,21 +82,22 @@
     <p>
         Null hypothesis: assume $\rho_T$ is drawn uniformly from the range
         $10^{-3}$–$10^{6}$ g/cm³ (spanning interstellar gas to nuclear density).
-        What is the probability of simultaneously satisfying:
-    </p>
-    <ol>
-        <li>
-            $R_T(M_\oplus) \sim 4000$ km within 50% (GNSS constraint)
-        </li>
-        <li>
-            $R_T(10^7 M_\odot) \sim 2 R_S$ within 50% (RBH-1 crossover)
-        </li>
-    </ol>
-    <p>
-        Given the GNSS and electron degeneracy constraints on $\rho_T$, the RBH-1
+        The GNSS constraint ($R_T(M_\oplus)$ within 50% of 4200 km) permits
+        $\rho_T$ in the range $\sim$6–160 g/cm³ ($\approx$1.4 dex). The RBH-1
+        constraint ($R_T(10^7 M_\odot)$ within 50% of $2R_S$) permits
+        $\rho_T$ in the range $\sim$7–180 g/cm³ ($\approx$1.4 dex). The
+        overlap is $\sim$7–160 g/cm³ ($\approx$1.4 dex). Under a uniform
+        logarithmic prior spanning 9 dex, the probability of a randomly
+        drawn $\rho_T$ satisfying both constraints simultaneously is
+        $P \approx 1.4/9 \approx 0.15$ ($\sim$15%). While not overwhelmingly
+        small, this probability is reduced further when the
+        condensed-matter coincidence (Section 5.3) is included as a third
+        independent cross-check. Given the GNSS calibration and the
+        condensed-matter coincidence noted in Section 5, the RBH-1
         correspondence provides an independent consistency check of the same underlying
-        parameter. The probability of these aligning by chance across 15 orders of
-        magnitude in density is low, but the universality hypothesis remains
+        parameter. The convergence of two physically distinct systems—geodesy and cosmology—on the
+        same density scale across 15 orders of magnitude is not readily explained by independent tuning,
+        but the universality hypothesis remains
         falsifiable: any future measurement that robustly requires a substantially
         different $\rho_T$ would exclude this framework.
     </p>
@@ -112,8 +112,8 @@
 
 <p>
     The GNSS-derived value $\rho_T \approx 19\text{–}20$ g/cm³
-    (Section 2) coincides with the onset of electron degeneracy (Section 5).
-    The central question is whether this same density constraint holds for RBH-1.
+    (Section 2) lies in the same condensed-matter density regime where electron degeneracy becomes dynamically relevant to the equation of state (Section 5).
+    The central question is whether this same density scale holds for RBH-1.
 </p>
 
 <div class="callout">
@@ -130,7 +130,7 @@
             structure persists across independent clock solutions from CODE,
             ESA, and IGS (1999–2024), disfavoring software-specific
             processing artifacts (e.g., Bernese vs. GIPSY). The recovered $L_c$
-            varies by $<5\%$ across centers.
+            spans $\sim$3,330–4,549 km across centers (a $\sim$23\% spread).
         </li>
         <li>
             <strong>Null Tests:</strong> (i) Randomizing satellite epochs
@@ -157,8 +157,7 @@
     <p style="font-size: 0.9em; color: #666">
         <em>Limitation:</em> The present analysis treats $L_c$ as an empirical
         calibration parameter. A complete derivation from first
-        principles—linking $L_c$ to the scalar field mass $m_\phi$ and coupling
-        constants—remains a target for future theoretical work.
+        principles—linking the empirical $L_c$ to the geometric saturation radius $R_T(M)$ and to a candidate completion’s field-profile parameters—remains a target for future theoretical work.
     </p>
 </div>
 
@@ -198,11 +197,11 @@
 <div class="callout">
     <h4>Box 6.5: Soliton Formation from the Canonical Action</h4>
     <p>
-        To move beyond phenomenology, the soliton structure implied by the
-        canonical Temporal Topology action (Paper 0) is derived. The action
+        To move beyond phenomenology, a candidate route from the canonical
+        Temporal Topology action (Paper 0) to soliton-like saturation is sketched. The action
         above contains a canonical kinetic term $-\frac{1}{2}(\partial\phi)^2$
         and a saturation potential $V(\phi)$ that prevents gradient divergence.
-        The interplay between these terms generates soliton solutions with
+        The interplay between these terms can generate soliton-like saturated configurations with
         characteristic radius $R_T \propto M^{1/3}$.
     </p>
     <p><strong>1. Field Equation and Equilibrium</strong></p>
@@ -211,7 +210,7 @@
         equation is:
     </p>
     <div class="equation">
-        \begin{equation} \label{eq:field_equation} \nabla^2 \phi = V'(\phi) - \alpha(\phi)\rho \end{equation}
+        \begin{equation} \label{eq:field_equation} \nabla^2 \phi = V'(\phi) + \alpha(\phi)\rho \end{equation}
     </div>
     <p>
         where $\alpha(\phi) \equiv d\ln A/d\phi$ and $\rho$ is the ambient
@@ -276,17 +275,17 @@
 
 <div class="callout">
     <p>
-        <strong>Schwarzschild radius:</strong> $R_{\rm S} = 2GM/c^2 \approx 5.9
+        Schwarzschild radius: $R_{\rm S} = 2GM/c^2 \approx 5.9
         \times 10^7$ km<br />
-        <strong>Predicted Temporal Topology saturation radius:</strong> $R_T =
+        Predicted Temporal Topology saturation radius: $R_T =
         (3M/4\pi\rho_T)^{1/3} \approx 7.8 \times 10^7$ km<br />
-        <strong>Ratio:</strong> $R_T/R_{\rm S} \approx 1.3$
+        Ratio: $R_T/R_{\rm S} \approx 1.3$
     </p>
 </div>
 
 <p>
-    This order-unity correspondence ($R_T \approx 1.3 R_{\rm S}$) is
-    naturally expected if $\rho_T$ is set near the horizon-formation density
+    This order-unity correspondence ($R_T \approx 1.3 R_{\rm S}$) arises
+    because $\rho_T$ lies near the horizon-formation density
     threshold in the underlying scalar sector. Within the combined uncertainties
     from $M$ and $\rho_T$, which propagate to $\sim 25\%$ uncertainty in $R_T$, the two scales remain consistent at the factor-of-few level. This
     places RBH-1 near a crossover regime where horizon and saturated-soliton
@@ -318,7 +317,7 @@
     The soliton relation predicts $R_T \propto M^{1/3}$, whereas the
     Schwarzschild radius scales as $R_{\rm S} \propto M$. These opposing
     scalings intersect at a unique crossover mass $M_{\times}$ where the two
-    radii coincide (see Figure C.1). Empirically, the terrestrial calibration
+    radii coincide (see Figure D.1). Empirically, the terrestrial calibration
     places this crossover near $M_{\times} \approx 10^7\,M_{\odot}$—precisely
     where RBH-1 resides. Objects near $M_{\times}$ are expected to be maximally
     degenerate between horizon and soliton interpretations, making RBH-1 an
@@ -346,7 +345,7 @@
     object.
 </p>
 
-<h3>Dependency Structure and Prior-Free Validation</h3>
+<h3>Dependency Structure and Constraint Isolation</h3>
 
 <p>
     A critical requirement for the robustness of this framework is to
@@ -357,40 +356,40 @@
 </p>
 
 <p>
-    To resolve this, a "prior-free" validation analysis is performed, isolating
+    To resolve this, a constraint-isolation analysis is performed, isolating
     each constraint to determine what value of $\rho_T$ it yields without input
     from the others.
 </p>
 
-<h4>Test 1: Electron Degeneracy Isolation (Dropping GNSS)</h4>
+<h4>Test 1: Condensed-Matter Density Coincidence Isolation (Dropping GNSS)</h4>
 <p>
-    If all GNSS data are discarded, electron degeneracy thresholds
-    (Section 5.2) provide an alternative density estimate.
+    If all GNSS data are discarded, condensed-matter equation-of-state transition scales
+    (Section 5.3) provide a coincidence-level density estimate.
 </p>
 <p>
-    <strong>Result:</strong> Electron degeneracy considerations yield densities in the ~10–30
+    Result: Condensed-matter transition considerations yield densities in the ~10–30
     g/cm³ range, broadly consistent with the GNSS-derived value.
 </p>
 
 <h4>Test 2: Terrestrial Isolation (External Calibration Check)</h4>
 <p>
-    If the electron degeneracy constraint is discarded and reliance is placed <em>solely</em> on
+    If the condensed-matter coincidence is discarded and reliance is placed <em>solely</em> on
     the observed GNSS correlation length $L_c \approx 4200$ km for Earth's mass
     ($M_\oplus$), what density is derived?
 </p>
 <div class="equation">
-    \begin{equation} \label{eq:gnss_rho} \rho_T(\text{GNSS}) = \frac{3 M_\oplus}{4\pi L_c^3} \approx 19.5 \pm 8
+    \begin{equation} \label{eq:gnss_rho} \rho_T(\text{GNSS}) = \frac{3 M_\oplus}{4\pi L_c^3} \approx 20 \pm 7
     \text{ g/cm}^3. \end{equation}
 </div>
 <p>
-    <strong>Result:</strong> Terrestrial data independently recovers the same
-    density scale, consistent with the electron degeneracy estimate but derived from a system 51
+    Result: Terrestrial data independently recovers the same
+    density scale, consistent with the condensed-matter coincidence estimate but derived from a system 51
     orders of magnitude more massive.
 </p>
 
 <h4>Test 3: Cosmological Isolation (Dropping Local Constraints)</h4>
 <p>
-    If both electron degeneracy and terrestrial inputs are discarded and the density required
+    If both condensed-matter considerations and terrestrial inputs are discarded and the density required
     to place the RBH-1 Temporal Topology saturation radius at the horizon scale (the crossover
     condition) is computed, the result is:
 </p>
@@ -399,7 +398,7 @@
     15\text{–}30 \text{ g/cm}^3. \end{equation}
 </div>
 <p>
-    <strong>Result:</strong> The cosmological constraint points to the same
+    Result: The cosmological constraint points to the same
     narrow density window.
 </p>
 

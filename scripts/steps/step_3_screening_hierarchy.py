@@ -41,8 +41,13 @@ def run_screening_hierarchy():
     M_sun = M_SUN
     R_sun = R_SUN
     R_earth = R_EARTH
-    R_TEP_earth = SCREENING_LENGTH_KM * 1000  # meters
     rho_T = RHO_C  # g/cm³ (saturation scale of temporal-field topology; not an on/off switch)
+    rho_T_kg_m3 = rho_T * 1000  # kg/m³ (conversion: 1 g/cm³ = 1000 kg/m³)
+    
+    # Compute R_T for Earth directly from rho_T (not from SCREENING_LENGTH_KM)
+    # This ensures consistency with step_6_sensitivity.py and the stated rho_T = 20.0 g/cm³
+    R_TEP_earth_m = ((3 * M_earth) / (4 * np.pi * rho_T_kg_m3)) ** (1/3)  # meters
+    R_TEP_earth_km = R_TEP_earth_m / 1000  # km
 
     # Physical constants for proximity axis
     M_E = 9.1093837015e-31     # kg
@@ -53,7 +58,7 @@ def run_screening_hierarchy():
     R_C = HBAR / (M_E * C)      # Compton radius ~ 3.86e-13 m
     LAMBDA_SCR = 2**0.5 * R_C   # Yukawa screening length
 
-    print_status(f"R_TEP (Earth) = {R_TEP_earth:.1f} m, rho_T = {rho_T:.2f} g/cm^3", "INFO")
+    print_status(f"R_TEP (Earth) = {R_TEP_earth_km:.1f} km, rho_T = {rho_T:.2f} g/cm^3", "INFO")
 
     # --- Data Objects (full 26-object dataset) ---
     objects = {
@@ -106,9 +111,11 @@ def run_screening_hierarchy():
     # Calculations
     print_status("Computing screening factors R_T / R_phys for all objects", "PROCESS")
     for name, obj in objects.items():
-        R_T = R_TEP_earth * (obj['M'] / M_earth)**(1/3) / 1000  # km
-        obj['R_T'] = R_T
-        obj['screening'] = R_T / obj['R']
+        # Compute R_T directly from rho_T using the same formula as step_6_sensitivity.py
+        R_T_m = ((3 * obj['M']) / (4 * np.pi * rho_T_kg_m3)) ** (1/3)  # meters
+        R_T_km = R_T_m / 1000  # km
+        obj['R_T'] = R_T_km
+        obj['screening'] = R_T_km / obj['R']
 
     # --- Plotting ---
     fig, axes = plt.subplots(1, 2, figsize=FIG_SIZE[FIG_PRESET], constrained_layout=True)
@@ -251,7 +258,7 @@ def run_screening_hierarchy():
     output_data = {
         "objects": len(objects),
         "rho_T_g_cm3": float(rho_T),
-        "R_TEP_earth_km": float(R_TEP_earth / 1000),
+        "R_TEP_earth_km": float(R_TEP_earth_km),
         "screening_data": {
             name: {
                 "M_kg": float(obj["M"]),

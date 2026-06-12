@@ -2,7 +2,7 @@
 **Matthew Lukin Smawfield**
 Version: v0.1 (Harare)
 First published: 6 June 2026
-DOI: pending
+DOI: 10.5281/zenodo.20572696
 
 ---
 

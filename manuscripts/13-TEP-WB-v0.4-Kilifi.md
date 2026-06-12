@@ -10,13 +10,12 @@ DOI: 10.5281/zenodo.19102061
 
 The Gaia DR3 catalog of over one million wide binaries opens a precise window onto gravity in the weak-field regime ($a \lesssim 10^{-10}\,\mathrm{m\,s^{-2}}$), yet whether the observed velocity excess reflects modified gravity or unresolved systematics remains contested.
 
-In the Temporal Equivalence Principle (TEP v0.8 Jakarta), a conformal scalar field modulates matter proper time as
+In the Temporal Equivalence Principle (TEP), a conformal scalar field modulates matter proper time as
 
-$$
-    \mathrm{d}\tau/\mathrm{d}t \approx A(\phi),
+\begin{equation} \label{eq:conformal_relation} \mathrm{d}\tau/\mathrm{d}t \approx A(\phi),
     \qquad
     A(\phi)=\exp(\beta_A\phi/M_{\rm Pl}).
-    $$
+    \end{equation}
 
 The Cepheid-calibrated response scale is denoted $\kappa_{\rm Cep}$, while the wide-binary transition is parameterized independently by the velocity-profile saturation amplitude $\alpha_{\rm sat}$, not by a bare scalar coupling. This paper tests whether the Gaia wide-binary anomaly is better described as smooth Temporal Shear recovery in weak-field environments.
 
@@ -42,15 +41,15 @@ Unlike MOND, which is organized around a universal acceleration threshold $a_0 \
 
 ### 2.1 The Screening Radius
 
-$R_T$ here denotes the projected separation at which the Temporal Shear suppression transitions from the screened to unscreened regime, related to but distinct from the GNSS correlation length $\lambda_T$ (which characterises the radial relaxation scale within a gravitational well) and the screening radius $R_s$ of Paper 10 (which characterises the system-level boundary condition).
+$R_T$ here denotes the projected separation at which the Temporal Shear suppression transitions from the screened to unscreened regime, related to but distinct from the GNSS correlation length $\lambda_T$ (which characterises the radial relaxation scale within a gravitational well) and the geometric saturation radius $R_T(M, \rho_T, \epsilon_{\rm env})$ derived in Paper 6 (which characterises the system-level boundary condition for a self-gravitating source of mass $M$). The wide-binary screening radius $R_s$ introduced below in Equation (\ref{eq:screening_radius}) is the chameleon-completion benchmark for this transition scale.
 
 For a binary of total mass $M$, the locally active Temporal Shear $\Sigma_\mu \equiv \nabla_\mu \ln A(\phi)$ is suppressed continuously by the environmental and source state rather than gated by an on/off density threshold (Smawfield 2025a, Section 7). As the binary's internal Newtonian potential becomes shallow enough that the source-charge sector no longer fully suppresses the locally observable Temporal Shear, the residual gradient of $\ln A$ generates an additional kinematic enhancement above the Keplerian baseline. The transition is therefore characterized by a continuous recovery of the Temporal Shear, parameterized below by an effective screening radius $R_s$.
 
 Within the Galaxy, however, the binary is not isolated. The TEP framework itself does not commit to a single microscopic screening mechanism: chameleon, Vainshtein, Galileon, DBI, and symmetron mechanisms are all treated as candidate completions of the conformal-sector screening (Smawfield 2025a, &sect;A4, &sect;7), with the defining ontology being the continuous suppression of the locally observable Temporal Shear $\Sigma_\mu \equiv \nabla_\mu \ln A(\phi)$ by source-charge sector, environmental state, and boundary conditions. To extract a quantitative benchmark prediction for the wide-binary transition scale we adopt the chameleon completion (Khoury & Weltman 2004; Burrage & Sakstein 2018) as one tractable realization. Within that completion the effective potential $V_{\rm eff}(\phi;\rho) = V(\phi) + [A(\phi) - 1]\,\rho$ has a density-dependent minimum that generates a large effective scalar mass in dense environments, flattening the Temporal Topology and driving $\Sigma_\mu \to 0$ continuously rather than via discrete thin-shell matching. The surrounding halo and disk already drive $\phi$ toward this screened configuration, so the transition scale relevant to a wide binary is set not by $\rho_c$ directly but by the residual local screening floor that the binary samples. Within the chameleon completion this floor admits a closed-form parameterization that we will use as a benchmark; other completions would yield qualitatively similar but quantitatively different forms.
 
-$$ \rho_{\rm floor} = \epsilon_{\rm env}\,\rho_T $$
+\begin{equation} \label{eq:rho_floor} \rho_{\rm floor} = \epsilon_{\rm env}\,\rho_T \end{equation}
 
-$$ R_s \approx \left( \frac{3M}{4\pi \rho_{\rm floor}} \right)^{1/3} = \left( \frac{3M}{4\pi \epsilon_{\rm env}\rho_T} \right)^{1/3} $$
+\begin{equation} \label{eq:screening_radius} R_s \approx \left( \frac{3M}{4\pi \rho_{\rm floor}} \right)^{1/3} = \left( \frac{3M}{4\pi \epsilon_{\rm env}\rho_T} \right)^{1/3} \end{equation}
 
 Here $\epsilon_{\rm env} < 1$ is the pre-screening factor generated by the Galactic environment, and the formula above is the chameleon-completion expression for $R_s$; in TEP it serves as a benchmark rather than a unique prediction of the underlying theory. Two of the three ingredients—$\rho_T$ and the field equation whose solution determines $\epsilon_{\rm env}$—are already derived in earlier work. The Temporal Topology saturation scale $\rho_T \approx 20$ g/cm$^3$ is fixed by three independent routes: GNSS atomic-clock networks, the SPARC rotation-curve slope, and magnetar critical periods (Smawfield 2025g). The chameleon-completion effective potential $V_{\rm eff}(\phi;\rho)$ whose ground state sets the local screening floor follows from the TEP two-metric action together with a chameleon self-interaction sector (Smawfield 2025a, &sect;7). The character of the transition is further tested by comparing the canonical TEP exponential fit to alternative transition morphologies. As shown in Section 4, a sigmoid model—which represents a sharper, more step-like transition of the kind produced by discrete thin-shell boundaries—is rejected at $\Delta\chi^2 = +131.5$ relative to the TEP exponential (Table 4.1). This rejection is naturally explained by the continuous Temporal Topology framework: the field gradient recovers smoothly, not via a step-function onset.
 
@@ -66,13 +65,13 @@ These qualitative features are not merely asserted; they follow from the continu
 
 The classical thin-shell formalism (Khoury & Weltman 2004; Burrage & Sakstein 2018) provides useful context. For a screened mass $M$ with screening radius $R_s$ embedded in a background of effective scalar mass $m_{\rm bg} = \sqrt{V_{\rm eff}''(\phi_{\rm bg})}$, the exterior scalar field profile obtained under thin-shell matching conditions is:
 
-$$ \phi(r) = \phi_{\rm bg} - C\,\frac{R_s}{r}\,e^{-m_{\rm bg}(r - R_s)}, \qquad r > R_s $$
+\begin{equation} \label{eq:field_profile} \phi(r) = \phi_{\rm bg} - C\,\frac{R_s}{r}\,e^{-m_{\rm bg}(r - R_s)}, \qquad r > R_s \end{equation}
 
 where $C$ is determined by the thin-shell matching and the $R_s/r$ prefactor arises from the discrete boundary. The corresponding unscreening fraction $f(s) = 1 - (R_s/s)\,e^{-m_{\rm bg}(s - R_s)}$ produces onset–rise–saturation morphology with a step-like character at $R_s$.
 
 However, the TEP Temporal Topology framework replaces the discrete thin-shell boundary with a continuous field profile. Without a step-function matching condition, the $R_s/s$ geometric prefactor—which encodes the thin-shell boundary—does not arise. Instead, the continuous recovery of the Temporal Shear from zero (deep in the screened core) to its unscreened asymptotic value produces a pure exponential approach to saturation. The natural two-parameter function is therefore:
 
-$$ \tilde{v}(s) = 1 + \alpha_{\rm sat}\bigl(1 - e^{-s/R_s}\bigr) $$
+\begin{equation} \label{eq:velocity_profile} \tilde{v}(s) = 1 + \alpha_{\rm sat}\bigl(1 - e^{-s/R_s}\bigr) \end{equation}
 
 where $R_s$ is the characteristic scale of the Temporal Topology transition and $\alpha_{\rm sat}$ is the saturation amplitude set by the asymptotic Temporal Shear. This is adopted as the canonical fitting function throughout the analysis. Unlike the thin-shell formula, the pure exponential is not an approximation to a more fundamental discrete-boundary solution; it is the natural prediction of continuous Temporal Topology, in which the field gradient recovers smoothly rather than jumping at a shell boundary. A literal first-principles prediction for the precise profile shape would require solving the full coupled system $\nabla^2\phi = dV_{\rm eff}/d\phi$ in the realistic potential of each binary within its Galactic environment. What the data can test at this stage is whether the morphological class of profile predicted by continuous Temporal Topology—finite onset, smooth exponential rise, bounded saturation—is preferred over the alternatives (scale-free MOND, constant boost, flat Newtonian, or the sharper step-like transition of the thin-shell sigmoid). The sensitivity of the inferred transition scale to the choice of functional form is assessed explicitly in Section 4 by fitting sigmoid and double-exponential alternatives, and the resulting spread is absorbed into the systematic uncertainty budget. As shown there, all three transition models agree on a $\sim 2{,}000$–$3{,}200$ AU onset scale, confirming that the inferred $R_s$ is a robust feature of the data rather than an artifact of any particular parametric choice. Notably, the data reject the sigmoid model ($\Delta\chi^2 = +131.5$ versus the TEP exponential), which represents a sharper, more step-like transition of the kind that discrete thin-shell boundaries would produce. This rejection is naturally explained by the continuous Temporal Topology framework: the field gradient recovers smoothly, not via a step-function onset.
 
@@ -96,7 +95,7 @@ To address this bias, the analysis implements a color-dependent MLR correction. 
 
 The stellar masses are then calculated as:
 
-$$ M = M_{solar}(M_G) \times (1 + \beta_{\rm MLR} \Delta C) $$
+\begin{equation} \label{eq:mass_correction} M = M_{solar}(M_G) \times (1 + \beta_{\rm MLR} \Delta C) \end{equation}
 
 Here $M_{solar}(M_G)$ is the baseline solar-metallicity mass from the empirical main-sequence relations of Pecaut & Mamajek (2013, updated 2022), and $\beta_{\rm MLR} \approx 1.5$ is a conservative color-mass coefficient. To avoid circularity, the pipeline calibrates $\beta_{\rm MLR}$ only from independent spectroscopic metallicities when a LAMOST or APOGEE cache is available; photometric [Fe/H] proxies derived from $\Delta C$ are retained for diagnostics but are not regressed back onto $\Delta C$. In the absence of an independent spectroscopic cache, the pipeline uses the external $\beta_{\rm MLR}=1.5\pm0.5$ prior and then stress-tests the environmental ordering with $\beta_{\rm MLR}=0$, $1$, $2$, and a quadratic correction. (This notation is kept distinct from the fundamental conformal coupling $\beta$ in $A(\phi)$.) The correction lowers the inferred masses of the bluer halo population and thereby restores a more accurate Newtonian baseline for the kinematic analysis.
 
@@ -232,7 +231,7 @@ Additional stratified controls confirm that the signal is not generated by a sin
 
 TEP itself does not commit to a specific microscopic screening mechanism (Smawfield 2025a, &sect;A4, &sect;7), so the bare prediction of TEP for the environmental modulation is qualitative: denser ambient environments more strongly suppress the locally observable Temporal Shear, leading to a larger characteristic transition radius. To make this quantitative we adopt the chameleon completion as a tractable benchmark. For a scalar self-interaction potential $V(\phi) \propto \phi^{-n}$ (Khoury & Weltman 2004), thin-shell matching gives the screening radius of a binary of mass $M$ in ambient baryonic density $\rho_{\rm amb}$ as $R_s \propto \rho_{\rm amb}^{1/(n+1)}$. The TEP-qualitative ordering (denser &rarr; larger $R_s$) is recovered by every well-behaved completion; the specific power-law exponent is a property of the chameleon completion, not of TEP itself. The ratio of transition radii at two Galactic heights then depends only on the ambient density ratio and the potential index:
 
-$$ \frac{R_s(Z_2)}{R_s(Z_1)} = \left(\frac{\rho_{\rm amb}(Z_2)}{\rho_{\rm amb}(Z_1)}\right)^{1/(n+1)} $$
+\begin{equation} \label{eq:environment_ratio} \frac{R_s(Z_2)}{R_s(Z_1)} = \left(\frac{\rho_{\rm amb}(Z_2)}{\rho_{\rm amb}(Z_1)}\right)^{1/(n+1)} \end{equation}
 
 Using a standard three-component Galactic baryonic density model—stellar thin disk ($\rho_0 = 0.040\;M_\odot\,{\rm pc}^{-3}$, $h = 300$ pc), thick disk ($0.005\;M_\odot\,{\rm pc}^{-3}$, $h = 900$ pc), and gas disk ($0.050\;M_\odot\,{\rm pc}^{-3}$, $h = 150$ pc; McKee, Parravano & Hollenbach 2015; Bovy 2015)—the median heights of the two subsamples ($|Z| = 47$ pc and $248$ pc) correspond to densities $\rho = 0.075$ and $0.031\;M_\odot\,{\rm pc}^{-3}$ respectively, giving a density ratio of $0.41$. The canonical Ratra–Peebles potential ($n = 1$) then predicts $R_s({\rm high}\text{-}|Z|)/R_s({\rm midplane}) = 0.64$, compared to the observed joint-fit ratio of $0.702 \pm 0.078$. Calibrating with the midplane joint-fit value ($R_s = 4{,}912$ AU), the $n = 1$ model predicts $R_s({\rm high}\text{-}|Z|) = 3{,}144$ AU, consistent with the observed $3{,}447 \pm 355$ AU.
 

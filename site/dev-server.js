@@ -24,8 +24,8 @@ class DevServer {
             return fromEnv;
         }
 
-        // Fixed unique port for TEP-UCD: 51731 (TEP = 517, UC = 31, D = 0)
-        return 51731;
+        // Fixed unique port for TEP-UCD: 51808
+        return 51808;
     }
 
     async assertPortAvailable(port) {

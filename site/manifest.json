@@ -1,8 +1,8 @@
 {
   "title": "Universal Critical Density: Cross-Scale Consistency of \u03c1_T",
-  "version": "v0.5 (New Delhi)",
-  "last_updated": "7 June 2026",
-  "description": "A universal saturation density scale (\u03c1_T \u2248 20 g/cm\u00b3) organizes gravitational anomalies across 18 orders of magnitude in mass (Earth to galaxy).",
+  "version": "v0.6 (New Delhi)",
+  "last_updated": "12 June 2026",
+  "description": "A candidate universal saturation scale (\u03c1_T \u2248 20 g/cm\u00b3) organizes gravitational anomalies across 18 orders of magnitude in mass (Earth to galaxy).",
 
   "sections": [
     {
@@ -84,16 +84,22 @@
       "order": 13
     },
     {
-      "id": "section-figures",
-      "title": "Appendix C: Visual Evidence",
-      "file": "12_visual_evidence.html",
+      "id": "appendix-eft",
+      "title": "Appendix C: Candidate EFT Realizations of the Soliton Profile",
+      "file": "appendix_c_eft.html",
       "order": 14
     },
     {
-      "id": "appendix-eht",
-      "title": "Appendix D: EHT Soliton Detection — Sensitivity and Feasibility",
-      "file": "6b_sensitivity.html",
+      "id": "section-figures",
+      "title": "Appendix D: Visual Evidence",
+      "file": "12_visual_evidence.html",
       "order": 15
+    },
+    {
+      "id": "appendix-eht",
+      "title": "Appendix E: EHT Soliton Detection — Sensitivity and Feasibility",
+      "file": "6b_sensitivity.html",
+      "order": 16
     }
   ]
 }

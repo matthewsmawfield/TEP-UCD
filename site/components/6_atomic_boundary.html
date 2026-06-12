@@ -3,13 +3,15 @@
 <p>
     A natural question arises: why does the saturation scale take the
     observational proxy value \(\rho_T \approx 20\) g/cm³? This section argues
-    that the underlying proximity scale is not an arbitrary fit parameter but is
-    constrained by independent physical considerations. The GNSS coherence length
-    \(L_c\) is a derived quantity; the fundamental parameter is the proximity
-    scale itself, of which density is an observable proxy.
+    that the underlying proximity scale is not treated as an arbitrary fit
+    parameter: it is empirically calibrated, while additional coincidence-level
+    reference scales and open derivation targets are recorded for completeness.
+    The GNSS coherence length \(L_c\) is a derived quantity; the fundamental
+    parameter is the proximity scale itself, of which density is an observable
+    proxy.
 </p>
 
-<h3>5.1 Reframing: \(\rho_T\) as Fundamental, \(L_c\) as Derived</h3>
+<h3>5.1 \(\rho_T\) as the Conjectured Fundamental Parameter, \(L_c\) as Derived</h3>
 
 <p>
     The saturation scaling law \(R_T \propto M^{1/3}\)—where a soliton interpretation is one candidate microscopic realization—implies a constant
@@ -28,7 +30,10 @@
 
 <p>
     The terrestrial coherence length \(L_c \approx 4200\) km is therefore not an
-    independent input but follows automatically once \(\rho_T\) is specified:
+    independently tuned galaxy-scale parameter; operationally, it is the observed
+    GNSS covariance scale used to calibrate the projected Earth-scale realization
+    of \(R_T(M_\oplus)\). This relation is inverted in Section 2 to calibrate
+    \(\rho_T\) from the measured \(L_c\) for Earth:
 </p>
 
 <div class="equation">
@@ -39,14 +44,64 @@
 
 <p>The question thus reduces to: what physical considerations constrain \(\rho_T\)?</p>
 
-<h3>5.2 The Electron Degeneracy Threshold</h3>
+<h3>5.2 The Dimensional Identity Bridge</h3>
 
 <p>
-    Independent physical significance attaches to \(\rho_T \approx 20\) g/cm³:
-    this density marks the transition from thermal to quantum pressure support
-    in condensed matter. Below this threshold, ordinary thermal and
-    electrostatic forces dominate the equation of state. Above it, electron
-    degeneracy pressure becomes the primary support mechanism.
+    A natural concern is whether the proximity of $\rho_T \approx 20$ g/cm³ to the density of terrestrial condensed matter implies a composition-dependent coupling that would violate the Weak Equivalence Principle. Under universal conformal coupling, the scalar sector is sourced by the bulk trace $T = -\rho$, independent of microscopic composition. The saturation scale $\rho_T$ must therefore be a property of the vacuum potential $V(\phi)$, not an emergent property of the local matter.
+</p>
+
+<p>
+    The electron Fermi wavelength does not cause the scalar field to saturate. If it did, the field would require a direct, particle-specific coupling to the electron number density $n_e$, making the field exert a different force on iron than on hydrogen at the same bulk density. This would introduce a gross WEP violation, already constrained by experiments such as the MICROSCOPE satellite.
+</p>
+
+<p>
+    Instead, $\rho_T$ is treated as a fundamental constant of the vacuum potential:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:vacuum_scale} \rho_T \equiv \Lambda^4 \approx \alpha^{4/3} m_e^4 \quad \text{(natural units)}. \end{equation}
+</div>
+
+<p>
+    Because this is a property of the scalar potential itself, the dimensional identity does not introduce composition-dependent coupling; WEP protection then follows from the universal matter coupling and the screened effective scalar charge. The field universally couples to bulk $\rho$ and begins its continuous screening transition when local $\rho$ approaches this vacuum $\rho_T$.
+</p>
+
+<p>
+    The bulk density of Thomas-Fermi condensed matter (rocks, metals) is governed by Coulomb packing. The volume per atom scales with the Bohr radius $a_0 = (\alpha m_e)^{-1}$. In the Thomas-Fermi model, the effective atomic radius is $R_{\rm TF} \approx a_0 Z^{-1/3}$, giving a volume $V \approx \frac{4\pi}{3} a_0^3 Z^{-1}$. With nucleon mass $M \approx A m_p$ and $A/Z \approx 2$ for stable planetary elements:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:condensed_density} \rho_{\rm CM} \approx \frac{3}{4\pi} \left( \frac{A}{Z} \right) m_p m_e^3 \alpha^3 \approx \frac{3}{2\pi} m_p m_e^3 \alpha^3 \approx \frac{1}{2} m_p m_e^3 \alpha^3. \end{equation}
+</div>
+
+<p>
+    Taking the ratio of the macroscopic Thomas-Fermi density to the fundamental scalar vacuum density:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:density_ratio} \frac{\rho_{\rm CM}}{\rho_T} = \frac{\frac{1}{2} m_p m_e^3 \alpha^3}{\alpha^{4/3} m_e^4} = \frac{1}{2} \left( \frac{m_p}{m_e} \right) \alpha^{5/3}. \end{equation}
+</div>
+
+<p>
+    Evaluating with $m_p/m_e \approx 1836$ and $\alpha \approx 1/137.036$:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:density_ratio_value} \frac{\rho_{\rm CM}}{\rho_T} \approx \frac{1}{2} (1836) (0.000268) \approx 0.246. \end{equation}
+</div>
+
+<p>
+    Because geometric lattice packing factors of $\mathcal{O}(1)$ were ignored in the estimate, the critical result is that $\rho_{\rm CM} \sim \mathcal{O}(1) \times \rho_T$. The electron Fermi wavelength does not cause the Temporal Topology to screen; the scalar field possesses a candidate saturation scale $\rho_T \approx \alpha^{4/3} m_e^4$. Because $(m_p/m_e)\alpha^{5/3}$ is order unity, the bulk density of Thomas–Fermi condensed matter is naturally driven into the same order-of-magnitude regime as $\rho_T$. Earth does not cause the saturation scale; rather, ordinary condensed matter is dimensionally predisposed to lie near the continuous transition boundary.
+</p>
+
+<h3>5.3 The Electron Degeneracy Threshold</h3>
+
+<p>
+    Coincidence-level significance attaches to \(\rho_T \approx 20\) g/cm³:
+    this density lies in the condensed-matter regime where quantum pressure begins
+    to become dynamically relevant. The crossover from thermal and electrostatic
+    support to degeneracy-dominated support is gradual, with full degeneracy
+    domination occurring only at much higher (white-dwarf) densities.
 </p>
 
 <table class="data-table" style="margin: 20px 0">
@@ -64,14 +119,19 @@
             <td>Planets, main-sequence stars</td>
         </tr>
         <tr>
-            <td>\(\rho \sim 1\text{–}20\) g/cm³</td>
-            <td>Coulomb/thermal transition</td>
+            <td>\(\rho \sim 1\text{–}10\) g/cm³</td>
+            <td>Coulomb/thermal dominated solids and liquids</td>
+            <td>Rocky planets</td>
+        </tr>
+        <tr>
+            <td>\(\rho \sim 10\text{–}10^2\) g/cm³</td>
+            <td>Degeneracy onset (crossover)</td>
             <td>Earth's core, brown dwarfs</td>
         </tr>
         <tr>
-            <td>\(\rho > 20\) g/cm³</td>
-            <td>Electron degeneracy</td>
-            <td>White dwarfs, neutron star crusts</td>
+            <td>\(\rho \gtrsim 10^4\) g/cm³</td>
+            <td>Electron degeneracy dominated</td>
+            <td>White dwarfs</td>
         </tr>
     </tbody>
 </table>
@@ -79,153 +139,124 @@
 <p style="font-size: 0.9em; color: #666">
     <em
         >Table 5.1: Equation of state transitions by density. The saturation
-        density \(\rho_T \approx 20\) g/cm³ coincides with the onset of electron
+        density \(\rho_T \approx 20\) g/cm³ lies near the onset of electron
         degeneracy.</em
     >
 </p>
 
 <p>
-    This coincidence suggests that the
-    scalar sector may couple fundamentally to the Pauli exclusion principle or
-    the quantum state of matter, rather than bulk mass density alone. Temporal
-    Topology screening becomes relevant where quantum effects begin to dominate
-    the equation of state—this points to a possible connection between
-    field saturation and quantum statistical mechanics.
+    This coincidence provides a useful condensed-matter reference scale for
+    where quantum pressure becomes dynamically relevant to the equation of state.
+    Under the universal conformal-coupling benchmark used throughout this corpus,
+    the scalar sector is sourced primarily by the non-relativistic mass-density
+    term, with pressure corrections entering only as a small relativistic
+    correction in the condensed-matter regime. Electron degeneracy therefore does
+    not, by itself, provide a mechanism that sets \(\rho_T\), but it motivates the
+    \(\sim 10\text{–}30\) g/cm³ window as a natural coincidence-level cross-check.
 </p>
 
-<h3>5.3 The Thomas–Fermi Bridge: From Compton Scale to Saturation Scale</h3>
+<h3>5.4 Open Derivation Target: From Potential Scale to Transition Width</h3>
 
 <p>
-    A single-particle Compton-scale estimate yields a core density
-    \(\rho_{\rm core} \sim m_e^4 c^3 / \hbar^3 \sim 10^4\) g/cm³—white-dwarf
-    scale, not the observed saturation scale. The gap of roughly three orders of
-    magnitude between \(\rho_{\rm core}\) and \(\rho_T \approx 20\) g/cm³
-    motivates a many-body correction. The Thomas–Fermi-TEP mean-field analysis
-    (in preparation) provides a candidate bridge.
-</p>
-
-<p>
-    In a degenerate electron gas the relevant exclusion length is the Fermi
-    wavelength
-</p>
-
-<div class="equation">
-    \begin{equation} \label{eq:fermi_wavelength} \lambda_F(n_e) = \frac{2\pi}{(3\pi^2 n_e)^{1/3}}, \end{equation}
-</div>
-
-<p>
-    where the electron number density for typical condensed matter is
-    \(n_e = \rho Z/(A m_u) \approx \rho/(2 m_u)\) with \(Z/A \approx 0.5\),
-    not the free-electron approximation \(n_e = \rho/m_e\) that treats every
-    gram of matter as an electron. At \(\rho \approx 20\) g/cm³, the
-    correct electron density gives \(\lambda_F \approx 1.1 \times 10^{-10}\) m,
-    roughly \(200\times\) larger than the Compton radius
-    \(r_c = \hbar/(m_e c) \approx 3.9 \times 10^{-13}\) m. The simple
-    packing-volume argument (\(\lambda_F^3\)) then predicts a density
-    \(\sim 10^6\)–\(10^7\) lower than the single-particle estimate, well
-    below the observed saturation scale. This shows that the naive analytical
-    closure is an artifact of using the incorrect electron number density;
-    the full Thomas–Fermi-TEP treatment, which includes the self-consistent
-    potential and Fermi-Dirac source coupling, is required.
+    Box 6.5 adopts a benchmark completion in which the scalar potential introduces
+    a saturation scale \(\rho_T \equiv \Lambda^4\). Once \(\rho_T\) (equivalently \(\Lambda\))
+    is specified, the field equation determines a smooth crossover between weakly
+    and strongly screened regimes. Determining the detailed width and shape of this
+    crossover as a function of ambient density—particularly in the terrestrial
+    transition regime \(\rho \sim 1\text{–}30\) g/cm³—requires an explicit numerical
+    profile solution under a specified completion. This remains a target for future work.
 </p>
 
 <p>
-    The Thomas-Fermi-TEP numerical solver finds the inflection-point crossover
-    at \(\rho \approx 15\) g/cm³ (where the screening transition is steepest,
-    \(S \approx 0.65\)), within \(\sim 25\%\) of the empirical
-    \(\rho_T \approx 20\) g/cm³. The full transition from 10% to 90% screened
-    spans roughly \(\rho \sim 2\)–30 g/cm³, reflecting the smooth, continuous
-    nature of the many-body saturation slope. This numerical result provides a
-    candidate theoretical bridge between the microscopic Compton scale and the
-    macroscopic saturation scale. The dimensional estimate presented in
-    Section 5.4 is retained as an independent order-of-magnitude consistency
-    check.
+    Many-body condensed-matter physics (including the onset of electron degeneracy)
+    governs the baryonic equation of state and provides useful reference densities,
+    but under universal coupling it does not by itself select the saturation scale
+    \(\rho_T\). A complete theoretical account must instead explain both the value of
+    \(\rho_T\) and the mapping between the geometric saturation radius \(R_T(M)\) and the
+    observable correlation length in clock networks.
 </p>
 
-<h3>5.4 Dimensional Analysis: The Scalar Coupling Scale</h3>
+<h3>5.5 Dimensional Analysis: The Scalar Coupling Scale</h3>
 
 <p>
-    A characteristic density can be constructed from fundamental constants. Consider
-    the mass-energy density associated with a scalar field of Compton wavelength
-    \(\lambda_\phi\), where \(c\) represents the standard speed of light
-    (characterizing the screened matter sector):
+    Box 6.5 identifies the empirical saturation scale with the potential scale,
+    \(\rho_T c^2 \sim \Lambda^4\) (natural units). Inverting for \(\Lambda\) gives
+    \(\Lambda \approx 96.4\) keV for \(\rho_T = 20\) g/cm³.
 </p>
 
 <div class="equation">
-    \begin{equation} \label{eq:phi_density} \rho_\phi \sim \frac{m_\phi c^2}{\lambda_\phi^3}. \end{equation}
+    \begin{equation} \label{eq:alpha_density} \rho_T \approx \alpha^{4/3}\,\frac{m_e^4 c^3}{\hbar^3} \approx 22.4 \text{ g/cm}^3. \end{equation}
 </div>
 
 <p>
-    For a scalar field coupling at length scale \(\lambda_\phi\),
-    the effective mass is \(m_\phi \sim \hbar / (\lambda_\phi c)\). Taking
-    \(\lambda_\phi \sim 10^{-10}\) m (atomic scale) and \(\alpha \approx 1/137\) 
-    the fine structure constant yields:
+    This correspondence is recorded as a numerical identity: the exponent \(4/3\)
+    (equivalently \(\Lambda \sim \alpha^{1/3} m_e c^2\)) is not derived within the
+    present corpus and must be treated as an open target for theoretical work, not
+    as an independent support.
 </p>
 
-<div class="equation">
-    \begin{equation} \label{eq:alpha_density} \rho_\phi \sim \frac{(\alpha m_e)^4 c^5}{\hbar^3} \sim 10^1 \text{
-    g/cm}^3. \end{equation}
-</div>
+<h3>5.6 Status: Phenomenological Constraint with Theoretical Foundation</h3>
 
 <p>
-    The order-of-magnitude agreement with \(\rho_T \approx 20\) g/cm³ is
-    encouraging. This dimensional scaling is retained as the strongest
-    surviving analytical argument, confirming that the saturation scale emerges
-    from fundamental quantum scales rather than cosmological coincidence.
-</p>
-
-<h3>5.5 Status: Phenomenological Constraint with Theoretical Foundation</h3>
-
-<p>
-    The present analysis establishes that \(\rho_T \approx 20\) g/cm³ is
-    constrained by three independent physical considerations:
+    The present analysis treats \(\rho_T \approx 20\) g/cm³ as an empirically calibrated
+    parameter, while recording additional coincidence-level reference scales and open
+    derivation targets:
 </p>
 
 <ol>
     <li>
-        <strong>Electron degeneracy onset:</strong> \(\rho_T\) coincides with
-        the quantum-classical EOS transition
+        <strong>Condensed-matter EOS coincidence:</strong> \(\rho_T\) lies near
+        the density scale where electron degeneracy becomes dynamically relevant to the equation of state
     </li>
     <li>
-        <strong>Thomas–Fermi-TEP mean field:</strong> The many-body Fermi
-        wavelength closes the gap between the Compton-scale core density
-        \(\sim 10^4\) g/cm³ and the macroscopic saturation scale \(\rho_T\)
-        (in preparation)
+        <strong>Numerical identity:</strong> \(\rho_T \approx \alpha^{4/3} m_e^4 c^3/\hbar^3\),
+        with the \(4/3\) exponent an explicit open target
     </li>
     <li>
-        <strong>Dimensional analysis:</strong> Scalar coupling at atomic scales
-        yields \(\rho_\phi \sim 10^1\) g/cm³
+        <strong>Open derivation:</strong> a first-principles account must explain why the saturation scale
+        \(\rho_T\) and the operational identification of \(L_c\) as the projected covariance scale
+        associated with \(R_T(M_\oplus)\) govern the observable
+        clock-correlation envelope
     </li>
 </ol>
 
 <p>
-    The Thomas–Fermi-TEP derivation provides a candidate theoretical mechanism:
-    it specifies how the scalar potential \(V(\phi)\) and the Fermi-Dirac source
-    combine to produce the observed saturation. The remaining constraints are
-    phenomenological—they identify what the theory must reproduce and provide
-    cross-checks, but the mean-field analysis provides a candidate bridge. The key
-    point for the present manuscript is that \(\rho_T\) is not arbitrary: it is
-    constrained by multiple independent considerations, and we conjecture that a
-    mean-field analysis may ultimately bridge the microscopic and macroscopic
-    scales.
+    Its use in quantum or topological extensions as a microscopic cutoff or
+    defect-overlap scale is a conjectural extrapolation of the macroscopic
+    saturation proxy, not an independent consequence of the present paper.
+</p>
+
+<p>
+    The key point for the present manuscript is that \(\rho_T\) is not treated as a free
+    fit parameter: it is externally calibrated by GNSS clock correlations (Section 2) and then
+    carried, without retuning, into the cross-scale tests that follow.
 </p>
 
 <div class="callout">
-    <h4>Box 5.1: Summary — The Saturation Scale is Not a Free Parameter</h4>
+    <h4>Box 5.1: Summary — The Saturation Scale: One Calibration, Two Coincidences, One Open Derivation</h4>
     <p>
-        The GNSS coherence length \(L_c \approx 4200\) km is often cited as the
-        calibration input for the TEP scaling law. This framing obscures the
-        underlying physics. The fundamental parameter is the saturation scale
-        \(\rho_T \approx 20\) g/cm³, which is constrained by:
+        Operationally, \(\rho_T\) is calibrated from the measured GNSS coherence length
+        \(L_c\) by treating \(L_c\) as the observed projected covariance scale associated with
+        \(R_T(M_\oplus)\), and then inverting
+        \(\rho_T = 3M_\oplus/(4\pi L_c^3)\). The framework’s conjecture—left as an open
+        derivation target—is that \(\rho_T\) is the fundamental saturation parameter and
+        that \(L_c\) follows as a derived geometric scale once \(\rho_T\) is fixed.
+        Two additional numerical correspondences are noted,
+        but they remain coincidence-level until a first-principles derivation exists:
     </p>
     <ul>
-        <li>The electron degeneracy threshold (equation of state physics)</li>
-        <li>The Thomas–Fermi-TEP mean-field bridge from Compton to saturation scale (in preparation)</li>
-        <li>Dimensional analysis of scalar field coupling (theoretical consistency)</li>
+        <li>Condensed-matter EOS coincidence (electron degeneracy onset)</li>
+        <li>Numerical identity \(\rho_T \approx \alpha^{4/3} m_e^4 c^3/\hbar^3\) (exponent underived)</li>
     </ul>
     <p>
-        The terrestrial coherence length follows as a derived quantity. GNSS
-        observations do not determine \(\rho_T\); they measure it in the most
-        accessible laboratory: Earth's gravitational field.
+        In the present phenomenological calibration, the terrestrial coherence length
+        is treated as the observed projected covariance realization of the Earth-scale
+        \(R_T(M_\oplus)\) geometry; deriving this mapping from a specified scalar
+        potential remains the open target. Both the condensed-matter coincidence and
+        the numerical identity are contingent on the transfer-sketch \(\mathcal{O}(1)\)
+        prefactor being close to unity; a prefactor of \(\sim\)2 would shift \(\rho_T\) to
+        \(\sim\)2.5 g/cm³, evaporating the coincidences. Operationally, GNSS observations
+        provide the calibration by which \(\rho_T\) is inferred in the most accessible
+        laboratory: Earth's gravitational field.
     </p>
 </div>

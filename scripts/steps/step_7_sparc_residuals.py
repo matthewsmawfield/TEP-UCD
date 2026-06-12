@@ -29,6 +29,12 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'utils'))
 from utils.style import set_pub_style as set_shared_style, COLORS, FIG_SIZE, FIG_SCALE
 
+def format_p(p):
+    """Format p-value for display; show p<0.001 when rounded to 0.000."""
+    if p < 0.001:
+        return "p<0.001"
+    return f"p={p:.3f}"
+
 FIG_PRESET = 'web_grid_3x3'
 
 
@@ -160,7 +166,10 @@ def calculate_central_density(M_bar, R_eff):
 
 def run_residual_analysis():
     """Main residual analysis function."""
-    from scripts.utils.logger import TEPLogger, set_step_logger, print_status
+    try:
+        from utils.logger import TEPLogger, set_step_logger, print_status
+    except ImportError:
+        from scripts.utils.logger import TEPLogger, set_step_logger, print_status
     logger = TEPLogger("step_7_sparc_residuals", log_file_path=os.path.join(os.path.dirname(__file__), '..', '..', 'logs', 'step_7_sparc_residuals.log'))
     set_step_logger(logger)
 
@@ -347,7 +356,7 @@ def run_residual_analysis():
         print_status("  FAVORS: Standard Model (baryonic physics)", "WARNING")
     elif max_screening > sig_threshold:
         print_status("INTERPRETATION: Residuals correlate with density (screening proxy).", "INFO")
-        print_status("  This supports a density-dependent field theory mechanism.", "INFO")
+        print_status("  This supports an environment-dependent field theory mechanism.", "INFO")
         print_status("  FAVORS: TEP (Field Theory)", "SUCCESS")
     else:
         print_status("INTERPRETATION: Residuals are largely random (no strong correlations).", "INFO")
@@ -358,7 +367,7 @@ def run_residual_analysis():
     print_status("STEP 5: Generate Diagnostic Plots", "PROCESS")
     
     fig = plt.figure(figsize=FIG_SIZE[FIG_PRESET])
-    gs = fig.add_gridspec(3, 3, hspace=0.55, wspace=0.45)
+    gs = fig.add_gridspec(3, 3, hspace=0.60, wspace=0.55)
     
     # Panel A: Main scaling relation
     ax1 = fig.add_subplot(gs[0, :])
@@ -389,7 +398,7 @@ def run_residual_analysis():
         ax2.plot(x_fit, p(x_fit), '-', color=COLORS['highlight'], linewidth=1.5)
     ax2.set_xlabel(r'Gas Fraction $f_{\rm gas}$')
     ax2.set_ylabel(r'Residual (dex)')
-    ax2.set_title(f'$\\bf{{b)}}$ Gas Fraction (r={r_gas:+.3f}, p={p_gas:.3f})', loc='left')
+    ax2.set_title(f'$\\bf{{b)}}$ Gas Fraction (r={r_gas:+.3f}, {format_p(p_gas)})', loc='left')
     ax2.grid(True, alpha=0.3)
     ax2.set_ylim(-1.5, 1.5)
     
@@ -406,7 +415,7 @@ def run_residual_analysis():
         ax3.plot(x_fit, p(x_fit), '-', color=COLORS['highlight'], linewidth=1.5)
     ax3.set_xlabel(r'$\log_{10}(\Sigma)$ ($M_\odot$/pc$^2$)')
     ax3.set_ylabel(r'Residual (dex)')
-    ax3.set_title(f'$\\bf{{c)}}$ Surface Brightness (r={r_sigma:+.3f}, p={p_sigma:.3f})', loc='left')
+    ax3.set_title(f'$\\bf{{c)}}$ Surface Brightness (r={r_sigma:+.3f}, {format_p(p_sigma)})', loc='left')
     ax3.grid(True, alpha=0.3)
     ax3.set_ylim(-1.5, 1.5)
     
@@ -422,7 +431,7 @@ def run_residual_analysis():
         ax4.plot(x_fit, p(x_fit), '-', color=COLORS['highlight'], linewidth=1.5)
     ax4.set_xlabel(r'Inclination (deg)')
     ax4.set_ylabel(r'Residual (dex)')
-    ax4.set_title(f'$\\bf{{d)}}$ Inclination (r={r_inc:+.3f}, p={p_inc:.3f})', loc='left')
+    ax4.set_title(f'$\\bf{{d)}}$ Inclination (r={r_inc:+.3f}, {format_p(p_inc)})', loc='left')
     ax4.grid(True, alpha=0.3)
     ax4.set_ylim(-1.5, 1.5)
     
@@ -439,7 +448,7 @@ def run_residual_analysis():
         ax5.plot(x_fit, p(x_fit), '-', color=COLORS['highlight'], linewidth=1.5)
     ax5.set_xlabel(r'$\log_{10}(\rho_{\rm central})$ ($M_\odot$/pc$^3$)')
     ax5.set_ylabel(r'Residual (dex)')
-    ax5.set_title(f'$\\bf{{e)}}$ Central Density (r={r_rho:+.3f}, p={p_rho:.3f})', loc='left')
+    ax5.set_title(f'$\\bf{{e)}}$ Central Density (r={r_rho:+.3f}, {format_p(p_rho)})', loc='left')
     ax5.grid(True, alpha=0.3)
     ax5.set_ylim(-1.5, 1.5)
     
@@ -474,6 +483,7 @@ def run_residual_analysis():
     ax7.legend(frameon=False)
     ax7.grid(True, axis='y', alpha=0.3)
     
+    fig.subplots_adjust(top=0.92)
     plt.savefig(os.path.join(output_dir, 'figure_7_sparc_residuals.png'))
     print_status("Saved: figure_7_sparc_residuals.png", "SUCCESS")
 

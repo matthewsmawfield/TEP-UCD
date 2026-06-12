@@ -133,6 +133,17 @@
         $R_T(M)$ construction, not an independent discriminator of microscopic
         mechanism.
     </p>
+    <p>
+        The per-constellation MGEX analysis (Paper 14 extension) provides a
+        concrete pre-registered discriminator: if GPS, Galileo, and GLONASS
+        individually recover $\sim$4,200 km while the combined product compresses
+        to $\sim$1,400 km, the MGEX discrepancy is resolved as a projection artifact.
+        If per-constellation analysis also yields $\sim$1,400 km, the
+        $L_c \leftrightarrow R_T(M_\oplus)$ identification fails as calibrated,
+        and the Level 1/2/3 claim hierarchy absorbs the hit exactly as designed.
+        Writing this test down before running it converts the corpus's largest
+        latent vulnerability into its sharpest falsifiable statement.
+    </p>
 </div>
 
 <h3>Dark Matter as Phantom Mass</h3>
@@ -216,10 +227,22 @@
 <h4>TEP vs. MOND</h4>
 <p>
     MOND provides an excellent fit to galaxy rotation curves but offers no
-    explanation for the GNSS clock correlations. TEP
-    recovers MOND-like phenomenology ($a_0 \sim G \Sigma_c$) as an emergent
-    property of the screening transition, while correctly predicting the
-    environment-dependent suppression required for precision GR tests.
+    explanation for the GNSS clock correlations. The critical distinction lies in
+    the triggering mechanism: MOND modifies kinematics at a specific
+    <em>acceleration</em> scale ($a_0 \approx 1.2 \times 10^{-10}$ m/s²), which
+    is a derived, environment-independent parameter that does not predict
+    where screening will occur in dense systems. By contrast, TEP is triggered
+    by a <em>density/proximity</em> scale ($\rho_T \approx 20$ g/cm³), enabling it
+    to explain anomalous dynamics in environments where MOND either makes no
+    prediction or fails—such as ultra-diffuse galaxies (where the low surface
+    brightness yields a different acceleration at fixed density) and the Milky
+    Way core (where the high baryonic density should suppress MOND-like effects
+    but does not in the data).
+</p>
+<p>
+    TEP recovers MOND-like phenomenology ($a_0 \sim G \Sigma_c$) as an
+    emergent property of the screening transition, while correctly predicting
+    the environment-dependent suppression required for precision GR tests.
 </p>
 
 <h4>TEP vs. FDM</h4>
@@ -259,14 +282,18 @@
 
 <p>
     The primary uncertainty in the global fit remains the GNSS calibration
-    length $L_c$. The multi-center analysis (CODE, IGS, ESA) yields
-    $\lambda_T = 3{,}330$–$4{,}549$ km (Paper 1), while the 25-year CODE
-    analysis gives $4{,}201 \pm 1{,}967$ km (Paper 2). We adopt $L_c = 4{,}200 \pm 500$ km,
-    reflecting the multi-center spread. Propagating this alone gives
-    $\rho_T = 20 \pm 7$ g/cm³ ($35\%$). The $M^{1/3}$ structural form is
+    length $L_c$. We report three distinct contributions: (i) the 25-year CODE
+    per-measurement statistical uncertainty ($4{,}201 \pm 1{,}967$ km, $\pm 47\%$;
+    Paper 2); (ii) the inter-center systematic spread ($3{,}330$–$4{,}549$ km,
+    $\sim \pm 12\%$; Paper 1), with the caveat that centers share largely overlapping
+    underlying data so this spread is not an independent ensemble; and (iii) the
+    $\mathcal{O}(1)$ prefactor in the transfer sketch (Section 2), treated as a
+    model-defining choice. The adopted operational value is $L_c = 4{,}200$ km
+    with $\pm 500$ km ($\pm 12\%$) reflecting the inter-center range; propagating
+    this alone gives $\rho_T = 20 \pm 7$ g/cm³. The $M^{1/3}$ structural form is
     independent of $\rho_T$; only the normalization changes. This uncertainty
-    is far smaller than the 15-order-of-magnitude dynamic range over which the
-    model is tested, preserving the falsifiability of the scaling law.
+    is far smaller than the dynamic range over which the model is tested,
+    preserving the falsifiability of the scaling law.
 </p>
 
 <h3>Predictions for High-Redshift JWST Observations</h3>
@@ -334,7 +361,7 @@
     </li>
 </ul>
 <p>
-    <strong>Discriminant:</strong> Spatially resolve the H$\alpha$ emission.
+    Discriminant: Spatially resolve the H$\alpha$ emission.
     Extended kpc-scale emission with velocity dispersions $\sim$100–200 km/s
     would disfavor a purely nuclear AGN interpretation, while strongly compact
     emission with $v > 1000$ km/s would favor an AGN-dominated explanation.
@@ -345,7 +372,7 @@
 <h3>Implications for Paper 7 (RBH-1)</h3>
 
 <p>
-    The universality of $\rho_T$ established here provides the foundation for
+    The GNSS-calibrated $\rho_T$ identified here provides the working normalization for
     the analysis of RBH-1 in the companion paper (Smawfield 2025h). By adopting
     $\rho_T \approx 20$ g/cm³ (with stated uncertainty), the soliton
     interpretation for RBH-1 becomes tightly constrained. The wake structure,

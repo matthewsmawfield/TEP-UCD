@@ -157,7 +157,7 @@ def run():
             ax.grid(True, alpha=0.25)
             ax.legend(fontsize=6, frameon=False, loc='lower right')
 
-        out_path = os.path.join(output_dir, 'figure_5_sparc_examples.png')
+        out_path = os.path.join(output_dir, 'figure_6_sparc_examples.png')
         plt.savefig(out_path, transparent=True)
         print_status(f"Saved synthetic example figure to {out_path}", "SUCCESS")
         return
@@ -250,12 +250,12 @@ def run():
         # Keep legends small and local for readability in the 3x3 panel
         ax.legend(fontsize=6, frameon=False, loc='lower right', handlelength=2)
 
-    out_path = os.path.join(output_dir, 'figure_5_sparc_examples.png')
+    out_path = os.path.join(output_dir, 'figure_6_sparc_examples.png')
     plt.savefig(out_path, transparent=True)
     print_status(f"Saved: {out_path}", "SUCCESS")
 
     # Save numerical outputs
-    output_data = {"figure": "figure_5_sparc_examples.png", "K_TEP": float(K_TEP)}
+    output_data = {"figure": "figure_6_sparc_examples.png", "K_TEP": float(K_TEP)}
     with open(os.path.join(outputs_dir, 'step_4b_sparc_examples.json'), 'w') as f:
         json.dump(output_data, f, indent=2)
     try:

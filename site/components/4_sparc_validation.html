@@ -54,7 +54,7 @@
     characteristic of the diffuse field tail.
 </p>
 <p>
-    <strong>Invariant:</strong> $\rho_T$ denotes the universal saturation
+    Invariant: $\rho_T$ denotes the universal saturation
     density of the scalar sector that fixes the compact soliton scale via
     $R_T \propto (M/\rho_T)^{1/3}$. By contrast, $\rho_{\rm trans}$ is
     an <em>emergent</em> screening threshold for the onset of halo phenomenology
@@ -145,18 +145,18 @@
     <tbody>
         <tr>
             <td>Loose ($V_{obs}/V_{bar} > 1.1$)</td>
-            <td>$0.281 \pm 0.037$</td>
-            <td>$1.4\sigma$</td>
+            <td>$0.274 \pm 0.036$</td>
+            <td>$1.6\sigma$</td>
         </tr>
         <tr>
             <td>Fiducial ($V_{obs}/V_{bar} > 1.3$)</td>
-            <td>$0.377 \pm 0.044$</td>
+            <td>$0.372 \pm 0.041$</td>
             <td>$1.0\sigma$</td>
         </tr>
         <tr>
             <td>Strict ($V_{obs}/V_{bar} > 1.5$)</td>
-            <td>$0.415 \pm 0.053$</td>
-            <td>$1.5\sigma$</td>
+            <td>$0.413 \pm 0.045$</td>
+            <td>$1.8\sigma$</td>
         </tr>
     </tbody>
 </table>
@@ -165,20 +165,23 @@
     While individual definitions shift the normalization, the slope consistently
     clusters around the $M^{1/3}$ expectation. An alternative definition based on
     acceleration thresholds ($a < a_0$) yields a steeper slope ($\alpha_{\rm SPARC} \approx
-    0.5$), but this method is known to be degenerate with the MOND acceleration
-    scale itself and is less direct than the kinematic divergence test.
+    0.5$). This estimator is the $M^{1/3}$ vs. $M^{1/2}$ (TEP vs. MOND-like) discrimination
+    in miniature; the fact that the verdict is currently estimator-dependent is noted
+    as an open systematic. Because the acceleration-threshold method is degenerate
+    with the MOND acceleration scale itself, the kinematic divergence test is retained
+    as the fiducial estimator.
 </p>
 
 <div class="equation">
     \begin{equation} \label{eq:dm_relation} R_{\rm DM} = k \cdot M_{\rm bar}^{\alpha_{\rm SPARC}} \end{equation}
 </div>
 <div class="equation">
-    \begin{equation} \label{eq:sparc_exponent} \alpha_{\rm SPARC} = 0.355 \pm 0.043 \text{ (Bootstrap, 1000 resamples)} \end{equation}
+    \begin{equation} \label{eq:sparc_exponent} \alpha_{\rm SPARC} = 0.355 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (definition)} \end{equation}
 </div>
 
 <p>
     The bootstrap-marginalized exponent deviates from the TEP expectation of $\alpha_{\rm SPARC} = 1/3
-    = 0.333$ by approximately 0.5$\sigma$—consistent within typical statistical tolerance. The correlation
+    = 0.333$ by approximately 0.3$\sigma$ under the combined uncertainty—consistent within typical statistical tolerance. The correlation
     coefficient $r \approx 0.6$ indicates a significant relationship.
     Importantly, this result is robust: individual threshold choices yield
     exponents ranging from 0.28 to 0.42, but the ensemble average converges near
@@ -188,18 +191,19 @@
 <h4>Cross-Regime Consistency</h4>
 <p>
     The significance of this result emerges when combined with the Temporal
-    Topology screening analysis (Section 4). The empirical screening law $S
-    \propto \rho^{0.334}$ ($R^2 = 0.99995$) spans 15 orders of magnitude in
-    density—from gas giants ($\rho \sim 1$ g/cm³) to binary pulsars ($\rho \sim
-    10^{14}$ g/cm³). The consistency of this exponent across such a range is
-    suggestive, though the high $R^2$ is partly a consequence of the definitions
+    Topology screening analysis (Section 4). The complete screening hierarchy spans
+    ~15 orders of magnitude in density—from gas giants ($\rho \sim 1$ g/cm³) to
+    binary pulsars ($\rho \sim 10^{14}$ g/cm³)—while the fitted regression uses the
+    11 dense objects ($\rho > \rho_T$) spanning ~12 orders of magnitude
+    ($\sim 10^2$–$10^{14}$ g/cm³). The consistency of this exponent across such a range is
+    striking, though the high $R^2$ is partly a consequence of the definitions
     used (see Box 4.1). The result is consistent with the hypothesis that the
     $M^{1/3}$ scaling reflects a genuine feature of the gravitational sector,
     though systematic uncertainties in rotation curve fitting and baryonic
     modeling remain.
 </p>
 <p>
-    Combined with the SPARC galaxy scaling ($\alpha_{\rm SPARC} = 0.355 \pm 0.043$), the
+    Combined with the SPARC galaxy scaling ($\alpha_{\rm SPARC} = 0.355 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (definition)}$), the
     RBH-1 crossover consistency (within $\sim 25\%$ combined uncertainty), and
     the Milky Way dark-matter onset ($R_{\text{DM}} \approx 3$ kpc, observed $\sim$3–5 kpc), these results
     suggest a universal density-limited structure may span 18 orders of
@@ -217,9 +221,12 @@
 </div>
 <p>
     Fixing $\alpha_{\rm SPARC} = 1/3$ and fitting only the normalization yields $k \approx
-    7.9 \times 10^{-4}\,{\rm kpc}/M_\odot^{1/3}$, corresponding to an effective
-    screening density $\rho_{\rm trans} \approx 0.5\,M_\odot/{\rm pc}^3$ ($\sim
-    3 \times 10^{-23}$ g/cm³). This value is within an order of magnitude of
+    7.9 \times 10^{-4}\,{\rm kpc}/M_\odot^{1/3}$. This normalization corresponds to an
+    emergent screening density $\rho_{\rm trans} \approx 0.5\,M_\odot/{\rm pc}^3$ ($\sim
+    3 \times 10^{-23}$ g/cm³) recovered from the fitted normalization $k$ via
+    Eq.~(\ref{eq:trans_radius}). A completion is conjectured to derive $\rho_{\rm trans}$
+    from the potential scale $\Lambda$ and coupling $\beta_A$, but this remains an open
+    target (see Formal Link below). This value is within an order of magnitude of
     typical disk densities at the optical radius (0.01–0.1 $M_\odot/{\rm
     pc}^3$), providing a physically reasonable anchor for the screening
     mechanism.
@@ -233,6 +240,36 @@
     $M^{1/3}$ structural form, consistent with the environment-dependent nature of the
     theory across 15 orders of magnitude in density.
 </p>
+
+<div class="callout">
+    <h4>Formal Link: From Core Saturation to Galactic Transition</h4>
+    <p>
+        The galactic transition density $\rho_{\rm trans}$ is not an
+        independent fitting parameter. It emerges from the same scalar field
+        profile that fixes the core saturation scale $\rho_T$. In the TEP
+        framework (Box 6.5), the scalar field obeys
+    </p>
+    <div class="equation">
+        \begin{equation} \label{eq:profile_link} \nabla^2 \phi = V'(\phi) + \alpha(\phi)\rho, \end{equation}
+    </div>
+    <p>
+        with effective mass $m_{\rm eff}^2(\rho) = V''(\phi_{\rm min})$.
+        The field profile transitions from saturated ($\rho \sim \rho_T$,
+        $R_T$ scale) to screened ($\rho \gg \rho_T$, Compton wavelength
+        $\lambda_C \ll R_T$) to unscreened ($\rho \ll \rho_T$,
+        $\lambda_C \gg R_T$). The galactic halo onset occurs where the
+        local baryonic density drops to the value $\rho_{\rm trans}$ at
+        which the scalar-field-induced gravitational acceleration becomes
+        comparable to the baryonic contribution. Because the field profile
+        is governed by the same potential scale $\Lambda \equiv \rho_T^{1/4}$
+        and coupling $\beta_A$ that set the compact-object saturation,
+        $\rho_{\rm trans}$ is a derived consequence of these parameters,
+        not a free fit. The SPARC analysis measures the structural
+        exponent $\alpha_{\rm SPARC}$ and normalization $k$; the
+        corresponding $\rho_{\rm trans}$ is then recovered from $k$
+        via Eq.~(\ref{eq:trans_radius}) as a consistency check.
+    </p>
+</div>
 
 <h4>Connection to the MOND Acceleration Scale</h4>
 <p>
@@ -274,12 +311,12 @@
 
 <figure>
     <img
-        src="figures/figure_5_sparc_examples.png"
+        src="figures/figure_6_sparc_examples.png"
         alt="Example Rotation Curves"
         style="max-width: 100%"
     />
     <figcaption>
-        Figure 5: Representative SPARC rotation curves. Observed velocities
+        Figure 1: Representative SPARC rotation curves. Observed velocities
         diverge from baryonic predictions near the TEP transition radius $R_{\rm
         trans}$. Shaded regions indicate the screened (Newtonian) zone. The
         agreement between $R_{\rm trans}$ and the observed onset $R_{\rm DM}$
@@ -289,7 +326,7 @@
 
 <h3>Linking RBH-1 to Galactic Halos</h3>
 <p>
-    The SPARC analysis establishes a direct empirical connection between the
+    The SPARC analysis identifies a cross-scale consistency between the
     RBH-1 wake phenomenon and galactic dark matter halos:
 </p>
 <ul>
@@ -419,12 +456,10 @@
         style="max-width: 100%"
     />
     <figcaption>
-        Figure 7: Residual analysis of the SPARC $M^{1/3}$ scaling. (a) Scaling
+        Figure 2: Residual analysis of the SPARC $M^{1/3}$ scaling. (a) Scaling
         relation colored by residual. (b-e) Correlations with baryonic
         properties and screening proxies. (f) Gaussian residual distribution
-        ($\sigma = 0.48$ dex). (g) All correlations fall below significance
-        ($|r| < 0.3$), indicating random scatter rather than baryonic feedback
-        systematics.
+        ($\sigma = 0.48$ dex). (g) Correlations are weak in amplitude ($|r|<0.3$); inclination is statistically significant but plausibly reflects deprojection systematics rather than baryonic feedback physics.
     </figcaption>
 </figure>
 
@@ -449,7 +484,7 @@
 
 <h4>Comparison with MOND and LCDM+Feedback</h4>
 <p>
-    <strong>MOND:</strong> The Modified Newtonian Dynamics framework typically
+    MOND: The Modified Newtonian Dynamics framework typically
     yields a tighter scatter ($\sim 0.13$ dex) in the Radial Acceleration
     Relation (RAR). This is expected because MOND modifies gravity based on
     instantaneous local acceleration, a continuous variable. In contrast, this
@@ -460,7 +495,7 @@
     "onset radius" is a noisy estimator of the underlying screening transition.
 </p>
 <p>
-    <strong>LCDM + Feedback (Null Hypothesis):</strong> The standard
+    LCDM + Feedback (Null Hypothesis): The standard
     cosmological model relies on baryonic feedback to explain rotation curve
     diversity. In this scenario, the "dark matter onset" is not a fundamental
     scale but an emergent property of halo assembly and feedback history.
@@ -474,7 +509,7 @@
 </p>
 
 <div class="result-box">
-    <h4>Why the TEP Model is Preferred</h4>
+    <h4>Distinctive Cross-Scale Linkage</h4>
     <p>
         While MOND provides a tighter fit to galaxy kinematics alone, it offers
         no explanation for the GNSS clock correlations ($L_c \approx 4200$ km).
@@ -541,10 +576,5 @@
     </li>
 </ol>
 <p>
-    The reported uncertainty ($\pm 0.043$) is the bootstrap standard deviation
-    from 1000 galaxy-level resamples, computed with the fiducial threshold
-    ($V_{\rm obs}/V_{\rm bar} > 1.3$). This naturally incorporates both sample
-    variance and the sensitivity to onset definition. Varying the threshold
-    from 1.1 to 1.5 yields exponents from 0.28 to 0.42, bracketing the
-    fiducial value.
+    The headline value $\alpha_{\rm SPARC}=0.355\pm0.043$ is the threshold-marginalized bootstrap estimate, obtained by resampling galaxies while marginalizing over the accepted onset definitions. The fiducial ($V_{\rm obs}/V_{\rm bar}>1.3$) definition alone gives $0.372\pm0.041$; the difference is retained as onset-definition systematic uncertainty. Varying the threshold from 1.1 to 1.5 yields exponents from 0.28 to 0.42, bracketing the headline estimate.
 </p>

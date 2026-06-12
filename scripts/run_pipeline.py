@@ -81,7 +81,7 @@ def save_pipeline_summary(results, elapsed_total):
     """Save a JSON summary of the full pipeline run."""
     summary = {
         "pipeline": "TEP-UCD",
-        "version": "v0.4 (New Delhi)",
+        "version": "v0.6 (New Delhi)",
         "date": time.strftime("%Y-%m-%dT%H:%M:%S"),
         "elapsed_seconds": round(elapsed_total, 2),
         "steps": {}

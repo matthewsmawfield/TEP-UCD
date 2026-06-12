@@ -46,8 +46,8 @@ cd site && npm run build
 | `steps/step_2_wd_screening.py` | `figure_3_wd_screening.png` | White dwarf screening test |
 | `steps/step_3_screening_hierarchy.py` | `figure_4_screening_hierarchy.png` | Screening hierarchy across object classes |
 | `steps/step_4_sparc_analysis.py` | `figure_5_sparc_enhanced.png` | **Primary SPARC scaling analysis** |
-| `steps/step_4b_sparc_examples.py` | `figure_5_sparc_examples.png` | Example rotation curves |
-| `steps/step_5_ultimate_screening.py` | `figure_6_ultimate_screening.png` | Comprehensive screening plot |
+| `steps/step_4b_sparc_examples.py` | `figure_6_sparc_examples.png` | Example rotation curves |
+| `steps/step_5_ultimate_screening.py` | `screening_comprehensive.png` | Comprehensive screening plot (not in manuscript) |
 | `steps/step_6_sensitivity.py` | `figure_8_sensitivity.png` | Sensitivity and feasibility analysis |
 | `steps/step_7_sparc_residuals.py` | `figure_7_sparc_residuals.png` | Residual analysis (baryonic vs screening proxies) |
 | `verification/verify_screening_claim.py` | — | Verifies S ∝ rho^0.334 claim from object data |
@@ -67,7 +67,7 @@ This is the primary galactic validation script. It performs the following steps:
 ### Robustness Checks Documented
 
 - **Threshold variation:** Exponents range from 0.28 (loose) to 0.42 (strict); ensemble converges near 1/3.
-- **Bootstrap uncertainty:** 1000 resamples yield $\alpha = 0.355 \pm 0.043$.
+- **Bootstrap uncertainty:** 1000 resamples yield $\alpha = 0.355 \pm 0.043$; combined with the definition systematic ($\pm 0.07$), the headline value is $\alpha_{\rm SPARC} = 0.355 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (definition)}$.
 - **Sample size:** 167 of 175 SPARC galaxies yield valid $R_{\rm DM}$ at threshold 1.3 (8 excluded because $V_{\rm obs}/V_{\rm bar}$ never exceeds threshold).
 - **RAR-based transition:** Alternative definition using $g_{\rm bar} < a_0$ yields a steeper slope (~0.57), flagged as degenerate with the MOND scale and not used as the primary estimator.
 

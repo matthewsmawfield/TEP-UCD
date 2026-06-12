@@ -40,6 +40,14 @@
     case-by-case.
 </p>
 
+<div class="equation">
+    \begin{equation} \label{eq:ppn_suppression} \alpha_{\rm PPN}^{\rm eff}=\alpha_0 F(S,\rho,\Phi,\nabla\phi), \qquad F\rightarrow 0 \end{equation}
+</div>
+
+<p>
+    in the screened or source-charge-suppressed limit. The geometric factor $S$ is not itself the observable PPN coupling. Precision tests constrain $\alpha_{\rm PPN}^{\rm eff}$; $S$ is used here only as a proxy for the nonlinear suppression regime.
+</p>
+
 <h3>4.1 The White Dwarf Stress Test</h3>
 
 <p>
@@ -47,16 +55,16 @@
     structure is determined by quantum mechanics (electron degeneracy pressure),
     not thermal physics, so their mass-radius relation is calculable from first
     principles. Second, their mass-radius scaling runs in the opposite direction
-    to the saturation scaling (see Figure 3); a soliton interpretation is one candidate microscopic realization:
+    to the saturation scaling (see Figure 3):
 </p>
 
 <ul>
     <li>
-        <strong>White Dwarf (Chandrasekhar):</strong> $R_{WD} \propto M^{-1/3}$
+        White Dwarf (Chandrasekhar): $R_{WD} \propto M^{-1/3}$
         — heavier stars are smaller
     </li>
     <li>
-        <strong>Soliton (TEP):</strong> $R_{sol} \propto M^{+1/3}$ — heavier
+        Soliton (TEP): $R_{sol} \propto M^{+1/3}$ — heavier
         fields are larger
     </li>
 </ul>
@@ -98,7 +106,7 @@
     \begin{equation} \label{eq:jupiter_radius} R_{phys} \approx 5{,}800 \text{ km} \quad \text{(observed)} \end{equation}
 </div>
 <div class="equation">
-    \begin{equation} \label{eq:jupiter_soliton} R_{sol} \approx 293{,}000 \text{ km} \quad \text{(TEP expectation)} \end{equation}
+    \begin{equation} \label{eq:jupiter_soliton} R_{sol} \approx 289{,}000 \text{ km} \quad \text{(TEP expectation)} \end{equation}
 </div>
 <div class="equation">
     \begin{equation} \label{eq:jupiter_screening} \text{Screening Factor} = \frac{R_T}{R_{phys}} \approx 50\times. \end{equation}
@@ -161,10 +169,10 @@
         ($S$ vs $\rho$) derives from the canonical Temporal Topology mechanism
         (Paper 0), where screening operates via the continuous spatial profile
         of the scalar field governed by non-linear superposition of field
-        gradients (Temporal Shear). Box 6.5 (Section 6) derives the soliton
-        structure from the canonical action, demonstrating how the interplay
-        between the kinetic term and saturation potential generates the
-        characteristic $M^{1/3}$ scaling and screening behavior. The detailed
+        gradients (Temporal Shear). Box 6.5 (Section 6) sketches a candidate
+        route from the canonical action to soliton-like saturation, showing how
+        the interplay between the kinetic term and saturation potential could generate
+        the characteristic $M^{1/3}$ scaling and screening behavior. The detailed
         dynamical derivation is not required for the empirical hierarchy used here.
     </p>
 </div>
@@ -219,7 +227,7 @@
             <td>0.7 – 1.6</td>
             <td>0.3 – 0.4×</td>
             <td>
-                Soliton smaller than planet; scalar contribution expected to be
+                $R_T$ smaller than physical radius; scalar contribution expected to be
                 small and/or below current constraints
             </td>
         </tr>
@@ -233,7 +241,7 @@
             <td>Rocky Planets (Earth)</td>
             <td>3.3 – 5.5</td>
             <td>0.56 – 0.66×</td>
-            <td>Soliton ≈ planet radius; GNSS probes this boundary</td>
+            <td>Saturation scale comparable to object radius; GNSS probes this boundary</td>
         </tr>
         <tr>
             <td>Brown Dwarfs</td>
@@ -243,9 +251,9 @@
         </tr>
         <tr>
             <td>White Dwarfs</td>
-            <td>$10^5$ – $10^6$</td>
+            <td>$\sim 4 \times 10^5$ – $2.5 \times 10^6$</td>
             <td>27 – 50×</td>
-            <td>Star embedded in soliton; Keplerian mass = baryonic mass</td>
+            <td>Baryonic star embedded within saturation scale; Keplerian mass = baryonic mass</td>
         </tr>
         <tr>
             <td>Neutron Stars</td>
@@ -377,10 +385,12 @@
 </ul>
 
 <p>
-    GNSS satellites orbit at ~20,000 km altitude, well within the soliton
-    boundary. Their atomic clocks sample proper time across different radial
-    positions within the scalar field structure. The observed clock correlation
-    length $L_c \approx 4200$ km is not an arbitrary parameter—it is the
+    GNSS satellites orbit at $\sim$20,000 km altitude, sampling clock transport
+    through the exterior field region associated with the terrestrial Temporal Topology
+    profile. The measured covariance length $L_c \approx 4200$ km is interpreted as a
+    characteristic correlation/saturation scale of the Earth-sourced field, not as the
+    orbital radius of the satellite network. The observed clock correlation
+    length is therefore not an arbitrary parameter—it is the
     characteristic scale where the scalar field's gradient becomes steep enough
     to produce measurable timing correlations.
 </p>
@@ -399,9 +409,9 @@
     The empirical data suggest a critical proximity scale, observationally
     proxied by the density $\rho_T \approx 20$ g/cm³,
     corresponding to approximately 4× Earth's mean density. This value has
-    physical significance: it lies near the onset of electron degeneracy, where
+    coincidence-level significance: it lies near the onset of electron degeneracy, where
     the equation of state transitions from thermal to quantum pressure support.
-    The scalar field appears to couple to this thermodynamic transition.
+    This coincidence motivates treating the 10–30 g/cm³ regime as a useful condensed-matter reference scale, while the mechanism setting $\rho_T$ remains an open derivation target.
 </p>
 
 <div class="principle">
@@ -424,13 +434,17 @@
         </li>
         <li>
             <strong>The Screening Exponent:</strong> The empirical scaling $S
-            \propto \rho^{\beta_{\rm scr}}$ with $\beta_{\rm scr} = 0.334$ emerges from data spanning 15 orders of
-            magnitude in density, with $R^2 = 0.99995$. The exponent 1/3 is a
-            direct consequence of the $M^{1/3}$ saturation scaling.
+            \propto \rho^{\beta_{\rm scr}}$ with $\beta_{\rm scr} = 0.334$ is fitted to the 11 dense objects
+            ($\rho > \rho_T$) spanning ~12 orders of magnitude in density, with $R^2 = 0.99995$. The exponent 1/3 is a
+            direct consequence of the $M^{1/3}$ saturation scaling. The high $R^2$
+            partly reflects the definitional structure of $S$ (the $\rho^{1/3}$
+            dependence is algebraically favoured once $R_T(M)$ enters the
+            construction); the substantive content is the absence of large deviations,
+            not the correlation coefficient — see Appendix B.4.
         </li>
         <li>
             <strong>GR Test Consistency:</strong> All five precision tests of
-            General Relativity are explained by screening factors that suppress
+            General Relativity are consistent with screening factors that suppress
             scalar contributions below current measurement limits.
         </li>
     </ol>

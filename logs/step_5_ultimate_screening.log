@@ -1,8 +1,8 @@
-[03:18:38] [PROCESS] Initializing ultimate screening analysis (26-object dataset)
-[03:18:38] [INFO] R_TEP (Earth) = 4200000.0 m, rho_T = 20.00 g/cm^3
-[03:18:38] [PROCESS] Loading 26-object dataset
-[03:18:38] [PROCESS] Computing screening factors and derived metrics
-[03:18:39] [SUCCESS] Figure saved to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/scripts/steps/../../results/figures/figure_6_ultimate_screening.png
-[03:18:39] [INFO] Screening law fit: S ~ rho^0.33, R^2 = 1.00
-[03:18:39] [SUCCESS] Numerical outputs saved to results/outputs/step_5_ultimate_screening.json
-[03:18:39] [SUCCESS] Completed in 1.0s
+[15:53:16] [PROCESS] Initializing ultimate screening analysis (26-object dataset)
+[15:53:16] [INFO] R_TEP (Earth) = 4146360.6 m, rho_T = 20.00 g/cm^3
+[15:53:16] [PROCESS] Loading 26-object dataset
+[15:53:16] [PROCESS] Computing screening factors and derived metrics
+[15:53:17] [SUCCESS] Figure saved to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/scripts/steps/../../results/figures/screening_comprehensive.png
+[15:53:17] [INFO] Screening law fit: S ~ rho^0.33, R^2 = 1.00
+[15:53:17] [SUCCESS] Numerical outputs saved to results/outputs/step_5_ultimate_screening.json
+[15:53:17] [SUCCESS] Completed in 1.0s
