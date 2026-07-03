@@ -1,6 +1,6 @@
 # TEP-UCD Analysis Scripts
 
-Analysis code for the TEP-UCD manuscript: "Universal Critical Density: Cross-Scale Consistency of ρ_T"
+Analysis code for the TEP-UCD manuscript: "Temporal Topology Saturation Scale: Cross-Scale Consistency of ρ_T"
 
 ## Directory Structure
 
@@ -98,7 +98,7 @@ If you use this code, please cite:
 ```bibtex
 @article{smawfield2025ucd,
   author = {Smawfield, Matthew Lukin},
-  title = {Universal Critical Density: Cross-Scale Consistency of ρ_T},
+  title = {Temporal Topology Saturation Scale: Cross-Scale Consistency of ρ_T},
   year = {2025},
   doi = {10.5281/zenodo.18064365}
 }

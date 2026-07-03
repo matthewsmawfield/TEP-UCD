@@ -2,7 +2,7 @@
 
 <h3>The Universal Scaling Anomaly</h3>
 
-<p>Dark matter observations across cosmological scales reveal an empirical regularity. From dwarf galaxies ($M \sim 10^9 M_\odot$) to massive galaxies ($M \sim 10^{12} M_\odot$), the characteristic radius at which Newtonian dynamics fails—the "dark matter onset"—scales approximately as $R \propto M^{1/3}$ (cluster-scale tests remain absent from this work). This implies a universal critical proximity scale, observationally proxied by $\rho_T \sim M/R^3 \sim \text{constant}$, at which gravitational phenomenology changes.</p>
+<p>Dark matter observations across cosmological scales reveal an empirical regularity. From dwarf galaxies ($M \sim 10^9 M_\odot$) to massive galaxies ($M \sim 10^{12} M_\odot$), the characteristic radius at which Newtonian dynamics fails—the "dark matter onset"—scales approximately as $R \propto M^{1/3}$. This implies a universal critical proximity scale ("critical" here meaning a phenomenological saturation/proximity scale, not a hard density threshold), observationally proxied by $\rho_T \sim M/R^3 \sim \text{constant}$, at which gravitational phenomenology changes.</p>
 
 <p>This scaling appears in multiple independent contexts:</p>
 <ul>
@@ -35,12 +35,52 @@
 
 <p>This $M^{1/3}$ scaling is a direct consequence of the saturation condition; under a soliton interpretation, this corresponds to soliton formation.</p>
 
-<h3>The Multi-Scale Validation Strategy</h3>
+<p>The saturation scale parameter $\rho_T \approx 20$ g/cm³ serves as the bulk-matter realization of the abstract environmental screening operator $\mathcal{S}_\Sigma(\mathcal{E})$ defined in the foundational TEP framework. In macroscopic atomic matter, $\rho_T$ acts as an empirical proxy for the geometric saturation of the Temporal Topology, yielding cross-scale predictions without committing to specific chameleon, Vainshtein, or symmetron microphysics.</p>
 
-<p>This paper tests $\rho_T$ through a convergent multi-scale approach:</p>
+<div class="equation">
+    \begin{equation} \label{eq:screening_operator}
+    \Sigma_\mu^{\text{obs}} = \mathcal{S}_\Sigma(\mathcal{E}) \, \nabla_\mu \ln A(\phi),
+    \end{equation}
+</div>
+
+<p>where the environmental state is
+$$\mathcal{E} = \{\rho, \Phi/c^2, \nabla\rho, \nabla\Phi, \text{compactness}, R_T(M), \text{proximity}, T, z, \text{boundary geometry}, \text{coherence volume}\}.$$
+This single operator unifies density screening, compactness screening, proximity screening, thermal/epoch screening, lensing/cosmological covariance screening, and wide-binary environmental screening across the entire TEP corpus.</p>
+
+<div class="callout-box-primary">
+    <h4>Box 1.1: Joint Constraint Architecture of \(\rho_T\) and \(S_\Sigma(\mathcal{E})\)</h4>
+    <p>
+        \(\rho_T\) is the shared macroscopic saturation/proximity scale. Other
+        papers in the TEP programme do not all measure \(\rho_T\) directly; they
+        measure domain-specific projections of the same environmental operator
+        \(S_\Sigma(\mathcal{E})\):
+    </p>
+    <ul>
+        <li><strong>Clock covariance lengths</strong> (GNSS, Paper 1–3)</li>
+        <li><strong>Galactic onset radii</strong> (SPARC, Milky Way, this work)</li>
+        <li><strong>Response coefficients</strong> (Cepheids, pulsars, Papers 10–11)</li>
+        <li><strong>Lensing residuals</strong> (strong-lens time delays, Paper 4)</li>
+        <li><strong>Weak-field recovery scales</strong> (wide binaries, Paper 13)</li>
+        <li><strong>Compactness-dependent residuals</strong> (LLR, Paper 17)</li>
+        <li><strong>Cosmological temporal-shear amplitudes</strong> (hi_class, C0, TH, Papers 18, 26, 27)</li>
+    </ul>
+    <p>
+        Each measurement channel has a response coefficient \(\kappa_X\), an
+        environmental screening projection, and a domain-specific observable
+        functional. This architecture protects the programme from the criticism
+        that different channels report different numerical values: they are
+        <em>observable response coefficients</em>, not bare scalar couplings,
+        and each channel measures a different projection of
+        \(S_\Sigma(\mathcal{E})\).
+    </p>
+</div>
+
+<h3>The Multi-Scale Consistency Strategy</h3>
+
+<p>As summarized in Table 1, this paper tests $\rho_T$ through a convergent multi-scale approach:</p>
 
 <div>
-    <h3>Table 1: Cross-Scale Validation of $\rho_T$</h3>
+    <h3>Table 1: Cross-Scale Consistency of $\rho_T$</h3>
     <table class="data-table" style="margin: 20px 0;">
     <thead>
     <tr>
@@ -96,15 +136,15 @@
 
 <ul>
     <li><strong>Section 2:</strong> Terrestrial calibration via GNSS atomic clock correlations, establishing $L_c \approx 4200$ km → $\rho_T \approx 20$ g/cm³.</li>
-    <li><strong>Section 3:</strong> Galactic validation via SPARC rotation curves, confirming $M^{1/3}$ scaling.</li>
-    <li><strong>Section 4:</strong> Screening hierarchy analysis, explaining why GR tests pass despite scalar field presence.</li>
+    <li><strong>Section 3:</strong> Galactic consistency test via SPARC rotation curves, confirming $M^{1/3}$ scaling.</li>
+    <li><strong>Section 4:</strong> Screening hierarchy analysis, providing a candidate screening account for why precision GR tests remain satisfied despite scalar-field structure.</li>
     <li><strong>Section 5:</strong> Physical context for $\rho_T$, including a dimensional identity bridge preserving WEP, a condensed-matter EOS coincidence, and open derivation targets.</li>
-    <li><strong>Section 6:</strong> The Universal Scaling Law, synthesizing constraints across all regimes.</li>
+    <li><strong>Section 6:</strong> Universal Scaling as a Cross-Scale Consistency Test, synthesizing constraints across all regimes.</li>
     <li><strong>Section 7:</strong> Milky Way dark-matter onset at $R_{\text{DM}} \approx 3$ kpc.</li>
     <li><strong>Section 8:</strong> Discussion of dark matter as phantom mass and cosmological implications.</li>
     <li><strong>Section 9:</strong> Conclusion and astrophysical applications (including RBH-1, companion paper).</li>
 </ul>
 
-<p>This multi-scale convergence identifies $\rho_T \approx 20$ g/cm³ as a candidate externally calibrated saturation parameter (with explicit systematic uncertainty), enabling sharply constrained astrophysical applications such as the RBH-1 runaway black hole candidate (Smawfield 2025h, Paper 7).</p>
+<p>This multi-scale convergence identifies $\rho_T \approx 20$ g/cm³ as a candidate GNSS-anchored saturation parameter (with explicit systematic uncertainty), enabling sharply constrained astrophysical applications such as the RBH-1 runaway black hole candidate (Smawfield 2025h, Paper 7).</p>
 
 <p><em>Evidence hierarchy.</em> Within the evidence hierarchy of the TEP series, the GNSS clock analyses (Papers 1–3) provide the primary empirical input for the terrestrial correlation scale; the present paper tests the cross-scale consequences of conditionally identifying that scale with $R_T(M_\oplus)$. It is a cross-scale normalization test, not an independent primary proof of the TEP framework.</p>

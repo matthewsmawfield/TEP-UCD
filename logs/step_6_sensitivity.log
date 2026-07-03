@@ -1,15 +1,15 @@
-[15:53:17] [PROCESS] Initializing sensitivity and feasibility analysis
-[15:53:17] [PROCESS] Running sensitivity analysis
-[15:53:17] [INFO] Grid size: 200x200, core pol fractions: [0.1, 0.3, 0.6, 0.9], brightness levels: 50
-[15:53:17] [INFO] Int. Pol   | Min Brightness for Detection (m>10%)    
-[15:53:17] [INFO] -------------------------------------------------------
-[15:53:17] [INFO] 10       % | 0.010 x Ring Peak
-[15:53:17] [INFO] 30       % | 0.010 x Ring Peak
-[15:53:17] [INFO] 60       % | 0.010 x Ring Peak
-[15:53:17] [INFO] 90       % | 0.010 x Ring Peak
-[15:53:17] [INFO] -------------------------------------------------------
-[15:53:17] [SUCCESS] Sensitivity plot saved to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/scripts/steps/../../results/figures/figure_8_sensitivity.png
-[15:53:17] [INFO] M87* soliton core prediction: R_T = 5.36e+08 km (3.59 AU)
-[15:53:17] [INFO] Sgr A* soliton core prediction: R_T = 4.67e+07 km (0.31 AU)
-[15:53:17] [SUCCESS] Numerical outputs saved to results/outputs/step_6_sensitivity.json
-[15:53:17] [SUCCESS] Completed in 0.3s
+[13:34:32] [PROCESS] Initializing sensitivity and feasibility analysis
+[13:34:32] [PROCESS] Running sensitivity analysis
+[13:34:32] [INFO] Grid size: 200x200, core pol fractions: [0.1, 0.3, 0.6, 0.9], brightness levels: 50
+[13:34:32] [INFO] Int. Pol   | Min Brightness for Detection (m>10%)
+[13:34:32] [INFO] -------------------------------------------------------
+[13:34:32] [INFO] 10       % | 0.010 x Ring Peak
+[13:34:32] [INFO] 30       % | 0.010 x Ring Peak
+[13:34:32] [INFO] 60       % | 0.010 x Ring Peak
+[13:34:32] [INFO] 90       % | 0.010 x Ring Peak
+[13:34:33] [INFO] -------------------------------------------------------
+[13:34:33] [SUCCESS] Sensitivity plot saved to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/scripts/steps/../../results/figures/figure_8_sensitivity.png
+[13:34:33] [INFO] M87* soliton core prediction: R_T = 5.36e+08 km (3.59 AU)
+[13:34:33] [INFO] Sgr A* soliton core prediction: R_T = 4.67e+07 km (0.31 AU)
+[13:34:33] [SUCCESS] Numerical outputs saved to results/outputs/step_6_sensitivity.json
+[13:34:33] [SUCCESS] Completed in 0.3s

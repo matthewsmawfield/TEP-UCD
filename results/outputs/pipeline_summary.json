@@ -1,8 +1,8 @@
 {
   "pipeline": "TEP-UCD",
-  "version": "v0.6 (New Delhi)",
-  "date": "2026-06-12T15:53:18",
-  "elapsed_seconds": 8.9,
+  "version": "v0.7 (New Delhi)",
+  "date": "2026-07-03T13:34:33",
+  "elapsed_seconds": 7.49,
   "steps": {
     "step_0_download_data": {
       "status": "completed",
@@ -262,8 +262,8 @@
     "step_4_sparc_analysis": {
       "status": "completed",
       "outputs": {
-        "alpha_marginalized": 0.35445136840579006,
-        "alpha_err_marginalized": 0.01350495321917755,
+        "alpha_marginalized": 0.3544513684057901,
+        "alpha_err_marginalized": 0.013504953219177551,
         "alpha_boot": 0.35490227449393696,
         "alpha_boot_err": 0.04279143798578596,
         "k": 0.0007860216159370755,
@@ -275,21 +275,21 @@
         "threshold_exponents": {
           "1.10": {
             "alpha": 0.2744323016107197,
-            "std_err": 0.035970632931440386,
+            "std_err": 0.0359706329314404,
             "n_galaxies": 170
           },
           "1.15": {
-            "alpha": 0.3030891356298874,
+            "alpha": 0.30308913562988754,
             "std_err": 0.036762420661962364,
             "n_galaxies": 168
           },
           "1.20": {
             "alpha": 0.33023136609751136,
-            "std_err": 0.03836739029526588,
+            "std_err": 0.038367390295265896,
             "n_galaxies": 168
           },
           "1.25": {
-            "alpha": 0.3585772942705071,
+            "alpha": 0.3585772942705072,
             "std_err": 0.039891709691340156,
             "n_galaxies": 168
           },
@@ -299,23 +299,23 @@
             "n_galaxies": 167
           },
           "1.35": {
-            "alpha": 0.3979643803405023,
-            "std_err": 0.04272100373439922,
+            "alpha": 0.39796438034050235,
+            "std_err": 0.04272100373439923,
             "n_galaxies": 164
           },
           "1.40": {
-            "alpha": 0.40318200558116923,
-            "std_err": 0.04248201663333245,
+            "alpha": 0.40318200558116934,
+            "std_err": 0.042482016633332446,
             "n_galaxies": 162
           },
           "1.45": {
-            "alpha": 0.4042069362372226,
+            "alpha": 0.40420693623722265,
             "std_err": 0.04554076565241347,
             "n_galaxies": 153
           },
           "1.50": {
-            "alpha": 0.4127777626607677,
-            "std_err": 0.04546570079158428,
+            "alpha": 0.41277776266076766,
+            "std_err": 0.045465700791584296,
             "n_galaxies": 151
           }
         },
@@ -336,11 +336,11 @@
       "status": "completed",
       "outputs": {
         "objects": 26,
-        "screening_slope": 0.3337735867180422,
-        "screening_intercept": -0.4489030417430735,
-        "screening_r2": 0.9999495157538255,
-        "screening_r": 0.9999747575583223,
-        "screening_std_err": 0.0007905322861102757
+        "screening_slope": 0.33377358671804214,
+        "screening_intercept": -0.44890304174307305,
+        "screening_r2": 0.9999495157538251,
+        "screening_r": 0.9999747575583221,
+        "screening_std_err": 0.0007905322861137527
       }
     },
     "step_6_sensitivity": {
@@ -370,11 +370,11 @@
         "rms_scatter": 0.47971316578890383,
         "r_gas": -0.16393626580461215,
         "p_gas": 0.0342636658119509,
-        "r_sigma": -0.1290659982947543,
+        "r_sigma": -0.12906599829475426,
         "p_sigma": 0.09644602479272722,
         "r_inc": 0.2966111028330125,
         "p_inc": 9.93274233755627e-05,
-        "r_rho": -0.10810055472014986,
+        "r_rho": -0.1081005547201498,
         "p_rho": 0.16436105565563863,
         "interpretation": "TEP (Field Theory)"
       }

@@ -158,7 +158,7 @@ def run():
             ax.legend(fontsize=6, frameon=False, loc='lower right')
 
         out_path = os.path.join(output_dir, 'figure_6_sparc_examples.png')
-        plt.savefig(out_path, transparent=True)
+        plt.savefig(out_path)
         print_status(f"Saved synthetic example figure to {out_path}", "SUCCESS")
         return
 
@@ -251,7 +251,7 @@ def run():
         ax.legend(fontsize=6, frameon=False, loc='lower right', handlelength=2)
 
     out_path = os.path.join(output_dir, 'figure_6_sparc_examples.png')
-    plt.savefig(out_path, transparent=True)
+    plt.savefig(out_path)
     print_status(f"Saved: {out_path}", "SUCCESS")
 
     # Save numerical outputs

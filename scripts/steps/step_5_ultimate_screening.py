@@ -293,7 +293,7 @@ def run_ultimate_screening():
     ax6.text(0.05, 0.8, text, va="top", linespacing=1.55)
 
     plt.savefig(
-        os.path.join(output_dir, "screening_comprehensive.png"), transparent=True
+        os.path.join(output_dir, "screening_comprehensive.png")
     )
     print_status(f"Figure saved to {os.path.join(output_dir, 'screening_comprehensive.png')}", "SUCCESS")
     print_status(f"Screening law fit: S ~ rho^{slope:.2f}, R^2 = {r_val**2:.2f}", "INFO")

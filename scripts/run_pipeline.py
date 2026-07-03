@@ -3,7 +3,7 @@
 TEP-UCD Analysis Pipeline Master Script
 =======================================
 Orchestrates the full analysis pipeline for Paper 6:
-"Universal Critical Density: Cross-Scale Consistency of ρ_T"
+"Temporal Topology Saturation Scale: Cross-Scale Consistency of ρ_T"
 
 Workflow Steps:
 0. Download Data       — Fetch SPARC Tables 1 & 2 if missing
@@ -81,7 +81,7 @@ def save_pipeline_summary(results, elapsed_total):
     """Save a JSON summary of the full pipeline run."""
     summary = {
         "pipeline": "TEP-UCD",
-        "version": "v0.6 (New Delhi)",
+        "version": "v0.7 (New Delhi)",
         "date": time.strftime("%Y-%m-%dT%H:%M:%S"),
         "elapsed_seconds": round(elapsed_total, 2),
         "steps": {}

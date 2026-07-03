@@ -1,7 +1,7 @@
 {
-  "title": "Universal Critical Density: Cross-Scale Consistency of \u03c1_T",
-  "version": "v0.6 (New Delhi)",
-  "last_updated": "12 June 2026",
+  "title": "Temporal Topology Saturation Scale: Cross-Scale Consistency of \u03c1_T",
+  "version": "v0.7 (New Delhi)",
+  "last_updated": "3 July 2026",
   "description": "A candidate universal saturation scale (\u03c1_T \u2248 20 g/cm\u00b3) organizes gravitational anomalies across 18 orders of magnitude in mass (Earth to galaxy).",
 
   "sections": [
@@ -97,7 +97,7 @@
     },
     {
       "id": "appendix-eht",
-      "title": "Appendix E: EHT Soliton Detection — Sensitivity and Feasibility",
+      "title": "Appendix E: Illustrative Future Application — Not Used in the ρ_T Evidence Hierarchy",
       "file": "6b_sensitivity.html",
       "order": 16
     }

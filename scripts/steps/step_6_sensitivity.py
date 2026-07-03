@@ -143,7 +143,7 @@ def run_sensitivity_analysis():
     outputs_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'results', 'outputs')
     os.makedirs(outputs_dir, exist_ok=True)
     save_path = os.path.join(output_dir, 'figure_8_sensitivity.png')
-    plt.savefig(save_path, dpi=300, facecolor=plt.gcf().get_facecolor())
+    plt.savefig(save_path, dpi=300)
     print_status("-" * 55, "INFO")
     print_status(f"Sensitivity plot saved to {save_path}", "SUCCESS")
 

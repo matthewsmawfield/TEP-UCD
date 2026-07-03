@@ -61,7 +61,8 @@ class TEPFormatter(logging.Formatter):
         self.use_colors = use_colors
 
     def format(self, record):
-        message = record.getMessage()
+        # Normalize trailing whitespace so generated logs remain clean for release checks.
+        message = str(record.getMessage()).rstrip()
 
         # Map log levels to display names and colors
         level_mapping = {
@@ -80,10 +81,13 @@ class TEPFormatter(logging.Formatter):
         # Format exactly like step 3: [timestamp] [LEVEL] message
         timestamp = self.formatTime(record, self.datefmt)
         
+        prefix = f"[{timestamp}] [{level_name}]"
+        line = f"{prefix} {message}" if message else prefix
+
         if self.use_colors:
-            return f"{color}[{timestamp}] [{level_name}] {message}{self.RESET}"
+            return f"{color}{line}{self.RESET}"
         else:
-            return f"[{timestamp}] [{level_name}] {message}"
+            return line
 
 class TEPFileFormatter(logging.Formatter):
     """Clean formatter for file output without ANSI color codes."""
@@ -93,7 +97,8 @@ class TEPFileFormatter(logging.Formatter):
         super().__init__(fmt, datefmt='%H:%M:%S')
 
     def format(self, record):
-        message = record.getMessage()
+        # Normalize trailing whitespace so generated logs remain clean for release checks.
+        message = str(record.getMessage()).rstrip()
 
         # Map log levels to display names (no colors for file)
         level_mapping = {
@@ -111,7 +116,8 @@ class TEPFileFormatter(logging.Formatter):
 
         # Format exactly like step 3: [timestamp] [LEVEL] message (no colors)
         timestamp = self.formatTime(record, self.datefmt)
-        return f"[{timestamp}] [{level_name}] {message}"
+        prefix = f"[{timestamp}] [{level_name}]"
+        return f"{prefix} {message}" if message else prefix
 
 class TEPLogger:
     def __init__(self, name: str = "tep_gnss", level: str = "INFO", log_file_path = None, reset_log: bool = True):

@@ -1,38 +1,56 @@
-[18:56:19] [INFO] 
-[18:56:19] [INFO] ================================================================================
-[18:56:19] [INFO] SPARC RESIDUAL ANALYSIS: Baryonic Feedback vs Field Theory
-[18:56:19] [INFO] ================================================================================
-[18:56:19] [INFO] 
-[18:56:19] [PROCESS] Parsing SPARC Table1 (galaxy properties)
-[18:56:19] [PROCESS] Parsing SPARC Table2 (rotation curves)
-[18:56:19] [SUCCESS] Loaded 175 galaxies from SPARC database
-[18:56:19] [PROCESS] STEP 1: Calculate Residuals from M^(1/3) Scaling
-[18:56:19] [INFO] Valid galaxies: 167
-[18:56:19] [INFO] Normalization: k = 7.8602e-04 kpc/M_sun^(1/3)
-[18:56:19] [INFO] RMS scatter: 0.480 dex
-[18:56:19] [PROCESS] STEP 2: Correlate Residuals with Baryonic Properties
-[18:56:19] [INFO] Baryonic Property Correlations:
-[18:56:19] [INFO]   Gas Fraction:       r = -0.164, p = 0.0343
-[18:56:19] [INFO]   Surface Brightness: r = -0.129, p = 0.0964
-[18:56:19] [INFO]   Inclination:        r = +0.297, p = 0.0001
-[18:56:19] [PROCESS] STEP 3: Correlate Residuals with Screening Proxies (Density)
-[18:56:19] [INFO] Screening Proxy Correlations:
-[18:56:19] [INFO]   Central Density:    r = -0.108 (p = 0.1644)
-[18:56:19] [PROCESS] STEP 4: Statistical Assessment
-[18:56:19] [INFO] Maximum Baryonic Correlation: |r| = 0.297
-[18:56:19] [INFO] Maximum Screening Correlation: |r| = 0.108
-[18:56:19] [INFO] INTERPRETATION: Residuals are largely random (no strong correlations).
-[18:56:19] [INFO]   This suggests the M^(1/3) scaling is fundamental, not a feedback artifact.
-[18:56:19] [SUCCESS]   FAVORS: TEP (Field Theory)
-[18:56:19] [PROCESS] STEP 5: Generate Diagnostic Plots
-[18:56:20] [SUCCESS] Saved: figure_7_sparc_residuals.png
-[18:56:20] [INFO] 
-[18:56:20] [INFO] ================================================================================
-[18:56:20] [INFO] RESIDUAL ANALYSIS SUMMARY
-[18:56:20] [INFO] ================================================================================
-[18:56:20] [INFO] 
-[18:56:20] [INFO] Dataset: 167 galaxies, RMS scatter = 0.480 dex
-[18:56:20] [INFO] Max baryonic correlation: |r| = 0.297
-[18:56:20] [INFO] Max screening correlation: |r| = 0.108
-[18:56:20] [SUCCESS] VERDICT: FAVORS TEP (Field Theory)
-[18:56:20] [SUCCESS] Numerical outputs saved to results/outputs/step_7_sparc_residuals.json
+[13:34:33] [INFO]
+[13:34:33] [INFO] ================================================================================
+[13:34:33] [INFO] SPARC RESIDUAL ANALYSIS: Baryonic Feedback vs Field Theory
+[13:34:33] [INFO] ================================================================================
+[13:34:33] [INFO]
+[13:34:33] [PROCESS] Parsing SPARC Table1 (galaxy properties)
+[13:34:33] [PROCESS] Parsing SPARC Table2 (rotation curves)
+[13:34:33] [SUCCESS] Loaded 175 galaxies from SPARC database
+[13:34:33] [PROCESS] STEP 1: Calculate Residuals from M^(1/3) Scaling
+[13:34:33] [INFO] Valid galaxies: 167
+[13:34:33] [INFO] Normalization: k = 7.8602e-04 kpc/M_sun^(1/3)
+[13:34:33] [INFO] RMS scatter: 0.480 dex
+[13:34:33] [PROCESS] STEP 2: Correlate Residuals with Baryonic Properties
+[13:34:33] [INFO] Baryonic Property Correlations:
+[13:34:33] [INFO]   Gas Fraction:       r = -0.164, p = 0.0343
+[13:34:33] [INFO]   Surface Brightness: r = -0.129, p = 0.0964
+[13:34:33] [INFO]   Inclination:        r = +0.297, p = 0.0001
+[13:34:33] [PROCESS] STEP 3: Correlate Residuals with Screening Proxies (Density)
+[13:34:33] [INFO] Screening Proxy Correlations:
+[13:34:33] [INFO]   Central Density:    r = -0.108 (p = 0.1644)
+[13:34:33] [PROCESS] STEP 4: Statistical Assessment
+[13:34:33] [INFO] Maximum Baryonic Correlation: |r| = 0.297
+[13:34:33] [INFO] Maximum Screening Correlation: |r| = 0.108
+[13:34:33] [INFO] INTERPRETATION: Residuals are largely random (no strong correlations).
+[13:34:33] [INFO]   This suggests the M^(1/3) scaling is fundamental, not a feedback artifact.
+[13:34:33] [SUCCESS]   FAVORS: TEP (Field Theory)
+[13:34:33] [PROCESS] STEP 5: Generate Diagnostic Plots
+[13:34:33] [SUCCESS] Saved: figure_7_sparc_residuals.png
+[13:34:33] [INFO]
+[13:34:33] [INFO] ================================================================================
+[13:34:33] [INFO] RESIDUAL ANALYSIS SUMMARY
+[13:34:33] [INFO] ================================================================================
+[13:34:33] [INFO]
+[13:34:33] [INFO] Dataset: 167 galaxies, RMS scatter = 0.480 dex
+[13:34:33] [INFO] Max baryonic correlation: |r| = 0.297
+[13:34:33] [INFO] Max screening correlation: |r| = 0.108
+[13:34:33] [SUCCESS] VERDICT: FAVORS TEP (Field Theory)
+[13:34:33] [SUCCESS] Numerical outputs saved to results/outputs/step_7_sparc_residuals.json
+[13:34:33] [SUCCESS] Completed in 0.6s
+[13:34:33] [INFO] Pipeline summary saved to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/results/outputs/pipeline_summary.json
+[13:34:33] [INFO]
+[13:34:33] [INFO] ================================================================================
+[13:34:33] [INFO] ============================================================
+[13:34:33] [INFO] ================================================================================
+[13:34:33] [INFO]
+[13:34:33] [INFO]
+[13:34:33] [INFO] ================================================================================
+[13:34:33] [INFO] PIPELINE COMPLETE
+[13:34:33] [INFO] ================================================================================
+[13:34:33] [INFO]
+[13:34:33] [INFO] Total elapsed: 7.5s
+[13:34:33] [INFO]
+[13:34:33] [INFO] ================================================================================
+[13:34:33] [INFO] ============================================================
+[13:34:33] [INFO] ================================================================================
+[13:34:33] [INFO]

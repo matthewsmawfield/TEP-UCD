@@ -247,10 +247,83 @@
 
 <h4>TEP vs. FDM</h4>
 <p>
-    Standard FDM predicts solitonic cores but struggles with "catching" the
-    right scale for both dwarf galaxies and the Milky Way simultaneously without
-    fine-tuning the particle mass. TEP naturally links the core scale to the
-    saturation scale, which is empirically anchored by GNSS measurements.
+    Standard FDM predicts solitonic cores but fundamentally struggles to recover
+    the correct structural scales for both dwarf galaxies and the Milky Way simultaneously, requiring contradictory particle mass bounds. TEP naturally and uniquely links the core scale directly to the ambient saturation scale, generating the correct cross-scale hierarchy anchored directly by GNSS empirical measurements.
+</p>
+
+<h3>Response-Coefficient Hierarchy</h3>
+
+<p>
+    A natural criticism of the multi-channel TEP programme is that different
+    papers report different numerical coefficients. This is expected, and it is
+    a feature rather than a flaw. In the TEP framework, each measurement channel
+    carries an <em>observable response coefficient</em> \(\kappa_X\) that
+    absorbs stellar physics, environment, and projection geometry, not the bare
+    microscopic conformal coupling \(\beta_A\).
+</p>
+
+<p>
+    Paper 11 (TEP-H0) independently calibrates the weakly screened galactic-disk
+    response via Cepheid period–luminosity residuals, yielding
+    \(\kappa_{\rm Cep} \sim 10^6\) (dimensionless, in the appropriate
+    observable basis). Paper 10 (TEP-COS) measures the globular-cluster
+    pulsar response \(\kappa_{\rm MSP}^{\rm emp} \approx 3 \times 10^4\)
+    after dense-cluster geometric suppression. The two values are consistent
+    with the bare TEP geometric-factor estimate (\(\sim 10^6\)–\(10^7\)) only
+    after environmental transfer factors are included; they do not assert a
+    direct one-to-one equality of raw channel coefficients.
+</p>
+
+<p>
+    This hierarchy protects the programme from the criticism:
+    <em>"Why does each paper have a different coefficient?"</em>
+    The answer is that they are <em>observable response coefficients</em>, not
+    bare scalar couplings. Each channel measures a different projection of
+    \(S_\Sigma(\mathcal{E})\):
+</p>
+
+<table class="data-table" style="margin: 20px 0; font-size: 0.9em;">
+    <thead>
+        <tr>
+            <th>Channel</th>
+            <th>Response coefficient</th>
+            <th>Environment</th>
+            <th>Projection</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>GNSS clocks</strong></td>
+            <td>\(L_c \approx 4200\) km</td>
+            <td>Planetary crust/mantle</td>
+            <td>Radial covariance scale</td>
+        </tr>
+        <tr>
+            <td><strong>Cepheids (Paper 11)</strong></td>
+            <td>\(\kappa_{\rm Cep} \sim 10^6\)</td>
+            <td>Galactic disk (weakly screened)</td>
+            <td>Period–luminosity modulation</td>
+        </tr>
+        <tr>
+            <td><strong>Pulsars (Paper 10)</strong></td>
+            <td>\(\kappa_{\rm MSP} \sim 10^4\)</td>
+            <td>Globular cluster (strongly screened)</td>
+            <td>Spin-down excess (suppressed)</td>
+        </tr>
+        <tr>
+            <td><strong>Wide binaries (Paper 13)</strong></td>
+            <td>\(\alpha_{\rm sat} \approx 0.37\)</td>
+            <td>Galactic halo (unscreened)</td>
+            <td>Velocity-profile saturation</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+    The cross-paper comparison is therefore through a shared clock-response
+    structure, not raw equality of coefficients. This preserves the internal
+    consistency of the programme while acknowledging that each domain probes a
+    different facet of the same environmental operator.
 </p>
 
 <h3>Resolving Galactic Anomalies</h3>
@@ -282,15 +355,21 @@
 
 <p>
     The primary uncertainty in the global fit remains the GNSS calibration
-    length $L_c$. We report three distinct contributions: (i) the 25-year CODE
+    length $L_c$. Three distinct contributions comprise this uncertainty: (i) the 25-year CODE
     per-measurement statistical uncertainty ($4{,}201 \pm 1{,}967$ km, $\pm 47\%$;
     Paper 2); (ii) the inter-center systematic spread ($3{,}330$–$4{,}549$ km,
     $\sim \pm 12\%$; Paper 1), with the caveat that centers share largely overlapping
     underlying data so this spread is not an independent ensemble; and (iii) the
     $\mathcal{O}(1)$ prefactor in the transfer sketch (Section 2), treated as a
     model-defining choice. The adopted operational value is $L_c = 4{,}200$ km
-    with $\pm 500$ km ($\pm 12\%$) reflecting the inter-center range; propagating
-    this alone gives $\rho_T = 20 \pm 7$ g/cm³. The $M^{1/3}$ structural form is
+    with $\pm 500$ km ($\pm 12\%$) reflecting the inter-center range. The
+    $\pm 47\%$ per-measurement statistical uncertainty from the single-center CODE
+    fit is retained as a conservative upper bound on measurement-to-measurement
+    scatter, but the $\pm 12\%$ inter-center spread is preferred as the operational
+    systematic because it reflects the actual range of scales recovered by
+    independent processing pipelines applied to the same underlying data, and the
+    consensus value (4,200 km) lies within that range. Propagating this alone gives
+    $\rho_T = 20 \pm 7$ g/cm³. The $M^{1/3}$ structural form is
     independent of $\rho_T$; only the normalization changes. This uncertainty
     is far smaller than the dynamic range over which the model is tested,
     preserving the falsifiability of the scaling law.
@@ -383,3 +462,226 @@
     $\rho_T$ and the effective radius in this environment, rather than the
     broader TEP framework.
 </p>
+
+<h3>Cross-Domain Constraint Network</h3>
+
+<table class="data-table" style="margin: 20px 0; font-size: 0.9em;">
+    <thead>
+        <tr>
+            <th>Tier</th>
+            <th>Role</th>
+            <th>Channels</th>
+            <th>Relation to \(\rho_T\)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>A</strong></td>
+            <td>Direct / quasi-direct calibration</td>
+            <td>GNSS, SPARC/MW, RBH-1, condensed-matter EOS</td>
+            <td>Enters \(\rho_T\) normalization directly</td>
+        </tr>
+        <tr>
+            <td><strong>B</strong></td>
+            <td>Screening / response-transfer test</td>
+            <td>Pulsars (10), Cepheids (11), wide binaries (13), LLR (17), Earth flyby (15)</td>
+            <td>Constrains \(S_\Sigma(\mathcal{E})\) and transfer functions, not independent \(\rho_T\)</td>
+        </tr>
+        <tr>
+            <td><strong>C</strong></td>
+            <td>Phantom Mass / conformal transport</td>
+            <td>Lensing (4), multiply-imaged SNe (19), JWST (12)</td>
+            <td>Tests the mechanism; not a \(\rho_T\) calibration</td>
+        </tr>
+        <tr>
+            <td><strong>D</strong></td>
+            <td>Orthogonal architecture test</td>
+            <td>J0437 (16), hi\_class (18), C0 (26), TH (27), QF (23)</td>
+            <td>Tests deep TEP structure; does not calibrate \(\rho_T\)</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><em>Only Tier A contributes to the present \(\rho_T\) normalization. Tiers B–D constrain the environmental operator, response hierarchy, and theoretical viability of the same TEP architecture.</em></p>
+
+<p>
+    The TEP programme now spans more than twenty papers across terrestrial,
+    galactic, compact-object, lensing, and cosmological domains. It is
+    essential to distinguish which of these constrain \(\rho_T\) directly
+    and which constrain the broader TEP architecture. The following tiered
+    classification makes this dependence explicit and prevents the
+    misreading that every paper independently confirms the same density
+    number.
+</p>
+
+<h4>Tier A — Direct or Quasi-Direct \(\rho_T\) Constraints</h4>
+
+<p>
+    These channels calibrate the macroscopic saturation scale most directly:
+</p>
+
+<ul>
+    <li>
+        <strong>GNSS \(\lambda_T\) (Papers 1–3):</strong> The primary
+        empirical anchor. The 4,200 km correlation length is conditionally
+        identified with the projected covariance scale associated with
+        \(R_T(M_\oplus)\), up to an order-unity transfer factor, yielding the
+        operational estimate \(\rho_T \approx 20\) g/cm³.
+    </li>
+    <li>
+        <strong>SPARC/Milky Way onset scaling (this work):</strong>
+        Quasi-direct scaling consistency. The \(M^{1/3}\) scaling of
+        dark-matter onset radii across 175 spiral galaxies is consistent with
+        the saturation-radius construction, but does not independently
+        calibrate \(\rho_T\). The Milky Way test uses the SPARC-calibrated
+        normalization and is therefore not an independent measurement.
+    </li>
+    <li>
+        <strong>RBH-1 crossover (Paper 7):</strong> The runaway-black-hole
+        candidate tests the extrapolation of \(R_T(M)\) to
+        \(M \sim 10^7 M_\odot\), with wake structure providing an
+        object-specific consistency test.
+    </li>
+    <li>
+        <strong>Condensed-matter EOS coincidence (this work, Section 5):</strong>
+        The proximity of \(\rho_T \approx 20\) g/cm³ to warm-dense-matter /
+        degeneracy-onset scales provides a coincidence-level physical
+        plausibility check, not an independent empirical calibration.
+    </li>
+</ul>
+
+<h4>Tier B — Screening and Response-Transfer Constraints</h4>
+
+<p>
+    These channels do not independently calibrate \(\rho_T\), but they
+    constrain the environmental operator \(S_\Sigma(\mathcal{E})\) and
+    the transfer functions that connect \(\rho_T\) to observables:
+</p>
+
+<ul>
+    <li>
+        <strong>Globular-cluster pulsars (Paper 10):</strong> The suppressed
+        density scaling of spin-down excess (\(\Gamma \approx 0.39\) dex/dex,
+        vs. Newtonian \(0.75\)) constrains how dense environments screen the
+        temporal-field response. The observable coefficient
+        \(\kappa_{\rm MSP}\) is a downstream projection, not a direct
+        \(\rho_T\) measurement.
+    </li>
+    <li>
+        <strong>Cepheids (Paper 11):</strong> The Cepheid clock-bias response
+        \(\kappa_{\rm Cep} \sim 10^6\) in galactic disks bridges the
+        weakly screened regime. It agrees with \(\kappa_{\rm MSP}\) only
+        after environmental transfer factors are applied, demonstrating that
+        response coefficients are channel-specific projections.
+    </li>
+    <li>
+        <strong>Wide binaries (Paper 13):</strong> Gaia DR3 reveals a
+        weak-field screening transition at a few thousand AU with
+        environmental ordering (high-\(|Z|\) vs. midplane). This is an
+        independent <em>morphology</em> test of Temporal Shear recovery, not
+        an independent \(\rho_T\) calibration: the paper explicitly states
+        that imported \(\rho_T\) and \(g_{\rm TEP}\) enter only as
+        cross-scale consistency checks.
+    </li>
+    <li>
+        <strong>Lunar Laser Ranging (Paper 17):</strong> Reports a
+        compactness-dependent residual channel at high significance, but
+        remains at the "candidate residual" level pending integrator-level
+        ephemeris refits. Classified as a <em>guardrail</em>: it suggests
+        the local screened regime may still contain residual-channel
+        structure, but does not yet provide a completed \(\rho_T\) likelihood
+        term.
+    </li>
+    <li>
+        <strong>Earth flyby (Paper 15):</strong> Uses the UCD
+        \(\rho_T \approx 20\) g/cm³ as a <em>shared input</em>, not an
+        independent validation. Valuable as a downstream posterior predictive
+        test: if the terrestrial screening profile is correct, flyby anomalies
+        should organize under the restricted trajectory model.
+    </li>
+</ul>
+
+<h4>Tier C — Phantom Mass / Conformal Transport Tests</h4>
+
+<p>
+    These channels test the <em>mechanism</em> by which TEP generates apparent
+    mass discrepancies, without directly calibrating \(\rho_T\):
+</p>
+
+<ul>
+    <li>
+        <strong>Gravitational lensing (Paper 4):</strong> The Phantom Mass
+        mechanism shows that standard lensing reconstructions implicitly
+        assume isochrony; relaxing this projects temporal depth onto the
+        spatial plane, degenerate with particulate dark matter. This is
+        <em>mechanistic support</em> for the TEP interpretation of the
+        dark sector, not a \(\rho_T\) calibration.
+    </li>
+    <li>
+        <strong>Multiply-imaged supernovae (Paper 19):</strong> SN Refsdal
+        provides directional evidence from blind model residuals for
+        conformal time-transport in the lensing sector. The amplitude kernel
+        remains phenomenological; included as a <em>sign test</em> for
+        Phantom Mass, pending derivation of the full transfer kernel.
+    </li>
+    <li>
+        <strong>JWST high-redshift galaxies (Paper 12):</strong> Tests
+        potential-depth response at \(z > 5\) using an external response
+        prior. The signal is not an independent \(\rho_T\) measurement;
+        it probes whether the same conformal architecture organizes
+        high-redshift compact galaxies.
+    </li>
+</ul>
+
+<h4>Tier D — Orthogonal TEP-Architecture Tests</h4>
+
+<p>
+    These papers do not calibrate \(\rho_T\) at all, but they test deep
+    structural claims of the TEP framework:
+</p>
+
+<ul>
+    <li>
+        <strong>J0437 scintillation (Paper 16):</strong> Reports non-zero
+        phase-closure signal in millisecond pulsar scintillation, rejecting
+        standard scalar-delay ISM models (\(\psi = 0\)) at high confidence.
+        This tests <em>non-integrable time transport</em> / synchronization
+        holonomy, one of the deepest TEP claims. It does not calibrate
+        \(\rho_T\).
+    </li>
+    <li>
+        <strong>hi_class cosmology (Paper 18):</strong> Demonstrates that
+        the conformal temporal-transport geometry preserves CMB acoustic
+        structure, sound-horizon behaviour, and stable linear perturbations.
+        A <em>global consistency constraint</em>, not a \(\rho_T\) term.
+    </li>
+    <li>
+        <strong>C0 supernova conformal redshift (Paper 26):</strong> Shows
+        that Pantheon+ distance-redshift data do not uniquely require
+        primitive spatial expansion. Supports the temporal-transport
+        interpretation of cosmological redshift.
+    </li>
+    <li>
+        <strong>TH temporal horizon (Paper 27):</strong> The apparent
+        \(a_{\rm eff} \to 0\) limit becomes a temporal conformal boundary
+        rather than a physical singularity. Provides <em>theoretical
+        closure</em> for the late-time cosmology.
+    </li>
+    <li>
+        <strong>QF quantum tangent limit (Paper 23):</strong> Shows that
+        the screened quantum tangent limit is consistent with the TEP
+        architecture. A <em>theoretical compatibility</em> check, not empirical
+        \(\rho_T\) evidence.
+    </li>
+</ul>
+
+<div class="callout-box-success">
+    <p>
+        <strong>Summary:</strong> Only Tier A enters the present
+        \(\rho_T\) normalization argument directly. Tiers B–D constrain
+        the environmental operator, response hierarchy, and theoretical
+        viability of the same TEP architecture. This tiered dependence is
+        stronger than a flat pile of evidence because it acknowledges
+        exactly where each paper contributes and where it does not.
+    </p>
+</div>

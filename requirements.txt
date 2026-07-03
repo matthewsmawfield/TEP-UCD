@@ -1,4 +1,4 @@
-# TEP-UCD: Universal Critical Density Analysis
+# TEP-UCD: Temporal Topology Saturation Scale Analysis
 # Core stack for SPARC galaxy analysis and screening hierarchy
 
 # Astronomical computing

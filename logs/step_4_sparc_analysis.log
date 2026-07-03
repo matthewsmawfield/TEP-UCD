@@ -1,52 +1,52 @@
-[15:53:11] [INFO] 
-[15:53:11] [INFO] ================================================================================
-[15:53:11] [INFO] SPARC Enhanced Analysis: Robust TEP Test
-[15:53:11] [INFO] ================================================================================
-[15:53:11] [INFO] 
-[15:53:11] [PROCESS] Parsing SPARC Table1 (galaxy properties)
-[15:53:11] [PROCESS] Parsing SPARC Table2 (rotation curves)
-[15:53:11] [SUCCESS] Loaded 175 galaxies with rotation curves
-[15:53:11] [PROCESS] ENHANCEMENT 1: Threshold-Marginalized Exponent
-[15:53:11] [INFO] Threshold range: 1.10 - 1.50
-[15:53:11] [INFO] Exponent range: 0.274 - 0.413
-[15:53:11] [SUCCESS] Weighted-average exponent: α = 0.3545 ± 0.0135
-[15:53:11] [INFO] TEP prediction: α = 1/3 = 0.3333
-[15:53:11] [INFO] Deviation: 1.6σ
-[15:53:11] [PROCESS] BOOTSTRAP: 1000 Resamples Across Thresholds
-[15:53:14] [INFO] Bootstrap alpha: 0.3549 ± 0.0428 (std)
-[15:53:14] [INFO] Bootstrap 95% CI: [0.2645, 0.4390]
-[15:53:14] [INFO] Deviation from 1/3: 0.5σ
-[15:53:14] [PROCESS] ENHANCEMENT 2: RAR-Based Transition Radius
-[15:53:14] [INFO] RAR-based transition (g_bar < a0):
-[15:53:14] [INFO]   Exponent: α = 0.5656 ± 0.0322
-[15:53:14] [INFO]   Correlation: r = 0.805
-[15:53:14] [INFO]   N galaxies: 170
-[15:53:14] [PROCESS] ENHANCEMENT 3: Fixed α = 1/3, Fit Screening Density
-[15:53:14] [INFO] Normalization k = 7.8602e-04 kpc / M_sun^(1/3)
-[15:53:14] [INFO] Implied screening density: ρ_screen = 4.92e+08 M_sun/kpc^3
-[15:53:14] [INFO]                          = 0.4916 M_sun/pc^3
-[15:53:14] [INFO] Typical disk density at optical radius: ~0.01-0.1 M_sun/pc^3
-[15:53:14] [INFO] Is ρ_screen physically reasonable? True
-[15:53:14] [INFO] RMS scatter with α = 1/3: 0.480 dex
-[15:53:14] [PROCESS] ENHANCEMENT 4: Connection to MOND Acceleration Scale
-[15:53:14] [INFO] Characteristic transition acceleration:
-[15:53:14] [INFO]   g_TEP = 4.86e-10 m/s^2
-[15:53:14] [INFO]   a0_MOND = 1.20e-10 m/s^2
-[15:53:14] [INFO]   Ratio g_TEP / a0_MOND = 4.05
-[15:53:15] [SUCCESS] Saved: figure_5_sparc_enhanced.png
-[15:53:15] [INFO] 
-[15:53:15] [INFO] ================================================================================
-[15:53:15] [INFO] ENHANCED ANALYSIS SUMMARY
-[15:53:15] [INFO] ================================================================================
-[15:53:15] [INFO] 
-[15:53:15] [INFO] Threshold-marginalized exponent: α = 0.354 ± 0.014
-[15:53:15] [INFO]   TEP prediction (1/3) within 1.6σ
-[15:53:15] [INFO] Bootstrap (1000 resamples): α = 0.355 ± 0.043
-[15:53:15] [INFO]   95% CI: [0.265, 0.439]
-[15:53:15] [INFO] Fixed α = 1/3 analysis: ρ = 0.492 M_sun/pc^3, RMS = 0.48 dex
-[15:53:15] [INFO] Connection to MOND: g_TEP / a0 = 4.0x
-[15:53:15] [SUCCESS] Analysis confirms M^(1/3) scaling is robust across thresholds
-[15:53:15] [INFO] Milky Way prediction: R_DM = k * M^(1/3) = 3.1 kpc
-[15:53:15] [INFO]   (M_bar = 6.0e+10 M_sun, k = 7.8602e-04)
-[15:53:15] [SUCCESS] Numerical outputs saved to results/outputs/step_4_sparc_analysis.json
-[15:53:15] [SUCCESS] Completed in 4.0s
+[13:34:28] [INFO]
+[13:34:28] [INFO] ================================================================================
+[13:34:28] [INFO] SPARC Enhanced Analysis: Robust TEP Test
+[13:34:28] [INFO] ================================================================================
+[13:34:28] [INFO]
+[13:34:28] [PROCESS] Parsing SPARC Table1 (galaxy properties)
+[13:34:28] [PROCESS] Parsing SPARC Table2 (rotation curves)
+[13:34:28] [SUCCESS] Loaded 175 galaxies with rotation curves
+[13:34:28] [PROCESS] ENHANCEMENT 1: Threshold-Marginalized Exponent
+[13:34:28] [INFO] Threshold range: 1.10 - 1.50
+[13:34:28] [INFO] Exponent range: 0.274 - 0.413
+[13:34:28] [SUCCESS] Weighted-average exponent: α = 0.3545 ± 0.0135
+[13:34:28] [INFO] TEP prediction: α = 1/3 = 0.3333
+[13:34:28] [INFO] Deviation: 1.6σ
+[13:34:28] [PROCESS] BOOTSTRAP: 1000 Resamples Across Thresholds
+[13:34:30] [INFO] Bootstrap alpha: 0.3549 ± 0.0428 (std)
+[13:34:30] [INFO] Bootstrap 95% CI: [0.2645, 0.4390]
+[13:34:30] [INFO] Deviation from 1/3: 0.5σ
+[13:34:30] [PROCESS] ENHANCEMENT 2: RAR-Based Transition Radius
+[13:34:30] [INFO] RAR-based transition (g_bar < a0):
+[13:34:30] [INFO]   Exponent: α = 0.5656 ± 0.0322
+[13:34:30] [INFO]   Correlation: r = 0.805
+[13:34:30] [INFO]   N galaxies: 170
+[13:34:30] [PROCESS] ENHANCEMENT 3: Fixed α = 1/3, Fit Screening Density
+[13:34:30] [INFO] Normalization k = 7.8602e-04 kpc / M_sun^(1/3)
+[13:34:30] [INFO] Implied screening density: ρ_screen = 4.92e+08 M_sun/kpc^3
+[13:34:30] [INFO]                          = 0.4916 M_sun/pc^3
+[13:34:30] [INFO] Typical disk density at optical radius: ~0.01-0.1 M_sun/pc^3
+[13:34:30] [INFO] Is ρ_screen physically reasonable? True
+[13:34:30] [INFO] RMS scatter with α = 1/3: 0.480 dex
+[13:34:30] [PROCESS] ENHANCEMENT 4: Connection to MOND Acceleration Scale
+[13:34:30] [INFO] Characteristic transition acceleration:
+[13:34:30] [INFO]   g_TEP = 4.86e-10 m/s^2
+[13:34:30] [INFO]   a0_MOND = 1.20e-10 m/s^2
+[13:34:30] [INFO]   Ratio g_TEP / a0_MOND = 4.05
+[13:34:30] [SUCCESS] Saved: figure_5_sparc_enhanced.png
+[13:34:30] [INFO]
+[13:34:30] [INFO] ================================================================================
+[13:34:30] [INFO] ENHANCED ANALYSIS SUMMARY
+[13:34:30] [INFO] ================================================================================
+[13:34:30] [INFO]
+[13:34:30] [INFO] Threshold-marginalized exponent: α = 0.354 ± 0.014
+[13:34:30] [INFO]   TEP prediction (1/3) within 1.6σ
+[13:34:30] [INFO] Bootstrap (1000 resamples): α = 0.355 ± 0.043
+[13:34:30] [INFO]   95% CI: [0.265, 0.439]
+[13:34:30] [INFO] Fixed α = 1/3 analysis: ρ = 0.492 M_sun/pc^3, RMS = 0.48 dex
+[13:34:30] [INFO] Connection to MOND: g_TEP / a0 = 4.0x
+[13:34:30] [SUCCESS] Analysis confirms M^(1/3) scaling is robust across thresholds
+[13:34:30] [INFO] Milky Way prediction: R_DM = k * M^(1/3) = 3.1 kpc
+[13:34:30] [INFO]   (M_bar = 6.0e+10 M_sun, k = 7.8602e-04)
+[13:34:30] [SUCCESS] Numerical outputs saved to results/outputs/step_4_sparc_analysis.json
+[13:34:30] [SUCCESS] Completed in 2.3s

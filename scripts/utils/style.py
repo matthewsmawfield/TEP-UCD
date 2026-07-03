@@ -8,7 +8,7 @@ COLORS = {
     'highlight': '#F39C12',
     'hover': '#A64D79',
     'text': '#220126',
-    'background': '#F8F8FF',
+    'background': '#FFFFFF',
     'grid': '#CCCCCC',
     'black': '#111111',
     'gray': '#666666',
@@ -46,7 +46,7 @@ FIG_SCALE = {
 }
 
 
-def set_pub_style(scale=1.0, dpi=600, transparent=True):
+def set_pub_style(scale=1.0, dpi=600, transparent=False):
     base_font = 9
     plt.rcParams.update({
         'font.family': 'serif',

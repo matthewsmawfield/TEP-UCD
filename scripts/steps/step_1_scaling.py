@@ -107,7 +107,7 @@ def run_scaling_analysis():
     ax.legend(loc='upper left', frameon=False)
 
     plt.tight_layout()
-    plt.savefig(os.path.join(output_dir, 'figure_2_scaling.png'), transparent=True)
+    plt.savefig(os.path.join(output_dir, 'figure_2_scaling.png'))
     print_status("Figure saved to results/figures/figure_2_scaling.png", "SUCCESS")
 
     # Save numerical outputs

@@ -1,3 +1,7 @@
+v0.7 (New Delhi) — 3 July 2026 — change title, consistency and framing revision
+- Retitling and framing alignment across the project to reflect the Temporal Topology saturation-scale wording and candidate-scale interpretation
+- Cross-project consistency pass covering manuscript text, metadata
+
 v0.6 (New Delhi) — 12 June 2026 — integrity revision and consistency edits
 - Figures: renumbered (6→1, 7→2, 8→E.1), regenerated SPARC residuals with r=+0.297, softened captions, eliminated duplicate numbering
 - Abstract & metadata: synchronized across README, zenodo, CITATION.cff, citation.json, codemeta.json, manifest.json, site/index.html; SPARC uncertainty now reports combined (stat)±0.07(definition); screening hierarchy uses S~10^-9
@@ -15,10 +19,8 @@ v0.3 (New Delhi) - Title and Terminology Refinement
 - Added DOI badge and PDF download link to manuscript header
 - Synchronized abstract across all citation files and zenodo.txt
 
-v0.2.1 (New Delhi) - LaTeX Notation Fix
-- Fixed Planck mass notation: M_{\rm Pl} → M_{\text{Pl}} (8 instances across 5 component files)
-
 v0.2 (New Delhi) - Topology Nomenclature Update
+- Fixed Planck mass notation: M_{\rm Pl} → M_{\text{Pl}} (8 instances across 5 component files)
 - Adopted continuous Temporal Topology framework (replaces discrete screening terminology)
 - Formalized Temporal Shear nomenclature for field gradient superposition
 - Aligned screening descriptions with continuous geometric profiles per theory paper v0.7

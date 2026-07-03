@@ -1,6 +1,6 @@
-[15:53:09] [INFO] SPARC data directory: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/data/sparc
-[15:53:09] [INFO] Required files: ['Table1.mrt', 'Table2.mrt']
-[15:53:09] [INFO] Already exists: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/data/sparc/Table1.mrt
-[15:53:09] [INFO] Already exists: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/data/sparc/Table2.mrt
-[15:53:09] [SUCCESS] All data files present.
-[15:53:09] [SUCCESS] Completed in 0.0s
+[13:34:26] [INFO] SPARC data directory: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/data/sparc
+[13:34:26] [INFO] Required files: ['Table1.mrt', 'Table2.mrt']
+[13:34:26] [INFO] Already exists: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/data/sparc/Table1.mrt
+[13:34:26] [INFO] Already exists: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/data/sparc/Table2.mrt
+[13:34:26] [SUCCESS] All data files present.
+[13:34:26] [SUCCESS] Completed in 0.1s

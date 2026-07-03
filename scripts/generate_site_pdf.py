@@ -255,11 +255,11 @@ async def generate_pdf(quality: str = 'high', wait_time: float = 5.0, skip_build
         # Copy to docs directory
         final_pdf = copy_pdf_to_docs(output_pdf, docs_dir)
         
-        # Copy to root directory
-        copy_pdf_to_root(final_pdf, base_dir)
-        
         # Process with metadata
         process_pdf_with_metadata(final_pdf)
+
+        # Copy processed PDF to root directory so both outputs are identical
+        copy_pdf_to_root(final_pdf, base_dir)
         
         print(f"\n✅ Complete! PDF available at:")
         print(f"   {final_pdf}")

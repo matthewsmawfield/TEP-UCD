@@ -2,6 +2,13 @@
 
 const fs = require('fs');
 const path = require('path');
+function processIncludes(html) {
+    return html.replace(/<!--\s*include:\s*([^\s]+)\s*-->/g, (_, relPath) => {
+        const fullPath = path.join(__dirname, '..', 'core', relPath);
+        return fs.existsSync(fullPath) ? fs.readFileSync(fullPath, 'utf8').trim() : '';
+    });
+}
+
 
 async function buildStaticSite() {
     console.log('🔨 Building static site...');
@@ -34,7 +41,7 @@ async function buildStaticSite() {
             const componentPath = path.join(__dirname, 'components', section.file);
             
             if (fs.existsSync(componentPath)) {
-                const componentHtml = fs.readFileSync(componentPath, 'utf8');
+                const componentHtml = processIncludes(fs.readFileSync(componentPath, 'utf8'));
                 
                 // Wrap component in section container (matching the dynamic loader)
                 componentsHtml += `
@@ -102,7 +109,7 @@ async function buildStaticSite() {
         const distFiguresPath = path.join(distDir, 'figures');
         if (fs.existsSync(resultsFiguresPath)) {
             console.log('📁 Copying results/figures/ → dist/figures/');
-            copyRecursiveSync(resultsFiguresPath, distFiguresPath);
+            copyRecursiveSync(resultsFiguresPath, distFiguresPath, ['screening_comprehensive.png']);
         }
         
         // Copy manifest.json for reference
@@ -137,7 +144,7 @@ async function buildStaticSite() {
             fs.mkdirSync(docsDir, { recursive: true });
         }
         const versionPath = path.join(__dirname, '..', 'VERSION.json');
-        let versionInfo = { version: '0.5', codename: 'New Delhi' };
+        let versionInfo = { version: '0.7', codename: 'New Delhi' };
         if (fs.existsSync(versionPath)) {
             versionInfo = JSON.parse(fs.readFileSync(versionPath, 'utf8'));
         }
@@ -196,11 +203,16 @@ async function buildStaticSite() {
 }
 
 // Helper function to copy directories recursively
-function copyRecursiveSync(src, dest) {
+function copyRecursiveSync(src, dest, excludeList = []) {
+    const basename = path.basename(src);
+    if (excludeList.includes(basename)) {
+        return;
+    }
+
     const exists = fs.existsSync(src);
     const stats = exists && fs.statSync(src);
     const isDirectory = exists && stats.isDirectory();
-    
+
     if (isDirectory) {
         if (!fs.existsSync(dest)) {
             fs.mkdirSync(dest, { recursive: true });
@@ -208,7 +220,8 @@ function copyRecursiveSync(src, dest) {
         fs.readdirSync(src).forEach(childItemName => {
             copyRecursiveSync(
                 path.join(src, childItemName),
-                path.join(dest, childItemName)
+                path.join(dest, childItemName),
+                excludeList
             );
         });
     } else {

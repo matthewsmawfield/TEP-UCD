@@ -186,7 +186,7 @@ def run_wd_screening():
 
     plt.tight_layout()
     output_path = os.path.join(output_dir, "figure_3_wd_screening.png")
-    plt.savefig(output_path, transparent=True)
+    plt.savefig(output_path)
     print_status("Figure saved to results/figures/figure_3_wd_screening.png", "SUCCESS")
 
     # Save numerical outputs

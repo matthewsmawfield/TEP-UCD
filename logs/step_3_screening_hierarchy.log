@@ -1,7 +1,7 @@
-[15:53:10] [PROCESS] Initializing screening hierarchy analysis
-[15:53:10] [INFO] R_TEP (Earth) = 4146.4 km, rho_T = 20.00 g/cm^3
-[15:53:10] [INFO] Loaded 26 objects for screening hierarchy
-[15:53:10] [PROCESS] Computing screening factors R_T / R_phys for all objects
-[15:53:11] [SUCCESS] Figure saved to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/scripts/steps/../../results/figures/figure_4_screening_hierarchy.png
-[15:53:11] [SUCCESS] Numerical outputs saved to results/outputs/step_3_screening_hierarchy.json
-[15:53:11] [SUCCESS] Completed in 0.5s
+[13:34:28] [PROCESS] Initializing screening hierarchy analysis
+[13:34:28] [INFO] R_TEP (Earth) = 4146.4 km, rho_T = 20.00 g/cm^3
+[13:34:28] [INFO] Loaded 26 objects for screening hierarchy
+[13:34:28] [PROCESS] Computing screening factors R_T / R_phys for all objects
+[13:34:28] [SUCCESS] Figure saved to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/scripts/steps/../../results/figures/figure_4_screening_hierarchy.png
+[13:34:28] [SUCCESS] Numerical outputs saved to results/outputs/step_3_screening_hierarchy.json
+[13:34:28] [SUCCESS] Completed in 0.5s

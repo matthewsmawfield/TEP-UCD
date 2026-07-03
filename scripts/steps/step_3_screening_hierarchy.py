@@ -251,7 +251,7 @@ def run_screening_hierarchy():
     ax2.text(1e1, 1e7, "Screened Regime\n(Scalar Field > Physical)", ha='center', color=COLORS['primary'])
 
     output_path = os.path.join(output_dir, 'figure_4_screening_hierarchy.png')
-    plt.savefig(output_path, transparent=True)
+    plt.savefig(output_path)
     print_status(f"Figure saved to {output_path}", "SUCCESS")
 
     # Save numerical outputs
