@@ -1185,7 +1185,7 @@ Table 9b: Multivariate Geometric Regression Predictions
 
 The relative weighting of the spacecraft and Earth CMB projections was determined by scanning the coefficient *w* in the linear combination E = cos *θ*<sub>SC-CMB</sub> + *w* (v<sub>Earth</sub> · n<sub>CMB</sub> / 30) and selecting the value that maximizes |*r*(E, ratio)|. The optimal weight is *w* = −1.21, yielding:
 
-Optimal combination: E = cos *θ*<sub>SC-CMB</sub> − 1.21 (v<sub>Earth</sub> · n<sub>CMB</sub> / 30)
+Optimal combination: E = cos *θ*<sub>SC-CMB</sub> − 1.21 (v<sub>Earth</sub> · n<sub>CMB</sub> / 30) 
 Pearson *r* = −0.61, *p* = 0.11 (n = 8)
 
 The scan does not yield a conventionally significant correlation at n = 8. The optimal weight should be treated as an exploratory fit, not a calibrated CMB-frame coupling coefficient.
@@ -1731,9 +1731,9 @@ independent constraint on the transition radius ($R_{\rm sol} \approx
 4200$ km). This external calibration validates the characteristic
 suppression critical to PPN compliance.
 
-- Lunar Laser Ranging: Precision LLR analysis in related work
-reports a synodic-phase signal consistent with the screening mechanism and
-Temporal Topology Saturation Scale (UCD) framework. Independent LLR validation would
+- Lunar Laser Ranging: Precision LLR analysis in related work 
+reports a synodic-phase signal consistent with the screening mechanism and 
+Temporal Topology Saturation Scale (UCD) framework. Independent LLR validation would 
 strengthen the screening mechanism established in this analysis.
 
 ## Data Availability

@@ -128,7 +128,7 @@ mean across centers)
 
 Statistical robustness: Distance-binned fits R² = 0.920–0.970 on
 ~28 bins vs. null mean 0.015–0.040 (ΔR² = 0.89–0.95; z =
-15.8–31.9, all p
+15.8–31.9, all p 
 
 Rigorous uncertainty quantification: Dual bootstrap approaches
 provide comprehensive validation — (1) 5000-iteration block
@@ -1010,7 +1010,7 @@ Result: The distance distribution matching ensures that any observed λ<sub>EW</
 
 Anisotropy Metric:
 
-A<sub>aniso</sub>(t) = λ<sub>EW</sub>(t) / λ<sub>NS</sub>(t)
+A<sub>aniso</sub>(t) = λ<sub>EW</sub>(t) / λ<sub>NS</sub>(t)            
 from 8-sector fits with matched distance distributions (KS p > 0.05).
 
 Statistical Analysis: Meta-analysis combines results across analysis centers using Fisher's Z-transformation to pool correlation coefficients. Low heterogeneity metrics (Q = 0.24, I² = 0%) indicate consistent effects across centers. High station overlap (83–90%) means combined evidence represents corroboration across independent processing methodologies rather than fully independent replications.
@@ -1031,7 +1031,7 @@ A<sub>exp</sub> (Expected Amplitude): The theoretically predicted TEP correlatio
 
 Enhancement Factor:
 
-E ≡ A<sub>obs</sub> / A<sub>exp</sub> = A<sub>obs</sub> / (M/d²)
+E ≡ A<sub>obs</sub> / A<sub>exp</sub> = A<sub>obs</sub> / (M/d²)            
 
 The enhancement factor E provides a normalized comparison of observed versus expected coupling strength. However, E should not be tested for correlation with mass—since E already divides by mass, testing whether E correlates with mass is circular and uninformative.
 
@@ -1041,11 +1041,11 @@ To test whether observed amplitudes follow gravitational scaling predictions, a 
 
 **Linear Gravitational Scaling:**
 
-r<sub>linear</sub> = correlation(A<sub>obs</sub>, M/d²)
+r<sub>linear</sub> = correlation(A<sub>obs</sub>, M/d²)            
 
 **Quadratic/Tidal Scaling:**
 
-r<sub>quadratic</sub> = correlation(A<sub>obs</sub>, (M/d²)²)
+r<sub>quadratic</sub> = correlation(A<sub>obs</sub>, (M/d²)²)            
 
 **Interpretation:**
 
@@ -1055,7 +1055,7 @@ r<sub>quadratic</sub> = correlation(A<sub>obs</sub>, (M/d²)²)
 
 - If both r ≈ 0: No gravitational scaling (coupling mechanism mass-independent)
 
-- If r
+- If r 
 
 Critical Methodological Note: Earlier analysis draft versions tested whether E correlated with mass. This approach is mathematically circular because E = A<sub>obs</sub>/(M/d²) already divides by mass. Testing whether E correlates with mass is equivalent to asking "does (X/M) correlate with M?"—the answer is always near-zero by construction, providing no information about gravitational scaling. The proper test examines A<sub>obs</sub> directly (Section 3.4.4).
 
@@ -1688,7 +1688,7 @@ network-wide synchronization)
 (rotational dynamics)
 
 **Collective oscillation:** Annual period
-(365.25 days) with R² = 0.35, p
+(365.25 days) with R² = 0.35, p 
 
 **Earth coupling:** Oscillation period matches
 Earth's orbital motion
@@ -2542,7 +2542,7 @@ structure.
 Cross-Validation: This finding aligns with Step 3.6 multiband analysis
 showing the 112-day period as dominant across all analysis centers, and
 supports the non-ionospheric origin through TID exclusion analysis. The
-systematic ranking of temporal effects (ESA Final
+systematic ranking of temporal effects (ESA Final 
 
 3.5.3 Comprehensive Diurnal Analysis: Associations Consistent with Dynamical
 Time
@@ -3397,7 +3397,7 @@ Multipath Systematic Effects
 Site-dependent multipath signatures could create
 distance-structured patterns
 
-- Expected scale: Site-specific (typically
+- Expected scale: Site-specific (typically 
 Discrimination: Carrier-phase analysis at raw level needed
 
 Reference Frame Instabilities
@@ -5005,7 +5005,7 @@ Edit `.env` file with your instance details:
 
 `./run_tep_gcp_high_cpu.sh`
 
-What It Does:
+What It Does:                
 
 - Automated Setup: Installs all dependencies (Python packages, system libraries)
 

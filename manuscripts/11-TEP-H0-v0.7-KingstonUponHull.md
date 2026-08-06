@@ -1,7 +1,7 @@
 # The Cepheid Bias: Resolving the Hubble Tension
-**Matthew Lukin Smawfield**
-Version: v0.7 (Kingston upon Hull)
-First published: 11 January 2026 · Last updated: 2 July 2026
+**Matthew Lukin Smawfield**  
+Version: v0.7 (Kingston upon Hull)  
+First published: 11 January 2026 · Last updated: 2 July 2026  
 DOI: 10.5281/zenodo.18209702
 
 ---
@@ -965,7 +965,7 @@ sample. The weak metallicity correlation is consistent with a secondary
 mass-metallicity effect: once $\sigma$ is controlled for, metallicity does
 not show a statistically significant association with the distance-ladder residual displayed in $H_0$-equivalent units.
 
->
+> 
 
 ### 3.3 Cross-Probe Consistency: Cepheid and Pulsar Channels
 
@@ -1094,7 +1094,7 @@ calibration galaxy alongside LMC and NGC 4258, the multi-anchor regression
 ($N=3$ galaxies; MW excluded due to its distinct parallax-based methodology)
 yields:
 
->
+> 
 **Multi-anchor regression ($N=3$):** $\kappa_{\rm anchor} = (0.246 \pm 0.139) \times 10^6$ mag ($1.78\sigma$ from zero).  The anchor-only regression yields a positive coefficient ($1.78\sigma$), directionally consistent with the host-inferred scale, though the small sample limits precision.  The decisive test is whether a pre-specified screening prescription can reconcile the anchor residuals with the host-inferred coefficient.
 
 **Joint host + anchor environmental-screening model ($N=32$):**
@@ -1277,7 +1277,7 @@ consistent with the TEP mediation prediction. The confound model would
 predict a stronger attenuation (to near-zero correlation). This pattern
 is opposite to the behavior expected from a pure nuisance confounder.
 
->
+> 
 
 #### Group Environment as a Physical Prediction
 
@@ -1453,7 +1453,7 @@ mag/dex
 **Sign:** Positive (Cepheid distances shrink relative to
 TRGB in deep potentials)
 
->
+> 
 
 #### Interpretation
 
@@ -1550,7 +1550,7 @@ blending.
 The HST J/H band analysis from Kodric et al. (2018, J/ApJ/864/59) ($N_{\rm inner}=78$,
 $N_{\rm outer}=69$) yields:
 
->
+> 
 Result: $\Delta W = +0.68 \pm 0.19$ mag (Inner Fainter), significant at
 3.6σ. The signal shows a continuous radial gradient (Pearson $r =
 -0.16$, $p = 0.0014$) and survives all photometric quality cuts.
@@ -2648,7 +2648,7 @@ stellar-dispersion spectroscopy; TRGB stratification by $\sigma$; JWST
 Cepheid imaging) to more directly validate or falsify the proposed
 mechanism.
 
->
+> 
 
 ### Code and Data Availability
 
@@ -3276,7 +3276,7 @@ scales across independent probes spanning ~8 orders of magnitude
 in period supports the TEP framework's prediction of environment-dependent
 response coefficients.
 
->
+> 
 
 #### Broader TEP Context: Theoretical Consistency Across Clock Channels
 

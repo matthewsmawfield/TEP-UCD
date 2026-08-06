@@ -1,4 +1,4 @@
-# Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars
+# TEP: Suppressed Density Scaling in Globular Cluster Pulsars
 **Matthew Lukin Smawfield**
 Version: v0.7 (Caracas)
 First published: 9 January 2026 · Last updated: 3 July 2026
@@ -274,7 +274,7 @@ TEP makes empirical claims that can be tested. The following tests either *const
 
 #### Key discriminating tests
 
-- N-body Dynamics (Pulsar Falsifier): If rigorous analysis using the full 20-cluster corrected CMC catalog set can reproduce the 0.612 dex controlled residual *and* the suppressed density scaling (slope 0.393) without modified gravity, the pulsar signal is claimed by standard physics.
+- N-body Dynamics (Pulsar Falsifier): If rigorous analysis using the full 20-cluster corrected CMC catalog set can reproduce the 0.612 dex controlled residual *and* the suppressed density scaling (slope 0.393) without modified gravity, the pulsar signal is attributable to standard dynamics.
 
 #### Model-dependent expectations (parameterization-level constraints)
 
@@ -1562,7 +1562,7 @@ Rigorous tests can validate or challenge the TEP interpretation of the pulsar ti
 
 #### High-Priority Falsification Tests
 
-- N-body Dynamics (Pulsar Falsifier): If rigorous analysis using the full CMC catalogs for 20 clusters can reproduce the 0.612 dex controlled residual *and* the suppressed density scaling (slope 0.393) without modified gravity, the pulsar signal is claimed by standard physics.
+- N-body Dynamics (Pulsar Falsifier): If rigorous analysis using the full CMC catalogs for 20 clusters can reproduce the 0.612 dex controlled residual *and* the suppressed density scaling (slope 0.393) without modified gravity, the pulsar signal is attributable to standard dynamics.
 
 ## 4.9 Limitations and Robustness
 
@@ -1778,7 +1778,7 @@ The interpretation of the pulsar signal relies on the suppressed density scaling
 
 Comparison of observed residuals against synthetic pulsars from Cluster Monte Carlo (CMC) catalogs (Kremer et al. 2020) provides the critical N-body test. The analysis includes 18,813 synthetic MSPs (20 CMC clusters) across 20 clusters (M62, M15, M13, Terzan 5, NGC 6517, 47 Tuc, M28, M3, M4, M5, Omega Cen, NGC 6397, NGC 6752).
 
-| Test | CMC Prediction | Observed | Discrepancy |
+| Test | CMC Prediction | Observed | Difference / interpretation |
 | --- | --- | --- | --- |
 | Raw Excess | 1.88 dex (computed from CMC) | 0.63 dex | 12.7σ model-data tension (CMC overpredicts 3.0×, not detection significance) |
 | Density Scaling | 0.75 ± 0.04 | 0.39 ± 0.08 | 4.1σ |
@@ -1828,7 +1828,7 @@ The repository includes a comprehensive reproduction guide (see `README.md`) to 
 
 ## TEP Series: Foundational Theory
 
-Smawfield, M. L. (2025). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.9 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
+Smawfield, M. L. (2025). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.8 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
 
 Smawfield, M. L. (2025). *Global Time Echoes: Distance-Structured Correlations in GNSS Clocks*. Preprint v0.25 (Jaipur). Zenodo. DOI: [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) (Paper 1)
 
@@ -1850,9 +1850,9 @@ Smawfield, M. L. (2025). *What Do Precision Tests of General Relativity Actually
 
 Smawfield, M. L. (2026). *Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars*. Preprint v0.7 (Caracas). Zenodo. DOI: [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) (Paper 10 — this work)
 
-Smawfield, M. L. (2026). *The Cepheid Bias: Resolving the Hubble Tension*. Preprint v0.7 (Kingston upon Hull). Zenodo. DOI: [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) (Paper 11)
+Smawfield, M. L. (2026). *The Cepheid Bias: Resolving the Hubble Tension*. Preprint v0.6 (Kingston upon Hull). Zenodo. DOI: [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) (Paper 11)
 
-Smawfield, M. L. (2026). *Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies*. Preprint v0.5 (Kos). Zenodo. DOI: [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) (Paper 12)
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies*. Preprint v0.4 (Kos). Zenodo. DOI: [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) (Paper 12)
 
 Smawfield, M. L. (2026). *Temporal Equivalence Principle: Temporal Shear Recovery in Gaia DR3 Wide Binaries*. Preprint v0.3 (Kilifi). Zenodo. DOI: [10.5281/zenodo.19102061](https://doi.org/10.5281/zenodo.19102061) (Paper 13)
 
