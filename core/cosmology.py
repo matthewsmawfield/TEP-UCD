@@ -3,7 +3,7 @@
 TEP Cosmological Distance Models
 =================================
 
-Version: TEP v0.9 (Jakarta)
+Version: TEP v0.10 (Jakarta)
 
 Provides the luminosity-distance--redshift relation for competing hypotheses,
 used by standard-siren and cosmology analyses across the TEP corpus.
@@ -30,8 +30,6 @@ Functions ``f_T_suppression``, ``f_T``, ``conformal_factor_native``,
 ``alpha_A_native``, and ``jordan_frame_M`` mirror ``background.c`` in
 ``external/patches/hiclass_tep_native.patch`` (TEP-HC).
 """
-
-from __future__ import annotations
 
 import numpy as np
 from scipy.integrate import cumulative_trapezoid, quad
