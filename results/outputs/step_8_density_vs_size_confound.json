@@ -1,0 +1,108 @@
+{
+  "description": "Density-threshold vs disk size-mass confound test on SPARC",
+  "method": "R_DM = first radius with Vobs/Vbar > threshold (step_4 convention). Size null: R_DM/R_d mass-independent. Density prediction: rho_bar(<R_DM) = 3 M_enc/(4 pi R_DM^3) mass-independent, with M_enc = V_bar(R_DM)^2 R_DM / G (spherical estimate).",
+  "ml_disk": 0.5,
+  "ml_bulge": 0.7,
+  "gas_factor": 1.33,
+  "mass_size_relation_Rd_vs_Mbar": {
+    "slope": 0.32202919477002934,
+    "slope_err": 0.017034631629265735,
+    "pearson_r": 0.8208630317692898,
+    "pearson_p": 6.044099257682779e-44,
+    "n": 175
+  },
+  "primary_threshold": 1.3,
+  "per_threshold": {
+    "1.20": {
+      "n_galaxies": 168,
+      "size_invariant_Rdm_over_Rd": {
+        "n": 168,
+        "median": 0.5530793194344596,
+        "scatter_dex_raw": 0.48542120082576146,
+        "scatter_dex_detrended": 0.48526749624330484,
+        "slope_vs_mass": 0.013490151803947031,
+        "slope_err": 0.04159686507336321,
+        "pearson_r": 0.025163129564447474,
+        "pearson_p": 0.7461139549713343,
+        "spearman_rho": 0.07101097888753348,
+        "spearman_p": 0.3603538675605311
+      },
+      "density_invariant_rho_enc": {
+        "n": 168,
+        "median": 0.025829448569353382,
+        "scatter_dex_raw": 0.7987163350396284,
+        "scatter_dex_detrended": 0.750329584792295,
+        "slope_vs_mass": 0.30236311878067906,
+        "slope_err": 0.0643178427172235,
+        "pearson_r": 0.34277000200122737,
+        "pearson_p": 5.410939707294447e-06,
+        "spearman_rho": 0.32336847859648415,
+        "spearman_p": 1.9072409090965123e-05
+      },
+      "median_Rdm_over_Rd": 0.5530793194344596,
+      "median_rho_enc_Msun_pc3": 0.025829448569353382,
+      "verdict": "size_scaling"
+    },
+    "1.30": {
+      "n_galaxies": 167,
+      "size_invariant_Rdm_over_Rd": {
+        "n": 167,
+        "median": 0.6415094339622641,
+        "scatter_dex_raw": 0.5155373267255526,
+        "scatter_dex_detrended": 0.51305064738323,
+        "slope_vs_mass": 0.05569474351074534,
+        "slope_err": 0.043984723034069986,
+        "pearson_r": 0.09810033699048044,
+        "pearson_p": 0.20721575849859813,
+        "spearman_rho": 0.15798695208550198,
+        "spearman_p": 0.041436938415127036
+      },
+      "density_invariant_rho_enc": {
+        "n": 167,
+        "median": 0.020717669399249055,
+        "scatter_dex_raw": 0.8110837597518793,
+        "scatter_dex_detrended": 0.792468842984837,
+        "slope_vs_mass": 0.19026361700586794,
+        "slope_err": 0.06793973021884019,
+        "pearson_r": 0.21301316693430516,
+        "pearson_p": 0.005712297584433408,
+        "spearman_rho": 0.15921341482267823,
+        "spearman_p": 0.03986303813837316
+      },
+      "median_Rdm_over_Rd": 0.6415094339622641,
+      "median_rho_enc_Msun_pc3": 0.020717669399249055,
+      "verdict": "size_scaling"
+    },
+    "1.40": {
+      "n_galaxies": 162,
+      "size_invariant_Rdm_over_Rd": {
+        "n": 162,
+        "median": 0.7848077640910788,
+        "scatter_dex_raw": 0.5325689502773125,
+        "scatter_dex_detrended": 0.5267959121730843,
+        "slope_vs_mass": 0.08605174632184158,
+        "slope_err": 0.045826543259322006,
+        "pearson_r": 0.14684161464383338,
+        "pearson_p": 0.06223234824721288,
+        "spearman_rho": 0.20514394667502162,
+        "spearman_p": 0.008825269549979654
+      },
+      "density_invariant_rho_enc": {
+        "n": 162,
+        "median": 0.015363892047641325,
+        "scatter_dex_raw": 0.8151788788014,
+        "scatter_dex_detrended": 0.8116337336590499,
+        "slope_vs_mass": 0.08356424041587421,
+        "slope_err": 0.07060489185047222,
+        "pearson_r": 0.09316072442161802,
+        "pearson_p": 0.23834771124279155,
+        "spearman_rho": 0.0021550720403747878,
+        "spearman_p": 0.9782864840275143
+      },
+      "median_Rdm_over_Rd": 0.7848077640910788,
+      "median_rho_enc_Msun_pc3": 0.015363892047641325,
+      "verdict": "density_threshold"
+    }
+  },
+  "primary_verdict": "size_scaling"
+}

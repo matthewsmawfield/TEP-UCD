@@ -1,11 +1,11 @@
-[13:34:27] [PROCESS] Initializing white dwarf screening analysis
-[13:34:27] [INFO] TEP screening length: 4146360.6 m (from rho_T = 20.0 g/cm³)
-[13:34:27] [INFO] WD mass range: 0.10 to 1.44 M_sun (200 points)
-[13:34:27] [PROCESS] Computing WD physical radius R_WD ~ M^(-1/3)
-[13:34:27] [PROCESS] Computing TEP soliton radius R_T ~ M^(1/3)
-[13:34:27] [INFO] Sirius B: R_phys = 5800 km, R_T = 2.89e+05 km, S = 50x
-[13:34:27] [INFO] Chandrasekhar limit: R_phys = 6163 km, R_T = 3.25e+05 km, S = 53x
-[13:34:27] [PROCESS] Generating WD screening figure
-[13:34:28] [SUCCESS] Figure saved to results/figures/figure_3_wd_screening.png
-[13:34:28] [SUCCESS] Numerical outputs saved to results/outputs/step_2_wd_screening.json
-[13:34:28] [SUCCESS] Completed in 0.4s
+[18:48:26] [PROCESS] Initializing white dwarf screening analysis
+[18:48:26] [INFO] TEP screening length: 4146360.6 m (from rho_T = 20.0 g/cm³)
+[18:48:26] [INFO] WD mass range: 0.10 to 1.44 M_sun (200 points)
+[18:48:26] [PROCESS] Computing WD physical radius R_WD ~ M^(-1/3)
+[18:48:26] [PROCESS] Computing TEP soliton radius R_T ~ M^(1/3)
+[18:48:26] [INFO] Sirius B: R_phys = 5800 km, R_T = 2.89e+05 km, S = 50x
+[18:48:26] [INFO] Chandrasekhar limit: R_phys = 6163 km, R_T = 3.25e+05 km, S = 53x
+[18:48:26] [PROCESS] Generating WD screening figure
+[18:48:26] [SUCCESS] Figure saved to results/figures/figure_3_wd_screening.png
+[18:48:26] [SUCCESS] Numerical outputs saved to results/outputs/step_2_wd_screening.json
+[18:48:26] [SUCCESS] Completed in 0.3s

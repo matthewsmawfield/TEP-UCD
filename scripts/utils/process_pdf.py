@@ -143,7 +143,7 @@ def build_metadata(cff_data):
     metadata = {
         'Title': title,
         'Author': author_name,
-        'Subject': keywords,
+        'Subject': abstract,
         'Keywords': keywords,
         'Producer': producer_label,
         'Copyright': f'Creative Commons Attribution 4.0 International License ({license_str})',

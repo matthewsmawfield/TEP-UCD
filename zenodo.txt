@@ -12,7 +12,8 @@ The ρ^(1/3) hierarchy is a consistency relation induced by the R_T(M) construct
 
 Evidence hierarchy. Within the evidence hierarchy of the TEP series, the GNSS clock analyses (Papers 1–3) provide the primary empirical input for the terrestrial correlation scale; the present paper tests the cross-scale consequences of conditionally identifying that scale with R_T(M_⊕).
 
-Website: https://matthewsmawfield.github.io/TEP-UCD/
+Website: https://mlsmawfield.com/tep/ucd/
+Repository: https://github.com/matthewsmawfield/TEP-UCD
 Code Availability: https://github.com/matthewsmawfield/TEP-UCD
 
 DOI: 10.5281/zenodo.18064365

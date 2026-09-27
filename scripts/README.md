@@ -15,7 +15,9 @@ scripts/
 │   ├── step_4b_sparc_examples.py
 │   ├── step_5_ultimate_screening.py
 │   ├── step_6_sensitivity.py
-│   └── step_7_sparc_residuals.py
+│   ├── step_7_sparc_residuals.py
+│   ├── step_8_density_vs_size_confound.py
+│   └── step_9_phantom_amplitude.py
 ├── utils/                # Shared utilities (style, logging)
 ├── verification/         # Verification audits
 │   └── verify_screening_claim.py
@@ -50,6 +52,8 @@ cd site && npm run build
 | `steps/step_5_ultimate_screening.py` | `screening_comprehensive.png` | Comprehensive screening plot (not in manuscript) |
 | `steps/step_6_sensitivity.py` | `figure_8_sensitivity.png` | Sensitivity and feasibility analysis |
 | `steps/step_7_sparc_residuals.py` | `figure_7_sparc_residuals.png` | Residual analysis (baryonic vs screening proxies) |
+| `steps/step_8_density_vs_size_confound.py` | `step_8_density_vs_size_confound.json` | Density-threshold vs disk size–mass confound test |
+| `steps/step_9_phantom_amplitude.py` | `step_9_phantom_amplitude.json` | Phantom-mass plateau amplitude and radial-profile test |
 | `verification/verify_screening_claim.py` | — | Verifies S ∝ rho^0.334 claim from object data |
 
 ## SPARC Scaling Analysis (`step_4_sparc_analysis.py`)

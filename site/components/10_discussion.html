@@ -264,11 +264,21 @@
 
 <p>
     Paper 11 (TEP-H0) independently calibrates the weakly screened galactic-disk
-    response via Cepheid period–luminosity residuals, yielding
-    \(\kappa_{\rm Cep} \sim 10^6\) (dimensionless, in the appropriate
-    observable basis). Paper 10 (TEP-COS) measures the globular-cluster
-    pulsar response \(\kappa_{\rm MSP}^{\rm emp} \approx 3 \times 10^4\)
-    after dense-cluster geometric suppression. The two values are consistent
+    response via Cepheid period–luminosity residuals. The Paper 0 benchmark
+    normalization is \(\kappa_{\rm Cep}^{\rm bench} \sim 10^6\), while the
+    empirical channel returns \(0.33\)–\(0.45 \times 10^6\) (dimensionless, in
+    the appropriate observable basis) — a factor \(2\)–\(3\) benchmark/empirical
+    gap carried as an unresolved normalization target (Paper 0, issue-class
+    0-17), attributable to host-screening normalization or additional
+    period-structure in the transfer function. Paper 10 (TEP-COS) measures the globular-cluster
+    pulsar response \(\tilde\kappa_{\rm MSP} \approx 3 \times 10^4\)
+    (full response coefficient, step_44_kappa_msp_prior.json)
+    after dense-cluster geometric suppression; the mapping to Paper 10's
+    effective channel coefficient is \(\kappa_{\rm MSP} = \tilde\kappa_{\rm
+    MSP}\,\mathcal S_{\rm cluster} \approx 0.05\), i.e. a cluster suppression
+    factor \(\mathcal S_{\rm cluster} \approx 1.7\times10^{-6}\) applied to the
+    full response — the same coefficient quoted under the un-tilded symbol.
+    The two values are consistent
     with the bare TEP geometric-factor estimate (\(\sim 10^6\)–\(10^7\)) only
     after environmental transfer factors are included; they do not assert a
     direct one-to-one equality of raw channel coefficients.
@@ -300,19 +310,19 @@
         </tr>
         <tr>
             <td><strong>Cepheids (Paper 11)</strong></td>
-            <td>\(\kappa_{\rm Cep} \sim 10^6\)</td>
+            <td>\(\kappa_{\rm Cep} = 0.33\)–\(0.45 \times 10^6\) empirical; benchmark \(\sim 10^6\)</td>
             <td>Galactic disk (weakly screened)</td>
             <td>Period–luminosity modulation</td>
         </tr>
         <tr>
             <td><strong>Pulsars (Paper 10)</strong></td>
-            <td>\(\kappa_{\rm MSP} \sim 10^4\)</td>
+            <td>\(\tilde\kappa_{\rm MSP} \sim 10^4\) full; \(\kappa_{\rm MSP} \approx 0.05\) effective</td>
             <td>Globular cluster (strongly screened)</td>
             <td>Spin-down excess (suppressed)</td>
         </tr>
         <tr>
             <td><strong>Wide binaries (Paper 13)</strong></td>
-            <td>\(\alpha_{\rm sat} \approx 0.37\)</td>
+            <td>\(\alpha_{\rm sat} \approx 0.366\)</td>
             <td>Galactic halo (unscreened)</td>
             <td>Velocity-profile saturation</td>
         </tr>
@@ -343,12 +353,18 @@
 <h4>Ultra-Diffuse Galaxies (DF2/DF4)</h4>
 <p>
     The "dark matter free" galaxies NGC 1052-DF2 and DF4 pose a challenge to
-    theories where dark matter and baryons are dynamically coupled. TEP resolves
-    this via "soliton stripping." Unlike a particulate halo, the scalar envelope
-    can be physically stripped from the baryons during high-velocity encounters
-    (as proposed by van Dokkum et al. 2022). The remaining baryonic component
-    would appear devoid of dark matter until it re-equilibrates a new (smaller)
-    soliton, a process governed by the field relaxation timescale.
+    theories where dark matter and baryons are dynamically coupled. TEP offers
+    an illustrative mechanism — "soliton stripping" — stated here as a
+    qualitative possibility pending a dynamical treatment: the scalar field is
+    not a separable substance, so "stripping" denotes the disruption and
+    slow re-equilibration of the baryon-anchored field configuration during a
+    high-velocity encounter (as proposed by van Dokkum et al. 2022), with the
+    timescale set by the effective mass $m_{\rm eff}$ and the encounter
+    velocity rather than by material removal. The remaining baryonic component
+    would appear devoid of dark matter until the field configuration
+    re-equilibrates. A quantitative version requires the relaxation timescale
+    of the disrupted profile to be computed; until then the mechanism is
+    registered as illustrative, not as a demonstrated channel.
 </p>
 
 <h3>Systematic Uncertainties</h3>
@@ -369,9 +385,13 @@
     systematic because it reflects the actual range of scales recovered by
     independent processing pipelines applied to the same underlying data, and the
     consensus value (4,200 km) lies within that range. Propagating this alone gives
-    $\rho_T = 20 \pm 7$ g/cm³. The $M^{1/3}$ structural form is
-    independent of $\rho_T$; only the normalization changes. This uncertainty
-    is far smaller than the dynamic range over which the model is tested,
+    $\rho_T = 20 \pm 7$ g/cm³; the epoch/window instability established by the
+    executed held-out discriminator (Paper 14 Step 3.1; quarterly-window scatter
+    of 1,050–1,935 km on an identical product) is the dominant calibration
+    systematic and widens the effective band to roughly $8$–$70$ g/cm³
+    (Appendix B.8). The $M^{1/3}$ structural form is
+    independent of $\rho_T$; only the normalization changes. Even the widened
+    band is far smaller than the dynamic range over which the model is tested,
     preserving the falsifiability of the scaling law.
 </p>
 
@@ -564,13 +584,14 @@
         density scaling of spin-down excess (\(\Gamma \approx 0.39\) dex/dex,
         vs. Newtonian \(0.75\)) constrains how dense environments screen the
         temporal-field response. The observable coefficient
-        \(\kappa_{\rm MSP}\) is a downstream projection, not a direct
+        \(\tilde\kappa_{\rm MSP}\) is a downstream projection, not a direct
         \(\rho_T\) measurement.
     </li>
     <li>
-        <strong>Cepheids (Paper 11):</strong> The Cepheid clock-bias response
-        \(\kappa_{\rm Cep} \sim 10^6\) in galactic disks bridges the
-        weakly screened regime. It agrees with \(\kappa_{\rm MSP}\) only
+        <strong>Cepheids (Paper 11):</strong> The Cepheid clock-bias response —
+        \(0.33\)–\(0.45\times10^6\) empirically, against the \(\sim 10^6\)
+        benchmark normalization — in galactic disks bridges the
+        weakly screened regime. It agrees with \(\tilde\kappa_{\rm MSP}\) only
         after environmental transfer factors are applied, demonstrating that
         response coefficients are channel-specific projections.
     </li>

@@ -1,548 +1,54 @@
 {
-  "pipeline": "TEP-UCD",
-  "version": "v0.7 (New Delhi)",
-  "date": "2026-09-23T18:48:32",
-  "elapsed_seconds": 6.67,
-  "steps": {
-    "step_0_download_data": {
-      "status": "completed",
-      "outputs": {
-        "status": "ok",
-        "dir": "/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/data/sparc"
-      }
+    "description": "Phantom-mass amplitude and radial-profile test on SPARC",
+    "method": "Plateau ratio = median V_obs/V_bar over outer third of each curve. S_eff = (ratio^2 - 1)/(2 beta_A^2) with |beta_A| = 1. Enhancement profile slope = d log E / d log R with E = V_obs^2/V_bar^2 - 1 = M_ph/M_bar(<R). V_bar floor 5.0 km/s, >= 6 valid points required.",
+    "ml_disk": 0.5,
+    "ml_bulge": 0.7,
+    "gas_factor": 1.33,
+    "beta_A": 1.0,
+    "bare_saturation_ratio_sqrt3": 1.7320508075688772,
+    "n_galaxies_analyzed": 164,
+    "plateau_ratio": {
+        "n": 164,
+        "median": 1.979771673497092,
+        "p16": 1.3810842898936464,
+        "p84": 2.491023322143659,
+        "mean": 2.001484124168731
     },
-    "step_1_scaling": {
-      "status": "completed",
-      "outputs": {
-        "M_earth_kg": 5.972e+24,
-        "R_TEP_earth_m": 4146360.5584198027,
-        "M_rbh_solar": 20000000.0,
-        "R_rbh_km": 78008778.5722887,
-        "mass_range_solar": [
-          3.0033141058200587e-06,
-          100000000000.00005
-        ],
-        "radius_tep_range_km": [
-          4146.360558419806,
-          1333931349.8824224
-        ]
-      }
+    "S_eff_plateau": {
+        "n": 164,
+        "median": 1.4597558446625984,
+        "p16": 0.4538708231611782,
+        "p84": 2.6026052436821243,
+        "mean": 1.655519564055896
     },
-    "step_2_wd_screening": {
-      "status": "completed",
-      "outputs": {
-        "sirius_b_mass": 1.018,
-        "sirius_b_radius_km": 5800.0,
-        "sirius_b_R_T_km": 289100.87452455005,
-        "screening_factor_sirius": 49.84497836630173,
-        "chandra_mass": 1.44,
-        "chandra_radius_km": 6163.419701259145,
-        "chandra_R_T_km": 324529.5967285117,
-        "screening_factor_chandra": 52.654145337889695
-      }
+    "fraction_S_eff_gt_1": 0.7073170731707317,
+    "fraction_S_eff_gt_0": 0.9817073170731707,
+    "enhancement_profile_slope": {
+        "n": 161,
+        "median": 0.4582240968981185,
+        "p16": -0.034619008423860134,
+        "p84": 1.3230559262831176,
+        "mean": 0.5928179009684437
     },
-    "step_3_screening_hierarchy": {
-      "status": "completed",
-      "outputs": {
-        "objects": 26,
-        "rho_T_g_cm3": 20.0,
-        "R_TEP_earth_km": 4146.360558419803,
-        "screening_data": {
-          "Mercury": {
-            "M_kg": 3.2846e+23,
-            "R_km": 2439.0,
-            "rho_g_cm3": 5.43,
-            "R_T_km": 1576.8412088846567,
-            "screening": 0.6465113607563168,
-            "type": "planet"
-          },
-          "Venus": {
-            "M_kg": 4.86718e+24,
-            "R_km": 6051.0,
-            "rho_g_cm3": 5.24,
-            "R_T_km": 3873.0484895725795,
-            "screening": 0.6400675077793058,
-            "type": "planet"
-          },
-          "Earth": {
-            "M_kg": 5.972e+24,
-            "R_km": 6371.0,
-            "rho_g_cm3": 5.51,
-            "R_T_km": 4146.360558419803,
-            "screening": 0.6508178556615607,
-            "type": "planet"
-          },
-          "Mars": {
-            "M_kg": 6.39004e+23,
-            "R_km": 3390.0,
-            "rho_g_cm3": 3.93,
-            "R_T_km": 1968.4678402736827,
-            "screening": 0.5806689794317648,
-            "type": "planet"
-          },
-          "Jupiter": {
-            "M_kg": 1.8979016000000002e+27,
-            "R_km": 69911.0,
-            "rho_g_cm3": 1.33,
-            "R_T_km": 28295.56448260961,
-            "screening": 0.40473694386590964,
-            "type": "planet"
-          },
-          "Saturn": {
-            "M_kg": 5.6853440000000006e+26,
-            "R_km": 58232.0,
-            "rho_g_cm3": 0.69,
-            "R_T_km": 18932.707012770414,
-            "screening": 0.3251254810545819,
-            "type": "planet"
-          },
-          "Uranus": {
-            "M_kg": 8.6594e+25,
-            "R_km": 25362.0,
-            "rho_g_cm3": 1.27,
-            "R_T_km": 10110.89806782437,
-            "screening": 0.39866327844114696,
-            "type": "planet"
-          },
-          "Neptune": {
-            "M_kg": 1.0212120000000002e+26,
-            "R_km": 24622.0,
-            "rho_g_cm3": 1.64,
-            "R_T_km": 10682.324540325862,
-            "screening": 0.43385283650092854,
-            "type": "planet"
-          },
-          "Moon": {
-            "M_kg": 7.345560000000001e+22,
-            "R_km": 1737.0,
-            "rho_g_cm3": 3.34,
-            "R_T_km": 957.1252389133259,
-            "screening": 0.5510220143427322,
-            "type": "planet"
-          },
-          "Teide 1": {
-            "M_kg": 1.04384588e+29,
-            "R_km": 62919.9,
-            "rho_g_cm3": 100.3429355281207,
-            "R_T_km": 107606.68657777284,
-            "screening": 1.7102170629287847,
-            "type": "bd"
-          },
-          "Gliese 229B": {
-            "M_kg": 7.5916064e+28,
-            "R_km": 55928.8,
-            "rho_g_cm3": 103.90624999999999,
-            "R_T_km": 96769.46932580377,
-            "screening": 1.730226096855355,
-            "type": "bd"
-          },
-          "Sun": {
-            "M_kg": 1.98847e+30,
-            "R_km": 696340.0,
-            "rho_g_cm3": 1.41,
-            "R_T_km": 287386.797430775,
-            "screening": 0.41271045384549937,
-            "type": "ms"
-          },
-          "Proxima": {
-            "M_kg": 2.4259333999999997e+29,
-            "R_km": 107236.36,
-            "rho_g_cm3": 56.8,
-            "R_T_km": 142534.53053269917,
-            "screening": 1.3291623338641778,
-            "type": "ms"
-          },
-          "Sirius A": {
-            "M_kg": 4.0962482e+30,
-            "R_km": 1190741.4,
-            "rho_g_cm3": 0.59,
-            "R_T_km": 365669.9054972518,
-            "screening": 0.30709430737627147,
-            "type": "ms"
-          },
-          "Alpha Cen A": {
-            "M_kg": 2.1873170000000002e+30,
-            "R_km": 849534.7999999999,
-            "rho_g_cm3": 0.85,
-            "R_T_km": 296663.676432476,
-            "screening": 0.34920720897187024,
-            "type": "ms"
-          },
-          "Alpha Cen B": {
-            "M_kg": 1.789623e+30,
-            "R_km": 598852.4,
-            "rho_g_cm3": 2.0,
-            "R_T_km": 277468.90219522174,
-            "screening": 0.4633343745390713,
-            "type": "ms"
-          },
-          "Sirius B": {
-            "M_kg": 2.02426246e+30,
-            "R_km": 5800.0,
-            "rho_g_cm3": 2380000.0,
-            "R_T_km": 289100.87452455005,
-            "screening": 49.84497836630173,
-            "type": "wd"
-          },
-          "Procyon B": {
-            "M_kg": 1.19705894e+30,
-            "R_km": 8600.0,
-            "rho_g_cm3": 550000.0,
-            "R_T_km": 242660.4376255502,
-            "screening": 28.216329956459326,
-            "type": "wd"
-          },
-          "40 Eri B": {
-            "M_kg": 1.1334278999999999e+30,
-            "R_km": 9500.0,
-            "rho_g_cm3": 380000.0,
-            "R_T_km": 238282.28967999612,
-            "screening": 25.082346282104854,
-            "type": "wd"
-          },
-          "Stein 2051B": {
-            "M_kg": 1.3123902e+30,
-            "R_km": 8200.0,
-            "rho_g_cm3": 650000.0,
-            "R_T_km": 250215.83531165894,
-            "screening": 30.514126257519383,
-            "type": "wd"
-          },
-          "Typical NS": {
-            "M_kg": 2.783858e+30,
-            "R_km": 12.0,
-            "rho_g_cm3": 400000000000000.0,
-            "R_T_km": 321496.4323859943,
-            "screening": 26791.369365499526,
-            "type": "ns"
-          },
-          "Hulse-Taylor": {
-            "M_kg": 2.8633968e+30,
-            "R_km": 11.0,
-            "rho_g_cm3": 600000000000000.0,
-            "R_T_km": 324529.5967285116,
-            "screening": 29502.690611682876,
-            "type": "pulsar"
-          },
-          "Double Pulsar": {
-            "M_kg": 2.6645498000000003e+30,
-            "R_km": 12.0,
-            "rho_g_cm3": 370000000000000.0,
-            "R_T_km": 316836.406428367,
-            "screening": 26403.033869030583,
-            "type": "pulsar"
-          },
-          "Vela X-1": {
-            "M_kg": 3.579246e+30,
-            "R_km": 12.0,
-            "rho_g_cm3": 500000000000000.0,
-            "R_T_km": 349588.9105669816,
-            "screening": 29132.409213915133,
-            "type": "pulsar"
-          },
-          "RBH-1": {
-            "M_kg": 3.97694e+37,
-            "R_km": 32000000.0,
-            "rho_g_cm3": 200000.0,
-            "R_T_km": 78008778.5722887,
-            "screening": 2.437774330384022,
-            "type": "bh"
-          },
-          "M87*": {
-            "M_kg": 1.2925054999999999e+40,
-            "R_km": 19000000000.0,
-            "rho_g_cm3": 6000.0,
-            "R_T_km": 536337213.8661728,
-            "screening": 0.028228274414009095,
-            "type": "bh"
-          }
-        }
-      }
+    "n_profile_positive": 133,
+    "n_profile_finite": 161,
+    "profile_wilcoxon_p": 1.0343142001926415e-17,
+    "E_outer_median": {
+        "n": 164,
+        "median": 2.919693071425073,
+        "p16": 0.9077684271345946,
+        "p84": 5.219618447272837,
+        "mean": 3.312665301245184
     },
-    "step_4_sparc_analysis": {
-      "status": "completed",
-      "outputs": {
-        "alpha_marginalized": 0.35445136840579006,
-        "alpha_err_marginalized": 0.01350495321917755,
-        "alpha_boot": 0.35490227449393696,
-        "alpha_boot_err": 0.04279143798578596,
-        "k": 0.0007860216159370755,
-        "rho_screen_pc3": 0.4915955265614741,
-        "rms_scatter_dex": 0.47971316578890383,
-        "g_transition": 4.859563682425492e-10,
-        "a0_MOND": 1.2e-10,
-        "n_galaxies": 167,
-        "threshold_exponents": {
-          "1.10": {
-            "alpha": 0.2744323016107197,
-            "std_err": 0.035970632931440386,
-            "n_galaxies": 170
-          },
-          "1.15": {
-            "alpha": 0.3030891356298874,
-            "std_err": 0.036762420661962364,
-            "n_galaxies": 168
-          },
-          "1.20": {
-            "alpha": 0.33023136609751136,
-            "std_err": 0.03836739029526588,
-            "n_galaxies": 168
-          },
-          "1.25": {
-            "alpha": 0.3585772942705071,
-            "std_err": 0.039891709691340156,
-            "n_galaxies": 168
-          },
-          "1.30": {
-            "alpha": 0.3723812776616528,
-            "std_err": 0.041014142570940354,
-            "n_galaxies": 167
-          },
-          "1.35": {
-            "alpha": 0.3979643803405023,
-            "std_err": 0.04272100373439922,
-            "n_galaxies": 164
-          },
-          "1.40": {
-            "alpha": 0.40318200558116923,
-            "std_err": 0.04248201663333245,
-            "n_galaxies": 162
-          },
-          "1.45": {
-            "alpha": 0.4042069362372226,
-            "std_err": 0.04554076565241347,
-            "n_galaxies": 153
-          },
-          "1.50": {
-            "alpha": 0.4127777626607677,
-            "std_err": 0.04546570079158428,
-            "n_galaxies": 151
-          }
-        },
-        "milky_way": {
-          "M_bar_Msun": 60000000000.0,
-          "R_dm_kpc": 3.0771705894913155
-        }
-      }
+    "E_inner_median": {
+        "n": 164,
+        "median": 1.2266751842759165,
+        "p16": 0.15259840590898607,
+        "p84": 3.6939400646930194,
+        "mean": 2.1282109905713185
     },
-    "step_4b_sparc_examples": {
-      "status": "completed",
-      "outputs": {
-        "figure": "figure_6_sparc_examples.png",
-        "K_TEP": 0.0007860216159370755
-      }
-    },
-    "step_5_ultimate_screening": {
-      "status": "completed",
-      "outputs": {
-        "objects": 26,
-        "screening_slope": 0.3337735867180422,
-        "screening_intercept": -0.4489030417430735,
-        "screening_r2": 0.9999495157538255,
-        "screening_r": 0.9999747575583223,
-        "screening_std_err": 0.0007905322861102757
-      }
-    },
-    "step_6_sensitivity": {
-      "status": "completed",
-      "outputs": {
-        "grid_size": 200,
-        "figure": "figure_8_sensitivity.png",
-        "rho_T_g_cm3": 20.0,
-        "M87_star": {
-          "M_kg": 1.2925054999999999e+40,
-          "M_solar": 6499999999.999999,
-          "R_T_km": 536337213.866173,
-          "R_T_AU": 3.585141803918269
-        },
-        "Sgr_A_star": {
-          "M_kg": 8.550421e+36,
-          "M_solar": 4300000.0,
-          "R_T_km": 46732925.03867125,
-          "R_T_AU": 0.3123858625579629
-        }
-      }
-    },
-    "step_7_sparc_residuals": {
-      "status": "completed",
-      "outputs": {
-        "n_galaxies": 167,
-        "rms_scatter": 0.47971316578890383,
-        "r_gas": -0.16393626580461215,
-        "p_gas": 0.0342636658119509,
-        "r_sigma": -0.1290659982947543,
-        "p_sigma": 0.09644602479272722,
-        "r_inc": 0.2966111028330125,
-        "p_inc": 9.93274233755627e-05,
-        "r_rho": -0.10810055472014986,
-        "p_rho": 0.16436105565563863,
-        "interpretation": "TEP (Field Theory)"
-      }
-    },
-    "step_8_density_vs_size_confound": {
-      "status": "completed",
-      "outputs": {
-        "description": "Density-threshold vs disk size-mass confound test on SPARC",
-        "method": "R_DM = first radius with Vobs/Vbar > threshold (step_4 convention). Size null: R_DM/R_d mass-independent. Density prediction: rho_bar(<R_DM) = 3 M_enc/(4 pi R_DM^3) mass-independent, with M_enc = V_bar(R_DM)^2 R_DM / G (spherical estimate).",
-        "ml_disk": 0.5,
-        "ml_bulge": 0.7,
-        "gas_factor": 1.33,
-        "mass_size_relation_Rd_vs_Mbar": {
-          "slope": 0.32202919477002934,
-          "slope_err": 0.017034631629265735,
-          "pearson_r": 0.8208630317692898,
-          "pearson_p": 6.044099257682779e-44,
-          "n": 175
-        },
-        "primary_threshold": 1.3,
-        "per_threshold": {
-          "1.20": {
-            "n_galaxies": 168,
-            "size_invariant_Rdm_over_Rd": {
-              "n": 168,
-              "median": 0.5530793194344596,
-              "scatter_dex_raw": 0.48542120082576146,
-              "scatter_dex_detrended": 0.48526749624330484,
-              "slope_vs_mass": 0.013490151803947031,
-              "slope_err": 0.04159686507336321,
-              "pearson_r": 0.025163129564447474,
-              "pearson_p": 0.7461139549713343,
-              "spearman_rho": 0.07101097888753348,
-              "spearman_p": 0.3603538675605311
-            },
-            "density_invariant_rho_enc": {
-              "n": 168,
-              "median": 0.025829448569353382,
-              "scatter_dex_raw": 0.7987163350396284,
-              "scatter_dex_detrended": 0.750329584792295,
-              "slope_vs_mass": 0.30236311878067906,
-              "slope_err": 0.0643178427172235,
-              "pearson_r": 0.34277000200122737,
-              "pearson_p": 5.410939707294447e-06,
-              "spearman_rho": 0.32336847859648415,
-              "spearman_p": 1.9072409090965123e-05
-            },
-            "median_Rdm_over_Rd": 0.5530793194344596,
-            "median_rho_enc_Msun_pc3": 0.025829448569353382,
-            "verdict": "size_scaling"
-          },
-          "1.30": {
-            "n_galaxies": 167,
-            "size_invariant_Rdm_over_Rd": {
-              "n": 167,
-              "median": 0.6415094339622641,
-              "scatter_dex_raw": 0.5155373267255526,
-              "scatter_dex_detrended": 0.51305064738323,
-              "slope_vs_mass": 0.05569474351074534,
-              "slope_err": 0.043984723034069986,
-              "pearson_r": 0.09810033699048044,
-              "pearson_p": 0.20721575849859813,
-              "spearman_rho": 0.15798695208550198,
-              "spearman_p": 0.041436938415127036
-            },
-            "density_invariant_rho_enc": {
-              "n": 167,
-              "median": 0.020717669399249055,
-              "scatter_dex_raw": 0.8110837597518793,
-              "scatter_dex_detrended": 0.792468842984837,
-              "slope_vs_mass": 0.19026361700586794,
-              "slope_err": 0.06793973021884019,
-              "pearson_r": 0.21301316693430516,
-              "pearson_p": 0.005712297584433408,
-              "spearman_rho": 0.15921341482267823,
-              "spearman_p": 0.03986303813837316
-            },
-            "median_Rdm_over_Rd": 0.6415094339622641,
-            "median_rho_enc_Msun_pc3": 0.020717669399249055,
-            "verdict": "size_scaling"
-          },
-          "1.40": {
-            "n_galaxies": 162,
-            "size_invariant_Rdm_over_Rd": {
-              "n": 162,
-              "median": 0.7848077640910788,
-              "scatter_dex_raw": 0.5325689502773125,
-              "scatter_dex_detrended": 0.5267959121730843,
-              "slope_vs_mass": 0.08605174632184158,
-              "slope_err": 0.045826543259322006,
-              "pearson_r": 0.14684161464383338,
-              "pearson_p": 0.06223234824721288,
-              "spearman_rho": 0.20514394667502162,
-              "spearman_p": 0.008825269549979654
-            },
-            "density_invariant_rho_enc": {
-              "n": 162,
-              "median": 0.015363892047641325,
-              "scatter_dex_raw": 0.8151788788014,
-              "scatter_dex_detrended": 0.8116337336590499,
-              "slope_vs_mass": 0.08356424041587421,
-              "slope_err": 0.07060489185047222,
-              "pearson_r": 0.09316072442161802,
-              "pearson_p": 0.23834771124279155,
-              "spearman_rho": 0.0021550720403747878,
-              "spearman_p": 0.9782864840275143
-            },
-            "median_Rdm_over_Rd": 0.7848077640910788,
-            "median_rho_enc_Msun_pc3": 0.015363892047641325,
-            "verdict": "density_threshold"
-          }
-        },
-        "primary_verdict": "size_scaling"
-      }
-    },
-    "step_9_phantom_amplitude": {
-      "status": "completed",
-      "outputs": {
-        "description": "Phantom-mass amplitude and radial-profile test on SPARC",
-        "method": "Plateau ratio = median V_obs/V_bar over outer third of each curve. S_eff = (ratio^2 - 1)/(2 beta_A^2) with |beta_A| = 1. Enhancement profile slope = d log E / d log R with E = V_obs^2/V_bar^2 - 1 = M_ph/M_bar(<R). V_bar floor 5.0 km/s, >= 6 valid points required.",
-        "ml_disk": 0.5,
-        "ml_bulge": 0.7,
-        "gas_factor": 1.33,
-        "beta_A": 1.0,
-        "bare_saturation_ratio_sqrt3": 1.7320508075688772,
-        "n_galaxies_analyzed": 164,
-        "plateau_ratio": {
-          "n": 164,
-          "median": 1.979771673497092,
-          "p16": 1.3810842898936464,
-          "p84": 2.491023322143659,
-          "mean": 2.001484124168731
-        },
-        "S_eff_plateau": {
-          "n": 164,
-          "median": 1.4597558446625984,
-          "p16": 0.4538708231611782,
-          "p84": 2.6026052436821243,
-          "mean": 1.655519564055896
-        },
-        "fraction_S_eff_gt_1": 0.7073170731707317,
-        "fraction_S_eff_gt_0": 0.9817073170731707,
-        "enhancement_profile_slope": {
-          "n": 161,
-          "median": 0.4582240968981185,
-          "p16": -0.034619008423860134,
-          "p84": 1.3230559262831176,
-          "mean": 0.5928179009684437
-        },
-        "n_profile_positive": 133,
-        "n_profile_finite": 161,
-        "profile_wilcoxon_p": 1.0343142001926415e-17,
-        "E_outer_median": {
-          "n": 164,
-          "median": 2.919693071425073,
-          "p16": 0.9077684271345946,
-          "p84": 5.219618447272837,
-          "mean": 3.312665301245184
-        },
-        "E_inner_median": {
-          "n": 164,
-          "median": 1.2266751842759165,
-          "p16": 0.15259840590898607,
-          "p84": 3.6939400646930194,
-          "mean": 2.1282109905713185
-        },
-        "per_galaxy": {
-          "CamB": {
+    "per_galaxy": {
+        "CamB": {
             "R_last": 1.79,
             "n_points": 8,
             "plateau_ratio": 1.2134111102350267,
@@ -550,8 +56,8 @@
             "enhancement_profile_slope": null,
             "E_outer_median": 0.4723665224418001,
             "E_inner_median": -0.5844460067743023
-          },
-          "D564-8": {
+        },
+        "D564-8": {
             "R_last": 3.07,
             "n_points": 6,
             "plateau_ratio": 2.7245003111456847,
@@ -559,8 +65,8 @@
             "enhancement_profile_slope": 0.9493869519352932,
             "E_outer_median": 6.431251954384157,
             "E_inner_median": 1.8599660724628615
-          },
-          "D631-7": {
+        },
+        "D631-7": {
             "R_last": 7.19,
             "n_points": 16,
             "plateau_ratio": 2.9904405608968423,
@@ -568,8 +74,8 @@
             "enhancement_profile_slope": 2.303061321395293,
             "E_outer_median": 7.9427347482570205,
             "E_inner_median": 0.5085378559728984
-          },
-          "DDO064": {
+        },
+        "DDO064": {
             "R_last": 2.98,
             "n_points": 13,
             "plateau_ratio": 1.9082091106332604,
@@ -577,8 +83,8 @@
             "enhancement_profile_slope": -0.288215885715835,
             "E_outer_median": 2.641349714180109,
             "E_inner_median": 3.407105465218697
-          },
-          "DDO154": {
+        },
+        "DDO154": {
             "R_last": 5.92,
             "n_points": 12,
             "plateau_ratio": 2.7676184776187114,
@@ -586,8 +92,8 @@
             "enhancement_profile_slope": 0.7149927161437226,
             "E_outer_median": 6.660712798295859,
             "E_inner_median": 2.5117007923906547
-          },
-          "DDO161": {
+        },
+        "DDO161": {
             "R_last": 13.37,
             "n_points": 31,
             "plateau_ratio": 1.9757954763540635,
@@ -595,8 +101,8 @@
             "enhancement_profile_slope": 0.6186841734815828,
             "E_outer_median": 2.903767764381181,
             "E_inner_median": 0.6358244666542139
-          },
-          "DDO168": {
+        },
+        "DDO168": {
             "R_last": 4.12,
             "n_points": 10,
             "plateau_ratio": 2.125283529752693,
@@ -604,8 +110,8 @@
             "enhancement_profile_slope": 1.077547217476555,
             "E_outer_median": 3.516830081838065,
             "E_inner_median": 0.6120449385995278
-          },
-          "DDO170": {
+        },
+        "DDO170": {
             "R_last": 12.33,
             "n_points": 8,
             "plateau_ratio": 2.0635327084130077,
@@ -613,8 +119,8 @@
             "enhancement_profile_slope": 0.19016345932964457,
             "E_outer_median": 3.258167238690323,
             "E_inner_median": 2.7226998895848373
-          },
-          "ESO079-G014": {
+        },
+        "ESO079-G014": {
             "R_last": 16.67,
             "n_points": 15,
             "plateau_ratio": 1.7367120137680536,
@@ -622,8 +128,8 @@
             "enhancement_profile_slope": 0.2843253270656191,
             "E_outer_median": 2.016168618766288,
             "E_inner_median": 0.9272014297500626
-          },
-          "ESO116-G012": {
+        },
+        "ESO116-G012": {
             "R_last": 9.86,
             "n_points": 15,
             "plateau_ratio": 2.2345140579168223,
@@ -631,8 +137,8 @@
             "enhancement_profile_slope": 0.34804837931567184,
             "E_outer_median": 3.9930530750279036,
             "E_inner_median": 1.6044176131554342
-          },
-          "ESO444-G084": {
+        },
+        "ESO444-G084": {
             "R_last": 4.44,
             "n_points": 7,
             "plateau_ratio": 3.6834825109535823,
@@ -640,8 +146,8 @@
             "enhancement_profile_slope": 0.35655509059748697,
             "E_outer_median": 12.670942427901839,
             "E_inner_median": 5.023618541931409
-          },
-          "ESO563-G021": {
+        },
+        "ESO563-G021": {
             "R_last": 42.41,
             "n_points": 30,
             "plateau_ratio": 1.9536385624094608,
@@ -649,8 +155,8 @@
             "enhancement_profile_slope": 0.5386234220311833,
             "E_outer_median": 2.818872556069131,
             "E_inner_median": 1.0282979318731762
-          },
-          "F561-1": {
+        },
+        "F561-1": {
             "R_last": 9.66,
             "n_points": 6,
             "plateau_ratio": 1.1384169178714019,
@@ -658,8 +164,8 @@
             "enhancement_profile_slope": -0.06850731903598911,
             "E_outer_median": 0.29707372001146504,
             "E_inner_median": 0.6350816147158934
-          },
-          "F563-1": {
+        },
+        "F563-1": {
             "R_last": 20.1,
             "n_points": 17,
             "plateau_ratio": 2.9700413226374383,
@@ -667,8 +173,8 @@
             "enhancement_profile_slope": 0.15513869050102028,
             "E_outer_median": 7.821222375241408,
             "E_inner_median": 7.831742577055232
-          },
-          "F563-V1": {
+        },
+        "F563-V1": {
             "R_last": 7.87,
             "n_points": 6,
             "plateau_ratio": 1.0975801437849757,
@@ -676,8 +182,8 @@
             "enhancement_profile_slope": -0.9338729288993819,
             "E_outer_median": 0.20717035986900978,
             "E_inner_median": 0.8694678120308409
-          },
-          "F563-V2": {
+        },
+        "F563-V2": {
             "R_last": 10.47,
             "n_points": 9,
             "plateau_ratio": 2.4647759795275093,
@@ -685,8 +191,8 @@
             "enhancement_profile_slope": -0.185692159346624,
             "E_outer_median": 5.075120629255792,
             "E_inner_median": 7.592899925765481
-          },
-          "F565-V2": {
+        },
+        "F565-V2": {
             "R_last": 8.8,
             "n_points": 7,
             "plateau_ratio": 2.747128577369084,
@@ -694,8 +200,8 @@
             "enhancement_profile_slope": 0.29675734041266905,
             "E_outer_median": 6.546787380230052,
             "E_inner_median": 5.176974587379854
-          },
-          "F568-1": {
+        },
+        "F568-1": {
             "R_last": 13.23,
             "n_points": 12,
             "plateau_ratio": 2.5581931186668676,
@@ -703,8 +209,8 @@
             "enhancement_profile_slope": 0.26662635274346624,
             "E_outer_median": 5.54557030091928,
             "E_inner_median": 4.810669320674671
-          },
-          "F568-3": {
+        },
+        "F568-3": {
             "R_last": 17.98,
             "n_points": 18,
             "plateau_ratio": 2.1096411883581876,
@@ -712,8 +218,8 @@
             "enhancement_profile_slope": 0.4310829712997068,
             "E_outer_median": 3.4506017594370517,
             "E_inner_median": 1.9619764531862474
-          },
-          "F568-V1": {
+        },
+        "F568-V1": {
             "R_last": 17.63,
             "n_points": 15,
             "plateau_ratio": 2.7459478647483087,
@@ -721,8 +227,8 @@
             "enhancement_profile_slope": 0.19578204369762703,
             "E_outer_median": 6.540229675915795,
             "E_inner_median": 6.805279063316162
-          },
-          "F571-8": {
+        },
+        "F571-8": {
             "R_last": 15.55,
             "n_points": 13,
             "plateau_ratio": 2.849704397915234,
@@ -730,8 +236,8 @@
             "enhancement_profile_slope": 2.4466333407752416,
             "E_outer_median": 7.138590428289241,
             "E_inner_median": -0.4113726003603032
-          },
-          "F571-V1": {
+        },
+        "F571-V1": {
             "R_last": 13.59,
             "n_points": 7,
             "plateau_ratio": 2.357733197394066,
@@ -739,8 +245,8 @@
             "enhancement_profile_slope": 0.4312321350327319,
             "E_outer_median": 4.565615551570267,
             "E_inner_median": 2.855070245959771
-          },
-          "F574-1": {
+        },
+        "F574-1": {
             "R_last": 12.6,
             "n_points": 14,
             "plateau_ratio": 2.2716819166557074,
@@ -748,8 +254,8 @@
             "enhancement_profile_slope": 0.26929699772441745,
             "E_outer_median": 4.160538730460549,
             "E_inner_median": 2.721628796649387
-          },
-          "F579-V1": {
+        },
+        "F579-V1": {
             "R_last": 15.16,
             "n_points": 14,
             "plateau_ratio": 1.9999313054784236,
@@ -757,8 +263,8 @@
             "enhancement_profile_slope": -0.3889350682852696,
             "E_outer_median": 2.9997252266326315,
             "E_inner_median": 6.79391107410268
-          },
-          "F583-1": {
+        },
+        "F583-1": {
             "R_last": 16.26,
             "n_points": 24,
             "plateau_ratio": 2.831495150702378,
@@ -766,8 +272,8 @@
             "enhancement_profile_slope": 0.4582240968981185,
             "E_outer_median": 7.0268540330342315,
             "E_inner_median": 3.4825129538577304
-          },
-          "F583-4": {
+        },
+        "F583-4": {
             "R_last": 7.29,
             "n_points": 11,
             "plateau_ratio": 2.158621918665861,
@@ -775,8 +281,8 @@
             "enhancement_profile_slope": 0.14119660468066864,
             "E_outer_median": 3.659651123319585,
             "E_inner_median": 2.8393295128200524
-          },
-          "IC2574": {
+        },
+        "IC2574": {
             "R_last": 10.23,
             "n_points": 34,
             "plateau_ratio": 2.1016481995156093,
@@ -784,8 +290,8 @@
             "enhancement_profile_slope": 0.36660108492149757,
             "E_outer_median": 3.4169635262155618,
             "E_inner_median": 2.1211190417296257
-          },
-          "IC4202": {
+        },
+        "IC4202": {
             "R_last": 25.9,
             "n_points": 32,
             "plateau_ratio": 1.4976033953245986,
@@ -793,8 +299,8 @@
             "enhancement_profile_slope": 0.9250927672414909,
             "E_outer_median": 1.242815929687766,
             "E_inner_median": 0.5013494195009929
-          },
-          "KK98-251": {
+        },
+        "KK98-251": {
             "R_last": 3.13,
             "n_points": 13,
             "plateau_ratio": 1.7058850169488653,
@@ -802,8 +308,8 @@
             "enhancement_profile_slope": 0.19586950070709713,
             "E_outer_median": 1.9100493237305831,
             "E_inner_median": 1.4520895193392378
-          },
-          "NGC0024": {
+        },
+        "NGC0024": {
             "R_last": 11.27,
             "n_points": 29,
             "plateau_ratio": 2.0525730781174047,
@@ -811,8 +317,8 @@
             "enhancement_profile_slope": 0.34031416330010994,
             "E_outer_median": 3.213070805006295,
             "E_inner_median": 3.6559591079894345
-          },
-          "NGC0055": {
+        },
+        "NGC0055": {
             "R_last": 13.5,
             "n_points": 21,
             "plateau_ratio": 1.8058884952707879,
@@ -820,8 +326,8 @@
             "enhancement_profile_slope": 0.7099802663216126,
             "E_outer_median": 2.2612332573513902,
             "E_inner_median": 0.8243385563477785
-          },
-          "NGC0100": {
+        },
+        "NGC0100": {
             "R_last": 9.62,
             "n_points": 21,
             "plateau_ratio": 2.444220900668545,
@@ -829,8 +335,8 @@
             "enhancement_profile_slope": 0.9666052924117051,
             "E_outer_median": 4.974215811264954,
             "E_inner_median": 1.0503162950436287
-          },
-          "NGC0247": {
+        },
+        "NGC0247": {
             "R_last": 14.54,
             "n_points": 26,
             "plateau_ratio": 1.9897000352201266,
@@ -838,8 +344,8 @@
             "enhancement_profile_slope": -0.11406305086906784,
             "E_outer_median": 2.958906230154973,
             "E_inner_median": 3.7726684098199015
-          },
-          "NGC0289": {
+        },
+        "NGC0289": {
             "R_last": 71.12,
             "n_points": 28,
             "plateau_ratio": 2.0615257692415883,
@@ -847,8 +353,8 @@
             "enhancement_profile_slope": 0.7369059798865114,
             "E_outer_median": 3.249891116999011,
             "E_inner_median": 0.43396908044244764
-          },
-          "NGC0300": {
+        },
+        "NGC0300": {
             "R_last": 11.8,
             "n_points": 25,
             "plateau_ratio": 2.619924786566739,
@@ -856,8 +362,8 @@
             "enhancement_profile_slope": 0.5387978055544764,
             "E_outer_median": 5.864669062688682,
             "E_inner_median": 2.5141275421959097
-          },
-          "NGC0801": {
+        },
+        "NGC0801": {
             "R_last": 59.82,
             "n_points": 13,
             "plateau_ratio": 1.5601363943791564,
@@ -865,8 +371,8 @@
             "enhancement_profile_slope": 0.33799166310320716,
             "E_outer_median": 1.4370988572089425,
             "E_inner_median": 0.4271497821133763
-          },
-          "NGC0891": {
+        },
+        "NGC0891": {
             "R_last": 17.11,
             "n_points": 18,
             "plateau_ratio": 1.3497012978512186,
@@ -874,8 +380,8 @@
             "enhancement_profile_slope": 1.3364118781864545,
             "E_outer_median": 0.8220227584620086,
             "E_inner_median": -0.14875208369288323
-          },
-          "NGC1003": {
+        },
+        "NGC1003": {
             "R_last": 30.24,
             "n_points": 36,
             "plateau_ratio": 2.929112067968685,
@@ -883,8 +389,8 @@
             "enhancement_profile_slope": 1.0213152812820863,
             "E_outer_median": 7.580682918218373,
             "E_inner_median": 1.5344275794960622
-          },
-          "NGC1090": {
+        },
+        "NGC1090": {
             "R_last": 30.09,
             "n_points": 24,
             "plateau_ratio": 1.7082142686847035,
@@ -892,8 +398,8 @@
             "enhancement_profile_slope": 1.197502690521247,
             "E_outer_median": 1.9180209640940695,
             "E_inner_median": 0.6567754523449476
-          },
-          "NGC1705": {
+        },
+        "NGC1705": {
             "R_last": 6.0,
             "n_points": 14,
             "plateau_ratio": 3.5445826359028625,
@@ -901,8 +407,8 @@
             "enhancement_profile_slope": 0.5420996188940488,
             "E_outer_median": 11.564066062744084,
             "E_inner_median": 3.246253066351288
-          },
-          "NGC2366": {
+        },
+        "NGC2366": {
             "R_last": 6.06,
             "n_points": 25,
             "plateau_ratio": 1.7695811425662806,
@@ -910,8 +416,8 @@
             "enhancement_profile_slope": 0.5808424689539045,
             "E_outer_median": 2.1314442695140463,
             "E_inner_median": 1.1571653741641477
-          },
-          "NGC2403": {
+        },
+        "NGC2403": {
             "R_last": 20.87,
             "n_points": 73,
             "plateau_ratio": 2.2333063942374283,
@@ -919,8 +425,8 @@
             "enhancement_profile_slope": 0.5216092073277226,
             "E_outer_median": 3.987657450541783,
             "E_inner_median": 0.9376298726509689
-          },
-          "NGC2683": {
+        },
+        "NGC2683": {
             "R_last": 34.62,
             "n_points": 11,
             "plateau_ratio": 1.9837478706401206,
@@ -928,8 +434,8 @@
             "enhancement_profile_slope": 0.9131507186918709,
             "E_outer_median": 2.9356183784689653,
             "E_inner_median": 0.5209999492260002
-          },
-          "NGC2841": {
+        },
+        "NGC2841": {
             "R_last": 63.64,
             "n_points": 50,
             "plateau_ratio": 2.34949172071656,
@@ -937,8 +443,8 @@
             "enhancement_profile_slope": 0.7472882552764271,
             "E_outer_median": 4.520111345715663,
             "E_inner_median": 1.1346488749812969
-          },
-          "NGC2903": {
+        },
+        "NGC2903": {
             "R_last": 24.96,
             "n_points": 34,
             "plateau_ratio": 1.8317055548224754,
@@ -946,8 +452,8 @@
             "enhancement_profile_slope": 1.6730689793627576,
             "E_outer_median": 2.3557094082182912,
             "E_inner_median": -0.008380532194494139
-          },
-          "NGC2915": {
+        },
+        "NGC2915": {
             "R_last": 10.04,
             "n_points": 30,
             "plateau_ratio": 3.61778458737254,
@@ -955,8 +461,8 @@
             "enhancement_profile_slope": 1.3926652415103074,
             "E_outer_median": 12.088367602734685,
             "E_inner_median": 3.415643601790027
-          },
-          "NGC2955": {
+        },
+        "NGC2955": {
             "R_last": 35.43,
             "n_points": 24,
             "plateau_ratio": 1.3381073416060063,
@@ -964,8 +470,8 @@
             "enhancement_profile_slope": 0.6862594219811239,
             "E_outer_median": 0.7905313755674037,
             "E_inner_median": 0.14550552531681915
-          },
-          "NGC2976": {
+        },
+        "NGC2976": {
             "R_last": 2.27,
             "n_points": 27,
             "plateau_ratio": 1.302023226971326,
@@ -973,8 +479,8 @@
             "enhancement_profile_slope": 0.15218153366291343,
             "E_outer_median": 0.6952644835728254,
             "E_inner_median": 0.5310517590812389
-          },
-          "NGC2998": {
+        },
+        "NGC2998": {
             "R_last": 42.28,
             "n_points": 13,
             "plateau_ratio": 1.7514237713695766,
@@ -982,8 +488,8 @@
             "enhancement_profile_slope": -0.15902266910112817,
             "E_outer_median": 2.069191668975251,
             "E_inner_median": 1.7060874112838684
-          },
-          "NGC3109": {
+        },
+        "NGC3109": {
             "R_last": 6.45,
             "n_points": 23,
             "plateau_ratio": 3.047000403547883,
@@ -991,8 +497,8 @@
             "enhancement_profile_slope": 0.4810243074321551,
             "E_outer_median": 8.284238995877093,
             "E_inner_median": 4.227368515235208
-          },
-          "NGC3198": {
+        },
+        "NGC3198": {
             "R_last": 44.08,
             "n_points": 43,
             "plateau_ratio": 2.0763060886919322,
@@ -1000,8 +506,8 @@
             "enhancement_profile_slope": 0.923070379385709,
             "E_outer_median": 3.31104697393919,
             "E_inner_median": 0.7749846846856121
-          },
-          "NGC3521": {
+        },
+        "NGC3521": {
             "R_last": 17.74,
             "n_points": 41,
             "plateau_ratio": 1.2239984165956717,
@@ -1009,8 +515,8 @@
             "enhancement_profile_slope": 0.7570399510722288,
             "E_outer_median": 0.49822918724238197,
             "E_inner_median": 0.21435980311009994
-          },
-          "NGC3726": {
+        },
+        "NGC3726": {
             "R_last": 32.52,
             "n_points": 12,
             "plateau_ratio": 1.9568341924179546,
@@ -1018,8 +524,8 @@
             "enhancement_profile_slope": 1.5443816098372942,
             "E_outer_median": 2.8323967172198543,
             "E_inner_median": 0.24176690686347513
-          },
-          "NGC3741": {
+        },
+        "NGC3741": {
             "R_last": 7.0,
             "n_points": 21,
             "plateau_ratio": 3.5108857974230867,
@@ -1027,8 +533,8 @@
             "enhancement_profile_slope": 0.6771735340006088,
             "E_outer_median": 11.326319082547144,
             "E_inner_median": 4.20020651131854
-          },
-          "NGC3769": {
+        },
+        "NGC3769": {
             "R_last": 37.16,
             "n_points": 12,
             "plateau_ratio": 2.4658992426612096,
@@ -1036,8 +542,8 @@
             "enhancement_profile_slope": 1.2868432826955236,
             "E_outer_median": 5.080697300015636,
             "E_inner_median": 0.36650220475770434
-          },
-          "NGC3877": {
+        },
+        "NGC3877": {
             "R_last": 11.35,
             "n_points": 13,
             "plateau_ratio": 1.1923952511339166,
@@ -1045,8 +551,8 @@
             "enhancement_profile_slope": -0.8475034523352178,
             "E_outer_median": 0.42193913936323,
             "E_inner_median": 0.9673474872346142
-          },
-          "NGC3893": {
+        },
+        "NGC3893": {
             "R_last": 19.05,
             "n_points": 10,
             "plateau_ratio": 1.7508872555692407,
@@ -1054,8 +560,8 @@
             "enhancement_profile_slope": 1.84201309326086,
             "E_outer_median": 2.065606181714788,
             "E_inner_median": 0.48790135010567215
-          },
-          "NGC3917": {
+        },
+        "NGC3917": {
             "R_last": 14.86,
             "n_points": 17,
             "plateau_ratio": 1.7858739362370142,
@@ -1063,8 +569,8 @@
             "enhancement_profile_slope": 0.17644451206762743,
             "E_outer_median": 2.190736489983807,
             "E_inner_median": 1.9628228619488555
-          },
-          "NGC3949": {
+        },
+        "NGC3949": {
             "R_last": 7.07,
             "n_points": 7,
             "plateau_ratio": 1.3699619689165519,
@@ -1072,8 +578,8 @@
             "enhancement_profile_slope": 1.309167368166839,
             "E_outer_median": 0.8790449017552769,
             "E_inner_median": 0.1739095882132493
-          },
-          "NGC3953": {
+        },
+        "NGC3953": {
             "R_last": 15.68,
             "n_points": 8,
             "plateau_ratio": 1.3258309530984629,
@@ -1081,8 +587,8 @@
             "enhancement_profile_slope": 0.12214461190233872,
             "E_outer_median": 0.7578277161939786,
             "E_inner_median": 0.6460644195161651
-          },
-          "NGC3972": {
+        },
+        "NGC3972": {
             "R_last": 8.72,
             "n_points": 10,
             "plateau_ratio": 1.7826203532476432,
@@ -1090,8 +596,8 @@
             "enhancement_profile_slope": 0.5548505631287417,
             "E_outer_median": 2.1777353238127524,
             "E_inner_median": 1.8134646328526742
-          },
-          "NGC3992": {
+        },
+        "NGC3992": {
             "R_last": 46.02,
             "n_points": 9,
             "plateau_ratio": 1.9656927262189021,
@@ -1099,8 +605,8 @@
             "enhancement_profile_slope": 0.49809795303149007,
             "E_outer_median": 2.8639478939099,
             "E_inner_median": 1.420945153329502
-          },
-          "NGC4010": {
+        },
+        "NGC4010": {
             "R_last": 10.47,
             "n_points": 12,
             "plateau_ratio": 1.6572690490413504,
@@ -1108,8 +614,8 @@
             "enhancement_profile_slope": 0.45522329245498855,
             "E_outer_median": 1.746556609588329,
             "E_inner_median": 0.4637506903811235
-          },
-          "NGC4013": {
+        },
+        "NGC4013": {
             "R_last": 31.01,
             "n_points": 36,
             "plateau_ratio": 2.034813210932413,
@@ -1117,8 +623,8 @@
             "enhancement_profile_slope": 1.4875785159601147,
             "E_outer_median": 3.1407371021907107,
             "E_inner_median": 0.5115768847920786
-          },
-          "NGC4051": {
+        },
+        "NGC4051": {
             "R_last": 12.19,
             "n_points": 7,
             "plateau_ratio": 1.1871668556216342,
@@ -1126,8 +632,8 @@
             "enhancement_profile_slope": 1.164911092677258,
             "E_outer_median": 0.4102354165798978,
             "E_inner_median": 0.3981140297895951
-          },
-          "NGC4085": {
+        },
+        "NGC4085": {
             "R_last": 6.2,
             "n_points": 7,
             "plateau_ratio": 1.2806054095449717,
@@ -1135,8 +641,8 @@
             "enhancement_profile_slope": 1.3350906411529062,
             "E_outer_median": 0.6434239460532287,
             "E_inner_median": -0.24836883547807964
-          },
-          "NGC4088": {
+        },
+        "NGC4088": {
             "R_last": 21.48,
             "n_points": 12,
             "plateau_ratio": 1.294004110235663,
@@ -1144,8 +650,8 @@
             "enhancement_profile_slope": 1.3150327830365915,
             "E_outer_median": 0.6779027691596521,
             "E_inner_median": -0.10585663980063059
-          },
-          "NGC4100": {
+        },
+        "NGC4100": {
             "R_last": 22.76,
             "n_points": 24,
             "plateau_ratio": 1.8066466007749524,
@@ -1153,8 +659,8 @@
             "enhancement_profile_slope": 0.5242427797207649,
             "E_outer_median": 2.2639753223150985,
             "E_inner_median": 0.9215371416553582
-          },
-          "NGC4138": {
+        },
+        "NGC4138": {
             "R_last": 18.58,
             "n_points": 7,
             "plateau_ratio": 1.8243847024755102,
@@ -1162,8 +668,8 @@
             "enhancement_profile_slope": 1.517894143675501,
             "E_outer_median": 2.3352653666674126,
             "E_inner_median": 0.8087657944848112
-          },
-          "NGC4157": {
+        },
+        "NGC4157": {
             "R_last": 29.61,
             "n_points": 17,
             "plateau_ratio": 1.7048467223936294,
@@ -1171,8 +677,8 @@
             "enhancement_profile_slope": 1.5791121825424348,
             "E_outer_median": 1.9078388529830597,
             "E_inner_median": 0.21937483297298477
-          },
-          "NGC4183": {
+        },
+        "NGC4183": {
             "R_last": 21.02,
             "n_points": 23,
             "plateau_ratio": 2.0333396527085084,
@@ -1180,8 +686,8 @@
             "enhancement_profile_slope": 0.12394002600613992,
             "E_outer_median": 3.1344855519181194,
             "E_inner_median": 2.413105163707458
-          },
-          "NGC4214": {
+        },
+        "NGC4214": {
             "R_last": 5.63,
             "n_points": 14,
             "plateau_ratio": 3.002931132181226,
@@ -1189,8 +695,8 @@
             "enhancement_profile_slope": 0.44801184850417636,
             "E_outer_median": 8.01759538462322,
             "E_inner_median": 1.5958823556560036
-          },
-          "NGC4217": {
+        },
+        "NGC4217": {
             "R_last": 16.72,
             "n_points": 19,
             "plateau_ratio": 1.3188021221697093,
@@ -1198,8 +704,8 @@
             "enhancement_profile_slope": 3.0102165572669897,
             "E_outer_median": 0.7394385240247087,
             "E_inner_median": -0.5108991456422609
-          },
-          "NGC4389": {
+        },
+        "NGC4389": {
             "R_last": 5.32,
             "n_points": 6,
             "plateau_ratio": 0.9767326715187169,
@@ -1207,8 +713,8 @@
             "enhancement_profile_slope": null,
             "E_outer_median": -0.03470436313013564,
             "E_inner_median": -0.7003260659111645
-          },
-          "NGC4559": {
+        },
+        "NGC4559": {
             "R_last": 20.97,
             "n_points": 32,
             "plateau_ratio": 1.7227264143818608,
@@ -1216,8 +722,8 @@
             "enhancement_profile_slope": 0.8115239618322794,
             "E_outer_median": 1.9677862988089827,
             "E_inner_median": 0.539266098379636
-          },
-          "NGC5005": {
+        },
+        "NGC5005": {
             "R_last": 11.47,
             "n_points": 18,
             "plateau_ratio": 1.2104258946972601,
@@ -1225,8 +731,8 @@
             "enhancement_profile_slope": 1.9322350674475681,
             "E_outer_median": 0.4652447976894436,
             "E_inner_median": -0.03822381331727942
-          },
-          "NGC5033": {
+        },
+        "NGC5033": {
             "R_last": 44.59,
             "n_points": 22,
             "plateau_ratio": 1.9948459863606878,
@@ -1234,8 +740,8 @@
             "enhancement_profile_slope": 1.453046367065308,
             "E_outer_median": 2.9794105092993455,
             "E_inner_median": 0.40841785053576796
-          },
-          "NGC5055": {
+        },
+        "NGC5055": {
             "R_last": 54.59,
             "n_points": 28,
             "plateau_ratio": 1.8214912132575432,
@@ -1243,8 +749,8 @@
             "enhancement_profile_slope": 1.9317162206603629,
             "E_outer_median": 2.3181487405934815,
             "E_inner_median": -0.04077345196276588
-          },
-          "NGC5371": {
+        },
+        "NGC5371": {
             "R_last": 46.24,
             "n_points": 19,
             "plateau_ratio": 1.369229717842909,
@@ -1252,8 +758,8 @@
             "enhancement_profile_slope": 0.06405420375993855,
             "E_outer_median": 0.8762718378632061,
             "E_inner_median": 0.541461421215313
-          },
-          "NGC5585": {
+        },
+        "NGC5585": {
             "R_last": 10.96,
             "n_points": 24,
             "plateau_ratio": 2.1518884106928846,
@@ -1261,8 +767,8 @@
             "enhancement_profile_slope": 0.633720189105332,
             "E_outer_median": 3.630647758396821,
             "E_inner_median": 0.3785041428792978
-          },
-          "NGC5907": {
+        },
+        "NGC5907": {
             "R_last": 50.33,
             "n_points": 19,
             "plateau_ratio": 1.8904752929425048,
@@ -1270,8 +776,8 @@
             "enhancement_profile_slope": 0.3527269501248374,
             "E_outer_median": 2.5742512481781645,
             "E_inner_median": 1.1721492716073487
-          },
-          "NGC5985": {
+        },
+        "NGC5985": {
             "R_last": 34.72,
             "n_points": 33,
             "plateau_ratio": 1.920077963997734,
@@ -1279,8 +785,8 @@
             "enhancement_profile_slope": -0.0396895673725597,
             "E_outer_median": 2.686699387829683,
             "E_inner_median": 3.1114640141491687
-          },
-          "NGC6015": {
+        },
+        "NGC6015": {
             "R_last": 29.23,
             "n_points": 44,
             "plateau_ratio": 2.182239447203784,
@@ -1288,8 +794,8 @@
             "enhancement_profile_slope": 0.41354091944421506,
             "E_outer_median": 3.762169004932276,
             "E_inner_median": 1.4065464026225085
-          },
-          "NGC6195": {
+        },
+        "NGC6195": {
             "R_last": 36.43,
             "n_points": 23,
             "plateau_ratio": 1.2078250324572464,
@@ -1297,8 +803,8 @@
             "enhancement_profile_slope": 0.8774104871502256,
             "E_outer_median": 0.46072185778124264,
             "E_inner_median": 0.05412139190429954
-          },
-          "NGC6503": {
+        },
+        "NGC6503": {
             "R_last": 23.5,
             "n_points": 31,
             "plateau_ratio": 2.478657932659964,
@@ -1306,8 +812,8 @@
             "enhancement_profile_slope": 0.9010448587861073,
             "E_outer_median": 5.1437451471381666,
             "E_inner_median": 1.274182129524668
-          },
-          "NGC6674": {
+        },
+        "NGC6674": {
             "R_last": 72.41,
             "n_points": 15,
             "plateau_ratio": 2.3923680698039846,
@@ -1315,8 +821,8 @@
             "enhancement_profile_slope": 0.6201511325317691,
             "E_outer_median": 4.723424981417643,
             "E_inner_median": 1.685211536645041
-          },
-          "NGC6946": {
+        },
+        "NGC6946": {
             "R_last": 20.4,
             "n_points": 58,
             "plateau_ratio": 1.5209929830989373,
@@ -1324,8 +830,8 @@
             "enhancement_profile_slope": 1.2939206924723452,
             "E_outer_median": 1.313433031028693,
             "E_inner_median": 0.12347947400147774
-          },
-          "NGC7331": {
+        },
+        "NGC7331": {
             "R_last": 36.31,
             "n_points": 36,
             "plateau_ratio": 1.5935442085198388,
@@ -1333,8 +839,8 @@
             "enhancement_profile_slope": 2.066499615863301,
             "E_outer_median": 1.5393841195361173,
             "E_inner_median": -0.10808380510691062
-          },
-          "NGC7793": {
+        },
+        "NGC7793": {
             "R_last": 7.87,
             "n_points": 46,
             "plateau_ratio": 1.6065198096530873,
@@ -1342,8 +848,8 @@
             "enhancement_profile_slope": 0.2819416257660748,
             "E_outer_median": 1.5809068144504121,
             "E_inner_median": 0.6825820582642265
-          },
-          "NGC7814": {
+        },
+        "NGC7814": {
             "R_last": 19.53,
             "n_points": 18,
             "plateau_ratio": 1.8653815327090837,
@@ -1351,8 +857,8 @@
             "enhancement_profile_slope": 1.7362209682934895,
             "E_outer_median": 2.480710859107082,
             "E_inner_median": 0.15149786626163686
-          },
-          "PGC51017": {
+        },
+        "PGC51017": {
             "R_last": 3.63,
             "n_points": 6,
             "plateau_ratio": 1.0407098449638412,
@@ -1360,8 +866,8 @@
             "enhancement_profile_slope": -1.6724835253926393,
             "E_outer_median": 0.08309400771088571,
             "E_inner_median": 2.141096636875809
-          },
-          "UGC00128": {
+        },
+        "UGC00128": {
             "R_last": 53.75,
             "n_points": 22,
             "plateau_ratio": 2.9106947551657014,
@@ -1369,8 +875,8 @@
             "enhancement_profile_slope": 0.24203499334962886,
             "E_outer_median": 7.472143957749122,
             "E_inner_median": 5.713128751203982
-          },
-          "UGC00191": {
+        },
+        "UGC00191": {
             "R_last": 9.98,
             "n_points": 9,
             "plateau_ratio": 2.0214311911006133,
@@ -1378,8 +884,8 @@
             "enhancement_profile_slope": 0.0649848662993249,
             "E_outer_median": 3.0861840603544444,
             "E_inner_median": 2.711185029562537
-          },
-          "UGC00731": {
+        },
+        "UGC00731": {
             "R_last": 10.91,
             "n_points": 12,
             "plateau_ratio": 2.024117751469038,
@@ -1387,8 +893,8 @@
             "enhancement_profile_slope": -1.0115904515761496,
             "E_outer_median": 3.097472632169614,
             "E_inner_median": 18.639432020165927
-          },
-          "UGC01230": {
+        },
+        "UGC01230": {
             "R_last": 36.54,
             "n_points": 11,
             "plateau_ratio": 2.155754693716783,
@@ -1396,8 +902,8 @@
             "enhancement_profile_slope": 0.2689096100453665,
             "E_outer_median": 3.654960018221835,
             "E_inner_median": 2.4205016117535196
-          },
-          "UGC01281": {
+        },
+        "UGC01281": {
             "R_last": 4.99,
             "n_points": 24,
             "plateau_ratio": 2.386323665232557,
@@ -1405,8 +911,8 @@
             "enhancement_profile_slope": 0.42975027744889954,
             "E_outer_median": 4.6947836505834655,
             "E_inner_median": 2.168513963448474
-          },
-          "UGC02259": {
+        },
+        "UGC02259": {
             "R_last": 8.14,
             "n_points": 8,
             "plateau_ratio": 2.391675140362942,
@@ -1414,8 +920,8 @@
             "enhancement_profile_slope": -0.2659886315934654,
             "E_outer_median": 4.720109977030098,
             "E_inner_median": 7.481664889906384
-          },
-          "UGC02455": {
+        },
+        "UGC02455": {
             "R_last": 4.03,
             "n_points": 8,
             "plateau_ratio": 0.9451970329556186,
@@ -1423,8 +929,8 @@
             "enhancement_profile_slope": null,
             "E_outer_median": -0.10660256889189523,
             "E_inner_median": -0.697675846430047
-          },
-          "UGC02487": {
+        },
+        "UGC02487": {
             "R_last": 80.38,
             "n_points": 17,
             "plateau_ratio": 2.3239459194331467,
@@ -1432,8 +938,8 @@
             "enhancement_profile_slope": 0.7075741000831299,
             "E_outer_median": 4.402858982113896,
             "E_inner_median": 1.2494654837998658
-          },
-          "UGC02885": {
+        },
+        "UGC02885": {
             "R_last": 74.07,
             "n_points": 19,
             "plateau_ratio": 1.970689037056196,
@@ -1441,8 +947,8 @@
             "enhancement_profile_slope": 0.5792920378382475,
             "E_outer_median": 2.8841724054722198,
             "E_inner_median": 0.8029475827623667
-          },
-          "UGC02916": {
+        },
+        "UGC02916": {
             "R_last": 38.0,
             "n_points": 43,
             "plateau_ratio": 1.375584641435959,
@@ -1450,8 +956,8 @@
             "enhancement_profile_slope": 0.34226330286731443,
             "E_outer_median": 0.8922331057544957,
             "E_inner_median": -0.1489486876036965
-          },
-          "UGC02953": {
+        },
+        "UGC02953": {
             "R_last": 62.39,
             "n_points": 115,
             "plateau_ratio": 1.9664335178870345,
@@ -1459,8 +965,8 @@
             "enhancement_profile_slope": 0.7438655338950766,
             "E_outer_median": 2.866860780269578,
             "E_inner_median": 0.07070494594511478
-          },
-          "UGC03205": {
+        },
+        "UGC03205": {
             "R_last": 40.04,
             "n_points": 48,
             "plateau_ratio": 1.6288291822212921,
@@ -1468,8 +974,8 @@
             "enhancement_profile_slope": 0.49072854730712445,
             "E_outer_median": 1.6536645142179673,
             "E_inner_median": 0.9936672850128311
-          },
-          "UGC03546": {
+        },
+        "UGC03546": {
             "R_last": 29.23,
             "n_points": 30,
             "plateau_ratio": 1.5591253033106436,
@@ -1477,8 +983,8 @@
             "enhancement_profile_slope": 1.8791124077986325,
             "E_outer_median": 1.4316508755204171,
             "E_inner_median": -0.2826188749356776
-          },
-          "UGC03580": {
+        },
+        "UGC03580": {
             "R_last": 27.06,
             "n_points": 47,
             "plateau_ratio": 1.779655948746833,
@@ -1486,8 +992,8 @@
             "enhancement_profile_slope": 0.7063342159710333,
             "E_outer_median": 2.1685030250669106,
             "E_inner_median": -0.4445591830959018
-          },
-          "UGC04278": {
+        },
+        "UGC04278": {
             "R_last": 6.69,
             "n_points": 24,
             "plateau_ratio": 2.3907465974170106,
@@ -1495,8 +1001,8 @@
             "enhancement_profile_slope": 0.3726063113110408,
             "E_outer_median": 4.719343820342038,
             "E_inner_median": 2.341232489545769
-          },
-          "UGC04305": {
+        },
+        "UGC04305": {
             "R_last": 5.52,
             "n_points": 21,
             "plateau_ratio": 1.0279421088043408,
@@ -1504,8 +1010,8 @@
             "enhancement_profile_slope": -0.9690033860062057,
             "E_outer_median": 0.05666497905311507,
             "E_inner_median": 0.8099878977104138
-          },
-          "UGC04325": {
+        },
+        "UGC04325": {
             "R_last": 5.59,
             "n_points": 8,
             "plateau_ratio": 2.1050770380237367,
@@ -1513,8 +1019,8 @@
             "enhancement_profile_slope": -0.41672540177598366,
             "E_outer_median": 3.4313493360147884,
             "E_inner_median": 6.9182661283575015
-          },
-          "UGC04483": {
+        },
+        "UGC04483": {
             "R_last": 1.21,
             "n_points": 7,
             "plateau_ratio": 1.828178334950834,
@@ -1522,8 +1028,8 @@
             "enhancement_profile_slope": 0.46913040251234,
             "E_outer_median": 2.342579945145208,
             "E_inner_median": 1.919912409457008
-          },
-          "UGC04499": {
+        },
+        "UGC04499": {
             "R_last": 8.18,
             "n_points": 9,
             "plateau_ratio": 1.8692649888373976,
@@ -1531,8 +1037,8 @@
             "enhancement_profile_slope": 0.6260633355034556,
             "E_outer_median": 2.494151598493276,
             "E_inner_median": 2.075246016581905
-          },
-          "UGC05005": {
+        },
+        "UGC05005": {
             "R_last": 28.61,
             "n_points": 11,
             "plateau_ratio": 2.316313144395202,
@@ -1540,8 +1046,8 @@
             "enhancement_profile_slope": 0.6052377465903619,
             "E_outer_median": 4.365560923636224,
             "E_inner_median": 1.1197857675202818
-          },
-          "UGC05253": {
+        },
+        "UGC05253": {
             "R_last": 53.29,
             "n_points": 73,
             "plateau_ratio": 1.5944297067767688,
@@ -1549,8 +1055,8 @@
             "enhancement_profile_slope": 0.863891397781374,
             "E_outer_median": 1.542206089852253,
             "E_inner_median": 0.07937688459363113
-          },
-          "UGC05414": {
+        },
+        "UGC05414": {
             "R_last": 4.11,
             "n_points": 6,
             "plateau_ratio": 1.7872565275085286,
@@ -1558,8 +1064,8 @@
             "enhancement_profile_slope": 0.3550796878145147,
             "E_outer_median": 2.1955629598325075,
             "E_inner_median": 1.23345081900645
-          },
-          "UGC05716": {
+        },
+        "UGC05716": {
             "R_last": 12.37,
             "n_points": 12,
             "plateau_ratio": 2.345086280341039,
@@ -1567,8 +1073,8 @@
             "enhancement_profile_slope": -0.03185393157787338,
             "E_outer_median": 4.499699577374668,
             "E_inner_median": 5.206112653283741
-          },
-          "UGC05721": {
+        },
+        "UGC05721": {
             "R_last": 6.74,
             "n_points": 23,
             "plateau_ratio": 2.8300649300023566,
@@ -1576,8 +1082,8 @@
             "enhancement_profile_slope": 0.5324209067052111,
             "E_outer_median": 7.009773618450636,
             "E_inner_median": 1.9654079092926158
-          },
-          "UGC05750": {
+        },
+        "UGC05750": {
             "R_last": 22.85,
             "n_points": 10,
             "plateau_ratio": 2.001367102177512,
@@ -1585,8 +1091,8 @@
             "enhancement_profile_slope": 0.49224996252792735,
             "E_outer_median": 3.0054702776784117,
             "E_inner_median": 2.012985213341699
-          },
-          "UGC05764": {
+        },
+        "UGC05764": {
             "R_last": 3.62,
             "n_points": 9,
             "plateau_ratio": 2.3582869259154187,
@@ -1594,8 +1100,8 @@
             "enhancement_profile_slope": -0.6050864318002755,
             "E_outer_median": 4.561517224943596,
             "E_inner_median": 10.02922882421614
-          },
-          "UGC05829": {
+        },
+        "UGC05829": {
             "R_last": 6.91,
             "n_points": 11,
             "plateau_ratio": 1.8109837434045808,
@@ -1603,8 +1109,8 @@
             "enhancement_profile_slope": -0.5226370440168976,
             "E_outer_median": 2.2801278052819436,
             "E_inner_median": 6.4654057493028665
-          },
-          "UGC05918": {
+        },
+        "UGC05918": {
             "R_last": 4.46,
             "n_points": 8,
             "plateau_ratio": 2.3254650519346023,
@@ -1612,8 +1118,8 @@
             "enhancement_profile_slope": -0.3392059340363165,
             "E_outer_median": 4.407787707769202,
             "E_inner_median": 7.8142564018738145
-          },
-          "UGC05986": {
+        },
+        "UGC05986": {
             "R_last": 9.41,
             "n_points": 15,
             "plateau_ratio": 2.422554016193682,
@@ -1621,8 +1127,8 @@
             "enhancement_profile_slope": 0.7032352785846789,
             "E_outer_median": 4.868767961376138,
             "E_inner_median": 2.1888161667665473
-          },
-          "UGC06399": {
+        },
+        "UGC06399": {
             "R_last": 7.85,
             "n_points": 9,
             "plateau_ratio": 2.2028194321092744,
@@ -1630,8 +1136,8 @@
             "enhancement_profile_slope": 0.3195272349248897,
             "E_outer_median": 3.8524134504782266,
             "E_inner_median": 2.7793180941112965
-          },
-          "UGC06446": {
+        },
+        "UGC06446": {
             "R_last": 10.22,
             "n_points": 17,
             "plateau_ratio": 2.223243481204018,
@@ -1639,8 +1145,8 @@
             "enhancement_profile_slope": -0.06612410745992621,
             "E_outer_median": 3.9432538029428725,
             "E_inner_median": 5.847386934684824
-          },
-          "UGC06614": {
+        },
+        "UGC06614": {
             "R_last": 64.59,
             "n_points": 13,
             "plateau_ratio": 1.9952462465463832,
@@ -1648,8 +1154,8 @@
             "enhancement_profile_slope": 1.7967915120665596,
             "E_outer_median": 2.9836694036170206,
             "E_inner_median": 0.23479127402128896
-          },
-          "UGC06628": {
+        },
+        "UGC06628": {
             "R_last": 7.69,
             "n_points": 7,
             "plateau_ratio": 0.9631422102390543,
@@ -1657,8 +1163,8 @@
             "enhancement_profile_slope": -0.7233888809344958,
             "E_outer_median": -0.07112310276567052,
             "E_inner_median": 0.6763702591098375
-          },
-          "UGC06667": {
+        },
+        "UGC06667": {
             "R_last": 7.85,
             "n_points": 8,
             "plateau_ratio": 2.8786741327036647,
@@ -1666,8 +1172,8 @@
             "enhancement_profile_slope": -0.9961184581869929,
             "E_outer_median": 7.286764762297196,
             "E_inner_median": 25.160368400640024
-          },
-          "UGC06786": {
+        },
+        "UGC06786": {
             "R_last": 34.05,
             "n_points": 45,
             "plateau_ratio": 2.137731268129646,
@@ -1675,8 +1181,8 @@
             "enhancement_profile_slope": 0.7586450338484975,
             "E_outer_median": 3.569894974739185,
             "E_inner_median": 0.8490939013740242
-          },
-          "UGC06787": {
+        },
+        "UGC06787": {
             "R_last": 37.19,
             "n_points": 71,
             "plateau_ratio": 2.0915146170979617,
@@ -1684,8 +1190,8 @@
             "enhancement_profile_slope": 1.5001238176174128,
             "E_outer_median": 3.3755712505310234,
             "E_inner_median": -0.0405604955204828
-          },
-          "UGC06818": {
+        },
+        "UGC06818": {
             "R_last": 6.98,
             "n_points": 8,
             "plateau_ratio": 2.1753226461072255,
@@ -1693,8 +1199,8 @@
             "enhancement_profile_slope": 1.8700836922582975,
             "E_outer_median": 3.732028614666941,
             "E_inner_median": 0.2203984275458637
-          },
-          "UGC06917": {
+        },
+        "UGC06917": {
             "R_last": 10.47,
             "n_points": 11,
             "plateau_ratio": 1.9840182129835289,
@@ -1702,8 +1208,8 @@
             "enhancement_profile_slope": 0.4196635871949929,
             "E_outer_median": 2.9364859714601454,
             "E_inner_median": 1.9037685886420728
-          },
-          "UGC06923": {
+        },
+        "UGC06923": {
             "R_last": 5.16,
             "n_points": 6,
             "plateau_ratio": 1.6833122171399677,
@@ -1711,8 +1217,8 @@
             "enhancement_profile_slope": 1.3818893856849612,
             "E_outer_median": 1.8336273481610643,
             "E_inner_median": 0.40957559350949735
-          },
-          "UGC06930": {
+        },
+        "UGC06930": {
             "R_last": 16.61,
             "n_points": 10,
             "plateau_ratio": 1.9311823681117768,
@@ -1720,8 +1226,8 @@
             "enhancement_profile_slope": 0.21262867996123633,
             "E_outer_median": 2.7294653389058103,
             "E_inner_median": 2.6708621402981034
-          },
-          "UGC06973": {
+        },
+        "UGC06973": {
             "R_last": 7.85,
             "n_points": 9,
             "plateau_ratio": 1.3053556313040904,
@@ -1729,8 +1235,8 @@
             "enhancement_profile_slope": 4.724533529820863,
             "E_outer_median": 0.7039533241773004,
             "E_inner_median": -0.3801188387286042
-          },
-          "UGC06983": {
+        },
+        "UGC06983": {
             "R_last": 15.68,
             "n_points": 17,
             "plateau_ratio": 2.1153819486032077,
@@ -1738,8 +1244,8 @@
             "enhancement_profile_slope": 0.32292261600243133,
             "E_outer_median": 3.4748614624318592,
             "E_inner_median": 3.54429833842725
-          },
-          "UGC07089": {
+        },
+        "UGC07089": {
             "R_last": 9.16,
             "n_points": 12,
             "plateau_ratio": 1.7996043524230658,
@@ -1747,8 +1253,8 @@
             "enhancement_profile_slope": 0.4010882658737467,
             "E_outer_median": 2.240826065320273,
             "E_inner_median": 1.0924280272949505
-          },
-          "UGC07125": {
+        },
+        "UGC07125": {
             "R_last": 18.68,
             "n_points": 13,
             "plateau_ratio": 1.5049539515914048,
@@ -1756,8 +1262,8 @@
             "enhancement_profile_slope": 0.3290684109868361,
             "E_outer_median": 1.2650172253825052,
             "E_inner_median": 1.2990399840413542
-          },
-          "UGC07151": {
+        },
+        "UGC07151": {
             "R_last": 5.5,
             "n_points": 11,
             "plateau_ratio": 1.7330707769873945,
@@ -1765,8 +1271,8 @@
             "enhancement_profile_slope": 0.29813922234454643,
             "E_outer_median": 2.0035502163279713,
             "E_inner_median": 1.2198995495453833
-          },
-          "UGC07261": {
+        },
+        "UGC07261": {
             "R_last": 6.67,
             "n_points": 7,
             "plateau_ratio": 2.0091215021944557,
@@ -1774,8 +1280,8 @@
             "enhancement_profile_slope": -0.0900027478147875,
             "E_outer_median": 3.038255499357229,
             "E_inner_median": 2.3395833019936814
-          },
-          "UGC07323": {
+        },
+        "UGC07323": {
             "R_last": 5.82,
             "n_points": 10,
             "plateau_ratio": 1.6093931031346205,
@@ -1783,8 +1289,8 @@
             "enhancement_profile_slope": 0.2013072848044016,
             "E_outer_median": 1.5901461604172833,
             "E_inner_median": 1.0852173407349408
-          },
-          "UGC07399": {
+        },
+        "UGC07399": {
             "R_last": 6.13,
             "n_points": 10,
             "plateau_ratio": 3.0522957275376417,
@@ -1792,8 +1298,8 @@
             "enhancement_profile_slope": 0.39185237677232704,
             "E_outer_median": 8.316509208344542,
             "E_inner_median": 5.883112326764184
-          },
-          "UGC07524": {
+        },
+        "UGC07524": {
             "R_last": 10.69,
             "n_points": 31,
             "plateau_ratio": 1.9430512739363097,
@@ -1801,8 +1307,8 @@
             "enhancement_profile_slope": 0.11302930623136424,
             "E_outer_median": 2.775448253145516,
             "E_inner_median": 3.8490908382710396
-          },
-          "UGC07559": {
+        },
+        "UGC07559": {
             "R_last": 2.53,
             "n_points": 7,
             "plateau_ratio": 1.6708932132072514,
@@ -1810,8 +1316,8 @@
             "enhancement_profile_slope": 0.6576281525962779,
             "E_outer_median": 1.793999597772766,
             "E_inner_median": 0.7323691472325331
-          },
-          "UGC07577": {
+        },
+        "UGC07577": {
             "R_last": 1.69,
             "n_points": 7,
             "plateau_ratio": 1.3488355713017173,
@@ -1819,8 +1325,8 @@
             "enhancement_profile_slope": 1.965892484129064,
             "E_outer_median": 0.8269767567183209,
             "E_inner_median": 0.12153176416192224
-          },
-          "UGC07603": {
+        },
+        "UGC07603": {
             "R_last": 4.11,
             "n_points": 12,
             "plateau_ratio": 2.6993883082620496,
@@ -1828,8 +1334,8 @@
             "enhancement_profile_slope": 0.8612367054135537,
             "E_outer_median": 6.288191149358914,
             "E_inner_median": 1.8730132729186575
-          },
-          "UGC07608": {
+        },
+        "UGC07608": {
             "R_last": 4.78,
             "n_points": 8,
             "plateau_ratio": 2.7257287602367235,
@@ -1837,8 +1343,8 @@
             "enhancement_profile_slope": 0.38761651935454183,
             "E_outer_median": 6.429597274381626,
             "E_inner_median": 4.501389749872036
-          },
-          "UGC07690": {
+        },
+        "UGC07690": {
             "R_last": 4.13,
             "n_points": 7,
             "plateau_ratio": 1.7559886723911777,
@@ -1846,8 +1352,8 @@
             "enhancement_profile_slope": 0.371077143775066,
             "E_outer_median": 2.0840494949782977,
             "E_inner_median": 1.6862801989522795
-          },
-          "UGC07866": {
+        },
+        "UGC07866": {
             "R_last": 2.32,
             "n_points": 7,
             "plateau_ratio": 1.754742304681548,
@@ -1855,8 +1361,8 @@
             "enhancement_profile_slope": -0.013938705149740707,
             "E_outer_median": 2.0809027743548123,
             "E_inner_median": 2.2409390615398834
-          },
-          "UGC08286": {
+        },
+        "UGC08286": {
             "R_last": 8.04,
             "n_points": 17,
             "plateau_ratio": 2.573713596428244,
@@ -1864,8 +1370,8 @@
             "enhancement_profile_slope": 0.12833523681191608,
             "E_outer_median": 5.6240332956928105,
             "E_inner_median": 5.302633553603386
-          },
-          "UGC08490": {
+        },
+        "UGC08490": {
             "R_last": 10.15,
             "n_points": 30,
             "plateau_ratio": 2.786271592054492,
@@ -1873,8 +1379,8 @@
             "enhancement_profile_slope": 0.40119533800289936,
             "E_outer_median": 6.763314226994562,
             "E_inner_median": 3.3792357138210303
-          },
-          "UGC08550": {
+        },
+        "UGC08550": {
             "R_last": 5.36,
             "n_points": 11,
             "plateau_ratio": 2.492098573403111,
@@ -1882,8 +1388,8 @@
             "enhancement_profile_slope": 0.27331146338930323,
             "E_outer_median": 5.2262161255454185,
             "E_inner_median": 3.412625279344174
-          },
-          "UGC08699": {
+        },
+        "UGC08699": {
             "R_last": 25.7,
             "n_points": 41,
             "plateau_ratio": 1.6313361112898033,
@@ -1891,8 +1397,8 @@
             "enhancement_profile_slope": 0.8911013268770797,
             "E_outer_median": 1.662458225818231,
             "E_inner_median": 0.2371321722706614
-          },
-          "UGC08837": {
+        },
+        "UGC08837": {
             "R_last": 4.2,
             "n_points": 8,
             "plateau_ratio": 1.6485519145542302,
@@ -1900,8 +1406,8 @@
             "enhancement_profile_slope": 1.1076122548462677,
             "E_outer_median": 1.717723414980418,
             "E_inner_median": 0.02160577135497649
-          },
-          "UGC09037": {
+        },
+        "UGC09037": {
             "R_last": 27.96,
             "n_points": 22,
             "plateau_ratio": 1.538215229070793,
@@ -1909,8 +1415,8 @@
             "enhancement_profile_slope": 1.5646694554070213,
             "E_outer_median": 1.3661060909453124,
             "E_inner_median": 0.16525461185350165
-          },
-          "UGC09133": {
+        },
+        "UGC09133": {
             "R_last": 108.31,
             "n_points": 68,
             "plateau_ratio": 2.0593292988152196,
@@ -1918,8 +1424,8 @@
             "enhancement_profile_slope": 0.902364196138789,
             "E_outer_median": 3.240837160958784,
             "E_inner_median": 0.06246323033427814
-          },
-          "UGC10310": {
+        },
+        "UGC10310": {
             "R_last": 7.74,
             "n_points": 7,
             "plateau_ratio": 1.8057148450750993,
@@ -1927,8 +1433,8 @@
             "enhancement_profile_slope": -0.2675842048697451,
             "E_outer_median": 2.2617615235503488,
             "E_inner_median": 3.6250089689692553
-          },
-          "UGC11455": {
+        },
+        "UGC11455": {
             "R_last": 41.93,
             "n_points": 36,
             "plateau_ratio": 1.444330247157052,
@@ -1936,8 +1442,8 @@
             "enhancement_profile_slope": 0.9012570314746515,
             "E_outer_median": 1.0864246230057286,
             "E_inner_median": 0.24509573595326428
-          },
-          "UGC11557": {
+        },
+        "UGC11557": {
             "R_last": 10.56,
             "n_points": 12,
             "plateau_ratio": 1.191817175548255,
@@ -1945,8 +1451,8 @@
             "enhancement_profile_slope": 2.109988986489421,
             "E_outer_median": 0.4223930828458141,
             "E_inner_median": -0.5665355444050739
-          },
-          "UGC11820": {
+        },
+        "UGC11820": {
             "R_last": 15.82,
             "n_points": 10,
             "plateau_ratio": 2.144198857030307,
@@ -1954,8 +1460,8 @@
             "enhancement_profile_slope": -0.03876662369284029,
             "E_outer_median": 3.5975887384900753,
             "E_inner_median": 3.6972427565802883
-          },
-          "UGC11914": {
+        },
+        "UGC11914": {
             "R_last": 9.83,
             "n_points": 65,
             "plateau_ratio": 1.263524753082073,
@@ -1963,8 +1469,8 @@
             "enhancement_profile_slope": 0.389267101833222,
             "E_outer_median": 0.5964984786732593,
             "E_inner_median": 0.43968157352130643
-          },
-          "UGC12506": {
+        },
+        "UGC12506": {
             "R_last": 49.99,
             "n_points": 31,
             "plateau_ratio": 2.0648718764525538,
@@ -1972,8 +1478,8 @@
             "enhancement_profile_slope": -0.2535719800689647,
             "E_outer_median": 3.2636958661646904,
             "E_inner_median": 3.2494649440570322
-          },
-          "UGC12632": {
+        },
+        "UGC12632": {
             "R_last": 10.66,
             "n_points": 15,
             "plateau_ratio": 2.0702718220410694,
@@ -1981,8 +1487,8 @@
             "enhancement_profile_slope": -0.17042549157454487,
             "E_outer_median": 3.2860254171372496,
             "E_inner_median": 4.87038237598333
-          },
-          "UGC12732": {
+        },
+        "UGC12732": {
             "R_last": 15.4,
             "n_points": 16,
             "plateau_ratio": 2.157208985407352,
@@ -1990,8 +1496,8 @@
             "enhancement_profile_slope": -0.05436544025636929,
             "E_outer_median": 3.6535506067222165,
             "E_inner_median": 5.324809649161713
-          },
-          "UGCA281": {
+        },
+        "UGCA281": {
             "R_last": 1.08,
             "n_points": 6,
             "plateau_ratio": 1.876362618895897,
@@ -1999,8 +1505,8 @@
             "enhancement_profile_slope": 0.3325673800510307,
             "E_outer_median": 2.521755690528296,
             "E_inner_median": 1.6573097272312136
-          },
-          "UGCA442": {
+        },
+        "UGCA442": {
             "R_last": 6.33,
             "n_points": 8,
             "plateau_ratio": 2.8093570336077693,
@@ -2008,8 +1514,8 @@
             "enhancement_profile_slope": 0.2237504580493606,
             "E_outer_median": 6.892486942281446,
             "E_inner_median": 3.6429494518954044
-          },
-          "UGCA444": {
+        },
+        "UGCA444": {
             "R_last": 2.62,
             "n_points": 31,
             "plateau_ratio": 2.1686876643792443,
@@ -2017,9 +1523,6 @@
             "enhancement_profile_slope": 0.13394468047846197,
             "E_outer_median": 3.7032061856307017,
             "E_inner_median": 3.0524325148298663
-          }
         }
-      }
     }
-  }
 }

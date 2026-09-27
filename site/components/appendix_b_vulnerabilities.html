@@ -161,15 +161,15 @@
         </tr>
         <tr>
             <td>\(\kappa_{\rm Cep}\)</td>
-            <td>\(\sim 10^6\)</td>
+            <td>\(0.33\)–\(0.45\times10^6\) empirical; \(\sim 10^6\) benchmark</td>
             <td>H0 (Paper 11)</td>
-            <td>Cepheid clock-bias response coefficient</td>
+            <td>Cepheid clock-bias response coefficient (benchmark/empirical gap of factor \(2\)–\(3\) carried as an open normalization target)</td>
         </tr>
         <tr>
-            <td>\(\kappa_{\rm MSP}\)</td>
+            <td>\(\tilde\kappa_{\rm MSP}\)</td>
             <td>\(\sim 10^4\)</td>
             <td>COS (Paper 10)</td>
-            <td>Pulsar timing response coefficient (suppressed observed value after dense-cluster geometric screening; bare geometric-factor estimate is \(\sim 10^6\)–\(10^7\))</td>
+            <td>Pulsar timing full response coefficient (suppressed observed value after dense-cluster geometric screening; bare geometric-factor estimate is \(\sim 10^6\)–\(10^7\))</td>
         </tr>
     </tbody>
 </table>
@@ -333,7 +333,7 @@
 </p>
 
 <p>
-    The error lies in conflating <strong>dynamic phase propagation</strong> with a
+    The error lies in conflating <em>dynamic phase propagation</em> with a
     <strong>static spatial gradient</strong>.
 </p>
 
@@ -373,7 +373,7 @@
 <p>
     When a GNSS clock network orbits through this profile, the residuals
     exhibit a spatial correlation length $L_c \approx 4{,}200$ km. This is
-    <strong>not</strong> a superluminal signal propagating between satellites.
+    not a superluminal signal propagating between satellites.
     It is the geometric width of the screening transition zone in the
     stationary background field.
 </p>
@@ -454,8 +454,8 @@
         <tr>
             <td>MGEX scale discrepancy (1,396 vs. 4,200 km)</td>
             <td>Medium–High</td>
-            <td>Candidate explanations identified; pre-registered per-constellation test proposed</td>
-            <td>TEP-GNSS-MGEX per-constellation analysis (Paper 14 extension)</td>
+            <td>Pre-registered test executed: scale is epoch-unstable but reproducible across independent analysis centers (COD 2,744 vs GRG 1,933 km — GRG within 4% of the pooled scale — on verified-independent matched days)</td>
+            <td>TEP-GNSS-MGEX Step 3.1 (per-center + span discriminator)</td>
         </tr>
     </tbody>
 </table>
@@ -476,8 +476,40 @@
     $L_c \leftrightarrow R_T(M_\oplus)$ identification fails as calibrated,
     and the Level 1/2/3 claim hierarchy (Section 8) absorbs the hit exactly as
     designed—Level 2 falls, Levels 1 and 3 survive. Writing this test into
-    v0.7 before running it converts the corpus's largest latent vulnerability
+    v0.8 before running it converts the corpus's largest latent vulnerability
     into its sharpest falsifiable statement.
+</p>
+
+<p>
+    The discriminator has now been executed (TEP-GNSS-MGEX Step 3.1,
+    <code>results/outputs/step_3_1_per_center_scale.json</code>), in the
+    strongest form the retained archive permits. Three results follow.
+    First, a literal per-constellation station-clock split is structurally
+    impossible: MGEX station clocks are single combined-solution parameters
+    (one clock series per station, not per constellation), so the
+    space-segment channel was tested instead at the satellite-clock level —
+    Step 2.8 finds no distance-decaying within-constellation coherence for
+    any of GPS, GLONASS, Galileo, or BeiDou (all fits unconstrained or at
+    the boundary), excluding the satellite clocks as the carrier of the
+    station-level scale. Second, the span test confirms explanation (ii):
+    the identical estimator on the identical COD product returns
+    $\lambda$ from 1,050 to 1,935 km across quarterly windows
+    ($R^2$ from $-0.18$ to $0.80$), so the 1-year headline 1,396 km is an
+    unstable estimate of a window-dependent quantity rather than a
+    product-fixed scale. Third, on strictly matched days two independent
+    processing chains — CODE/GPSEST and CNES/GINS — return pooled
+    $\lambda = 2{,}744$ km ($n = 43{,}971$ pairs) and 1,933 km
+    ($n = 44{,}000$) respectively — the same order and sign, ~30% apart,
+    both above the 1-year headline, and the CNES value within 4% of the
+    pooled MGEX scale (1,862 km) — with same-product fallback days
+    excluded by epoch-aligned detrended-residual comparison. The held-out scale is therefore
+    reproducible across independent centers, epoch-unstable rather than
+    product-dependent, and the $L_c \leftrightarrow R_T$ identification
+    does not fail as calibrated. What the discrepancy does require is
+    carried forward into the anchor's uncertainty: $\rho_T$ should be
+    quoted with an epoch/window systematic of order 30–40% (the observed
+    window scatter), superseding the 12% inter-center figure as the
+    dominant calibration error.
 </p>
 
 <p>

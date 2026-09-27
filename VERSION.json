@@ -1,9 +1,10 @@
 {
-  "version": "0.7",
+  "version": "0.8",
   "codename": "New Delhi",
-  "description": "Paper 6: Temporal Topology Saturation Scale: Cross-Scale Consistency of \u03c1_T",
+  "description": "Paper 6: Temporal Topology Saturation Scale: Cross-Scale Consistency of ρ_T",
   "date_published": "2025-12-28",
-  "date_updated": "2026-07-03",
-  "date": "2026-07-03",
-  "previous_version": "0.6"
+  "date_updated": "2026-09-13",
+  "date": "2026-09-13",
+  "previous_version": "0.7",
+  "paper": "6"
 }

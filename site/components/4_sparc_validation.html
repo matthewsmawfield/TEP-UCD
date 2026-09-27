@@ -34,12 +34,13 @@
 </p>
 <ul>
     <li>
-        Inside $R_{\rm trans}$: The local density exceeds the critical screening
-        density ($\rho > \rho_{\rm trans}$). The time-field is screened, and
+        Inside $R_{\rm trans}$: The enclosed mean baryonic density exceeds the
+        critical screening density ($\bar\rho > \rho_{\rm trans}$). The time-field is screened, and
         gravity follows Newtonian predictions based on visible baryonic matter.
     </li>
     <li>
-        Outside $R_{\rm trans}$: The density drops below $\rho_{\rm trans}$. The
+        Outside $R_{\rm trans}$: The enclosed mean density drops below
+        $\rho_{\rm trans}$. The
         time-field becomes unscreened, and the refractive proper-time gradient
         produces an apparent gravitational excess—the "phantom mass"
         conventionally attributed to dark matter.
@@ -68,11 +69,12 @@
     The TEP scaling law \(R_T \propto M^{1/3}\), anchored by the GNSS
     calibration \(\rho_T \approx 20\) g/cm³, has a direct consequence for
     galactic structure. In the TEP framework, the dark-matter onset radius
-    \(R_{\rm DM}\) is identified with the radius at which the local density
-    drops below the emergent halo threshold \(\rho_{\rm trans}\). Because
-    \(\rho_{\rm trans}\) is not an independent fundamental constant but an
-    emergent threshold tied to the same scalar potential that fixes
-    \(\rho_T\), dimensional analysis yields the same mass scaling:
+    \(R_{\rm DM}\) is identified with the radius at which the enclosed mean
+    baryonic density drops below the emergent halo threshold \(\rho_{\rm trans}\). Because
+    \(\rho_{\rm trans}\) is an emergent threshold intended to be tied to the
+    same scalar potential that fixes \(\rho_T\) — a linkage whose derivation
+    is the open target of the Formal Link — dimensional analysis yields the
+    same mass scaling:
 </p>
 
 <div class="equation">
@@ -111,7 +113,13 @@
     </li>
     <li>
         Identify the mass discrepancy onset radius $R_{\rm DM}$: the first
-        radius where $V_{\rm obs}/V_{\rm bar} > 1.3$.
+        radius where $V_{\rm obs}/V_{\rm bar} > 1.3$. Radial bins with
+        nonpositive or unreliable baryonic velocity ($V_{\rm bar} \leq 5$ km
+        s$^{-1}$, including $V_{\rm bar}^2 \leq 0$ from negative model
+        contributions) are excluded from the ratio; galaxies whose ratio never
+        exceeds the threshold contribute no $R_{\rm DM}$ and are dropped from
+        the fit — a selection, disclosed here — leaving 167 of 175 systems at
+        the fiducial threshold.
     </li>
     <li>
         Fit the power-law relation $R_{\rm DM} = k \cdot M_{\rm bar}^\alpha$
@@ -191,6 +199,83 @@
     1/3.
 </p>
 
+<h4>Size-Scaling Confound Test</h4>
+<p>
+    The $M^{1/3}$ onset exponent is not by itself discriminating: for
+    approximately self-similar exponential disks, a fixed velocity-ratio
+    crossing occurs at a nearly fixed multiple of the disk scale length $R_d$,
+    so the galaxy mass–size relation can produce the same exponent without any
+    density threshold. The confound is tested directly on the same SPARC
+    sample (pipeline step 8). The in-sample mass–size relation is
+    $R_d \propto M_{\rm bar}^{0.322 \pm 0.017}$ ($r = 0.821$, $n = 175$), which
+    alone predicts an onset exponent $\approx 0.32$ — within the stated
+    uncertainty of the measured $0.355 \pm 0.043$. Comparing the two candidate
+    invariants per galaxy — the size ratio $R_{\rm DM}/R_d$ and the enclosed
+    mean baryonic density $\bar\rho(<R_{\rm DM}) = 3M_{\rm bar}(<R_{\rm
+    DM})/(4\pi R_{\rm DM}^3)$, with $M_{\rm bar}(<R)$ estimated spherically as
+    $V_{\rm bar}(R)^2 R/G$ — the size invariant is mass-independent at the
+    fiducial threshold (slope $0.056 \pm 0.044$, $p = 0.21$; median
+    $R_{\rm DM}/R_d = 0.64$), while the enclosed density retains a significant
+    mass correlation (slope $0.190 \pm 0.068$, $p = 5.7\times10^{-3}$). The
+    pattern is threshold-dependent: at $V_{\rm obs}/V_{\rm bar} > 1.2$ the
+    size null wins decisively (density slope $0.302$, $p = 5.4\times10^{-6}$),
+    while at $1.4$ the two are comparable ($0.086$ vs $0.084$).
+</p>
+<p>
+    The onset scaling is therefore consistent with, but not by itself
+    discriminating evidence for, the density-threshold mechanism: a fixed
+    fraction of the disk scale length produces the same exponent on this
+    sample. The discriminating weight of the SPARC test accordingly rests on
+    the two channels the size-scaling null cannot supply — the residual
+    correlations with baryonic content (step 7) and the open normalization
+    linkage of the Formal Link, which the confound makes the sharper
+    falsification condition: if $\rho_{\rm trans}$ cannot be derived from
+    $(\Lambda, \beta_A)$, or if a forward-modelled amplitude fails, the
+    onset-scaling result contributes no independent support.
+</p>
+
+<h4>Phantom-Mass Amplitude and Profile Test</h4>
+<p>
+    The onset radius alone does not test the mechanism — any threshold
+    criterion produces an onset. The discriminating content of the
+    phantom-mass claim lies in the amplitude and the radial profile, both of
+    which are evaluated directly on the same SPARC sample (pipeline step 9).
+    For a conformal coupling of charge $\beta_A$, an unscreened scalar channel
+    contributes a centripetal term of order $2\beta_A^2$ times the Newtonian
+    one, giving the plateau ratio $V_{\rm obs}/V_{\rm bar} = \sqrt{1 +
+    2\beta_A^2 \mathcal S_{\rm eff}}$, which for the bare coupling
+    $|\beta_A| = 1$ at full saturation is $\sqrt{3} \approx 1.73$. Measured on
+    the outer third of each curve ($n = 164$ galaxies with $\geq 6$ valid
+    points and $V_{\rm bar} > 5$ km s$^{-1}$), the median plateau ratio is
+    $1.98$ ($16$–$84$th percentile $1.38$–$2.49$) — order-consistent with the
+    bare-coupling saturation value but systematically above it: the implied
+    effective response is $\mathcal S_{\rm eff} = 1.46$ at the median, and
+    $71\%$ of galaxies require $\mathcal S_{\rm eff} > 1$. The plateau
+    amplitude is therefore quantified rather than asserted: it sits within a
+    factor of order unity of the bare-coupling prediction and the residual
+    excess is precisely the response-normalization demand already flagged in
+    the Formal Link — the amplitude test converts that open derivation into a
+    measured gap of factor $\sim 1.5$–$2$ rather than an unconstrained
+    parameter.
+</p>
+<p>
+    The radial profile supplies the second discriminator. Defining the
+    enhancement $E(R) = V_{\rm obs}^2/V_{\rm bar}^2 - 1 = M_{\rm
+    ph}(R)/M_{\rm bar}(<R)$, the phantom fraction is required by the
+    transition picture to grow outward (screened inside, unscreened outside),
+    whereas a constant coupling rescaling of the baryonic potential predicts
+    $d\log E/d\log R = 0$. The measured profile rises: median slope $0.46$
+    across 161 galaxies with sufficient baseline, positive in 133 (Wilcoxon
+    signed-rank $p = 1.0\times10^{-17}$). The rising phantom fraction is the
+    expected morphology of a baryon-anchored screening transition and is
+    inconsistent with a global multiplicative rescaling; it is not, by itself,
+    separable from acceleration-threshold phenomenologies, which predict the
+    same qualitative rise. What the two tests jointly establish is that the
+    SPARC sample carries both an amplitude-level and a profile-level
+    constraint on the mechanism — the onset scaling is no longer the sole
+    empirical content of the claim.
+</p>
+
 <h4>Cross-Regime Consistency</h4>
 <p>
     The significance of this result emerges when combined with the Temporal
@@ -247,27 +332,35 @@
 <div class="callout">
     <h4>Formal Link: From Core Saturation to Galactic Transition</h4>
     <p>
-        The galactic transition density $\rho_{\rm trans}$ is not an
-        independent fitting parameter. It emerges from the same scalar field
-        profile that fixes the core saturation scale $\rho_T$. In the TEP
+        The galactic transition density $\rho_{\rm trans}$ is intended to
+        emerge from the same scalar field profile that fixes the core
+        saturation scale $\rho_T$; at present it is an independent empirical
+        normalization recovered from the fitted $k$, and the derivation
+        sketched below is the stated open target rather than an established
+        result. In the TEP
         framework (Box 6.5), the scalar field obeys
     </p>
     <div class="equation">
         \begin{equation} \label{eq:profile_link} \nabla^2 \phi = V'(\phi) + \alpha(\phi)\rho, \end{equation}
     </div>
     <p>
-        with effective mass $m_{\rm eff}^2(\rho) = V''(\phi_{\rm min})$.
+        with effective mass $m_{\rm eff}^2(\rho) = V_{\rm eff}''(\phi_{\rm min})$.
         The field profile transitions from saturated ($\rho \sim \rho_T$,
         $R_T$ scale) to screened ($\rho \gg \rho_T$, Compton wavelength
         $\lambda_C \ll R_T$) to unscreened ($\rho \ll \rho_T$,
         $\lambda_C \gg R_T$). The galactic halo onset occurs where the
-        local baryonic density drops to the value $\rho_{\rm trans}$ at
+        enclosed mean baryonic density $\bar\rho(<R) = 3M_{\rm bar}(<R)/(4\pi
+        R^3)$ drops to the value $\rho_{\rm trans}$ at
         which the scalar-field-induced gravitational acceleration becomes
-        comparable to the baryonic contribution. Because the field profile
+        comparable to the baryonic contribution — an enclosed-mean-density
+        criterion, consistent with the form of Eq.~(\ref{eq:trans_radius});
+        a local-density formulation would require a specified field/density
+        profile and is not used here. Because the field profile
         is governed by the same potential scale $\Lambda \equiv \rho_T^{1/4}$
         and coupling $\beta_A$ that set the compact-object saturation,
-        $\rho_{\rm trans}$ is a derived consequence of these parameters,
-        not a free fit. The SPARC analysis measures the structural
+        $\rho_{\rm trans}$ is expected to be a derived consequence of these
+        parameters rather than a free fit; pending that derivation it is an
+        independent empirical input. The SPARC analysis measures the structural
         exponent $\alpha_{\rm SPARC}$ and normalization $k$; the
         corresponding $\rho_{\rm trans}$ is then recovered from $k$
         via Eq.~(\ref{eq:trans_radius}) as a consistency check.
@@ -504,11 +597,15 @@
     scale but an emergent property of halo assembly and feedback history.
     Hydrodynamic simulations (e.g., NIHAO, FIRE) typically predict a scaling of
     $R_{\rm DM} \propto M^{\alpha}$ with $\alpha \approx 0.3$–$0.4$, broadly
-    consistent with observation. However, they struggle to explain why the
-    normalization aligns with the specific density $\rho_T \approx 20$ g/cm³
-    derived from GNSS and terrestrial constraints. The "Null Hypothesis" (that
-    the $M^{1/3}$ scaling is a feedback coincidence) does not naturally explain the
-    cross-scale convergence with GNSS and compact-object physics.
+    consistent with observation. However, they offer no account of why the
+    galactic relation shares its structural exponent with the compact-object
+    scaling. The fitted normalization corresponds to $\rho_{\rm trans} \approx
+    0.5\,M_\odot/{\rm pc}^3$ ($\sim 3\times10^{-23}$ g/cm³), twenty-four orders
+    of magnitude below $\rho_T$: what is presently demonstrated is a shared
+    structural exponent between two independently normalized scales, not a
+    normalization link, and whether $\rho_{\rm trans}$ follows from the same
+    potential scale $\Lambda$ that sets $\rho_T$ is the open derivation target
+    recorded in the Formal Link.
 </p>
 
 <div class="result-box">
@@ -519,10 +616,12 @@
         LCDM+Feedback can accommodate the
         galaxy scaling but treats the normalization as a free parameter,
         offering no predictive link to other scales. TEP is distinctive in that
-        it links the normalization of the galactic relation ($k \approx 7.9
-        \times 10^{-4}$ kpc/$M_\odot^{1/3}$) to a GNSS-anchored normalization,
-        enabling a cross-scale consistency check without galaxy-by-galaxy
-        tuning, within the stated systematic uncertainty.
+        it poses the normalization of the galactic relation ($k \approx 7.9
+        \times 10^{-4}$ kpc/$M_\odot^{1/3}$, equivalently $\rho_{\rm trans}$)
+        as a quantity to be derived from the same GNSS-anchored scalar sector —
+        a stated falsification condition rather than an established link: the
+        measured normalization is an independent empirical input pending that
+        derivation, within the stated systematic uncertainty.
     </p>
 </div>
 

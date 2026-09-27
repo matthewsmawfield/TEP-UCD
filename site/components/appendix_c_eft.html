@@ -6,12 +6,20 @@
     phenomenologically from GNSS clock correlations and SPARC scaling. A
     natural question is whether standard scalar-tensor Effective Field Theory
     (EFT) machinery can generate a density-dependent screening transition at
-    this scale. This appendix presents two candidate completions—Symmetron and
-    Chameleon screening—demonstrating that the observed phenomenology is
-    <em>mechanistically possible</em> within established modified-gravity
-    frameworks, without requiring new physics beyond a self-interacting scalar
-    sector. The completions are benchmark models, not unique derivations; the
-    ultimate microscopic origin of $\rho_T$ remains an open target. In the
+    this scale. This appendix presents two candidate completions: the
+    symmetron, retained as an external benchmark whose $\mathbb{Z}_2$
+    mechanism is standard in the modified-gravity literature but whose
+    quadratic coupling is not the corpus's universal exponential; and a
+    confining-potential realization constructed directly on the corpus
+    coupling $A(\phi) = e^{-\phi/M_{\rm Pl}}$ ($\beta_A = -1$), which is
+    the corpus-internal demonstration that the observed phenomenology is
+    <em>mechanistically possible</em> without requiring new physics beyond
+    a self-interacting scalar sector. The completions are benchmark models,
+    not unique derivations; the corpus's primary screening vehicle is the
+    nonlinear kinetic sector $K(X) = 1 + (X/\Lambda^4)^n$ of Paper 0, whose
+    gradient saturation at $X \sim \Lambda^4$ supplies the same density scale
+    — the potential-sector realization here is the minimal analogue sharing
+    that scale. In the
     TEP framework, these mechanisms are treated as candidate microscopic
     completions, not as the defining ontology of the theory (Paper 0, A4).
     TEP screening is defined by the continuous spatial profile of the scalar
@@ -58,7 +66,7 @@
 <p>
     The critical behavior is immediate. When $\rho > \rho_* \equiv \mu^2 M^2$,
     the effective mass squared is negative and the field sits at the symmetric
-    minimum $\phi = 0$; the scalar is massive and screened, so fifth-force
+    minimum $\phi = 0$; the scalar is massive and screened, so Temporal Shear
     effects are suppressed. When $\rho < \rho_*$, symmetry is spontaneously
     broken, the field rolls to $\phi_0 = \mu_{\rm eff}/\sqrt{\lambda}$, and the
     scalar becomes light—generating long-range forces. The saturation scale is:
@@ -74,28 +82,37 @@
     Compton wavelength in the unscreened regime matches the galactic scale
     ($\lambda_C \sim$ kpc), which yields $\mu \sim 10^{-27}$ eV and
     $M \sim 10^{-3}$ $M_{\rm Pl}$. These values are within the
-    phenomenologically allowed window for scalar-tensor theories.
+    phenomenologically allowed window for scalar-tensor theories. Within the
+    corpus this completion is an external benchmark only: its quadratic
+    coupling $A(\phi) = 1 + \phi^2/2M^2$ is not the universal exponential,
+    and the $\mathbb{Z}_2$ structure on which the mechanism rests cannot be
+    imposed on the linearly coupled exponential $A = e^{-\phi/M_{\rm Pl}}$.
 </p>
 
-<h3>C.2 Chameleon Screening: Runaway Potential and Thin-Shell</h3>
+<h3>C.2 Confining-Potential Screening on the Corpus Coupling</h3>
 
 <p>
-    The chameleon mechanism (Khoury &amp; Weltman 2004) achieves screening through
-    a runaway potential that becomes steep in dense environments. A benchmark
-    choice is:
+    Under the corpus's frozen coupling $\beta_A = -1$, the matter term enters
+    the effective potential with negative slope, so the runaway inverse-power
+    branch $V \propto \phi^{-n}$ used in chameleon completions is inadmissible:
+    both $V' < 0$ and $\beta_A\rho A/M_{\rm Pl} < 0$ for all $\phi > 0$, no
+    minimum of $V_{\rm eff}$ exists, and the field runs away rather than
+    saturating. The admissible branch is a confining potential, $V' > 0$.
+    Writing the dimensionless field $u = \phi/M_{\rm Pl}$, a benchmark choice
+    is:
 </p>
 
 <div class="equation">
-    \begin{equation} \label{eq:chameleon_potential} V(\phi) = \Lambda^4 \left(1 + \frac{\Lambda^n}{\phi^n}\right), \end{equation}
+    \begin{equation} \label{eq:chameleon_potential} V(u) = \frac{\Lambda^4}{m}\,u^{m}, \qquad m > 2, \end{equation}
 </div>
 
 <p>
-    with $n > 0$ and $\Lambda \sim \rho_T^{1/4} \approx 96$ keV (Section 5.5).
-    The conformal coupling is exponential:
+    with $\Lambda \sim \rho_T^{1/4} \approx 96$ keV (Section 5.5).
+    The conformal coupling is the corpus exponential:
 </p>
 
 <div class="equation">
-    \begin{equation} \label{eq:chameleon_coupling} A(\phi) = \exp\left(\frac{\beta_A \phi}{M_{\rm Pl}}\right), \end{equation}
+    \begin{equation} \label{eq:chameleon_coupling} A(u) = e^{-u} \qquad (\beta_A = -1). \end{equation}
 </div>
 
 <p>
@@ -103,16 +120,26 @@
 </p>
 
 <div class="equation">
-    \begin{equation} \label{eq:chameleon_veff} V_{\rm eff}(\phi) = V(\phi) + \frac{\beta_A \rho}{M_{\rm Pl}} \phi, \end{equation}
+    \begin{equation} \label{eq:chameleon_veff} V_{\rm eff}(u) = V(u) + \rho\left[A(u) - 1\right] = \frac{\Lambda^4}{m}u^m + \rho\left(e^{-u} - 1\right). \end{equation}
 </div>
 
 <p>
-    where $A(\phi)$ has been linearized for small $\phi/M_{\rm Pl}$. The field
+    Its derivative $V_{\rm eff}' = \Lambda^4 u^{m-1} - \rho\,e^{-u}$ vanishes at
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:chameleon_umin} u_{\rm min}^{m-1}\,e^{u_{\rm min}} = \frac{\rho}{\Lambda^4} \quad\Longrightarrow\quad u_{\rm min} \approx \left(\frac{\rho}{\Lambda^4}\right)^{1/(m-1)} \;\; (u_{\rm min} \ll 1), \end{equation}
+</div>
+
+<p>
+    so a minimum exists for every $\rho > 0$, with the field elevated inside
+    matter ($u_{\rm min} > 0$) and approaching zero in the ambient — the
+    direction required by the corpus sign convention. The field
     equation in a static, spherically symmetric environment is:
 </p>
 
 <div class="equation">
-    \begin{equation} \label{eq:chameleon_eom} \frac{d^2\phi}{dr^2} + \frac{2}{r}\frac{d\phi}{dr} = V_{\rm eff}'(\phi). \end{equation}
+    \begin{equation} \label{eq:chameleon_eom} \frac{d^2 u}{dr^2} + \frac{2}{r}\frac{du}{dr} = \frac{1}{M_{\rm Pl}^2}V_{\rm eff}'(u). \end{equation}
 </div>
 
 <p>
@@ -120,39 +147,49 @@
 </p>
 
 <div class="equation">
-    \begin{equation} \label{eq:chameleon_meff} m_{\rm eff}^2 = V_{\rm eff}''(\phi) = V''(\phi) = n(n+1) \frac{\Lambda^{n+4}}{\phi^{n+2}}. \end{equation}
+    \begin{equation} \label{eq:chameleon_meff} m_{\rm eff}^2 = \frac{1}{M_{\rm Pl}^2}V_{\rm eff}''(u_{\rm min}) = \frac{\Lambda^4(m-1)\,u_{\rm min}^{m-2} + \rho\,e^{-u_{\rm min}}}{M_{\rm Pl}^2}. \end{equation}
 </div>
 
 <p>
-    In dense environments ($\rho \gg \rho_T$), the field is forced to small
-    $\phi$, making $m_{\rm eff}$ large and the Compton wavelength small: the
-    scalar is screened. In dilute environments ($\rho \ll \rho_T$), the field
-    relaxes to large $\phi$, $m_{\rm eff}$ drops, and the scalar becomes
-    long-ranged. The transition density $\rho_T$ is the value at which the
-    screening transition becomes gradual and the field begins to couple to the
-    exterior environment.
+    Both terms are positive, and $m_{\rm eff}^2$ grows with density (at fixed
+    large $\rho$ the second term alone gives $\lambda_C \sim M_{\rm
+    Pl}/\sqrt{\rho}$). The screening is doubly density-dependent: in dense
+    environments ($\rho \gg \rho_T$) the equilibrium rises to
+    $u_{\rm min} \gtrsim 1$, the Compton wavelength shrinks, and the matter
+    source slope $\rho\,A_{,u} = -\rho\,e^{-u_{\rm min}}$ is itself
+    exponentially suppressed — the conformal coupling self-quenches where the
+    field is large. In dilute environments ($\rho \ll \rho_T$), $u_{\rm min}$
+    approaches zero, $m_{\rm eff}$ drops toward $\Lambda^4(m-1)u_{\rm
+    min}^{m-2}/M_{\rm Pl}^2 \to 0$ for $m > 2$, and the scalar becomes
+    long-ranged. The transition density $\rho_T = \Lambda^4$ is the value at
+    which $u_{\rm min}$ crosses order unity and the conformal suppression
+    becomes appreciable.
 </p>
 
 <h3>C.3 Deriving the Saturation Scale</h3>
 
 <p>
-    Both mechanisms yield a density scale $\rho_T$ that is not put in by hand
+    Both completions yield a density scale $\rho_T$ that is not put in by hand
     but emerges from the interplay between the scalar self-interaction and the
-    matter coupling. In the symmetron, $\rho_T = \mu^2 M^2$ is the symmetry
-    restoration density. In the chameleon, $\rho_T$ is approximately the density
-    at which the linear matter-coupling term balances the potential gradient:
+    matter coupling. In the symmetron benchmark, $\rho_T = \mu^2 M^2$ is the
+    symmetry-restoration density. In the corpus realization, the transition
+    density is the point where the equilibrium field crosses order unity:
 </p>
 
 <div class="equation">
-    \begin{equation} \label{eq:chameleon_rhot} \frac{\beta_A \rho_T}{M_{\rm Pl}} \sim \frac{V'(\phi_0)}{\phi_0} \sim \frac{n \Lambda^4}{\phi_0^2}. \end{equation}
+    \begin{equation} \label{eq:chameleon_rhot} \Lambda^4\,u_T^{m-1}\,e^{u_T} = \rho_T \quad\Longrightarrow\quad \rho_T \sim \Lambda^4 \;\; (u_T \sim 1). \end{equation}
 </div>
 
 <p>
-    Fixing $\Lambda \approx 96$ keV from the dimensional analysis of Section 5.5
-    and demanding consistency with the SPARC-normalized galactic transition
-    yields $\beta_A \sim \mathcal{O}(1)$ and $n \sim \mathcal{O}(1)$. The scale
-    $\rho_T \approx 20$ g/cm³ therefore emerges structurally from the EFT topology,
-    directly recovered without arbitrary parameter insertion.
+    Fixing $\Lambda \approx 96$ keV from the dimensional analysis of Section
+    5.5 and imposing the frozen corpus coupling $\beta_A = -1$ leaves the
+    confining exponent $m$ as the remaining structural freedom: the scale
+    $\rho_T \approx 20$ g/cm³ is carried by the potential scale $\Lambda^4$
+    itself, while $m$ controls only the shape of the screening transition. The
+    consistency of this picture with the SPARC-normalized galactic transition
+    is then a question about how the same $(\Lambda, \beta_A)$ field profile
+    behaves at galactic densities — the open normalization linkage recorded in
+    the Formal Link, not a free refit.
 </p>
 
 <h3>C.4 Status and Caveats</h3>
@@ -160,17 +197,20 @@
 <p>
     The completions above demonstrate that the TEP phenomenology—density-dependent
     screening, a compact soliton scale, and a galactic transition—is
-    <em>mathematically realizable</em> within standard scalar-tensor EFTs. They
+    <em>mathematically realizable</em>: the confining-potential construction
+    realizes it within the corpus's own frozen coupling, and the symmetron
+    provides an external benchmark from the standard EFT literature. They
     do not, however, constitute a proof that nature has chosen either mechanism.
     Key open questions include:
 </p>
 
 <ul>
     <li>
-        <strong>Unique potential:</strong> The symmetron and chameleon are
-        representative examples. Other potentials (e.g., dilatonic, k-essence,
-        or Gallileon) may also produce the required screening, and a
-        first-principles derivation from quantum gravity would be required to
+        <strong>Unique potential:</strong> The confining benchmark and the
+        symmetron are representative examples. Other admissible forms (e.g.,
+        confining potentials of different exponent, or the corpus's $K(X)$
+        kinetic route) may also produce the required screening, and a
+        first-principles derivation from the master action would be required to
         select the correct form.
     </li>
     <li>
@@ -189,9 +229,13 @@
 </ul>
 
 <p>
-    The existence of at least two standard completions that structurally reproduce the salient phenomenology
-    removes any objection that $\rho_T \approx 20$ g/cm³ is a numerological
-    construct. It is a strictly derived consequence of density-dependent scalar
-    screening, firmly anchored to terrestrial kinematic data.
+    The existence of a corpus-internal completion that structurally reproduces
+    the salient phenomenology under the frozen $\beta_A = -1$ coupling —
+    with the symmetron as an external benchmark — removes the objection that
+    $\rho_T \approx 20$ g/cm³ is a numerological construct. The scale is
+    carried by the saturation potential $\Lambda^4$ of a density-dependent
+    scalar screening mechanism whose admissible branch is selected by the
+    corpus sign convention itself, and is anchored to terrestrial kinematic
+    data.
 </p>
 </div>

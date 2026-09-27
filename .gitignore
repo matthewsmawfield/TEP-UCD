@@ -57,3 +57,4 @@ results/**/*.hdf5
 !data/.gitkeep
 !results/.gitkeep
 !logs/.gitkeep
+manuscripts/

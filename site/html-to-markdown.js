@@ -223,7 +223,7 @@ class HTMLToMarkdownConverter {
         const version = versionMatch ? versionMatch[1]
             .replace(/<[^>]+>/g, '')
             .replace(/^Version:\s*/i, '')
-            .trim() : 'v0.7 (New Delhi)';
+            .trim() : 'v0.8 (New Delhi)';
         
         const dateMatch = html.match(/<div[^>]*class=["'][^"']*date[^"']*["'][^>]*>(.*?)<\/div>/i);
         const date = dateMatch ? dateMatch[1].replace(/<[^>]+>/g, '').trim() : 'First published: 29 November 2025';
@@ -300,6 +300,24 @@ class HTMLToMarkdownConverter {
             const filename = `6-TEP-UCD-v${versionInfo.version}-${safeCodename}.md`;
             const outputPath = path.join(__dirname, '..', filename);
             fs.writeFileSync(outputPath, markdown, 'utf8');
+
+            // Keep the shared collection archive (../manuscripts/) in sync
+            try {
+                const sharedArchiveDir = path.join(__dirname, '..', '..', 'manuscripts');
+                if (fs.existsSync(sharedArchiveDir)) {
+                    const archiveName = path.basename(outputPath);
+                    const paperPrefix = archiveName.split('-')[0];
+                    for (const staleFile of fs.readdirSync(sharedArchiveDir)) {
+                        if (staleFile !== archiveName && staleFile.endsWith('.md') && staleFile.startsWith(`${paperPrefix}-TEP`)) {
+                            fs.rmSync(path.join(sharedArchiveDir, staleFile));
+                        }
+                    }
+                    fs.copyFileSync(outputPath, path.join(sharedArchiveDir, archiveName));
+                    console.log(`📄 Copied to shared archive: manuscripts/${archiveName}`);
+                }
+            } catch (archiveError) {
+                console.warn(`⚠️  Could not update shared manuscripts archive: ${archiveError.message}`);
+            }
             
             console.log('✅ Markdown conversion complete!');
             console.log(`📄 Output: ${outputPath}`);

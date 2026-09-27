@@ -172,6 +172,18 @@ def run_pipeline():
         "run_residual_analysis"
     )
 
+    # Step 8: Density-threshold vs size-scaling confound test
+    results["step_8_density_vs_size_confound"] = run_step(
+        "step_8_density_vs_size_confound", steps_dir / "step_8_density_vs_size_confound.py",
+        "run_confound_test"
+    )
+
+    # Step 9: Phantom-mass amplitude and radial-profile test
+    results["step_9_phantom_amplitude"] = run_step(
+        "step_9_phantom_amplitude", steps_dir / "step_9_phantom_amplitude.py",
+        "run_amplitude_test"
+    )
+
     total_elapsed = time.time() - t0
     save_pipeline_summary(results, total_elapsed)
 
