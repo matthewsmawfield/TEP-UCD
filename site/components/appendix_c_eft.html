@@ -15,11 +15,18 @@
     the corpus-internal demonstration that the observed phenomenology is
     <em>mechanistically possible</em> without requiring new physics beyond
     a self-interacting scalar sector. The completions are benchmark models,
-    not unique derivations; the corpus's primary screening vehicle is the
-    nonlinear kinetic sector $K(X) = 1 + (X/\Lambda^4)^n$ of Paper 0, whose
-    gradient saturation at $X \sim \Lambda^4$ supplies the same density scale
-    — the potential-sector realization here is the minimal analogue sharing
-    that scale. In the
+    not unique derivations; the corpus's working screening realization is the
+    nonlinear kinetic sector of the Paper-0 master action,
+    $P = X - V + X|X|/\Lambda_X^4$, whose response $P_{,X} = 1 +
+    2|X|/\Lambda_X^4$ saturates the scalar coupling once the field gradient
+    exceeds the kinetic scale $\Lambda_X = \sqrt{M_{\rm Pl}H_0} \approx 1.9$
+    meV (a realization, not a uniqueness theorem — Paper 0, A4).
+    The kinetic scale fixes the shear threshold $g_t$ — equivalently a
+    surface-density crossover $\Sigma_* \sim M_{\rm Pl}^2 H_0 \sim
+    10^{-1}$ g/cm² inside sources (step 14) — not a volume-density scale:
+    the density argument of the amplitude sector enters through the
+    potential normalization, and the potential-sector realization below is
+    constructed on the corpus's own quartic coupling. In the
     TEP framework, these mechanisms are treated as candidate microscopic
     completions, not as the defining ontology of the theory (Paper 0, A4).
     TEP screening is defined by the continuous spatial profile of the scalar
@@ -98,17 +105,22 @@
     both $V' < 0$ and $\beta_A\rho A/M_{\rm Pl} < 0$ for all $\phi > 0$, no
     minimum of $V_{\rm eff}$ exists, and the field runs away rather than
     saturating. The admissible branch is a confining potential, $V' > 0$.
-    Writing the dimensionless field $u = \phi/M_{\rm Pl}$, a benchmark choice
-    is:
+    Writing the dimensionless field $u = \phi/M_{\rm Pl}$, the admissible
+    family is
 </p>
 
 <div class="equation">
-    \begin{equation} \label{eq:chameleon_potential} V(u) = \frac{\Lambda^4}{m}\,u^{m}, \qquad m > 2, \end{equation}
+    \begin{equation} \label{eq:chameleon_potential} V(u) = \frac{\lambda}{m}\,M_{\rm Pl}^4\,u^{m}, \qquad m > 2, \end{equation}
 </div>
 
 <p>
-    with $\Lambda \sim \rho_T^{1/4} \approx 96$ keV (Section 5.5).
-    The conformal coupling is the corpus exponential:
+    whose coefficient is the dimensionless coupling $\lambda$ — not a
+    fourth-power energy density, and distinct from the GNSS covariance
+    length denoted $\lambda$ in Section 3. The corpus's own matter-hosting branch is
+    the quartic member of this family, the weak-field truncation of the
+    master potential $V(u) = V_{\rm matter}(u)e^{-(u/u_s)^4} + V_0
+    e^{-(u_s/u)^4}$ (Paper 0, Section 8). The conformal coupling is the
+    corpus exponential:
 </p>
 
 <div class="equation">
@@ -120,21 +132,51 @@
 </p>
 
 <div class="equation">
-    \begin{equation} \label{eq:chameleon_veff} V_{\rm eff}(u) = V(u) + \rho\left[A(u) - 1\right] = \frac{\Lambda^4}{m}u^m + \rho\left(e^{-u} - 1\right). \end{equation}
+    \begin{equation} \label{eq:chameleon_veff} V_{\rm eff}(u) = V(u) + \rho\left[A(u) - 1\right] = \frac{\lambda}{m}M_{\rm Pl}^4\,u^m + \rho\left(e^{-u} - 1\right). \end{equation}
 </div>
 
 <p>
-    Its derivative $V_{\rm eff}' = \Lambda^4 u^{m-1} - \rho\,e^{-u}$ vanishes at
+    Its derivative $V_{\rm eff}' = \lambda M_{\rm Pl}^4 u^{m-1} - \rho\,e^{-u}$ vanishes at
 </p>
 
 <div class="equation">
-    \begin{equation} \label{eq:chameleon_umin} u_{\rm min}^{m-1}\,e^{u_{\rm min}} = \frac{\rho}{\Lambda^4} \quad\Longrightarrow\quad u_{\rm min} \approx \left(\frac{\rho}{\Lambda^4}\right)^{1/(m-1)} \;\; (u_{\rm min} \ll 1), \end{equation}
+    \begin{equation} \label{eq:chameleon_umin} \lambda\,u_{\rm min}^{m-1}\,e^{u_{\rm min}} = \frac{\rho}{M_{\rm Pl}^4} \quad\Longrightarrow\quad u_{\rm min} \approx \left(\frac{\rho}{\lambda M_{\rm Pl}^4}\right)^{1/(m-1)} \;\; (u_{\rm min} \ll 1), \end{equation}
 </div>
 
 <p>
     so a minimum exists for every $\rho > 0$, with the field elevated inside
     matter ($u_{\rm min} > 0$) and approaching zero in the ambient — the
-    direction required by the corpus sign convention. The field
+    direction required by the corpus sign convention. The exponent is then
+    fixed, not free: the corpus's clock-amplitude response
+    $S_A(\bar\rho) = \min[1, (\bar\rho/\rho_T)^{1/3}]$ is, on this branch,
+    the equilibrium ratio $u_{\rm min}(\bar\rho)/u_{\rm min}(\rho_T)$
+    (the $u_{\rm min} \ll 1$ truncation; the full $\lambda u^3 e^u$ solve
+    agrees to $\sim 4\times10^{-10}$ relative, step 14), and reproducing its
+    density exponent requires $1/(m-1) = 1/3$, i.e. $m = 4$ — the quartic
+    member already adopted by the master potential. The corpus-internal
+    realization and the corpus's amplitude law are thereby the same object.
+    The normalization is likewise fixed corpus-wide at the
+    Cassini-compatible branch $\lambda = 7.5\times10^{-66}$
+    (<code>LAMBDA_QUARTIC_CASSINI</code>; the fiducial point $\lambda_{\rm ref} =
+    7.5\times10^{-71}$ of the same family fails the corrected
+    linear-in-$S_\Sigma$ Cassini evaluation by $\sim 250\times$, Paper 0
+    Appendix E step 03). As an energy scale the potential normalization is
+    $\Lambda_V \equiv \lambda^{1/4}M_{\rm Pl} \approx 1.3\times10^{2}$ GeV —
+    fourteen orders of magnitude above the kinetic scale $\Lambda_X \approx
+    1.9$ meV, and six orders above the energy-density reading
+    $\rho_T^{1/4} \approx 96$ keV of the saturation density (Section 5.5).
+    These are three distinct quantities: $\Lambda_X$ is the gradient
+    threshold of the kinetic sector, $\lambda$ the amplitude-sector
+    coupling, and $\rho_T$ the geometric reference density of the
+    $R_T(M)$ law. Under this normalization the equilibrium remains deeply
+    perturbative at all matter densities: $u_{\rm min}(\rho_T) =
+    6.9\times10^{-9}$ and $u_{\rm min}(\bar\rho_\oplus) = 4.5\times10^{-9}$,
+    matching the terrestrial share ($\sim 0.5\%$) of the nested field
+    decomposition (Paper 0, Section 2.2).
+</p>
+
+<p>
+    The field
     equation in a static, spherically symmetric environment is:
 </p>
 
@@ -147,48 +189,85 @@
 </p>
 
 <div class="equation">
-    \begin{equation} \label{eq:chameleon_meff} m_{\rm eff}^2 = \frac{1}{M_{\rm Pl}^2}V_{\rm eff}''(u_{\rm min}) = \frac{\Lambda^4(m-1)\,u_{\rm min}^{m-2} + \rho\,e^{-u_{\rm min}}}{M_{\rm Pl}^2}. \end{equation}
+    \begin{equation} \label{eq:chameleon_meff} m_{\rm eff}^2 = \frac{1}{M_{\rm Pl}^2}V_{\rm eff}''(u_{\rm min}) = \frac{3\lambda M_{\rm Pl}^4\,u_{\rm min}^{2} + \rho\,e^{-u_{\rm min}}}{M_{\rm Pl}^2} \simeq 3\lambda M_{\rm Pl}^2 u_{\rm min}^{2}, \end{equation}
 </div>
 
 <p>
-    Both terms are positive, and $m_{\rm eff}^2$ grows with density (at fixed
-    large $\rho$ the second term alone gives $\lambda_C \sim M_{\rm
-    Pl}/\sqrt{\rho}$). The screening is doubly density-dependent: in dense
-    environments ($\rho \gg \rho_T$) the equilibrium rises to
-    $u_{\rm min} \gtrsim 1$, the Compton wavelength shrinks, and the matter
-    source slope $\rho\,A_{,u} = -\rho\,e^{-u_{\rm min}}$ is itself
-    exponentially suppressed — the conformal coupling self-quenches where the
-    field is large. In dilute environments ($\rho \ll \rho_T$), $u_{\rm min}$
-    approaches zero, $m_{\rm eff}$ drops toward $\Lambda^4(m-1)u_{\rm
-    min}^{m-2}/M_{\rm Pl}^2 \to 0$ for $m > 2$, and the scalar becomes
-    long-ranged. The transition density $\rho_T = \Lambda^4$ is the value at
-    which $u_{\rm min}$ crosses order unity and the conformal suppression
-    becomes appreciable.
+    where the equilibrium condition makes the curvature term dominant at
+    $u_{\rm min} \ll 1$, giving $m_{\rm eff} \propto \lambda^{1/6}
+    \rho^{1/3}$. The screening is doubly density-dependent. The Compton
+    wavelength $\lambda_c(\rho) = 1/m_{\rm eff}$ contracts through denser
+    interiors; the dynamical content of the saturation transition is the
+    crossover at which a body's interior becomes Compton-resolved inside its
+    own saturation halo, $\lambda_c(\bar\rho) \lesssim R_T(M)$ — for the
+    corpus normalization $\lambda_c(\rho_T) \approx 2{,}500$ km $\approx
+    0.6\,R_T(M_\oplus)$, and the crossover density $\lambda_c(\bar\rho) =
+    R_T(M_\oplus)$ sits at $\sim 4$ g/cm³, inside the terrestrial
+    condensed-matter window (step 14). Deep in the interior the field sits
+    near its local equilibrium $u_{\rm min}(\rho)$ and the spatial variation
+    is confined to a boundary layer of width $\sim \lambda_c$, where the
+    nonlinear kinetic response $P_{,X}$ — the same field equation's other
+    half — controls the gradient amplitude; this is the channel through
+    which $\Lambda_X$ enters the profile. The conformal self-quenching of
+    the source slope $\rho\,A_{,u} = -\rho\,e^{-u_{\rm min}}$ becomes
+    operative only when the equilibrium reaches order unity, which under the
+    corpus normalization occurs at $\rho_{\rm sat} \sim \lambda M_{\rm
+    Pl}^4 \approx 6\times10^{25}$ g/cm³ — far above neutron-star densities,
+    inside the temporal-well regime where the master potential's $V_0$ floor
+    activates (Paper 28). Ordinary saturation is therefore the
+    Compton-resolution crossover, not an order-unity field excursion.
 </p>
 
-<h3>C.3 Deriving the Saturation Scale</h3>
+<h3>C.3 The Saturation Scale: Calibration versus Derivation</h3>
 
 <p>
-    Both completions yield a density scale $\rho_T$ that is not put in by hand
-    but emerges from the interplay between the scalar self-interaction and the
-    matter coupling. In the symmetron benchmark, $\rho_T = \mu^2 M^2$ is the
-    symmetry-restoration density. In the corpus realization, the transition
-    density is the point where the equilibrium field crosses order unity:
+    In the symmetron benchmark, $\rho_T = \mu^2 M^2$ is the
+    symmetry-restoration density, fixed by two potential parameters. On the
+    corpus branch the analogous question — which property of the scalar
+    action returns $\rho_T$ — has a sharper answer than a dimensional guess.
+    Under the corpus normalization the equilibrium at the transition density
+    is $u_{\rm min}(\rho_T) = 6.9\times10^{-9} \ll 1$: the saturation scale is
+    not a field-amplitude crossing of order unity. What $\rho_T$ parameterizes
+    is the geometric constant of the saturation-radius law $R_T(M) =
+    (3M/4\pi\rho_T)^{1/3}$, calibrated by the GNSS covariance length (Section
+    2); its dynamical proxy on the quartic branch is the Compton-resolution
+    crossover $\lambda_c(\bar\rho) \sim R_T(M)$, which for Earth sits at
+    $\bar\rho \sim 4$ g/cm³ — the terrestrial condensed-matter window in which
+    the measured $\rho_T \approx 20$ g/cm³ resides.
 </p>
 
-<div class="equation">
-    \begin{equation} \label{eq:chameleon_rhot} \Lambda^4\,u_T^{m-1}\,e^{u_T} = \rho_T \quad\Longrightarrow\quad \rho_T \sim \Lambda^4 \;\; (u_T \sim 1). \end{equation}
-</div>
+<p>
+    The shortcut identification $\rho_T \equiv \Lambda_V^4$ — equating the
+    geometric reference density with the potential coefficient — is not
+    available on the corpus branch, and is excluded rather than merely
+    unnecessary. Imposing $u_{\rm min}(\rho_T) \sim 1$ is equivalent to fixing
+    $\lambda = \rho_T/M_{\rm Pl}^4 \approx 2.4\times10^{-90}$, and that
+    normalization fails three independent checks (step 14): it lies
+    $3\times10^{24}$ below the Cassini-compatible quartic normalization that
+    Solar-System screening requires; it drives the neutron-star-core
+    equilibrium to $u_{\rm min} \approx 21$, past the master-potential knee
+    $u_s \simeq 10$ and onto the Planck-density floor — observed pulsars are
+    not temporal wells; and its implied Compton length at the transition
+    density, $\lambda_c(\rho_T) \approx 3.4\times10^{7}$ km, exceeds any
+    terrestrial body by more than three orders of magnitude, so the local equilibrium it
+    invokes never forms within the host. The same comparison furnishes a
+    directional lower bound: keeping neutron-star interiors below the knee,
+    $u_{\rm min}(\rho_{\rm NS}) < u_s$ at $\rho_{\rm NS} \sim 2\times10^{14}$
+    g/cm³, requires $\lambda \gtrsim 10^{-84}$, which the corpus branch
+    satisfies at nineteen orders of margin. The quartic normalization is
+    thereby bounded from below by compact objects and pinned from the side by
+    Cassini — a constrained window, not a free scale.
+</p>
 
 <p>
-    Fixing $\Lambda \approx 96$ keV from the dimensional analysis of Section
-    5.5 and imposing the frozen corpus coupling $\beta_A = -1$ leaves the
-    confining exponent $m$ as the remaining structural freedom: the scale
-    $\rho_T \approx 20$ g/cm³ is carried by the potential scale $\Lambda^4$
-    itself, while $m$ controls only the shape of the screening transition. The
+    The correct microscopic reading is therefore: $\rho_T$ is the measured
+    geometric constant of $R_T(M)$; the quartic coupling $\lambda$ is the
+    amplitude-sector normalization; and the order-unity self-quenching crossing
+    sits at $\rho_{\rm sat} \sim \lambda M_{\rm Pl}^4 \approx
+    6\times10^{25}$ g/cm³, inside the temporal-well regime of Paper 28. The
     consistency of this picture with the SPARC-normalized galactic transition
-    is then a question about how the same $(\Lambda, \beta_A)$ field profile
-    behaves at galactic densities — the open normalization linkage recorded in
+    is then a question about how the same $(\lambda, \beta_A)$ field profile
+    behaves at halo densities — the open normalization linkage recorded in
     the Formal Link, not a free refit.
 </p>
 
@@ -206,24 +285,28 @@
 
 <ul>
     <li>
-        <strong>Unique potential:</strong> The confining benchmark and the
-        symmetron are representative examples. Other admissible forms (e.g.,
-        confining potentials of different exponent, or the corpus's $K(X)$
-        kinetic route) may also produce the required screening, and a
-        first-principles derivation from the master action would be required to
-        select the correct form.
+        <strong>Realization uniqueness:</strong> Within the confining family
+        no exponent freedom remains — the corpus amplitude-response exponent
+        selects the quartic member $m = 4$, which is the weak-field branch of
+        the corpus's own master potential rather than one choice among many.
+        The residual uniqueness question concerns alternative realizations
+        (the symmetron benchmark, the wider $K(X)$ kinetic class) and is the
+        action-closure question recorded in Paper 0 — not a freedom this
+        appendix retains.
     </li>
     <li>
-        <strong>Quantum stability:</strong> The $\mu \sim 10^{-27}$ eV mass scale
-        in the symmetron completion is vulnerable to quantum corrections. A
-        technically natural model (e.g., with approximate shift symmetry or
-        clockwork structure) would strengthen the completion.
+        <strong>Quantum stability:</strong> The small quartic coupling
+        $\lambda \approx 7.5\times10^{-66}$ is radiatively stable in the
+        technical sense — its quantum corrections are proportional to
+        $\lambda$ itself. The $\mu \sim 10^{-27}$ eV mass-scale exposure
+        belongs to the symmetron benchmark, not to the corpus realization.
     </li>
     <li>
         <strong>Terrestrial transition width:</strong> Neither completion predicts
         the detailed width $\Delta R_T$ of the Earth's screening transition,
         which controls the orbital-transfer mapping to $L_c$ (the phenomenological transfer sketch in Section 2). A
-        numerical solution of the specified potential in Earth's density
+        numerical solution of the quartic profile at the fixed corpus
+        normalization in Earth's density
         profile is required.
     </li>
 </ul>
@@ -232,10 +315,12 @@
     The existence of a corpus-internal completion that structurally reproduces
     the salient phenomenology under the frozen $\beta_A = -1$ coupling —
     with the symmetron as an external benchmark — removes the objection that
-    $\rho_T \approx 20$ g/cm³ is a numerological construct. The scale is
-    carried by the saturation potential $\Lambda^4$ of a density-dependent
-    scalar screening mechanism whose admissible branch is selected by the
-    corpus sign convention itself, and is anchored to terrestrial kinematic
-    data.
+    $\rho_T \approx 20$ g/cm³ is a numerological construct. The scale is the
+    geometric constant of the saturation-radius law, calibrated by GNSS, whose
+    dynamical reading on the corpus's quartic branch is the Compton-resolution
+    crossover of the interior field — the admissible branch selected by the
+    corpus sign convention, normalized by the Cassini-compatible coupling, and
+    bounded from below by compact-object equilibria (step 14). It is anchored
+    to terrestrial kinematic data at every step.
 </p>
 </div>

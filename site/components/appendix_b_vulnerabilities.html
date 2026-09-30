@@ -72,8 +72,9 @@
 <p>
     <strong>Mitigation:</strong> A complete mitigation
     requires a dedicated numerical solution of a specified completion (e.g., Box 6.5)
-    in the terrestrial transition regime, with \(\Lambda\) fixed by the calibrated
-    \(\rho_T\), to demonstrate how an observable clock-network correlation length
+    in the terrestrial transition regime, with the quartic normalization held
+    at the corpus value and \(\rho_T\) fixed by the calibrated
+    \(L_c\), to demonstrate how an observable clock-network correlation length
     maps onto the geometric scale \(R_T(M_\oplus)\). This single-potential demonstration
     remains an open target.
 </p>
@@ -384,7 +385,7 @@
         By deriving the effective light cone $c_\gamma^2$ and distinguishing
         the stationary boundary-value solution from the dynamic Green's function,
         it is demonstrated that the Temporal Equivalence Principle is
-        <strong>causally safe</strong>:
+        causally safe:
     </p>
     <ol>
         <li>
@@ -452,7 +453,7 @@
             <td>TEP-UCD v0.6+</td>
         </tr>
         <tr>
-            <td>MGEX scale discrepancy (1,396 vs. 4,200 km)</td>
+            <td>MGEX scale discrepancy (1,862 vs. 4,200 km)</td>
             <td>Medium–High</td>
             <td>Pre-registered test executed: scale is epoch-unstable but reproducible across independent analysis centers (COD 2,744 vs GRG 1,933 km — GRG within 4% of the pooled scale — on verified-independent matched days)</td>
             <td>TEP-GNSS-MGEX Step 3.1 (per-center + span discriminator)</td>
@@ -462,17 +463,18 @@
 
 <p>
     The MGEX discrepancy is the most consequential held-out tension in the
-    corpus. Paper 14 reports $\lambda \approx 1{,}396 \pm 90$ km from a
-    ~1-year combined multi-constellation product, versus the ~4,200 km scale
+    corpus. Paper 14 reports $\lambda \approx 1{,}862 \pm 112$ km (corrected
+    pooled; the original ~1-year headline was 1,396 km) from a combined
+    multi-constellation product, versus the ~4,200 km scale
     recovered from multi-year single-center analyses. Candidate explanations
     include: (i) combined multi-constellation clock products mixing different
     orbital sampling geometries into a compressed projection; (ii) the short
-    1-year span yielding an unstable scale estimate (consistent with
-    $R^2 \approx 0.49$); or (iii) a genuinely different scale. The
+    ~1-year span yielding an unstable scale estimate (consistent with
+    the window scatter and $R^2 \approx 0.70$ on the pooled fit); or (iii) a genuinely different scale. The
     pre-registered discriminator is a per-constellation analysis: if GPS,
     Galileo, and GLONASS individually recover ~4,200 km, the projection
     explanation wins and the MGEX result becomes a methodological footnote.
-    If per-constellation analysis also yields ~1,400 km, the
+    If per-constellation analysis also yields ~1,900 km, the
     $L_c \leftrightarrow R_T(M_\oplus)$ identification fails as calibrated,
     and the Level 1/2/3 claim hierarchy (Section 8) absorbs the hit exactly as
     designed—Level 2 falls, Levels 1 and 3 survive. Writing this test into
@@ -482,7 +484,7 @@
 
 <p>
     The discriminator has now been executed (TEP-GNSS-MGEX Step 3.1,
-    <code>results/outputs/step_3_1_per_center_scale.json</code>), in the
+    <code>TEP-GNSS-MGEX/results/outputs/step_3_1_per_center_scale.json</code>), in the
     strongest form the retained archive permits. Three results follow.
     First, a literal per-constellation station-clock split is structurally
     impossible: MGEX station clocks are single combined-solution parameters

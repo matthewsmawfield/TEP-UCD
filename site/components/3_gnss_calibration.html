@@ -11,10 +11,10 @@
     <li><strong>Distance structure:</strong> Correlation amplitude scales with inter-station separation.</li>
     <li><strong>Directional anisotropy:</strong> Stronger correlations along Earth's orbital velocity vector.</li>
     <li><strong>Orbital velocity coupling:</strong> Annual modulation consistent with $v_\oplus \approx 30$ km/s.</li>
-    <li><strong>CMB-frame alignment:</strong> Dipole structure aligns with CMB rest frame.</li>
+    <li><strong>Annual-phase direction recovery:</strong> RA = 6°, Dec = +4°, about 6° from Earth's aphelion velocity tangent; the directed CMB-apex template is anti-phase.</li>
     <li><strong>Multi-center consistency:</strong> CODE, IGS, and ESA products show consistent characteristic scales and directional structure.</li>
     <li><strong>25-year stability:</strong> Correlation structure persists across 1999–2024 (Smawfield 2025c, Paper 2).</li>
-    <li><strong>Raw RINEX validation:</strong> Pattern survives in unprocessed Single Point Positioning (SPP) analysis, constraining processing artifacts (Smawfield 2025d, Paper 3).</li>
+    <li><strong>Raw RINEX validation:</strong> Pattern survives in raw-RINEX Single Point Positioning (SPP) analysis, constraining processing artifacts (Smawfield 2025d, Paper 3).</li>
 </ul>
 
 <h3>Operational Calibration of $\rho_T$ from $L_c$</h3>
@@ -59,7 +59,7 @@
     <li><strong>Scalar field signature:</strong> Persists as a covariance floor at ~4200 km</li>
 </ul>
 
-<p>The 4200 km feature shows no counterpart in ionospheric or tropospheric delay products. Furthermore, the signal aligns with the CMB rest frame (reported at 3.8σ significance in the companion analysis)—a directional dependence absent in atmospheric models. Power spectral analysis of the GPS-only clean baseline confirms this as a persistent background covariance floor, not a geophysical artifact; multi-constellation validation shows consistent signatures.</p>
+<p>The 4200 km feature shows no counterpart in ionospheric or tropospheric delay products. Furthermore, the signal recovers an annual phase about 6° from Earth's aphelion velocity tangent (companion analysis); the CMB-apex template is anti-phase and is not identified as a rest frame. Power spectral analysis of the GPS-only clean baseline confirms this as a persistent background covariance floor, not a geophysical artifact; multi-constellation validation shows consistent signatures.</p>
 
 <h3>Null Tests and Robustness</h3>
 
@@ -184,7 +184,11 @@
     not follow that law across the astrophysical systems of Sections 3–7. The
     single-potential numerical demonstration that would replace this sketch
     with a derivation — an explicit exterior profile and sampling kernel under
-    a specified completion, with $\Lambda$ fixed by the calibrated $\rho_T$ —
+    a specified completion, with the quartic normalization held at the corpus
+    self-coupling value $\lambda = 7.5\times10^{-66}$ (the scalar-potential
+    coefficient, not the covariance length denoted $\lambda$ in this
+    section) and $\rho_T$ fixed by the calibrated
+    $L_c$ —
     remains the open target recorded in Appendix B.2.
 </p>
 

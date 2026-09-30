@@ -1,5 +1,8 @@
 v0.8 (New Delhi) — 13 September 2026 — Canonical TEP architecture alignment: added S_Σ(E) environmental operator note to ρ_T definition; replaced "unscreened" with "active-shear" in screening hierarchy
 
+- Expanded SPARC validation and universal-scaling sections
+- Updated the EFT appendix; GNSS covariance channel relabelled C_A with S_A as the static-depth factor
+
 v0.7 (New Delhi) — 3 July 2026 — change title, consistency and framing revision
 - Retitling and framing alignment across the project to reflect the Temporal Topology saturation-scale wording and candidate-scale interpretation
 - Cross-project consistency pass covering manuscript text, metadata

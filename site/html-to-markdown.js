@@ -18,10 +18,14 @@ class HTMLToMarkdownConverter {
      * Convert HTML string to markdown with proper academic formatting
      */
     cleanContentIndentation(content) {
-        // Split into lines and remove leading indentation from each line
+        // Split into lines and remove leading indentation from each line (outside code fences)
+        let inFence = false;
         return content
             .split('\n')
-            .map(line => line.replace(/^[ \t]+/, ''))
+            .map((line) => {
+                if (line.trimStart().startsWith('```')) inFence = !inFence;
+                return inFence ? line : line.replace(/^[ \t]+/, '');
+            })
             .join('\n')
             .replace(/\n{3,}/g, '\n\n')  // Remove excessive blank lines
             .trim();
@@ -48,13 +52,15 @@ class HTMLToMarkdownConverter {
         html = html.replace(/<div[^>]*class=["'][^"']*manuscript-section[^"']*["'][^>]*data-section=["']([^"']*)["'][^>]*>/gi, '\n\n## $1\n\n');
         
         // Convert headers
-        html = html.replace(/<h1[^>]*>(.*?)<\/h1>/gi, '\n# $1\n\n');
-        html = html.replace(/<h2[^>]*>(.*?)<\/h2>/gi, '\n## $1\n\n');
-        html = html.replace(/<h3[^>]*>(.*?)<\/h3>/gi, '\n### $1\n\n');
-        html = html.replace(/<h4[^>]*>(.*?)<\/h4>/gi, '\n#### $1\n\n');
+        html = html.replace(/<h1[^>]*>([\s\S]*?)<\/h1>/gi, '\n# $1\n\n');
+        html = html.replace(/<h2[^>]*>([\s\S]*?)<\/h2>/gi, '\n## $1\n\n');
+        html = html.replace(/<h3[^>]*>([\s\S]*?)<\/h3>/gi, '\n### $1\n\n');
+        html = html.replace(/<h4[^>]*>([\s\S]*?)<\/h4>/gi, '\n#### $1\n\n');
+        html = html.replace(/<h5[^>]*>([\s\S]*?)<\/h5>/gi, '\n##### $1\n\n');
+        html = html.replace(/<h6[^>]*>([\s\S]*?)<\/h6>/gi, '\n###### $1\n\n');
         
         // Convert paragraphs
-        html = html.replace(/<p[^>]*>(.*?)<\/p>/gi, '$1\n\n');
+        html = html.replace(/<p\b[^>]*>(.*?)<\/p>/gi, '$1\n\n');
         
         // Convert strong/bold
         html = html.replace(/<(strong|b)[^>]*>(.*?)<\/(strong|b)>/gi, '**$2**');
@@ -85,7 +91,8 @@ class HTMLToMarkdownConverter {
         html = html.replace(/<blockquote[^>]*>(.*?)<\/blockquote>/gi, '\n> $1\n\n');
         
         // Convert code blocks
-        html = html.replace(/<pre[^>]*><code[^>]*>(.*?)<\/code><\/pre>/gi, '\n```\n$1\n```\n\n');
+        html = html.replace(/<pre[^>]*>\s*<code[^>]*>([\s\S]*?)<\/code>\s*<\/pre>/gi, '\n```\n$1\n```\n\n');
+        html = html.replace(/<pre[^>]*>([\s\S]*?)<\/pre>/gi, '\n```\n$1\n```\n\n');
         html = html.replace(/<code[^>]*>(.*?)<\/code>/gi, '`$1`');
         
         // Convert line breaks
@@ -132,15 +139,15 @@ class HTMLToMarkdownConverter {
         
         // Restore MathJax expressions
         mathExpressions.forEach((expr, index) => {
-            html = html.replace(`__MATH_EXPRESSION_${index}__`, expr);
+            html = html.replace(`__MATH_EXPRESSION_${index}__`, () => expr);
         });
 
         // Restore sub/sup tags
         subTags.forEach((inner, index) => {
-            html = html.replace(`__SUB_${index}__`, `<sub>${inner}</sub>`);
+            html = html.replace(`__SUB_${index}__`, () => `<sub>${inner}</sub>`);
         });
         supTags.forEach((inner, index) => {
-            html = html.replace(`__SUP_${index}__`, `<sup>${inner}</sup>`);
+            html = html.replace(`__SUP_${index}__`, () => `<sup>${inner}</sup>`);
         });
         
         // Decode HTML entities
@@ -355,7 +362,7 @@ ${cleanedContent}
 
 ---
 
-*This document was automatically generated from the TEP-UCD research site. For the interactive version with figures and enhanced formatting, visit: https://matthewsmawfield.github.io/TEP-UCD/*
+*This document was automatically generated from the TEP-UCD research site. For the interactive version with figures and enhanced formatting, visit: https://mlsmawfield.com/tep/ucd/*
 
 *Related Work:*
 - [**TEP Theory**](https://doi.org/10.5281/zenodo.16921911) (Foundational framework)

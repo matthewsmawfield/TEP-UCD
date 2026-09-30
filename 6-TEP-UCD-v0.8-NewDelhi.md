@@ -1,7 +1,7 @@
 # Temporal Topology Saturation Scale: Cross-Scale Consistency of ρ_T
 Matthew Lukin Smawfield
 Version: v0.8 (New Delhi)
-First published: 28 December 2025 · Last updated: 13 September 2026
+First published: 28 December 2025 · Last updated: 30 September 2026
 DOI: 10.5281/zenodo.18064365
 
 ---
@@ -97,7 +97,7 @@ The Temporal Equivalence Principle (TEP) proposes that gravitational phenomena a
 
 where matter couples to the Jordan frame metric $\tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu} + B(\phi) \nabla_\mu\phi \nabla_\nu\phi$. At late times, $B(\phi)$ is strongly constrained by multi-messenger observations and can be neglected, yielding $\tilde{g}_{\mu\nu} \approx A^2(\phi) g_{\mu\nu}$ with $A(\phi) = \exp(\beta_A \phi/M_{\text{Pl}})$. The environmental screening response suppresses the observed gradient in dense environments, producing effective field saturation at characteristic density $\rho_T$. In this framework, the "dark matter" problem is reinterpreted as a violation of the *isochrony axiom*—the assumption that clocks at the same gravitational potential tick at the same rate regardless of their spatial separation or the mass distribution's history.
 
-When this axiom is relaxed, mass estimates made through different observable pairs diverge, and "phantom mass" must be defined per channel. In the *dynamical–baryonic* channel studied here (rotation curves), phantom mass is the apparent excess of the dynamical mass $V_{\rm obs}^2 R/G$ over the baryonic mass: the orbital dynamics respond to the local time gradient, sourcing centripetal support with no additional baryons. In the distinct *lensing–dynamical* channel (Paper 19), light propagation samples the *integrated* time dilation along the null geodesic while orbital dynamics sample the *local* gradient, producing an apparent excess of lensing mass over dynamical mass with the opposite bookkeeping. Both arise from spatial structure in proper time—without invoking non-baryonic particles—but the two observable pairs are different measurements with different signs and mappings, and are kept distinct throughout.<sup>†</sup>
+When this axiom is relaxed, mass estimates made through different observable pairs diverge, and "phantom mass" — the apparent mass inferred when temporal structure is analysed as spatial mass — can be measured per channel. In the *dynamical–baryonic* channel studied here (rotation curves), phantom mass is the apparent excess of the dynamical mass $V_{\rm obs}^2 R/G$ over the baryonic mass: the orbital dynamics respond to the local time gradient, sourcing centripetal support with no additional baryons. In the *lensing* channel (Papers 4, 19), photon paths are conformally invariant and track the gravitating matter alone, so no conformal propagation delay exists and lensing inference reads the true mass — the phantom mass therefore appears only in dynamics, and the dynamical–lensing mass difference is its decisive test. Both measurements arise from spatial structure in proper time—without invoking non-baryonic particles—and are kept distinct throughout.<sup>†</sup>
 
 <sup>†</sup>*Note: This geometric "phantom mass" from temporal shear differs from cosmological "phantom energy" (dark energy with $w < -1$). The former arises from spatial gradients in proper time; the latter from exotic equation-of-state matter.*
 
@@ -114,7 +114,7 @@ The saturation scale parameter $\rho_T \approx 20$ g/cm³ serves as the bulk-mat
 \end{equation}
 
 where the environmental state is
-$\mathcal{E} = \{\rho, \Phi/c^2, \nabla\rho, \nabla\Phi, \text{compactness}, R_T(M), \text{proximity}, T, z, \text{boundary geometry}, \text{coherence volume}\}.$
+$$\mathcal{E} = \{\rho, \Phi/c^2, \nabla\rho, \nabla\Phi, \text{compactness}, R_T(M), \text{proximity}, T, z, \text{boundary geometry}, \text{coherence volume}\}.$$
 This single operator unifies density screening, compactness screening, proximity screening, thermodynamic/environmental-state response, lensing/cosmological covariance screening, and wide-binary environmental screening across the entire TEP corpus.
 
 #### Box 1.1: Joint Constraint Architecture of \(\rho_T\) and \(S_\Sigma(\mathcal{E})\)
@@ -201,13 +201,13 @@ These correlations exhibit seven independent signatures:
 
 - **Orbital velocity coupling:** Annual modulation consistent with $v_\oplus \approx 30$ km/s.
 
-- **CMB-frame alignment:** Dipole structure aligns with CMB rest frame.
+- **Annual-phase direction recovery:** RA = 6°, Dec = +4°, about 6° from Earth's aphelion velocity tangent; the directed CMB-apex template is anti-phase.
 
 - **Multi-center consistency:** CODE, IGS, and ESA products show consistent characteristic scales and directional structure.
 
 - **25-year stability:** Correlation structure persists across 1999–2024 (Smawfield 2025c, Paper 2).
 
-- **Raw RINEX validation:** Pattern survives in unprocessed Single Point Positioning (SPP) analysis, constraining processing artifacts (Smawfield 2025d, Paper 3).
+- **Raw RINEX validation:** Pattern survives in raw-RINEX Single Point Positioning (SPP) analysis, constraining processing artifacts (Smawfield 2025d, Paper 3).
 
 ### Operational Calibration of $\rho_T$ from $L_c$
 
@@ -243,7 +243,7 @@ A critical objection to long-range clock correlations is the presence of troposp
 
 - **Scalar field signature:** Persists as a covariance floor at ~4200 km
 
-The 4200 km feature shows no counterpart in ionospheric or tropospheric delay products. Furthermore, the signal aligns with the CMB rest frame (reported at 3.8σ significance in the companion analysis)—a directional dependence absent in atmospheric models. Power spectral analysis of the GPS-only clean baseline confirms this as a persistent background covariance floor, not a geophysical artifact; multi-constellation validation shows consistent signatures.
+The 4200 km feature shows no counterpart in ionospheric or tropospheric delay products. Furthermore, the signal recovers an annual phase about 6° from Earth's aphelion velocity tangent (companion analysis); the CMB-apex template is anti-phase and is not identified as a rest frame. Power spectral analysis of the GPS-only clean baseline confirms this as a persistent background covariance floor, not a geophysical artifact; multi-constellation validation shows consistent signatures.
 
 ### Null Tests and Robustness
 
@@ -353,7 +353,11 @@ mass-scaling test: $R_T \propto M^{1/3}$ while a source-radius scale does
 not follow that law across the astrophysical systems of Sections 3–7. The
 single-potential numerical demonstration that would replace this sketch
 with a derivation — an explicit exterior profile and sampling kernel under
-a specified completion, with $\Lambda$ fixed by the calibrated $\rho_T$ —
+a specified completion, with the quartic normalization held at the corpus
+self-coupling value $\lambda = 7.5\times10^{-66}$ (the scalar-potential
+coefficient, not the covariance length denoted $\lambda$ in this
+section) and $\rho_T$ fixed by the calibrated
+$L_c$ —
 remains the open target recorded in Appendix B.2.
 
 *For detailed methodology and validation, see Appendix A and Papers 1–3.*
@@ -518,7 +522,13 @@ $R_d \propto M_{\rm bar}^{0.322 \pm 0.017}$ ($r = 0.821$, $n = 175$), which
 alone predicts an onset exponent $\approx 0.32$ — within the stated
 uncertainty of the measured $0.355 \pm 0.043$. Comparing the two candidate
 invariants per galaxy — the size ratio $R_{\rm DM}/R_d$ and the enclosed
-mean baryonic density $\bar\rho( 1.2$ the
+mean baryonic density $\bar\rho(<R_{\rm DM}) = 3M_{\rm bar}(<R_{\rm
+DM})/(4\pi R_{\rm DM}^3)$, with $M_{\rm bar}(<R)$ estimated spherically as
+$V_{\rm bar}(R)^2 R/G$ — the size invariant is mass-independent at the
+fiducial threshold (slope $0.056 \pm 0.044$, $p = 0.21$; median
+$R_{\rm DM}/R_d = 0.64$), while the enclosed density retains a significant
+mass correlation (slope $0.190 \pm 0.068$, $p = 5.7\times10^{-3}$). The
+pattern is threshold-dependent: at $V_{\rm obs}/V_{\rm bar} > 1.2$ the
 size null wins decisively (density slope $0.302$, $p = 5.4\times10^{-6}$),
 while at $1.4$ the two are comparable ($0.086$ vs $0.084$).
 
@@ -530,7 +540,8 @@ the two channels the size-scaling null cannot supply — the residual
 correlations with baryonic content (step 7) and the open normalization
 linkage of the Formal Link, which the confound makes the sharper
 falsification condition: if $\rho_{\rm trans}$ cannot be derived from
-$(\Lambda, \beta_A)$, or if a forward-modelled amplitude fails, the
+the scalar-sector parameters $(\lambda, \beta_A)$, or if a
+forward-modelled amplitude fails, the
 onset-scaling result contributes no independent support.
 
 #### Phantom-Mass Amplitude and Profile Test
@@ -559,7 +570,19 @@ parameter.
 
 The radial profile supplies the second discriminator. Defining the
 enhancement $E(R) = V_{\rm obs}^2/V_{\rm bar}^2 - 1 = M_{\rm
-ph}(R)/M_{\rm bar}(
+ph}(R)/M_{\rm bar}(<R)$, the phantom fraction is required by the
+transition picture to grow outward (screened inside, unscreened outside),
+whereas a constant coupling rescaling of the baryonic potential predicts
+$d\log E/d\log R = 0$. The measured profile rises: median slope $0.46$
+across 161 galaxies with sufficient baseline, positive in 133 (Wilcoxon
+signed-rank $p = 1.0\times10^{-17}$). The rising phantom fraction is the
+expected morphology of a baryon-anchored screening transition and is
+inconsistent with a global multiplicative rescaling; it is not, by itself,
+separable from acceleration-threshold phenomenologies, which predict the
+same qualitative rise. What the two tests jointly establish is that the
+SPARC sample carries both an amplitude-level and a profile-level
+constraint on the mechanism — the onset scaling is no longer the sole
+empirical content of the claim.
 
 #### Cross-Regime Consistency
 
@@ -594,7 +617,8 @@ Fixing $\alpha_{\rm SPARC} = 1/3$ and fitting only the normalization yields $k \
 emergent screening density $\rho_{\rm trans} \approx 0.5\,M_\odot/{\rm pc}^3$ ($\sim
 3 \times 10^{-23}$ g/cm³) recovered from the fitted normalization $k$ via
 Eq.~(\ref{eq:trans_radius}). A completion is conjectured to derive $\rho_{\rm trans}$
-from the potential scale $\Lambda$ and coupling $\beta_A$, but this remains an open
+from the scalar-sector normalization (the quartic coupling $\lambda$ and the
+coupling $\beta_A$), but this remains an open
 target (see Formal Link below). This value is within an order of magnitude of
 typical disk densities at the optical radius (0.01–0.1 $M_\odot/{\rm
 pc}^3$), providing a physically reasonable anchor for the screening
@@ -625,15 +649,30 @@ The field profile transitions from saturated ($\rho \sim \rho_T$,
 $R_T$ scale) to screened ($\rho \gg \rho_T$, Compton wavelength
 $\lambda_C \ll R_T$) to unscreened ($\rho \ll \rho_T$,
 $\lambda_C \gg R_T$). The galactic halo onset occurs where the
-enclosed mean baryonic density $\bar\rho(
+enclosed mean baryonic density $\bar\rho(<R) = 3M_{\rm bar}(<R)/(4\pi
+R^3)$ drops to the value $\rho_{\rm trans}$ at
+which the scalar-field-induced gravitational acceleration becomes
+comparable to the baryonic contribution — an enclosed-mean-density
+criterion, consistent with the form of Eq.~(\ref{eq:trans_radius});
+a local-density formulation would require a specified field/density
+profile and is not used here. Because the field profile
+is governed by the same scalar sector — the quartic normalization
+$\lambda$ and coupling $\beta_A$ — that underlies the compact-object
+saturation,
+$\rho_{\rm trans}$ is expected to be a derived consequence of these
+parameters rather than a free fit; pending that derivation it is an
+independent empirical input. The SPARC analysis measures the structural
+exponent $\alpha_{\rm SPARC}$ and normalization $k$; the
+corresponding $\rho_{\rm trans}$ is then recovered from $k$
+via Eq.~(\ref{eq:trans_radius}) as a consistency check.
 
 #### Connection to the MOND Acceleration Scale
 
 The fitted screening density implies a characteristic transition
 acceleration. At the transition radius, the gravitational acceleration is:
 
-$g_{\rm TEP} = \frac{GM}{R_{\rm trans}^2} \approx 5 \times 10^{-10}\,{\rm
-m/s}^2.$
+$$g_{\rm TEP} = \frac{GM}{R_{\rm trans}^2} \approx 5 \times 10^{-10}\,{\rm
+m/s}^2.$$
 
 This is within a factor of 4 of the MOND acceleration scale $a_0 \approx 1.2
 \times 10^{-10}\,{\rm m/s}^2$. The near-coincidence suggests that the TEP
@@ -659,6 +698,38 @@ time-field gradient contributes additional apparent gravity, producing the
 characteristic upturn in the RAR. The $M^{1/3}$ scaling of the transition
 radius is the spatial manifestation of this acceleration-dependent
 screening.
+
+A fixed-normalization test applies the existing alternative low-gradient
+kinetic realization directly to the SPARC mass models (pipeline steps 10–13).
+Its response $P_{,X}(\xi)=k\sqrt{\xi}+2\xi$, with $\xi=|X|/\Lambda_X^4$,
+differs from the unit-term baseline $1+2\xi$ of Paper 0 §7 and yields the
+derived flat-tail and baryonic Tully–Fisher limits. Step 10 fixes
+$k=4\sqrt{2}\,g_t/a_0\simeq16.03$ using the adopted empirical
+$a_0=1.2\times10^{-10}$ m/s$^2$. No galaxy-specific parameter is adjusted
+in this comparison: the normalization is prespecified from that empirical
+scale, not independently derived from the wide-binary/Solar crossover.
+The algebraic flux law $\bar{u}P_{,X}(\bar{u}^2/2) = g_{\rm bar}/g_t$ yields
+the pointwise prediction $g_{\rm obs} = g_{\rm bar} + 2g_t\bar{u}$.
+Evaluated on all 3,389 measured radii across 175 galaxies ($\Upsilon_d =
+0.5$, $\Upsilon_b = 0.7$), this curve tracks the RAR across four decades
+in $g_{\rm bar}$ (rms log-residual 0.219 dex, against 0.281 dex for the
+unit-term baseline and 0.199 dex for the empirical MOND interpolating
+function), with a uniform $\approx$20% normalization offset (median
+$-0.086$ dex) rather than a shape-dependent failure; a single free
+normalization prefers $a_{\rm eff} \approx 0.52\,a_0$ ($k \approx 31$).
+The same fixed sector predicts the onset-radius scaling $R_{\rm onset} =
+\sqrt{GM_b/a_{\rm eff}}$: over the 54 galaxies bracketing the crossing,
+the fixed-slope-$1/2$ intercept reproduces the predicted normalization to
+0.022 dex (rms 0.277 dex). The baryonic Tully–Fisher outer-edge evaluation
+returns median $v_{\rm obs}/v_{\rm pred} = 0.910$ (rms 0.093 dex) over 135
+galaxies — consistent with the same normalization offset in the same
+$\bar{u}$ regime and with mass-to-light systematics. A field-value
+coupling $K(\phi) = e^{c\psi}$ improves the RAR match monotonically (rms
+$\to 0.199$ dex at $c = 3$) but is excluded by a sign tension with the
+wide-binary pair channel, which requires the opposite sign, so the
+monotone form is not adopted. The residual offset is attributed to the
+identified corrections — disk geometry, $\Upsilon$ systematics, and
+ambient-field vertex factors — rather than treated as a free refit.
 
 ![Example Rotation Curves](results/figures/figure_6_sparc_examples.png)
 
@@ -794,7 +865,8 @@ scaling. The fitted normalization corresponds to $\rho_{\rm trans} \approx
 of magnitude below $\rho_T$: what is presently demonstrated is a shared
 structural exponent between two independently normalized scales, not a
 normalization link, and whether $\rho_{\rm trans}$ follows from the same
-potential scale $\Lambda$ that sets $\rho_T$ is the open derivation target
+scalar-sector normalization that underlies the $\rho_T$ saturation law
+is the open derivation target
 recorded in the Formal Link.
 
 #### Distinctive Cross-Scale Linkage
@@ -865,16 +937,16 @@ General Relativity is recovered in the regimes where it has been tested most
 stringently.
 
 Screening in TEP is represented at the theory level by the environmental operator
-*S*<sub>&Sigma;</sub>(*&Epsilon;*).
+$S_\Sigma(\mathcal{E})$.
 Quantities such as
-&rho;<sub>T</sub>,
-*R*<sub>T</sub>(*M*),
-*S*<sub>&oplus;</sub>(*r*),
-compactness &Phi;/*c*<sup>2</sup>,
+$\rho_T$,
+$R_T(M)$,
+$S_\oplus(r)$,
+compactness $\Phi/c^2$,
 local stellar density,
 geometric coherence length,
 and channel-specific response coefficients
-are domain-specific projections of *&Epsilon;*,
+are domain-specific projections of $\mathcal{E}$,
 not independent screening mechanisms
 and not interchangeable universal thresholds.
 Each is an observational transfer model
@@ -912,7 +984,7 @@ probe the source-charge/shear projection $\mathcal S_\Sigma$, which is
 suppressed more strongly for the pairwise configurations used in ephemeris
 tests. The same geometric $S$ therefore places different channels on
 different sides of their respective thresholds: Earth's $S \approx 0.66$
-admits a detectable clock-covariance signal ($S_A$ channel, the GNSS
+admits a detectable clock-covariance signal ($C_A$ covariance channel, the GNSS
 calibration of Section 2) while the LLR, Cassini, and MESSENGER orbital
 observables at $S = 0.42$–$0.65$ remain GR-consistent through the
 $\mathcal S_\Sigma$ projection. The reading of sub-unity $S$ is uniform
@@ -973,7 +1045,7 @@ with density. Restricting the regression fit to the 11 dense objects
 
 \begin{equation} \label{eq:screening_law} S \propto \rho^{\beta_{\rm scr}}, \qquad \beta_{\rm scr} = 0.334 \quad (R^2 = 0.99995). \end{equation}
 
-The exponent $\beta_{\rm scr} = 0.334$ is statistically indistinguishable from 1/3. This density-dependent screening law is a projection of the source-charge screening operator $\mathcal{S}_\Sigma(\mathcal{E})$ (Paper 0 \S7) onto the UCD density regime; it is not an independent screening operator. Under the
+The exponent $\beta_{\rm scr} = 0.334$ is statistically indistinguishable from 1/3. This density-dependent screening law is a projection of the source-charge screening operator $\mathcal{S}_\Sigma(\mathcal{E})$ (Paper 0 \S7) onto the UCD density regime; it is not an independent screening operator. Two sector assignments are stated explicitly. The geometric diagnostic $S = R_T/R_{\rm phys}$ tracks the shear-sector $\mathcal{S}_\Sigma$ regime — density is the licensed stand-in for the ambient-steepness criterion inside dense macroscopic matter (Paper 0 \S8) — while the scale $\rho_T$ that sets $R_T$ is itself calibrated through the clock-amplitude projection $S_A = \min[1,(\bar\rho/\rho_T)^{1/3}]$ (Paper 0 \S3). Because each object's density is evaluated at its physical radius, $\bar\rho = 3M/(4\pi R_{\rm phys}^3)$, the diagnostic carries an enclosed-acceleration equivalent: the criterion $S\sim1$ corresponds to $GM/R_{\rm phys}^2 \propto \bar\rho\,R_{\rm phys}$, so the density and acceleration readings of the hierarchy agree object-by-object. Under the
 stated definitions, this is the expected scaling: if $R_T \propto
 M^{1/3}$ and $R_{phys} \propto (M/\rho)^{1/3}$, then:
 
@@ -1048,7 +1120,7 @@ verified to 0.2% precision at screening factors exceeding 29,500×.
 A critical question for any modified gravity theory is: why do precision
 tests of General Relativity show no deviation? Temporal Topology provides
 the answer: the suppression of Temporal Shear (vanishing field gradient)
-reduces the screened PPN scalar charge $\alpha_{\rm PPN}^{\rm eff}$ in dense environments. The five most precise
+reduces the screened PPN scalar charge $\alpha_{\rm PPN}^{\rm eff}$ where the ambient landscape is steep. The five most precise
 tests of GR all occur in regimes where screening is operative:
 
 | Test | Observable | Precision | Screening Factor | Status |
@@ -1191,11 +1263,14 @@ A natural concern is whether the proximity of $\rho_T \approx 20$ g/cm³ to the 
 
 The electron Fermi wavelength does not cause the scalar field to saturate. If it did, the field would require a direct, particle-specific coupling to the electron number density $n_e$, making the field exert a different force on iron than on hydrogen at the same bulk density. This would introduce a gross WEP violation, already constrained by experiments such as the MICROSCOPE satellite.
 
-Instead, $\rho_T$ is treated as a fundamental constant of the vacuum potential:
+Instead, $\rho_T$ is treated as a fundamental constant of the scalar
+sector — the geometric reference density of the saturation-radius law —
+rather than an emergent property of the local matter. The recorded
+coincidence is, in natural units,
 
-\begin{equation} \label{eq:vacuum_scale} \rho_T \equiv \Lambda^4 \approx \alpha^{4/3} m_e^4 \quad \text{(natural units)}. \end{equation}
+\begin{equation} \label{eq:vacuum_scale} \rho_T \approx \alpha^{4/3} m_e^4 \quad \text{(a density coincidence, not a potential-scale identification)}. \end{equation}
 
-Because this is a property of the scalar potential itself, the dimensional identity does not introduce composition-dependent coupling; WEP protection then follows from the universal matter coupling and the screened effective scalar charge. The field universally couples to bulk $\rho$ and begins its continuous screening transition when local $\rho$ approaches this vacuum $\rho_T$.
+Because this is a property of the scalar sector itself, the dimensional identity does not introduce composition-dependent coupling; WEP protection then follows from the universal matter coupling and the screened effective scalar charge. The field universally couples to bulk $\rho$ and begins its continuous screening transition when local $\rho$ approaches this $\rho_T$. The potential sector's own normalization is a separate quantity — the quartic coupling $\lambda$ (equivalently $\Lambda_V = \lambda^{1/4}M_{\rm Pl} \approx 1.3\times10^{2}$ GeV on the Cassini-compatible branch) — and is not to be identified with $\rho_T$ (Appendix C.3).
 
 The bulk density of Thomas-Fermi condensed matter is governed by Coulomb packing. The volume per atom scales with the Bohr radius $a_0 = (\alpha m_e)^{-1}$. In the Thomas-Fermi model, the effective atomic radius is $R_{\rm TF} \approx a_0 Z^{-1/3}$, giving a volume $V \approx \frac{4\pi}{3} a_0^3 Z^{-1}$ per atom. With nucleon mass $M \approx A m_p$:
 
@@ -1233,13 +1308,17 @@ not, by itself, provide a mechanism that sets \(\rho_T\), but it motivates the
 
 ### 5.4 Open Derivation Target: From Potential Scale to Transition Width
 
-Box 6.5 adopts a benchmark completion in which the scalar potential introduces
-a saturation scale \(\rho_T \equiv \Lambda^4\). Once \(\rho_T\) (equivalently \(\Lambda\))
-is specified, the field equation determines a smooth crossover between weakly
-and strongly screened regimes. Determining the detailed width and shape of this
+Box 6.5 adopts the corpus's quartic completion, in which the amplitude
+sector is normalized by the quartic coupling \(\lambda\) and \(\rho_T\)
+enters as the geometric constant of the saturation-radius law
+\(R_T(M)\). Once \(\rho_T\) and the corpus branch of \(\lambda\) are
+specified, the field equation determines a smooth crossover between
+Compton-unresolved and Compton-resolved regimes
+(\(\lambda_c(\bar\rho)\) versus \(R_T(M)\)). Determining the detailed
+width and shape of this
 crossover as a function of ambient density—particularly in the terrestrial
 transition regime \(\rho \sim 1\text{–}30\) g/cm³—requires an explicit numerical
-profile solution under a specified completion. This remains a target for future work.
+profile solution at the specified corpus normalization. This remains a target for future work.
 
 Many-body condensed-matter physics (including the onset of electron degeneracy)
 governs the baryonic equation of state and provides useful reference densities,
@@ -1254,14 +1333,21 @@ scale at the vacuum level.
 
 ### 5.5 Dimensional Analysis: The Scalar Coupling Scale
 
-Box 6.5 identifies the empirical saturation scale with the potential scale,
-\(\rho_T c^2 \sim \Lambda^4\) (natural units). Inverting for \(\Lambda\) gives
-\(\Lambda \approx 96.4\) keV for \(\rho_T = 20\) g/cm³.
+Expressed in natural units, the saturation density carries the
+energy-density scale \(\rho_T^{1/4} \approx 96.4\) keV for
+\(\rho_T = 20\) g/cm³. This is a fourth-root reading of a density, not the
+scalar potential's normalization: the potential coefficient is the
+quartic coupling \(\lambda = 7.5\times10^{-66}\), equivalently
+\(\Lambda_V \equiv \lambda^{1/4}M_{\rm Pl} \approx 1.3\times10^{2}\) GeV
+(Box 6.5, Appendix C; step 14). The kinetic completion carries its own
+distinct scale, \(\Lambda_X = \sqrt{M_{\rm Pl}H_0} \approx 1.9\) meV,
+which sets the Temporal-Shear threshold and plays no role in the
+amplitude-sector density argument.
 
 \begin{equation} \label{eq:alpha_density} \rho_T \approx \alpha^{4/3}\,\frac{m_e^4 c^3}{\hbar^3} \approx 22.4 \text{ g/cm}^3. \end{equation}
 
 This correspondence is recorded as a numerical identity: the exponent \(4/3\)
-(equivalently \(\Lambda \sim \alpha^{1/3} m_e c^2\)) is not derived within the
+(equivalently \(\rho_T^{1/4} \sim \alpha^{1/3} m_e c^2\)) is not derived within the
 present corpus and must be treated as an open target for theoretical work, not
 as an independent support.
 
@@ -1409,7 +1495,9 @@ The central question is whether this same density scale holds for RBH-1.
 
 #### Box 6.3: Robustness of the GNSS Calibration (Systematics Check)
 
-The terrestrial calibration length $L_c \approx 4200$ km is an
+The terrestrial calibration length $L_c \approx 4200$ km — the GNSS
+instrument's measured realization of the canonical correlation scale
+$\lambda_T$ (Paper 0 §7) — is an
 extraordinary claim requiring careful exclusion of geodetic
 systematics. The following tests support its physical origin (full
 methodology in Smawfield 2025b,c,d):
@@ -1494,44 +1582,63 @@ $m_{\rm eff}^2(\rho) = V_{\rm eff}''(\phi_{\rm min})$.
 Under the corpus coupling $\beta_A = -1$ the matter term enters with
 negative slope ($\alpha\rho = -\rho/M_{\rm Pl}$), so a minimum of
 $V_{\rm eff}$ exists only on the confining branch $V' > 0$. Writing
-$u = \phi/M_{\rm Pl}$ and adopting $V(u) = (\Lambda^4/m)\,u^m$ with
-$m > 2$, the equilibrium condition $V_{\rm eff}' = 0$ reads
-$\Lambda^4 u_{\rm min}^{m-1} = \rho\,e^{-u_{\rm min}}$, giving
-$u_{\rm min} \approx (\rho/\Lambda^4)^{1/(m-1)}$ for
+$u = \phi/M_{\rm Pl}$, the corpus's own weak-field branch is the
+quartic $V(u) = (\lambda/4)\,M_{\rm Pl}^4\,u^4$ — the member of the
+confining family $V \propto u^m$ selected by the corpus amplitude
+law $S_A \propto \rho^{1/3} = \rho^{1/(m-1)}$, i.e. $m = 4$
+(Appendix C.2). The equilibrium condition $V_{\rm eff}' = 0$ reads
+$\lambda M_{\rm Pl}^4 u_{\rm min}^{3} = \rho\,e^{-u_{\rm min}}$, giving
+$u_{\rm min} \approx (\rho/\lambda M_{\rm Pl}^4)^{1/3}$ for
 $u_{\rm min} \ll 1$: the field is elevated inside matter and
 approaches zero in the ambient, in the direction required by the
 corpus sign convention. (The inverse-power branch
 $V \propto \phi^{-n}$ is inadmissible under $\beta_A = -1$: both
 slopes are then negative and no minimum exists; its implied
 $\phi_{\rm min} \propto \rho^{-1/(n+1)}$ would in any case run
-opposite to the required direction.) The energy density in the
+opposite to the required direction.) The scalar energy density in a
 saturated core is:
 
 \begin{equation} \label{eq:effective_density} \rho_{\rm eff} \sim V(u_{\rm min}) + \frac{1}{2}M_{\rm Pl}^2(\nabla u)^2
-\sim \Lambda^4 \equiv \rho_T \approx 20 \text{ g/cm}^3. \end{equation}
+\simeq \tfrac{1}{4}\rho\,u_{\rm min} \ll \rho. \end{equation}
 
-This identifies the empirical saturation scale $\rho_T$ with the
-potential scale $\Lambda$: at $\rho \sim \Lambda^4$ the equilibrium
-crosses $u_{\rm min} \sim 1$, where the conformal factor
-$A = e^{-u}$ becomes appreciably suppressed and the matter source
-$\rho\,A_{,u} = -\rho\,e^{-u}$ self-quenches.
+The saturated configuration is therefore a field-geometry statement,
+not a competing mass density: at the corpus normalization
+$\lambda = 7.5\times10^{-66}$ (the scalar self-coupling, Appendix C)
+the core energy density is
+$\sim 3\times10^{-8}$ g/cm³ at terrestrial densities, and the
+equilibrium $u_{\rm min}(\rho_T) \approx 6.9\times10^{-9}$ remains
+perturbative. What saturates at $\rho_T$ is the clock-amplitude
+response $S_A = \min[1, u_{\rm min}(\bar\rho)/u_{\rm min}(\rho_T)]$
+through the geometric radius $R_T$; the order-unity self-quenching
+crossing $u_{\rm min} \sim 1$ (where $e^{-u}$ suppresses the
+conformal source) lies at $\rho_{\rm sat} \sim \lambda M_{\rm Pl}^4
+\approx 6\times10^{25}$ g/cm³, inside the temporal-well domain of
+Paper 28 (step 14).
 
 **3. Temporal Topology Screening**
 
-In dense environments ($\rho \gg \rho_T$), the effective mass
+The effective mass
 $m_{\rm eff}^2(\rho) = V_{\rm eff}''(u_{\rm min})/M_{\rm Pl}^2 =
-[\Lambda^4(m-1)u_{\rm min}^{m-2} + \rho\,e^{-u_{\rm min}}]/M_{\rm Pl}^2$
-becomes large, suppressing field gradients
-(Temporal Shear) within the Compton wavelength $\lambda_C =
-1/m_{\rm eff}$. In the same limit the effective source slope
-$\rho\,A_{,u} = -\rho\,e^{-u_{\rm min}}$ is exponentially
-suppressed, so the scalar charge of saturated matter quenches as
-well. This creates the characteristic flattening of
+[3\lambda M_{\rm Pl}^4\,u_{\rm min}^{2} + \rho\,e^{-u_{\rm min}}]/M_{\rm Pl}^2$
+grows with density as $m_{\rm eff} \propto \lambda^{1/6}\rho^{1/3}$,
+so the Compton wavelength $\lambda_C = 1/m_{\rm eff}$ contracts
+through denser interiors: a body is Compton-resolved once
+$\lambda_c(\bar\rho) \lesssim R_T(M)$, the crossover that for Earth
+sits at $\sim 4$ g/cm³ (step 14). Inside such a body the field rests
+near its local equilibrium $u_{\rm min}(\rho)$ and the spatial
+variation is confined to a boundary layer of width $\sim\lambda_C$,
+where the kinetic response $P_{,X}$ controls the gradient amplitude.
+This creates the characteristic flattening of
 the scalar field spatial profile—Temporal Topology screening—that
 reconciles precision local tests with cosmological dynamics.
 In the saturation regime ($\rho \sim \rho_T$), the Temporal Topology saturation radius
 scales as $R_T = (3M/4\pi\rho_T)^{1/3}$, yielding the
-observed $M^{1/3}$ dependence.
+observed $M^{1/3}$ dependence. At still higher densities — where the
+equilibrium approaches order unity ($\rho \sim \rho_{\rm sat} \approx
+6\times10^{25}$ g/cm³) — the effective source slope
+$\rho\,A_{,u} = -\rho\,e^{-u_{\rm min}}$ is exponentially
+suppressed, so the scalar charge of deep-interior matter quenches as
+well: that is the temporal-well regime, not the terrestrial one.
 
 **4. Coupling and Stability**
 
@@ -1822,8 +1929,8 @@ mechanism.
 The per-constellation MGEX analysis (Paper 14 extension) provides a
 concrete pre-registered discriminator: if GPS, Galileo, and GLONASS
 individually recover $\sim$4,200 km while the combined product compresses
-to $\sim$1,400 km, the MGEX discrepancy is resolved as a projection artifact.
-If per-constellation analysis also yields $\sim$1,400 km, the
+to the measured $\sim$1,900 km scale (pooled MGEX: 1,862 km), the MGEX discrepancy is resolved as a projection artifact.
+If per-constellation analysis also yields $\sim$1,900 km, the
 $L_c \leftrightarrow R_T(M_\oplus)$ identification fails as calibrated,
 and the Level 1/2/3 claim hierarchy absorbs the hit exactly as designed.
 Writing this test down before running it converts the corpus's largest
@@ -2152,9 +2259,9 @@ These channels test the *mechanism* by which TEP generates apparent
 mass discrepancies, without directly calibrating \(\rho_T\):
 
 **Gravitational lensing (Paper 4):** The Phantom Mass
-mechanism shows that standard lensing reconstructions implicitly
-assume isochrony; relaxing this projects temporal depth onto the
-spatial plane, degenerate with particulate dark matter. This is
+framework shows that the Temporal Shear acts on matter trajectories
+while lensing tracks the gravitating matter, so the theory's
+dark-sector signature is the dynamical–lensing mass difference. This is
 *mechanistic support* for the TEP interpretation of the
 dark sector, not a \(\rho_T\) calibration.
 
@@ -2229,7 +2336,7 @@ The primary findings are:
 
 ### Dark Matter as Phantom Mass
 
-The TEP framework reinterprets dark matter observations as violations of the isochrony axiom—the assumption that spatially separated clocks at the same gravitational potential tick at the same rate. When this axiom is relaxed, gravitational lensing (integrated time dilation) and dynamical mass (local time gradient) diverge, creating "phantom mass" without invoking non-baryonic particles.
+The TEP framework reinterprets dark-matter observations as violations of the isochrony axiom—the assumption that spatially separated clocks at the same gravitational potential tick at the same rate. The Temporal Shear acts on matter trajectories but not on photon paths (null curves are conformally invariant), so mass inferred from dynamics and mass inferred from lensing diverge in low-acceleration environments—creating "phantom mass" as an inference artifact without invoking non-baryonic particles. This dynamical–lensing mass difference — the phantom mass — is the theory's falsifiable dark-sector signature (Paper 19); persistent dynamical–lensing agreement bounds the shear's share of the dynamical anomaly. The companion closure obligation is registered: replacing particulate dark matter additionally requires a CDM-free gravitational-metric prediction of galaxy, cluster and CMB lensing, and that common optical-sector closure is not established by the present force-level construction (Paper 0, §8).
 
 This reinterpretation offers a candidate common account of several dark-sector puzzles:
 
@@ -2249,11 +2356,11 @@ Future applications include:
 
 - **JWST high-redshift galaxies:** "Little Red Dots" and massive quiescent galaxies at $z > 10$ may exhibit soliton signatures.
 
-- **EHT polarimetry:** M87* and Sgr A* polarization patterns could reveal scalar field structure near event horizons.
+- **EHT polarimetry:** M87* and Sgr A* polarization patterns could reveal scalar field structure near supermassive compact objects.
 
 - **Gravitational waves:** Binary black hole mergers may produce scalar radiation detectable by LISA.
 
-- **Strong lensing time delays:** The phantom-mass sector can act on time-delay cosmography through the mass-model normalization — the lensing–dynamical slip biases the velocity-dispersion prior that breaks the mass-sheet degeneracy, in the direction that elevates the inferred $H_0$ (Paper 19, Step 58 channel audit); the propagated-delay sector itself is clean at $\lesssim 10^{-7}$ fractional.
+- **Strong lensing time delays:** The phantom-mass sector can act on time-delay cosmography through the mass-model normalization — the dynamical–lensing mass difference biases the velocity-dispersion prior that breaks the mass-sheet degeneracy, in the direction that elevates the inferred $H_0$ (Paper 19, Step 58 channel audit); the propagated-delay sector itself is clean at $\lesssim 10^{-7}$ fractional.
 
 ### Theoretical Implications
 
@@ -2263,7 +2370,7 @@ The convergence of terrestrial, compact, galactic, and cosmological constraints 
 
 where $\tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu}$ and $A(\phi) = \exp(\beta_A\phi/M_{\text{Pl}})$ in the late-time conformal limit.
 
-The saturation scale $\rho_T$ emerges as the scale at which the scalar field $\phi$ reaches its self-interaction threshold, saturating the field. Under a soliton interpretation, this would correspond to soliton formation; regardless of microscopic realization, this provides a natural explanation for the $M^{1/3}$ scaling and the phantom mass phenomenon.
+The saturation scale $\rho_T$ emerges as the scale at which the scalar field $\phi$ reaches its self-interaction threshold, saturating the field. Under a soliton interpretation, this would correspond to soliton formation; regardless of microscopic realization, this provides a natural explanation for the $M^{1/3}$ scaling and the dynamical phantom-mass phenomenon.
 
 ### Systematic Uncertainties and Robustness
 
@@ -2295,7 +2402,7 @@ The identification of $\rho_T \approx 20$ g/cm³ as a candidate cross-scale satu
 
 This paper identifies $\rho_T \approx 20$ g/cm³ as a candidate macroscopic saturation/proximity scale in the TEP environmental-response hierarchy. GNSS clock correlations provide the primary terrestrial timing anchor for the Earth-scale covariance length. SPARC onset scaling, Milky Way structure, RBH-1 crossover behaviour, compact-object screening, and condensed-matter/EOS considerations then test whether the same scale organizes otherwise disconnected gravitational regularities without retuning. Channel-specific quantities such as $\rho_{\rm trans}$, $R_s$, $\kappa_{\rm Cep}$, $\kappa_{\rm MSP}$, and lensing response coefficients are not independent measurements of $\rho_T$, but downstream projections of $S_\Sigma(\mathcal{E})$.
 
-This paradigm shift—from dark matter as substance to dark matter as temporal shear—provides a candidate unified organizing framework for the $M^{1/3}$ scaling, screening hierarchy, and phantom mass phenomenon. The GNSS-anchored value of $\rho_T$ enables specific testable applications, including the RBH-1 case study (Paper 7), positioning the Temporal Equivalence Principle as an empirically grounded candidate alternative to the particle dark matter paradigm.
+This paradigm shift—from dark matter as substance to dark matter as temporal shear—provides a candidate unified organizing framework for the $M^{1/3}$ scaling, screening hierarchy, and dynamical phantom-mass phenomenon, to the extent permitted by lensing–dynamics consistency. The GNSS-anchored value of $\rho_T$ enables specific testable applications, including the RBH-1 case study (Paper 7), positioning the Temporal Equivalence Principle as an empirically grounded candidate alternative to the particle dark matter paradigm in the dynamical sector, with the dynamical–lensing mass comparison (Paper 19) as its decisive open test.
 
 ## References
 
@@ -2433,25 +2540,25 @@ Olausen, S. A., & Kaspi, V. M. 2014, *ApJS*, 212, 6 (DOI: 10.1088/0067-0049/212/
 
 ### TEP Research Series
 
-Smawfield, M. L. (2026). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.14 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.15 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
 
 Smawfield, M. L. (2025b). *Global Time Echoes: Distance-Structured Correlations in GNSS Clocks*. Preprint v0.27 (Jaipur). Zenodo. DOI: [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) (Paper 1)
 
 Smawfield, M. L. (2025c). *Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products*. Preprint v0.20 (Cairo). Zenodo. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) (Paper 2)
 
-Smawfield, M. L. (2025d). *Global Time Echoes: Raw RINEX Consistency Test*. Preprint v0.6 (Kathmandu). Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3)
+Smawfield, M. L. (2025d). *Global Time Echoes: Raw RINEX Consistency Test*. Preprint v0.8 (Kathmandu). Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3)
 
 Smawfield, M. L. (2025e). *Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations*. Preprint v0.8 (Tortola). Zenodo. DOI: [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) (Paper 4)
 
-Smawfield, M. L. (2025f). *Global Time Echoes: Empirical Synthesis*. Preprint v0.6 (Singapore). Zenodo. DOI: [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Paper 5)
+Smawfield, M. L. (2025f). *Global Time Echoes: Empirical Synthesis*. Preprint v0.7 (Singapore). Zenodo. DOI: [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Paper 5)
 
 Smawfield, M. L. (2025g). *Temporal Topology Saturation Scale: Cross-Scale Consistency of ρ_T*. Preprint v0.8 (New Delhi). Zenodo. DOI: [10.5281/zenodo.18064365](https://doi.org/10.5281/zenodo.18064365) (Paper 6 — this work)
 
 Smawfield, M. L. (2025h). *The Soliton Wake: Exploring RBH-1 as a Temporal Topology Candidate*. Preprint v0.4 (Blantyre). Zenodo. DOI: [10.5281/zenodo.18059250](https://doi.org/10.5281/zenodo.18059250) (Paper 7)
 
-Smawfield, M. L. (2025). *Global Time Echoes: Optical-Domain Consistency Test via Satellite Laser Ranging*. Preprint v0.4 (Mombasa). Zenodo. DOI: [10.5281/zenodo.18064581](https://doi.org/10.5281/zenodo.18064581) (Paper 8)
+Smawfield, M. L. (2025). *Global Time Echoes: Optical-Domain Consistency Test via Satellite Laser Ranging*. Preprint v0.6 (Mombasa). Zenodo. DOI: [10.5281/zenodo.18064581](https://doi.org/10.5281/zenodo.18064581) (Paper 8)
 
-Smawfield, M. L. (2025). *What Do Precision Tests of General Relativity Actually Measure?*. Preprint v0.7 (Istanbul). Zenodo. DOI: [10.5281/zenodo.18109760](https://doi.org/10.5281/zenodo.18109760) (Paper 9)
+Smawfield, M. L. (2025). *What Do Precision Tests of General Relativity Actually Measure?*. Preprint v0.8 (Istanbul). Zenodo. DOI: [10.5281/zenodo.18109760](https://doi.org/10.5281/zenodo.18109760) (Paper 9)
 
 Smawfield, M. L. (2026). *Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars*. Preprint v0.9 (Caracas). Zenodo. DOI: [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) (Paper 10)
 
@@ -2461,7 +2568,7 @@ Smawfield, M. L. (2026). *Temporal Equivalence Principle: A Unified Resolution t
 
 Smawfield, M. L. (2026). *Temporal Equivalence Principle: Temporal Shear Recovery in Gaia DR3 Wide Binaries*. Preprint v0.6 (Kilifi). Zenodo. DOI: [10.5281/zenodo.19102061](https://doi.org/10.5281/zenodo.19102061) (Paper 13)
 
-Smawfield, M. L. (2026). *Temporal Equivalence Principle: hi_class Background Implementation and CMB Acoustic Peak Preservation*. Preprint v0.7 (Cambridge). Zenodo. (Paper 18)
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: Native hi_class Conformal Implementation, Linear Perturbation Closure, and CMB Acoustic Peak Preservation*. Preprint v0.7 (Cambridge). Zenodo. DOI: [10.5281/zenodo.20572722](https://doi.org/10.5281/zenodo.20572722) (Paper 18)
 
 ## Contact Information
 
@@ -2477,9 +2584,9 @@ GitHub: [github.com/matthewsmawfield](https://github.com/matthewsmawfield)
 
 License: This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
-Version: v0.8 (New Delhi) · Last updated: 13 September 2026
+Version: v0.8 (New Delhi) · Last updated: 30 September 2026
 
-Revision note (v0.8): consistency revision aligning screening terminology with Jakarta v0.14.
+Revision note (v0.8): consistency revision aligning screening terminology with Jakarta v0.15.
 
 ## Appendix A: GNSS Calibration — Summary of Evidence
 
@@ -2535,7 +2642,7 @@ The correlation length has been confirmed over a 25-year temporal baseline (1999
 
 - Strong orbital velocity coupling ($r = -0.86$, $p = 0.002$ for Southern Hemisphere)
 
-- CMB frame alignment (reported at 3.8σ significance in the companion analysis)
+- Annual-phase direction recovery near Earth's aphelion velocity tangent; the directed CMB-apex template is anti-phase
 
 ### A.4 Raw RINEX Validation
 
@@ -2546,7 +2653,7 @@ To strongly constrain the processing artifact hypothesis, the correlation was de
 | Exponential decay | R² = 0.92–0.97 | R² = 0.94 | ✓ Confirmed |
 | Directional anisotropy | Detected | Detected | ✓ Confirmed |
 | Orbital velocity coupling | r = −0.86 | Detected | ✓ Confirmed |
-| CMB frame alignment | 3.8σ | Detected | ✓ Confirmed |
+| Preferred-direction recovery | RA = 6°, Dec = +4°; ~6° from aphelion velocity tangent; CMB apex anti-phase | Detected | ✓ Confirmed |
 
 *Table A.2: Raw RINEX validation results. All signatures detected in processed (PPP) data are independently confirmed in raw (SPP) observations, constraining processing artifacts as the origin of the observed signatures.*
 
@@ -2632,8 +2739,9 @@ parameter.
 
 **Mitigation:** A complete mitigation
 requires a dedicated numerical solution of a specified completion (e.g., Box 6.5)
-in the terrestrial transition regime, with \(\Lambda\) fixed by the calibrated
-\(\rho_T\), to demonstrate how an observable clock-network correlation length
+in the terrestrial transition regime, with the quartic normalization held
+at the corpus value and \(\rho_T\) fixed by the calibrated
+\(L_c\), to demonstrate how an observable clock-network correlation length
 maps onto the geometric scale \(R_T(M_\oplus)\). This single-potential demonstration
 remains an open target.
 
@@ -2833,7 +2941,7 @@ stationary background field.
 By deriving the effective light cone $c_\gamma^2$ and distinguishing
 the stationary boundary-value solution from the dynamic Green's function,
 it is demonstrated that the Temporal Equivalence Principle is
-**causally safe**:
+causally safe:
 
 **Signal Propagation:** Both matter/photons and scalar
 waves ($\delta\phi$) obey strict subluminal/luminal propagation
@@ -2856,20 +2964,21 @@ clocks.
 | Screening hierarchy algebraic | Low | Audit confirms robustness | TEP-UCD v0.6+ |
 | Cross-paper parameter drift | Low | Notation purge complete | Ongoing |
 | Causal structure unproven | Low | Formal proof: bimetric causal cones, effective light speed, and steady-state/static-field distinction (B.7) | TEP-UCD v0.6+ |
-| MGEX scale discrepancy (1,396 vs. 4,200 km) | Medium–High | Pre-registered test executed: scale is epoch-unstable but reproducible across independent analysis centers (COD 2,744 vs GRG 1,933 km — GRG within 4% of the pooled scale — on verified-independent matched days) | TEP-GNSS-MGEX Step 3.1 (per-center + span discriminator) |
+| MGEX scale discrepancy (1,862 vs. 4,200 km) | Medium–High | Pre-registered test executed: scale is epoch-unstable but reproducible across independent analysis centers (COD 2,744 vs GRG 1,933 km — GRG within 4% of the pooled scale — on verified-independent matched days) | TEP-GNSS-MGEX Step 3.1 (per-center + span discriminator) |
 
 The MGEX discrepancy is the most consequential held-out tension in the
-corpus. Paper 14 reports $\lambda \approx 1{,}396 \pm 90$ km from a
-~1-year combined multi-constellation product, versus the ~4,200 km scale
+corpus. Paper 14 reports $\lambda \approx 1{,}862 \pm 112$ km (corrected
+pooled; the original ~1-year headline was 1,396 km) from a combined
+multi-constellation product, versus the ~4,200 km scale
 recovered from multi-year single-center analyses. Candidate explanations
 include: (i) combined multi-constellation clock products mixing different
 orbital sampling geometries into a compressed projection; (ii) the short
-1-year span yielding an unstable scale estimate (consistent with
-$R^2 \approx 0.49$); or (iii) a genuinely different scale. The
+~1-year span yielding an unstable scale estimate (consistent with
+the window scatter and $R^2 \approx 0.70$ on the pooled fit); or (iii) a genuinely different scale. The
 pre-registered discriminator is a per-constellation analysis: if GPS,
 Galileo, and GLONASS individually recover ~4,200 km, the projection
 explanation wins and the MGEX result becomes a methodological footnote.
-If per-constellation analysis also yields ~1,400 km, the
+If per-constellation analysis also yields ~1,900 km, the
 $L_c \leftrightarrow R_T(M_\oplus)$ identification fails as calibrated,
 and the Level 1/2/3 claim hierarchy (Section 8) absorbs the hit exactly as
 designed—Level 2 falls, Levels 1 and 3 survive. Writing this test into
@@ -2877,7 +2986,7 @@ v0.8 before running it converts the corpus's largest latent vulnerability
 into its sharpest falsifiable statement.
 
 The discriminator has now been executed (TEP-GNSS-MGEX Step 3.1,
-`results/outputs/step_3_1_per_center_scale.json`), in the
+`TEP-GNSS-MGEX/results/outputs/step_3_1_per_center_scale.json`), in the
 strongest form the retained archive permits. Three results follow.
 First, a literal per-constellation station-clock split is structurally
 impossible: MGEX station clocks are single combined-solution parameters
@@ -2925,11 +3034,18 @@ coupling $A(\phi) = e^{-\phi/M_{\rm Pl}}$ ($\beta_A = -1$), which is
 the corpus-internal demonstration that the observed phenomenology is
 *mechanistically possible* without requiring new physics beyond
 a self-interacting scalar sector. The completions are benchmark models,
-not unique derivations; the corpus's primary screening vehicle is the
-nonlinear kinetic sector $K(X) = 1 + (X/\Lambda^4)^n$ of Paper 0, whose
-gradient saturation at $X \sim \Lambda^4$ supplies the same density scale
-— the potential-sector realization here is the minimal analogue sharing
-that scale. In the
+not unique derivations; the corpus's working screening realization is the
+nonlinear kinetic sector of the Paper-0 master action,
+$P = X - V + X|X|/\Lambda_X^4$, whose response $P_{,X} = 1 +
+2|X|/\Lambda_X^4$ saturates the scalar coupling once the field gradient
+exceeds the kinetic scale $\Lambda_X = \sqrt{M_{\rm Pl}H_0} \approx 1.9$
+meV (a realization, not a uniqueness theorem — Paper 0, A4).
+The kinetic scale fixes the shear threshold $g_t$ — equivalently a
+surface-density crossover $\Sigma_* \sim M_{\rm Pl}^2 H_0 \sim
+10^{-1}$ g/cm² inside sources (step 14) — not a volume-density scale:
+the density argument of the amplitude sector enters through the
+potential normalization, and the potential-sector realization below is
+constructed on the corpus's own quartic coupling. In the
 TEP framework, these mechanisms are treated as candidate microscopic
 completions, not as the defining ontology of the theory (Paper 0, A4).
 TEP screening is defined by the continuous spatial profile of the scalar
@@ -2984,67 +3100,137 @@ branch $V \propto \phi^{-n}$ used in chameleon completions is inadmissible:
 both $V' < 0$ and $\beta_A\rho A/M_{\rm Pl} < 0$ for all $\phi > 0$, no
 minimum of $V_{\rm eff}$ exists, and the field runs away rather than
 saturating. The admissible branch is a confining potential, $V' > 0$.
-Writing the dimensionless field $u = \phi/M_{\rm Pl}$, a benchmark choice
-is:
+Writing the dimensionless field $u = \phi/M_{\rm Pl}$, the admissible
+family is
 
-\begin{equation} \label{eq:chameleon_potential} V(u) = \frac{\Lambda^4}{m}\,u^{m}, \qquad m > 2, \end{equation}
+\begin{equation} \label{eq:chameleon_potential} V(u) = \frac{\lambda}{m}\,M_{\rm Pl}^4\,u^{m}, \qquad m > 2, \end{equation}
 
-with $\Lambda \sim \rho_T^{1/4} \approx 96$ keV (Section 5.5).
-The conformal coupling is the corpus exponential:
+whose coefficient is the dimensionless coupling $\lambda$ — not a
+fourth-power energy density, and distinct from the GNSS covariance
+length denoted $\lambda$ in Section 3. The corpus's own matter-hosting branch is
+the quartic member of this family, the weak-field truncation of the
+master potential $V(u) = V_{\rm matter}(u)e^{-(u/u_s)^4} + V_0
+e^{-(u_s/u)^4}$ (Paper 0, Section 8). The conformal coupling is the
+corpus exponential:
 
 \begin{equation} \label{eq:chameleon_coupling} A(u) = e^{-u} \qquad (\beta_A = -1). \end{equation}
 
 The effective potential is:
 
-\begin{equation} \label{eq:chameleon_veff} V_{\rm eff}(u) = V(u) + \rho\left[A(u) - 1\right] = \frac{\Lambda^4}{m}u^m + \rho\left(e^{-u} - 1\right). \end{equation}
+\begin{equation} \label{eq:chameleon_veff} V_{\rm eff}(u) = V(u) + \rho\left[A(u) - 1\right] = \frac{\lambda}{m}M_{\rm Pl}^4\,u^m + \rho\left(e^{-u} - 1\right). \end{equation}
 
-Its derivative $V_{\rm eff}' = \Lambda^4 u^{m-1} - \rho\,e^{-u}$ vanishes at
+Its derivative $V_{\rm eff}' = \lambda M_{\rm Pl}^4 u^{m-1} - \rho\,e^{-u}$ vanishes at
 
-\begin{equation} \label{eq:chameleon_umin} u_{\rm min}^{m-1}\,e^{u_{\rm min}} = \frac{\rho}{\Lambda^4} \quad\Longrightarrow\quad u_{\rm min} \approx \left(\frac{\rho}{\Lambda^4}\right)^{1/(m-1)} \;\; (u_{\rm min} \ll 1), \end{equation}
+\begin{equation} \label{eq:chameleon_umin} \lambda\,u_{\rm min}^{m-1}\,e^{u_{\rm min}} = \frac{\rho}{M_{\rm Pl}^4} \quad\Longrightarrow\quad u_{\rm min} \approx \left(\frac{\rho}{\lambda M_{\rm Pl}^4}\right)^{1/(m-1)} \;\; (u_{\rm min} \ll 1), \end{equation}
 
 so a minimum exists for every $\rho > 0$, with the field elevated inside
 matter ($u_{\rm min} > 0$) and approaching zero in the ambient — the
-direction required by the corpus sign convention. The field
+direction required by the corpus sign convention. The exponent is then
+fixed, not free: the corpus's clock-amplitude response
+$S_A(\bar\rho) = \min[1, (\bar\rho/\rho_T)^{1/3}]$ is, on this branch,
+the equilibrium ratio $u_{\rm min}(\bar\rho)/u_{\rm min}(\rho_T)$
+(the $u_{\rm min} \ll 1$ truncation; the full $\lambda u^3 e^u$ solve
+agrees to $\sim 4\times10^{-10}$ relative, step 14), and reproducing its
+density exponent requires $1/(m-1) = 1/3$, i.e. $m = 4$ — the quartic
+member already adopted by the master potential. The corpus-internal
+realization and the corpus's amplitude law are thereby the same object.
+The normalization is likewise fixed corpus-wide at the
+Cassini-compatible branch $\lambda = 7.5\times10^{-66}$
+(`LAMBDA_QUARTIC_CASSINI`; the fiducial point $\lambda_{\rm ref} =
+7.5\times10^{-71}$ of the same family fails the corrected
+linear-in-$S_\Sigma$ Cassini evaluation by $\sim 250\times$, Paper 0
+Appendix E step 03). As an energy scale the potential normalization is
+$\Lambda_V \equiv \lambda^{1/4}M_{\rm Pl} \approx 1.3\times10^{2}$ GeV —
+fourteen orders of magnitude above the kinetic scale $\Lambda_X \approx
+1.9$ meV, and six orders above the energy-density reading
+$\rho_T^{1/4} \approx 96$ keV of the saturation density (Section 5.5).
+These are three distinct quantities: $\Lambda_X$ is the gradient
+threshold of the kinetic sector, $\lambda$ the amplitude-sector
+coupling, and $\rho_T$ the geometric reference density of the
+$R_T(M)$ law. Under this normalization the equilibrium remains deeply
+perturbative at all matter densities: $u_{\rm min}(\rho_T) =
+6.9\times10^{-9}$ and $u_{\rm min}(\bar\rho_\oplus) = 4.5\times10^{-9}$,
+matching the terrestrial share ($\sim 0.5\%$) of the nested field
+decomposition (Paper 0, Section 2.2).
+
+The field
 equation in a static, spherically symmetric environment is:
 
 \begin{equation} \label{eq:chameleon_eom} \frac{d^2 u}{dr^2} + \frac{2}{r}\frac{du}{dr} = \frac{1}{M_{\rm Pl}^2}V_{\rm eff}'(u). \end{equation}
 
 The effective mass squared is:
 
-\begin{equation} \label{eq:chameleon_meff} m_{\rm eff}^2 = \frac{1}{M_{\rm Pl}^2}V_{\rm eff}''(u_{\rm min}) = \frac{\Lambda^4(m-1)\,u_{\rm min}^{m-2} + \rho\,e^{-u_{\rm min}}}{M_{\rm Pl}^2}. \end{equation}
+\begin{equation} \label{eq:chameleon_meff} m_{\rm eff}^2 = \frac{1}{M_{\rm Pl}^2}V_{\rm eff}''(u_{\rm min}) = \frac{3\lambda M_{\rm Pl}^4\,u_{\rm min}^{2} + \rho\,e^{-u_{\rm min}}}{M_{\rm Pl}^2} \simeq 3\lambda M_{\rm Pl}^2 u_{\rm min}^{2}, \end{equation}
 
-Both terms are positive, and $m_{\rm eff}^2$ grows with density (at fixed
-large $\rho$ the second term alone gives $\lambda_C \sim M_{\rm
-Pl}/\sqrt{\rho}$). The screening is doubly density-dependent: in dense
-environments ($\rho \gg \rho_T$) the equilibrium rises to
-$u_{\rm min} \gtrsim 1$, the Compton wavelength shrinks, and the matter
-source slope $\rho\,A_{,u} = -\rho\,e^{-u_{\rm min}}$ is itself
-exponentially suppressed — the conformal coupling self-quenches where the
-field is large. In dilute environments ($\rho \ll \rho_T$), $u_{\rm min}$
-approaches zero, $m_{\rm eff}$ drops toward $\Lambda^4(m-1)u_{\rm
-min}^{m-2}/M_{\rm Pl}^2 \to 0$ for $m > 2$, and the scalar becomes
-long-ranged. The transition density $\rho_T = \Lambda^4$ is the value at
-which $u_{\rm min}$ crosses order unity and the conformal suppression
-becomes appreciable.
+where the equilibrium condition makes the curvature term dominant at
+$u_{\rm min} \ll 1$, giving $m_{\rm eff} \propto \lambda^{1/6}
+\rho^{1/3}$. The screening is doubly density-dependent. The Compton
+wavelength $\lambda_c(\rho) = 1/m_{\rm eff}$ contracts through denser
+interiors; the dynamical content of the saturation transition is the
+crossover at which a body's interior becomes Compton-resolved inside its
+own saturation halo, $\lambda_c(\bar\rho) \lesssim R_T(M)$ — for the
+corpus normalization $\lambda_c(\rho_T) \approx 2{,}500$ km $\approx
+0.6\,R_T(M_\oplus)$, and the crossover density $\lambda_c(\bar\rho) =
+R_T(M_\oplus)$ sits at $\sim 4$ g/cm³, inside the terrestrial
+condensed-matter window (step 14). Deep in the interior the field sits
+near its local equilibrium $u_{\rm min}(\rho)$ and the spatial variation
+is confined to a boundary layer of width $\sim \lambda_c$, where the
+nonlinear kinetic response $P_{,X}$ — the same field equation's other
+half — controls the gradient amplitude; this is the channel through
+which $\Lambda_X$ enters the profile. The conformal self-quenching of
+the source slope $\rho\,A_{,u} = -\rho\,e^{-u_{\rm min}}$ becomes
+operative only when the equilibrium reaches order unity, which under the
+corpus normalization occurs at $\rho_{\rm sat} \sim \lambda M_{\rm
+Pl}^4 \approx 6\times10^{25}$ g/cm³ — far above neutron-star densities,
+inside the temporal-well regime where the master potential's $V_0$ floor
+activates (Paper 28). Ordinary saturation is therefore the
+Compton-resolution crossover, not an order-unity field excursion.
 
-### C.3 Deriving the Saturation Scale
+### C.3 The Saturation Scale: Calibration versus Derivation
 
-Both completions yield a density scale $\rho_T$ that is not put in by hand
-but emerges from the interplay between the scalar self-interaction and the
-matter coupling. In the symmetron benchmark, $\rho_T = \mu^2 M^2$ is the
-symmetry-restoration density. In the corpus realization, the transition
-density is the point where the equilibrium field crosses order unity:
+In the symmetron benchmark, $\rho_T = \mu^2 M^2$ is the
+symmetry-restoration density, fixed by two potential parameters. On the
+corpus branch the analogous question — which property of the scalar
+action returns $\rho_T$ — has a sharper answer than a dimensional guess.
+Under the corpus normalization the equilibrium at the transition density
+is $u_{\rm min}(\rho_T) = 6.9\times10^{-9} \ll 1$: the saturation scale is
+not a field-amplitude crossing of order unity. What $\rho_T$ parameterizes
+is the geometric constant of the saturation-radius law $R_T(M) =
+(3M/4\pi\rho_T)^{1/3}$, calibrated by the GNSS covariance length (Section
+2); its dynamical proxy on the quartic branch is the Compton-resolution
+crossover $\lambda_c(\bar\rho) \sim R_T(M)$, which for Earth sits at
+$\bar\rho \sim 4$ g/cm³ — the terrestrial condensed-matter window in which
+the measured $\rho_T \approx 20$ g/cm³ resides.
 
-\begin{equation} \label{eq:chameleon_rhot} \Lambda^4\,u_T^{m-1}\,e^{u_T} = \rho_T \quad\Longrightarrow\quad \rho_T \sim \Lambda^4 \;\; (u_T \sim 1). \end{equation}
+The shortcut identification $\rho_T \equiv \Lambda_V^4$ — equating the
+geometric reference density with the potential coefficient — is not
+available on the corpus branch, and is excluded rather than merely
+unnecessary. Imposing $u_{\rm min}(\rho_T) \sim 1$ is equivalent to fixing
+$\lambda = \rho_T/M_{\rm Pl}^4 \approx 2.4\times10^{-90}$, and that
+normalization fails three independent checks (step 14): it lies
+$3\times10^{24}$ below the Cassini-compatible quartic normalization that
+Solar-System screening requires; it drives the neutron-star-core
+equilibrium to $u_{\rm min} \approx 21$, past the master-potential knee
+$u_s \simeq 10$ and onto the Planck-density floor — observed pulsars are
+not temporal wells; and its implied Compton length at the transition
+density, $\lambda_c(\rho_T) \approx 3.4\times10^{7}$ km, exceeds any
+terrestrial body by more than three orders of magnitude, so the local equilibrium it
+invokes never forms within the host. The same comparison furnishes a
+directional lower bound: keeping neutron-star interiors below the knee,
+$u_{\rm min}(\rho_{\rm NS}) < u_s$ at $\rho_{\rm NS} \sim 2\times10^{14}$
+g/cm³, requires $\lambda \gtrsim 10^{-84}$, which the corpus branch
+satisfies at nineteen orders of margin. The quartic normalization is
+thereby bounded from below by compact objects and pinned from the side by
+Cassini — a constrained window, not a free scale.
 
-Fixing $\Lambda \approx 96$ keV from the dimensional analysis of Section
-5.5 and imposing the frozen corpus coupling $\beta_A = -1$ leaves the
-confining exponent $m$ as the remaining structural freedom: the scale
-$\rho_T \approx 20$ g/cm³ is carried by the potential scale $\Lambda^4$
-itself, while $m$ controls only the shape of the screening transition. The
+The correct microscopic reading is therefore: $\rho_T$ is the measured
+geometric constant of $R_T(M)$; the quartic coupling $\lambda$ is the
+amplitude-sector normalization; and the order-unity self-quenching crossing
+sits at $\rho_{\rm sat} \sim \lambda M_{\rm Pl}^4 \approx
+6\times10^{25}$ g/cm³, inside the temporal-well regime of Paper 28. The
 consistency of this picture with the SPARC-normalized galactic transition
-is then a question about how the same $(\Lambda, \beta_A)$ field profile
-behaves at galactic densities — the open normalization linkage recorded in
+is then a question about how the same $(\lambda, \beta_A)$ field profile
+behaves at halo densities — the open normalization linkage recorded in
 the Formal Link, not a free refit.
 
 ### C.4 Status and Caveats
@@ -3057,32 +3243,38 @@ provides an external benchmark from the standard EFT literature. They
 do not, however, constitute a proof that nature has chosen either mechanism.
 Key open questions include:
 
-**Unique potential:** The confining benchmark and the
-symmetron are representative examples. Other admissible forms (e.g.,
-confining potentials of different exponent, or the corpus's $K(X)$
-kinetic route) may also produce the required screening, and a
-first-principles derivation from the master action would be required to
-select the correct form.
+**Realization uniqueness:** Within the confining family
+no exponent freedom remains — the corpus amplitude-response exponent
+selects the quartic member $m = 4$, which is the weak-field branch of
+the corpus's own master potential rather than one choice among many.
+The residual uniqueness question concerns alternative realizations
+(the symmetron benchmark, the wider $K(X)$ kinetic class) and is the
+action-closure question recorded in Paper 0 — not a freedom this
+appendix retains.
 
-**Quantum stability:** The $\mu \sim 10^{-27}$ eV mass scale
-in the symmetron completion is vulnerable to quantum corrections. A
-technically natural model (e.g., with approximate shift symmetry or
-clockwork structure) would strengthen the completion.
+**Quantum stability:** The small quartic coupling
+$\lambda \approx 7.5\times10^{-66}$ is radiatively stable in the
+technical sense — its quantum corrections are proportional to
+$\lambda$ itself. The $\mu \sim 10^{-27}$ eV mass-scale exposure
+belongs to the symmetron benchmark, not to the corpus realization.
 
 **Terrestrial transition width:** Neither completion predicts
 the detailed width $\Delta R_T$ of the Earth's screening transition,
 which controls the orbital-transfer mapping to $L_c$ (the phenomenological transfer sketch in Section 2). A
-numerical solution of the specified potential in Earth's density
+numerical solution of the quartic profile at the fixed corpus
+normalization in Earth's density
 profile is required.
 
 The existence of a corpus-internal completion that structurally reproduces
 the salient phenomenology under the frozen $\beta_A = -1$ coupling —
 with the symmetron as an external benchmark — removes the objection that
-$\rho_T \approx 20$ g/cm³ is a numerological construct. The scale is
-carried by the saturation potential $\Lambda^4$ of a density-dependent
-scalar screening mechanism whose admissible branch is selected by the
-corpus sign convention itself, and is anchored to terrestrial kinematic
-data.
+$\rho_T \approx 20$ g/cm³ is a numerological construct. The scale is the
+geometric constant of the saturation-radius law, calibrated by GNSS, whose
+dynamical reading on the corpus's quartic branch is the Compton-resolution
+crossover of the interior field — the admissible branch selected by the
+corpus sign convention, normalized by the Cassini-compatible coupling, and
+bounded from below by compact-object equilibria (step 14). It is anchored
+to terrestrial kinematic data at every step.
 
 ## Appendix D: Visual Evidence
 
@@ -3210,7 +3402,7 @@ detection thresholds.
 
 ---
 
-*This document was automatically generated from the TEP-UCD research site. For the interactive version with figures and enhanced formatting, visit: https://matthewsmawfield.github.io/TEP-UCD/*
+*This document was automatically generated from the TEP-UCD research site. For the interactive version with figures and enhanced formatting, visit: https://mlsmawfield.com/tep/ucd/*
 
 *Related Work:*
 - [**TEP Theory**](https://doi.org/10.5281/zenodo.16921911) (Foundational framework)

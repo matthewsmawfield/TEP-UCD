@@ -184,6 +184,27 @@ def run_pipeline():
         "run_amplitude_test"
     )
 
+    results["step_10_two_branch_sparc_rar"] = run_step(
+        "step_10_two_branch_sparc_rar", steps_dir / "step_10_two_branch_sparc_rar.py",
+        "main"
+    )
+    results["step_11_kphi_sparc"] = run_step(
+        "step_11_kphi_sparc", steps_dir / "step_11_kphi_sparc.py",
+        "main"
+    )
+    results["step_12_onset_radius_law"] = run_step(
+        "step_12_onset_radius_law", steps_dir / "step_12_onset_radius_law.py",
+        "main"
+    )
+    results["step_13_two_branch_btfr"] = run_step(
+        "step_13_two_branch_btfr", steps_dir / "step_13_two_branch_btfr.py",
+        "main"
+    )
+    results["step_14_scale_audit"] = run_step(
+        "step_14_scale_audit", steps_dir / "step_14_scale_audit.py",
+        "main"
+    )
+
     total_elapsed = time.time() - t0
     save_pipeline_summary(results, total_elapsed)
 

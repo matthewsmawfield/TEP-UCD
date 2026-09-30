@@ -66,7 +66,7 @@ async function buildStaticSite() {
             // Replace the loading div and manuscript-content div with the built content
             .replace(
                 /<div id="loading".*?<\/div>\s*<div id="manuscript-content".*?<\/div>/s,
-                `<div id="manuscript-content">${componentsHtml}</div>`
+                () => `<div id="manuscript-content">${componentsHtml}</div>`
             )
             // Defensive cleanup: if the dynamic loader placeholders still exist anywhere
             // (e.g., due to an unexpected template transformation), remove them.
@@ -226,7 +226,7 @@ function copyRecursiveSync(src, dest, excludeList = []) {
         });
     } else {
         // Filter out raw data files
-        if (src.endsWith('.csv') || src.endsWith('.dat') || src.endsWith('.nc')) {
+        if (src.endsWith('.csv') || src.endsWith('.dat') || src.endsWith('.nc') || src.endsWith('.DS_Store')) {
             return;
         }
         fs.copyFileSync(src, dest);

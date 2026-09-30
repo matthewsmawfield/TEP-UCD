@@ -119,7 +119,9 @@
 <div class="callout">
     <h4>Box 6.3: Robustness of the GNSS Calibration (Systematics Check)</h4>
     <p>
-        The terrestrial calibration length $L_c \approx 4200$ km is an
+        The terrestrial calibration length $L_c \approx 4200$ km — the GNSS
+        instrument's measured realization of the canonical correlation scale
+        $\lambda_T$ (Paper 0 §7) — is an
         extraordinary claim requiring careful exclusion of geodetic
         systematics. The following tests support its physical origin (full
         methodology in Smawfield 2025b,c,d):
@@ -224,46 +226,65 @@
         Under the corpus coupling $\beta_A = -1$ the matter term enters with
         negative slope ($\alpha\rho = -\rho/M_{\rm Pl}$), so a minimum of
         $V_{\rm eff}$ exists only on the confining branch $V' > 0$. Writing
-        $u = \phi/M_{\rm Pl}$ and adopting $V(u) = (\Lambda^4/m)\,u^m$ with
-        $m > 2$, the equilibrium condition $V_{\rm eff}' = 0$ reads
-        $\Lambda^4 u_{\rm min}^{m-1} = \rho\,e^{-u_{\rm min}}$, giving
-        $u_{\rm min} \approx (\rho/\Lambda^4)^{1/(m-1)}$ for
+        $u = \phi/M_{\rm Pl}$, the corpus's own weak-field branch is the
+        quartic $V(u) = (\lambda/4)\,M_{\rm Pl}^4\,u^4$ — the member of the
+        confining family $V \propto u^m$ selected by the corpus amplitude
+        law $S_A \propto \rho^{1/3} = \rho^{1/(m-1)}$, i.e. $m = 4$
+        (Appendix C.2). The equilibrium condition $V_{\rm eff}' = 0$ reads
+        $\lambda M_{\rm Pl}^4 u_{\rm min}^{3} = \rho\,e^{-u_{\rm min}}$, giving
+        $u_{\rm min} \approx (\rho/\lambda M_{\rm Pl}^4)^{1/3}$ for
         $u_{\rm min} \ll 1$: the field is elevated inside matter and
         approaches zero in the ambient, in the direction required by the
         corpus sign convention. (The inverse-power branch
         $V \propto \phi^{-n}$ is inadmissible under $\beta_A = -1$: both
         slopes are then negative and no minimum exists; its implied
         $\phi_{\rm min} \propto \rho^{-1/(n+1)}$ would in any case run
-        opposite to the required direction.) The energy density in the
+        opposite to the required direction.) The scalar energy density in a
         saturated core is:
     </p>
     <div class="equation">
         \begin{equation} \label{eq:effective_density} \rho_{\rm eff} \sim V(u_{\rm min}) + \frac{1}{2}M_{\rm Pl}^2(\nabla u)^2
-        \sim \Lambda^4 \equiv \rho_T \approx 20 \text{ g/cm}^3. \end{equation}
+        \simeq \tfrac{1}{4}\rho\,u_{\rm min} \ll \rho. \end{equation}
     </div>
     <p>
-        This identifies the empirical saturation scale $\rho_T$ with the
-        potential scale $\Lambda$: at $\rho \sim \Lambda^4$ the equilibrium
-        crosses $u_{\rm min} \sim 1$, where the conformal factor
-        $A = e^{-u}$ becomes appreciably suppressed and the matter source
-        $\rho\,A_{,u} = -\rho\,e^{-u}$ self-quenches.
+        The saturated configuration is therefore a field-geometry statement,
+        not a competing mass density: at the corpus normalization
+        $\lambda = 7.5\times10^{-66}$ (the scalar self-coupling, Appendix C)
+        the core energy density is
+        $\sim 3\times10^{-8}$ g/cm³ at terrestrial densities, and the
+        equilibrium $u_{\rm min}(\rho_T) \approx 6.9\times10^{-9}$ remains
+        perturbative. What saturates at $\rho_T$ is the clock-amplitude
+        response $S_A = \min[1, u_{\rm min}(\bar\rho)/u_{\rm min}(\rho_T)]$
+        through the geometric radius $R_T$; the order-unity self-quenching
+        crossing $u_{\rm min} \sim 1$ (where $e^{-u}$ suppresses the
+        conformal source) lies at $\rho_{\rm sat} \sim \lambda M_{\rm Pl}^4
+        \approx 6\times10^{25}$ g/cm³, inside the temporal-well domain of
+        Paper 28 (step 14).
     </p>
     <p><strong>3. Temporal Topology Screening</strong></p>
     <p>
-        In dense environments ($\rho \gg \rho_T$), the effective mass
+        The effective mass
         $m_{\rm eff}^2(\rho) = V_{\rm eff}''(u_{\rm min})/M_{\rm Pl}^2 =
-        [\Lambda^4(m-1)u_{\rm min}^{m-2} + \rho\,e^{-u_{\rm min}}]/M_{\rm Pl}^2$
-        becomes large, suppressing field gradients
-        (Temporal Shear) within the Compton wavelength $\lambda_C =
-        1/m_{\rm eff}$. In the same limit the effective source slope
-        $\rho\,A_{,u} = -\rho\,e^{-u_{\rm min}}$ is exponentially
-        suppressed, so the scalar charge of saturated matter quenches as
-        well. This creates the characteristic flattening of
+        [3\lambda M_{\rm Pl}^4\,u_{\rm min}^{2} + \rho\,e^{-u_{\rm min}}]/M_{\rm Pl}^2$
+        grows with density as $m_{\rm eff} \propto \lambda^{1/6}\rho^{1/3}$,
+        so the Compton wavelength $\lambda_C = 1/m_{\rm eff}$ contracts
+        through denser interiors: a body is Compton-resolved once
+        $\lambda_c(\bar\rho) \lesssim R_T(M)$, the crossover that for Earth
+        sits at $\sim 4$ g/cm³ (step 14). Inside such a body the field rests
+        near its local equilibrium $u_{\rm min}(\rho)$ and the spatial
+        variation is confined to a boundary layer of width $\sim\lambda_C$,
+        where the kinetic response $P_{,X}$ controls the gradient amplitude.
+        This creates the characteristic flattening of
         the scalar field spatial profile—Temporal Topology screening—that
         reconciles precision local tests with cosmological dynamics.
         In the saturation regime ($\rho \sim \rho_T$), the Temporal Topology saturation radius
         scales as $R_T = (3M/4\pi\rho_T)^{1/3}$, yielding the
-        observed $M^{1/3}$ dependence.
+        observed $M^{1/3}$ dependence. At still higher densities — where the
+        equilibrium approaches order unity ($\rho \sim \rho_{\rm sat} \approx
+        6\times10^{25}$ g/cm³) — the effective source slope
+        $\rho\,A_{,u} = -\rho\,e^{-u_{\rm min}}$ is exponentially
+        suppressed, so the scalar charge of deep-interior matter quenches as
+        well: that is the temporal-well regime, not the terrestrial one.
     </p>
     <p><strong>4. Coupling and Stability</strong></p>
     <p>

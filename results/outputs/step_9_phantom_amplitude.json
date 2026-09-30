@@ -4,7 +4,7 @@
     "ml_disk": 0.5,
     "ml_bulge": 0.7,
     "gas_factor": 1.33,
-    "beta_A": 1.0,
+    "beta_A": -1.0,
     "bare_saturation_ratio_sqrt3": 1.7320508075688772,
     "n_galaxies_analyzed": 164,
     "plateau_ratio": {
@@ -53,7 +53,7 @@
             "n_points": 8,
             "plateau_ratio": 1.2134111102350267,
             "S_eff_plateau": 0.23618326122090005,
-            "enhancement_profile_slope": null,
+            "enhancement_profile_slope": NaN,
             "E_outer_median": 0.4723665224418001,
             "E_inner_median": -0.5844460067743023
         },
@@ -710,7 +710,7 @@
             "n_points": 6,
             "plateau_ratio": 0.9767326715187169,
             "S_eff_plateau": -0.02299664419395514,
-            "enhancement_profile_slope": null,
+            "enhancement_profile_slope": NaN,
             "E_outer_median": -0.03470436313013564,
             "E_inner_median": -0.7003260659111645
         },
@@ -926,7 +926,7 @@
             "n_points": 8,
             "plateau_ratio": 0.9451970329556186,
             "S_eff_plateau": -0.053301284445947616,
-            "enhancement_profile_slope": null,
+            "enhancement_profile_slope": NaN,
             "E_outer_median": -0.10660256889189523,
             "E_inner_median": -0.697675846430047
         },

@@ -17,7 +17,11 @@ scripts/
 │   ├── step_6_sensitivity.py
 │   ├── step_7_sparc_residuals.py
 │   ├── step_8_density_vs_size_confound.py
-│   └── step_9_phantom_amplitude.py
+│   ├── step_9_phantom_amplitude.py
+│   ├── step_10_two_branch_sparc_rar.py
+│   ├── step_11_kphi_sparc.py
+│   ├── step_12_onset_radius_law.py
+│   └── step_13_two_branch_btfr.py
 ├── utils/                # Shared utilities (style, logging)
 ├── verification/         # Verification audits
 │   └── verify_screening_claim.py
@@ -54,6 +58,13 @@ cd site && npm run build
 | `steps/step_7_sparc_residuals.py` | `figure_7_sparc_residuals.png` | Residual analysis (baryonic vs screening proxies) |
 | `steps/step_8_density_vs_size_confound.py` | `step_8_density_vs_size_confound.json` | Density-threshold vs disk size–mass confound test |
 | `steps/step_9_phantom_amplitude.py` | `step_9_phantom_amplitude.json` | Phantom-mass plateau amplitude and radial-profile test |
+| `steps/step_10_two_branch_sparc_rar.py` | `step_10_two_branch_sparc_rar.json` | Two-branch kinetic-sector RAR test on all SPARC Table 2 points (migrated from Paper 0 step_55) |
+| `steps/step_11_kphi_sparc.py` | `step_11_kphi_sparc.json` | K(φ)-corrected SPARC RAR well-depth sweep (migrated from Paper 0 step_60) |
+| `steps/step_12_onset_radius_law.py` | `step_12_onset_radius_law.json` | Zero-parameter onset-radius law, R_onset = √(GM/a_eff) (migrated from Paper 0 step_63) |
+| `steps/step_13_two_branch_btfr.py` | `step_13_two_branch_btfr.json` | Two-branch BTFR outer-edge and deep-limit tests (migrated from Paper 0 step_66) |
+| `steps/step_14_scale_audit.py` | `step_14_scale_audit.json` | Scalar-sector scale audit: kinetic scale Λ_X, quartic coupling λ, and ρ_T disambiguation |
+
+All migrated steps share the canonical shear scale `g_t = c·H0/(2·β_A²) ≈ 3.4e-10 m/s²` (H0 = 70 km/s/Mpc, β_A² = 1), so the BTFR asymptote `a_eff = 4√2·g_t/k` equals `a_0 = 1.2e-10 m/s²` exactly.
 | `verification/verify_screening_claim.py` | — | Verifies S ∝ rho^0.334 claim from object data |
 
 ## SPARC Scaling Analysis (`step_4_sparc_analysis.py`)

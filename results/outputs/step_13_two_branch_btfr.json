@@ -1,0 +1,28 @@
+{
+  "step": "btfr_two_branch",
+  "k": 16.03,
+  "g_t": 3.4001944264419963e-10,
+  "a_eff_ms2": 1.1999004547921841e-10,
+  "a_eff_over_g_t": 0.3528917186208596,
+  "ups": [
+    0.5,
+    0.7
+  ],
+  "hi_factor": 1.33,
+  "outer_edge": {
+    "n_points": 405,
+    "n_galaxies": 135,
+    "median_vobs_over_vpred": 0.9101436545061856,
+    "median_log10_resid": -0.04089005445310795,
+    "rms_log10_resid": 0.09254978293043735,
+    "median_gN_over_gt": 0.019757469505757238
+  },
+  "asymptotic": {
+    "n": 135,
+    "median_vobs_over_vpred_deep_limit": 1.0616113897744934,
+    "rms_log10_deep_limit": 0.08977684252082106,
+    "empirical_slope_Mb_vs_v": 3.189204983649691,
+    "median_implied_a_eff_ms2": 1.5240790567538562e-10,
+    "note": "deep-limit formula underpredicts v_flat at finite u; the outer-edge test is the honest comparison"
+  }
+}

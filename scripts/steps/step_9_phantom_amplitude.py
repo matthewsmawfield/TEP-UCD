@@ -51,7 +51,7 @@ def print_header(title):
 ML_DISK = 0.5
 ML_BULGE = 0.7
 GAS_FACTOR = 1.33
-BETA_A = 1.0          # |beta_A| for the bare conformal coupling
+BETA_A = -1.0         # Canonical universal coupling beta_A = -1 (Rule 3)
 OUTER_FRACTION = 0.34  # outer third of points defines the plateau
 MIN_POINTS = 6         # minimum valid radial points per galaxy
 VBAR_MIN = 5.0         # km/s floor for a usable baryonic velocity (step-4 convention)

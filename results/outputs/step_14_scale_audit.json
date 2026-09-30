@@ -1,0 +1,54 @@
+{
+  "scale_dictionary": {
+    "Lambda_X_kinetic_meV": 1.9068042618173275,
+    "lambda_quartic_ref": 7.526e-71,
+    "lambda_quartic_cassini": 7.526e-66,
+    "Lambda_V_cassini_GeV": 127.53812239306488,
+    "Lambda_V_ref_GeV": 7.171995675880504,
+    "rho_T_g_cm3": 20.0,
+    "rho_T_fourth_root_keV": 96.3562987145747,
+    "R_T_earth_km": 4146.360558419803,
+    "L_c_GNSS_km": 4200.0
+  },
+  "amplitude_law_check": {
+    "S_A_earth_model": 0.6508863647344154,
+    "u_min_ratio_earth": 0.650886365255617,
+    "u_min_earth_g515": 4.478768620359719e-09,
+    "u_min_rhoT_20": 6.881030022192599e-09,
+    "statement": "S_A = min[1,(rho/rho_T)^(1/3)] is exactly u_min(rho)/u_min(rho_T) for the quartic branch: the corpus response exponent 1/3 = 1/(m-1) fixes m = 4."
+  },
+  "self_quenching_crossing": {
+    "u_cross": 0.7728829591492101,
+    "rho_sat_corpus_g_cm3": 6.138604233965126e+25,
+    "rho_sat_ucd_equiv_g_cm3": 20.000000000000004,
+    "statement": "under the corpus normalization the u ~ 1 crossing sits at ~1e26 g/cm^3 (temporal-well interior), not at rho_T = 20 g/cm^3."
+  },
+  "compton_resolution": {
+    "lambda_c_rhoT_corpus_km": 2478.5136613604604,
+    "lambda_c_over_R_T_earth": 0.5977564243243316,
+    "lambda_c_eq_R_T_at_rho_g_cm3": 4.271719744372345,
+    "lambda_c_rhoT_ucd_km": 34472661.80361659
+  },
+  "compact_object_bound": {
+    "rho_ns_core_g_cm3": 200000000000000.0,
+    "u_min_ns_corpus": 0.0001482399729588169,
+    "u_min_ns_ucd_equiv": 20.825125557336104,
+    "u_s_knee": 10.0,
+    "lambda_pulsar_lower_bound": 1.1132168107594674e-84,
+    "lambda_cassini_over_bound": 6.760587809364426e+18,
+    "lambda_ucd_equiv_over_bound": 2.202646579480672e-06
+  },
+  "excluded_normalization": {
+    "lambda_equiv_if_Lambda4_eq_rhoT": 2.4520232004397233e-90,
+    "ratio_cassini_over_ucd": 3.0693021169825617e+24,
+    "failures": [
+      "3e24 below the Cassini-compatible quartic normalization",
+      "u_min(NS core) ~ 21 > u_s = 10: pulsars would sit on the Planck-density floor (temporal wells), excluded",
+      "lambda_c(rho_T) >> any body radius: the invoked local equilibrium never forms; mechanism inert where claimed"
+    ]
+  },
+  "kinetic_column_scale": {
+    "Sigma_star_g_cm2": 0.12159857786034232,
+    "statement": "the X|X|/Lambda_X^4 interior turns canonical below surface density ~ 0.1 g/cm^2 (~ 570 M_sun/pc^2): the kinetic scale supplies a column-density floor, not a volume-density scale."
+  }
+}
