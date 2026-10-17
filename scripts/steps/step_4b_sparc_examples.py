@@ -139,28 +139,9 @@ def run():
     table2 = os.path.join(data_dir, 'Table2.mrt')
 
     if not (os.path.exists(table1) and os.path.exists(table2)):
-        print_status("SPARC tables absent; generating synthetic illustration", "WARNING")
-        np.random.seed(7)
-        fig, axes = plt.subplots(3, 3, figsize=FIG_SIZE[FIG_PRESET], constrained_layout=True)
-        for i, ax in enumerate(axes.flat):
-            R = np.linspace(0.1, 10, 40)
-            Vbar = 50 + 50 * (1 - np.exp(-R / 2.0))
-            Vobs = Vbar + 30 * (1 - np.exp(-np.maximum(R - 3, 0) / 2.0))
-            ax.plot(R, Vbar, color=COLORS['secondary'], lw=1.8, label='Baryonic')
-            ax.errorbar(R, Vobs, yerr=0.05 * Vobs, fmt='o', ms=2.5, color=COLORS['primary'],
-                        ecolor=COLORS['primary_light'], elinewidth=0.8, capsize=0, label='Observed')
-            ax.axvline(3.0, color=COLORS['highlight'], ls='--', lw=1.2, label=r'$R_{\rm trans}$')
-            ax.axvline(4.0, color=COLORS['accent'], ls=':', lw=1.2, label=r'$R_{\rm DM}$')
-            ax.set_title(f'Synthetic {i+1}', fontsize=9)
-            ax.set_xlabel('R (kpc)')
-            ax.set_ylabel('V (km/s)')
-            ax.grid(True, alpha=0.25)
-            ax.legend(fontsize=6, frameon=False, loc='lower right')
-
-        out_path = os.path.join(output_dir, 'figure_6_sparc_examples.png')
-        plt.savefig(out_path)
-        print_status(f"Saved synthetic example figure to {out_path}", "SUCCESS")
-        return
+        raise FileNotFoundError(
+            f"SPARC tables absent ({table1}, {table2}); synthetic illustration fallback is disabled."
+        )
 
     print_status("Parsing SPARC tables", "PROCESS")
     props = parse_table1(table1)

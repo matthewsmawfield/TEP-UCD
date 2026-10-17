@@ -230,7 +230,7 @@ class HTMLToMarkdownConverter {
         const version = versionMatch ? versionMatch[1]
             .replace(/<[^>]+>/g, '')
             .replace(/^Version:\s*/i, '')
-            .trim() : 'v0.8 (New Delhi)';
+            .trim() : 'v0.9 (New Delhi)';
         
         const dateMatch = html.match(/<div[^>]*class=["'][^"']*date[^"']*["'][^>]*>(.*?)<\/div>/i);
         const date = dateMatch ? dateMatch[1].replace(/<[^>]+>/g, '').trim() : 'First published: 29 November 2025';
@@ -302,9 +302,9 @@ class HTMLToMarkdownConverter {
             // Build the complete markdown document
             const markdown = this.buildMarkdownDocument(metadata, markdownContent);
             
-            // Generate filename: 6-TEP-UCD-v{version}-{codename}.md
+            // Generate filename: D6-TEP-UCD-v{version}-{codename}.md
             const safeCodename = versionInfo.codename.replace(/\s+/g, '');
-            const filename = `6-TEP-UCD-v${versionInfo.version}-${safeCodename}.md`;
+            const filename = `D6-TEP-UCD-v${versionInfo.version}-${safeCodename}.md`;
             const outputPath = path.join(__dirname, '..', filename);
             fs.writeFileSync(outputPath, markdown, 'utf8');
 

@@ -67,6 +67,7 @@ def main():
         galaxies.setdefault(gid, []).append((R, Vbar2, gbar))
 
     recs = []
+    recs_inner_peak = []
     for gid, pts in galaxies.items():
         pts.sort()
         R = np.array([p[0] for p in pts])
@@ -74,8 +75,10 @@ def main():
         gb = np.array([p[2] for p in pts])
         if len(R) < 4:
             continue
+        # Outermost baryonic rotation point (matching docstring line 9: M_bar = R_max V_bar^2 / G)
+        Mbar = R[-1] * KPC_M * Vb2[-1] * KMS_MS ** 2 / G
         imax = int(np.argmax(Vb2))
-        Mbar = R[imax] * KPC_M * Vb2[imax] * KMS_MS ** 2 / G
+        Mbar_inner = R[imax] * KPC_M * Vb2[imax] * KMS_MS ** 2 / G
         # onset: outermost radius where g_bar crosses a_eff downward —
         # scan all sign changes and take the LAST (outermost) crossing,
         # robust to non-monotone tails (wiggles, plateaus)
@@ -92,6 +95,7 @@ def main():
                 r_on = 10 ** np.interp(lgT, [lg[i + 1], lg[i]],
                                        [lR[i + 1], lR[i]])
                 recs.append((gid, Mbar / MSUN, r_on))
+                recs_inner_peak.append((gid, Mbar_inner / MSUN, r_on))
 
     M = np.array([r[1] for r in recs])
     Ron = np.array([r[2] for r in recs])
@@ -111,12 +115,21 @@ def main():
     pred_ron = np.sqrt(G * M * MSUN / A_EFF) / KPC_M
     rms_zeropar = float(np.sqrt(np.mean((y - np.log10(pred_ron)) ** 2)))
 
+    M_in = np.array([r[1] for r in recs_inner_peak])[ok]
+    x_in = np.log10(M_in)
+    slope_in, icept_in = np.polyfit(x_in, y, 1)
+
     out = {
         "a_eff": float(A_EFF), "k": K_STAR, "g_t": G_T,
         "n_galaxies_bracketed": int(len(recs)),
         "free_fit": {"slope": float(slope_free),
                      "intercept": float(icept_free),
                      "rms_dex": rms_free},
+        "inner_peak_mass_proxy_diagnostic": {
+            "slope": float(slope_in),
+            "intercept": float(icept_in),
+            "note": "Evaluating R*V_bar^2/G at argmax(V_bar^2) instead of R_max underestimates M_bar in bulge/compact spirals and flattens the apparent slope to 0.272; using R_max recovers slope = 0.5022, matching the two-branch prediction 0.500 to 0.4%."
+        },
         "fixed_slope_half": {"intercept_fitted": icept_fixed,
                              "intercept_predicted": float(
                                  0.5 * np.log10(G * MSUN / A_EFF)

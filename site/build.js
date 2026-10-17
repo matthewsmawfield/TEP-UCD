@@ -149,7 +149,7 @@ async function buildStaticSite() {
             versionInfo = JSON.parse(fs.readFileSync(versionPath, 'utf8'));
         }
         const safeCodename = versionInfo.codename.replace(/\s+/g, '');
-        const pdfName = `6-TEP-UCD-v${versionInfo.version}-${safeCodename}.pdf`;
+        const pdfName = `D6-TEP-UCD-v${versionInfo.version}-${safeCodename}.pdf`;
         const repoPdf = path.join(__dirname, '..', pdfName);
         if (fs.existsSync(repoPdf)) {
             fs.copyFileSync(repoPdf, path.join(docsDir, pdfName));
@@ -188,7 +188,7 @@ async function buildStaticSite() {
         await converter.convertSiteToMarkdown();
         
         // Reuse versionInfo and safeCodename loaded earlier for markdown filename
-        const markdownFilename = `6-TEP-UCD-v${versionInfo.version}-${safeCodename}.md`;
+        const markdownFilename = `D6-TEP-UCD-v${versionInfo.version}-${safeCodename}.md`;
         
         console.log('✅ Static site built successfully!');
         console.log(`📁 Output: ${outputPath}`);

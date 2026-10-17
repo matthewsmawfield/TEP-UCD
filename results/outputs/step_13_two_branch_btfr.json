@@ -12,6 +12,9 @@
   "outer_edge": {
     "n_points": 405,
     "n_galaxies": 135,
+    "median_vobs_over_vpred_quadrature": 1.0108759989765699,
+    "median_log10_resid_quadrature": 0.004697885301111044,
+    "rms_log10_resid_quadrature": 0.08119938026946287,
     "median_vobs_over_vpred": 0.9101436545061856,
     "median_log10_resid": -0.04089005445310795,
     "rms_log10_resid": 0.09254978293043735,

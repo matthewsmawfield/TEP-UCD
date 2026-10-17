@@ -125,63 +125,13 @@ def run_enhanced_analysis():
 
     print_status("SPARC Enhanced Analysis: Robust TEP Test", "TITLE")
 
-    # Parse data
-    try:
-        print_status("Parsing SPARC Table1 (galaxy properties)", "PROCESS")
-        galaxy_props = parse_table1(os.path.join(data_dir, 'Table1.mrt'))
-        print_status("Parsing SPARC Table2 (rotation curves)", "PROCESS")
-        rotation_curves = parse_table2(os.path.join(data_dir, 'Table2.mrt'))
-        using_synthetic = False
-        print_status(f"Loaded {len(galaxy_props)} galaxies with rotation curves", "SUCCESS")
-    except FileNotFoundError:
-        print_status("Data files not found. Generating synthetic SPARC-like data for visualization.", "WARNING")
-        using_synthetic = True
-        # Generate synthetic galaxies scaling roughly as M ~ R^3 with scatter
-        # and R_dm ~ M^(1/3)
-        np.random.seed(42)
-        galaxy_props = {}
-        rotation_curves = {}
-        n_syn = 150
-        
-        # Mass range 10^7 to 10^11.5
-        M_bars = 10**np.random.uniform(7, 11.5, n_syn)
-        
-        for i in range(n_syn):
-            name = f"G{i:03d}"
-            M = M_bars[i]
-            
-            # Theoretical R_dm with scatter
-            # R ~ M^(1/3) * scatter
-            R_dm_true = 7.9e-4 * M**(1/3) * 10**np.random.normal(0, 0.15) # 0.15 dex scatter
-            
-            # Create synthetic curve properties (simplified for the analysis function)
-            # We just need to ensure the analysis logic 'finds' this R_dm
-            galaxy_props[name] = {'L_36': M * 0.8 / ML_DISK, 'MHI': M * 0.2 / 1.33} 
-            
-            # Mock rotation curve data
-            R_arr = np.linspace(0.1, 3 * R_dm_true, 100)
-            # Newtonian: Keplerian fall-off after some extent
-            V_bar_true = np.sqrt(G * M * M_sun_kg / (R_arr * kpc_to_m)) / 1000 # km/s
-            
-            # Ensure components sum to V_bar_true
-            # V_bar_calc^2 = Vgas^2 + ML_DISK*Vdisk^2 + ML_BULGE*Vbul^2
-            # Let's use only disk for simplicity: Vdisk = V_bar_true / sqrt(ML_DISK)
-            V_disk = V_bar_true / np.sqrt(ML_DISK)
-            
-            # Observed: Flat
-            V_flat = V_bar_true[0] * 1.0 # Flat at V_max
-            # Transition function
-            trans = 1 / (1 + (R_dm_true/R_arr)**2) 
-            V_obs = V_bar_true * (1 - trans) + V_flat * trans
-            
-            rotation_curves[name] = {
-                'R': R_arr,
-                'Vobs': V_obs,
-                'e_Vobs': V_obs * 0.05,
-                'Vgas': np.zeros_like(R_arr),
-                'Vdisk': V_disk,
-                'Vbul': np.zeros_like(R_arr)
-            }
+    # Parse data (real SPARC tables required; no synthetic fallback)
+    print_status("Parsing SPARC Table1 (galaxy properties)", "PROCESS")
+    galaxy_props = parse_table1(os.path.join(data_dir, 'Table1.mrt'))
+    print_status("Parsing SPARC Table2 (rotation curves)", "PROCESS")
+    rotation_curves = parse_table2(os.path.join(data_dir, 'Table2.mrt'))
+    using_synthetic = False
+    print_status(f"Loaded {len(galaxy_props)} galaxies with rotation curves", "SUCCESS")
 
     # --- ENHANCEMENT 1: Marginalize over thresholds ---
     print_status("ENHANCEMENT 1: Threshold-Marginalized Exponent", "PROCESS")

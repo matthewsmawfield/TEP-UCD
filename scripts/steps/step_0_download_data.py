@@ -70,7 +70,7 @@ def run_download_data():
     if all_ok:
         print_status("All data files present.", "SUCCESS")
     else:
-        print_status("Some downloads failed. Pipeline may fall back to synthetic data.", "WARNING")
+        raise FileNotFoundError("Required SPARC data files failed to download; synthetic fallback is disabled.")
 
     return {"status": "ok" if all_ok else "partial", "dir": str(sparc_dir)}
 

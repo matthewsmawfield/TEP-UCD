@@ -11,12 +11,18 @@
   "n_galaxies": 175,
   "rar_prediction": {
     "n_points": 3389,
-    "rms_log10_resid_two_branch": 0.21857280860053888,
-    "median_log10_resid_two_branch": -0.08614090239095694,
+    "primary_force_law": "g_obs = g_N + a_phi (action-derived additive force law from L_pp = -mc sqrt(-g_tilde_munu dx^mu dx^nu))",
+    "zero_gradient_regulator_eps_reg": 0.001,
+    "calibration_provenance": "k_star = 4 sqrt(2) g_t / a_0 = 16.03 calibrated to empirical scale a_0 = 1.2e-10 m/s^2 (not an independent prediction of a_0)",
+    "rms_log10_resid_two_branch": 0.21846221905980956,
+    "median_log10_resid_two_branch": -0.0861064060847398,
+    "frac_within_0p1dex_two_branch": 0.4470345234582473,
     "rms_log10_resid_baseline": 0.2812372661274251,
     "median_log10_resid_baseline": -0.031940483255782616,
-    "frac_within_0p1dex_two_branch": 0.44673945116553554,
     "frac_within_0p1dex_baseline": 0.23517261729123634,
+    "rms_log10_resid_two_branch_quadrature": 0.19737528669193252,
+    "median_log10_resid_two_branch_quadrature": 0.023614035950993092,
+    "frac_within_0p1dex_two_branch_quadrature": 0.5101799940985542,
     "rms_log10_resid_mond_reference": 0.19886339710301015,
     "median_log10_resid_mond_reference": -0.014228411214360859,
     "rms_log10_resid_exp_interp": 0.2749051659562611,
@@ -24,11 +30,15 @@
   },
   "k_scan": {
     "k_grid_min_rms": 30.632911392405063,
-    "k_fit_bounded": 30.941303406264783,
-    "a_eff_fit_m_s2": 6.2164169484936e-11,
+    "k_fit_bounded": 30.89891276738952,
+    "a_eff_fit_m_s2": 6.224945335493668e-11,
     "a_eff_predicted": 1.2e-10,
-    "ratio_fit_over_predicted": 0.5180347457078,
-    "note": "a_eff fit is the single normalization freedom; the SHAPE of the curve (p=1/2 tail + 2xi screening) is fixed"
+    "ratio_fit_over_predicted": 0.5187454446244724,
+    "k_fit_quadrature": 15.781497490840746,
+    "a_eff_fit_quadrature_m_s2": 1.218794623354467e-10,
+    "ratio_fit_over_predicted_quadrature": 1.0156621861287225,
+    "rms_at_k_fit_quadrature": 0.1973582630986168,
+    "note": "Under the action-derived additive force law g_obs = g_N + a_phi (with zero-gradient regulator eps_reg = 1e-3), the calibrated k_star = 16.03 gives RMS = 0.2185 dex at Upsilon_d = 0.5 and 0.2004 dex at Upsilon_d = 0.35 (improving over the 0.2812 dex unit-term baseline and 0.2749 dex exp-interp rival by >60 mdex); the empirical quadrature comparator sqrt(g_N^2 + a_phi^2) (0.1974 dex) is recorded separately as a phenomenological interpolating reference rather than an action-derived force law."
   },
   "binned_rar": {
     "log10_g_bar": [
@@ -78,27 +88,27 @@
       4.848779434003024e-09
     ],
     "median_g_pred_two_branch": [
-      1.2186458704147517e-11,
-      1.6036419610034885e-11,
-      1.949935526274577e-11,
-      2.459531333661459e-11,
-      3.115956832873264e-11,
-      4.0568996256143886e-11,
-      5.2353245533054016e-11,
-      6.906323729383441e-11,
-      9.289650943393154e-11,
-      1.2376632759816975e-10,
-      1.7255237799159378e-10,
-      2.310021579410207e-10,
-      3.1923544245093086e-10,
-      4.6058178764950155e-10,
-      6.4640730982646e-10,
-      9.338800251116835e-10,
-      1.3286610457443842e-09,
-      2.0211802130047573e-09,
-      2.9644195702656668e-09,
-      4.340609379918912e-09,
-      6.880138426768597e-09
+      1.2156563757224261e-11,
+      1.600653416043488e-11,
+      1.9469480682077296e-11,
+      2.456545629625477e-11,
+      3.112973465535812e-11,
+      4.0539195733627135e-11,
+      5.2323484817797594e-11,
+      6.903352938102189e-11,
+      9.286687028656483e-11,
+      1.237367684556717e-10,
+      1.7252293007802494e-10,
+      2.3097282607496484e-10,
+      3.1920626188343464e-10,
+      4.605528109027783e-10,
+      6.463785561267472e-10,
+      9.33851556083221e-10,
+      1.3286328961462165e-09,
+      2.02115251019043e-09,
+      2.9643923456159323e-09,
+      4.3405827045187735e-09,
+      6.880112519620301e-09
     ],
     "iqr": [
       6.162122397904765e-12,
@@ -132,5 +142,219 @@
   "btfr": {
     "n_table1_parsed": 2,
     "note": "V_flat^4 = G M_b a_eff with a_eff = 4 sqrt(2) g_t/k; M_b = Ups_d L3.6 + Ups_b Lbul + 1.33 M_HI. Detailed per-galaxy BTFR fit deferred to T1.1b (Table-1 column layout to be confirmed)."
+  },
+  "transition_shape_scan": {
+    "family": "P_X = k sqrt(xi) + 2 xi + c2 xi^{3/2}",
+    "n_transition_points": 1008,
+    "scan": [
+      {
+        "c2_xi32": 0.0,
+        "rms_log10_resid": 0.21857280860053888,
+        "median_log10_resid": -0.08614090239095694,
+        "median_log10_resid_transition": -0.0918861287240966,
+        "median_log10_resid_deep": -0.07396397063155394
+      },
+      {
+        "c2_xi32": 5.0,
+        "rms_log10_resid": 0.21840444721078187,
+        "median_log10_resid": -0.08583333291119734,
+        "median_log10_resid_transition": -0.09130260505212043,
+        "median_log10_resid_deep": -0.0739183124984583
+      },
+      {
+        "c2_xi32": 10.0,
+        "rms_log10_resid": 0.21824738339025382,
+        "median_log10_resid": -0.08572328024778891,
+        "median_log10_resid_transition": -0.09073222524687623,
+        "median_log10_resid_deep": -0.07387269091228069
+      },
+      {
+        "c2_xi32": 20.0,
+        "rms_log10_resid": 0.21795773927655823,
+        "median_log10_resid": -0.08468271063987409,
+        "median_log10_resid_transition": -0.0898186378267918,
+        "median_log10_resid_deep": -0.07378155712630859
+      },
+      {
+        "c2_xi32": 40.0,
+        "rms_log10_resid": 0.21744655134086535,
+        "median_log10_resid": -0.08335654102180338,
+        "median_log10_resid_transition": -0.08865251856134984,
+        "median_log10_resid_deep": -0.07359972533220456
+      },
+      {
+        "c2_xi32": 80.0,
+        "rms_log10_resid": 0.2165934562863624,
+        "median_log10_resid": -0.08096093183324098,
+        "median_log10_resid_transition": -0.0856984129735909,
+        "median_log10_resid_deep": -0.07312591077312483
+      }
+    ],
+    "note": "subleading xi^{3/2} term preserves both asymptotic branches; reported as a diagnostic of what mid-range suppression the SPARC distribution requires, not as a fitted sector"
+  },
+  "transition_qcoef_scan": {
+    "family": "P_X = k sqrt(xi) + (2 + c1) xi",
+    "scan": [
+      {
+        "c1_xi_coef": 0.0,
+        "rms_log10_resid": 0.21857280860053888,
+        "median_log10_resid": -0.08614090239095694,
+        "median_log10_resid_transition": -0.0918861287240966,
+        "median_log10_resid_deep": -0.07396397063155394
+      },
+      {
+        "c1_xi_coef": 5.0,
+        "rms_log10_resid": 0.2173586542866194,
+        "median_log10_resid": -0.08318960963134665,
+        "median_log10_resid_transition": -0.08789082023607053,
+        "median_log10_resid_deep": -0.07235614526499336
+      },
+      {
+        "c1_xi_coef": 10.0,
+        "rms_log10_resid": 0.21626302583574486,
+        "median_log10_resid": -0.08060146352545891,
+        "median_log10_resid_transition": -0.08456192583907475,
+        "median_log10_resid_deep": -0.07050948474305205
+      },
+      {
+        "c1_xi_coef": 20.0,
+        "rms_log10_resid": 0.21433913357619833,
+        "median_log10_resid": -0.0760931147409308,
+        "median_log10_resid_transition": -0.07875930963404856,
+        "median_log10_resid_deep": -0.06700911668345082
+      },
+      {
+        "c1_xi_coef": 40.0,
+        "rms_log10_resid": 0.21123322539301487,
+        "median_log10_resid": -0.06783811107970315,
+        "median_log10_resid_transition": -0.06834898356691188,
+        "median_log10_resid_deep": -0.060244073314124444
+      },
+      {
+        "c1_xi_coef": 80.0,
+        "rms_log10_resid": 0.20679393486153866,
+        "median_log10_resid": -0.055759304602607,
+        "median_log10_resid_transition": -0.052168228260172866,
+        "median_log10_resid_deep": -0.0492650487938589
+      }
+    ],
+    "note": "the xi coefficient controls suppression in the SPARC window (xi ~ 0.01-1); scanned to quantify the mid-range deformation the data would require if the offset were sector-internal"
+  },
+  "ambient_field_scan": {
+    "model": "g_obs = g_N + 2 g_t (ubar_solve(y) + u_amb)",
+    "scan": [
+      {
+        "u_ambient": 0.0,
+        "rms_log10_resid": 0.21846221905980956,
+        "median_log10_resid": -0.0861064060847398,
+        "median_log10_resid_deep": -0.07358580321517386
+      },
+      {
+        "u_ambient": 0.02,
+        "rms_log10_resid": 0.2829111713889271,
+        "median_log10_resid": -0.16324814587369896,
+        "median_log10_resid_deep": -0.21043979647675734
+      },
+      {
+        "u_ambient": 0.05,
+        "rms_log10_resid": 0.3766613203023035,
+        "median_log10_resid": -0.2563276001094725,
+        "median_log10_resid_deep": -0.3461112469142834
+      },
+      {
+        "u_ambient": 0.1,
+        "rms_log10_resid": 0.4966890311523771,
+        "median_log10_resid": -0.3770895786787975,
+        "median_log10_resid_deep": -0.5091746672267334
+      },
+      {
+        "u_ambient": 0.2,
+        "rms_log10_resid": 0.6598290567232722,
+        "median_log10_resid": -0.5547915748720185,
+        "median_log10_resid_deep": -0.7252489494428884
+      },
+      {
+        "u_ambient": 0.3,
+        "rms_log10_resid": 0.7729458354186648,
+        "median_log10_resid": -0.6779670635591508,
+        "median_log10_resid_deep": -0.8675802844503202
+      }
+    ],
+    "note": "positive u_amb raises the predicted curve; since the transition residual is already negative (obs below pred), the scan bounds the ambient shear allowed by SPARC"
+  },
+  "upsilon_disk_scan": {
+    "scan": [
+      {
+        "Upsilon_disk": 0.35,
+        "n_points": 3389,
+        "rms_log10_resid": 0.20043041081976226,
+        "median_log10_resid": -0.0200880267309291,
+        "median_log10_resid_transition": -0.01076880252930566
+      },
+      {
+        "Upsilon_disk": 0.5,
+        "n_points": 3389,
+        "rms_log10_resid": 0.21846221905980956,
+        "median_log10_resid": -0.0861064060847398,
+        "median_log10_resid_transition": -0.09183373372947279
+      },
+      {
+        "Upsilon_disk": 0.7,
+        "n_points": 3389,
+        "rms_log10_resid": 0.2568626516850621,
+        "median_log10_resid": -0.15050120836524747,
+        "median_log10_resid_transition": -0.1700009238077711
+      },
+      {
+        "Upsilon_disk": 1.0,
+        "n_points": 3389,
+        "rms_log10_resid": 0.31546092010693094,
+        "median_log10_resid": -0.22578709972231342,
+        "median_log10_resid_transition": -0.2633473728631472
+      }
+    ],
+    "note": "disk M/L rescales g_bar horizontally; reported to quantify how much of the transition offset is absorbed by the canonical M/L uncertainty rather than the sector shape"
+  },
+  "unit_term_scan": {
+    "family": "P_X = eps + k sqrt(xi) + 2 xi",
+    "scan": [
+      {
+        "eps_unit_term": 0.0,
+        "rms_log10_resid": 0.21857280860053888,
+        "median_log10_resid": -0.08614090239095694,
+        "median_log10_resid_deep": -0.07396397063155394
+      },
+      {
+        "eps_unit_term": 0.01,
+        "rms_log10_resid": 0.21748735292097993,
+        "median_log10_resid": -0.0837616232489471,
+        "median_log10_resid_deep": -0.07018572531772266
+      },
+      {
+        "eps_unit_term": 0.03,
+        "rms_log10_resid": 0.21545409087303313,
+        "median_log10_resid": -0.07906042829266599,
+        "median_log10_resid_deep": -0.0641197409170365
+      },
+      {
+        "eps_unit_term": 0.1,
+        "rms_log10_resid": 0.20981096018171208,
+        "median_log10_resid": -0.06300963506485871,
+        "median_log10_resid_deep": -0.04222364222809973
+      },
+      {
+        "eps_unit_term": 0.3,
+        "rms_log10_resid": 0.20565589446273178,
+        "median_log10_resid": -0.022352468405928735,
+        "median_log10_resid_deep": 0.020132802262375554
+      },
+      {
+        "eps_unit_term": 1.0,
+        "rms_log10_resid": 0.2563565014942504,
+        "median_log10_resid": 0.07485130932379865,
+        "median_log10_resid_deep": 0.1867599522395332
+      }
+    ],
+    "note": "eps <= 0.1 is observationally free and slightly improves the fit; eps ~ 0.3 reaches the MOND-reference rms but restores a linear (Keplerian) tail below g_N ~ (eps/k) g_t, conflicting with the flat-asymptote requirement that selects p=1/2.  The admissible regulator window is therefore small-eps (fixes the X->0 degeneracy at zero data cost), consistent with the step_62 growth scan where even eps = 1 shifts chi2 by < 0.1."
   }
 }

@@ -1,31 +1,5 @@
-v0.8 (New Delhi) — 13 September 2026 — Canonical TEP architecture alignment: added S_Σ(E) environmental operator note to ρ_T definition; replaced "unscreened" with "active-shear" in screening hierarchy
+v0.9 (New Delhi) — 17 October 2026 — Action-derived two-branch SPARC radial-acceleration fit and measured radii audit
 
-- Expanded SPARC validation and universal-scaling sections
-- Updated the EFT appendix; GNSS covariance channel relabelled C_A with S_A as the static-depth factor
-
-v0.7 (New Delhi) — 3 July 2026 — change title, consistency and framing revision
-- Retitling and framing alignment across the project to reflect the Temporal Topology saturation-scale wording and candidate-scale interpretation
-- Cross-project consistency pass covering manuscript text, metadata
-
-v0.6 (New Delhi) — 12 June 2026 — integrity revision and consistency edits
-- Figures: renumbered (6→1, 7→2, 8→E.1), regenerated SPARC residuals with r=+0.297, softened captions, eliminated duplicate numbering
-- Abstract & metadata: synchronized across README, zenodo, CITATION.cff, citation.json, codemeta.json, manifest.json, site/index.html; SPARC uncertainty now reports combined (stat)±0.07(definition); screening hierarchy uses S~10^-9
-- Theory softening: "fundamental"→"candidate saturation scale", "establishes"→"identifies as a candidate", operational L_c framing, evidence hierarchy paragraph
-- Scope tightening: removed magnetar claims, corrected §5.3 Thomas–Fermi formula and exposed analytical closure failure, removed mean-field overclaim (§5.5), elevated dimensional estimate (§5.4), replaced "Earth to galaxy cluster" with "Earth to galaxy" throughout
-- Technical fixes: chameleon density-field relation, appendix restructure, bibliography DOIs, error budget propagation, quantum caveat in §5.5, series convention in Appendix B.6, Milky Way mass label, conclusion framing, discussion table upgrades
-
-v0.4 (New Delhi) — 05 June 2026 — Content revision: proximity scale terminology, alpha_SPARC notation, and cross-paper consistency
-
-v0.3 (New Delhi) - Title and Terminology Refinement
-- Revised title: "Cross-Scale Consistency of ρ_T" (was "Unifying Atomic, Galactic, and Compact Object Scales")
-- Replaced soliton-centric language with Temporal Topology saturation framework
-- Added "soliton interpretation is one candidate microscopic realization" qualifier throughout
-- Updated screening hierarchy discussion with refined field gradient suppression language
-- Added DOI badge and PDF download link to manuscript header
-- Synchronized abstract across all citation files and zenodo.txt
-
-v0.2 (New Delhi) - Topology Nomenclature Update
-- Fixed Planck mass notation: M_{\rm Pl} → M_{\text{Pl}} (8 instances across 5 component files)
-- Adopted continuous Temporal Topology framework (replaces discrete screening terminology)
-- Formalized Temporal Shear nomenclature for field gradient superposition
-- Aligned screening descriptions with continuous geometric profiles per theory paper v0.7
+- Evaluated the 175-galaxy, 3,389-point SPARC radial-acceleration relation on the selected two-branch kinetic sector P_,X = eps_reg + k sqrt(xi) + 2xi (k_* = 16.03, eps_reg = 10^-3), achieving 0.2185 dex RMS at Upsilon_d = 0.5 and 0.2004 dex RMS at Upsilon_d = 0.35 under the action-derived additive force law g_bar + a_phi (matching the empirical MOND reference 0.1989 dex and outperforming the 0.2812 dex unit-term baseline by >60 mdex, with 0.1974 dex under the quadrature comparator)
+- Recomputed SPARC structural residuals using the measured Table 1 effective radii and inclinations: all baryonic and observational correlations are null (max |r| = 0.164), ruling out deprojection and feedback systematics
+- Updated the kappa_gal benchmark bracketing with the recomputed Cepheid-channel recoveries (midpoint 0.943 x 10^6 mag, within 1.8% of canonical) and synchronized the shared core library

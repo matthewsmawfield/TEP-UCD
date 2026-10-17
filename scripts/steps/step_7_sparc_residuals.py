@@ -73,15 +73,10 @@ def parse_table1(filepath):
             name = parts[0]
             T = float(parts[1]) if parts[1] != '...' else np.nan  # Hubble type
             D = float(parts[2])  # Distance (Mpc)
-            inc = float(parts[4]) if parts[4] != '...' else np.nan  # Inclination (deg)
+            inc = float(parts[5]) if parts[5] != '...' else np.nan  # Inclination (deg, parts[5]; parts[4] is f_D)
             L_36 = float(parts[7]) * 1e9  # L_3.6 in L_sun
+            R_eff = float(parts[9]) if parts[9] != '...' else np.nan  # Measured effective radius at [3.6] in kpc (parts[9])
             MHI = float(parts[13]) * 1e9  # M_HI in M_sun
-            
-            # Calculate effective radius (R_eff) from L_36
-            # Assuming surface brightness Σ ~ L / (2π R_eff^2)
-            # Typical disk scale length h ~ 0.3 R_eff
-            # We'll use L_36 as proxy for size
-            R_eff = (L_36 / 1e9)**(1/2) * 2.0  # kpc (rough scaling)
             
             galaxies[name] = {
                 'L_36': L_36,
@@ -181,68 +176,13 @@ def run_residual_analysis():
 
     print_status("SPARC RESIDUAL ANALYSIS: Baryonic Feedback vs Field Theory", "TITLE")
 
-    # Parse data
-    try:
-        print_status("Parsing SPARC Table1 (galaxy properties)", "PROCESS")
-        galaxy_props = parse_table1(os.path.join(data_dir, 'Table1.mrt'))
-        print_status("Parsing SPARC Table2 (rotation curves)", "PROCESS")
-        rotation_curves = parse_table2(os.path.join(data_dir, 'Table2.mrt'))
-        using_synthetic = False
-        print_status(f"Loaded {len(galaxy_props)} galaxies from SPARC database", "SUCCESS")
-    except FileNotFoundError:
-        print_status("WARNING: SPARC data files not found.", "WARNING")
-        print_status("Generating synthetic data for demonstration...", "PROCESS")
-        using_synthetic = True
-        
-        # Generate synthetic galaxies with realistic correlations
-        np.random.seed(42)
-        galaxy_props = {}
-        rotation_curves = {}
-        n_syn = 167
-        
-        M_bars = 10**np.random.uniform(7, 11.5, n_syn)
-        
-        for i in range(n_syn):
-            name = f"G{i:03d}"
-            M = M_bars[i]
-            
-            # Add scatter with weak baryonic correlations
-            gas_frac = np.random.uniform(0.05, 0.5)
-            inc = np.random.uniform(30, 85)
-            
-            # R_dm with scatter (0.48 dex as reported)
-            scatter_base = np.random.normal(0, 0.48)
-            # Add weak gas fraction correlation (r ~ 0.1-0.2)
-            scatter = scatter_base + 0.1 * (gas_frac - 0.25)
-            
-            R_dm_true = 7.9e-4 * M**(1/3) * 10**scatter
-            R_eff = (M / 1e9)**(1/2) * 2.0
-            
-            galaxy_props[name] = {
-                'L_36': M * (1 - gas_frac) / ML_DISK,
-                'MHI': M * gas_frac / 1.33,
-                'D': np.random.uniform(5, 50),
-                'inc': inc,
-                'T': np.random.uniform(1, 10),
-                'R_eff': R_eff
-            }
-            
-            # Mock rotation curve
-            R_arr = np.linspace(0.1, 3 * R_dm_true, 100)
-            V_bar_true = np.sqrt(G * M * M_sun_kg / (R_arr * kpc_to_m)) / 1000
-            V_disk = V_bar_true / np.sqrt(ML_DISK)
-            V_flat = V_bar_true[0] * 1.0
-            trans = 1 / (1 + (R_dm_true/R_arr)**2)
-            V_obs = V_bar_true * (1 - trans) + V_flat * trans
-            
-            rotation_curves[name] = {
-                'R': R_arr,
-                'Vobs': V_obs,
-                'e_Vobs': V_obs * 0.05,
-                'Vgas': np.zeros_like(R_arr),
-                'Vdisk': V_disk,
-                'Vbul': np.zeros_like(R_arr)
-            }
+    # Parse data (real SPARC tables required; no synthetic fallback)
+    print_status("Parsing SPARC Table1 (galaxy properties)", "PROCESS")
+    galaxy_props = parse_table1(os.path.join(data_dir, 'Table1.mrt'))
+    print_status("Parsing SPARC Table2 (rotation curves)", "PROCESS")
+    rotation_curves = parse_table2(os.path.join(data_dir, 'Table2.mrt'))
+    using_synthetic = False
+    print_status(f"Loaded {len(galaxy_props)} galaxies from SPARC database", "SUCCESS")
     
     # --- STEP 1: Calculate M^(1/3) Fit and Residuals ---
     print_status("STEP 1: Calculate Residuals from M^(1/3) Scaling", "PROCESS")

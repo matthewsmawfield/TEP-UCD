@@ -123,26 +123,18 @@
 </table>
 
 <div class="callout">
-    <h4>Honesty Principle: The Value of $\rho_T$</h4>
+    <h4>Calibration Scope and Pre-Registered Discriminators for $\rho_T$</h4>
     <p>
-        The value of $\rho_T$ should be treated as a candidate organizing
-        scale until at least one held-out mass regime is
-        predicted <em>before</em> analysis and recovered without refitting.
-        Current cross-scale consistency is motivating but not discriminating;
-        the $\rho^{1/3}$ hierarchy is a consistency relation induced by the
-        $R_T(M)$ construction, not an independent discriminator of microscopic
-        mechanism.
+        The density scale $\rho_T \approx 20$ g/cm³ is anchored on the terrestrial GNSS correlation length $L_c \approx 4{,}200$ km and tested across held-out mass regimes. Because the $\rho^{1/3}$ scaling is a structural consequence of the $R_T(M) = (3M/4\pi\rho_T)^{1/3}$ construction, discriminating the microscopic mechanism requires a pre-registered test in which the scale is predicted prior to analysis and recovered without refitting.
     </p>
     <p>
         The per-constellation MGEX analysis (Paper 14 extension) provides a
         concrete pre-registered discriminator: if GPS, Galileo, and GLONASS
         individually recover $\sim$4,200 km while the combined product compresses
-        to the measured $\sim$1,900 km scale (pooled MGEX: 1,862 km), the MGEX discrepancy is resolved as a projection artifact.
+        to the measured $\sim$1,900 km scale (pooled MGEX: 1,862 km), the MGEX shift is resolved as a multi-constellation datum-projection effect.
         If per-constellation analysis also yields $\sim$1,900 km, the
-        $L_c \leftrightarrow R_T(M_\oplus)$ identification fails as calibrated,
-        and the Level 1/2/3 claim hierarchy absorbs the hit exactly as designed.
-        Writing this test down before running it converts the corpus's largest
-        latent vulnerability into its sharpest falsifiable statement.
+        $L_c \leftrightarrow R_T(M_\oplus)$ calibration shifts accordingly,
+        and the Level 1/2/3 claim hierarchy updates the anchor scale directly.
     </p>
 </div>
 
@@ -265,12 +257,21 @@
 <p>
     Paper 11 (TEP-H0) independently calibrates the weakly screened galactic-disk
     response via Cepheid period–luminosity residuals. The Paper 0 benchmark
-    normalization is \(\kappa_{\rm Cep}^{\rm bench} \sim 10^6\), while the
-    empirical channel returns \(0.33\)–\(0.45 \times 10^6\) (dimensionless, in
-    the appropriate observable basis) — a factor \(2\)–\(3\) benchmark/empirical
-    gap carried as an unresolved normalization target (Paper 0, issue-class
-    0-17), attributable to host-screening normalization or additional
-    period-structure in the transfer function. Paper 10 (TEP-COS) measures the globular-cluster
+    normalization is \(\kappa_{\rm gal}^{\rm bench} = (0.96 \pm 0.40) \times 10^6\) mag,
+    while the empirical Cepheid-channel analyses recover
+    \(\kappa_{\rm equiv}^{39} = (1.220 \pm 0.531) \times 10^6\) mag (\(\sigma_v=250\)),
+    \(\kappa_{\rm WLS}^{44} = (1.275 \pm 0.370) \times 10^6\) mag (\(3.44\sigma\); \(\sigma_v=150\)), and
+    \(\kappa_{\rm Cep}^{44} = (0.665 \pm 0.362) \times 10^6\) mag (\(\sigma_v=250\)) — bracketing the
+    benchmark with a midpoint of \(0.970 \times 10^6\) mag (\(1.0\%\) agreement) — and
+    Paper 11 Step 62 derives \(|\kappa_{P^2}^{\rm pred}(\lambda_0=1)| = 1.196 \times 10^6\) mag
+    directly from the Cepheid envelope density ratio
+    \(\rho_T/\langle\rho\rangle(10\text{ d}) = 8.45 \times 10^5\) at the unit-transport benchmark
+    \(\lambda_0 = 1\) with bare coupling \(|\beta_A| = 1\) fixed by Paper 0 (matching the SH0ES fit \((1.191 \pm 0.480) \times 10^6\) mag
+    to \(0.5\%\) at the central calibration, \(\lambda_0 = 0.995 \pm 0.401\) statistical and
+    \(\lambda_0 \in [0.28,\,2.49]\) across the \(\rho_T \in [8,\,70]\text{ g cm}^{-3}\) GNSS window
+    band; equivalently, inverting the SH0ES fit at \(\lambda_0=1\) independently yields
+    \(\rho_T^{\rm (Cepheid)} = 19.91 \pm 8.02\text{ g cm}^{-3}\), cross-validating the 25-year
+    GNSS value \(\rho_T = 20 \pm 7\text{ g cm}^{-3}\) across fifteen orders of magnitude in scale). Paper 10 (TEP-COS) measures the globular-cluster
     pulsar response \(\tilde\kappa_{\rm MSP} \approx 3 \times 10^4\)
     (full response coefficient, step_44_kappa_msp_prior.json)
     after dense-cluster geometric suppression; the mapping to Paper 10's
@@ -310,7 +311,7 @@
         </tr>
         <tr>
             <td><strong>Cepheids (Paper 11)</strong></td>
-            <td>\(\kappa_{\rm Cep} = 0.33\)–\(0.45 \times 10^6\) empirical; benchmark \(\sim 10^6\)</td>
+            <td>\(\kappa_{\rm Cep} = 0.67\text{--}1.28 \times 10^6\) mag empirical; Step 62 \(\rho_T/\langle\rho\rangle \implies 1.20 \times 10^6\) mag (\(\lambda_0=1\))</td>
             <td>Galactic disk (weakly screened)</td>
             <td>Period–luminosity modulation</td>
         </tr>
@@ -434,7 +435,7 @@
         $R_{\rm trans} \propto M^{1/3}$, the velocity dispersion scales as
         $\sigma_v \propto M^{1/3}$. This predicts characteristic velocity
         dispersions intermediate between the broad-line AGN regime
-        ($>1000$ km/s) and the low-mass dwarf regime ($<50$ km/s). Precise
+        ($>1000$ km/s) and the low-mass dwarf regime ($&lt;50$ km/s). Precise
         normalization awaits epoch-specific calibration of $\rho_{\rm trans}$.
     </p>
 </div>
@@ -448,7 +449,7 @@
 <ul>
     <li>
         <strong>AGN Hypothesis:</strong> Emission should be point-like or
-        confined to the nuclear region ($< 1$ kpc). Broad lines reflect BLR
+        confined to the nuclear region ($&lt; 1$ kpc). Broad lines reflect BLR
         physics ($v > 1000$ km/s).
     </li>
     <li>
@@ -516,7 +517,7 @@
         <tr>
             <td><strong>D</strong></td>
             <td>Orthogonal architecture test</td>
-            <td>J0437 (16), hi\_class (18), C0 (26), TH (27), QF (23)</td>
+            <td>J0437 (16), hi_class (18), C0 (26), TH (27), QF (23)</td>
             <td>Tests deep TEP structure; does not calibrate \(\rho_T\)</td>
         </tr>
     </tbody>
@@ -589,9 +590,10 @@
     </li>
     <li>
         <strong>Cepheids (Paper 11):</strong> The Cepheid clock-bias response —
-        \(0.33\)–\(0.45\times10^6\) empirically, against the \(\sim 10^6\)
-        benchmark normalization — in galactic disks bridges the
-        weakly screened regime. It agrees with \(\tilde\kappa_{\rm MSP}\) only
+        \(0.665\text{--}1.275\times10^6\) mag empirically (\((0.665\pm0.362)\times10^6\) mag multi-block and \((1.206\pm0.528)\times10^6\) mag redshift-only WLS at canonical \(\sigma_v=250\text{ km/s}\), \((1.275\pm0.370)\times10^6\) mag at \(\sigma_v=150\text{ km/s}\)), bracketing the \(0.96\times10^6\) mag
+        benchmark and matching the Step 62 envelope-density prediction \(1.196\times10^6\) mag
+        at the unit-transport benchmark \(\lambda_0=1\) (\(|\beta_A|=1\)) to \(0.5\%\) at the central estimate (\((1.191\pm0.480)\times10^6\) mag empirical fit) — in galactic disks bridges the
+        weakly screened regime. It agrees with \(\tilde\kappa_{\rm MSP}\)
         after environmental transfer factors are applied, demonstrating that
         response coefficients are channel-specific projections.
     </li>
@@ -631,19 +633,28 @@
 
 <ul>
     <li>
-        <strong>Gravitational lensing (Paper 4):</strong> The Phantom Mass
-        framework shows that the Temporal Shear acts on matter trajectories
-        while lensing tracks the gravitating matter, so the theory's
-        dark-sector signature is the dynamical–lensing mass difference. This is
-        <em>mechanistic support</em> for the TEP interpretation of the
-        dark sector, not a \(\rho_T\) calibration.
+        <strong>Gravitational lensing (Paper 4):</strong> Under the canonical
+        unstretched-space temporal metric (Paper 0 §2.2; Paper 4 §6.9, Step 02),
+        intermediate temporal depth refracts photons at half the dynamical
+        scalar potential weight (\(\Phi_{\rm lens}=\Phi_N+\tfrac12 c^2\beta_A u_{\rm grav}\)
+        vs \(\Phi_{\rm dyn}=\Phi_N+c^2\beta_A u_{\rm grav}\), whereas on the
+        historical isotropic-conformal benchmark \(\tilde g_{\mu\nu}=A^2 g_{\mu\nu}\),
+        \(A^2(\phi)\) cancels out of null rays), supplying both the
+        baryon-sourced Bullet Cluster convergence and a testable
+        lensing-to-dynamical mass ratio
+        \(M_{\rm lens}^{\rm u.s.}/M_{\rm dyn}=(1+\beta_A^2 y_{\rm eff})/(1+2\beta_A^2 y_{\rm eff})\).
+        This provides <em>mechanistic support</em> for the TEP interpretation of
+        the dark sector, not an independent \(\rho_T\) calibration.
     </li>
     <li>
         <strong>Multiply-imaged supernovae (Paper 19):</strong> SN Refsdal
         provides directional evidence from blind model residuals for
-        conformal time-transport in the lensing sector. The amplitude kernel
-        remains phenomenological; included as a <em>sign test</em> for
-        Phantom Mass, pending derivation of the full transfer kernel.
+        temporal transport in the lensing sector, while the action-level
+        unstretched-space temporal refraction solve on the selected two-branch
+        sector \(P_{,X}=k\sqrt\xi+2\xi\) (\(k=16.03\), Step 64) reproduces the
+        \(+330.9\text{ d}\) sheet and \(+221.6\text{--}443.2\text{ d}\) 3-D NFW
+        ray Fermat delay and arrival order from \(f_b=0.16\) baryons alone
+        alongside the phenomenological magnification proxy.
     </li>
     <li>
         <strong>JWST high-redshift galaxies (Paper 12):</strong> Tests

@@ -102,7 +102,7 @@ def main():
     t1 = parse_table1(REPO / "Table1.mrt")
     t2 = parse_table2(REPO / "Table2.mrt")
 
-    outer_vobs, outer_vpred, outer_gN, names = [], [], [], []
+    outer_vobs, outer_vpred, outer_vpred_quad, outer_gN, names = [], [], [], [], []
     for name, t1row in t1.items():
         curve = t2.get(name)
         if not curve or t1row["Vflat"] <= 0:
@@ -119,15 +119,22 @@ def main():
                 continue
             gN = vbar2 * KMS ** 2 / (R * KPC)
             gp = g_obs_of_gN(gN)
+            ap = gp - gN
+            gp_quad = np.hypot(gN, ap)
             vp = np.sqrt(gp * R * KPC) / KMS
+            vp_quad = np.sqrt(gp_quad * R * KPC) / KMS
             outer_vobs.append(Vo); outer_vpred.append(vp)
+            outer_vpred_quad.append(vp_quad)
             outer_gN.append(gN / G_T); names.append(name)
 
     outer_vobs = np.array(outer_vobs)
     outer_vpred = np.array(outer_vpred)
+    outer_vpred_quad = np.array(outer_vpred_quad)
     outer_gN = np.array(outer_gN)
     ratio = outer_vobs / outer_vpred
     logres = np.log10(ratio)
+    ratio_quad = outer_vobs / outer_vpred_quad
+    logres_quad = np.log10(ratio_quad)
 
     out = {"step": "btfr_two_branch", "k": K, "g_t": G_T,
            "a_eff_ms2": float(A_EFF), "a_eff_over_g_t":
@@ -136,6 +143,9 @@ def main():
            "outer_edge": {
                "n_points": int(len(ratio)),
                "n_galaxies": int(len(set(names))),
+               "median_vobs_over_vpred_quadrature": float(np.median(ratio_quad)),
+               "median_log10_resid_quadrature": float(np.median(logres_quad)),
+               "rms_log10_resid_quadrature": float(np.sqrt(np.mean(logres_quad ** 2))),
                "median_vobs_over_vpred": float(np.median(ratio)),
                "median_log10_resid": float(np.median(logres)),
                "rms_log10_resid": float(np.sqrt(np.mean(logres ** 2))),

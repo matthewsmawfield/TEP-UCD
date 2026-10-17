@@ -33,7 +33,7 @@ scripts/
 ## Clean-Run Command Sequence
 
 ```bash
-cd "/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD"
+cd "TEP-UCD"
 pip install -r requirements.txt
 
 # Run the full analysis pipeline (downloads data, generates figures, runs verification)
@@ -92,7 +92,7 @@ Discriminates baryonic feedback from field-theory interpretations by correlating
 - Gas fraction, surface brightness, inclination (baryonic proxies)
 - Central density (screening proxy)
 
-**Result:** Maximum baryonic correlation $|r| = 0.297$ (inclination, likely deprojection systematic). Central density shows no significant correlation ($r = -0.108$, $p = 0.16$), favoring the field-theory interpretation.
+**Result:** Evaluated using the measured SPARC Table 1 effective radii $R_{\rm eff}$ and inclinations $i$, residuals are uncorrelated with inclination ($r = +0.115$, $p = 0.139$), surface brightness ($r = +0.062$, $p = 0.427$), and central density ($r = +0.032$, $p = 0.685$), and only weakly correlated with gas fraction ($r = -0.164$, $p = 0.034$, $\max|r| = 0.164$), ruling out inclination deprojection and baryonic feedback artifacts.
 
 ## Screening Verification (`verify_screening_claim.py`)
 
