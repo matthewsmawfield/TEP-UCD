@@ -68,7 +68,14 @@ def run_scaling_analysis():
     # --- RBH-1 Point ---
     M_rbh_solar = 2.0e7
     R_rbh_km = (R_TEP_earth * ((M_rbh_solar * M_sun) / M_earth)**(1/3)) / 1000
-    print_status(f"RBH-1 crossover: M = {M_rbh_solar:.1e} M_sun, R_T = {R_rbh_km:.2e} km", "INFO")
+    R_rbh_S_km = 2 * G * M_rbh_solar * M_sun / c**2 / 1000
+    print_status(f"RBH-1: M = {M_rbh_solar:.1e} M_sun, R_T = {R_rbh_km:.2e} km, R_S = {R_rbh_S_km:.2e} km", "INFO")
+
+    # --- Exact R_T = R_S crossover mass: M_x = sqrt(3 c^6 / (32 pi G^3 rho_T)) ---
+    M_cross_kg = np.sqrt(3 * c**6 / (32 * np.pi * G**3 * rho_T_kg_m3))
+    M_cross_solar = M_cross_kg / M_sun
+    R_cross_km = 2 * G * M_cross_kg / c**2 / 1000
+    print_status(f"Crossover: M_x = {M_cross_solar:.3e} M_sun, R_T = R_S = {R_cross_km:.3e} km", "INFO")
 
     # --- Earth Anchor ---
     M_earth_solar = M_earth / M_sun
@@ -79,14 +86,15 @@ def run_scaling_analysis():
     print_status("Generating scaling law figure", "PROCESS")
     fig, ax = plt.subplots(figsize=FIG_SIZE[FIG_PRESET])
 
-    ax.loglog(masses_solar, radius_tep_km, color=COLORS['accent'], label=r'Soliton Scale ($R \propto M^{1/3}$)')
-    ax.loglog(masses_solar, radius_sch_km, color='black', linestyle='--', label=r'Schwarzschild Radius ($R_S \propto M$)')
+    ax.loglog(masses_solar, radius_tep_km, color=COLORS['accent'], label=r'Soliton Scale ($R_T \propto M^{1/3}$)')
+    ax.loglog(masses_solar, radius_sch_km, color='black', linestyle='--', label=r'Schwarzschild Radius ($R_{\rm S} \propto M$)')
 
-    ax.scatter([M_rbh_solar], [R_rbh_km], color=COLORS['highlight'], s=100, zorder=5, marker='D', edgecolors='white', linewidth=0.8)
+    ax.scatter([M_cross_solar], [R_cross_km], facecolors='none', edgecolors='black', s=95, zorder=6, marker='o', linewidth=1.3, label=r'Exact Crossover ($M_\times = 3.04 \times 10^7\,M_\odot$)')
+    ax.scatter([M_rbh_solar], [R_rbh_km], color=COLORS['highlight'], s=100, zorder=5, marker='D', edgecolors='white', linewidth=0.8, label=r'RBH-1 ($M \approx 2 \times 10^7\,M_\odot$)')
     ax.scatter([M_earth_solar], [R_earth_km], color=COLORS['primary'], s=80, zorder=5, marker='o', edgecolors='white', linewidth=0.8)
 
     ax.annotate(r'$\bf{RBH}$-$\bf{1}$' + '\n' + r'($M \approx 2 \times 10^7 M_{\odot}$)',
-                xy=(M_rbh_solar, R_rbh_km), xytext=(M_rbh_solar/20, R_rbh_km*5),
+                xy=(M_rbh_solar, R_rbh_km), xytext=(M_rbh_solar/25, R_rbh_km*8),
                 arrowprops=dict(arrowstyle='->', color=COLORS['highlight'], lw=1.2),
                 color=COLORS['highlight'], fontsize=10, ha='center')
 
@@ -95,12 +103,13 @@ def run_scaling_analysis():
                 arrowprops=dict(arrowstyle='->', color=COLORS['primary'], lw=1.2),
                 color=COLORS['primary'], fontsize=10)
 
-    ax.text(1e2, 1e7, "Scalar Field Dominated", rotation=12, color=COLORS['accent'], fontsize=10, alpha=0.85)
-    ax.text(1e9, 5e7, "Gravity Dominated", rotation=40, color=COLORS['text'], fontsize=10, alpha=0.85)
+    ax.text(1e0, 1.5e6, r"$R_T > R_{\rm S}$: Saturation-Scale Regime", rotation=13, color=COLORS['accent'], fontsize=9.5, alpha=0.85)
+    ax.text(3e8, 3e5, r"$R_{\rm S} > R_T$:" + "\nSchwarzschild-Scale Regime", rotation=13, ha='center', color=COLORS['text'], fontsize=9.2, alpha=0.85)
 
     ax.set_xlabel(r'Mass ($M/M_{\odot}$)')
     ax.set_ylabel(r'Effective Radius $R$ (km)')
-    ax.set_title('Universal Mass-Radius Scaling Law', color=COLORS['primary'])
+    ax.set_ylim(1e-6, 3e12)
+    ax.set_title('Saturation Radius vs. Schwarzschild Radius Across Mass Scales', color=COLORS['primary'])
     ax.grid(True, which='major', linestyle='-', alpha=0.3)
     ax.grid(True, which='minor', linestyle=':', alpha=0.1)
 
@@ -116,6 +125,10 @@ def run_scaling_analysis():
         "R_TEP_earth_m": float(R_TEP_earth),
         "M_rbh_solar": float(M_rbh_solar),
         "R_rbh_km": float(R_rbh_km),
+        "R_S_rbh_km": float(R_rbh_S_km),
+        "R_T_over_R_S_rbh": float(R_rbh_km / R_rbh_S_km),
+        "M_crossover_solar": float(M_cross_solar),
+        "R_crossover_km": float(R_cross_km),
         "mass_range_solar": [float(masses_solar[0]), float(masses_solar[-1])],
         "radius_tep_range_km": [float(radius_tep_km[0]), float(radius_tep_km[-1])]
     }

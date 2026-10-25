@@ -73,15 +73,15 @@
 </p>
 
 <p>
-    The bulk density of Thomas-Fermi condensed matter is governed by Coulomb packing. The volume per atom scales with the Bohr radius $a_0 = (\alpha m_e)^{-1}$. In the Thomas-Fermi model, the effective atomic radius is $R_{\rm TF} \approx a_0 Z^{-1/3}$, giving a volume $V \approx \frac{4\pi}{3} a_0^3 Z^{-1}$ per atom. With nucleon mass $M \approx A m_p$:
+    The bulk density of zero-pressure condensed matter is governed by valence Coulomb packing on the scale of the Bohr radius $a_0 = (\alpha m_e)^{-1}$ ($\rho_{\rm solid} \sim A m_p / (\frac{4\pi}{3} r_s^3 a_0^3) \sim 3\text{--}10$ g/cm$^3$ for typical terrestrial rock and iron with Wigner–Seitz radius $r_s \sim 2\text{--}3$), whereas the inner Thomas-Fermi core screening radius $R_{\rm TF} \approx a_0 Z^{-1/3}$ characterizes the high-compression regime where inner electron shells overlap:
 </p>
 
 <div class="equation">
-    \begin{equation} \label{eq:condensed_density_corrected} \rho_{\rm CM} \approx \frac{3}{4\pi} A Z \, m_p m_e^3 \alpha^3. \end{equation}
+    \begin{equation} \label{eq:condensed_density_corrected} \rho_{\rm TF} \approx \frac{3}{4\pi} A Z \, m_p m_e^3 \alpha^3. \end{equation}
 </div>
 
 <p>
-    For representative rock-forming elements ($A/Z \approx 2$), the product $AZ$ ranges from $\sim 10^2$ (oxygen, $Z=8$) to $\sim 10^3$ (iron, $Z=26$). Evaluating with $m_p/m_e \approx 1836$ and $\alpha \approx 1/137.036$ gives $\rho_{\rm CM} \sim 10^2$–$10^3$ g/cm$^3$, one to two orders of magnitude above the calibrated $\rho_T \approx 20$ g/cm$^3$. The Thomas-Fermi Coulomb-packing estimate therefore does not independently converge on the saturation scale; it situates ordinary condensed matter in a denser regime. The relevant condensed-matter reference that lies near $\rho_T$ is the electron-degeneracy onset threshold (Section 5.3).
+    For representative rock-forming elements ($A/Z \approx 2$, $AZ \sim 10^2\text{--}10^3$), $\rho_{\rm TF} \sim 10^2$–$10^3$ g/cm$^3$ marks full Thomas-Fermi core compression, while the initial crossover from zero-pressure valence solids ($\sim 3\text{--}8$ g/cm$^3$) toward pressure-ionized degeneracy support begins in the intermediate $\sim 10\text{--}10^2$ g/cm$^3$ regime (Section 5.3; the exact pressure-ionization threshold varies with composition $Z$, so this regime serves as a broad order-of-magnitude condensed-matter reference window rather than a composition-independent constant).
 </p>
 
 <h3>5.3 The Electron Degeneracy Threshold</h3>
@@ -127,11 +127,9 @@
 </table>
 
 <p style="font-size: 0.9em; color: #666">
-    <em
-        >Table 5.1: Equation of state transitions by density. The saturation
+    <em>Table 5.1: Equation of state transitions by density. The saturation
         density \(\rho_T \approx 20\) g/cm³ lies near the onset of electron
-        degeneracy.</em
-    >
+        degeneracy.</em>
 </p>
 
 <p>
@@ -154,11 +152,7 @@
     \(R_T(M)\). Once \(\rho_T\) and the corpus branch of \(\lambda\) are
     specified, the field equation determines a smooth crossover between
     Compton-unresolved and Compton-resolved regimes
-    (\(\lambda_c(\bar\rho)\) versus \(R_T(M)\)). Determining the detailed
-    width and shape of this
-    crossover as a function of ambient density—particularly in the terrestrial
-    transition regime \(\rho \sim 1\text{–}30\) g/cm³—requires an explicit numerical
-    profile solution at the specified corpus normalization. This remains a target for future work.
+    (\(\lambda_c(\bar\rho)\) versus \(R_T(M)\)). On the canonical-kinetic benchmark at the fixed Cassini-compatible corpus normalization (\(\lambda = 7.53\times 10^{-66}\), \(\rho_T = 20\) g/cm³), Step 14 (Figure 1; Appendix B.2) solves this boundary-value problem across a 4-layer PREM Earth density profile (\(\rho \sim 3.5\text{–}12.9\) g/cm³), recovering a radial transition-gradient centroid at \(R_{\rm grad} = 4{,}875\) km (\(1.18\,R_T(M_\oplus)\)) and a projected 3-D Yukawa surface spatial-kernel decay length of \(L_c^{\rm PREM} = 4{,}010\) km (\(L_c^{\rm PREM}/R_T(M_\oplus) = 0.967\)). Extending this calculation to the full 3-D anisotropic nonlinear kinetic operator \(\nabla\cdot(P_X\nabla u) = M_{\rm Pl}^{-2}V_{\rm eff}'(u)\) and deriving \(\rho_T\) itself from vacuum microphysics remain targets for future work.
 </p>
 
 <p>
@@ -258,8 +252,7 @@
     <p>
         In the present phenomenological calibration, the terrestrial coherence length
         is treated as the observed projected covariance realization of the Earth-scale
-        \(R_T(M_\oplus)\) geometry; deriving this mapping from a specified scalar
-        potential remains the open target. Both the condensed-matter coincidence and
+        \(R_T(M_\oplus)\) geometry (supported on the canonical-kinetic benchmark by the 4-layer PREM BVP and 3-D Yukawa spatial-kernel solve \(L_c^{\rm PREM} = 4{,}010\) km, \(L_c^{\rm PREM}/R_T(M_\oplus) = 0.967\), Step 14, while the full time-dependent nonlinear kinetic covariance transfer remains an open target). Both the condensed-matter coincidence and
         the numerical identity are contingent on the transfer-sketch \(\mathcal{O}(1)\)
         prefactor being close to unity; a prefactor of \(\sim\)2 would shift \(\rho_T\) to
         \(\sim\)2.5 g/cm³, evaporating the coincidences. Operationally, GNSS observations

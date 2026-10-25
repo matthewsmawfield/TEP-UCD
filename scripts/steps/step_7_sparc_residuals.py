@@ -107,7 +107,7 @@ def parse_table2(filepath):
                 rotation_curves[name]['R'].append(float(parts[2]))
                 rotation_curves[name]['Vobs'].append(float(parts[3]))
                 rotation_curves[name]['e_Vobs'].append(float(parts[4]))
-                rotation_curves[name]['Vgas'].append(abs(float(parts[5])))
+                rotation_curves[name]['Vgas'].append(float(parts[5]))
                 rotation_curves[name]['Vdisk'].append(float(parts[6]))
                 rotation_curves[name]['Vbul'].append(float(parts[7]))
         except:
@@ -199,7 +199,8 @@ def run_residual_analysis():
             continue
         
         M_bar = props['L_36'] * ML_DISK + 1.33 * props['MHI']
-        V_bar = np.sqrt(rc['Vgas']**2 + ML_DISK * rc['Vdisk']**2 + ML_BULGE * rc['Vbul']**2)
+        V_bar2 = np.abs(rc['Vgas']) * rc['Vgas'] + ML_DISK * np.abs(rc['Vdisk']) * rc['Vdisk'] + ML_BULGE * np.abs(rc['Vbul']) * rc['Vbul']
+        V_bar = np.sqrt(np.clip(V_bar2, 0.0, None))
         
         R_dm = find_rdm_for_threshold(rc['R'], rc['Vobs'], V_bar, threshold)
         
@@ -307,24 +308,30 @@ def run_residual_analysis():
     print_status("STEP 5: Generate Diagnostic Plots", "PROCESS")
     
     fig = plt.figure(figsize=FIG_SIZE[FIG_PRESET])
-    gs = fig.add_gridspec(3, 3, hspace=0.60, wspace=0.55)
+    gs = fig.add_gridspec(3, 3, hspace=0.68, wspace=0.52)
     
     # Panel A: Main scaling relation
     ax1 = fig.add_subplot(gs[0, :])
     ax1.scatter(M_arr, R_arr, c=residuals, s=30, alpha=0.7,
-                cmap='RdBu_r', vmin=-0.5, vmax=0.5, edgecolors='black', linewidth=0.3)
+                cmap='RdBu_r', vmin=-1.0, vmax=1.0, edgecolors='black', linewidth=0.3)
     M_range = np.logspace(np.log10(M_arr.min()), np.log10(M_arr.max()), 100)
-    ax1.plot(M_range, k * M_range**(1/3), '-', color='black',
-             linewidth=2, label=r'TEP: $R \propto M^{1/3}$')
+    ax1.plot(
+        M_range,
+        k * M_range**(1/3),
+        '-',
+        color='black',
+        linewidth=2,
+        label=rf'TEP: $R \propto M^{{1/3}}$ ($\alpha_{{\rm SPARC}}=0.352\pm0.043$, $\sigma={rms_scatter:.2f}$ dex)',
+    )
     ax1.set_xscale('log')
     ax1.set_yscale('log')
     ax1.set_xlabel(r'Baryonic Mass $M_{\rm bar}$ ($M_\odot$)')
     ax1.set_ylabel(r'Mass Discrepancy Radius $R_{\rm DM}$ (kpc)')
     ax1.set_title(r'$\bf{a)}$ SPARC Scaling Relation (colored by residual)', loc='left')
-    ax1.legend(loc='upper left', frameon=False)
+    ax1.legend(loc='upper left', frameon=False, fontsize=8.2)
     ax1.grid(True, which='major', alpha=0.3)
     cbar = plt.colorbar(ax1.collections[0], ax=ax1, pad=0.01)
-    cbar.set_label(r'Residual (dex)')
+    cbar.set_label(r'Residual (dex, clamped $\pm 1$)')
     
     # Panel B: Residuals vs Gas Fraction
     ax2 = fig.add_subplot(gs[1, 0])
@@ -338,7 +345,7 @@ def run_residual_analysis():
         ax2.plot(x_fit, p(x_fit), '-', color=COLORS['highlight'], linewidth=1.5)
     ax2.set_xlabel(r'Gas Fraction $f_{\rm gas}$')
     ax2.set_ylabel(r'Residual (dex)')
-    ax2.set_title(f'$\\bf{{b)}}$ Gas Fraction (r={r_gas:+.3f}, {format_p(p_gas)})', loc='left')
+    ax2.set_title(f'$\\bf{{b)}}$ Gas Fraction\n($r={r_gas:+.3f}$, {format_p(p_gas)})', loc='left', fontsize=8.5)
     ax2.grid(True, alpha=0.3)
     ax2.set_ylim(-1.5, 1.5)
     
@@ -355,7 +362,7 @@ def run_residual_analysis():
         ax3.plot(x_fit, p(x_fit), '-', color=COLORS['highlight'], linewidth=1.5)
     ax3.set_xlabel(r'$\log_{10}(\Sigma)$ ($M_\odot$/pc$^2$)')
     ax3.set_ylabel(r'Residual (dex)')
-    ax3.set_title(f'$\\bf{{c)}}$ Surface Brightness (r={r_sigma:+.3f}, {format_p(p_sigma)})', loc='left')
+    ax3.set_title(f'$\\bf{{c)}}$ Surface Brightness\n($r={r_sigma:+.3f}$, {format_p(p_sigma)})', loc='left', fontsize=8.5)
     ax3.grid(True, alpha=0.3)
     ax3.set_ylim(-1.5, 1.5)
     
@@ -371,7 +378,7 @@ def run_residual_analysis():
         ax4.plot(x_fit, p(x_fit), '-', color=COLORS['highlight'], linewidth=1.5)
     ax4.set_xlabel(r'Inclination (deg)')
     ax4.set_ylabel(r'Residual (dex)')
-    ax4.set_title(f'$\\bf{{d)}}$ Inclination (r={r_inc:+.3f}, {format_p(p_inc)})', loc='left')
+    ax4.set_title(f'$\\bf{{d)}}$ Inclination\n($r={r_inc:+.3f}$, {format_p(p_inc)})', loc='left', fontsize=8.5)
     ax4.grid(True, alpha=0.3)
     ax4.set_ylim(-1.5, 1.5)
     
@@ -388,7 +395,7 @@ def run_residual_analysis():
         ax5.plot(x_fit, p(x_fit), '-', color=COLORS['highlight'], linewidth=1.5)
     ax5.set_xlabel(r'$\log_{10}(\rho_{\rm central})$ ($M_\odot$/pc$^3$)')
     ax5.set_ylabel(r'Residual (dex)')
-    ax5.set_title(f'$\\bf{{e)}}$ Central Density (r={r_rho:+.3f}, {format_p(p_rho)})', loc='left')
+    ax5.set_title(f'$\\bf{{e)}}$ Central Density\n($r={r_rho:+.3f}$, {format_p(p_rho)})', loc='left', fontsize=8.5)
     ax5.grid(True, alpha=0.3)
     ax5.set_ylim(-1.5, 1.5)
     
@@ -403,24 +410,26 @@ def run_residual_analysis():
     ax6.axvline(0, color='black', linestyle=':', linewidth=1)
     ax6.set_xlabel(r'Residual (dex)')
     ax6.set_ylabel('Probability Density')
-    ax6.set_title(r'$\bf{f)}$ Residual Distribution', loc='left')
-    ax6.legend(frameon=False)
+    ax6.set_title(r'$\bf{f)}$ Residual Distribution', loc='left', fontsize=8.5)
     ax6.set_xlim(-1.5, 1.5)
+    ax6.set_ylim(0, 1.62)
+    ax6.legend(loc='upper right', frameon=False, fontsize=7.0, handlelength=1.4)
     ax6.grid(True, alpha=0.3)
     
     # Panel G: Correlation Summary
     ax7 = fig.add_subplot(gs[2, 2])
-    categories = ['Gas\nFraction', 'Surface\nBrightness', 'Inclination', 'Central\nDensity']
+    categories = ['Gas\nFrac.', 'Surf.\nBright.', 'Inclin.', 'Central\nDensity']
     correlations = [abs(r_gas), abs(r_sigma), abs(r_inc), abs(r_rho)]
     colors_bar = [COLORS['accent'], COLORS['secondary'], COLORS['hover'], COLORS['primary_light']]
     
-    bars = ax7.bar(categories, correlations, color=colors_bar, alpha=0.7, edgecolor='black')
+    bars = ax7.bar(categories, correlations, color=colors_bar, alpha=0.7, edgecolor='black', width=0.62)
     ax7.axhline(sig_threshold, color=COLORS['highlight'], linestyle='--', linewidth=1.5,
-                label=f'Significance (|r| = {sig_threshold})')
+                label=f'Ref. effect size (|r| = {sig_threshold})')
     ax7.set_ylabel(r'|Correlation| with Residuals')
-    ax7.set_title(r'$\bf{g)}$ Correlation Summary', loc='left')
+    ax7.set_title(r'$\bf{g)}$ Correlation Summary', loc='left', fontsize=8.5)
     ax7.set_ylim(0, max(0.5, max(correlations) * 1.2))
-    ax7.legend(frameon=False)
+    ax7.tick_params(axis='x', labelsize=7.2)
+    ax7.legend(loc='upper right', frameon=False, fontsize=7.2)
     ax7.grid(True, axis='y', alpha=0.3)
     
     fig.subplots_adjust(top=0.92)

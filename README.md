@@ -6,8 +6,8 @@
 ![Temporal Topology Saturation Scale](site/public/og-image.jpg)
 
 **Author:** Matthew Lukin Smawfield
-**Version:** v0.9 (New Delhi)
-**First published:** 28 December 2025 · **Last updated:** 17 October 2026
+**Version:** v0.10 (New Delhi)
+**First published:** 28 December 2025 · **Last updated:** 25 October 2026
 **Status:** Preprint
 **DOI:** [10.5281/zenodo.18064365](https://doi.org/10.5281/zenodo.18064365)
 **Website:** [https://mlsmawfield.com/tep/ucd/](https://mlsmawfield.com/tep/ucd/)
@@ -16,19 +16,9 @@
 
 <!-- Generated from site/components/1_abstract.html; update the manuscript source, then run tools/sync_current_corpus_readmes.py. -->
 
-Dark matter observations across cosmological scales exhibit a regularity: the characteristic radius at which Newtonian dynamics fails scales as $R \propto M^{1/3}$, implying a universal saturation/proximity scale (historically labelled a critical density), observationally proxied by $\rho_T$. This scaling appears in galaxy rotation curves (SPARC database), ultra-diffuse galaxies (DF2/DF4), and the Milky Way's dark-matter onset. Within TEP, this pattern is interpreted as evidence of a candidate saturation scale in the conformal time-field sector, where field saturation occurs at a characteristic proximity scale.
+Gravitational anomalies across astrophysical scales exhibit an empirical regularity: the radius at which Newtonian dynamics fails scales as $R \propto M^{1/3}$ in the compact saturation regime and $R \propto M^{1/2}$ in the low-acceleration galactic regime, organized by a candidate saturation/proximity density scale $\rho_T$ in the Temporal Equivalence Principle (TEP) conformal time-field sector. The 25-year GNSS atomic-clock correlation length $L_c \approx 4{,}200$ km (CODE, IGS, ESA; raw-RINEX validated) establishes an Earth-scale correlation structure consistent with $R_T(M_\oplus) = (3M_\oplus/4\pi\rho_T)^{1/3} = 4{,}146$ km at $\rho_T \approx 20$ g/cm³ ($\rho_T \in [8,\,70]$ g/cm³ conditional mapping under $L_c \leftrightarrow R_T(M_\oplus)$). A 4-layer PREM Earth boundary-value integration confirms an order-unity geometric projection ($L_c^{\rm PREM} = 4{,}010$ km shell; $3{,}213$ km volume) governed by Earth's $R_{\rm CMB}$ and $R_\oplus$ structure, while Monte Carlo network injection–recovery simulations across $L_c^{\rm true} \in [1{,}000,\,6{,}000]$ km demonstrate that 1-constellation GPS-only processing recovers $L_c^{\rm true} = 4{,}200$ km ($\hat L_c^{\rm GPS} = 4{,}036 \pm 113$ km; white-noise null $|C(d)| = 0.009$; correlated orbital/datum dipole null concave-down with $d²C/dd² < 0$), whereas 4-constellation multi-GNSS inter-system-bias (ISB) projection compresses the same field to $\hat L_c^{\rm MGEX} = 2{,}277 \pm 47$ km per-epoch ($1.77\times$) and $2{,}485 \pm 45$ km daily-constant ($1.62\times$, matching the empirical $1.90\times$ MGEX offset).
 
-Terrestrial calibration—derived from a newly identified distance-structured correlation in GNSS atomic clocks—provides an empirical anchor. A 25-year CODE analysis yields $L_c \approx 4{,}200$ km for Earth's mass ($M_\oplus \approx 6 \times 10^{27}$ g), consistent with multi-center results (CODE, IGS, ESA). The characteristic length $L_c$ is operationally identified with the projected Temporal Topology covariance scale associated with $R_T(M_\oplus)$, the geometric saturation scale for Earth's mass; a soliton interpretation is one candidate microscopic realization, not assumed in the calibration. Under the conditional identification $L_c \leftrightarrow R_T(M_\oplus)$, this corresponds to $\rho_T \approx 20$ g/cm³. The underlying GNSS correlation scale $L_c$ itself exhibits 25-year temporal stability and survives raw RINEX validation, constraining processing-artifact explanations.
-
-Galactic-scale consistency is tested using the SPARC rotation curve database (167 galaxies). The empirical dark matter onset scaling is $\alpha_{\rm SPARC} = 0.355 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (definition)}$, consistent with the $M^{1/3}$ expectation within $\sim 0.3\sigma$ ($\sim 0.5\sigma$ statistical-only). For the Milky Way, the SPARC-calibrated $M^{1/3}$ relation predicts a dark-matter onset radius $R_{\text{DM}} \approx 3$ kpc, consistent with the observed transition from baryonic to dark-matter-dominated rotation at $R \sim 3$–5 kpc. For ultra-diffuse galaxies DF2 and DF4, the model predicts Temporal Topology saturation radii exceeding tidal radii, consistent with observed dark matter deficiency via an illustrative field-envelope disruption mechanism (a dynamical timescale for re-equilibration remains to be computed).
-
-Temporal Topology screening provides a candidate explanation for why precision GR tests remain satisfied. A hierarchy of 26 astrophysical objects spanning 15 orders of magnitude in density is assembled; regression on the 11 dense objects ($\rho > \rho_T$) yields $S \propto \rho^{0.334}$ ($R² = 0.99995$), algebraically expected from the $R_T(M)$ construction. This provides a candidate screening explanation for why GR tests pass (binary pulsars: $S \sim 29{,}000$) while galactic dynamics ($S \sim 10^{-9}$ at $\rho \sim 10^{-24}$ g/cm³) are deeply unscreened, exhibiting strong scalar effects.
-
-The saturation density $\rho_T \approx 20$ g/cm³ emerges as a candidate macroscopic saturation/proximity scale in the TEP environmental-response hierarchy, not an ambient-density switch. GNSS provides the primary terrestrial timing anchor; SPARC onset scaling, Milky Way structure, RBH-1 crossover behaviour, compact-object screening, and condensed-matter/EOS considerations then test whether the same scale organizes otherwise disconnected gravitational regularities without retuning. Channel-specific quantities such as $\rho_{\rm trans}$, $R_s$, $\kappa_{\rm Cep}$, $\kappa_{\rm MSP}$, and lensing response coefficients are downstream projections of $S_\Sigma(\mathcal{E})$, not independent measurements of $\rho_T$.
-
-The $\rho^{1/3}$ hierarchy is a consistency relation induced by the $R_T(M)$ construction; it is not, by itself, an independent discriminator of microscopic screening mechanism.
-
-Evidence hierarchy. Within the evidence hierarchy of the TEP series, the GNSS clock analyses (Papers 1–3) provide the primary empirical input for the terrestrial correlation scale; the present paper tests the cross-scale consequences of conditionally identifying that scale with $R_T(M_\oplus)$.
+Because the canonical terrestrial BVP is shaped by Earth's fixed geometry, quantitative calibration of $\rho_T \approx 20$ g/cm³ rests on direct $R_\oplus$-free cross-mass tests, separated from structural-exponent tests. Direct tests comprise the RBH-1 crossover ($M_\times = \sqrt{3c⁶/(32\pi G³\rho_T)} \approx 3.04 \times 10⁷\,M_\odot$, $R_T/R_S = 1.32$), the zero-parameter equatorial rotation relation $v_{\rm eq}/c = u_T(M)/\sqrt{u_{\rm gal}}$ ($v_{\rm gal} = 220$ km s$^{-1}$), which matches Earth, Uranus, Neptune, and Saturn at $v_{\rm obs}/v_{\rm TEP} = 1.016 \pm 0.073$ ($\rho_T^{\rm spin} = 20.9$ g/cm³ geometric mean; extending above $M_{\rm cap} = 194\,M_\oplus = 0.61\,M_{\rm Jup}$ with one small-body capacity parameter $\eta_0 = 0.129$ [or the parameter-free secular stability fraction $\eta_{\rm sec} = \tfrac{1}{8} = 0.125$] and $S_A = \min[1,\,S]$ matches Jupiter at $-2.9\%$ [$-0.2\%$ at $\eta_{\rm sec}$], the fastest planetary-mass rotator SIMP J0136 at $-2.8\%$ [$-0.3\%$], and the $1.15 \pm 0.08$ hr brown-dwarf period floor of Tannock et al. 2021 at $P_{\min}^{\rm TEP} = (k_{\rm MOI}/\eta_0)\tau_T = 1.17$ hr [$1.21$ hr at $\eta_{\rm sec}$], giving $v_{\rm obs}/v_{\rm 2br} = 1.008 \pm 0.060$ and $\rho_T^{\rm rot} = 21.1$ g/cm³ across $N = 9$ planetary and substellar systems), and cold-planet moments of inertia $k_{\rm MOI} \simeq \tfrac{1}{2}S$ ($\rho_T^{\rm MOI,\text{terr}} = 17.9 \pm 1.4$ g/cm³ across the three core-screened terrestrial planets; $2k_{\rm MOI}/S = 1.17 \pm 0.14$ across eight planets with a systematic trend toward $8$–$9$ g/cm³ in compressible gas giants). Structural and scale-cancellation tests comprise the SPARC onset scaling ($\alpha_{\rm SPARC} = 0.352 \pm 0.043$ discrete, $N = 168$; $\alpha_{\rm res} = 0.417 \pm 0.050$ on $n = 75$ resolved crossings compatible with a transition between the $M^{1/3}$ saturation and $M^{1/2}$ low-acceleration kinetic scales; Tobit rejection of $R_{\rm DM}/R_d$ invariance at $+0.323 \pm 0.034, z = 9.57, p < 10^{-4}$; fixed-radius non-circular partial $r(R_{\rm DM},\,V_{\rm bar}(2.2R_d)\mid R_d) = +0.547$, $p = 3.8 \times 10^{-7}$), the two-branch RAR/BTFR profile $P_{,X} = k\sqrt{\xi} + 2\xi$ ($0.139$–$0.152$ dex RMS on the quality-controlled SPARC sample), the Milky Way onset ($3.1 \pm 0.4$ kpc mean; $[1.0,\,9.4]$ kpc $1\sigma$ interval), the algebraic $S \propto \rho^{0.334}$ hierarchy ($R² = 0.99995$), and Wesson's constant $p_{\rm TEP} \equiv J/M² = G/(2v_{\rm gal}) = 1.52 \times 10^{-15}$ cm$²$ g$^{-1}$ s$^{-1}$ ($J_{\rm obs}/J_{\rm TEP} = 1.11 \pm 0.25$).
 
 Keywords: dark matter – gravitation – scalar fields – galaxies: kinematics and dynamics – temporal equivalence principle
 
@@ -56,10 +46,19 @@ The current findings, numerical results and comparison assumptions are reported 
 | **Paper 11** | [TEP-H0](https://github.com/matthewsmawfield/TEP-H0) | The Cepheid Bias: Resolving the Hubble Tension | [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) |
 | **Paper 12** | [TEP-JWST](https://github.com/matthewsmawfield/TEP-JWST) | The Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies | [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) |
 | **Paper 13** | [TEP-WB](https://github.com/matthewsmawfield/TEP-WB) | The Temporal Equivalence Principle: Temporal Shear Recovery in Gaia DR3 Wide Binaries | [10.5281/zenodo.19102061](https://doi.org/10.5281/zenodo.19102061) |
-| **Paper 15** | [TEP-EFA](https://github.com/matthewsmawfield/TEP-EFA) | Temporal Equivalence Principle: Temporal Shear in the Earth Flyby Anomaly | [10.5281/zenodo.19454862](https://doi.org/10.5281/zenodo.19454862) |
+| **Paper 14** | [TEP-GNSS-MGEX](https://github.com/matthewsmawfield/TEP-GNSS-MGEX) | Global Time Echoes: Multi-GNSS MGEX Held-Out Replication and Processing-Chain Decomposition | [10.5281/zenodo.20572726](https://doi.org/10.5281/zenodo.20572726) |
+| **Paper 15** | [TEP-EFA](https://github.com/matthewsmawfield/TEP-EFA) | Temporal Equivalence Principle and the Earth Flyby Anomaly: Clock-Sector Response and Coherent-Link Cancellation | [10.5281/zenodo.19454862](https://doi.org/10.5281/zenodo.19454862) |
 | **Paper 16** | [TEP-J0437](https://github.com/matthewsmawfield/TEP-J0437) | Synchronization Holonomy in Pulsar Scintillation | [10.5281/zenodo.19454619](https://doi.org/10.5281/zenodo.19454619) |
 | **Paper 17** | [TEP-LLR](https://github.com/matthewsmawfield/TEP-LLR) | Lunar Laser Ranging and the Nordtvedt Effect | [10.5281/zenodo.19446028](https://doi.org/10.5281/zenodo.19446028) |
-| **Paper 18** | [TEP-HC](https://github.com/matthewsmawfield/TEP-HC) | Temporal Equivalence Principle: hi_class Background Implementation and CMB Acoustic Peak Preservation | — |
+| **Paper 18** | [TEP-HC](https://github.com/matthewsmawfield/TEP-HC) | Temporal Equivalence Principle: Native hi_class Conformal Implementation, Linear Perturbation Closure, and CMB Acoustic Peak Preservation | [10.5281/zenodo.20572722](https://doi.org/10.5281/zenodo.20572722) |
+| **Paper 19** | [TEP-LENS](https://github.com/matthewsmawfield/TEP-LENS) | Temporal Equivalence Principle: Multiply-Imaged Supernova Time-Delay Cosmography and Unstretched-Space Refraction | [10.5281/zenodo.20572719](https://doi.org/10.5281/zenodo.20572719) |
+| **Paper 22** | [TEP-LVK](https://github.com/matthewsmawfield/TEP-LVK) | Temporal Equivalence Principle: A Standard-Siren Test of Bi-Metric Gravitational-Wave Propagation | [10.5281/zenodo.20572695](https://doi.org/10.5281/zenodo.20572695) |
+| **Paper 23** | [TEP-QF](https://github.com/matthewsmawfield/TEP-QF) | Temporal Equivalence Principle: The Dirac Limit of Dynamical Proper Time | [10.5281/zenodo.20572697](https://doi.org/10.5281/zenodo.20572697) |
+| **Paper 26** | [TEP-C0](https://github.com/matthewsmawfield/TEP-C0) | Temporal Equivalence Principle: A Covariant Alternative to Cosmic Expansion | [10.5281/zenodo.20370143](https://doi.org/10.5281/zenodo.20370143) |
+| **Paper 27** | [TEP-TH](https://github.com/matthewsmawfield/TEP-TH) | Temporal Equivalence Principle: Nonsingular Temporal-Horizon Closure and Cosmological Perturbation Regularity | [10.5281/zenodo.20723059](https://doi.org/10.5281/zenodo.20723059) |
+| **Paper 28** | [TEP-BH](https://github.com/matthewsmawfield/TEP-BH) | Temporal Equivalence Principle: Nonsingular Temporal Wells and Black-Hole Horizon Regularity | [10.5281/zenodo.21677826](https://doi.org/10.5281/zenodo.21677826) |
+| **Paper 29** | [TEP-BBN](https://github.com/matthewsmawfield/TEP-BBN) | Temporal Equivalence Principle: Dynamical Proper Time and the Illusion of Primordial Deuterium | [10.5281/zenodo.21841147](https://doi.org/10.5281/zenodo.21841147) |
+| **Paper 36** | [TEP-9](https://github.com/matthewsmawfield/TEP-9) | Temporal Equivalence Principle: A Proper-Time Domain Boundary in the Outer Solar System | [10.5281/zenodo.22858190](https://doi.org/10.5281/zenodo.22858190) |
 
 ## Repository Structure
 
@@ -67,16 +66,17 @@ The current findings, numerical results and comparison assumptions are reported 
   - `1_abstract.html`: Paper abstract.
   - `2_introduction.html`: The Dark Matter problem as a temporal structure problem.
   - `3_gnss_calibration.html`: Derivation of $\rho_T$ from atomic clocks.
-  - `4_sparc_validation.html`: Galactic rotation curve analysis.
-  - `5_screening_hierarchy.html`: Temporal Topology screening mechanism.
-  - `6_atomic_boundary.html`: Physical constraints on ρ_T (electron degeneracy, dimensional analysis).
-  - `7_universal_scaling.html`: The unified scaling law.
+  - `4_sparc_validation.html`: Galactic rotation curve and two-branch RAR/BTFR analysis.
+  - `5_screening_hierarchy.html`: Temporal Topology screening hierarchy and planetary rotational kinematics.
+  - `6_atomic_boundary.html`: Physical constraints on $\rho_T$ (electron degeneracy, dimensional analysis).
+  - `7_universal_scaling.html`: The unified $M^{1/3}$ scaling law and RBH-1 crossover.
   - `8_milky_way_test.html`: Local Milky Way dark-matter onset.
-  - `10_discussion.html`: Theoretical implications (Phantom Mass).
+  - `10_discussion.html`: Theoretical implications (Phantom Mass and Cross-Domain Constraint Network).
   - `11_conclusion.html`: Summary of findings.
-  - `12_visual_evidence.html`: Key figures.
   - `13_references.html`: Bibliography.
-  - `appendix_a_gnss.html`: GNSS methodology appendix.
+  - `appendix_a_gnss.html`: Appendix A GNSS methodology summary.
+  - `appendix_b_vulnerabilities.html`: Appendix B open questions, causal proof, and risk register.
+  - `appendix_c_eft.html`: Appendix C candidate EFT realizations and scale dictionary.
 
 ## Relationship to Other Papers
 
@@ -92,7 +92,7 @@ The current findings, numerical results and comparison assumptions are reported 
   journal={Zenodo},
   year={2025},
   doi={10.5281/zenodo.18064365},
-  note={Preprint v0.9 (New Delhi)}
+  note={Preprint v0.10 (New Delhi)}
 }
 ```
 

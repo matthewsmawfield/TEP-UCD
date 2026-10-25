@@ -72,8 +72,10 @@ def parse_table1(path):
         if len(p) < 19:
             continue
         try:
-            rows[p[0]] = {"T": int(p[1]), "L36": float(p[7]),
-                          "MHI": float(p[13]), "Vflat": float(p[15])}
+            rows[p[0]] = {"T": int(p[1]), "inc": float(p[5]),
+                          "L36": float(p[7]), "MHI": float(p[13]),
+                          "Vflat": float(p[15]), "eVflat": float(p[16]),
+                          "Q": int(p[17])}
         except ValueError:
             continue
     return rows
@@ -152,26 +154,88 @@ def main():
                "median_gN_over_gt": float(np.median(outer_gN))}}
 
     # B. asymptotic BTFR on Table-1 Vflat
-    Mb, vo = [], []
+    Mb, vo, evo, inc_arr, q_arr = [], [], [], [], []
     for name, r in t1.items():
-        if r["Vflat"] > 0 and r["L36"] > 0:
+        if r["Vflat"] > 0 and (r["L36"] > 0 or r["MHI"] > 0):
             Mb.append((UPS_D * r["L36"] + HI_FAC * r["MHI"]) * 1e9)
             vo.append(r["Vflat"])
+            evo.append(r["eVflat"])
+            inc_arr.append(r["inc"])
+            q_arr.append(r["Q"])
     Mb = np.array(Mb) * MSUN
     vo = np.array(vo) * KMS
+    evo = np.array(evo) * KMS
+    inc_arr = np.array(inc_arr)
+    q_arr = np.array(q_arr)
     vpred_asym = (G_SI * Mb * A_EFF) ** 0.25
     res = np.log10(vo / vpred_asym)
-    b, a = np.polyfit(np.log10(vo), np.log10(Mb / MSUN), 1)
+    lx, ly = np.log10(vo), np.log10(Mb / MSUN)
+    b, a = np.polyfit(lx, ly, 1)
+    b_xy, _ = np.polyfit(ly, lx, 1)
+    b_inv = float(1.0 / b_xy)
+
+    # Lelli et al. (2016) quality-filtered subset (Q <= 2, inc >= 30 deg)
+    clean_mask = (q_arr <= 2) & (inc_arr >= 30.0)
+    lx_c, ly_c = lx[clean_mask], ly[clean_mask]
+    vo_c, Mb_c, evo_c = vo[clean_mask], Mb[clean_mask], evo[clean_mask]
+    b_c, _ = np.polyfit(lx_c, ly_c, 1)
+    b_xy_c, _ = np.polyfit(ly_c, lx_c, 1)
+    b_inv_c = float(1.0 / b_xy_c)
+    sig_lx_c = evo_c / (vo_c * np.log(10.0))
+    w_c = 1.0 / (sig_lx_c ** 2 + 0.02 ** 2)
+    b_winv_c = float(np.cov(ly_c, aweights=w_c) / np.cov(lx_c, ly_c, aweights=w_c)[0, 1])
+    res_c = np.log10(vo_c / ((G_SI * Mb_c * A_EFF) ** 0.25))
+
+    # High-quality subset (Q == 1, inc >= 30 deg)
+    q1_mask = (q_arr == 1) & (inc_arr >= 30.0)
+    lx_1, ly_1 = lx[q1_mask], ly[q1_mask]
+    vo_1, evo_1 = vo[q1_mask], evo[q1_mask]
+    b_xy_1, _ = np.polyfit(ly_1, lx_1, 1)
+    b_inv_1 = float(1.0 / b_xy_1)
+    sig_lx_1 = evo_1 / (vo_1 * np.log(10.0))
+    w_1 = 1.0 / (sig_lx_1 ** 2 + 0.02 ** 2)
+    b_winv_1 = float(np.cov(ly_1, aweights=w_1) / np.cov(lx_1, ly_1, aweights=w_1)[0, 1])
+
+    # Theoretical finite-radius two-branch slope across SPARC mass range (10^8 - 10^11.5 Msun)
+    M_grid = np.logspace(8.0, 11.5, 50) * MSUN
+    R_out_grid = 2.5 * KPC * ((M_grid / (1e9 * MSUN)) ** 0.32)
+    gN_grid = G_SI * M_grid / (R_out_grid ** 2)
+    g_add_grid = np.array([g_obs_of_gN(g) for g in gN_grid])
+    g_quad_grid = np.array([np.hypot(g, g_obs_of_gN(g) - g) for g in gN_grid])
+    V_add_grid = np.sqrt(g_add_grid * R_out_grid)
+    V_quad_grid = np.sqrt(g_quad_grid * R_out_grid)
+    s_tep_add, _ = np.polyfit(np.log10(V_add_grid), np.log10(M_grid / MSUN), 1)
+    s_tep_quad, _ = np.polyfit(np.log10(V_quad_grid), np.log10(M_grid / MSUN), 1)
+
     out["asymptotic"] = {
         "n": int(len(vo)),
         "median_vobs_over_vpred_deep_limit":
             float(np.median(vo / vpred_asym)),
         "rms_log10_deep_limit": float(np.sqrt(np.mean(res ** 2))),
         "empirical_slope_Mb_vs_v": float(b),
+        "empirical_slope_inverse_ols_all": b_inv,
+        "quality_filtered_Q_le_2_inc_ge_30": {
+            "n": int(clean_mask.sum()),
+            "rms_log10_deep_limit": float(np.sqrt(np.mean(res_c ** 2))),
+            "slope_ols_Mb_on_v": float(b_c),
+            "slope_inverse_ols_v_on_Mb": b_inv_c,
+            "slope_weighted_inverse_ols": b_winv_c,
+        },
+        "high_quality_Q_eq_1_inc_ge_30": {
+            "n": int(q1_mask.sum()),
+            "slope_inverse_ols_v_on_Mb": b_inv_1,
+            "slope_weighted_inverse_ols": b_winv_1,
+        },
+        "predicted_finite_radius_two_branch_slope": {
+            "additive": float(s_tep_add),
+            "quadrature": float(s_tep_quad),
+            "deep_tail_asymptote": 4.0,
+        },
         "median_implied_a_eff_ms2": float(
             np.median(vo ** 4 / (G_SI * Mb))),
-        "note": "deep-limit formula underpredicts v_flat at finite u; "
-                "the outer-edge test is the honest comparison"}
+        "note": ("deep-limit formula underpredicts v_flat at finite u (g_N/g_t ~ 0.02 at outer radii), "
+                 "where the two-branch finite-radius slope is 3.53-3.64 and inverse-OLS on the quality-filtered "
+                 "sample recovers 3.76-3.86; the outer-edge test is the direct finite-u comparison")}
 
     dest = Path(__file__).resolve().parents[2] / "results" / "outputs" / \
         "step_13_two_branch_btfr.json"

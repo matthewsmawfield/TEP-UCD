@@ -4,6 +4,7 @@ import json
 from collections import defaultdict
 
 import numpy as np
+from scipy.optimize import brentq
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -24,9 +25,38 @@ set_shared_style(scale=FIG_SCALE[FIG_PRESET])
 # --- Constants ---
 ML_DISK = 0.5
 ML_BULGE = 0.7
+C_LIGHT = 2.998e8
+H0_SI = 70.0e3 / 3.086e22
+G_T = C_LIGHT * H0_SI / 2.0  # 3.40e-10 m/s^2 (Paper 0 §7)
+A0_MOND = 1.2e-10            # m/s^2
+K_STAR = 4.0 * np.sqrt(2.0) * G_T / A0_MOND  # 16.03
+EPS_REG = 1.0e-3
+KPC_M = 3.086e19
+KMS_MS = 1.0e3
+
+
+def compute_v_tep_two_branch(R_kpc, Vbar_kms, quadrature=False):
+    """Compute fixed-input two-branch TEP rotation velocity V_TEP(R) (Step 10)."""
+    R_m = np.asarray(R_kpc, dtype=float) * KPC_M
+    Vbar_ms = np.asarray(Vbar_kms, dtype=float) * KMS_MS
+    g_bar = np.where(R_m > 0, (Vbar_ms ** 2) / R_m, 0.0)
+    v_tep_kms = np.zeros_like(Vbar_ms)
+    for i, g in enumerate(g_bar):
+        if g <= 0 or R_m[i] <= 0:
+            continue
+        y = g / G_T
+        f = lambda w: (EPS_REG + K_STAR * (w / np.sqrt(2.0)) + (w ** 2)) * w - y
+        hi = max(1.0, y)
+        while f(hi) < 0 and hi < 1e15:
+            hi *= 4.0
+        ubar = brentq(f, 0.0, hi, xtol=1e-30, rtol=1e-12)
+        a_phi = 2.0 * G_T * ubar
+        g_tot = np.hypot(g, a_phi) if quadrature else (g + a_phi)
+        v_tep_kms[i] = np.sqrt(g_tot * R_m[i]) / KMS_MS
+    return v_tep_kms
 
 # Load fitted normalization from step_4 output, fallback to canonical value
-_K_FALLBACK = 7.86e-4
+_K_FALLBACK = 7.96e-4
 _step4_json = os.path.join(
     os.path.dirname(__file__), '..', '..', 'results', 'outputs', 'step_4_sparc_analysis.json'
 )
@@ -88,7 +118,7 @@ def parse_table2(filepath):
                 rotation_curves[name]['R'].append(float(parts[2]))
                 rotation_curves[name]['Vobs'].append(float(parts[3]))
                 rotation_curves[name]['e_Vobs'].append(float(parts[4]))
-                rotation_curves[name]['Vgas'].append(abs(float(parts[5])))
+                rotation_curves[name]['Vgas'].append(float(parts[5]))
                 rotation_curves[name]['Vdisk'].append(float(parts[6]))
                 rotation_curves[name]['Vbul'].append(float(parts[7]))
         except Exception:
@@ -106,7 +136,8 @@ def calculate_baryonic_mass(props):
 
 
 def calculate_newtonian_velocity(rc):
-    return np.sqrt(rc['Vgas']**2 + ML_DISK * rc['Vdisk']**2 + ML_BULGE * rc['Vbul']**2)
+    v2 = np.abs(rc['Vgas']) * rc['Vgas'] + ML_DISK * np.abs(rc['Vdisk']) * rc['Vdisk'] + ML_BULGE * np.abs(rc['Vbul']) * rc['Vbul']
+    return np.sqrt(np.clip(v2, 0.0, None))
 
 
 def find_rdm_for_threshold(R, Vobs, Vbar, threshold=1.3):
@@ -200,7 +231,11 @@ def run():
         ax.axvspan(0, R_shade, color=COLORS['primary_light'], alpha=0.06)
 
         # Curves
-        ax.plot(R, Vbar, color=COLORS['secondary'], lw=1.8, label='Baryonic')
+        Vtep_add = compute_v_tep_two_branch(R, Vbar, quadrature=False)
+        Vtep_quad = compute_v_tep_two_branch(R, Vbar, quadrature=True)
+        ax.plot(R, Vbar, color=COLORS['secondary'], lw=1.6, label='Baryonic ($V_{\\rm bar}$)')
+        ax.plot(R, Vtep_add, color=COLORS['accent'], lw=2.0, label='TEP 2-branch (additive)')
+        ax.plot(R, Vtep_quad, color=COLORS['accent'], lw=1.3, ls='-.', alpha=0.80, label='Quadrature comparator')
         ax.errorbar(
             R,
             Vobs,
@@ -211,12 +246,12 @@ def run():
             ecolor=COLORS['primary_light'],
             elinewidth=0.8,
             capsize=0,
-            label='Observed',
+            label='Observed ($V_{\\rm obs}$)',
         )
 
         # Vertical markers
-        ax.axvline(rec['R_pred'], color=COLORS['highlight'], ls='--', lw=1.2, label=r'$R_{\rm trans}$')
-        ax.axvline(rec['R_dm'], color=COLORS['accent'], ls=':', lw=1.2, label=r'$R_{\rm DM}$')
+        ax.axvline(rec['R_pred'], color=COLORS['highlight'], ls='--', lw=1.2, label=r'$R_{\rm trans}$ (pred.)')
+        ax.axvline(rec['R_dm'], color='dimgray', ls=':', lw=1.3, label=r'$R_{\rm DM}$ (obs.)')
 
         # Title
         logM = np.log10(rec['M_bar'])
@@ -228,8 +263,17 @@ def run():
         ax.set_ylabel(r"$V$ (km/s)")
         ax.grid(True, alpha=0.25)
 
-        # Keep legends small and local for readability in the 3x3 panel
-        ax.legend(fontsize=6, frameon=False, loc='lower right', handlelength=2)
+    handles, labels = axes.flat[0].get_legend_handles_labels()
+    fig.legend(
+        handles,
+        labels,
+        loc='outside upper center',
+        ncol=6,
+        frameon=False,
+        fontsize=7.6,
+        handlelength=1.8,
+        columnspacing=1.0,
+    )
 
     out_path = os.path.join(output_dir, 'figure_6_sparc_examples.png')
     plt.savefig(out_path)

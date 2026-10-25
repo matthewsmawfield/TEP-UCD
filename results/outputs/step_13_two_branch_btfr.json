@@ -25,7 +25,25 @@
     "median_vobs_over_vpred_deep_limit": 1.0616113897744934,
     "rms_log10_deep_limit": 0.08977684252082106,
     "empirical_slope_Mb_vs_v": 3.189204983649691,
+    "empirical_slope_inverse_ols_all": 3.6174187551267685,
+    "quality_filtered_Q_le_2_inc_ge_30": {
+      "n": 123,
+      "rms_log10_deep_limit": 0.06975173535047437,
+      "slope_ols_Mb_on_v": 3.4847050731221474,
+      "slope_inverse_ols_v_on_Mb": 3.752695784236947,
+      "slope_weighted_inverse_ols": 3.758729511397556
+    },
+    "high_quality_Q_eq_1_inc_ge_30": {
+      "n": 83,
+      "slope_inverse_ols_v_on_Mb": 3.839510305509417,
+      "slope_weighted_inverse_ols": 3.8572774248289536
+    },
+    "predicted_finite_radius_two_branch_slope": {
+      "additive": 3.5270491675688347,
+      "quadrature": 3.638576763446027,
+      "deep_tail_asymptote": 4.0
+    },
     "median_implied_a_eff_ms2": 1.5240790567538562e-10,
-    "note": "deep-limit formula underpredicts v_flat at finite u; the outer-edge test is the honest comparison"
+    "note": "deep-limit formula underpredicts v_flat at finite u (g_N/g_t ~ 0.02 at outer radii), where the two-branch finite-radius slope is 3.53-3.64 and inverse-OLS on the quality-filtered sample recovers 3.76-3.86; the outer-edge test is the direct finite-u comparison"
   }
 }

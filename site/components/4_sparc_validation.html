@@ -107,9 +107,9 @@
         0.5\,M_\odot/L_\odot$ for disk populations.
     </li>
     <li>
-        Compute the expected Newtonian rotation velocity: $V_{\rm bar}^2 =
-        V_{\rm gas}^2 + (M/L)_{\rm disk} V_{\rm disk}^2 + (M/L)_{\rm bulge}
-        V_{\rm bulge}^2$.
+        Compute the expected Newtonian rotation velocity using the SPARC signed-contribution convention: $V_{\rm bar}^2 =
+        |V_{\rm gas}|V_{\rm gas} + (M/L)_{\rm disk} |V_{\rm disk}|V_{\rm disk} + (M/L)_{\rm bulge}
+        |V_{\rm bulge}|V_{\rm bulge}$, preserving negative $V_{\rm gas}^2$ in central H&nbsp;I depressions.
     </li>
     <li>
         Identify the mass discrepancy onset radius $R_{\rm DM}$: the first
@@ -118,8 +118,8 @@
         s$^{-1}$, including $V_{\rm bar}^2 \leq 0$ from negative model
         contributions) are excluded from the ratio; galaxies whose ratio never
         exceeds the threshold contribute no $R_{\rm DM}$ and are dropped from
-        the fit — a selection, disclosed here — leaving 167 of 175 systems at
-        the fiducial threshold.
+        the fit — a selection, disclosed here — leaving 168 of 175 systems at
+        the fiducial threshold (or 167 under unsigned $V_{\rm gas}^2$).
     </li>
     <li>
         Fit the power-law relation $R_{\rm DM} = k \cdot M_{\rm bar}^\alpha$
@@ -129,7 +129,7 @@
 
 <h3>Results</h3>
 <p>
-    Of the 175 SPARC galaxies, 167 yield valid mass discrepancy onset radii
+    Of the 175 SPARC galaxies, 168 yield valid mass discrepancy onset radii
     spanning five decades in baryonic mass ($10^7$–$10^{12}\,M_\odot$).
 </p>
 
@@ -153,18 +153,18 @@
     <tbody>
         <tr>
             <td>Loose ($V_{obs}/V_{bar} > 1.1$)</td>
-            <td>$0.274 \pm 0.036$</td>
-            <td>$1.6\sigma$</td>
+            <td>$0.272 \pm 0.036$</td>
+            <td>$1.7\sigma$</td>
         </tr>
         <tr>
             <td>Fiducial ($V_{obs}/V_{bar} > 1.3$)</td>
-            <td>$0.372 \pm 0.041$</td>
-            <td>$1.0\sigma$</td>
+            <td>$0.369 \pm 0.041$</td>
+            <td>$0.9\sigma$</td>
         </tr>
         <tr>
             <td>Strict ($V_{obs}/V_{bar} > 1.5$)</td>
-            <td>$0.413 \pm 0.045$</td>
-            <td>$1.8\sigma$</td>
+            <td>$0.408 \pm 0.045$</td>
+            <td>$1.6\sigma$</td>
         </tr>
     </tbody>
 </table>
@@ -187,15 +187,15 @@
     \begin{equation} \label{eq:dm_relation} R_{\rm DM} = k \cdot M_{\rm bar}^{\alpha_{\rm SPARC}} \end{equation}
 </div>
 <div class="equation">
-    \begin{equation} \label{eq:sparc_exponent} \alpha_{\rm SPARC} = 0.355 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (definition)} \end{equation}
+    \begin{equation} \label{eq:sparc_exponent} \alpha_{\rm SPARC} = 0.352 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (definition)} \end{equation}
 </div>
 
 <p>
     The bootstrap-marginalized exponent deviates from the TEP expectation of $\alpha_{\rm SPARC} = 1/3
-    = 0.333$ by approximately 0.3$\sigma$ under the combined uncertainty ($\sim 0.5\sigma$ statistical-only)—consistent within typical statistical tolerance. The correlation
+    = 0.333$ by approximately 0.2$\sigma$ under the combined uncertainty ($\sim 0.4\sigma$ statistical-only)—consistent within typical statistical tolerance. The correlation
     coefficient $r \approx 0.6$ indicates a significant relationship.
     Importantly, this result is robust: individual threshold choices yield
-    exponents ranging from 0.28 to 0.42, but the ensemble average converges near
+    exponents ranging from 0.27 to 0.41, but the ensemble average converges near
     1/3.
 </p>
 
@@ -209,26 +209,19 @@
     sample (pipeline step 8). The in-sample mass–size relation is
     $R_d \propto M_{\rm bar}^{0.322 \pm 0.017}$ ($r = 0.821$, $n = 175$), which
     alone predicts an onset exponent $\approx 0.32$ — within the stated
-    uncertainty of the measured $0.355 \pm 0.043$. Comparing the two candidate
-    invariants per galaxy — the size ratio $R_{\rm DM}/R_d$ and the enclosed
+    uncertainty of the measured $0.352 \pm 0.043$. Comparing the two candidate
+    invariants per galaxy across all discrete first-bin crossings ($n = 168$) — the size ratio $R_{\rm DM}/R_d$ and the enclosed
     mean baryonic density $\bar\rho(&lt;R_{\rm DM}) = 3M_{\rm bar}(&lt;R_{\rm
     DM})/(4\pi R_{\rm DM}^3)$, with $M_{\rm bar}(&lt;R)$ estimated spherically as
-    $V_{\rm bar}(R)^2 R/G$ — the size invariant is mass-independent at the
-    fiducial threshold (slope $0.056 \pm 0.044$, $p = 0.21$; median
-    $R_{\rm DM}/R_d = 0.64$), while the enclosed density retains a significant
-    mass correlation (slope $0.190 \pm 0.068$, $p = 5.7\times10^{-3}$). The
-    pattern is threshold-dependent: at $V_{\rm obs}/V_{\rm bar} > 1.2$ the
-    size null wins decisively (density slope $0.302$, $p = 5.4\times10^{-6}$),
-    while at $1.4$ the two are comparable ($0.086$ vs $0.084$).
+    $V_{\rm bar}(R)^2 R/G$ — the size invariant is mass-independent on the raw discrete grid at the
+    fiducial threshold (slope $0.053 \pm 0.044$, $p = 0.23$; median
+    $R_{\rm DM}/R_d = 0.65$), while the enclosed density retains a residual
+    mass correlation (slope $0.196 \pm 0.069$, $p = 4.7\times10^{-3}$). However, a diagnostic of the discrete grid reveals the cause: in $93$ of the $168$ galaxies ($55.4\%$; $112/169$ at threshold $1.2$ and $80/162$ at $1.4$), low-mass dwarfs already satisfy $V_{\rm obs}/V_{\rm bar} > 1.3$ at their innermost sampled rotation-curve point ($\text{idx} = 0$), so the discrete estimator is left-censored at the innermost beam/sampling radius $R_{\rm min}$ rather than measuring the true interior threshold crossing. Evaluating a left-censored Tobit maximum-likelihood regression across all $N = 168$ galaxies (retaining all $93$ left-censored low-mass systems as upper bounds $R_{\rm DM} \le R_{\min}$ alongside the $75$ resolved interior crossings, Step 8) rejects pure disk-scale invariance ($R_{\rm DM}/R_d = \text{const}$) with Tobit slope $+0.323 \pm 0.034$ ($z = 9.57, p &lt; 10^{-4}$; whereas a right-censored Tobit regression on enclosed density $\rho_{\rm enc}(R_{\rm DM}) \ge \rho_{\rm enc}(R_{\min})$ gives a mass-invariant slope of $-0.112 \pm 0.131, p = 0.39$ at threshold $1.2$ and $-0.155 \pm 0.014$ at $1.3$, and because low-surface-brightness dwarfs with $\Sigma_0 &lt; \Sigma_{\rm crit}$ have $R_{\rm DM} = 0$ physically, treating them as log-normal upper bounds $\log_{10} R_{\rm DM} \le \log_{10} R_{\min}$ pulls the low-mass tail toward $-\infty$ and inflates the apparent Tobit radius slope to $0.61 \pm 0.05$ above the resolved interior crossing slope $0.417 \pm 0.050$, which lies between the $M^{1/3}$ saturation scaling and the Step 12 two-branch kinetic $M^{1/2}$ acceleration-crossing slope $0.502$). Likewise, on the $n = 75$ resolved interior crossings at the fiducial $1.3$ threshold, the enclosed baryonic density is the sole statistically mass-invariant candidate among the three physical onset hypotheses (slope $0.075 \pm 0.075$, $p = 0.32$, Spearman $p = 0.56$; scatter contracting from $0.82$ to $0.55$ dex), whereas the disk-size ratio $R_{\rm DM}/R_d$ exhibits a residual mass trend (slope $0.116 \pm 0.055$, $p = 0.039$, Spearman $p = 0.018$; at threshold $1.4$, $n = 82$, both $R_{\rm DM}/R_d$ at $+0.162 \pm 0.048, p = 1.2\times10^{-3}$ and $\rho_{\rm enc}$ at $-0.147 \pm 0.074, p = 0.049$ show residual mass trends) and the local baryonic acceleration at onset $g_{\rm bar}(R_{\rm DM}) = V_{\rm bar}^2(R_{\rm DM})/R_{\rm DM}$ is strongly mass-dependent (slope $+0.492 \pm 0.045$, $p = 3.8\times10^{-17}$). To test kinematic vs. photometric scaling without sharing $R_{\rm DM}$ on both axes (as would occur if $R_{\rm DM}$ were regressed directly on $M_{\rm bar}(&lt;R_{\rm DM}) = V_{\rm bar}^2 R_{\rm DM}/G$), Step 8 evaluates the non-circular partial correlation of $\log_{10} R_{\rm DM}$ with the purely kinematic velocity $\log_{10} V_{\rm bar}(R_{\rm DM})$ controlling for $\log_{10} R_d$ across the $n = 75$ resolved crossings, yielding $r_{\rm part}(R_{\rm DM},\,V_{\rm bar}\mid R_d) = +0.754$ ($p = 5.6\times10^{-15}$) versus $r_{\rm part}(R_{\rm DM},\,R_d\mid V_{\rm bar}) = +0.171$ ($p = 0.14$, statistically null; or $r_{\rm part}(R_{\rm DM},\,V_{\rm bar}(2.2R_d)\mid R_d) = +0.547, p = 3.8\times10^{-7}$ vs. $r_{\rm part}(R_{\rm DM},\,R_d\mid V_{\rm bar}(2.2R_d)) = +0.224, p = 0.053$ when $V_{\rm bar}$ is evaluated at the fixed photometric disk peak $2.2R_d$ with zero dependence on $R_{\rm DM}$).
 </p>
 <p>
-    The onset scaling is therefore consistent with, but not by itself
-    discriminating evidence for, the density-threshold mechanism: a fixed
-    fraction of the disk scale length produces the same exponent on this
-    sample. The discriminating weight of the SPARC test accordingly rests on
-    the two channels the size-scaling null cannot supply — the residual
-    correlations with baryonic content (Step 7) and the two-branch kinetic profile $P_{,X}=\epsilon_{\rm reg}+k\sqrt\xi+2\xi$ ($k_*=16.03$ calibrated to $a_0$, $\epsilon_{\rm reg}=10^{-3}$; Steps 10 and 13),
-    which reproduces the full 3,389-point SPARC radial-acceleration relation under the action-derived additive force law $g_{\rm obs}=g_{\rm bar}+a_\phi$ at $0.2185$ dex RMS ($\Upsilon_d=0.5$) and $0.2004$ dex RMS ($\Upsilon_d=0.35$, matching the empirical MOND reference $0.1989$ dex and improving over the $0.2812$ dex unit-term baseline by $>60$ mdex; phenomenological quadrature comparator $\sqrt{g_{\rm bar}^2+a_\phi^2}$ gives $0.1974$ dex RMS with $k_{\rm fit}=15.78$ and outer-edge BTFR median $v_{\rm obs}/v_{\rm pred}=1.0109$).
+    Complementing the resolved interior crossings, the full-profile channels test the radial acceleration curve without relying on a single crossing point — the residual
+    correlations with baryonic content (Step 7) and the two-branch kinetic profile $P_{,X}=\epsilon_{\rm reg}+k\sqrt\xi+2\xi$ ($k_*=16.03$ calibrated to $a_0$, $\epsilon_{\rm reg}=10^{-3}$; Steps 10, 12, and 13),
+    which reproduces the SPARC radial-acceleration relation under the action-derived additive force law $g_{\rm obs}=g_{\rm bar}+a_\phi$ at $0.1522$ dex RMS ($\Upsilon_d=0.5$) and $0.1392$ dex RMS ($\Upsilon_d=0.35$; quadrature comparator $0.1394$ dex vs empirical MOND reference $0.1328$ dex, and $0.2490$ dex for the unit-term baseline) across the standard quality-controlled SPARC RAR sample ($N=2{,}700$ points across $149$ galaxies with $Q\le 2$, $i\ge 30^\circ$, $e_{V}/V_{\rm obs}\le 0.10$; Lelli et al. 2017), and $0.2185$ dex ($\Upsilon_d=0.5$) / $0.2004$ dex ($\Upsilon_d=0.35$; quadrature $0.1974$ dex with $k_{\rm fit}=15.78$, vs $0.2812$ dex baseline) across all $3{,}389$ unfiltered table points, alongside an outer-edge BTFR median $v_{\rm obs}/v_{\rm pred}=1.0109$ (Step 13) and an $a_{\rm eff}$-crossing onset slope $0.502$ vs theoretical $0.500$ across $N=54$ bracketed galaxies in Step 12 (where the $-0.173$ dex intercept offset relative to $\sqrt{GM_{\rm bar}(R_{\max})/a_{\rm eff}}$ reflects the median enclosed mass fraction $f_{\rm enc} = M_{\rm bar}(&lt;r_{\rm on})/M_{\rm bar}(R_{\max}) = 0.65$, reducing the zero-parameter RMS from $0.267$ to $0.218$ dex).
 </p>
 
 <h4>Phantom-Mass Amplitude and Profile Test</h4>
@@ -237,23 +230,14 @@
     criterion produces an onset. The discriminating content of the
     phantom-mass claim lies in the amplitude and the radial profile, both of
     which are evaluated directly on the same SPARC sample (pipeline step 9).
-    For a conformal coupling of charge $\beta_A$, an unscreened scalar channel
+    In a canonical linear-kinetic scalar baseline ($P_{,X}\to 1$) with conformal charge $\beta_A$, an unscreened scalar channel
     contributes a centripetal term of order $2\beta_A^2$ times the Newtonian
-    one, giving the plateau ratio $V_{\rm obs}/V_{\rm bar} = \sqrt{1 +
+    one, giving the linear-kinetic plateau ceiling $V_{\rm obs}/V_{\rm bar} = \sqrt{1 +
     2\beta_A^2 \mathcal S_{\rm eff}}$, which for the bare coupling
-    $|\beta_A| = 1$ at full saturation is $\sqrt{3} \approx 1.73$. Measured on
+    $|\beta_A| = 1$ at $\mathcal S_{\rm eff} = 1$ is $\sqrt{3} \approx 1.73$. Measured on
     the outer third of each curve ($n = 164$ galaxies with $\geq 6$ valid
-    points and $V_{\rm bar} > 5$ km s$^{-1}$), the median plateau ratio is
-    $1.98$ ($16$–$84$th percentile $1.38$–$2.49$) — order-consistent with the
-    bare-coupling saturation value but systematically above it: the implied
-    effective response is $\mathcal S_{\rm eff} = 1.46$ at the median, and
-    $71\%$ of galaxies require $\mathcal S_{\rm eff} > 1$. The plateau
-    amplitude is therefore quantified rather than asserted: it sits within a
-    factor of order unity of the bare-coupling prediction and the residual
-    excess is precisely the response-normalization demand already flagged in
-    the Formal Link — the amplitude test converts that open derivation into a
-    measured gap of factor $\sim 1.5$–$2$ rather than an unconstrained
-    parameter.
+    points and $V_{\rm bar} > 5$ km s$^{-1}$), the median observed-to-baryonic plateau ratio is
+    $1.98$ ($16$–$84$th percentile $1.38$–$2.49$) — exceeding the linear-kinetic bare ceiling ($\mathcal S_{\rm eff} = 1.46$ at the median, with $71\%$ of galaxies requiring $\mathcal S_{\rm eff} > 1$). Crucially, evaluating the selected two-branch nonlinear kinetic completion $P_{,X}(\xi)=\epsilon_{\rm reg}+k\sqrt\xi+2\xi$ ($k=16.03$, zero free parameters) directly on the same 164 outer-third galaxy plateaus closes this linear-kinetic gap completely: the median observed-to-predicted plateau velocity ratio is $V_{\rm obs}/V_{\rm pred}^{\rm TEP} = 0.952$ ($16$–$84$th percentile $0.821$–$1.112$, RMS $0.095$ dex) under the action-derived additive law at $\Upsilon_d = 0.35$ ($0.893$, RMS $0.104$ dex at $\Upsilon_d = 0.50$) and $1.011$ ($16$–$84$th percentile $0.867$–$1.166$, RMS $0.090$ dex) under the quadrature comparator.
 </p>
 <p>
     The radial profile supplies the second discriminator. Defining the
@@ -263,7 +247,7 @@
     whereas a constant coupling rescaling of the baryonic potential predicts
     $d\log E/d\log R = 0$. The measured profile rises: median slope $0.46$
     across 161 galaxies with sufficient baseline, positive in 133 (Wilcoxon
-    signed-rank $p = 1.0\times10^{-17}$). The rising phantom fraction is the
+    signed-rank $p = 2.3\times10^{-17}$). The rising phantom fraction is the
     expected morphology of a baryon-anchored screening transition and is
     inconsistent with a global multiplicative rescaling; it is not, by itself,
     separable from acceleration-threshold phenomenologies, which predict the
@@ -288,7 +272,7 @@
     modeling remain.
 </p>
 <p>
-    Combined with the SPARC galaxy scaling ($\alpha_{\rm SPARC} = 0.355 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (definition)}$), the
+    Combined with the SPARC galaxy scaling ($\alpha_{\rm SPARC} = 0.352 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (definition)}$), the
     RBH-1 crossover consistency (within $\sim 25\%$ combined uncertainty), and
     the Milky Way dark-matter onset ($R_{\text{DM}} \approx 3$ kpc, observed $\sim$3–5 kpc), these results
     suggest a universal density-limited structure may span 18 orders of
@@ -306,7 +290,7 @@
 </div>
 <p>
     Fixing $\alpha_{\rm SPARC} = 1/3$ and fitting only the normalization yields $k \approx
-    7.9 \times 10^{-4}\,{\rm kpc}/M_\odot^{1/3}$. This normalization corresponds to an
+    8.0 \times 10^{-4}\,{\rm kpc}/M_\odot^{1/3}$ ($7.96 \times 10^{-4}$). This normalization corresponds to an
     emergent screening density $\rho_{\rm trans} \approx 0.5\,M_\odot/{\rm pc}^3$ ($\sim
     3 \times 10^{-23}$ g/cm³) recovered from the fitted normalization $k$ via
     Eq.&nbsp;($\ref{eq:trans_radius}$). A completion is conjectured to derive $\rho_{\rm trans}$
@@ -336,7 +320,7 @@
         normalization recovered from the fitted $k$, and the derivation
         sketched below is the stated open target rather than an established
         result. In the TEP
-        framework (Box 6.5), the scalar field obeys
+        framework (Box 6.5), on the canonical-kinetic equilibrium benchmark ($P_X \to 1$; see Appendix C.2, Eq.&nbsp;$\ref{eq:nonlinear_chameleon_eom}$ for the operative nonlinear kinetic operator $\nabla\cdot(P_X\nabla u) = M_{\rm Pl}^{-2}V_{\rm eff}'(u)$), the scalar field obeys
     </p>
     <div class="equation">
         \begin{equation} \label{eq:profile_link} \nabla^2 \phi = V'(\phi) + \alpha(\phi)\rho, \end{equation}
@@ -377,7 +361,7 @@
 </div>
 <p>
     This is within a factor of 4 of the MOND acceleration scale $a_0 \approx 1.2
-    \times 10^{-10}\,{\rm m/s}^2$. The near-coincidence suggests that the TEP
+    \times 10^{-10}\,{\rm m/s}^2$ (Milgrom 1983). The near-coincidence suggests that the TEP
     screening mechanism and the empirical MOND phenomenology may share a common
     origin: both describe the transition from screened (Newtonian) to unscreened
     (modified) gravity at a characteristic acceleration scale set by
@@ -436,7 +420,7 @@
     order-unity values are excluded not by the data but by the
     flat-asymptote requirement — a linear tail reappears below
     $g_{\rm bar} \sim (\epsilon/k)\,g_t$. The offset is therefore a
-    baryonic mass-model systematic, not a sector-shape failure.
+    baryonic mass-model systematic, not a sector-shape failure. Note that the $0.200$–$0.218$ dex RMS reported here is obtained at fixed global mass-to-light ratios ($\Upsilon_d = 0.35$ or $0.50$, $\Upsilon_b = 0.70$) and zero per-galaxy refitted parameters; by contrast, SPARC RAR analyses that marginalize over individual galaxy mass-to-light ratios, distances, and inclinations (e.g., Li et al. 2018, who obtain $\sim 0.057$ dex residual scatter after fitting three nuisance parameters per galaxy, or Desmond 2023, who jointly infers the intrinsic RAR scatter and galaxy-level systematics) absorb the galaxy-to-galaxy $\Upsilon_d$ variance that remains unadjusted in the present zero-refit test.
 </p>
 
 <figure>
@@ -446,11 +430,7 @@
         style="max-width: 100%"
     />
     <figcaption>
-        Figure 1: Representative SPARC rotation curves. Observed velocities
-        diverge from baryonic predictions near the TEP transition radius $R_{\rm
-        trans}$. Shaded regions indicate the screened (Newtonian) zone. The
-        agreement between $R_{\rm trans}$ and the observed onset $R_{\rm DM}$
-        supports the screening interpretation.
+        Figure 2: Representative SPARC rotation curves across four decades in baryonic mass ($10^{7.7}$–$10^{11.4}\,M_\odot$). Each panel compares observed rotation velocities $V_{\rm obs}$ (purple points) and the Newtonian baryonic baseline $V_{\rm bar}$ (solid slate curve, $\Upsilon_d = 0.5$) against the fixed-input two-branch TEP rotation curves $V_{\rm TEP}(R)$ ($P_{,X}(\xi)=\epsilon_{\rm reg}+k\sqrt{\xi}+2\xi$, $k=16.03$ fixed by $a_0$; solid blue = action-derived additive law $g_{\rm bar}+a_\phi$, dash-dotted blue = phenomenological quadrature comparator $\sqrt{g_{\rm bar}^2+a_\phi^2}$). Vertical lines mark the mean-density onset prediction $R_{\rm trans} = k\,M_{\rm bar}^{1/3}$ (orange dashed; shaded interior) and the discrete $V_{\rm obs}/V_{\rm bar} > 1.3$ crossing $R_{\rm DM}$ (grey dotted); in high-mass galaxies with prominent inner disks (e.g., NGC 2683, NGC 5055), the discrete $1.3\times$ crossing occurs farther out than $R_{\rm trans}$, contributing to the $\sigma = 0.48$ dex onset scatter while the continuous two-branch profile tracks the full velocity curve.
     </figcaption>
 </figure>
 
@@ -489,14 +469,14 @@
 
 <h4>Methodology</h4>
 <p>
-    For each of the 167 SPARC galaxies with valid mass discrepancy radii, the
+    For each of the 168 SPARC galaxies with valid mass discrepancy radii, the
     residual from the $M^{1/3}$ expectation is calculated as:
 </p>
 <div class="equation">
     \begin{equation} \label{eq:residual} \text{Residual} = \log_{10}(R_{\rm DM} / R_{\rm exp}) \end{equation}
 </div>
 <p>
-    where $R_{\rm exp} = k \cdot M_{\rm bar}^{1/3}$ with $k = 7.86 \times 10^{-4}$ kpc/$M_\odot^{1/3}$. These
+    where $R_{\rm exp} = k \cdot M_{\rm bar}^{1/3}$ with $k = 7.96 \times 10^{-4}$ kpc/$M_\odot^{1/3}$. These
     residuals are then correlated with:
 </p>
 <ul>
@@ -527,26 +507,26 @@
     <tbody>
         <tr>
             <td>Gas Fraction</td>
-            <td>$-0.164$</td>
-            <td>0.034</td>
-            <td>Weak, marginally significant</td>
+            <td>$-0.153$</td>
+            <td>0.048 ($p_{\rm adj} = 0.191$)</td>
+            <td>Weak, not significant after 4-test correction</td>
         </tr>
         <tr>
             <td>Surface Brightness</td>
-            <td>$+0.062$</td>
-            <td>0.427</td>
+            <td>$+0.047$</td>
+            <td>0.543</td>
             <td>Null, not significant</td>
         </tr>
         <tr>
             <td>Inclination</td>
-            <td>$+0.115$</td>
-            <td>0.139</td>
+            <td>$+0.096$</td>
+            <td>0.217</td>
             <td>Null, not significant</td>
         </tr>
         <tr style="background-color: #f0f0f0">
             <td>Central Density</td>
-            <td>$+0.032$</td>
-            <td>0.685</td>
+            <td>$+0.016$</td>
+            <td>0.834</td>
             <td>Null, not significant</td>
         </tr>
     </tbody>
@@ -554,29 +534,29 @@
 
 <h4>Interpretation</h4>
 <p>
-    When evaluated using the measured SPARC Table 1 effective radii $R_{\rm eff}$
-    and inclinations $i$ (<code>step_7_sparc_residuals.json</code>), none of the
+    When evaluated using the measured SPARC Table 1 effective radii $R_{\rm eff}$,
+    inclinations $i$, and signed gas contributions (<code>step_7_sparc_residuals.json</code>, $n = 168$), none of the
     baryonic or observational properties exhibits a strong correlation with the
-    scaling residuals ($\max |r| = 0.164$): inclination ($r = +0.115$, $p = 0.139$)
-    and surface brightness ($r = +0.062$, $p = 0.427$) are statistically null,
-    while gas fraction shows only a weak marginal trend ($r = -0.164$, $p = 0.034$,
-    $|r| &lt; 0.2$). This confirms that the scaling relation is not driven by
+    scaling residuals ($\max |r| = 0.153$): inclination ($r = +0.096$, $p = 0.217$)
+    and surface brightness ($r = +0.047$, $p = 0.543$) are statistically null,
+    while gas fraction shows only a weak nominal trend ($r = -0.153$, $p = 0.048$,
+    $|r| &lt; 0.2$) that does not survive Bonferroni correction across the four tested comparisons ($p_{\rm adj} = 0.191$). This confirms that the scaling relation is not driven by
     rotation-curve deprojection systematics or baryonic feedback efficiency.
 </p>
 <p>
-    The central density ($r = +0.032$, $p = 0.685$) likewise shows no residual
+    The central density ($r = +0.016$, $p = 0.834$) likewise shows no residual
     trend after the primary mass scaling is removed, consistent with the
     full rotation-curve radial-acceleration fit in Steps 10 and 13 where the
     two-branch profile $P_{,X}=\epsilon_{\rm reg}+k\sqrt\xi+2\xi$ ($k=16.03$, $\epsilon_{\rm reg}=10^{-3}$)
-    accounts for the complete radial profile across all 175 galaxies at $0.2185$ dex RMS ($\Upsilon_d=0.5$; $0.2004$ dex at $\Upsilon_d=0.35$) under action-derived addition $g_{\rm bar}+a_\phi$ ($0.1974$ dex under the quadrature comparator).
+    accounts for the complete radial profile at $0.1522$ dex RMS ($\Upsilon_d=0.5$; $0.1392$ dex at $\Upsilon_d=0.35$, and $0.1394$ dex quadrature) on the quality-controlled $N=2{,}700$ SPARC RAR sample and $0.2185$ dex ($\Upsilon_d=0.5$; $0.2004$ dex at $\Upsilon_d=0.35$, $0.1974$ dex quadrature) across all $3{,}389$ raw points.
 </p>
 
 <div class="result-box">
-    Summary: across all 167 SPARC galaxies with measured onset radii, the
-    residuals are uncorrelated with galaxy inclination ($r = +0.115$, $p = 0.139$),
-    surface brightness ($r = +0.062$, $p = 0.427$), and central density
-    ($r = +0.032$, $p = 0.685$), and only weakly correlated with gas fraction
-    ($r = -0.164$, $p = 0.034$), ruling out inclination deprojection and
+    Summary: across all 168 SPARC galaxies with measured onset radii, the
+    residuals are uncorrelated with galaxy inclination ($r = +0.096$, $p = 0.217$),
+    surface brightness ($r = +0.047$, $p = 0.543$), and central density
+    ($r = +0.016$, $p = 0.834$), and show only a weak gas-fraction association
+    ($r = -0.153$, $p = 0.048$; $p_{\rm adj} = 0.191$ after four-test correction), ruling out inclination deprojection and
     baryonic feedback artifacts.
 </div>
 
@@ -587,10 +567,10 @@
         style="max-width: 100%"
     />
     <figcaption>
-        Figure 2: Residual analysis of the SPARC $M^{1/3}$ scaling. (a) Scaling
-        relation colored by residual. (b-e) Correlations with baryonic
-        properties and screening proxies. (f) Gaussian residual distribution
-        ($\sigma = 0.48$ dex). (g) Correlations are weak in amplitude ($|r|&lt;0.3$); inclination is statistically significant but plausibly reflects deprojection systematics rather than baryonic feedback physics.
+        Figure 3: Residual analysis of the SPARC $M^{1/3}$ onset scaling ($\alpha_{\rm SPARC} = 0.352 \pm 0.043$, $\sigma = 0.48$ dex). (a) Scaling
+        relation colored by log-residual (color bar clamped to $[-1, +1]$ dex). (b–e) Residual correlations with baryonic
+        properties and central density. (f) Gaussian residual distribution
+        ($\sigma = 0.48$ dex). (g) Correlation magnitude summary compared against the $|r| = 0.3$ reference effect-size threshold; all residual correlations satisfy $|r| &lt; 0.2$, and the nominal gas-fraction association ($p = 0.048$) does not survive correction for the four tested residual comparisons ($p_{\rm adj} = 0.191$).
     </figcaption>
 </figure>
 
@@ -652,8 +632,8 @@
         LCDM+Feedback can accommodate the
         galaxy scaling but treats the normalization as a free parameter,
         offering no predictive link to other scales. TEP is distinctive in that
-        it poses the normalization of the galactic relation ($k \approx 7.9
-        \times 10^{-4}$ kpc/$M_\odot^{1/3}$, equivalently $\rho_{\rm trans}$)
+        it poses the normalization of the galactic relation ($k = 7.96
+        \times 10^{-4} \approx 8.0 \times 10^{-4}$ kpc/$M_\odot^{1/3}$, equivalently $\rho_{\rm trans}$)
         as a quantity to be derived from the same GNSS-anchored scalar sector —
         a stated falsification condition rather than an established link: the
         measured normalization is an independent empirical input pending that
@@ -680,6 +660,14 @@
     <li>
         <em>SPARC Residual Analysis.</em>
         <code>scripts/steps/step_7_sparc_residuals.py</code>
+    </li>
+    <li>
+        <em>Two-Branch RAR &amp; BTFR Analysis.</em>
+        <code>scripts/steps/step_10_two_branch_sparc_rar.py</code>, <code>scripts/steps/step_13_two_branch_btfr.py</code>
+    </li>
+    <li>
+        <em>Scale Audit &amp; Planetary Rotational Kinematics.</em>
+        <code>scripts/steps/step_14_scale_audit.py</code>, <code>scripts/steps/step_15_planetary_rotation.py</code>
     </li>
     <li>
         <em>Input Data.</em> <code>data/sparc/</code> (SPARC database tables)
@@ -709,10 +697,10 @@
         fluctuations.
     </li>
     <li>
-        Galaxies that never exceed the threshold (8 of 175) are excluded from
+        Galaxies that never exceed the threshold (7 of 175) are excluded from
         the fit.
     </li>
 </ol>
 <p>
-    The headline value $\alpha_{\rm SPARC}=0.355\pm0.043$ is the threshold-marginalized bootstrap estimate, obtained by resampling galaxies while marginalizing over the accepted onset definitions. The fiducial ($V_{\rm obs}/V_{\rm bar}>1.3$) definition alone gives $0.372\pm0.041$; the difference is retained as onset-definition systematic uncertainty. Varying the threshold from 1.1 to 1.5 yields exponents from 0.28 to 0.42, bracketing the headline estimate.
+    The headline value $\alpha_{\rm SPARC}=0.352\pm0.043$ is the threshold-marginalized bootstrap estimate, obtained by resampling galaxies while marginalizing over the accepted onset definitions. The fiducial ($V_{\rm obs}/V_{\rm bar}>1.3$) definition alone gives $0.369\pm0.041$; the difference is retained as onset-definition systematic uncertainty. Varying the threshold from 1.1 to 1.5 yields exponents from 0.27 to 0.41, bracketing the headline estimate.
 </p>

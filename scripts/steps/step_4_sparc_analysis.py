@@ -88,7 +88,7 @@ def parse_table2(filepath):
                 rotation_curves[name]['R'].append(float(parts[2]))
                 rotation_curves[name]['Vobs'].append(float(parts[3]))
                 rotation_curves[name]['e_Vobs'].append(float(parts[4]))
-                rotation_curves[name]['Vgas'].append(abs(float(parts[5])))
+                rotation_curves[name]['Vgas'].append(float(parts[5]))
                 rotation_curves[name]['Vdisk'].append(float(parts[6]))
                 rotation_curves[name]['Vbul'].append(float(parts[7]))
         except:
@@ -148,7 +148,8 @@ def run_enhanced_analysis():
             continue
         
         M_bar = props['L_36'] * ML_DISK + 1.33 * props['MHI']
-        V_bar = np.sqrt(rc['Vgas']**2 + ML_DISK * rc['Vdisk']**2 + ML_BULGE * rc['Vbul']**2)
+        V_bar2 = np.abs(rc['Vgas']) * rc['Vgas'] + ML_DISK * np.abs(rc['Vdisk']) * rc['Vdisk'] + ML_BULGE * np.abs(rc['Vbul']) * rc['Vbul']
+        V_bar = np.sqrt(np.clip(V_bar2, 0.0, None))
         
         for thresh in thresholds:
             R_dm = find_rdm_for_threshold(rc['R'], rc['Vobs'], V_bar, thresh)
@@ -288,7 +289,8 @@ def run_enhanced_analysis():
             continue
         
         M_bar = props['L_36'] * ML_DISK + 1.33 * props['MHI']
-        V_bar = np.sqrt(rc['Vgas']**2 + ML_DISK * rc['Vdisk']**2 + ML_BULGE * rc['Vbul']**2)
+        V_bar2 = np.abs(rc['Vgas']) * rc['Vgas'] + ML_DISK * np.abs(rc['Vdisk']) * rc['Vdisk'] + ML_BULGE * np.abs(rc['Vbul']) * rc['Vbul']
+        V_bar = np.sqrt(np.clip(V_bar2, 0.0, None))
         
         # Convert to accelerations (in m/s^2)
         R_m = rc['R'] * kpc_to_m
@@ -371,79 +373,6 @@ def run_enhanced_analysis():
     print_status(f"  g_TEP = {g_transition:.2e} m/s^2", "INFO")
     print_status(f"  a0_MOND = {a0_MOND:.2e} m/s^2", "INFO")
     print_status(f"  Ratio g_TEP / a0_MOND = {g_transition / a0_MOND:.2f}", "INFO")
-    
-    # --- GENERATE ENHANCED FIGURE ---
-    fig, axes = plt.subplots(2, 2, figsize=FIG_SIZE[FIG_PRESET], constrained_layout=True)
-    
-    # Panel A: Threshold sensitivity with marginalized result
-    ax1 = axes[0, 0]
-    ax1.errorbar(thresholds[:len(exponents)], exponents, yerr=std_errs, 
-                 fmt='o-', color=COLORS['accent'], markersize=5,
-                 capsize=3, linewidth=1.5, label='Fitted exponent')
-    ax1.axhline(1/3, color='black', linestyle='--', 
-                linewidth=1.5, label=r'TEP: $\alpha = 1/3$')
-    ax1.axhline(alpha_marginalized, color=COLORS['highlight'], linestyle='-',
-                linewidth=1.5, label=f'Marginalized: {alpha_marginalized:.3f}')
-    ax1.fill_between([thresholds[0], thresholds[-1]], 
-                     [alpha_marginalized - alpha_err_marginalized]*2,
-                     [alpha_marginalized + alpha_err_marginalized]*2,
-                     alpha=0.2, color=COLORS['highlight'])
-    ax1.set_xlabel(r'Threshold ($V_{obs}/V_{bar}$)')
-    ax1.set_ylabel(r'Fitted Exponent $\alpha$')
-    ax1.set_title(r'$\bf{a)}$ Threshold Sensitivity Analysis', loc='left')
-    ax1.legend(loc='upper left', frameon=False)
-    ax1.set_ylim(0.2, 0.5)
-    ax1.grid(True, alpha=0.3)
-    
-    # Panel B: Main scaling relation with fixed α = 1/3
-    ax2 = axes[0, 1]
-    ax2.scatter(M_arr, R_arr, c=COLORS['secondary'], s=20, alpha=0.55,
-                edgecolors='none', label='SPARC galaxies')
-    M_range = np.logspace(np.log10(M_arr.min()), np.log10(M_arr.max()), 100)
-    ax2.plot(M_range, k * M_range**(1/3), '-', color=COLORS['accent'],
-             linewidth=2, label=r'TEP: $R \propto M^{1/3}$')
-    ax2.set_xscale('log')
-    ax2.set_yscale('log')
-    ax2.set_xlabel(r'Baryonic Mass $M_{bar}$ ($M_\odot$)')
-    ax2.set_ylabel(r'Mass Discrepancy Radius $R_{DM}$ (kpc)')
-    ax2.set_title(r'$\bf{b)}$ Scaling Relation ($\alpha = 1/3$ fixed)', loc='left')
-    ax2.legend(loc='upper left', frameon=False)
-    ax2.grid(True, which='major', alpha=0.3)
-    
-    # Panel C: Residuals histogram
-    ax3 = axes[1, 0]
-    ax3.hist(residuals, bins=25, color=COLORS['primary_light'], 
-             edgecolor='black', alpha=0.6, density=True)
-    x_gauss = np.linspace(-1.5, 1.5, 100)
-    ax3.plot(x_gauss, stats.norm.pdf(x_gauss, 0, rms_scatter), 
-             color='black', linewidth=1.5,
-             label=rf'Gaussian ($\sigma = {rms_scatter:.2f}$ dex)')
-    ax3.axvline(0, color='black', linestyle=':', linewidth=1)
-    ax3.set_xlabel(r'$\log_{10}(R_{DM} / R_{pred})$')
-    ax3.set_ylabel('Probability Density')
-    ax3.set_title(r'$\bf{c)}$ Residuals from TEP Prediction', loc='left')
-    ax3.legend(frameon=False)
-    ax3.set_xlim(-1.5, 1.5)
-    ax3.grid(True, alpha=0.3)
-    
-    # Panel D: Mass independence check
-    ax4 = axes[1, 1]
-    ax4.scatter(M_arr, R_arr / R_pred, c=COLORS['hover'], s=20, alpha=0.55,
-                edgecolors='none')
-    ax4.axhline(1.0, color='black', linestyle='--', linewidth=1.5)
-    ax4.axhline(np.median(R_arr / R_pred), color=COLORS['highlight'],
-                linestyle=':', linewidth=1.5, 
-                label=f'Median = {np.median(R_arr / R_pred):.2f}')
-    ax4.set_xscale('log')
-    ax4.set_xlabel(r'Baryonic Mass $M_{bar}$ ($M_\odot$)')
-    ax4.set_ylabel(r'Ratio $R_{DM} / R_{TEP}$')
-    ax4.set_title(r'$\bf{d)}$ Mass Independence of Residuals', loc='left')
-    ax4.set_ylim(0, 5)
-    ax4.legend(frameon=False)
-    ax4.grid(True, which='major', alpha=0.3)
-    
-    plt.savefig(os.path.join(output_dir, 'figure_5_sparc_enhanced.png'))
-    print_status("Saved: figure_5_sparc_enhanced.png", "SUCCESS")
     
     # --- SUMMARY ---
     print_status("ENHANCED ANALYSIS SUMMARY", "TITLE")

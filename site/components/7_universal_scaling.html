@@ -23,8 +23,8 @@
     </li>
     <li>
         <strong>Cosmological Scale:</strong> The extrapolated Temporal Topology saturation radius for
-        RBH-1 ($M \approx 10^7 M_\odot$) can be compared to the Schwarzschild
-        diameter, placing the object near the crossover mass where horizon and
+        RBH-1 ($M \approx 2 \times 10^7 M_\odot$, near the crossover mass $M_\times \approx 3.04 \times 10^7 M_\odot$) can be compared to the Schwarzschild
+        radius, placing the object near the crossover regime where horizon and
         soliton interpretations are maximally degenerate.
     </li>
 </ol>
@@ -84,12 +84,12 @@
         $10^{-3}$–$10^{6}$ g/cm³ (spanning interstellar gas to nuclear density).
         The GNSS constraint ($R_T(M_\oplus)$ within 50% of 4200 km) permits
         $\rho_T$ in the range $\sim$6–160 g/cm³ ($\approx$1.4 dex). The RBH-1
-        constraint ($R_T(10^7 M_\odot)$ within 50% of $2R_S$) permits
-        $\rho_T$ in the range $\sim$7–180 g/cm³ ($\approx$1.4 dex). The
-        overlap is $\sim$7–160 g/cm³ ($\approx$1.4 dex). Under a uniform
+        crossover constraint ($R_T(2 \times 10^7 M_\odot)$ within 50% of $R_S$; $R_T/R_S = 1.32$ at $\rho_T = 20$ g/cm³) permits
+        $\rho_T$ in the range $\sim$14–370 g/cm³ ($\approx$1.4 dex). The
+        overlap is $\sim$14–150 g/cm³ ($\approx$1.05 dex). Under a uniform
         logarithmic prior spanning 9 dex, the probability of a randomly
         drawn $\rho_T$ satisfying both constraints simultaneously is
-        $P \approx 1.4/9 \approx 0.15$ ($\sim$15%). While not overwhelmingly
+        $P \approx 1.05/9 \approx 0.12$ ($\sim$12%). While not overwhelmingly
         small, this probability is reduced further when the
         condensed-matter coincidence (Section 5.3) is included as a third
         independent cross-check. Given the GNSS calibration and the
@@ -128,7 +128,7 @@
             structure persists across independent clock solutions from CODE,
             ESA, and IGS (1999–2024), disfavoring software-specific
             processing artifacts (e.g., Bernese vs. GIPSY). The recovered $L_c$
-            spans $\sim$3,330–4,549 km across centers (a $\sim$23% spread).
+            spans $\sim$3,330–4,549 km across centers (CV $18.2\%$, $\sim \pm 15\%$ half-range).
         </li>
         <li>
             <strong>Null Tests:</strong> (i) Randomizing satellite epochs
@@ -143,7 +143,7 @@
             period harmonics (half-sidereal, ~12 hr). Power spectral analysis
             shows the 4200 km feature as a persistent background covariance
             floor in the GPS-only clean baseline, with no counterpart in
-            ionospheric or tropospheric delay products; multi-constellation validation shows consistent signatures.
+            ionospheric or tropospheric delay products; combined multi-GNSS receiver-clock products (Paper 14) recover the same band-ordered correlation structure.
         </li>
         <li>
             <strong>Dataset:</strong> IGS final clock products (CLK files),
@@ -160,35 +160,21 @@
 </div>
 
 <div class="callout">
-    <h4>Box 6.4: Derivation of the Scaling Law</h4>
+    <h4>Box 6.4: Geometric Origin of the Saturation-Radius Law</h4>
     <p>
-        The $R \propto M^{1/3}$ scaling is not an ad hoc ansatz but a direct
-        consequence of saturation in the scalar sector. Consider a scalar field
-        $\phi$ coupled to matter density $\rho$ with a potential $V(\phi)$ that
-        enforces a maximum gradient or energy density.
-    </p>
-    <p>
-        In the dense limit (compact objects), the scalar field profile
-        saturates to a core of constant effective energy density $\rho_T$. For a
-        self-gravitating configuration of total mass $M$, the volume of this
-        saturated core is constrained by mass conservation:
+        For a universal macroscopic proximity-density parameter $\rho_T$, the characteristic source-mass saturation radius $R_T(M)$ is defined geometrically as the radius enclosing mass $M$ at reference density $\rho_T$:
     </p>
     <div class="equation">
-        \begin{equation} \label{eq:mass_conservation} M \approx \frac{4}{3}\pi R_T^3 \rho_T. \end{equation}
+        \begin{equation} \label{eq:mass_conservation} M = \frac{4}{3}\pi R_T^3 \rho_T. \end{equation}
     </div>
     <p>
-        Solving for the radius yields the characteristic scaling:
+        Solving for the radius yields the characteristic $M^{1/3}$ scaling:
     </p>
     <div class="equation">
-        \begin{equation} \label{eq:scaling_law} R_T \propto \left(\frac{M}{\rho_T}\right)^{1/3}. \end{equation}
+        \begin{equation} \label{eq:scaling_law} R_T(M) = \left(\frac{3M}{4\pi\rho_T}\right)^{1/3} \propto \left(\frac{M}{\rho_T}\right)^{1/3}. \end{equation}
     </div>
     <p>
-        This relation describes the boundary of the saturated "soliton" region.
-        Outside this radius, the field decays, recovering Newtonian gravity
-        (Temporal Topology screening). Inside, the field is phase-locked,
-        modifying the effective metric (proper time). The "Universal Scaling" is
-        thus simply the statement that the scalar potential $V(\phi)$ has a maximum capacity to
-        support scalar gradients before saturating at $\rho_T$.
+        As shown in Box 6.5 and Appendix C, $\rho_T$ is the matter-density reference scale at which the clock-amplitude response $S_A(\bar\rho) = \min[1,\,(\bar\rho/\rho_T)^{1/3}]$ saturates and the interior field becomes Compton-resolved ($\lambda_c(\bar\rho) \lesssim R_T(M)$), rather than a literal energy density of the scalar field itself ($\rho_{\rm eff} \ll \rho$). Demonstrating that $R_T(M)$ corresponds to the spatial transition scale of a finite, stratified body requires solving the boundary-value problem in the source's density profile (executed on the canonical-kinetic benchmark for the 4-layer PREM Earth in Step 14, yielding $R_{\rm grad} = 1.18\,R_T(M_\oplus)$ and $L_c^{\rm PREM} = 4{,}010$ km).
     </p>
 </div>
 
@@ -204,7 +190,7 @@
     </p>
     <p><strong>1. Field Equation and Equilibrium</strong></p>
     <p>
-        For a static, spherically symmetric configuration, the scalar field
+        For a static, spherically symmetric configuration on the canonical-kinetic equilibrium benchmark ($P_X \to 1$; see Appendix C.2, Eq.&nbsp;$\ref{eq:nonlinear_chameleon_eom}$ for the operative nonlinear kinetic operator $\nabla\cdot(P_X\nabla u) = M_{\rm Pl}^{-2}V_{\rm eff}'(u)$), the scalar field
         equation is:
     </p>
     <div class="equation">
@@ -353,13 +339,33 @@
     A further structural implication follows from the different mass scalings.
     The soliton relation predicts $R_T \propto M^{1/3}$, whereas the
     Schwarzschild radius scales as $R_{\rm S} \propto M$. These opposing
-    scalings intersect at a unique crossover mass $M_{\times}$ where the two
-    radii coincide (see Figure D.1). Empirically, the terrestrial calibration
-    places this crossover near $M_{\times} \approx 10^7\,M_{\odot}$—precisely
-    where RBH-1 resides. Objects near $M_{\times}$ are expected to be maximally
-    degenerate between horizon and soliton interpretations, making RBH-1 an
+    scalings intersect at a unique crossover mass $M_{\times} = \sqrt{3c^6/(32\pi G^3\rho_T)}$ where the two
+    radii coincide (see Figure 7). Empirically, the terrestrial calibration
+    ($\rho_T = 20$ g/cm³) places this crossover at $M_{\times} \approx 3.04 \times 10^7\,M_{\odot}$ ($R_T = R_{\rm S} \approx 8.97 \times 10^7$ km)—directly adjacent
+    to the mass regime where RBH-1 ($M \approx 2 \times 10^7\,M_{\odot}$) resides. Objects near $M_{\times}$ are expected to be maximally
+    degenerate between Schwarzschild-scale and saturation-scale interpretations, making RBH-1 an
     unusually diagnostic system.
 </p>
+
+<figure style="margin: 30px 0">
+    <img
+        src="figures/figure_2_scaling.png"
+        alt="Saturation Radius vs. Schwarzschild Radius Across Mass Scales"
+        style="max-width: 100%"
+    />
+    <figcaption
+        style="
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        "
+    >
+        Figure 7: Saturation Radius vs. Schwarzschild Radius Across Mass Scales. The solid curve shows the
+        geometric saturation radius $R_T(M) = (3M/4\pi\rho_T)^{1/3} \propto M^{1/3}$ calibrated via
+        terrestrial GNSS clock data ($L_c \approx 4{,}200$ km, $R_T(M_\oplus) \approx 4{,}146$ km at $\rho_T = 20$ g/cm³), while the dashed line shows the General Relativistic Schwarzschild radius $R_{\rm S}(M) = 2GM/c^2 \propto M$. The two constructed length scales intersect at the crossover mass $M_\times = \sqrt{3c^6/(32\pi G^3\rho_T)} \approx 3.04 \times 10^7\,M_\odot$, separating the $R_T > R_{\rm S}$ saturation-scale regime from the $R_{\rm S} > R_T$ Schwarzschild-scale regime; RBH-1 is plotted at its independently inferred mass $M \approx 2 \times 10^7\,M_\odot$ ($R_T \approx 7.80 \times 10^7$ km vs. $R_{\rm S} \approx 5.91 \times 10^7$ km; van Dokkum et al. 2025), directly adjacent to the crossover.
+    </figcaption>
+</figure>
 
 <p>
     The identification is thereby restricted to the crossover neighbourhood:
@@ -370,8 +376,7 @@
     $10^{6}$ km against $R_{\rm S} \approx 30$ km — so soliton-realized
     compact objects at stellar masses would appear as extended structures and
     are incompatible with observed merger phenomenology. For $M \gg M_{\times}$
-    the saturation radius retreats far inside the horizon (Appendix E computes
-    $S \sim 0.03$ for M87*), and the identification ceases to be degenerate.
+    the saturation radius retreats far inside the horizon (for $\text{M87}^*$ at $M \approx 6.5 \times 10^9\,M_\odot$, $R_T \approx 3.6\text{ AU}$ against $R_{\rm S} \approx 128\text{ AU}$ gives $S \sim 0.03$, whereas $\text{Sgr A}^*$ at $M \approx 4.3 \times 10^6\,M_\odot$ has $R_T \approx 0.31\text{ AU}$ and $S \sim 3.7$, placing its saturation boundary across the observed photon-ring scale), and the identification ceases to be degenerate.
     Two resolutions are admitted, and the corpus requires one of them: either
     soliton-realized compact objects exist only in the crossover band, or the
     weak-field $R_T(M)$ construction fails at horizon compactness and must be
@@ -400,8 +405,8 @@
     cosmological scales. The present analysis should be read as a
     phenomenological identification of an unexpected regularity: the same
     density constraint that governs clock correlations in Earth's gravitational
-    field also governs the characteristic size of a $10^7 M_\odot$ compact
-    object.
+    field also governs the characteristic size of an $M \sim 10^7 M_\odot$ compact
+    object ($M \approx 2 \times 10^7 M_\odot$ for RBH-1).
 </p>
 
 <h3>Dependency Structure and Constraint Isolation</h3>

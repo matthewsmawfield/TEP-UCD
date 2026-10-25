@@ -109,7 +109,7 @@ async function buildStaticSite() {
         const distFiguresPath = path.join(distDir, 'figures');
         if (fs.existsSync(resultsFiguresPath)) {
             console.log('📁 Copying results/figures/ → dist/figures/');
-            copyRecursiveSync(resultsFiguresPath, distFiguresPath, ['screening_comprehensive.png']);
+            copyRecursiveSync(resultsFiguresPath, distFiguresPath);
         }
         
         // Copy manifest.json for reference

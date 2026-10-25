@@ -96,9 +96,9 @@ def run_ultimate_screening():
         "Hulse-Taylor": {"M": 1.44 * M_sun, "R": 11, "type": "pulsar", "rho": 6e14},
         "Double Pulsar": {"M": 1.34 * M_sun, "R": 12, "type": "pulsar", "rho": 3.7e14},
         "Vela X-1": {"M": 1.8 * M_sun, "R": 12, "type": "pulsar", "rho": 5e14},
-        # Black Holes
-        "RBH-1": {"M": 2.0e7 * M_sun, "R": 3.2e7, "type": "bh", "rho": 2e5},
-        "M87*": {"M": 6.5e9 * M_sun, "R": 1.9e10, "type": "bh", "rho": 6e3},
+        # Black Holes (evaluated at their Schwarzschild radii R_S = 2GM/c^2 and horizon mean densities rho_S = 3M / (4 pi R_S^3))
+        "RBH-1": {"M": 2.0e7 * M_sun, "R": 5.907e7, "type": "bh", "rho": 46.10},
+        "M87*": {"M": 6.5e9 * M_sun, "R": 1.920e10, "type": "bh", "rho": 4.37e-4},
     }
 
     # Derived Metrics
@@ -108,66 +108,6 @@ def run_ultimate_screening():
         obj["R_T"] = R_T
         obj["screening"] = R_T / obj["R"]
         obj["M_solar"] = obj["M"] / M_sun
-
-    # --- Plotting ---
-    fig = plt.figure(figsize=FIG_SIZE[FIG_PRESET], constrained_layout=True)
-    gs = fig.add_gridspec(2, 3)
-
-    # Colors & Markers
-    colors = {
-        "planet": COLORS["accent"],
-        "bd": COLORS["secondary"],
-        "ms": COLORS["highlight"],
-        "wd": COLORS["primary_light"],
-        "ns": COLORS["hover"],
-        "pulsar": COLORS["text"],
-        "bh": COLORS["primary"],
-    }
-    markers = {
-        "planet": "o",
-        "bd": "p",
-        "ms": "s",
-        "wd": "^",
-        "ns": "D",
-        "pulsar": "*",
-        "bh": "H",
-    }
-
-    # --- Panel A: Mass-Density Phase Space ---
-    ax1 = fig.add_subplot(gs[0, 0])
-    ax1.set_title(r"$\bf{a)}$ Mass-Density Phase Space", loc="left")
-
-    for name, obj in objects.items():
-        t = obj["type"]
-        ax1.scatter(
-            obj["M_solar"],
-            obj["rho"],
-            c=colors.get(t, "gray"),
-            marker=markers.get(t, "o"),
-            s=60,
-            edgecolors="k",
-            lw=0.5,
-            zorder=5,
-        )
-
-    # Mark the saturation scale rho_T as a reference line only.
-    # NOTE: rho_T is a saturation scale of the temporal-field topology,
-    # not an ambient-density switch. GR recovery is controlled by suppression
-    # of the observable shear/source-charge sector, not by rho > rho_T alone.
-    ax1.axhline(rho_T, color="k", ls="--", alpha=0.5)
-    ax1.text(1e-7, rho_T * 2, r"$\rho_T \approx 20$ g/cm³ (saturation)", fontsize=8)
-
-    ax1.set_xscale("log")
-    ax1.set_yscale("log")
-    ax1.set_xlim(1e-8, 1e11)
-    ax1.set_ylim(1e-2, 1e16)
-    ax1.set_xlabel(r"Mass ($M_{\odot}$)")
-    ax1.set_ylabel(r"Mean Density (g/cm³)")
-    ax1.grid(True, which="major", alpha=0.3)
-
-    # --- Panel B: Empirical Screening Law ---
-    ax2 = fig.add_subplot(gs[0, 1])
-    ax2.set_title(r"$\bf{b)}$ Empirical Screening Law", loc="left")
 
     # Sample selection for the empirical fit: dense objects (excluding BHs).
     # The rho > rho_T cut is a sample-selection choice, not a physical threshold.
@@ -180,123 +120,7 @@ def run_ultimate_screening():
         if obj["rho"] > rho_T and obj["type"] != "bh"
     ]
     slope, intercept, r_val, _, std_err = stats.linregress(np.log10(rho_vals), np.log10(scr_vals))
-
-    rho_line = np.logspace(1, 16, 10)
-    scr_line = 10**intercept * rho_line**slope
-    ax2.loglog(
-        rho_line,
-        scr_line,
-        "k--",
-        alpha=0.6,
-        label=f"Fit: $S \\propto \\rho^{{{slope:.2f}}}$ ($R^2={r_val**2:.2f}$)",
-    )
-
-    for name, obj in objects.items():
-        if obj["type"] != "bh":
-            t = obj["type"]
-            ax2.scatter(
-                obj["rho"],
-                obj["screening"],
-                c=colors.get(t, "gray"),
-                marker=markers.get(t, "o"),
-                s=60,
-                edgecolors="k",
-                lw=0.5,
-            )
-
-    ax2.set_xlabel(r"Mean Density (g/cm³)")
-    ax2.set_ylabel(r"Screening Factor")
-    ax2.legend(fontsize=8)
-    ax2.grid(True, which="major", alpha=0.3)
-
-    # --- Panel C: GR Test Precision ---
-    ax3 = fig.add_subplot(gs[0, 2])
-    ax3.set_title(r"$\bf{c)}$ GR Test Precision", loc="left")
-
-    tests = [
-        ("Solar System", 1e-5, objects["Sun"]["screening"]),
-        ("Binary Pulsar", 1e-3, objects["Hulse-Taylor"]["screening"]),
-        ("Double Pulsar", 5e-4, objects["Hulse-Taylor"]["screening"] * 0.8),
-    ]
-    for name, prec, scr in tests:
-        ax3.scatter(scr, prec, marker="*", s=150, c="gold", edgecolors="k")
-        ax3.text(scr, prec * 1.5, name, fontsize=8, ha="center")
-
-    ax3.loglog([1e0, 1e6], [1e-1, 1e-7], "k:", alpha=0.3, label="Theoretical Sensitivity")
-    ax3.set_xlabel("Screening Factor")
-    ax3.set_ylabel("GR Test Precision")
-    ax3.grid(True, which="major", alpha=0.3)
-
-    # --- Panel D: RBH-1 Crossover ---
-    ax4 = fig.add_subplot(gs[1, 0])
-    ax4.set_title(r"$\bf{d)}$ RBH-1 Crossover", loc="left")
-
-    m_range = np.logspace(-6, 11, 100)
-    r_T = (R_TEP_earth / 1000) * (m_range * M_sun / M_earth) ** (1 / 3)
-    r_sch = 2 * G * (m_range * M_sun) / c**2 / 1000
-
-    ax4.loglog(m_range, r_T, "-", color=COLORS["accent"], label=r"$R_T$ ($M^{1/3}$)")
-    ax4.loglog(m_range, r_sch, "k--", label=r"Schwarzschild ($M$)")
-
-    rbh = objects["RBH-1"]
-    ax4.scatter(
-        rbh["M_solar"],
-        rbh["R_T"],
-        marker="*",
-        s=200,
-        c=COLORS["highlight"],
-        edgecolors="k",
-        zorder=10,
-    )
-    ax4.text(rbh["M_solar"] * 3, rbh["R_T"], "RBH-1\nCrossover", va="center", fontsize=8)
-
-    ax4.set_xlabel(r"Mass ($M_{\odot}$)")
-    ax4.set_ylabel(r"Radius (km)")
-    ax4.legend(fontsize=8)
-    ax4.grid(True, which="major", alpha=0.3)
-
-    # --- Panel E: Screening by Class ---
-    ax5 = fig.add_subplot(gs[1, 1])
-    ax5.set_title(r"$\bf{e)}$ Screening by Class", loc="left")
-
-    classes = ["planet", "ms", "wd", "ns", "pulsar"]
-    labels = ["Planet", "Main Seq", "WD", "NS", "Pulsar"]
-    vals = [
-        [obj["screening"] for obj in objects.values() if obj["type"] == c] for c in classes
-    ]
-    means = [np.mean(v) if v else 0 for v in vals]
-
-    x_pos = np.arange(len(classes))
-    ax5.bar(x_pos, means, color=[colors[c] for c in classes], edgecolor="k", alpha=0.8)
-    ax5.set_xticks(x_pos)
-    ax5.set_xticklabels(labels, fontsize=8, rotation=45)
-    ax5.set_yscale("log")
-    ax5.set_ylabel("Avg Screening Factor")
-    ax5.axhline(1, color="gray", ls=":")
-
-    # --- Panel F: Summary ---
-    ax6 = fig.add_subplot(gs[1, 2])
-    ax6.axis("off")
-    ax6.text(0.05, 0.9, "Summary Findings:", fontweight="bold")
-    text = (
-        "1. Universal Scaling:\n"
-        "   Single law connects Earth to RBH-1.\n\n"
-        "2. Temporal Topology:\n"
-        "   Density-dependent screening ($S \\propto \\rho^{1/3}$)\n"
-        "   recovers GR in dense environments.\n\n"
-        "3. GR Consistency:\n"
-        "   High-precision tests occur in highly\n"
-        "   screened regimes (S > 1000).\n\n"
-        "4. RBH-1 Prediction:\n"
-        "   Parameter-free crossover at $10^7 M_{\\odot}$."
-    )
-    ax6.text(0.05, 0.8, text, va="top", linespacing=1.55)
-
-    plt.savefig(
-        os.path.join(output_dir, "screening_comprehensive.png")
-    )
-    print_status(f"Figure saved to {os.path.join(output_dir, 'screening_comprehensive.png')}", "SUCCESS")
-    print_status(f"Screening law fit: S ~ rho^{slope:.2f}, R^2 = {r_val**2:.2f}", "INFO")
+    print_status(f"Screening law fit: S ~ rho^{slope:.4f}, R^2 = {r_val**2:.5f}", "INFO")
 
     # Save numerical outputs
     output_data = {

@@ -26,6 +26,7 @@ import sys
 import json
 from collections import defaultdict
 from scipy import stats
+from scipy.optimize import minimize
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
@@ -90,7 +91,7 @@ def parse_table2(filepath):
                 rotation_curves[name]['R'].append(float(parts[2]))
                 rotation_curves[name]['Vobs'].append(float(parts[3]))
                 rotation_curves[name]['e_Vobs'].append(float(parts[4]))
-                rotation_curves[name]['Vgas'].append(abs(float(parts[5])))
+                rotation_curves[name]['Vgas'].append(float(parts[5]))
                 rotation_curves[name]['Vdisk'].append(float(parts[6]))
                 rotation_curves[name]['Vbul'].append(float(parts[7]))
         except (ValueError, IndexError):
@@ -103,7 +104,7 @@ def parse_table2(filepath):
 
 def find_rdm_for_threshold(R, Vobs, Vbar, threshold):
     """First radius where Vobs/Vbar exceeds threshold (step_4 convention)."""
-    valid = (Vbar > 5) & (Vobs > 0)
+    valid = (Vbar > 5) & (Vobs > 0) & (R > 0)
     if not np.any(valid):
         return np.nan
     R_valid = R[valid]
@@ -112,6 +113,29 @@ def find_rdm_for_threshold(R, Vobs, Vbar, threshold):
     if np.any(mask):
         return R_valid[np.argmax(mask)]
     return np.nan
+
+
+def find_rdm_interpolated(R, Vobs, Vbar, threshold):
+    """Log-linear interpolated interior crossing where Vobs/Vbar crosses threshold.
+    Returns (R_dm_interp, is_left_censored). When ratio > threshold already at the
+    innermost valid radial bin (idx == 0), the crossing is left-censored by the
+    innermost beam/sampling radius R_min rather than bracketed by the curve.
+    """
+    valid = (Vbar > 5) & (Vobs > 0) & (R > 0)
+    if not np.any(valid):
+        return np.nan, False
+    R_valid = R[valid]
+    ratio = Vobs[valid] / Vbar[valid]
+    mask = ratio > threshold
+    if not np.any(mask):
+        return np.nan, False
+    idx = int(np.argmax(mask))
+    if idx == 0:
+        return float(R_valid[0]), True
+    r0, r1 = np.log10(R_valid[idx - 1]), np.log10(R_valid[idx])
+    y0, y1 = ratio[idx - 1], ratio[idx]
+    r_c = 10.0 ** (r0 + (threshold - y0) / (y1 - y0) * (r1 - r0))
+    return float(r_c), False
 
 
 def enclosed_mean_density(R, Vbar, R_dm):
@@ -195,7 +219,10 @@ def run_confound_test():
 
     per_threshold = {}
     for thresh in THRESHOLDS:
-        masses, rdm_over_rd, rho_enc, names = [], [], [], []
+        masses, m_enc_list, r_dm_list, rdm_over_rd, rho_enc, g_bar_at_rdm, names = [], [], [], [], [], [], []
+        masses_brk, m_enc_brk, r_dm_brk, rd_brk, vat_brk, v22_brk, rdm_over_rd_brk, rho_enc_brk, g_bar_brk = [], [], [], [], [], [], [], [], []
+        tobit_m, tobit_r_interp, tobit_rd, tobit_rho, tobit_is_cens = [], [], [], [], []
+        n_left_censored = 0
         for name, rc in rotation_curves.items():
             if name not in galaxy_props:
                 continue
@@ -205,7 +232,8 @@ def run_confound_test():
                 continue
             if len(rc['R']) < 5:
                 continue
-            V_bar = np.sqrt(rc['Vgas']**2 + ML_DISK * rc['Vdisk']**2 + ML_BULGE * rc['Vbul']**2)
+            V_bar2 = np.abs(rc['Vgas']) * rc['Vgas'] + ML_DISK * np.abs(rc['Vdisk']) * rc['Vdisk'] + ML_BULGE * np.abs(rc['Vbul']) * rc['Vbul']
+            V_bar = np.sqrt(np.clip(V_bar2, 0.0, None))
             M_bar = props['L_36'] * ML_DISK + GAS_FACTOR * props['MHI']
             R_dm = find_rdm_for_threshold(rc['R'], rc['Vobs'], V_bar, thresh)
             if not np.isfinite(R_dm) or R_dm <= 0 or M_bar <= 0:
@@ -213,47 +241,213 @@ def run_confound_test():
             rho = enclosed_mean_density(rc['R'], V_bar, R_dm)
             if not np.isfinite(rho) or rho <= 0:
                 continue
+            v_at = float(np.interp(R_dm, rc['R'], V_bar))
+            m_enc = (v_at ** 2) * R_dm / G_KPC
+            g_at = (v_at ** 2) / R_dm
             masses.append(M_bar)
+            m_enc_list.append(m_enc)
+            r_dm_list.append(R_dm)
             rdm_over_rd.append(R_dm / R_d)
             rho_enc.append(rho)
+            g_bar_at_rdm.append(g_at)
             names.append(name)
+
+            R_dm_c, is_cens = find_rdm_interpolated(rc['R'], rc['Vobs'], V_bar, thresh)
+            if np.isfinite(R_dm_c) and R_dm_c > 0:
+                rho_c_all = enclosed_mean_density(rc['R'], V_bar, R_dm_c)
+                if np.isfinite(rho_c_all) and rho_c_all > 0:
+                    tobit_m.append(M_bar)
+                    tobit_r_interp.append(R_dm_c)
+                    tobit_rd.append(R_d)
+                    tobit_rho.append(rho_c_all)
+                    tobit_is_cens.append(bool(is_cens))
+            if is_cens:
+                n_left_censored += 1
+            elif np.isfinite(R_dm_c) and R_dm_c > 0:
+                rho_c = enclosed_mean_density(rc['R'], V_bar, R_dm_c)
+                if np.isfinite(rho_c) and rho_c > 0:
+                    v_at_c = float(np.interp(R_dm_c, rc['R'], V_bar))
+                    v_22_c = float(np.interp(2.2 * R_d, rc['R'], V_bar))
+                    m_enc_c = (v_at_c ** 2) * R_dm_c / G_KPC
+                    g_at_c = (v_at_c ** 2) / R_dm_c
+                    masses_brk.append(M_bar)
+                    m_enc_brk.append(m_enc_c)
+                    r_dm_brk.append(R_dm_c)
+                    rd_brk.append(R_d)
+                    vat_brk.append(v_at_c)
+                    v22_brk.append(v_22_c)
+                    rdm_over_rd_brk.append(R_dm_c / R_d)
+                    rho_enc_brk.append(rho_c)
+                    g_bar_brk.append(g_at_c)
 
         size_stats = summarize_invariant(rdm_over_rd, masses)
         dens_stats = summarize_invariant(rho_enc, masses)
+        accel_stats = summarize_invariant(g_bar_at_rdm, masses)
+        size_stats_brk = summarize_invariant(rdm_over_rd_brk, masses_brk)
+        dens_stats_brk = summarize_invariant(rho_enc_brk, masses_brk)
+        accel_stats_brk = summarize_invariant(g_bar_brk, masses_brk)
+
+        # Left-censored Tobit MLE keeping all galaxies (left-censored idx==0 as upper bounds R_DM <= R_min)
+        tx = np.log10(tobit_m)
+        ty_size = np.log10(np.array(tobit_r_interp) / np.array(tobit_rd))
+        ty_rad = np.log10(np.array(tobit_r_interp))
+        ty_rho = np.log10(np.array(tobit_rho))
+        tcens = np.array(tobit_is_cens, dtype=bool)
+        def _fit_tobit_vec(y_vec, right_cens=False):
+            def _nll(params):
+                a_t, b_t, lsig_t = params
+                sig_t = np.exp(lsig_t)
+                z_t = (y_vec - (a_t + b_t * tx)) / sig_t
+                if right_cens:
+                    return -(np.sum(stats.norm.logpdf(z_t[~tcens]) - lsig_t) + np.sum(stats.norm.logsf(z_t[tcens])))
+                return -(np.sum(stats.norm.logpdf(z_t[~tcens]) - lsig_t) + np.sum(stats.norm.logcdf(z_t[tcens])))
+            r_t = minimize(_nll, [float(np.mean(y_vec[~tcens])), 0.1, np.log(0.4)], method="BFGS")
+            b_t = float(r_t.x[1])
+            se_t = float(np.sqrt(r_t.hess_inv[1, 1]))
+            z_t = b_t / se_t
+            p_t = float(2.0 * (1.0 - stats.norm.cdf(abs(z_t))))
+            return b_t, se_t, float(z_t), p_t
+
+        b_tob_size, se_tob_size, z_tob_size, p_tob_size = _fit_tobit_vec(ty_size, False)
+        b_tob_rad, se_tob_rad, z_tob_rad, p_tob_rad = _fit_tobit_vec(ty_rad, False)
+        b_tob_rho_rc, se_tob_rho_rc, z_tob_rho_rc, p_tob_rho_rc = _fit_tobit_vec(ty_rho, True)
+        sl_rad_brk, ic_rad_brk, r_rad_brk, p_rad_brk, se_rad_brk = stats.linregress(np.log10(masses_brk), np.log10(r_dm_brk))
+
+        # Non-circular partial correlation on resolved interior crossings:
+        # (a) V_bar(R_DM) vs R_d, and (b) fixed-radius disk peak V_bar(2.2 R_d) vs R_d (zero dependence on R_DM!)
+        log_r_b = np.log10(r_dm_brk)
+        log_v_b = np.log10(vat_brk)
+        log_v22_b = np.log10(v22_brk)
+        log_rd_b = np.log10(rd_brk)
+        res_r_rd = log_r_b - np.polyval(np.polyfit(log_rd_b, log_r_b, 1), log_rd_b)
+        res_v_rd = log_v_b - np.polyval(np.polyfit(log_rd_b, log_v_b, 1), log_rd_b)
+        r_part_v_given_rd, p_part_v_given_rd = stats.pearsonr(res_v_rd, res_r_rd)
+
+        res_r_v = log_r_b - np.polyval(np.polyfit(log_v_b, log_r_b, 1), log_v_b)
+        res_rd_v = log_rd_b - np.polyval(np.polyfit(log_v_b, log_rd_b, 1), log_v_b)
+        r_part_rd_given_v, p_part_rd_given_v = stats.pearsonr(res_rd_v, res_r_v)
+
+        res_v22_rd = log_v22_b - np.polyval(np.polyfit(log_rd_b, log_v22_b, 1), log_rd_b)
+        r_part_v22_given_rd, p_part_v22_given_rd = stats.pearsonr(res_v22_rd, res_r_rd)
+        res_r_v22 = log_r_b - np.polyval(np.polyfit(log_v22_b, log_r_b, 1), log_v22_b)
+        res_rd_v22 = log_rd_b - np.polyval(np.polyfit(log_v22_b, log_rd_b, 1), log_v22_b)
+        r_part_rd_given_v22, p_part_rd_given_v22 = stats.pearsonr(res_rd_v22, res_r_v22)
+
+        # Gauss's-law enclosed-mass scaling R_DM vs M_bar(<R_DM) (shared-R_DM algebraic note disclosed)
+        sl_enc_all, ic_enc_all, r_enc_all, p_enc_all, se_enc_all = stats.linregress(
+            np.log10(m_enc_list), np.log10(r_dm_list))
+        resid_enc_all = np.log10(r_dm_list) - (sl_enc_all * np.log10(m_enc_list) + ic_enc_all)
+        sl_enc_brk, ic_enc_brk, r_enc_brk, p_enc_brk, se_enc_brk = stats.linregress(
+            np.log10(m_enc_brk), np.log10(r_dm_brk))
+        resid_enc_brk = np.log10(r_dm_brk) - (sl_enc_brk * np.log10(m_enc_brk) + ic_enc_brk)
+
+        log_m_b = np.log10(m_enc_brk)
+        res_m_rd = log_m_b - np.polyval(np.polyfit(log_rd_b, log_m_b, 1), log_rd_b)
+        r_part_m_given_rd, p_part_m_given_rd = stats.pearsonr(res_m_rd, res_r_rd)
+
+        res_r_m = log_r_b - np.polyval(np.polyfit(log_m_b, log_r_b, 1), log_m_b)
+        res_rd_m = log_rd_b - np.polyval(np.polyfit(log_m_b, log_rd_b, 1), log_m_b)
+        r_part_rd_given_m, p_part_rd_given_m = stats.pearsonr(res_rd_m, res_r_m)
 
         verdict = None
         if size_stats and dens_stats:
-            # The surviving invariant is the one with smaller mass-correlation
-            # magnitude; scatter is reported for context.
             dens_wins = abs(dens_stats['slope_vs_mass']) < abs(size_stats['slope_vs_mass'])
             verdict = 'density_threshold' if dens_wins else 'size_scaling'
             print_status(
-                f"thresh {thresh}: n={size_stats['n']}  "
+                f"thresh {thresh} (all discrete, n={size_stats['n']}, left-censored={n_left_censored}):  "
                 f"R_DM/R_d slope={size_stats['slope_vs_mass']:.3f} (p={size_stats['pearson_p']:.2e}), "
                 f"rho_enc slope={dens_stats['slope_vs_mass']:.3f} (p={dens_stats['pearson_p']:.2e})  "
                 f"-> {verdict}", "SUCCESS")
 
+        verdict_brk = None
+        if size_stats_brk and dens_stats_brk:
+            dens_wins_brk = abs(dens_stats_brk['slope_vs_mass']) < abs(size_stats_brk['slope_vs_mass'])
+            verdict_brk = 'density_threshold' if dens_wins_brk else 'size_scaling'
+            print_status(
+                f"thresh {thresh} (bracketed interpolated, n={size_stats_brk['n']}):  "
+                f"R_DM/R_d slope={size_stats_brk['slope_vs_mass']:.3f} (p={size_stats_brk['pearson_p']:.2e}), "
+                f"rho_enc slope={dens_stats_brk['slope_vs_mass']:.3f} (p={dens_stats_brk['pearson_p']:.2e})  "
+                f"-> {verdict_brk}", "SUCCESS")
+
         per_threshold[f"{thresh:.2f}"] = {
             'n_galaxies': len(masses),
+            'n_left_censored_at_Rmin': int(n_left_censored),
+            'n_bracketed_interior': len(masses_brk),
             'size_invariant_Rdm_over_Rd': size_stats,
             'density_invariant_rho_enc': dens_stats,
+            'acceleration_invariant_g_bar': accel_stats,
+            'enclosed_mass_scaling_all': {
+                'n': len(m_enc_list),
+                'alpha_enc': float(sl_enc_all),
+                'alpha_enc_err': float(se_enc_all),
+                'pearson_r': float(r_enc_all),
+                'pearson_p': float(p_enc_all),
+                'scatter_dex': float(np.std(resid_enc_all)),
+            },
+            'tobit_left_censored_size_invariant_test': {
+                'n_total': len(tobit_m),
+                'n_left_censored_upper_bounds': int(np.sum(tcens)),
+                'n_uncensored_interior': int(np.sum(~tcens)),
+                'slope_log_Rdm_over_Rd_vs_log_Mbar': b_tob_size,
+                'slope_err': se_tob_size,
+                'z_score': float(z_tob_size),
+                'p_value': p_tob_size,
+                'slope_log_Rdm_vs_log_Mbar_tobit': b_tob_rad,
+                'slope_log_Rdm_vs_log_Mbar_tobit_err': se_tob_rad,
+                'slope_log_rho_enc_vs_log_Mbar_right_censored_tobit': b_tob_rho_rc,
+                'slope_log_rho_enc_vs_log_Mbar_right_censored_tobit_err': se_tob_rho_rc,
+                'slope_log_rho_enc_right_censored_p': p_tob_rho_rc,
+                'note': 'Low-surface-brightness dwarfs with central Sigma_0 < Sigma_crit are unscreened to r=0 (R_DM = 0 physically); treating R_DM = 0 systems as finite log-normal upper bounds log10(R_DM) <= log10(R_min) pulls the low-mass tail toward -inf and inflates the apparent log-log slope above the resolved interior crossing slope (0.36-0.49) and the Step 12 two-branch kinetic law (0.502).',
+            },
             'median_Rdm_over_Rd': float(np.median(rdm_over_rd)) if rdm_over_rd else None,
             'median_rho_enc_Msun_pc3': float(np.median(rho_enc)) if rho_enc else None,
             'verdict': verdict,
+            'bracketed_interpolated': {
+                'n_galaxies': len(masses_brk),
+                'resolved_ols_alpha_Rdm_vs_Mbar': float(sl_rad_brk),
+                'resolved_ols_alpha_Rdm_vs_Mbar_err': float(se_rad_brk),
+                'size_invariant_Rdm_over_Rd': size_stats_brk,
+                'density_invariant_rho_enc': dens_stats_brk,
+                'acceleration_invariant_g_bar': accel_stats_brk,
+                'non_circular_kinematic_partial_correlation': {
+                    'partial_r_Rdm_Vbar_given_Rd': float(r_part_v_given_rd),
+                    'partial_p_Rdm_Vbar_given_Rd': float(p_part_v_given_rd),
+                    'partial_r_Rdm_Rd_given_Vbar': float(r_part_rd_given_v),
+                    'partial_p_Rdm_Rd_given_Vbar': float(p_part_rd_given_v),
+                    'fixed_radius_partial_r_Rdm_Vbar2p2Rd_given_Rd': float(r_part_v22_given_rd),
+                    'fixed_radius_partial_p_Rdm_Vbar2p2Rd_given_Rd': float(p_part_v22_given_rd),
+                    'fixed_radius_partial_r_Rdm_Rd_given_Vbar2p2Rd': float(r_part_rd_given_v22),
+                    'fixed_radius_partial_p_Rdm_Rd_given_Vbar2p2Rd': float(p_part_rd_given_v22),
+                },
+                'enclosed_mass_scaling_resolved': {
+                    'n': len(m_enc_brk),
+                    'alpha_enc': float(sl_enc_brk),
+                    'alpha_enc_err': float(se_enc_brk),
+                    'pearson_r': float(r_enc_brk),
+                    'pearson_p': float(p_enc_brk),
+                    'scatter_dex': float(np.std(resid_enc_brk)),
+                    'partial_r_Rdm_Menc_given_Rd': float(r_part_m_given_rd),
+                    'partial_p_Rdm_Menc_given_Rd': float(p_part_m_given_rd),
+                    'partial_r_Rdm_Rd_given_Menc': float(r_part_rd_given_m),
+                    'partial_p_Rdm_Rd_given_Menc': float(p_part_rd_given_m),
+                },
+                'verdict': verdict_brk,
+            },
         }
 
     primary = per_threshold[f"{PRIMARY_THRESHOLD:.2f}"]
     result = {
         'description': 'Density-threshold vs disk size-mass confound test on SPARC',
-        'method': ('R_DM = first radius with Vobs/Vbar > threshold (step_4 convention). '
-                   'Size null: R_DM/R_d mass-independent. Density prediction: '
-                   'rho_bar(<R_DM) = 3 M_enc/(4 pi R_DM^3) mass-independent, with '
-                   'M_enc = V_bar(R_DM)^2 R_DM / G (spherical estimate).'),
+        'method': ('R_DM = first radius with Vobs/Vbar > threshold (step_4 convention), '
+                   'evaluated both on all discrete grid crossings and on bracketed log-interpolated '
+                   'interior crossings (excluding left-censored idx == 0 galaxies where Vobs/Vbar > threshold '
+                   'already at the innermost beam/sampling radius R_min).'),
         'ml_disk': ML_DISK, 'ml_bulge': ML_BULGE, 'gas_factor': GAS_FACTOR,
         'mass_size_relation_Rd_vs_Mbar': mass_size_relation,
         'primary_threshold': PRIMARY_THRESHOLD,
         'per_threshold': per_threshold,
         'primary_verdict': primary['verdict'],
+        'primary_verdict_bracketed_interpolated': primary['bracketed_interpolated']['verdict'],
     }
 
     out_path = os.path.join(outputs_dir, 'step_8_density_vs_size_confound.json')

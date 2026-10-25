@@ -77,17 +77,17 @@
     structure is determined by quantum mechanics (electron degeneracy pressure),
     not thermal physics, so their mass-radius relation is calculable from first
     principles. Second, their mass-radius scaling runs in the opposite direction
-    to the saturation scaling (see Figure 3):
+    to the saturation scaling (see Figure 4):
 </p>
 
 <ul>
     <li>
-        White Dwarf (Chandrasekhar): $R_{WD} \propto M^{-1/3}$
-        — heavier stars are smaller
+        White Dwarf (low-mass non-relativistic limit): $R_{\rm WD} \propto M^{-1/3}$
+        — heavier stars are smaller (steepening toward $M_{\rm Ch} = 1.44\,M_\odot$ under relativistic degeneracy; Nauenberg 1972)
     </li>
     <li>
-        Soliton (TEP): $R_{sol} \propto M^{+1/3}$ — heavier
-        fields are larger
+        Saturation Scale (TEP): $R_T \propto M^{+1/3}$ — heavier
+        sources have larger saturation radii
     </li>
 </ul>
 
@@ -105,18 +105,15 @@
             font-style: italic;
         "
     >
-        Figure 3: The "Scissors" Effect. The defining visual signature is the
-        divergence of scales: as mass increases, the white dwarf physical radius
-        shrinks ($R_{WD} \propto M^{-1/3}$) while the saturation radius grows
-        ($R_{sol} \propto M^{1/3}$). This divergence drives the screening factor
-        $S = R_T/R_{\rm phys}$ to large values ($S \gg 1$), recovering
-        General Relativity within the star.
+        Figure 4: White Dwarf Physical Radius vs. Geometric Saturation Scale. As mass increases, the white-dwarf physical radius
+        shrinks (solid slate curve: Nauenberg 1972 relativistic degeneracy relation steepening toward the Chandrasekhar limit $M_{\rm Ch} = 1.44\,M_\odot$; dotted curve: low-mass non-relativistic asymptote $R_{\rm WD} \propto M^{-1/3}$) while the geometric saturation radius grows
+        ($R_T \propto M^{1/3}$). This divergence drives the geometric saturation ratio
+        $S = R_T/R_{\rm phys}$ to large values ($S \approx 50\times$ for Sirius B), placing the star deep inside the compact-body regime ($R_T \gg R_{\rm phys}$).
     </figcaption>
 </figure>
 
 <p>
-    These opposing scalings create a "scissors" pattern. As mass increases, the saturation radius grows while the physical radius shrinks—the screening factor
-    diverges. This is the signature of Temporal Topology flattening.
+    These opposing scalings create a "scissors" pattern: as mass increases, the geometric saturation radius $R_T(M)$ grows while the physical radius $R_{\rm phys}$ shrinks, driving the geometric saturation ratio $S \equiv R_T/R_{\rm phys}$ to large values across the degenerate stellar sequence.
 </p>
 
 <p>
@@ -125,22 +122,18 @@
 </p>
 
 <div class="equation">
-    \begin{equation} \label{eq:jupiter_radius} R_{phys} \approx 5{,}800 \text{ km} \quad \text{(observed)} \end{equation}
+    \begin{equation} \label{eq:jupiter_radius} R_{\rm phys} \approx 5{,}800 \text{ km} \quad \text{(observed)} \end{equation}
 </div>
 <div class="equation">
-    \begin{equation} \label{eq:jupiter_soliton} R_{sol} \approx 289{,}000 \text{ km} \quad \text{(TEP expectation)} \end{equation}
+    \begin{equation} \label{eq:jupiter_soliton} R_T \approx 289{,}000 \text{ km} \quad \text{(TEP saturation scale)} \end{equation}
 </div>
 <div class="equation">
-    \begin{equation} \label{eq:jupiter_screening} \text{Screening Factor} = \frac{R_T}{R_{phys}} \approx 50\times. \end{equation}
+    \begin{equation} \label{eq:jupiter_screening} \text{Geometric Saturation Ratio } S = \frac{R_T}{R_{\rm phys}} \approx 50\times. \end{equation}
 </div>
 
 <p>
     With a mean density \(\rho \approx 2.4 \times 10^6\) g/cm³ far exceeding the
-    saturation threshold \(\rho_T \approx 20\) g/cm³, the saturation field extends
-    50 times beyond the physical surface of the star. The dense baryonic matter is
-    deeply embedded within the scalar field's saturation core, consistent with strong
-    screening under the stated model assumptions. Within the star, GR dynamics are recovered; the Keplerian mass
-    measured from binary orbital motion is the true baryonic mass.
+    reference scale \(\rho_T \approx 20\) g/cm³, the geometric saturation ratio \(S = R_T/R_{\rm phys} \approx 50\) places Sirius B deep within the compact-body regime (\(R_T \gg R_{\rm phys}\)). This is consistent with the expected nonlinear screening hierarchy; the quantitative magnitude of physical scalar-gradient suppression in binary orbital dynamics is determined by the corresponding nonlinear kinetic and shell-impedance field solution (Paper 0 &sect;7.3), rather than by the geometric ratio \(S\) alone.
 </p>
 
 <h3>4.2 The Empirical Screening Law</h3>
@@ -222,17 +215,15 @@
             font-style: italic;
         "
     >
-        Figure 4: The Screening Hierarchy. Screening factor $S$ plotted against
-        density for 26 astrophysical objects. The empirical power law $S \propto
-        \rho^{0.334}$ explains why dense objects (binary pulsars) are screened
-        ($S \gg 1$) while diffuse systems (galaxies) are weakly screened ($S \ll
-        1$).
+        Figure 5: The Geometric Screening Hierarchy. (a) Geometric saturation ratio $S = R_T/R_{\rm phys}$ plotted against
+        mean density $\rho$ for 26 astrophysical objects (with the density-derived electron Fermi wavelength $\lambda_F = (8\pi m_p/(3\rho\,Z/A))^{1/3}$ at $Z/A = 0.5$ shown on the upper axis as a condensed-matter reference scale). The empirical power law $S \propto
+        \rho^{0.334}$ ($R^2 = 0.99995$ across the 11 dense objects with $\rho > \rho_T$) places degenerate stars and pulsars deep in the compact-body regime ($R_T \gg R_{\rm phys}$), while diffuse systems and supermassive black holes evaluated at their Schwarzschild horizon density (M87* at $\rho_S = 4.37 \times 10^{-4}$ g/cm³, $S = 0.028$; RBH-1 near the crossover at $\rho_S = 46.1$ g/cm³, $S = 1.32$) fall along the same $S = (\rho/\rho_T)^{1/3}$ locus across 18 decades in density. (b) Direct comparison of saturation radius $R_T(M)$ versus physical radius $R_{\rm phys}$.
     </figcaption>
 </figure>
 
 <p>
     The complete hierarchy of screening factors across all object classes is
-    visualized in Figure 4 and tabulated below.
+    visualized in Figure 5 and tabulated below.
 </p>
 
 <table class="data-table" style="margin: 20px 0">
@@ -265,7 +256,7 @@
         <tr>
             <td>Rocky Planets (Earth)</td>
             <td>3.3 – 5.5</td>
-            <td>0.56 – 0.66×</td>
+            <td>0.55 – 0.65×</td>
             <td>Saturation scale comparable to object radius; GNSS probes this boundary</td>
         </tr>
         <tr>
@@ -276,8 +267,8 @@
         </tr>
         <tr>
             <td>White Dwarfs</td>
-            <td>$\sim 4 \times 10^5$ – $2.5 \times 10^6$</td>
-            <td>27 – 50×</td>
+            <td>$\sim 4 \times 10^5$ – $2.4 \times 10^6$</td>
+            <td>25 – 50×</td>
             <td>Baryonic star embedded within saturation scale; Keplerian mass = baryonic mass</td>
         </tr>
         <tr>
@@ -296,16 +287,14 @@
 </table>
 
 <p style="font-size: 0.9em; color: #666">
-    <em
-        >Table 4.1: Complete screening hierarchy across astrophysical object
+    <em>Table 4.1: Complete screening hierarchy across astrophysical object
         classes. The screening factor increases monotonically with density,
         consistent with a Temporal Topology screening hierarchy under the stated
         definitions. Binary pulsars provide the strongest validation, with GR
-        verified to 0.2% precision at screening factors exceeding 29,500×.</em
-    >
+        verified to 0.2% precision at screening factors exceeding 29,500×.</em>
 </p>
 
-<h3>4.4 Precision GR Tests: Explained, Not Violated</h3>
+<h3>4.4 Consistency with Precision GR Tests</h3>
 
 <p>
     A critical question for any modified gravity theory is: why do precision
@@ -330,14 +319,14 @@
             <td>Lunar Laser Ranging</td>
             <td>Nordtvedt effect</td>
             <td>$10^{-13}$</td>
-            <td>0.56×</td>
+            <td>0.55×</td>
             <td>GR-consistent in the orbital ($\mathcal S_\Sigma \sim 10^{-14}$) projection; synodic residual channel analyzed in Paper 17</td>
         </tr>
         <tr>
             <td>Cassini Conjunction</td>
             <td>Shapiro delay</td>
             <td>$2 \times 10^{-5}$</td>
-            <td>0.42×</td>
+            <td>0.41×</td>
             <td>Satisfied via kinetic source-charge suppression ($y_{\rm tb}(1.6\,R_\odot)=2.16\times10^{-8}$, $|\gamma_{\rm PPN}-1|=4.32\times10^{-8}\ll2.3\times10^{-5}$)</td>
         </tr>
         <tr>
@@ -365,11 +354,9 @@
 </table>
 
 <p style="font-size: 0.9em; color: #666">
-    <em
-        >Table 4.2: Precision GR tests and their screening factors. All tests
+    <em>Table 4.2: Precision GR tests and their screening factors. All tests
         are consistent with GR; TEP explains this via environment-dependent
-        screening rather than requiring the scalar sector to be absent.</em
-    >
+        screening rather than requiring the scalar sector to be absent.</em>
 </p>
 
 <p>
@@ -391,8 +378,8 @@
 
 <p>
     At $\rho \approx 5.5$ g/cm³, Earth sits just below the critical proximity
-    scale, proxied by $\rho_T \approx 20$ g/cm³. The screening factor is 0.66×,
-    meaning the saturation radius (4,200 km) is comparable to the physical radius
+    scale, proxied by $\rho_T \approx 20$ g/cm³. The geometric saturation ratio is $S = 0.65\times$,
+    meaning the saturation radius ($R_T(M_\oplus) \approx 4{,}146$ km; GNSS $L_c \approx 4{,}200$ km) is comparable to the physical radius
     (6,371 km). Earth occupies the narrow window where:
 </p>
 
@@ -404,8 +391,8 @@
     </li>
     <li>
         <strong>The transition is close:</strong> Unlike gas giants ($S \approx
-        0.3$), where the saturation core sits deep inside the object and well
-        below the channel-projection boundary, Earth's $S \approx 0.66$ places
+        0.3$–$0.4$), where the saturation core sits deep inside the object and well
+        below the channel-projection boundary, Earth's $S \approx 0.65$ places
         it near the transition, where clock-comparison ($S_A$) channels retain
         a measurable response.
     </li>
@@ -445,17 +432,403 @@
     <p>$\rho_T \approx 20$ g/cm³ is a saturation scale of the temporal-field topology, not a local on/off switch. Systems approach the GR-like limit when the observable shear/source-charge sector is suppressed, $\mathcal{S}_\Sigma \to 0$, which depends on source structure, environment, and boundary conditions, not $\rho > \rho_T$ alone. The empirical screening hierarchy $S \propto \rho^{0.334}$ (§4.2) is a smooth power-law across 15 orders of magnitude in density, not a step function at $\rho_T$.</p>
 </div>
 
+<h3>4.7 Planetary Rotational Kinematics and the Wesson–MacDonald Angular Momentum Laws</h3>
+
+<p>
+    An independent dynamical test of the saturation radius $R_T(M)$ and screening factor $S = R_T(M)/R_{\rm phys}$ is provided by the rotational kinematics of Solar System bodies. In Newtonian gravity, planetary rotation periods ($T_{\rm rot} \approx 9.9\text{ hr}$ for Jupiter to $24.6\text{ hr}$ for Mars among unbraked planets, and $58.6\text{--}243\text{ d}$ for solar-tide-braked Mercury and Venus) and equatorial linear speeds ($v_{\rm eq} \approx 0.24\text{ km s}^{-1}$ for Mars to $12.57\text{ km s}^{-1}$ for Jupiter) appear unorganized by radius or heliocentric distance. Yet two empirical regularities have long been noted in the astrophysical literature without a first-principles gravitational derivation: the MacDonald–Brosche specific angular momentum scaling $j \equiv J/M \propto M^{2/3}\text{--}M^{0.8}$ across minor and major planets (Brosche 1963; MacDonald 1964), and Wesson's universal angular-momentum relation $J = p\,M^2$ with empirical constant $p_{\rm obs} \approx 10^{-15}\text{ cm}^2\text{ g}^{-1}\text{ s}^{-1}$ spanning planetary systems to spiral galaxies (Wesson 1979, 1981)—a value approximately $680$ times larger than the General Relativistic Kerr scale $G/c = 2.23 \times 10^{-18}\text{ cm}^2\text{ g}^{-1}\text{ s}^{-1}$.
+</p>
+
+<p>
+    Both regularities follow directly from the Temporal Topology saturation scale $\rho_T = 20\text{ g/cm}^3$ and the nested temporal hierarchy of Paper 0 (§7). First, because $R_T(M)^3 = 3M/(4\pi\rho_T)$ is proportional to mass, the characteristic dynamical frequency at the saturation boundary $R_T(M)$ is strictly mass-independent:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:omega_T_universal}
+    \omega_T \equiv \sqrt{\frac{GM}{R_T(M)^3}} = \sqrt{\frac{4\pi G\rho_T}{3}} = 2.365 \times 10^{-3}\text{ rad s}^{-1} \qquad \left(\tau_T = \frac{2\pi}{\omega_T} = 0.738\text{ hr} = 44.3\text{ min}\right).
+    \end{equation}
+</div>
+
+<p>
+    At the saturation radius $R_T(M)$, the dimensionless proper-time lapse depth is $u_T(M) \equiv GM/(R_T(M)c^2) = \omega_T^2 R_T(M)^2/c^2 \propto M^{2/3}$. Consequently, the natural specific angular-momentum capacity of the saturation core rotating at $\omega_T$ is directly proportional to its proper-time depth:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:j_T_capacity}
+    j_T(M) \equiv R_T(M)^2\,\omega_T = \frac{c^2}{\omega_T}\,u_T(M) \propto M^{2/3},
+    \end{equation}
+</div>
+
+<p>
+    with universal proportionality constant $c^2/\omega_T = 3.801 \times 10^{19}\text{ m}^2\text{ s}^{-1}$ per unit fractional proper-time dilation. Second, in the nested environmental hierarchy of Paper 0 (§7), Solar System bodies condense inside the ambient Solar-Circle Galactic temporal well of depth $u_{\rm gal} = (v_{\rm gal}/c)^2 = 5.385 \times 10^{-7}$ ($v_{\rm gal} = 220\text{ km s}^{-1}$, $c/v_{\rm gal} = 1/\sqrt{u_{\rm gal}} = 1362.7$; adopting modern Gaia/VLBI solar-circle estimates $v_{\rm gal} \approx 229\text{--}236\text{ km s}^{-1}$ shifts predictions by $4\text{--}7\%$). As an action-motivated, zero-refit rotational scaling proposal, equating the mixed time–space kinematic transport coupling $(v_{\rm eq}/c)\sqrt{u_{\rm gal}}$ — equivalently, the advective velocity cross-term $(v_{\rm eq}\,v_{\rm gal})/c^2$ between internal circulation and Galactic drift — across the saturation boundary to the local proper-time depth $u_T(M)$ yields the equatorial velocity relation for ambient-coupled planets:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:veq_tep_law}
+    \frac{v_{\rm eq}^{\rm TEP}}{c} = \frac{u_T(M)}{\sqrt{u_{\rm gal}}} \quad \Longleftrightarrow \quad v_{\rm eq}^{\rm TEP} = \frac{GM}{R_T(M)\,v_{\rm gal}} = \frac{v_T(M)^2}{v_{\rm gal}},
+    \end{equation}
+</div>
+
+<p>
+    where $v_T(M) = \sqrt{GM/R_T(M)} = R_T(M)\omega_T$ is the circular velocity at the TEP saturation radius. Across Earth, Uranus, Neptune, and Saturn, the observed dimensionless ratio $(v_{\rm eq}/c)/u_T$ averages $1384.8 \pm 99.6$, matching the Galactic constant $c/v_{\rm gal} = 1362.7$ within $+1.6\%$ ($v_{\rm obs}/v_{\rm TEP} = 1.016 \pm 0.073$; Table 4.3, Figure 6) with zero fitted parameters. Equation (\ref{eq:veq_tep_law}) predicts rotation periods of $25.48\text{ hr}$ for Earth (observed $23.93\text{ hr}$), $17.14\text{ hr}$ for Uranus (observed $17.25\text{ hr}$; Lamy et al. 2025), $14.87\text{ hr}$ for Neptune (observed $16.11\text{ hr}$), and $11.55\text{ hr}$ for Saturn (observed $10.66\text{ hr}$). Moreover, the departures of Jupiter ($v_{\rm obs}/v_{\rm TEP} = 0.62$) and Mars ($v_{\rm obs}/v_{\rm TEP} = 2.44$) from the single-branch ambient formula Eq.&nbsp;($\ref{eq:veq_tep_law}$) reflect the two-branch angular-momentum geometry of Figure 6b (Step 15):
+    because the ambient Galactic Wesson branch $j_{\rm TEP}(M) = GM/(2v_{\rm gal}) \propto M^1$ grows faster with mass than the small-body soliton angular-momentum capacity $j_{\rm sol}(M) = \eta_0 R_T(M)^2\omega_T \propto M^{2/3}$ (where $\eta_0 = 0.129$ is a single empirical efficiency parameter calibrated from the small-body median, close to the classical secular bar-mode / rotational-shedding stability fraction $\eta_{\rm sec} = k_{\rm core}(\omega_{\max}/\omega_T) = \tfrac{1}{2} \times \tfrac{1}{4} = \tfrac{1}{8} = 0.125$ at the $S \to 1$ core boundary), their ratio
+    $$\frac{j_{\rm TEP}(M)}{j_{\rm sol}(M)} = \frac{R_T(M)\,\omega_T}{2\,\eta_0\,v_{\rm gal}} = \left(\frac{M}{M_{\rm cap}}\right)^{1/3}$$
+    crosses unity at a unique crossover mass $M_{\rm cap} = \frac{4\pi}{3}\rho_T(2\eta_0 v_{\rm gal}/\omega_T)^3 = 1.16 \times 10^{27}\text{ kg} = 194.2\,M_\oplus = 0.611\,M_{\rm Jup}$ ($R_T(M_{\rm cap}) = 24{,}013\text{ km}$; intersection of the solid and dashed curves in Figure 6b). For Earth ($1.0\,M_\oplus$), Uranus ($14.5\,M_\oplus$), Neptune ($17.1\,M_\oplus$), and Saturn ($95.2\,M_\oplus < M_{\rm cap}$), $j_{\rm TEP}(M)/j_{\rm sol}(M) \in [0.173,\,0.788] < 1$, so all four lie on the unsaturated ambient branch ($v_{\rm eq}^{\rm 2br} = v_{\rm eq}^{\rm TEP}$, with Saturn at $9.87\text{ km s}^{-1}$ vs $9.11\text{ km s}^{-1}$, $+8.4\%$). Conversely, Jupiter ($317.8\,M_\oplus > M_{\rm cap}$, $j_{\rm TEP}/j_{\rm sol} = 1.178 > 1$) is the sole Solar System planet above $M_{\rm cap}$, so its specific angular momentum saturates at $j_{\rm sol}(M_{\rm Jup})$ ($\eta_{\rm obs} = 0.125$ vs $\eta_0 = 0.129$), yielding $v_{\rm eq}^{\rm 2br} = j_{\rm sol}(M_{\rm Jup})/(k_{\rm MOI}R_{\rm Jup}) = 12.95\text{ km s}^{-1}$ ($T_{\rm 2br} = 9.64\text{ hr}$), within $-2.9\%$ of Jupiter's observed $12.57\text{ km s}^{-1}$ ($T_{\rm obs} = 9.93\text{ hr}$, $v_{\rm obs}/v_{\rm 2br} = 0.971$; across all five major Solar System planets, $v_{\rm obs}/v_{\rm 2br} = 1.007 \pm 0.066$, and $1.008 \pm 0.060$ across all nine planetary and substellar speed-limit systems, Figure 6a, diamond markers). Low-mass Mars ($0.11\,M_\oplus$, $v_{\rm obs} = 0.241\text{ km s}^{-1}$) sits in the intermediate transition zone between the ambient curve ($0.099\text{ km s}^{-1}$) and the soliton capacity curve ($0.768\text{ km s}^{-1}$) in Figure 6b and is recorded as an unmodeled transition body without introducing a Mars-specific rule.
+</p>
+
+<p>
+    Furthermore, comparing the dimensionless moment-of-inertia factor $k_{\rm MOI} \equiv I/(MR_{\rm eq}^2)$ (normalized to the equatorial radius $R_{\rm eq}$, measured via satellite geodesy, precession, and Juno/Cassini gravity-wind interior models for the gas giants, $k_{\rm MOI} = 0.26393 \pm 0.00001$ for Jupiter and $0.2181 \pm 0.0002$ for Saturn, Militzer &amp; Hubbard 2023, and constrained by gravity-harmonic interior models for Uranus and Neptune, Lin et al. 2025; Morf &amp; Helled 2025) against the geometric screening factor $S = R_T(M)/R_{\rm eq}$ across all eight cold hydrostatic Solar System planets ($M < 13\,M_{\rm Jup}$, non-fusing interiors with polytropic index $n \lesssim 1$ and central-to-mean density $\rho_c/\bar\rho \lesssim 2\text{--}10$) reveals an empirical interior gyration relation on the unscreened planetary branch ($S \lesssim 0.7$, $\bar\rho < 10\text{ g/cm}^3$; Step 15):
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:kmoi_screening}
+    k_{\rm MOI} \simeq \frac{1}{2}\,S = \frac{1}{2}\,\frac{R_T(M)}{R_{\rm phys}} \quad \Longleftrightarrow \quad I \simeq \frac{1}{2}\,M\,R_T(M)\,R_{\rm phys},
+    \end{equation}
+</div>
+
+<p>
+    with $2k_{\rm MOI}/S = 1.039 \pm 0.027$ across the three iron-core terrestrial planets ($1.017$ for Earth, $1.031$ for Venus, and $1.069$ for Mercury; because these three bodies span a narrow bulk density range $\bar\rho = 5.24\text{--}5.51\text{ g/cm}^3$, their agreement serves as a single-regime terrestrial amplitude check rather than a lever-arm slope test) and $2k_{\rm MOI}/S = 1.169 \pm 0.142$ across all eight planets spanning an $8\times$ range in mean density ($\bar\rho = 0.69\text{--}5.51\text{ g/cm}^3$: $1.112$ for Neptune, $1.137$ for Uranus, $1.261$ for low-pressure Mars near the incompressible uniform-sphere ceiling $k_{\rm MOI} \to 2/5 = 0.4$, and $1.334$ for Jupiter and $1.389$ for Saturn where compressible H/He envelopes inflate $R_{\rm eq}$). Because $k_{\rm MOI} \le 0.4$ for any self-gravitating body whose density does not increase outward, Eq.&nbsp;(\ref{eq:kmoi_screening}) is restricted to cold, non-fusing planetary interiors ($M < 13\,M_{\rm Jup}$, $S < 2k_{\max} \approx 0.8$); in nuclear-burning main-sequence stars such as the Sun ($\bar\rho_\odot = 1.41\text{ g/cm}^3$, $S_\odot = 0.413$, $k_{\rm MOI,\odot} \approx 0.070 \ll S_\odot/2$), ideal-gas thermal support and radiative opacity produce an $n \approx 3$ Eddington core condensation ($\rho_c/\bar\rho_\odot \approx 107$) governed by radiation transport rather than cold condensed-matter/degeneracy hydrostatics. Multiplying Equation (\ref{eq:veq_tep_law}) by Equation (\ref{eq:kmoi_screening}) cancels both $R_{\rm phys}$ and $R_T(M)$ identically, yielding the empirical Wesson angular-momentum relation:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:wesson_tep_law}
+    j_{\rm TEP}(M) = k_{\rm MOI}\,R_{\rm phys}\,v_{\rm eq}^{\rm TEP} = \frac{GM}{2\,v_{\rm gal}}, \qquad J_{\rm TEP}(M) = p_{\rm TEP}\,M^2, \qquad p_{\rm TEP} \equiv \frac{G}{2\,v_{\rm gal}} = 1.517 \times 10^{-15}\text{ cm}^2\text{ g}^{-1}\text{ s}^{-1},
+    \end{equation}
+</div>
+
+<p>
+    corresponding to a dimensionless Kerr-like spin parameter $\chi_{\rm TEP} \equiv cJ/(GM^2) = c/(2v_{\rm gal}) = 1/(2\sqrt{u_{\rm gal}}) = 681.3$. Crucially, for any body, the exact algebraic identity
+    $$\frac{J_{\rm obs}}{J_{\rm TEP}} \equiv \left(\frac{2\,k_{\rm MOI}}{S}\right) \left(\frac{v_{\rm eq}^{\rm obs}}{v_{\rm eq}^{\rm TEP}}\right)$$
+    holds by definition: although $\rho_T$ cancels out of the product $J_{\rm TEP}(M)$, measuring $k_{\rm MOI}$ and $v_{\rm eq}$ separately constrains $\rho_T \approx 20\text{ g/cm}^3$ through both factors simultaneously ($2k_{\rm MOI}/S \propto \rho_T^{1/3}$ and $v_{\rm obs}/v_{\rm TEP} \propto \rho_T^{-1/3}$—an unadjusted $\rho_T \sim 220\text{ g/cm}^3$ would shift both factors by $2.23\times$ in opposite directions, to $2.61$ and $0.45$). Inverting Equation (\ref{eq:veq_tep_law}) directly via $\rho_T^{\rm spin} = \frac{3}{4\pi}(v_{\rm eq}^{\rm obs}v_{\rm gal}/GM^{2/3})^3 = \rho_T(v_{\rm obs}/v_{\rm TEP})^3$ across the four unsaturated ambient-coupled planets yields individual spin-implied saturation densities of $24.1\text{ g/cm}^3$ (Earth), $19.6\text{ g/cm}^3$ (Uranus, using the 2025 HST auroral rotation period $17\text{ h }14\text{ m }52\text{ s} = 17.247864 \pm 0.000010\text{ hr}$, Lamy et al. 2025), $15.7\text{ g/cm}^3$ (Neptune), and $25.5\text{ g/cm}^3$ (Saturn), with a geometric mean of $\rho_T^{\rm spin} = 20.9\text{ g/cm}^3$ ($21.2 \pm 4.4\text{ g/cm}^3$ arithmetic mean; and $21.1\text{ g/cm}^3$ geometric mean across the nine planetary and substellar systems under the one-parameter $\eta_0 = 0.129$ two-branch model), while inverting Equation (\ref{eq:kmoi_screening}) via $\rho_T^{\rm MOI} = \bar\rho/(8k_{\rm MOI}^3)$ yields $\rho_T^{\rm MOI,\text{terr}} = 17.9 \pm 1.4\text{ g/cm}^3$ sample scatter across the three iron-core terrestrial planets ($19.1\text{ g/cm}^3$ for Earth, $18.2\text{ g/cm}^3$ for Venus with $\pm 20\%$ propagated $k_{\rm MOI}$ uncertainty, $16.4\text{ g/cm}^3$ for Mercury) and $\rho_T^{\rm MOI} = 13.7 \pm 4.2\text{ g/cm}^3$ across all eight planets, exhibiting a systematic trend with planet composition from iron-core terrestrials ($16.4\text{--}19.1\text{ g/cm}^3$) to ice giants ($14.8\text{ g/cm}^3$ for Neptune, $13.9\text{ g/cm}^3$ for Uranus), low-pressure Mars ($10.0\text{ g/cm}^3$), and compressible H/He gas giants ($9.0\text{ g/cm}^3$ for Jupiter, $8.3\text{ g/cm}^3$ for Saturn). Across the five ambient-coupled major planets (Earth, Uranus, Neptune, Saturn, and Jupiter), the observed spin angular momenta match the zero-parameter Wesson relation $p_{\rm TEP} = G/(2v_{\rm gal})$ at $J_{\rm obs}/J_{\rm TEP} = 1.11 \pm 0.25$ ($\bar\chi_{\rm obs} = 758.7 \pm 169.0$ versus $\chi_{\rm TEP} = 681.3$).
+</p>
+
+<p>
+    A necessary condition separating the ambient Galactic Wesson branch ($J \propto M^2$) from the low-mass intrinsic soliton-clock branch ($j \propto M^{2/3}$) is obtained by comparing each body's two-branch screening shell radius $r_*(M) = \sqrt{GM/g_t}$ ($g_t = cH_0/2 = 3.40 \times 10^{-10}\text{ m s}^{-2}$; Paper 0 §7) to its heliocentric orbital semimajor axis $a$ (Table 4.3). Unbraked planets whose screening shell reaches their orbit ($r_*(M)/a \gtrsim 1$, with Neptune at the boundary) can couple to the Galactic shear floor: Jupiter ($r_*/a = 24.79$, $J_{\rm obs}/J_{\rm TEP} = 0.824$), Saturn ($r_*/a = 7.37$, $J_{\rm obs}/J_{\rm TEP} = 1.505$), Earth ($r_*/a = 7.24$, $J_{\rm obs}/J_{\rm TEP} = 1.083$), Uranus ($r_*/a = 1.44$, $J_{\rm obs}/J_{\rm TEP} = 1.129$), and Neptune ($r_*(M_{\rm Nep}) = 29.97\text{ AU}$ versus $a_{\rm Nep} = 30.11\text{ AU}$, $r_*/a = 0.995$, $J_{\rm obs}/J_{\rm TEP} = 1.026$), whereas Mars ($r_*/a = 1.56$, $\chi_{\rm obs} = 2094.6$, $\eta_{\rm rot} = 0.033$) sits in the transition zone between the two branches. Conversely, for small bodies whose screening shell is much smaller than their orbital radius ($r_*(M)/a \ll 1$: Vesta $0.020$, Ceres $0.033$, Haumea $0.004$), rotation decouples from the Galactic floor and follows the intrinsic soliton-clock capacity $j_{\rm sol}(M) = \eta_{\rm rot}\,R_T(M)^2\,\omega_T \propto M^{2/3}$ with mean efficiency $\eta_{\rm rot} \equiv j_{\rm obs}/j_T = 0.127 \pm 0.080$ (median $0.125$; $0.129$ for Ceres), yielding a log-log slope of $0.941 \pm 0.059$ ($R^2 = 0.9735$, $p = 8.85 \times 10^{-7}$) against $u_T(M)$ across seven orders of magnitude in mass (Figure 6). Notably, the combined Earth+Moon system ($r_*/a = 7.28$, $\eta_{\rm rot} = 0.119$) sits near the soliton capacity branch ($\eta_{\rm rot} \approx 0.13$) following the Moon-forming giant impact, while subsequent and still-ongoing lunar tidal dissipation ($\dot{a}_{\rm Moon} \approx +3.8\text{ cm yr}^{-1}$, lengthening the day by $\sim 2\text{ ms century}^{-1}$) has spun Earth down across the intermediate region to its present-day epochal value near the Wesson line ($\chi_{\rm obs} = 737.8$ vs. $\chi_{\rm TEP} = 681.3$, a secular transit rather than a static tidal equilibrium). Extending this soliton-capacity branch out of sample across the expanded minor-planet/dwarf-planet sequence (Hygiea, Pallas, Vesta, Ceres, Quaoar, and Haumea; $\eta_{\rm rot}$ median $0.138$, mean $0.157 \pm 0.076$) and beyond the Solar System to super-Jupiters and ultra-cool brown dwarfs ($M > M_{\rm cap} = 0.61\,M_{\rm Jup}$; Snellen et al. 2014; Gagné et al. 2017; Bryan et al. 2020; Tannock et al. 2021) exposes a direct out-of-sample test of both $R_T(M)$ and the clock-amplitude saturation ceiling $S_A(\bar\rho) = \min[1,\,(\bar\rho/\rho_T)^{1/3}] = \min[1,\,S]$ (Paper 0 §3). Because the active saturation core inside a body has radius $R_{\rm active} = S_A\,R_{\rm phys} = \min[R_T(M),\,R_{\rm phys}]$, the maximum specific angular momentum is $j_{\rm cap}(M,\,R_{\rm phys}) = \eta_0\,\min[R_T(M),\,R_{\rm phys}]^2\,\omega_T$, which defines two distinct high-mass regimes above $M_{\rm cap}$:
+    (i) for unscreened planetary-mass objects with $\bar\rho < \rho_T = 20\text{ g/cm}^3$ ($S < 1$, $M \lesssim 16\,M_{\rm Jup}$), $R_{\rm active} = R_T(M) < R_{\rm phys}$ and the rotational ceiling rises as $v_{\rm cap}(M) = \eta_0 R_T(M)^2\omega_T/(k_{\rm MOI}R_{\rm phys})$ — predicting $v_{\rm cap} = 64.9\text{ km s}^{-1}$ ($P_{\rm cap} = 2.35\text{ hr}$) for the fastest-rotating planetary-mass object known, SIMP J013656.5+093347 ($M = 12.7 \pm 1.0\,M_{\rm Jup}, R = 1.22\,R_{\rm Jup}, \bar\rho = 8.67\text{ g/cm}^3, S = 0.76$; Gagné et al. 2017), matching its observed $v_{\rm eq} = 63.1\text{ km s}^{-1}$ ($P_{\rm obs} = 2.414\text{ hr}$, $v_{\rm obs}/v_{\rm cap} = 0.972$, within $-2.8\%$), while young contracting exoplanets such as $\beta$ Pictoris b ($11\,M_{\rm Jup}, v\sin i = 25\text{ km s}^{-1}$, deprojected $v_{\rm eq} \approx 31.8\text{ km s}^{-1}$ vs. $v_{\rm cap} = 46.6\text{ km s}^{-1}$; Snellen et al. 2014) and the 27-object sample of Bryan et al. (2020; $v/v_{\rm breakup} \in [0.05,\,0.31]$, $0/27$ exceeding the $v_{\rm eq}/v_{\rm breakup} \le 0.45$ ceiling) lie below this upper boundary; and
+    (ii) once $\bar\rho \ge \rho_T = 20\text{ g/cm}^3$ ($S = R_T/R_{\rm phys} \ge 1$, in degenerate brown dwarfs with $M \gtrsim 16\,M_{\rm Jup}$), the active radius saturates at the physical surface ($R_{\rm active} = R_{\rm phys}$), so $R_{\rm phys}$ cancels out of $P_{\min} = 2\pi R_{\rm phys}/v_{\rm cap}$ and locks the minimum rotation period of all degenerate brown dwarfs onto a universal, mass- and radius-independent floor set directly by $\tau_T = 2\pi/\omega_T = 0.7381\text{ hr}$ ($44.3\text{ min}$):
+    $$P_{\min}^{\rm TEP}(\bar\rho \ge \rho_T) = \frac{k_{\rm MOI}}{\eta_0}\,\tau_T = \frac{0.205}{0.129}\,\tau_T = 1.172\text{ hr} \quad (70.3\text{ min}),$$
+    where $k_{\rm MOI} = 0.205$ is the exact Lane–Emden gyration factor of an $n = 1.5$ degenerate polytrope. With $\eta_0 = 0.129$ fixed by the small-body median, this zero-refit floor reproduces the empirical rotational speed limit of ultra-cool brown dwarfs discovered by Tannock et al. (2021): across the three fastest-rotating brown dwarfs known — 2MASS J0348$-$6022 ($43\,M_{\rm Jup}, \bar\rho = 70.8\text{ g/cm}^3, S = 1.52, P_{\rm obs} = 1.080\text{ hr}$), 2MASS J1219$+$3128 ($49\,M_{\rm Jup}, \bar\rho = 66.6\text{ g/cm}^3, S = 1.49, P_{\rm obs} = 1.140\text{ hr}$), and 2MASS J0407$+$1546 ($67\,M_{\rm Jup}, \bar\rho = 156.4\text{ g/cm}^3, S = 1.98, P_{\rm obs} = 1.230\text{ hr}$) — the observed period floor is $1.150 \pm 0.075\text{ hr}$ (matching $P_{\min}^{\rm TEP} = 1.172\text{ hr}$ within $+1.9\%$, whereas Newtonian Keplerian breakup sits at $P_{\rm breakup} = 0.28\text{--}0.43\text{ hr}$; evaluating the same law at the parameter-free secular stability fraction $\eta_{\rm sec} = \tfrac{1}{8} = 0.125$ with zero small-body calibration predicts $v_{\rm eq}^{\rm th} = 12.54\text{ km s}^{-1}$ for Jupiter [$-0.2\%$ vs $12.57\text{ km s}^{-1}$], $62.9\text{ km s}^{-1}$ for SIMP J0136 [$-0.3\%$ vs $63.1\text{ km s}^{-1}$], and $P_{\min}^{\rm th} = 8k_{\rm MOI}\tau_T = 1.210\text{ hr}$ [$0.8\sigma$ from $1.150 \pm 0.075\text{ hr}$]). Across all nine major planetary and substellar speed-limit systems spanning $1\,M_\oplus$ to $67\,M_{\rm Jup}$ ($21{,}300\,M_\oplus$; Earth, Uranus, Neptune, Saturn, Jupiter, SIMP J0136, and the three Tannock et al. brown dwarfs), the two-branch $+\;S_A$ saturation law achieves $v_{\rm obs}/v_{\rm 2br} = 1.008 \pm 0.060$ ($\rho_T^{\rm rot} = 21.1\text{ g/cm}^3$ geometric mean; Figure 6).
+</p>
+
+<table class="data-table" style="margin: 20px 0; font-size: 0.72em;">
+    <thead>
+        <tr>
+            <th>Body</th>
+            <th>$M$ (kg)</th>
+            <th>$r_*/a$</th>
+            <th>$R_T$ (km)</th>
+            <th>$2k_{\rm MOI}/S$</th>
+            <th>$u_T$</th>
+            <th>$v_{\rm obs}$ (km/s)</th>
+            <th>$v_{\rm TEP}$ (km/s)</th>
+            <th>$T_{\rm obs}$ (hr)</th>
+            <th>$T_{\rm TEP}$ (hr)</th>
+            <th>$\chi_{\rm obs}$</th>
+            <th>$\eta_{\rm rot}$</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Hygiea</strong></td>
+            <td>$8.74 \times 10^{19}$</td>
+            <td>$0.009$</td>
+            <td>$101.4$</td>
+            <td>$1.498$</td>
+            <td>$6.40 \times 10^{-13}$</td>
+            <td>$0.027$</td>
+            <td>$0.041^{\dagger}$</td>
+            <td>$13.83$</td>
+            <td>$9.16^{\dagger}$</td>
+            <td>$1.07 \times 10^5$</td>
+            <td>$0.086$</td>
+        </tr>
+        <tr>
+            <td><strong>Pallas</strong></td>
+            <td>$2.04 \times 10^{20}$</td>
+            <td>$0.015$</td>
+            <td>$134.5$</td>
+            <td>$1.332$</td>
+            <td>$1.13 \times 10^{-12}$</td>
+            <td>$0.057$</td>
+            <td>$0.062^{\dagger}$</td>
+            <td>$7.81$</td>
+            <td>$7.25^{\dagger}$</td>
+            <td>$1.13 \times 10^5$</td>
+            <td>$0.120$</td>
+        </tr>
+        <tr>
+            <td><strong>Vesta</strong></td>
+            <td>$2.59 \times 10^{20}$</td>
+            <td>$0.020$</td>
+            <td>$145.7$</td>
+            <td>$1.262$</td>
+            <td>$1.32 \times 10^{-12}$</td>
+            <td>$0.086$</td>
+            <td>—</td>
+            <td>$5.34$</td>
+            <td>—</td>
+            <td>$1.37 \times 10^5$</td>
+            <td>$0.157$</td>
+        </tr>
+        <tr>
+            <td><strong>Ceres</strong></td>
+            <td>$9.38 \times 10^{20}$</td>
+            <td>$0.033$</td>
+            <td>$223.7$</td>
+            <td>$1.511$</td>
+            <td>$3.11 \times 10^{-12}$</td>
+            <td>$0.090$</td>
+            <td>—</td>
+            <td>$9.07$</td>
+            <td>—</td>
+            <td>$7.31 \times 10^4$</td>
+            <td>$0.129$</td>
+        </tr>
+        <tr>
+            <td><strong>Quaoar</strong></td>
+            <td>$1.20 \times 10^{21}$</td>
+            <td>$0.002$</td>
+            <td>$242.9$</td>
+            <td>$1.565$</td>
+            <td>$3.67 \times 10^{-12}$</td>
+            <td>$0.107$</td>
+            <td>$0.095^{\dagger}$</td>
+            <td>$8.84$</td>
+            <td>$10.01^{\dagger}$</td>
+            <td>$7.63 \times 10^4$</td>
+            <td>$0.146$</td>
+        </tr>
+        <tr>
+            <td><strong>Haumea</strong></td>
+            <td>$4.01 \times 10^{21}$</td>
+            <td>$0.004$</td>
+            <td>$363.0$</td>
+            <td>$1.504$</td>
+            <td>$8.20 \times 10^{-12}$</td>
+            <td>$0.348$</td>
+            <td>—</td>
+            <td>$3.92$</td>
+            <td>—</td>
+            <td>$1.06 \times 10^5$</td>
+            <td>$0.305$</td>
+        </tr>
+        <tr>
+            <td><strong>Mars</strong></td>
+            <td>$6.42 \times 10^{23}$</td>
+            <td>$1.557$</td>
+            <td>$1{,}971.2$</td>
+            <td>$1.261$</td>
+            <td>$2.42 \times 10^{-10}$</td>
+            <td>$0.241$</td>
+            <td>$0.099$</td>
+            <td>$24.62$</td>
+            <td>$60.02$</td>
+            <td>$2{,}094.6$</td>
+            <td>$0.033$</td>
+        </tr>
+        <tr>
+            <td><strong>Earth</strong></td>
+            <td>$5.97 \times 10^{24}$</td>
+            <td>$7.237$</td>
+            <td>$4{,}146.4$</td>
+            <td>$1.017$</td>
+            <td>$1.07 \times 10^{-9}$</td>
+            <td>$0.465$</td>
+            <td>$0.437$</td>
+            <td>$23.93$</td>
+            <td>$25.48$</td>
+            <td>$737.8$</td>
+            <td>$0.024$</td>
+        </tr>
+        <tr>
+            <td><strong>Earth+Moon</strong></td>
+            <td>$6.05 \times 10^{24}$</td>
+            <td>$7.282$</td>
+            <td>$4{,}163.3$</td>
+            <td>$1.013$</td>
+            <td>$1.08 \times 10^{-9}$</td>
+            <td>$2.319^*$</td>
+            <td>$0.441$</td>
+            <td>$4.80^*$</td>
+            <td>$25.27$</td>
+            <td>$3{,}634.3$</td>
+            <td>$0.119$</td>
+        </tr>
+        <tr>
+            <td><strong>Uranus</strong></td>
+            <td>$8.68 \times 10^{25}$</td>
+            <td>$1.436$</td>
+            <td>$10{,}119.3$</td>
+            <td>$1.137$</td>
+            <td>$6.37 \times 10^{-9}$</td>
+            <td>$2.586$</td>
+            <td>$2.603$</td>
+            <td>$17.25$</td>
+            <td>$17.14$</td>
+            <td>$769.6$</td>
+            <td>$0.061$</td>
+        </tr>
+        <tr>
+            <td><strong>Neptune</strong></td>
+            <td>$1.02 \times 10^{26}$</td>
+            <td>$0.995$</td>
+            <td>$10{,}692.4$</td>
+            <td>$1.112$</td>
+            <td>$7.11 \times 10^{-9}$</td>
+            <td>$2.683$</td>
+            <td>$2.906$</td>
+            <td>$16.11$</td>
+            <td>$14.87$</td>
+            <td>$699.4$</td>
+            <td>$0.059$</td>
+        </tr>
+        <tr>
+            <td><strong>Saturn</strong></td>
+            <td>$5.68 \times 10^{26}$</td>
+            <td>$7.368$</td>
+            <td>$18{,}930.3$</td>
+            <td>$1.389$</td>
+            <td>$2.23 \times 10^{-8}$</td>
+            <td>$9.871$</td>
+            <td>$9.108$</td>
+            <td>$10.66$</td>
+            <td>$11.55$</td>
+            <td>$1{,}025.5$</td>
+            <td>$0.153$</td>
+        </tr>
+        <tr>
+            <td><strong>Jupiter</strong></td>
+            <td>$1.90 \times 10^{27}$</td>
+            <td>$24.791$</td>
+            <td>$28{,}296.7$</td>
+            <td>$1.334$</td>
+            <td>$4.98 \times 10^{-8}$</td>
+            <td>$12.572$</td>
+            <td>$12.954^{\dagger}$</td>
+            <td>$9.93$</td>
+            <td>$9.64^{\dagger}$</td>
+            <td>$561.4$</td>
+            <td>$0.125$</td>
+        </tr>
+        <tr>
+            <td><strong>SIMP J0136</strong></td>
+            <td>$2.41 \times 10^{28}$</td>
+            <td>—</td>
+            <td>$66{,}019.2$</td>
+            <td>$0.621$</td>
+            <td>$2.71 \times 10^{-7}$</td>
+            <td>$63.060$</td>
+            <td>$64.890^{\dagger}$</td>
+            <td>$2.41$</td>
+            <td>$2.35^{\dagger}$</td>
+            <td>$240.8$</td>
+            <td>$0.125$</td>
+        </tr>
+        <tr>
+            <td><strong>2M J0348$-$60</strong></td>
+            <td>$8.16 \times 10^{28}$</td>
+            <td>—</td>
+            <td>$99{,}134.6$</td>
+            <td>$0.269$</td>
+            <td>$6.11 \times 10^{-7}$</td>
+            <td>$105.136$</td>
+            <td>$96.842^{\ddagger}$</td>
+            <td>$1.08$</td>
+            <td>$1.17^{\ddagger}$</td>
+            <td>$77.2$</td>
+            <td>$0.140^{\ddagger}$</td>
+        </tr>
+        <tr>
+            <td><strong>2M J1219$+$31</strong></td>
+            <td>$9.30 \times 10^{28}$</td>
+            <td>—</td>
+            <td>$103{,}546.3$</td>
+            <td>$0.275$</td>
+            <td>$6.67 \times 10^{-7}$</td>
+            <td>$106.170$</td>
+            <td>$103.228^{\ddagger}$</td>
+            <td>$1.14$</td>
+            <td>$1.17^{\ddagger}$</td>
+            <td>$72.9$</td>
+            <td>$0.133^{\ddagger}$</td>
+        </tr>
+        <tr>
+            <td><strong>2M J0407$+$15</strong></td>
+            <td>$1.27 \times 10^{29}$</td>
+            <td>—</td>
+            <td>$114{,}928.4$</td>
+            <td>$0.207$</td>
+            <td>$8.22 \times 10^{-7}$</td>
+            <td>$82.170$</td>
+            <td>$86.200^{\ddagger}$</td>
+            <td>$1.23$</td>
+            <td>$1.17^{\ddagger}$</td>
+            <td>$34.5$</td>
+            <td>$0.123^{\ddagger}$</td>
+        </tr>
+        <tr>
+            <td><em>Mercury (braked)</em></td>
+            <td>$3.30 \times 10^{23}$</td>
+            <td>$4.396$</td>
+            <td>$1{,}579.5$</td>
+            <td>$1.069$</td>
+            <td>$1.55 \times 10^{-10}$</td>
+            <td>$0.003$</td>
+            <td>$0.063$</td>
+            <td>$1407.6$</td>
+            <td>$67.16$</td>
+            <td>$34.7$</td>
+            <td>$0.0004$</td>
+        </tr>
+        <tr>
+            <td><em>Venus (braked)</em></td>
+            <td>$4.87 \times 10^{24}$</td>
+            <td>$9.033$</td>
+            <td>$3{,}873.1$</td>
+            <td>$1.031$</td>
+            <td>$9.33 \times 10^{-10}$</td>
+            <td>$0.002$</td>
+            <td>$0.381$</td>
+            <td>$5832.6$</td>
+            <td>$27.70$</td>
+            <td>$3.3$</td>
+            <td>$0.0001$</td>
+        </tr>
+    </tbody>
+</table>
+
+<p style="font-size: 0.9em; color: #666">
+    <em>Table 4.3: Planetary and small-body rotational kinematics evaluated at the GNSS-calibrated saturation density $\rho_T = 20$ g/cm³ ($\omega_T = 2.365 \times 10^{-3}$ rad s$^{-1}$) and Solar-Circle Galactic velocity $v_{\rm gal} = 220$ km s$^{-1}$ ($\chi_{\rm TEP} = c/(2v_{\rm gal}) = 681.3$, $p_{\rm TEP} = 1.517 \times 10^{-15}$ cm$^2$ g$^{-1}$ s$^{-1}$; Step 15). <sup>*</sup>Earth+Moon restores the tidally transferred lunar orbital angular momentum to Earth's spin ($\eta_{\rm rot} = 0.119$), while present-day Earth spin sits directly on the ambient-coupled Wesson branch ($\chi_{\rm obs} = 737.8$, $v_{\rm obs}/v_{\rm TEP} = 1.064$). <sup>&dagger;</sup>Evaluated on the unscreened ($S &lt; 1$) soliton-capacity branch $v_{\rm cap} = \eta_0 R_T^2\omega_T/(k_{\rm MOI}R_{\rm phys})$ ($\eta_0 = 0.129$; for Jupiter, the unsaturated ambient formula gives $20.35$ km s$^{-1}$). <sup>&Dagger;</sup>Evaluated in the screened brown-dwarf regime ($\bar\rho \ge \rho_T$, $S \ge 1$) where $R_{\rm active} = \min[R_T,\,R_{\rm phys}] = R_{\rm phys}$, giving the universal period floor $P_{\min}^{\rm TEP} = (k_{\rm MOI}/\eta_0)\tau_T = 1.172$ hr and active efficiency $\eta_{\rm act} = j_{\rm obs}/(R_{\rm phys}^2\omega_T)$.</em>
+</p>
+
+<figure style="margin: 30px 0">
+    <img
+        src="figures/figure_9_planetary_rotation.png"
+        alt="Planetary Rotational Kinematics and Angular Momentum Scaling"
+        style="max-width: 100%"
+    />
+    <figcaption
+        style="
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        "
+    >
+        Figure 6: Planetary Rotational Kinematics Across Mass Scales (Step 15). (a) Observed equatorial rotation speeds $v_{\rm eq}$ versus the fixed-input TEP ambient relation $v_{\rm eq}^{\rm TEP} = c\,u_T(M)/\sqrt{u_{\rm gal}} = GM/(R_T v_{\rm gal})$ (solid line, using GNSS-calibrated $\rho_T = 20$ g/cm³ and Solar-Circle $v_{\rm gal} = 220$ km s$^{-1}$), the interior-structure band $2k_{\rm MOI}/S \in [1.0, 1.4]$ (shaded), and the two-branch $+\;S_A$ saturation model ($v_{\rm obs}/v_{\rm 2br} = 1.008 \pm 0.060$ across all $N = 9$ major planetary and substellar speed-limit systems from Earth to $67\,M_{\rm Jup}$, orange diamonds: Earth, Uranus, Neptune, and Saturn on the unsaturated ambient branch at $1.016 \pm 0.073$; Jupiter at $1.0\,M_{\rm Jup}$ and SIMP J0136 at $12.7\,M_{\rm Jup}$ on the unscreened $S < 1$ soliton capacity branch within $-2.9\%$ and $-2.8\%$; and the three Tannock et al. 2021 speed-limit brown dwarfs at $43\text{--}67\,M_{\rm Jup}$ on the $S \ge 1$ saturated period floor $P_{\min}^{\rm TEP} = (k_{\rm MOI}/\eta_0)\tau_T = 1.172\text{ hr}$ vs. observed $1.150 \pm 0.075\text{ hr}$, crimson triangles). (b) Specific angular momentum $j = J/M$ across nearly ten orders of magnitude in mass ($8.7 \times 10^{19}$ to $1.3 \times 10^{29}$ kg), showing the three-regime structure: the $j_{\rm sol} = \eta_0 R_T(M)^2\omega_T \propto M^{2/3}$ soliton branch across six minor/dwarf planets (Hygiea, Pallas, Vesta, Ceres, Quaoar, Haumea), Earth+Moon, Jupiter, and SIMP J0136; the ambient Galactic Wesson branch $j_{\rm TEP} = GM/(2v_{\rm gal}) \propto M$ for intermediate-mass planets ($M < M_{\rm cap} = 194\,M_\oplus$); and the horizontal $S_A = \min[1,\,S] = 1$ saturation plateau ($P_{\min} = 1.17\text{ hr}$) at $\bar\rho \ge \rho_T$ ($S \ge 1$, $M \gtrsim 16\,M_{\rm Jup}$).
+    </figcaption>
+</figure>
+
 <div class="callout">
-    <h4>Box 4.1: Summary — Three Cross-Regime Consistency Tests</h4>
+    <h4>Box 4.1: Summary — Four Cross-Regime Consistency Tests</h4>
     <p>
-        The screening analysis provides three cross-regime consistency tests of
+        The screening analysis provides four cross-regime consistency tests of
         the TEP framework under a single $\rho_T$:
     </p>
     <ol>
         <li>
             <strong>The RBH-1 Crossover:</strong> The saturation radius is
-            consistent with the Schwarzschild radius at $M \approx 10^7
-            M_{\odot}$ within combined uncertainties ($R_T/R_S \approx 1.3$). This
+            consistent with the Schwarzschild radius for RBH-1 ($M \approx 2 \times 10^7
+            M_{\odot}$, near the exact crossover mass $M_\times = \sqrt{3c^6/(32\pi G^3\rho_T)} \approx 3.04 \times 10^7 M_{\odot}$) within combined uncertainties ($R_T/R_S \approx 1.3$). This
             provides a tightly constrained cross-regime consistency check under
             the fixed $\rho_T$ calibration.
         </li>
@@ -473,6 +846,9 @@
             <strong>GR Test Consistency:</strong> All five precision tests of
             General Relativity are consistent with screening factors that suppress
             scalar contributions below current measurement limits.
+        </li>
+        <li>
+            <strong>Planetary Spin and Wesson Constant:</strong> Combining $\rho_T = 20$ g/cm³ with the Galactic temporal depth $u_{\rm gal} = (v_{\rm gal}/c)^2$ yields the zero-parameter ambient equatorial speed relation ($v_{\rm eq} = c\,u_T/\sqrt{u_{\rm gal}}$, mean ratio $1.016 \pm 0.073$ and $\rho_T^{\rm spin} = 20.9$ g/cm³ across Earth, Uranus, Neptune, and Saturn) and the zero-parameter Wesson constant $p_{\rm TEP} = G/(2v_{\rm gal}) = 1.52 \times 10^{-15}$ cm$^2$ g$^{-1}$ s$^{-1}$, while the conditional one-parameter ($\eta_0 = 0.129$) two-branch $+\;S_A$ extension matches $N = 9$ planetary and substellar speed-limit systems from Earth to $67\,M_{\rm Jup}$ at $v_{\rm obs}/v_{\rm 2br} = 1.008 \pm 0.060$ ($\rho_T^{\rm rot} = 21.1$ g/cm³, including SIMP J0136 and the $1.172$ hr brown-dwarf period floor) alongside cold-planet moments of inertia ($2k_{\rm MOI}/S = 1.039 \pm 0.027$ across the three iron-core terrestrial planets and $1.17 \pm 0.14$ across all eight planets).
         </li>
     </ol>
     <p>

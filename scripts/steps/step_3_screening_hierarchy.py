@@ -101,9 +101,9 @@ def run_screening_hierarchy():
         "Hulse-Taylor": {"M": 1.44 * M_sun, "R": 11, "type": "pulsar", "rho": 6e14},
         "Double Pulsar": {"M": 1.34 * M_sun, "R": 12, "type": "pulsar", "rho": 3.7e14},
         "Vela X-1": {"M": 1.8 * M_sun, "R": 12, "type": "pulsar", "rho": 5e14},
-        # Black Holes
-        "RBH-1": {"M": 2.0e7 * M_sun, "R": 3.2e7, "type": "bh", "rho": 2e5},
-        "M87*": {"M": 6.5e9 * M_sun, "R": 1.9e10, "type": "bh", "rho": 6e3},
+        # Black Holes (evaluated at their Schwarzschild radii R_S = 2GM/c^2 and horizon mean densities rho_S = 3M / (4 pi R_S^3))
+        "RBH-1": {"M": 2.0e7 * M_sun, "R": 5.907e7, "type": "bh", "rho": 46.10},
+        "M87*": {"M": 6.5e9 * M_sun, "R": 1.920e10, "type": "bh", "rho": 4.37e-4},
     }
 
     print_status(f"Loaded {len(objects)} objects for screening hierarchy", "INFO")
@@ -160,7 +160,7 @@ def run_screening_hierarchy():
 
     # --- Panel A: Screening Factor vs Density (with Proximity Axis) ---
     ax1 = axes[0]
-    ax1.set_title(r"$\bf{a)}$ Screening Factor vs Density", loc='left')
+    ax1.set_title(r"$\bf{a)}$ Geometric Saturation Ratio vs. Density", loc='left')
 
     # Plot Objects
     for name, obj in objects.items():
@@ -168,14 +168,53 @@ def run_screening_hierarchy():
         ax1.scatter(obj['rho'], obj['screening'], color=colors[t], marker=markers[t],
                     s=80, edgecolors='k', lw=0.5, zorder=5)
 
-        # Annotations
-        if name in ['Earth', 'Sirius B', 'Typical NS']:
-            ax1.annotate(name, (obj['rho'], obj['screening']), xytext=(0, 5),
-                         textcoords='offset points', ha='center')
+    # Offset annotations in Panel A with leader lines where crowded
+    ax1.annotate(
+        'Earth',
+        xy=(objects['Earth']['rho'], objects['Earth']['screening']),
+        xytext=(0.8, 4.5),
+        textcoords='data',
+        fontsize=8.5,
+        ha='center',
+        arrowprops=dict(arrowstyle='->', color='dimgray', lw=0.7, shrinkA=0, shrinkB=4),
+        zorder=8,
+    )
+    ax1.annotate(
+        'Sirius B',
+        xy=(objects['Sirius B']['rho'], objects['Sirius B']['screening']),
+        xytext=(0, 8),
+        textcoords='offset points',
+        fontsize=8.5,
+        ha='center',
+        zorder=8,
+    )
+    ax1.annotate(
+        'Typical NS',
+        xy=(objects['Typical NS']['rho'], objects['Typical NS']['screening']),
+        xytext=(-10, 12),
+        textcoords='offset points',
+        fontsize=8.5,
+        ha='center',
+        zorder=8,
+    )
+
+    # Empirical power-law fit S \propto \rho^{0.334} across full hierarchy
+    rho_fit = np.logspace(-3.6, 15.2, 300)
+    S_fit = (rho_fit / rho_T) ** 0.334
+    ax1.plot(
+        rho_fit,
+        S_fit,
+        color=COLORS['primary'],
+        linestyle='--',
+        linewidth=1.5,
+        alpha=0.75,
+        zorder=3,
+        label=r'Fit: $S \propto \rho^{0.334}$',
+    )
 
     # Theoretical lines
     ax1.axvline(x=rho_T, color='k', linestyle='--', alpha=0.5)
-    ax1.text(rho_T*1.5, 0.6, r'$\rho_T \approx 20$ g/cm³', rotation=90, va='bottom')
+    ax1.text(rho_T * 0.55, 25.0, r'$\rho_T \approx 20$ g/cm³', rotation=90, ha='right', va='bottom', fontsize=8)
 
     # Proximity regime bands (vertical, on primary axis)
     # Core overlap: lambda_F < r_c  =>  rho > ~10^4 g/cm³
@@ -186,17 +225,17 @@ def run_screening_hierarchy():
     rho_trans_lo = rho_core / 1000.0  # ~10 g/cm³ where lambda_F ~ 10*r_c
     ax1.axvspan(rho_trans_hi, 1e16, color='red', alpha=0.06, label='Core overlap')
     ax1.axvspan(rho_trans_lo, rho_trans_hi, color='orange', alpha=0.06, label='Transition')
-    ax1.axvspan(1e-1, rho_trans_lo, color='green', alpha=0.06, label='Dilute')
+    ax1.axvspan(2e-4, rho_trans_lo, color='green', alpha=0.06, label='Dilute')
 
     # Unity Line
     ax1.axhline(y=1, color='gray', linestyle=':', alpha=0.5)
-    ax1.text(1e-1, 1.1, 'No Screening', color='gray')
+    ax1.text(2e10, 1.35, 'Transition Boundary ($S = 1$)', color='dimgray', ha='center', fontsize=8)
 
     ax1.set_xscale('log')
     ax1.set_yscale('log')
     ax1.set_xlabel(r'Mean Density $\rho$ (g/cm³)  (observable proxy for proximity)')
-    ax1.set_ylabel(r'Screening Factor $S = R_T/R_{phys}$')
-    ax1.set_xlim(1e-1, 1e16)
+    ax1.set_ylabel(r'Geometric Saturation Ratio $S = R_T/R_{\rm phys}$')
+    ax1.set_xlim(2e-4, 1e16)
     ax1.set_ylim(1e-2, 1e8)
     ax1.grid(True, which='major', alpha=0.3)
 
@@ -205,11 +244,11 @@ def run_screening_hierarchy():
     ax1_top.set_xscale('log')
     ax1_top.set_xlim(ax1.get_xlim())
 
-    # Map density ticks to lambda_F values
-    tick_rhos = np.array([1e-1, 1e0, 1e1, 1e2, 1e4, 1e8, 1e12, 1e16])
+    # Map cleanly spaced density ticks (every 3 decades) to lambda_F values
+    tick_rhos = np.array([1e-3, 1e0, 1e3, 1e6, 1e9, 1e12, 1e15])
     tick_lams = [lambda_F_from_rho_g_cm3(r) for r in tick_rhos]
     ax1_top.set_xticks(tick_rhos)
-    ax1_top.set_xticklabels([f'{lam:.0e}' for lam in tick_lams])
+    ax1_top.set_xticklabels([f'{lam:.0e}' for lam in tick_lams], fontsize=8)
     ax1_top.set_xlabel(r'Fermi wavelength $\lambda_F$ (m)')
 
     # Mark r_c and lambda_scr on top axis
@@ -220,7 +259,7 @@ def run_screening_hierarchy():
     # Dummy points for legend
     for t in colors:
         ax1.scatter([], [], color=colors[t], marker=markers[t], label=labels[t], edgecolors='k')
-    ax1.legend(loc='upper left', frameon=False, fontsize=7)
+    ax1.legend(loc='upper left', ncol=2, frameon=False, fontsize=6.5, columnspacing=0.8, handletextpad=0.4)
 
     # --- Panel B: Physical vs TEP Radius ---
     ax2 = axes[1]
@@ -230,25 +269,67 @@ def run_screening_hierarchy():
         t = obj['type']
         ax2.scatter(obj['R'], obj['R_T'], color=colors[t], marker=markers[t], 
                     s=80, edgecolors='k', lw=0.5, zorder=5)
-    
-        if name in ['Earth', 'Sirius B', 'Typical NS']:
-            ax2.annotate(name, (obj['R'], obj['R_T']), xytext=(5, -5), 
-                         textcoords='offset points')
+
+    ax2.annotate(
+        'Earth',
+        xy=(objects['Earth']['R'], objects['Earth']['R_T']),
+        xytext=(8, -10),
+        textcoords='offset points',
+        fontsize=8.5,
+        zorder=8,
+    )
+    ax2.annotate(
+        'Sirius B',
+        xy=(objects['Sirius B']['R'], objects['Sirius B']['R_T']),
+        xytext=(-4, 12),
+        textcoords='offset points',
+        ha='center',
+        fontsize=8.5,
+        zorder=8,
+    )
+    ax2.annotate(
+        'Typical NS',
+        xy=(objects['Typical NS']['R'], objects['Typical NS']['R_T']),
+        xytext=(4, -15),
+        textcoords='offset points',
+        ha='left',
+        fontsize=8.5,
+        zorder=8,
+    )
+
+    ax2.annotate(
+        'RBH-1',
+        xy=(objects['RBH-1']['R'], objects['RBH-1']['R_T']),
+        xytext=(-14, 10),
+        textcoords='offset points',
+        ha='center',
+        fontsize=8.0,
+        zorder=8,
+    )
+    ax2.annotate(
+        'M87*',
+        xy=(objects['M87*']['R'], objects['M87*']['R_T']),
+        xytext=(-16, -13),
+        textcoords='offset points',
+        ha='center',
+        fontsize=8.0,
+        zorder=8,
+    )
 
     # Unity Line
-    r_line = np.logspace(0, 10, 10)
+    r_line = np.logspace(0, 10.8, 10)
     ax2.plot(r_line, r_line, 'k--', alpha=0.5, label='Unity ($R_T=R_{phys}$)')
 
     ax2.set_xscale('log')
     ax2.set_yscale('log')
     ax2.set_xlabel(r'Physical Radius $R_{phys}$ (km)')
     ax2.set_ylabel(r'TEP Radius $R_T$ (km)')
-    ax2.set_xlim(1e0, 2e10)
-    ax2.set_ylim(1e0, 2e10)
+    ax2.set_xlim(1e0, 6e10)
+    ax2.set_ylim(1e0, 6e10)
     ax2.grid(True, which='major', alpha=0.3)
 
     # Annotations
-    ax2.text(1e1, 1e7, "Screened Regime\n(Scalar Field > Physical)", ha='center', color=COLORS['primary'])
+    ax2.text(1.5e2, 1.2e7, "Compact-Body Regime\n($R_T > R_{\\rm phys}$)", ha='center', color=COLORS['primary'])
 
     output_path = os.path.join(output_dir, 'figure_4_screening_hierarchy.png')
     plt.savefig(output_path)

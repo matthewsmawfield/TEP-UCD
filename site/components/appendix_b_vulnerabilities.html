@@ -70,21 +70,15 @@
 </p>
 
 <p>
-    <strong>Mitigation:</strong> A complete mitigation
-    requires a dedicated numerical solution of a specified completion (e.g., Box 6.5)
-    in the terrestrial transition regime, with the quartic normalization held
-    at the corpus value and \(\rho_T\) fixed by the calibrated
-    \(L_c\), to demonstrate how an observable clock-network correlation length
-    maps onto the geometric scale \(R_T(M_\oplus)\). This single-potential demonstration
-    remains an open target.
+    <strong>Mitigation:</strong> A fixed-input, canonical-kinetic Earth-profile consistency calculation has now been executed in Step 14 (<code>step_14_scale_audit.py</code>, <code>prem_earth_bvp_integration</code>). Holding the quartic coupling fixed at the Cassini-compatible corpus normalization $\lambda = 7.53\times 10^{-66}$ and using the GNSS-anchored $\rho_T = 20$ g/cm³ ($\lambda_c(\rho_T) = 2{,}478.5$ km), the boundary-value problem $\nabla^2 u = M_{\rm Pl}^{-2}V_{\rm eff}'(u)$ is solved across a 4-layer piecewise-constant approximation to the Preliminary Reference Earth Model (PREM; Dziewonski &amp; Anderson 1981; layer-mean densities joined by 30 km tanh transitions, total mass within $0.4\%$ of $M_\oplus$; inner core $12.90$ g/cm³, outer core $11.05$ g/cm³ to $3{,}480$ km, lower mantle $4.90$ g/cm³ to $5{,}701$ km, upper mantle/crust $3.55$ g/cm³ to $6{,}371$ km). The solved transition gradient $r^2|\mathrm{d}u/\mathrm{d}r|$ peaks across the core–mantle transition with radial centroid $R_{\rm grad} = 4{,}874.9$ km $= 1.176\,R_T(M_\oplus)$ and transition Compton scale $\lambda_c(R_{\rm grad}) = 7{,}807.9$ km. Projecting the 3-D Yukawa spatial kernel from this transition shell onto pairs of surface stations at $R_\oplus = 6{,}371$ km separated by arc baselines $d \in [200,\,8{,}000]$ km (with network datum-mean removal) recovers an exponential spatial-kernel decay scale ($R^2 = 0.927$) of $L_c^{\rm PREM} = 4{,}010.2$ km—within $-4.5\%$ of the GNSS-calibrated length $L_c = 4{,}200$ km ($L_c^{\rm PREM}/R_T(M_\oplus) = 0.967$, confirming an order-unity spatial transfer prefactor; varying the fit window $d_{\max} \in \{6{,}000,\,8{,}000,\,10{,}000\}$ km shifts $L_c^{\rm PREM}$ across $3{,}290\text{--}4{,}595$ km and scaling $\lambda_c(\rho_T) \propto \rho_T^{-1/3}$ across $\rho_T \in \{5,\,20,\,50,\,200\}$ g/cm³ shifts $L_c^{\rm PREM}$ from $4{,}105$ to $3{,}650$ km because the single-body projection is governed primarily by Earth's fixed $R_{\rm CMB}$ and $R_\oplus$ geometry, so numerical discrimination of $\rho_T$ rests on the cross-mass tests of Sections 4 and 6). Evolving the full time-dependent station-residual modulation together with the nonlinear kinetic operator $\nabla\cdot(P_X\nabla u) = M_{\rm Pl}^{-2}V_{\rm eff}'(u)$ remains the next theoretical target.
 </p>
 
 <h3>B.3 The SPARC Exponent is Empirical, Not Uniquely \(\rho^{1/3}\)</h3>
 
 <p>
     The empirical dark-matter onset exponent
-    \(\alpha_{\rm SPARC} = 0.355 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (definition)}\) is consistent with
-    \(1/3 = 0.333\) at approximately \(0.3\sigma\) under combined uncertainty. This agreement is
+    \(\alpha_{\rm SPARC} = 0.352 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (definition)}\) is consistent with
+    \(1/3 = 0.333\) at approximately \(0.2\sigma\) under combined uncertainty. This agreement is
     encouraging but not uniquely predicted by TEP without showing that the
     TEP field equation <em>derives</em> the \(M^{1/3}\) scaling at halo
     densities. The present manuscript presents the scaling as a consistency
@@ -97,7 +91,7 @@
 <p>
     <strong>Mitigation:</strong> The geometric consequence \(R_T \propto M^{1/3}\) (\(\alpha = 1/3\)) follows analytically once a universal saturation density \(\rho_T\) is assumed (Section 3, <em>Theoretical Expectation from \(\rho_T\)</em>), whereas deriving that onset scaling dynamically from the screened field equation in halo conditions remains open. The SPARC
     analysis is accordingly framed as a <em>post hoc</em> consistency check, not a blind
-    prediction. The 0.022 offset from \(1/3\) corresponds to approximately \(0.5\sigma\) using the statistical bootstrap uncertainty (\(\sim 0.3\sigma\) including the \(\pm 0.07\) onset-definition systematic) and is therefore not statistically significant; the larger threshold-dependent shifts are treated as
+    prediction. The 0.018 offset from \(1/3\) corresponds to approximately \(0.4\sigma\) using the statistical bootstrap uncertainty (\(\sim 0.2\sigma\) including the \(\pm 0.07\) onset-definition systematic) and is therefore not statistically significant; the larger threshold-dependent shifts are treated as
     targets for future galactic-field modelling rather than a refutation.
 </p>
 
@@ -114,13 +108,9 @@
 </p>
 
 <p>
-    <strong>Mitigation:</strong> The screening audit
-    (<code>screening_audit.py</code>) performs object-by-object residual
-    analysis and class-wise jackknife. The slope remains stable to
-    \(\pm 0.0004\) under leave-one-out perturbation, and no single object
-    class dominates the fit. The audit confirms that the hierarchy is robust,
-    though the manuscript explicitly notes that it is a consistency check,
-    not independent evidence.
+    <strong>Mitigation:</strong> The screening hierarchy verification
+    (<code>scripts/steps/step_5_ultimate_screening.py</code> and <code>scripts/verification/verify_screening_claim.py</code>) performs object-by-object residual
+    analysis across the 11 dense objects (\(\rho > \rho_T\)), confirming \(\beta_{\rm scr} = 0.3338 \pm 0.0008\) (\(R^2 = 0.99995\)). While the density-ordered \(S = R_T/R_{\rm phys}\) relation is an internal consistency check by construction, the planetary rotational kinematics and moment-of-inertia test in Section 4.7 (<code>step_15_planetary_rotation.py</code>) breaks this algebraic circularity by testing \(R_T(M)\) and \(S\) against independent NASA/JPL ephemeris spin velocities (\(v_{\rm obs}/v_{\rm TEP} = 1.016 \pm 0.073\)), moments of inertia (\(2k_{\rm MOI}/S = 1.17 \pm 0.14\)), and Wesson's angular-momentum constant \(p_{\rm TEP} = G/(2v_{\rm gal})\).
 </p>
 
 <h3>B.5 Cross-Paper Parameter Drift</h3>
@@ -142,7 +132,7 @@
     <tbody>
         <tr>
             <td>\(\alpha_{\rm SPARC}\)</td>
-            <td>\(0.355 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (definition)}\)</td>
+            <td>\(0.352 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (definition)}\)</td>
             <td>UCD (this work)</td>
             <td>Galactic DM onset scaling (expected 1/3)</td>
         </tr>
@@ -203,26 +193,22 @@
     </p>
 </div>
 
-<h3>B.7 Causal Structure and Superluminality</h3>
+<h3>B.7 Causal Structure and Hyperbolicity</h3>
 
 <p>
     The TEP scalar field mediates correlations over thousands of kilometres
     in GNSS clocks. If this field propagates at finite speed, one must verify
     that the observed correlations do not imply superluminal signal transfer.
-    The following proof demonstrates that the TEP bimetric framework is causally safe and
-    strictly prohibits superluminal signaling by separating the <em>signal
-    propagation velocity</em> (group velocity of $\delta\phi$) from the
-    <em>static spatial topology</em> (the steady-state solution $\bar{\phi}$).
+    This appendix establishes local causal-cone and scalar-hyperbolicity consistency on the selected physical backgrounds and explains why GNSS spatial covariance arises from a static boundary-value geometry rather than instantaneous signaling. Global causal admissibility is formulated relative to the preferred TEP foliation ($\nabla_\mu\bar{\phi}$ timelike at the cosmological boundary; Paper 0 §12).
 </p>
 
-<h4>Theorem: Causal Safety in the TEP Bimetric Framework</h4>
+<h4>Local Causal-Cone and Hyperbolicity Analysis</h4>
 
 <p>
-    <em>Objective.</em> Prove that the effective causal (matter) metric
-    $\tilde{g}_{\mu\nu}$ and the scalar field equation of motion do not admit
-    closed timelike curves or superluminal signal velocities, and that
-    long-range spatial correlations are artifacts of boundary-value static
-    geometry, not dynamic propagation.
+    <em>Objective.</em> Establish that on the specified static background the effective causal (matter) metric
+    $\tilde{g}_{\mu\nu}$ and the scalar field equation of motion preserve locally Lorentz-invariant matter/photon cones and strict Cauchy hyperbolicity, and that
+    long-range spatial correlations reflect static boundary-value
+    geometry rather than dynamic propagation.
 </p>
 
 <h4>Step 1: The Bimetric Causal Cones</h4>
@@ -230,7 +216,7 @@
 <p>
     In TEP (Paper 0), gravity is governed by the Einstein-frame metric
     $g_{\mu\nu}$. Matter and electromagnetic fields evolve along the geodesics
-    of the causal (Jordan-frame) metric:
+    of the causal (Jordan-frame) metric, written here on the isotropic conformal–disformal benchmark (in the canonical unified unstretched-space decomposition of Paper 0 §2.2, $\tilde{g}_{\mu\nu} = -A_{\rm loc}^2 U_\mu U_\nu + A_{\rm sp}^2 \Pi_{\mu\nu} + B(\phi)\Pi_\mu^\alpha\Pi_\nu^\beta\nabla_\alpha\phi\nabla_\beta\phi$):
 </p>
 
 <div class="equation">
@@ -261,7 +247,7 @@
 </div>
 
 <p>
-    As long as this condition holds, the causal cone of $\tilde{g}_{\mu\nu}$
+    As long as Condition 1 holds on the $B(\phi) \ge 0$, static-gradient benchmark ($\partial_t\phi = 0$, $(\nabla\phi)^2 > 0$), the causal cone of $\tilde{g}_{\mu\nu}$
     remains strictly nested inside, or tangent to, the gravitational light cone
     of $g_{\mu\nu}$.
 </p>
@@ -303,37 +289,31 @@
     late universe, meaning $c_\gamma \approx c$ macroscopically.)
 </p>
 
-<h4>Step 3: Propagation of the Scalar Field Itself</h4>
+<h4>Step 3: Propagation and Hyperbolicity of the Scalar Field</h4>
 
 <p>
-    Consider the attempt to transmit a signal by oscillating a mass and creating a scalar wave
-    $\delta\phi$? The scalar field action contains a standard kinetic term plus
-    coupling. In the EFT of Dark Energy framework (Paper 18, hi_class cosmology),
-    the propagation of $\delta\phi$ is governed by a sound speed $c_s^2$:
+    Consider perturbations $\delta\phi$ of the scalar field around a background solution $\bar{\phi}$ under the convention $X \equiv -\frac{1}{2}g^{\mu\nu}\nabla_\mu\phi\nabla_\nu\phi$. On a homogeneous cosmological background ($\bar{X} > 0$), the EFT of Dark Energy implementation (Paper 18, <code>hi_class</code> cosmology) satisfies the no-ghost ($\alpha_K > 0$) and no-gradient-instability ($c_s^2 > 0$) conditions with $c_s \le c$. On a static spacelike-gradient background ($\bar{X} = -\frac{1}{2}(\nabla\bar{\phi})^2 < 0$, so $|X| = -X > 0$) for the selected two-branch k-essence completion $P_X(\xi) = \epsilon_{\rm reg} + k\sqrt{\xi} + 2\xi$ ($\xi \equiv |X|/\Lambda_X^4$, $\epsilon_{\rm reg} = 10^{-3}$; Paper 0 §12, Step 77), varying $\nabla_\mu(P_X\nabla^\mu\phi)$ with $\nabla_\nu X = -\nabla^\mu\phi\nabla_\nu\nabla_\mu\phi$ yields the linearized hyperbolic wave equation:
 </p>
 
 <div class="equation">
-    \begin{equation} \label{eq:scalar_wave} \ddot{\delta\phi} - c_s^2 \nabla^2 \delta\phi = \text{source terms}. \end{equation}
+    \begin{equation} \label{eq:scalar_wave} P_X\,\ddot{\delta\phi} - c^2 \nabla_i \Big[\big(P_X\delta^{ij} - P_{XX}\nabla^i\bar{\phi}\nabla^j\bar{\phi}\big)\nabla_j\delta\phi\Big] + V_{,\phi\phi}\,\delta\phi = \text{source terms}, \end{equation}
 </div>
 
 <p>
-    Because TEP is built as a stable Horndeski subclass, stability mandates the
-    no-ghost ($\alpha_K > 0$) and no-gradient-instability ($c_s^2 \ge 0$)
-    conditions. Furthermore, bounding the running of the Planck mass enforces
-    $c_s \le c$. Thus, temporal shear waves propagate at or below $c$. No
-    information travels faster than light.
+    whose transverse and longitudinal scalar characteristic speeds squared relative to the gravitational metric $g_{\mu\nu}$ are $v_\perp^2 = 1$ and
+    $$v_\parallel^2 = \frac{P_X + 2X P_{XX}}{P_X} = \frac{P_X - 2|X| P_{XX}}{P_X} = \frac{\epsilon_{\rm reg} + 2k\sqrt{\xi} + 6\xi}{\epsilon_{\rm reg} + k\sqrt{\xi} + 2\xi} \in [1, 3]$$
+    across the nonlinear branches ($v_\parallel^2 \to 1$ in the regulator-dominated limit $\xi \to 0$, $v_\parallel^2 \to 2$ on the $\sqrt{\xi}$ branch, and $v_\parallel^2 \to 3$ on the quadratic branch). As established in Paper 0 §12, this widened longitudinal scalar characteristic ($v_\parallel > 1$ on static spacelike gradients) does not violate matter-sector causality: matter and electromagnetic fields propagate strictly on the locally Lorentz-invariant causal cone of $\tilde{g}_{\mu\nu}$ ($c_\gamma \le c$, Step 2), while the cosmic time field $\bar{\phi}$ defines a preferred global foliation on which the classical Cauchy initial-value problem is strictly hyperbolic and well-posed ($P_X > 0$ and $P_X + 2X P_{XX} = P_X - 2|X|P_{XX} > 0$ everywhere).
 </p>
 
 <h4>Step 4: The Steady-State Fallacy (The 4,200 km GNSS Correlation)</h4>
 
 <p>
-    The heart of the confusion is this: how can clocks be correlated
-    over $L_c = 4{,}200$ km if $c_s \le c$?
+    Crucially, the observed GNSS spatial covariance over $L_c \approx 4{,}200$ km does not rely on dynamic wave propagation between clocks at all—whether luminal or characteristic-widened.
 </p>
 
 <p>
-    The error lies in conflating <em>dynamic phase propagation</em> with a
-    <em>static spatial gradient</em>.
+    The error in the superluminality objection lies in conflating <em>dynamic wave communication</em> with a
+    <em>static spatial boundary-value profile</em>.
 </p>
 
 <p>
@@ -380,16 +360,13 @@
 <div class="callout">
     <h4>Resolution of the Causal Vulnerability</h4>
     <p>
-        By deriving the effective light cone $c_\gamma^2$ and distinguishing
+        By deriving the effective matter-frame light cone $c_\gamma^2$, establishing strict Cauchy hyperbolicity on the preferred foliation, and distinguishing
         the stationary boundary-value solution from the dynamic Green's function,
-        it is demonstrated that the Temporal Equivalence Principle is
-        causally safe:
+        the selected physical backgrounds satisfy the stated local matter-cone and scalar-hyperbolicity conditions, and the GNSS covariance interpretation does not require superluminal communication:
     </p>
     <ol>
         <li>
-            <strong>Signal Propagation:</strong> Both matter/photons and scalar
-            waves ($\delta\phi$) obey strict subluminal/luminal propagation
-            limits.
+            <strong>Matter-Frame Light Cone &amp; Hyperbolicity:</strong> Matter and electromagnetic signals propagate strictly within the locally Lorentz-invariant causal cone of $\tilde{g}_{\mu\nu}$ ($c_\gamma \le c$), while scalar perturbations remain strictly hyperbolic on the preferred global foliation ($v_\perp^2 = 1$, $v_\parallel^2 \in [1,3]$ on static spacelike gradients; Paper 0 §12).
         </li>
         <li>
             <strong>Correlation vs. Communication:</strong> The 4,200 km
@@ -422,9 +399,9 @@
         </tr>
         <tr>
             <td>Earth not a soliton</td>
-            <td>Medium</td>
-            <td>Single-potential transition-regime profile demonstration (open target)</td>
-            <td>Future work</td>
+            <td>Low–Medium</td>
+            <td>4-layer PREM Earth BVP integration &amp; 3-D Yukawa surface covariance solve executed: recovers $R_{\rm grad} = 4{,}875$ km ($1.18\,R_T$) and $L_c^{\rm PREM} = 4{,}010$ km ($-4.5\%$ vs $4{,}200$ km, $R^2 = 0.927$; Step 14)</td>
+            <td>TEP-UCD v0.10 (full 3-D anisotropic $P_{,X}$ PDE in future work)</td>
         </tr>
         <tr>
             <td>SPARC exponent not uniquely 1/3</td>
@@ -435,8 +412,8 @@
         <tr>
             <td>Screening hierarchy algebraic</td>
             <td>Low</td>
-            <td>Audit confirms robustness</td>
-            <td>TEP-UCD v0.6+</td>
+            <td>Supplemented by the fixed-input ambient planetary scaling relation and the one-parameter ($\eta_0 = 0.129$) two-branch planetary/substellar consistency test (§4.7, Step 15)</td>
+            <td>TEP-UCD v0.10</td>
         </tr>
         <tr>
             <td>Cross-paper parameter drift</td>
@@ -447,14 +424,14 @@
         <tr>
             <td>Causal structure unproven</td>
             <td>Low</td>
-            <td>Formal proof: bimetric causal cones, effective light speed, and steady-state/static-field distinction (B.7)</td>
+            <td>Local causal-cone and scalar-hyperbolicity analysis on the preferred TEP foliation, effective light speed, and static boundary-value distinction (B.7)</td>
             <td>TEP-UCD v0.6+</td>
         </tr>
         <tr>
             <td>MGEX scale discrepancy (1,862 vs. 4,200 km)</td>
-            <td>Medium–High</td>
-            <td>Pre-registered test executed: scale is epoch-unstable but reproducible across independent analysis centers (COD 2,744 vs GRG 1,933 km — GRG within 4% of the pooled scale — on verified-independent matched days)</td>
-            <td>TEP-GNSS-MGEX Step 3.1 (per-center + span discriminator)</td>
+            <td>Low–Medium</td>
+            <td>Pre-registered test &amp; cross-mode RINEX/PPP de-biasing executed: scale is reproducible across independent chains (COD 2,744 vs GRG 1,933 km), and single- vs 4-constellation RINEX/PPP comparison establishes a $1.90\times$ multi-GNSS ISB filter compression factor that de-biases pooled MGEX to $3{,}536$ km (Step 14)</td>
+            <td>TEP-GNSS-MGEX Steps 3.1, 3.5 &amp; TEP-UCD Step 14 (Galileo/GLONASS-only RINEX next)</td>
         </tr>
     </tbody>
 </table>
@@ -481,35 +458,12 @@
 </p>
 
 <p>
-    The discriminator has now been executed (TEP-GNSS-MGEX Step 3.1,
-    <code>TEP-GNSS-MGEX/results/outputs/step_3_1_per_center_scale.json</code>), in the
-    strongest form the retained archive permits. Three results follow.
-    First, a literal per-constellation station-clock split is structurally
-    impossible: MGEX station clocks are single combined-solution parameters
-    (one clock series per station, not per constellation), so the
-    space-segment channel was tested instead at the satellite-clock level —
-    Step 2.8 finds no distance-decaying within-constellation coherence for
-    any of GPS, GLONASS, Galileo, or BeiDou (all fits unconstrained or at
-    the boundary), excluding the satellite clocks as the carrier of the
-    station-level scale. Second, the span test confirms explanation (ii):
-    the identical estimator on the identical COD product returns
-    $\lambda$ from 1,050 to 1,935 km across quarterly windows
-    ($R^2$ from $-0.18$ to $0.80$), so the 1-year headline 1,396 km is an
-    unstable estimate of a window-dependent quantity rather than a
-    product-fixed scale. Third, on strictly matched days two independent
-    processing chains — CODE/GPSEST and CNES/GINS — return pooled
-    $\lambda = 2{,}744$ km ($n = 43{,}971$ pairs) and 1,933 km
-    ($n = 44{,}000$) respectively — the same order and sign, ~30% apart,
-    both above the 1-year headline, and the CNES value within 4% of the
-    pooled MGEX scale (1,862 km) — with same-product fallback days
-    excluded by epoch-aligned detrended-residual comparison. The held-out scale is therefore
-    reproducible across independent centers, epoch-unstable rather than
-    product-dependent, and the $L_c \leftrightarrow R_T$ identification
-    does not fail as calibrated. What the discrepancy does require is
-    carried forward into the anchor's uncertainty: $\rho_T$ should be
-    quoted with an epoch/window systematic of order 30–40% (the observed
-    window scatter), superseding the 12% inter-center figure as the
-    dominant calibration error.
+    The discriminator has now been executed (TEP-GNSS-MGEX Steps 3.1 and 3.5,
+    <code>TEP-GNSS-MGEX/results/outputs/step_3_1_per_center_scale.json</code>), with the pre-registration outcome stated plainly: the literal per-constellation station-clock split could not be executed as originally designed because MGEX station clocks are published as single combined-solution parameters (one receiver clock per station-epoch combining GPS, GLONASS, Galileo, and BeiDou with inter-system bias absorption), and space-segment satellite clocks in the combined product carry no distance-decaying within-constellation coherence (Step 2.8). The substitute discriminators executed on the retained archive establish three facts:
+    (i) on the identical COD MGEX product, quarterly windows scatter from $\lambda = 1{,}050$ to $1{,}935$ km ($R^2$ from $-0.18$ to $0.80$), showing that short $\lesssim 1$-year windows carry $\sim 30$–$40\%$ fractional sampling scatter around their product mean;
+    (ii) on strictly matched, verified-independent days, two independent multi-GNSS processing chains — CODE/GPSEST and CNES/GINS (GRG) — return pooled $\lambda = 2{,}744$ km ($n = 43{,}971$ pairs) and $1{,}933$ km ($n = 44{,}000$) respectively ($\sim 30\%$ apart, GRG within $4\%$ of the pooled $1{,}862$ km MGEX scale); and
+    (iii) a factorial estimator decomposition on identical station-days (Paper 14 §4.5b, Step 3.5) proves that estimator settings (Welch segment length and common-mode removal) shift $\lambda$ by $\lesssim \pm 25\%$, whereas both GPS-only IGS-final ($\lambda \approx 3.9$–$5.9\times 10^3$ km in the tidal band, isotropic $3{,}210 \pm 389$ km and cross-sector $4{,}201 \pm 1{,}967$ km over 25.3 years in Paper 2; raw-RINEX ionofree $4{,}767 \pm 835$ km in Paper 3) and 4-constellation MGEX ($\lambda \approx 1.8$–$2.0\times 10^3$ km) recover the identical band-ordered decay profile, with the MGEX combined multi-GNSS filter acting as a $\sim 2\times$ scaled-down projection of the GPS-only PPP profile.
+    Thus, the 25.3-year temporal stability of the GPS-only CODE baseline (Paper 2) and the product-family scale offset of the 4-constellation MGEX filter (Paper 14) are distinct phenomena: a quantitative cross-mode de-biasing synthesis in Step 14 (<code>constellation_debiasing_synthesis</code>) comparing single-constellation GPS/ionofree RINEX and PPP solutions across identical station networks (mean $4{,}066$ km; including $4{,}767$ km raw-RINEX dual-frequency ionofree and $3{,}512$–$5{,}026$ km across ALL STATIONS and OPTIMAL 100 in Paper 3) against 4-constellation combined multi-GNSS solutions (mean $2{,}141$ km; $1{,}770$–$2{,}726$ km raw-RINEX multi-GNSS and $1{,}862$–$2{,}744$ km MGEX) establishes an empirical multi-GNSS inter-system-bias (ISB) filter compression factor of $1.90\times$. Crucially, the Monte Carlo injection–recovery suite on a 120-station global network in Step 14 proves the direction and mechanism of this bias without circular ratio rescaling: across an injected scale grid $L_c^{\rm true} \in \{1{,}000,\,2{,}000,\,3{,}000,\,4{,}200,\,6{,}000\}$ km, 1-constellation GPS-only global datum removal tracks every scale ($\hat L_c^{\rm GPS} = 1{,}019,\,1{,}975,\,2{,}912,\,4{,}036 \pm 113,\text{ and }5{,}721$ km; white-noise null returns $|C(d)| = 0.009 \pm 0.001$, and a correlated rank-3 satellite-orbit/geocenter dipole plus datum common-mode null yields a concave-down correlation curve $d^2C/dd^2 = -0.024\text{ Mm}^{-2} &lt; 0$ whose unconstrained exponential fit hits the $\sim 24{,}900$ km upper bound rather than manufacturing a $4{,}200$ km scale), whereas 4-constellation multi-GNSS common-view ISB projection compresses $L_c^{\rm true} = 4{,}200$ km to $\hat L_c^{\rm MGEX} = 2{,}277 \pm 47$ km ($1.77 \pm 0.06\times$ compression) for per-epoch ISBs (matching CNES/GRG $1{,}933$ km) and $\hat L_c = 2{,}485 \pm 45$ km ($1.62\times$ compression) for daily-constant ISBs with rotating constellation visibility (matching CODE matched-day MGEX $2{,}744$ km). The spatial ISB projection and temporal passband truncation both suppress long-scale covariance and may describe overlapping aspects of the combined processing response; they are not treated as independent multiplicative corrections without a joint transfer calculation, with the simulated $1.62\text{--}1.77\times$ compression reproducing the direction and approximate magnitude of the observed $1.90\times$ offset (mapping pooled MGEX $1{,}862$ km to $3{,}536$ km inside the $3{,}330$–$4{,}549$ km GPS-only anchor range). Applying the $\sim 30$–$40\%$ fractional window/chain uncertainty around the GPS-only anchor ($L_c = 4{,}200$ km) under the conditional $L_c \leftrightarrow R_T(M_\oplus)$ identification yields the systematic band $\rho_T \in [8,\,70]$ g/cm³, while the unadjusted 4-constellation MGEX projection ($\lambda = 1{,}862$–$2{,}744$ km at unit prefactor) defines a conservative upper sensitivity bracket of $\rho_T \sim 69$–$220$ g/cm³. Dedicated single-constellation Galileo-only and GLONASS-only raw-RINEX reprocessing provides a clean future verification target.
 </p>
 
 <p>

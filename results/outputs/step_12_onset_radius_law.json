@@ -20,7 +20,12 @@
   },
   "zero_parameter": {
     "rms_dex": 0.2672310841573073,
-    "mean_resid_dex": -0.1727180717438598
+    "mean_resid_dex": -0.1727180717438598,
+    "median_enclosed_mass_fraction_f_enc": 0.6471077676391588,
+    "mean_enclosed_mass_fraction_f_enc": 0.5930747565840457,
+    "rms_dex_with_median_f_enc": 0.21839678941779456,
+    "mean_resid_dex_with_median_f_enc": -0.07820637822471878,
+    "note": "The -0.173 dex intercept offset relative to sqrt(G M_bar(R_max)/a_eff) reflects the enclosed baryonic mass fraction f_enc = M_bar(<r_on)/M_bar(R_max) ~= 0.65 at the interior crossing radius r_on."
   },
   "samples": [
     {

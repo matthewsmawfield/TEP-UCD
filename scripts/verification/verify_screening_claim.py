@@ -8,8 +8,8 @@ M_earth = 5.972e24  # kg
 M_sun = 1.989e30  # kg
 R_sun = 6.96e8  # meters
 R_earth = 6.371e6  # meters
-R_TEP_earth = 4200e3  # meters (calibration)
-rho_T = 20  # g/cm^3 (saturation scale of temporal-field topology)
+rho_T = 20.0  # g/cm^3 (saturation scale of temporal-field topology)
+R_TEP_earth = ((3.0 * M_earth) / (4.0 * np.pi * (rho_T * 1000.0))) ** (1.0 / 3.0)  # 4146.36 km
 
 # --- 1. 26-object dataset (canonical, from step_5_ultimate_screening.py) ---
 
@@ -53,9 +53,9 @@ objects = {
     "Hulse-Taylor": {"M": 1.44 * M_sun, "R": 11, "type": "pulsar", "rho": 6e14},
     "Double Pulsar": {"M": 1.34 * M_sun, "R": 12, "type": "pulsar", "rho": 3.7e14},
     "Vela X-1": {"M": 1.8 * M_sun, "R": 12, "type": "pulsar", "rho": 5e14},
-    # Black Holes (excluded from fit)
-    "RBH-1": {"M": 2.0e7 * M_sun, "R": 3.2e7, "type": "bh", "rho": 2e5},
-    "M87*": {"M": 6.5e9 * M_sun, "R": 1.9e10, "type": "bh", "rho": 6e3},
+    # Black Holes (excluded from fit; evaluated at Schwarzschild radii R_S = 2GM/c^2 and horizon mean densities rho_S = 3M/(4 pi R_S^3))
+    "RBH-1": {"M": 2.0e7 * M_sun, "R": 5.907e7, "type": "bh", "rho": 46.10},
+    "M87*": {"M": 6.5e9 * M_sun, "R": 1.920e10, "type": "bh", "rho": 4.37e-4},
 }
 
 print(f"Loaded {len(objects)} objects.")

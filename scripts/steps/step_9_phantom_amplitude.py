@@ -36,6 +36,7 @@ import sys
 import numpy as np
 import json
 from scipy import stats
+from scipy.optimize import brentq
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
@@ -55,6 +56,28 @@ BETA_A = -1.0         # Canonical universal coupling beta_A = -1 (Rule 3)
 OUTER_FRACTION = 0.34  # outer third of points defines the plateau
 MIN_POINTS = 6         # minimum valid radial points per galaxy
 VBAR_MIN = 5.0         # km/s floor for a usable baryonic velocity (step-4 convention)
+G_T = 3.4001944264419963e-10
+K_STAR = 16.03
+KPC_M = 3.086e19
+KMS_MS = 1e3
+
+
+def px_two_branch(u):
+    u = np.abs(u)
+    return 1e-3 + K_STAR * u / np.sqrt(2.0) + u * u
+
+
+def g_obs_two_branch(gN, ml_disk_scale=1.0, quadrature=False):
+    gN_scaled = gN * ml_disk_scale
+    y = gN_scaled / G_T
+    if y <= 0:
+        return 0.0
+    hi = max(1.0, y)
+    while hi * px_two_branch(hi) < y:
+        hi *= 4.0
+    u = brentq(lambda uu: uu * px_two_branch(uu) - y, 0.0, hi, xtol=1e-13, rtol=1e-12)
+    ap = 2.0 * (BETA_A ** 2) * G_T * u
+    return float(np.hypot(gN_scaled, ap) if quadrature else (gN_scaled + ap))
 
 
 def parse_table1(filepath):
@@ -107,26 +130,49 @@ def parse_table2(filepath):
     return curves
 
 
-def baryonic_velocity(rc):
-    """V_bar^2 = V_gas^2 + ML_DISK V_disk^2 + ML_BULGE V_bul^2 (step-4 convention)."""
-    v2 = rc['Vgas']**2 + ML_DISK * rc['Vdisk']**2 + ML_BULGE * rc['Vbul']**2
-    return np.sqrt(np.clip(v2, 0, None))
+def baryonic_velocity(rc, ml_disk=ML_DISK):
+    """V_bar^2 = |V_gas| V_gas + ml_disk |V_disk| V_disk + ML_BULGE |V_bul| V_bul (SPARC signed convention)."""
+    v2 = (np.abs(rc['Vgas']) * rc['Vgas']
+          + ml_disk * np.abs(rc['Vdisk']) * rc['Vdisk']
+          + ML_BULGE * np.abs(rc['Vbul']) * rc['Vbul'])
+    return np.sqrt(np.clip(v2, 0.0, None))
 
 
 def galaxy_amplitude(rc):
     """Plateau ratio and outer-region enhancement-profile slope for one galaxy."""
     R, Vobs = rc['R'], rc['Vobs']
-    Vbar = baryonic_velocity(rc)
-    valid = (Vbar > VBAR_MIN) & (Vobs > 0) & np.isfinite(Vobs) & np.isfinite(Vbar)
+    Vbar = baryonic_velocity(rc, ML_DISK)
+    Vbar_035 = baryonic_velocity(rc, 0.35)
+    valid = (Vbar > VBAR_MIN) & (Vobs > 0) & (R > 0) & np.isfinite(Vobs) & np.isfinite(Vbar)
     if valid.sum() < MIN_POINTS:
         return None
-    R, Vobs, Vbar = R[valid], Vobs[valid], Vbar[valid]
+    R, Vobs, Vbar, Vbar_035 = R[valid], Vobs[valid], Vbar[valid], Vbar_035[valid]
 
     # Plateau: outer OUTER_FRACTION of valid points by radius
     n_outer = max(2, int(round(len(R) * OUTER_FRACTION)))
     ratio_all = Vobs / Vbar
     plateau_ratio = float(np.median(ratio_all[-n_outer:]))
     s_plateau = (plateau_ratio**2 - 1.0) / (2.0 * BETA_A**2)
+
+    # Direct two-branch TEP prediction on the outer-third plateau points
+    R_out = R[-n_outer:]
+    Vo_out = Vobs[-n_outer:]
+    Vb_out = Vbar[-n_outer:]
+    Vb035_out = Vbar_035[-n_outer:]
+    gbar_out = (Vb_out * KMS_MS) ** 2 / (R_out * KPC_M)
+    gbar035_out = (Vb035_out * KMS_MS) ** 2 / (R_out * KPC_M)
+
+    gpred_add = np.array([g_obs_two_branch(g, quadrature=False) for g in gbar_out])
+    gpred_add_035 = np.array([g_obs_two_branch(max(g, 1e-18), quadrature=False) for g in gbar035_out])
+    gpred_quad = np.array([g_obs_two_branch(g, quadrature=True) for g in gbar_out])
+
+    Vpred_add = np.sqrt(gpred_add * R_out * KPC_M) / KMS_MS
+    Vpred_add_035 = np.sqrt(gpred_add_035 * R_out * KPC_M) / KMS_MS
+    Vpred_quad = np.sqrt(gpred_quad * R_out * KPC_M) / KMS_MS
+
+    ratio_tb_add = float(np.median(Vo_out / Vpred_add))
+    ratio_tb_add_035 = float(np.median(Vo_out / np.maximum(Vpred_add_035, 1e-6)))
+    ratio_tb_quad = float(np.median(Vo_out / Vpred_quad))
 
     # Enhancement profile E(R) = V_obs^2/V_bar^2 - 1 = M_ph / M_bar(<R)
     E = ratio_all**2 - 1.0
@@ -140,10 +186,13 @@ def galaxy_amplitude(rc):
         'n_points': int(len(R)),
         'plateau_ratio': plateau_ratio,
         'S_eff_plateau': float(s_plateau),
-        'enhancement_profile_slope': float(slope),
+        'vobs_over_vpred_two_branch_additive_ml05': ratio_tb_add,
+        'vobs_over_vpred_two_branch_additive_ml035': ratio_tb_add_035,
+        'vobs_over_vpred_two_branch_quadrature_ml05': ratio_tb_quad,
+        'enhancement_profile_slope': float(slope) if np.isfinite(slope) else None,
         'E_outer_median': float(np.median(E[-n_outer:])),
         'E_inner_median': float(np.median(E[:max(2, len(R) - 2 * n_outer)]))
-        if len(R) > 2 * n_outer else np.nan,
+        if len(R) > 2 * n_outer else None,
     }
 
 
@@ -186,9 +235,12 @@ def run_amplitude_test():
 
     ratios = np.array([g['plateau_ratio'] for g in per_galaxy.values()])
     s_plat = np.array([g['S_eff_plateau'] for g in per_galaxy.values()])
-    slopes = np.array([g['enhancement_profile_slope'] for g in per_galaxy.values()])
+    tb_add_05 = np.array([g['vobs_over_vpred_two_branch_additive_ml05'] for g in per_galaxy.values()])
+    tb_add_035 = np.array([g['vobs_over_vpred_two_branch_additive_ml035'] for g in per_galaxy.values()])
+    tb_quad_05 = np.array([g['vobs_over_vpred_two_branch_quadrature_ml05'] for g in per_galaxy.values()])
+    slopes = np.array([g['enhancement_profile_slope'] if g['enhancement_profile_slope'] is not None else np.nan for g in per_galaxy.values()], dtype=float)
     e_out = np.array([g['E_outer_median'] for g in per_galaxy.values()])
-    e_in = np.array([g['E_inner_median'] for g in per_galaxy.values()])
+    e_in = np.array([g['E_inner_median'] if g['E_inner_median'] is not None else np.nan for g in per_galaxy.values()], dtype=float)
 
     finite_slope = np.isfinite(slopes)
     n_rising = int(np.sum(slopes[finite_slope] > 0))
@@ -199,9 +251,10 @@ def run_amplitude_test():
     results = {
         'description': 'Phantom-mass amplitude and radial-profile test on SPARC',
         'method': (
-            'Plateau ratio = median V_obs/V_bar over outer third of each curve. '
-            'S_eff = (ratio^2 - 1)/(2 beta_A^2) with |beta_A| = 1. '
-            'Enhancement profile slope = d log E / d log R with '
+            'Plateau ratio = median V_obs/V_bar over outer third of each curve (signed V_gas convention). '
+            'Linear-kinetic baseline S_eff = (ratio^2 - 1)/(2 beta_A^2) with |beta_A| = 1 (ceiling sqrt(3) = 1.732), '
+            'evaluated alongside the selected two-branch kinetic completion P_X = eps_reg + k sqrt(xi) + 2 xi '
+            '(k = 16.03, zero free parameters). Enhancement profile slope = d log E / d log R with '
             'E = V_obs^2/V_bar^2 - 1 = M_ph/M_bar(<R). '
             f'V_bar floor {VBAR_MIN} km/s, >= {MIN_POINTS} valid points required.'
         ),
@@ -213,6 +266,15 @@ def run_amplitude_test():
         'S_eff_plateau': summarize(s_plat),
         'fraction_S_eff_gt_1': float(np.mean(s_plat > 1.0)),
         'fraction_S_eff_gt_0': float(np.mean(s_plat > 0.0)),
+        'two_branch_plateau_validation': {
+            'k_star': K_STAR,
+            'additive_ml05_vobs_over_vpred': summarize(tb_add_05),
+            'additive_ml05_rms_dex': float(np.sqrt(np.mean(np.log10(tb_add_05) ** 2))),
+            'additive_ml035_vobs_over_vpred': summarize(tb_add_035),
+            'additive_ml035_rms_dex': float(np.sqrt(np.mean(np.log10(tb_add_035) ** 2))),
+            'quadrature_ml05_vobs_over_vpred': summarize(tb_quad_05),
+            'quadrature_ml05_rms_dex': float(np.sqrt(np.mean(np.log10(tb_quad_05) ** 2))),
+        },
         'enhancement_profile_slope': summarize(slopes),
         'n_profile_positive': n_rising,
         'n_profile_finite': int(finite_slope.sum()),

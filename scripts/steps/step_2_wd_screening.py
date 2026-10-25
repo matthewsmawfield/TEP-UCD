@@ -56,9 +56,13 @@ def run_wd_screening():
     print_status(f"WD mass range: {masses_solar[0]:.2f} to {masses_solar[-1]:.2f} M_sun ({len(masses_solar)} points)", "INFO")
 
     # --- Line A: White Dwarf Physical Radius (Baryonic Reality) ---
-    print_status("Computing WD physical radius R_WD ~ M^(-1/3)", "PROCESS")
-    R_WD_solar = 0.01 * masses_solar ** (-1 / 3)  # in solar radii
-    R_WD_km = R_WD_solar * R_sun / 1000  # convert to km
+    print_status("Computing WD physical radius R_WD ~ M^(-1/3) and Nauenberg relativistic curve", "PROCESS")
+    # Nauenberg (1972) relativistic phase-space correction normalized to Sirius B (5,800 km at 1.018 M_sun)
+    m_ch = 1.44
+    masses_rel = np.linspace(0.1, 1.432, 200)
+    sirius_norm = 5800.0 / ((1.018 ** (-1.0 / 3.0)) * np.sqrt(1.0 - (1.018 / m_ch) ** (4.0 / 3.0)))
+    R_WD_km = sirius_norm * (masses_solar ** (-1.0 / 3.0))  # consistent low-mass non-relativistic asymptote
+    R_WD_rel_km = sirius_norm * (masses_rel ** (-1.0 / 3.0)) * np.sqrt(np.maximum(1.0 - (masses_rel / m_ch) ** (4.0 / 3.0), 1e-4))
 
     # --- Line B: TEP Soliton Radius (Scalar Field Extent) ---
     print_status("Computing TEP soliton radius R_T ~ M^(1/3)", "PROCESS")
@@ -73,10 +77,10 @@ def run_wd_screening():
     print_status(f"Sirius B: R_phys = {sirius_b_radius:.0f} km, R_T = {sirius_b_R_T:.2e} km, S = {screening_factor_sirius:.0f}x", "INFO")
 
     chandra_mass = 1.44
-    chandra_radius = 0.01 * chandra_mass ** (-1 / 3) * R_sun / 1000
+    chandra_radius = sirius_norm * (chandra_mass ** (-1.0 / 3.0))
     chandra_R_T = (R_TEP_earth * ((chandra_mass * M_sun) / M_earth) ** (1 / 3)) / 1000
     screening_factor_chandra = chandra_R_T / chandra_radius
-    print_status(f"Chandrasekhar limit: R_phys = {chandra_radius:.0f} km, R_T = {chandra_R_T:.2e} km, S = {screening_factor_chandra:.0f}x", "INFO")
+    print_status(f"Chandrasekhar limit (non-rel. asymptote): R_nonrel = {chandra_radius:.0f} km, R_T = {chandra_R_T:.2e} km, S_nonrel = {screening_factor_chandra:.0f}x", "INFO")
 
     # --- Plotting ---
     print_status("Generating WD screening figure", "PROCESS")
@@ -87,26 +91,35 @@ def run_wd_screening():
     c_fill = COLORS["accent"]
 
     ax.fill_between(
-        masses_solar,
-        R_WD_km,
-        R_T_km,
+        masses_rel,
+        R_WD_rel_km,
+        (R_TEP_earth * ((masses_rel * M_sun) / M_earth) ** (1 / 3)) / 1000,
         alpha=0.06,
         color=c_fill,
-        label="Screened Regime (Shear Suppressed)",
+        label=r"Compact-Body Regime ($R_T > R_{\rm phys}$)",
     )
 
     ax.semilogy(
-        masses_solar,
-        R_WD_km,
-        label=r"Physical Radius ($R_{WD} \propto M^{-1/3}$)",
+        masses_rel,
+        R_WD_rel_km,
+        label=r"Physical Radius (Nauenberg 1972 rel.)",
         color=c_phys,
         linewidth=2.5,
     )
+    ax.semilogy(
+        masses_solar,
+        R_WD_km,
+        label=r"Non-rel. asymptote ($R_{\rm WD} \propto M^{-1/3}$)",
+        color=c_phys,
+        linewidth=1.4,
+        linestyle=":",
+        alpha=0.75,
+    )
 
     ax.semilogy(
         masses_solar,
         R_T_km,
-        label=r"$R_T$ Radius ($R_T \propto M^{1/3}$)",
+        label=r"Saturation Scale ($R_T \propto M^{1/3}$)",
         color=c_sol,
         linewidth=2.5,
         linestyle="--",
@@ -146,7 +159,7 @@ def run_wd_screening():
     ax.text(
         sirius_b_mass + 0.02,
         (sirius_b_radius * sirius_b_R_T) ** 0.5,
-        f"Sirius B\nScreening: {screening_factor_sirius:.0f}×",
+        f"Sirius B\n$R_T/R_{{\\rm phys}} \\approx {screening_factor_sirius:.0f}\\times$",
         fontsize=10,
         color="black",
         va="center",
@@ -154,8 +167,8 @@ def run_wd_screening():
 
     ax.axvline(x=1.44, color="gray", linestyle=":", linewidth=1.5)
     ax.text(
-        1.43,
-        2e5,
+        1.425,
+        2.5e4,
         "Chandrasekhar Limit",
         fontsize=9,
         color="gray",
@@ -164,24 +177,28 @@ def run_wd_screening():
         va="center",
     )
 
-    ax.set_title("White Dwarf Screening Test")
+    ax.set_title("White Dwarf: Physical Radius vs. Saturation Scale")
     ax.set_xlabel(r"White Dwarf Mass ($M/M_\odot$)")
     ax.set_ylabel("Radius (km)")
-    ax.set_xlim(0.1, 1.5)
+    ax.set_xlim(0.1, 1.54)
     ax.set_ylim(1e3, 1e6)
     ax.grid(True, which="major", ls="-", alpha=0.3)
     ax.grid(True, which="minor", ls=":", alpha=0.1)
-    ax.legend(loc="upper right", frameon=False)
+    ax.legend(loc="upper right", bbox_to_anchor=(0.93, 0.99), frameon=False)
 
     ax.text(
-        0.3,
-        3000,
-        "Dense Matter Flattens Topology\n(GR Recovered)",
+        0.42,
+        2500,
+        "Relativistic degeneracy steepens\nradius drop near $M_{\\rm Ch}$",
         ha="center",
         color=COLORS["text"],
     )
     ax.text(
-        0.6, 2e5, "Saturation scale extends beyond baryonic surface", ha="center", color=COLORS["text"]
+        0.55,
+        3.2e5,
+        "Saturation scale extends beyond baryonic surface",
+        ha="center",
+        color=COLORS["text"],
     )
 
     plt.tight_layout()

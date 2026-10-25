@@ -16,14 +16,14 @@
     <em>mechanistically possible</em> without requiring new physics beyond
     a self-interacting scalar sector. The completions are benchmark models,
     not unique derivations; the corpus's working screening realization is the
-    nonlinear kinetic sector of the Paper-0 master action,
-    $P = X - V + X|X|/\Lambda_X^4$, whose response $P_{,X} = 1 +
-    2|X|/\Lambda_X^4$ saturates the scalar coupling once the field gradient
+    selected two-branch nonlinear kinetic sector of the Paper-0 master action,
+    $P(X,\phi) = -V(\phi) + \frac{2k}{3\Lambda_X^2}X|X|^{1/2} + X|X|/\Lambda_X^4$ (with the unit-term form $P = X - V + X|X|/\Lambda_X^4$ retained as the high-gradient control), whose response $P_{,X}(\xi) = k\sqrt{\xi} +
+    2\xi$ ($\xi = |X|/\Lambda_X^4$, $k = 16.03$) saturates the scalar coupling once the field gradient
     exceeds the kinetic scale $\Lambda_X = \sqrt{M_{\rm Pl}H_0} \approx 1.9$
-    meV (a realization, not a uniqueness theorem — Paper 0, A4).
+    meV (Paper 0, A4, §7; analogous to non-canonical kinetic K-mouflage screening in the scalar-tensor literature, Babichev et al. 2009; Barreira et al. 2015, where precision Solar-System perihelion, Lunar Laser Ranging, and time-varying $G_{\rm eff}$ bounds complement Cassini Shapiro-delay constraints).
     The kinetic scale fixes the shear threshold $g_t$ — equivalently a
-    surface-density crossover $\Sigma_* \sim M_{\rm Pl}^2 H_0 \sim
-    10^{-1}$ g/cm² inside sources (step 14) — not a volume-density scale:
+    surface-density crossover $\Sigma_* \sim 3 M_{\rm Pl}^2 H_0 \approx
+    0.12$ g/cm² inside sources on the unit-term interior benchmark (step 14) — not a volume-density scale:
     the density argument of the amplitude sector enters through the
     potential normalization, and the potential-sector realization below is
     constructed on the corpus's own quartic coupling. In the
@@ -176,16 +176,24 @@
 </p>
 
 <p>
-    The field
+    On the canonical-kinetic equilibrium benchmark ($P_{,X} \to 1$), the field
     equation in a static, spherically symmetric environment is:
 </p>
 
 <div class="equation">
-    \begin{equation} \label{eq:chameleon_eom} \frac{d^2 u}{dr^2} + \frac{2}{r}\frac{du}{dr} = \frac{1}{M_{\rm Pl}^2}V_{\rm eff}'(u). \end{equation}
+    \begin{equation} \label{eq:chameleon_eom} \frac{d^2 u}{dr^2} + \frac{2}{r}\frac{du}{dr} = \frac{1}{M_{\rm Pl}^2}V_{\rm eff}'(u), \end{equation}
 </div>
 
 <p>
-    The effective mass squared is:
+    whereas on the operative nonlinear two-branch kinetic completion $P_{,X}(\xi) = \epsilon_{\rm reg} + k\sqrt{\xi} + 2\xi$, the spatial differential operator carries the nonlinear kinetic stiffness directly:
+</p>
+
+<div class="equation">
+    \begin{equation} \label{eq:nonlinear_chameleon_eom} \nabla \cdot \big(P_{,X}(\xi)\,\nabla u\big) = \frac{1}{r^2}\frac{d}{dr}\!\left(r^2 P_{,X}(\xi)\frac{du}{dr}\right) = \frac{1}{M_{\rm Pl}^2}V_{\rm eff}'(u). \end{equation}
+</div>
+
+<p>
+    On the canonical-kinetic equilibrium benchmark, the effective mass squared around $u_{\rm min}(\rho)$ is:
 </p>
 
 <div class="equation">
@@ -195,20 +203,16 @@
 <p>
     where the equilibrium condition makes the curvature term dominant at
     $u_{\rm min} \ll 1$, giving $m_{\rm eff} \propto \lambda^{1/6}
-    \rho^{1/3}$. The screening is doubly density-dependent. The Compton
+    \rho^{1/3}$. The screening is doubly density-dependent. On this canonical-kinetic benchmark, the Compton
     wavelength $\lambda_c(\rho) = 1/m_{\rm eff}$ contracts through denser
-    interiors; the dynamical content of the saturation transition is the
-    crossover at which a body's interior becomes Compton-resolved inside its
+    interiors, defining an order-of-magnitude equilibrium reference scale at which a body's interior becomes Compton-resolved inside its
     own saturation halo, $\lambda_c(\bar\rho) \lesssim R_T(M)$ — for the
     corpus normalization $\lambda_c(\rho_T) \approx 2{,}500$ km $\approx
-    0.6\,R_T(M_\oplus)$, and the crossover density $\lambda_c(\bar\rho) =
+    0.6\,R_T(M_\oplus)$, and the canonical crossover density $\lambda_c(\bar\rho) =
     R_T(M_\oplus)$ sits at $\sim 4$ g/cm³, inside the terrestrial
     condensed-matter window (step 14). Deep in the interior the field sits
-    near its local equilibrium $u_{\rm min}(\rho)$ and the spatial variation
-    is confined to a boundary layer of width $\sim \lambda_c$, where the
-    nonlinear kinetic response $P_{,X}$ — the same field equation's other
-    half — controls the gradient amplitude; this is the channel through
-    which $\Lambda_X$ enters the profile. The conformal self-quenching of
+    near its local equilibrium $u_{\rm min}(\rho)$, while across the transition layer the
+    nonlinear kinetic stiffness $P_X(\xi)$ (and its longitudinal combination $P_X + 2X P_{XX} = P_X - 2|X|P_{XX} = \epsilon_{\rm reg} + 2k\sqrt{\xi} + 6\xi$ in Eq.&nbsp;$\ref{eq:nonlinear_chameleon_eom}$) governs the actual physical transition width $\Delta R_T$; computing the exact finite-source transition width from the coupled nonlinear operator Eq.&nbsp;($\ref{eq:nonlinear_chameleon_eom}$) remains the open numerical target noted in C.4 below. The conformal self-quenching of
     the source slope $\rho\,A_{,u} = -\rho\,e^{-u_{\rm min}}$ becomes
     operative only when the equilibrium reaches order unity, which under the
     corpus normalization occurs at $\rho_{\rm sat} \sim \lambda M_{\rm
@@ -302,12 +306,7 @@
         belongs to the symmetron benchmark, not to the corpus realization.
     </li>
     <li>
-        <strong>Terrestrial transition width:</strong> Neither completion predicts
-        the detailed width $\Delta R_T$ of the Earth's screening transition,
-        which controls the orbital-transfer mapping to $L_c$ (the phenomenological transfer sketch in Section 2). A
-        numerical solution of the quartic profile at the fixed corpus
-        normalization in Earth's density
-        profile is required.
+        <strong>Terrestrial transition width:</strong> On the canonical-kinetic quartic branch ($\lambda = 7.53\times 10^{-66}$, $\rho_T = 20$ g/cm³), a 4-layer PREM Earth BVP solve and 3-D Yukawa surface covariance projection (Step 14) recovers a transition gradient centroid at $R_{\rm grad} = 4{,}875$ km ($1.18\,R_T(M_\oplus)$) and a surface-network exponential decay length of $L_c^{\rm PREM} = 4{,}010$ km ($-4.5\%$ relative to the measured $4{,}200$ km, $R^2 = 0.927$). Extending this spherical BVP solve to the full 3-D anisotropic nonlinear kinetic operator Eq.&nbsp;($\ref{eq:nonlinear_chameleon_eom}$) remains a target for future work.
     </li>
 </ul>
 

@@ -44,10 +44,6 @@ def run_sensitivity_analysis():
     core_brightness_levels = np.linspace(0.01, 1.0, 50) # relative to ring peak
     core_pol_fractions = [0.1, 0.3, 0.6, 0.9] # Intrinsic polarization of core emission
     
-    plt.figure(figsize=FIG_SIZE[FIG_PRESET])
-    
-    colors = [COLORS['secondary'], COLORS['accent'], COLORS['primary'], COLORS['highlight']]
-    
     print_status("Running sensitivity analysis", "PROCESS")
     print_status(f"Grid size: {N}x{N}, core pol fractions: {core_pol_fractions}, brightness levels: {len(core_brightness_levels)}", "INFO")
     print_status(f"{'Int. Pol':<10} | {'Min Brightness for Detection (m>10%)':<40}", "INFO")
@@ -95,57 +91,12 @@ def run_sensitivity_analysis():
                 detection_threshold_crossed = True
                 threshold_brightness = b_rel
 
-        label_str = f'Intrinsic Core Pol ($p_{{int}}$) = {p_int*100:.0f}%'
-        plt.plot(core_brightness_levels, m_core_curve, label=label_str, color=colors[i], linewidth=2.5)
-        
         thresh_str = f"{threshold_brightness:.3f} x Ring Peak" if threshold_brightness else "Not Detected"
         print_status(f"{p_int*100:<9.0f}% | {thresh_str}", "INFO")
-        
-    # --- Empirical Limits (EHT Data) ---
-    # Current EHT (2017/2021): Dynamic Range ~10:1 (conservative) to ~20:1
-    # This means features fainter than ~0.1 * Peak are hard to distinguish from noise/artifacts.
-    limit_current = 0.10
-    plt.axvline(x=limit_current, color='gray', linestyle=':', linewidth=2, label='Current EHT Limit (Dyn. Range ~10:1)')
-    
-    # Future ngEHT / High-SNR: Dynamic Range ~100:1
-    limit_future = 0.01
-    plt.axvline(x=limit_future, color='gray', linestyle='-.', linewidth=1.5, alpha=0.7, label='Future ngEHT Limit (Dyn. Range ~100:1)')
 
-    # Shaded regions for feasibility
-    plt.fill_betweenx([0, 0.6], 0, limit_future, color='gray', alpha=0.1, hatch='///', label='Instrumental Noise Floor')
-
-    # Styling
-    plt.axhline(y=0.10, color=COLORS['highlight'], linestyle='--', alpha=0.7, linewidth=1.5, label=r'Detection Threshold ($m_{obs} > 10\%$)')
-    
-    plt.title("Sensitivity Analysis: Soliton Core Polarization Signature", fontsize=14, fontweight='bold', color=COLORS['primary'])
-    plt.xlabel("Core Relative Brightness (Fraction of Ring Peak)", fontsize=12)
-    plt.ylabel("Observed Core Fractional Polarization ($m_{obs}$)", fontsize=12)
-    
-    # Log scale for x-axis to better show the dynamic range
-    plt.xscale('log')
-    plt.xlim(0.005, 1.2)
-    
-    # Use decimal labels instead of powers of ten for readability
-    ax = plt.gca()
-    ax.set_xticks([0.01, 0.1, 1.0])
-    ax.set_xticklabels(['0.01', '0.1', '1.0'])
-    
-    plt.legend(frameon=True, fancybox=True, framealpha=0.9, facecolor='white', loc='upper left', fontsize=9)
-    
-    # Annotations
-    plt.text(0.15, 0.02, "Feasible with Current Data", fontsize=10, color=COLORS['secondary'], fontweight='bold')
-    plt.text(0.012, 0.02, "Requires ngEHT", fontsize=10, color=COLORS['highlight'], fontweight='bold', rotation=90)
-    
-    plt.tight_layout()
-    
-    output_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'results', 'figures')
-    os.makedirs(output_dir, exist_ok=True)
     outputs_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'results', 'outputs')
     os.makedirs(outputs_dir, exist_ok=True)
-    save_path = os.path.join(output_dir, 'figure_8_sensitivity.png')
-    plt.savefig(save_path, dpi=300)
     print_status("-" * 55, "INFO")
-    print_status(f"Sensitivity plot saved to {save_path}", "SUCCESS")
 
     # EHT target predictions from rho_T
     rho_T = 20.0  # g/cm^3
@@ -162,7 +113,6 @@ def run_sensitivity_analysis():
     # Save numerical outputs
     output_data = {
         "grid_size": int(N),
-        "figure": "figure_8_sensitivity.png",
         "rho_T_g_cm3": float(rho_T),
         "M87_star": {
             "M_kg": float(M_m87),

@@ -205,6 +205,57 @@ OUT["rar_prediction"]["rms_log10_resid_exp_interp"] = \
 OUT["rar_prediction"]["frac_within_0p1dex_exp_interp"] = \
     float(np.mean(np.abs(logresid_ei) < 0.1))
 
+# Standard SPARC RAR quality-controlled sample (McGaugh et al. 2016; Lelli et al. 2017):
+# Q <= 2, inclination >= 30 deg, and fractional velocity error e_Vobs / V_obs <= 0.10.
+gal_meta_t1 = {}
+t1_lines = (REPO / "Table1.mrt").read_text().splitlines()
+t1_start = 0
+for idx_l, line_t1 in enumerate(t1_lines):
+    if line_t1.startswith("---"):
+        t1_start = idx_l + 1
+for line_t1 in t1_lines[t1_start:]:
+    p_t1 = line_t1.split()
+    if len(p_t1) >= 18:
+        try:
+            gal_meta_t1[p_t1[0]] = {"inc": float(p_t1[5]), "Q": int(p_t1[17])}
+        except ValueError:
+            pass
+
+go_qc, gb50_qc, gb35_qc, gids_qc = [], [], [], []
+for gid, R, Vobs, eV, Vgas, Vdisk, Vbul in rows:
+    meta = gal_meta_t1.get(gid, {"inc": 0.0, "Q": 3})
+    if Vobs <= 0 or R <= 0 or meta["Q"] > 2 or meta["inc"] < 30.0 or (eV / Vobs) > 0.10:
+        continue
+    vb50 = abs(Vgas) * Vgas + 0.50 * abs(Vdisk) * Vdisk + UPS_B * abs(Vbul) * Vbul
+    vb35 = abs(Vgas) * Vgas + 0.35 * abs(Vdisk) * Vdisk + UPS_B * abs(Vbul) * Vbul
+    if vb50 <= 0 or vb35 <= 0:
+        continue
+    go_qc.append((Vobs * KMS_MS) ** 2 / (R * KPC_M))
+    gb50_qc.append(vb50 * (KMS_MS ** 2) / (R * KPC_M))
+    gb35_qc.append(vb35 * (KMS_MS ** 2) / (R * KPC_M))
+    gids_qc.append(gid)
+
+go_qc = np.array(go_qc)
+gb50_qc = np.array(gb50_qc)
+gb35_qc = np.array(gb35_qc)
+pred_qc_add50 = g_obs_curve(gb50_qc, PX_two_branch, quadrature=False)
+pred_qc_add35 = g_obs_curve(gb35_qc, PX_two_branch, quadrature=False)
+pred_qc_quad50 = g_obs_curve(gb50_qc, PX_two_branch, quadrature=True)
+pred_qc_bl50 = g_obs_curve(gb50_qc, lambda xi: PX_baseline(xi), k=None, quadrature=False)
+pred_qc_mond50 = gb50_qc / (1.0 - np.exp(-np.sqrt(gb50_qc / A0)))
+
+OUT["rar_prediction"]["quality_controlled_sparc_sample"] = {
+    "selection_cuts": "Q <= 2, i >= 30 deg, e_Vobs / V_obs <= 0.10 (Lelli et al. 2017 standard SPARC RAR cuts)",
+    "n_points": int(len(go_qc)),
+    "n_galaxies": int(len(set(gids_qc))),
+    "rms_log10_resid_two_branch_add_ml05": float(np.sqrt(np.mean(np.log10(go_qc / pred_qc_add50) ** 2))),
+    "rms_log10_resid_two_branch_add_ml035": float(np.sqrt(np.mean(np.log10(go_qc / pred_qc_add35) ** 2))),
+    "frac_within_0p1dex_two_branch_add_ml035": float(np.mean(np.abs(np.log10(go_qc / pred_qc_add35)) < 0.1)),
+    "rms_log10_resid_two_branch_quad_ml05": float(np.sqrt(np.mean(np.log10(go_qc / pred_qc_quad50) ** 2))),
+    "rms_log10_resid_baseline_ml05": float(np.sqrt(np.mean(np.log10(go_qc / pred_qc_bl50) ** 2))),
+    "rms_log10_resid_mond_reference_ml05": float(np.sqrt(np.mean(np.log10(go_qc / pred_qc_mond50) ** 2))),
+}
+
 
 # ---------------------------------------------------------------------------
 # 2. free-k scan: does the SPARC cloud prefer k ~ 16?
@@ -282,33 +333,27 @@ t1_path = REPO / "Table1.mrt"
 btfr = []
 if t1_path.exists():
     txt = t1_path.read_text().splitlines()
-    # SPARC Table 1 (byte-by-byte): Name, D, L3.6 (1e9 Lsun), MHI (1e9 Msun), Vflat
-    for line in txt:
-        if len(line) < 60 or line.startswith(("Title", "Authors", "Table",
-                                              "=", "-", " ", "Byte", "Note",
-                                              "(", "Cam")):
-            continue
+    data_start = 0
+    for i, line in enumerate(txt):
+        if line.startswith("---"):
+            data_start = i + 1
+    for line in txt[data_start:]:
         parts = line.split()
-        if len(parts) < 8:
+        if len(parts) < 19:
             continue
         try:
             name = parts[0]
-            # find numeric tail: L36 eL36? MHI Vflat
-            nums = [float(x) for x in parts[1:] if
-                    x.replace(".", "").replace("-", "").replace("+", "")
-                    .replace("e", "").replace("E", "").isdigit()
-                    or "e" in x.lower()]
-            L36 = nums[-3] if len(nums) >= 3 else np.nan
-            MHI = nums[-2] if len(nums) >= 2 else np.nan
-            Vfl = nums[-1]
+            L36 = float(parts[7])
+            MHI = float(parts[13])
+            Vfl = float(parts[15])
             btfr.append((name, L36, MHI, Vfl))
         except (ValueError, IndexError):
             continue
 OUT["btfr"] = {"n_table1_parsed": len(btfr),
+               "n_vflat_gt_0": int(sum(1 for _, l36, mhi, vfl in btfr if vfl > 0 and (l36 > 0 or mhi > 0))),
                "note": ("V_flat^4 = G M_b a_eff with a_eff = 4 sqrt(2) g_t/k; "
-                        "M_b = Ups_d L3.6 + Ups_b Lbul + 1.33 M_HI. "
-                        "Detailed per-galaxy BTFR fit deferred to T1.1b "
-                        "(Table-1 column layout to be confirmed).")}
+                        "M_b = Ups_d L3.6 + 1.33 M_HI. "
+                        "Full per-galaxy BTFR analysis is performed in step_13_two_branch_btfr.py.")}
 
 # ---------------------------------------------------------------------------
 # 6. transition-shape sensitivity diagnostics (exploratory, AUD-1 follow-up)

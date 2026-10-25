@@ -4,10 +4,10 @@
 
 <p>The Milky Way provides a local test of the galactic $M^{1/3}$ scaling law established in Section 3. Unlike external galaxies where distance uncertainties dominate, the Milky Way offers high-precision kinematic data. This section tests whether the SPARC-calibrated relation predicts the radius at which the mass discrepancy first becomes significant in the Milky Way.</p>
 
-<p>Using the SPARC-calibrated normalization ($k \approx 7.9 \times 10^{-4}$ kpc/$M_\odot^{1/3}$) and the Milky Way's total baryonic mass estimated at $M_{\text{bar}} \approx 6 \times 10^{10} M_\odot$ (Bland-Hawthorn &amp; Gerhard 2016), the expected dark-matter onset radius is:</p>
+<p>Using the SPARC-calibrated normalization ($k = 7.96 \times 10^{-4} \approx 8.0 \times 10^{-4}$ kpc/$M_\odot^{1/3}$) and the Milky Way's total baryonic mass estimated at $M_{\text{bar}} \approx 6 \times 10^{10} M_\odot$ (Bland-Hawthorn &amp; Gerhard 2016), the expected dark-matter onset radius is:</p>
 
 <div class="equation">
-    \begin{equation} \label{eq:milky_way_dm} R_{\text{DM}} = k \cdot M_{\text{bar}}^{1/3} \approx 7.9 \times 10^{-4} \cdot (6 \times 10^{10})^{1/3} \text{ kpc} \approx 3.1 \text{ kpc}. \end{equation}
+    \begin{equation} \label{eq:milky_way_dm} R_{\text{DM}} = k \cdot M_{\text{bar}}^{1/3} \approx 7.96 \times 10^{-4} \cdot (6 \times 10^{10})^{1/3} \text{ kpc} \approx 3.1 \text{ kpc}. \end{equation}
 </div>
 
 <p>This radius marks the scale where the baryonic rotation curve (bulge + disk) first falls below the observed circular velocity, signaling the onset of the phantom mass effect. It is the same quantity $R_{\text{DM}}$ that is measured directly in the SPARC ensemble; the outer Keplerian decline at larger radii is a separate phenomenon governed by the full halo profile, not by the onset scaling alone.</p>
@@ -44,7 +44,7 @@
         </tr>
         <tr>
             <td><strong>SPARC Constant ($k$)</strong></td>
-            <td>$7.9 \times 10^{-4}$</td>
+            <td>$7.96 \times 10^{-4}$</td>
             <td>$\pm 4\%$ (fit error)</td>
             <td>$\pm 4\%$</td>
         </tr>
@@ -55,10 +55,16 @@
             <td>$\pm 10\%$</td>
         </tr>
         <tr style="background-color: #f8f9fa; font-weight: bold;">
-            <td>Total Expected $R_{\text{DM}}$</td>
+            <td>Mean Relation $R_{\text{DM}}$</td>
             <td>3.1 kpc</td>
-            <td>$\pm 0.4$ kpc ($\sim$14%)</td>
+            <td>$\pm 0.4$ kpc ($\sim$14% on mean curve)</td>
             <td>-</td>
+        </tr>
+        <tr>
+            <td><strong>Single-Galaxy $1\sigma$ Interval</strong></td>
+            <td>3.1 kpc</td>
+            <td>$[1.0,\,9.4]$ kpc ($\pm 0.48$ dex SPARC population scatter)</td>
+            <td>Factor $\sim 3\times$</td>
         </tr>
         <tr style="border-top: 2px solid #ccc;">
             <td><strong>Observed Onset</strong></td>
@@ -70,7 +76,7 @@
 </table>
 
 <p>
-    The expected value ($3.1 \pm 0.4$ kpc) and the observed dark-matter onset
+    The mean-relation prediction ($3.1 \pm 0.4$ kpc; single-galaxy $1\sigma$ population prediction interval $[1.0,\,9.4]$ kpc when the $0.48$ dex SPARC ensemble scatter is included) and the observed dark-matter onset
     scale ($\sim$3–5 kpc) are consistent within the combined uncertainty. Because
     the SPARC-calibrated normalization $k$ is the sole empirical input to this
     prediction, the Milky Way test is a SPARC-internal consistency check rather
@@ -84,7 +90,7 @@
     <h4>NFW Halo vs. TEP Soliton</h4>
     <ul>
         <li><strong>NFW Halo (CDM):</strong> In standard CDM, the inner rotation curve profile depends on the halo concentration $c$ and virial mass $M_{\text{vir}}$, both of which are free parameters. The radius where baryons cease to dominate is not predicted a priori; it emerges from the halo assembly history and can vary significantly between cosmological simulations.</li>
-        <li><strong>TEP Soliton:</strong> The $M^{1/3}$ scaling yields the onset radius directly from the baryonic mass, with no Milky Way-specific tuning. The normalization is fixed by the SPARC ensemble ($k \approx 7.9 \times 10^{-4}$ kpc/$M_\odot^{1/3}$) and gives $R_{\text{DM}} \approx 3$ kpc for the Milky Way. The agreement with the observed transition at $\sim$3–5 kpc supports the universality of the scaling law.</li>
+        <li><strong>TEP Soliton:</strong> The $M^{1/3}$ scaling yields the onset radius directly from the baryonic mass, with no Milky Way-specific tuning. The normalization is fixed by the SPARC ensemble ($k = 7.96 \times 10^{-4}$ kpc/$M_\odot^{1/3}$) and gives $R_{\text{DM}} \approx 3.1$ kpc for the Milky Way. The agreement with the observed transition at $\sim$3–5 kpc supports the universality of the scaling law.</li>
     </ul>
 </div>
 

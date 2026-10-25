@@ -11,7 +11,7 @@ the outermost baryonic rotation component: M_bar = R_max V_bar^2/G.
 Test: log-log fit of R_onset vs M_bar; compare slope to 1/2 and the
 intercept to 0.5 log10(G/a_eff) — the zero-parameter prediction.
 Also reports the free-slope fit for the record (the Paper 6 M^{1/3}
-exponent is 0.355 +- 0.043 +- 0.07 def.; degenerate with the
+exponent is 0.352 +- 0.043 +- 0.07 def.; degenerate with the
 size-mass relation, Paper 0 F5).
 
 Outputs results/outputs/step_12_onset_radius_law.json
@@ -68,6 +68,7 @@ def main():
 
     recs = []
     recs_inner_peak = []
+    f_enc_list = []
     for gid, pts in galaxies.items():
         pts.sort()
         R = np.array([p[0] for p in pts])
@@ -94,13 +95,17 @@ def main():
                 # crossing lg[i] > lg[i+1], so reverse both arrays
                 r_on = 10 ** np.interp(lgT, [lg[i + 1], lg[i]],
                                        [lR[i + 1], lR[i]])
+                vb2_on = float(np.interp(r_on, R, Vb2))
+                f_enc = (r_on * vb2_on) / (R[-1] * Vb2[-1])
                 recs.append((gid, Mbar / MSUN, r_on))
                 recs_inner_peak.append((gid, Mbar_inner / MSUN, r_on))
+                f_enc_list.append(f_enc)
 
     M = np.array([r[1] for r in recs])
     Ron = np.array([r[2] for r in recs])
+    f_enc_arr = np.array(f_enc_list)
     ok = (M > 0) & (Ron > 0)
-    M, Ron = M[ok], Ron[ok]
+    M, Ron, f_enc_arr = M[ok], Ron[ok], f_enc_arr[ok]
     x, y = np.log10(M), np.log10(Ron)
 
     # free fit and fixed-slope fit
@@ -114,6 +119,8 @@ def main():
         (y - (slope_free * x + icept_free)) ** 2)))
     pred_ron = np.sqrt(G * M * MSUN / A_EFF) / KPC_M
     rms_zeropar = float(np.sqrt(np.mean((y - np.log10(pred_ron)) ** 2)))
+    pred_ron_fenc = np.sqrt(np.median(f_enc_arr) * G * M * MSUN / A_EFF) / KPC_M
+    rms_zeropar_fenc = float(np.sqrt(np.mean((y - np.log10(pred_ron_fenc)) ** 2)))
 
     M_in = np.array([r[1] for r in recs_inner_peak])[ok]
     x_in = np.log10(M_in)
@@ -137,7 +144,13 @@ def main():
                              "rms_dex": rms_fixed},
         "zero_parameter": {"rms_dex": rms_zeropar,
                            "mean_resid_dex": float(np.mean(
-                               y - np.log10(pred_ron)))},
+                               y - np.log10(pred_ron))),
+                           "median_enclosed_mass_fraction_f_enc": float(np.median(f_enc_arr)),
+                           "mean_enclosed_mass_fraction_f_enc": float(np.mean(f_enc_arr)),
+                           "rms_dex_with_median_f_enc": rms_zeropar_fenc,
+                           "mean_resid_dex_with_median_f_enc": float(np.mean(
+                               y - np.log10(pred_ron_fenc))),
+                           "note": "The -0.173 dex intercept offset relative to sqrt(G M_bar(R_max)/a_eff) reflects the enclosed baryonic mass fraction f_enc = M_bar(<r_on)/M_bar(R_max) ~= 0.65 at the interior crossing radius r_on."},
         "samples": [{"galaxy": g, "M_msun": m, "r_onset_kpc": r}
                     for g, m, r in recs],
     }

@@ -2,11 +2,11 @@
 
 <h3>The Universal Scaling Anomaly</h3>
 
-<p>Dark matter observations across cosmological scales reveal an empirical regularity. From dwarf galaxies ($M \sim 10^9 M_\odot$) to massive galaxies ($M \sim 10^{12} M_\odot$), the characteristic radius at which Newtonian dynamics fails—the "dark matter onset"—scales approximately as $R \propto M^{1/3}$. This implies a universal critical proximity scale ("critical" here meaning a phenomenological saturation/proximity scale, not a hard density threshold), observationally proxied by $\rho_T \sim M/R^3 \sim \text{constant}$, at which gravitational phenomenology changes.</p>
+<p>Dark matter observations across cosmological scales reveal an empirical regularity. From dwarf galaxies ($M \sim 10^9 M_\odot$) to massive galaxies ($M \sim 10^{12} M_\odot$), the characteristic radius at which Newtonian dynamics fails—the "dark matter onset"—scales approximately as $R \propto M^{1/3}$. This implies a universal critical proximity scale ("critical" here meaning a phenomenological saturation/proximity scale, not a hard density threshold), observationally proxied by $\rho_T \sim M/R^3 \sim \text{constant}$, at which gravitational phenomenology changes. In the two-branch TEP action, the geometric saturation radius follows $R_T \propto M^{1/3}$, whereas the low-acceleration kinetic response produces an $R_s \propto M^{1/2}$ acceleration-crossing scale; these are different operational radii, and galactic onset estimators spanning the transition between them need not recover identical exponents.</p>
 
 <p>This scaling appears in multiple independent contexts:</p>
 <ul>
-    <li><strong>Galaxy rotation curves:</strong> SPARC database analysis yields $R_{\text{DM}} \propto M^{\alpha_{\rm SPARC}}$ with $\alpha_{\rm SPARC} = 0.355 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (definition)}$ (Lelli et al. 2016; this work).</li>
+    <li><strong>Galaxy rotation curves:</strong> SPARC database analysis yields $R_{\text{DM}} \propto M^{\alpha_{\rm SPARC}}$ with $\alpha_{\rm SPARC} = 0.352 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (definition)}$ (Lelli et al. 2016; this work).</li>
     <li><strong>Ultra-diffuse galaxies:</strong> DF2 and DF4 exhibit dark matter deficiency consistent with saturation radii exceeding tidal radii (van Dokkum et al. 2018, 2019).</li>
     <li><strong>Milky Way:</strong> The SPARC-calibrated $M^{1/3}$ relation predicts a dark-matter onset at $R_{\text{DM}} \approx 3$ kpc for the Milky Way, consistent with the observed transition from baryonic to dark-matter-dominated rotation at $R \sim 3$–5 kpc (Gaia Collaboration 2023; Sofue 2020).</li>
 </ul>
@@ -18,12 +18,12 @@
 <p>The Temporal Equivalence Principle (TEP) proposes that gravitational phenomena arise from a conformal time field $\phi(x^\mu)$ that modulates proper time rates. This phenomenology arises from the TEP action (Smawfield 2025a, Paper 0):</p>
 
 <div class="equation">
-    \begin{equation} \label{eq:tep_action} S = \int d^4x \sqrt{-g} \left[ \frac{M_{\text{Pl}}^2}{2} R + P(X,\phi) - V(\phi) \right] + S_m[\tilde{g}_{\mu\nu}] \end{equation}
+    \begin{equation} \label{eq:tep_action} S = \int d^4x \sqrt{-g} \left[ \frac{M_{\text{Pl}}^2}{2} R + P(X,\phi) \right] + S_m[\tilde{g}_{\mu\nu}], \qquad P(X,\phi) = P_{\rm kin}(X) - V(\phi), \end{equation}
 </div>
 
 <p>where matter couples to the causal matter metric $\tilde{g}_{\mu\nu} = -A_{\rm loc}^2(u_{\rm grav}(\mathbf{x}))U_\mu U_\nu + A_{\rm sp}^2(u_{\rm drift}(t,\mathbf{x}))\Pi_{\mu\nu} + B(\phi)\Pi_\mu^\alpha\Pi_\nu^\beta\nabla_\alpha\phi\nabla_\beta\phi$ in the canonical unified unstretched-space decomposition ($\tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu} + B(\phi) \nabla_\mu\phi \nabla_\nu\phi$ on the historical isotropic-conformal benchmark). At late times, $B(\phi)$ is strongly constrained by multi-messenger observations and can be neglected, while $A(\phi) = \exp(\beta_A \phi/M_{\text{Pl}})$ modulates local proper-time rates. The environmental screening response suppresses the observed gradient in dense environments, producing effective field saturation at characteristic density $\rho_T$. In this framework, the "dark matter" problem is reinterpreted as a violation of the <em>isochrony axiom</em>—the assumption that clocks at the same gravitational potential tick at the same rate regardless of their spatial separation or the mass distribution's history.</p>
 
-<p>When this axiom is relaxed, mass estimates made through different observable pairs diverge, and "phantom mass" — the apparent mass inferred when temporal structure is analysed as spatial mass — can be measured per channel. In the <em>dynamical–baryonic</em> channel studied here (rotation curves), phantom mass is the apparent excess of the dynamical mass $V_{\rm obs}^2 R/G$ over the baryonic mass: the orbital dynamics respond to the local time gradient, sourcing centripetal support with no additional baryons. In the <em>lensing</em> channel (Papers 4, 18, 19), under the canonical unified unstretched-space matter metric (Paper 0 §2.2, Step 80) — where at a fixed cosmic epoch ($A_{\rm sp}(t_0)=1$) the spatial 3-metric $\tilde\gamma_{ij}=\gamma_{ij}$ remains unstretched while the $(3+1)$ ADM lapse rescales as $N_{\rm TEP}(\mathbf x)=A_{\rm loc}(u_{\rm grav}(\mathbf x))N_{\rm GR}(\mathbf x)$ — intermediate clock rates refract light at half the dynamical potential weight ($\Phi_{\rm lens}=\Phi_N+\tfrac12 c^2\beta_A u_{\rm grav}$ versus $\Phi_{\rm dyn}=\Phi_N+c^2\beta_A u_{\rm grav}$), yielding a testable lensing-to-dynamical mass ratio $M_{\rm lens}^{\rm GR}/M_{\rm dyn}=(1+\beta_A^2 y_{\rm eff})/(1+2\beta_A^2 y_{\rm eff})$ (whereas on the historical isotropic-conformal benchmark $\tilde g_{\mu\nu}=A^2(\phi)g_{\mu\nu}$, $A^2(\phi)$ cancels out of null rays and $M_{\rm dyn}/M_{\rm lens}=1+2\beta_A^2 y_{\rm tb}$). Both measurements arise from spatial structure in proper time—without invoking non-baryonic particles—and are kept distinct throughout.<sup>†</sup></p>
+<p>When this axiom is relaxed, mass estimates made through different observable pairs diverge, and "phantom mass" — the apparent mass inferred when temporal structure is analysed as spatial mass — can be measured per channel. Whereas earlier relativistic extensions of the MOND paradigm introduced vector and scalar fields to reconcile galactic dynamics with gravitational lensing (Milgrom 1983; Bekenstein 2004) or invoked non-canonical kinetic screening to satisfy Solar System bounds (Babichev et al. 2009; Barreira et al. 2015), TEP derives both channels from the local clock-rate and spatial-slice decomposition of a single proper-time foliation. In the <em>dynamical–baryonic</em> channel studied here (rotation curves), phantom mass is the apparent excess of the dynamical mass $V_{\rm obs}^2 R/G$ over the baryonic mass: the orbital dynamics respond to the local time gradient, sourcing centripetal support with no additional baryons. In the <em>lensing</em> channel (Papers 4, 18, 19), under the canonical unified unstretched-space matter metric (Paper 0 §2.2, Step 80) — where at a fixed cosmic epoch ($A_{\rm sp}(t_0)=1$) the spatial 3-metric $\tilde\gamma_{ij}=\gamma_{ij}$ remains unstretched while the $(3+1)$ ADM lapse rescales as $N_{\rm TEP}(\mathbf x)=A_{\rm loc}(u_{\rm grav}(\mathbf x))N_{\rm GR}(\mathbf x)$ — intermediate clock rates refract light at half the dynamical potential weight ($\Phi_{\rm lens}=\Phi_N+\tfrac12 c^2\beta_A u_{\rm grav}$ versus $\Phi_{\rm dyn}=\Phi_N+c^2\beta_A u_{\rm grav}$), yielding a testable lensing-to-dynamical mass ratio $M_{\rm lens}^{\rm GR}/M_{\rm dyn}=(1+\beta_A^2 y_{\rm eff})/(1+2\beta_A^2 y_{\rm eff})$ (whereas on the historical isotropic-conformal benchmark $\tilde g_{\mu\nu}=A^2(\phi)g_{\mu\nu}$, $A^2(\phi)$ cancels out of null rays and $M_{\rm dyn}/M_{\rm lens}=1+2\beta_A^2 y_{\rm tb}$). Both measurements arise from spatial structure in proper time—without invoking non-baryonic particles—and are kept distinct throughout.<sup>†</sup></p>
 
 <p style="font-size: 0.9em; color: #666;"><sup>†</sup><em>Note: This geometric "phantom mass" from temporal shear differs from cosmological "phantom energy" (dark energy with $w &lt; -1$). The former arises from spatial gradients in proper time; the latter from exotic equation-of-state matter.</em></p>
 
@@ -107,7 +107,7 @@ This single operator unifies density screening, compactness screening, proximity
         <td>$10^9$–$10^{12} M_\odot$</td>
         <td>$\rho \sim 10^{-24}$ g/cm³</td>
         <td>$R_{\text{DM}} \propto M^{\alpha_{\rm SPARC}}$</td>
-        <td>$\alpha_{\rm SPARC} = 0.355 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (def.)}$</td>
+        <td>$\alpha_{\rm SPARC} = 0.352 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (def.)}$</td>
     </tr>
     <tr>
         <td><strong>Local</strong></td>
@@ -124,6 +124,14 @@ This single operator unifies density screening, compactness screening, proximity
         <td>$\sim 10^{0}$–$10^{14}$ g/cm³</td>
         <td>$S \propto \rho^{\beta_{\rm scr}}$</td>
         <td>$\beta_{\rm scr} = 0.334$ ($R^2 = 0.99995$)</td>
+    </tr>
+    <tr>
+        <td><strong>Planetary Spin</strong></td>
+        <td>Solar System ($N=12$)</td>
+        <td>$2.6 \times 10^{23}$–$1.9 \times 10^{30}$ g</td>
+        <td>$0.69$–$5.51$ g/cm³</td>
+        <td>$v_{\rm eq} = c\,u_T/\sqrt{u_{\rm gal}}$; $J = \frac{G M^2}{2 v_{\rm gal}}$</td>
+        <td>$v_{\rm obs}/v_{\rm TEP} = 1.02 \pm 0.07$; $p_{\rm TEP} = 1.52 \times 10^{-15}$ cgs</td>
     </tr>
     </tbody>
     </table>

@@ -21,7 +21,9 @@ scripts/
 │   ├── step_10_two_branch_sparc_rar.py
 │   ├── step_11_kphi_sparc.py
 │   ├── step_12_onset_radius_law.py
-│   └── step_13_two_branch_btfr.py
+│   ├── step_13_two_branch_btfr.py
+│   ├── step_14_scale_audit.py
+│   └── step_15_planetary_rotation.py
 ├── utils/                # Shared utilities (style, logging)
 ├── verification/         # Verification audits
 │   └── verify_screening_claim.py
@@ -48,21 +50,22 @@ cd site && npm run build
 | Script | Output | Description |
 |--------|--------|-------------|
 | `steps/step_0_download_data.py` | — | Download SPARC Tables 1 & 2 if missing |
-| `steps/step_1_scaling.py` | `figure_2_scaling.png` | Universal scaling law (TEP vs GR) |
-| `steps/step_2_wd_screening.py` | `figure_3_wd_screening.png` | White dwarf screening test |
-| `steps/step_3_screening_hierarchy.py` | `figure_4_screening_hierarchy.png` | Screening hierarchy across object classes |
-| `steps/step_4_sparc_analysis.py` | `figure_5_sparc_enhanced.png` | **Primary SPARC scaling analysis** |
-| `steps/step_4b_sparc_examples.py` | `figure_6_sparc_examples.png` | Example rotation curves |
-| `steps/step_5_ultimate_screening.py` | `screening_comprehensive.png` | Comprehensive screening plot (not in manuscript) |
-| `steps/step_6_sensitivity.py` | `figure_8_sensitivity.png` | Sensitivity and feasibility analysis |
-| `steps/step_7_sparc_residuals.py` | `figure_7_sparc_residuals.png` | Residual analysis (baryonic vs screening proxies) |
+| `steps/step_1_scaling.py` | `figure_2_scaling.png` | Saturation radius vs. Schwarzschild radius (Figure 7) |
+| `steps/step_2_wd_screening.py` | `figure_3_wd_screening.png` | White dwarf physical radius vs. saturation scale (Figure 4) |
+| `steps/step_3_screening_hierarchy.py` | `figure_4_screening_hierarchy.png` | Geometric screening hierarchy across object classes (Figure 5) |
+| `steps/step_4_sparc_analysis.py` | `step_4_sparc_analysis.json` | **Primary SPARC scaling analysis** |
+| `steps/step_4b_sparc_examples.py` | `figure_6_sparc_examples.png` | Example rotation curves with two-branch TEP profile (Figure 2) |
+| `steps/step_5_ultimate_screening.py` | `step_5_ultimate_screening.json` | Screening regression across 11 dense objects |
+| `steps/step_6_sensitivity.py` | `step_6_sensitivity.json` | Horizon-crossover compactness calculations (M87*, Sgr A*) |
+| `steps/step_7_sparc_residuals.py` | `figure_7_sparc_residuals.png` | Residual analysis (baryonic vs screening proxies, Figure 3) |
 | `steps/step_8_density_vs_size_confound.py` | `step_8_density_vs_size_confound.json` | Density-threshold vs disk size–mass confound test |
 | `steps/step_9_phantom_amplitude.py` | `step_9_phantom_amplitude.json` | Phantom-mass plateau amplitude and radial-profile test |
 | `steps/step_10_two_branch_sparc_rar.py` | `step_10_two_branch_sparc_rar.json` | Two-branch kinetic-sector RAR test on all SPARC Table 2 points (migrated from Paper 0 step_55) |
 | `steps/step_11_kphi_sparc.py` | `step_11_kphi_sparc.json` | K(φ)-corrected SPARC RAR well-depth sweep (migrated from Paper 0 step_60) |
 | `steps/step_12_onset_radius_law.py` | `step_12_onset_radius_law.json` | Zero-parameter onset-radius law, R_onset = √(GM/a_eff) (migrated from Paper 0 step_63) |
 | `steps/step_13_two_branch_btfr.py` | `step_13_two_branch_btfr.json` | Two-branch BTFR outer-edge and deep-limit tests (migrated from Paper 0 step_66) |
-| `steps/step_14_scale_audit.py` | `step_14_scale_audit.json` | Scalar-sector scale audit: kinetic scale Λ_X, quartic coupling λ, and ρ_T disambiguation |
+| `steps/step_14_scale_audit.py` | `step_14_scale_audit.json`, `figure_10_prem_earth_kernel.png` | Scalar-sector scale audit and 4-layer PREM Earth spatial-kernel integration (Figure 1) |
+| `steps/step_15_planetary_rotation.py` | `step_15_planetary_rotation.json`, `figure_9_planetary_rotation.png` | Planetary rotational kinematics, MOI screening scaling, and Wesson angular-momentum constant (Figure 6) |
 
 All migrated steps share the canonical shear scale `g_t = c·H0/(2·β_A²) ≈ 3.4e-10 m/s²` (H0 = 70 km/s/Mpc, β_A² = 1), so the BTFR asymptote `a_eff = 4√2·g_t/k` equals `a_0 = 1.2e-10 m/s²` exactly.
 | `verification/verify_screening_claim.py` | — | Verifies S ∝ rho^0.334 claim from object data |
@@ -81,9 +84,9 @@ This is the primary galactic validation script. It performs the following steps:
 
 ### Robustness Checks Documented
 
-- **Threshold variation:** Exponents range from 0.28 (loose) to 0.42 (strict); ensemble converges near 1/3.
-- **Bootstrap uncertainty:** 1000 resamples yield $\alpha = 0.355 \pm 0.043$; combined with the definition systematic ($\pm 0.07$), the headline value is $\alpha_{\rm SPARC} = 0.355 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (definition)}$.
-- **Sample size:** 167 of 175 SPARC galaxies yield valid $R_{\rm DM}$ at threshold 1.3 (8 excluded because $V_{\rm obs}/V_{\rm bar}$ never exceeds threshold).
+- **Threshold variation:** Exponents range from 0.27 (loose) to 0.41 (strict); ensemble converges near 1/3.
+- **Bootstrap uncertainty:** 1000 resamples yield $\alpha = 0.352 \pm 0.043$; combined with the definition systematic ($\pm 0.07$), the headline value is $\alpha_{\rm SPARC} = 0.352 \pm 0.043 \text{ (stat)} \pm 0.07 \text{ (definition)}$.
+- **Sample size:** 168 of 175 SPARC galaxies yield valid $R_{\rm DM}$ at threshold 1.3 (7 excluded because $V_{\rm obs}/V_{\rm bar}$ never exceeds threshold).
 - **RAR-based transition:** Alternative definition using $g_{\rm bar} < a_0$ yields a steeper slope (~0.57), flagged as degenerate with the MOND scale and not used as the primary estimator.
 
 ## SPARC Residual Analysis (`step_7_sparc_residuals.py`)
@@ -92,7 +95,7 @@ Discriminates baryonic feedback from field-theory interpretations by correlating
 - Gas fraction, surface brightness, inclination (baryonic proxies)
 - Central density (screening proxy)
 
-**Result:** Evaluated using the measured SPARC Table 1 effective radii $R_{\rm eff}$ and inclinations $i$, residuals are uncorrelated with inclination ($r = +0.115$, $p = 0.139$), surface brightness ($r = +0.062$, $p = 0.427$), and central density ($r = +0.032$, $p = 0.685$), and only weakly correlated with gas fraction ($r = -0.164$, $p = 0.034$, $\max|r| = 0.164$), ruling out inclination deprojection and baryonic feedback artifacts.
+**Result:** Evaluated using the measured SPARC Table 1 effective radii $R_{\rm eff}$, inclinations $i$, and signed gas contributions ($n = 168$), residuals are uncorrelated with inclination ($r = +0.096$, $p = 0.217$), surface brightness ($r = +0.047$, $p = 0.543$), and central density ($r = +0.016$, $p = 0.834$), and only weakly correlated with gas fraction ($r = -0.153$, $p = 0.048$, $\max|r| = 0.153$), ruling out inclination deprojection and baryonic feedback artifacts.
 
 ## Screening Verification (`verify_screening_claim.py`)
 

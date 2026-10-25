@@ -26,7 +26,18 @@
     "rms_log10_resid_mond_reference": 0.19886339710301015,
     "median_log10_resid_mond_reference": -0.014228411214360859,
     "rms_log10_resid_exp_interp": 0.2749051659562611,
-    "frac_within_0p1dex_exp_interp": 0.2519917379758041
+    "frac_within_0p1dex_exp_interp": 0.2519917379758041,
+    "quality_controlled_sparc_sample": {
+      "selection_cuts": "Q <= 2, i >= 30 deg, e_Vobs / V_obs <= 0.10 (Lelli et al. 2017 standard SPARC RAR cuts)",
+      "n_points": 2700,
+      "n_galaxies": 149,
+      "rms_log10_resid_two_branch_add_ml05": 0.1522489443738529,
+      "rms_log10_resid_two_branch_add_ml035": 0.13923498967519812,
+      "frac_within_0p1dex_two_branch_add_ml035": 0.6062962962962963,
+      "rms_log10_resid_two_branch_quad_ml05": 0.13944600145573727,
+      "rms_log10_resid_baseline_ml05": 0.24903093856711228,
+      "rms_log10_resid_mond_reference_ml05": 0.132761707369115
+    }
   },
   "k_scan": {
     "k_grid_min_rms": 30.632911392405063,
@@ -140,8 +151,9 @@
     "rms_log10_resid": 0.21179315753721611
   },
   "btfr": {
-    "n_table1_parsed": 2,
-    "note": "V_flat^4 = G M_b a_eff with a_eff = 4 sqrt(2) g_t/k; M_b = Ups_d L3.6 + Ups_b Lbul + 1.33 M_HI. Detailed per-galaxy BTFR fit deferred to T1.1b (Table-1 column layout to be confirmed)."
+    "n_table1_parsed": 175,
+    "n_vflat_gt_0": 135,
+    "note": "V_flat^4 = G M_b a_eff with a_eff = 4 sqrt(2) g_t/k; M_b = Ups_d L3.6 + 1.33 M_HI. Full per-galaxy BTFR analysis is performed in step_13_two_branch_btfr.py."
   },
   "transition_shape_scan": {
     "family": "P_X = k sqrt(xi) + 2 xi + c2 xi^{3/2}",
