@@ -67,6 +67,11 @@ def px_two_branch(u):
     return 1e-3 + K_STAR * u / np.sqrt(2.0) + u * u
 
 
+def g_obs_coupled_additive(gN):
+    a_eff = 4.0 * np.sqrt(2.0) * G_T / K_STAR
+    return float(0.5 * gN + np.sqrt((0.5 * gN) ** 2 + gN * a_eff))
+
+
 def g_obs_two_branch(gN, ml_disk_scale=1.0, quadrature=False):
     gN_scaled = gN * ml_disk_scale
     y = gN_scaled / G_T

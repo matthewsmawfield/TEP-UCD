@@ -58,6 +58,7 @@ def parse_citation_cff():
             data['title'] = _extract_yaml_value(content, 'title')
             data['version'] = _extract_yaml_value(content, 'version')
             data['date-released'] = _extract_yaml_value(content, 'date-released')
+            data['date-updated'] = _extract_yaml_value(content, 'date-updated')
             data['doi'] = _extract_yaml_value(content, 'doi')
             data['url'] = _extract_yaml_value(content, 'url')
             data['license'] = _extract_yaml_value(content, 'license')
@@ -116,10 +117,12 @@ def build_metadata(cff_data):
         codename = ''
 
     date = cff_data.get('date-released', '')
+    date_updated = cff_data.get('date-updated', '') or date
     if date:
         date_pdf = str(date).replace('-', ':')
     else:
         date_pdf = ''
+    date_updated_pdf = str(date_updated).replace('-', ':') if date_updated else ''
 
     doi = cff_data.get('doi', '')
     url = cff_data.get('url', '')
@@ -151,7 +154,7 @@ def build_metadata(cff_data):
 
     if date_pdf:
         metadata['CreationDate'] = f'{date_pdf} 00:00:00'
-        metadata['ModifyDate'] = f'{date_pdf} 00:00:00'
+        metadata['ModifyDate'] = f'{date_updated_pdf or date_pdf} 00:00:00'
 
     metadata['XMP-dc:Creator'] = author_name
     metadata['XMP-dc:Title'] = title

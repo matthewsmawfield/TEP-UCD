@@ -1,7 +1,7 @@
-[20:25:37] [PROCESS] Initializing ultimate screening analysis (26-object dataset)
-[20:25:37] [INFO] R_TEP (Earth) = 4146360.6 m, rho_T = 20.00 g/cm^3
-[20:25:37] [PROCESS] Loading 26-object dataset
-[20:25:37] [PROCESS] Computing screening factors and derived metrics
-[20:25:37] [INFO] Screening law fit: S ~ rho^0.3338, R^2 = 0.99995
-[20:25:37] [SUCCESS] Numerical outputs saved to results/outputs/step_5_ultimate_screening.json
-[20:25:37] [SUCCESS] Completed in 0.0s
+[13:20:01] [PROCESS] Initializing ultimate screening analysis (26-object dataset)
+[13:20:01] [INFO] R_TEP (Earth) = 4146360.6 m, rho_T = 20.00 g/cm^3
+[13:20:01] [PROCESS] Loading 26-object dataset
+[13:20:01] [PROCESS] Computing screening factors and derived metrics
+[13:20:01] [INFO] Screening law fit: S ~ rho^0.3338, R^2 = 0.99995
+[13:20:01] [SUCCESS] Numerical outputs saved to results/outputs/step_5_ultimate_screening.json
+[13:20:01] [SUCCESS] Completed in 0.0s

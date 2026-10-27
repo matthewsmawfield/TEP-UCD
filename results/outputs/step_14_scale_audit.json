@@ -47,6 +47,35 @@
       "lambda_c(rho_T) >> any body radius: the invoked local equilibrium never forms; mechanism inert where claimed"
     ]
   },
+  "closed_form_theoretical_derivations": {
+    "quartic_spatial_alpha_em_4_over_3_derivation": {
+      "quartic_potential_degree_m": 4,
+      "spatial_clock_response_exponent_1_over_m_minus_1": 0.3333333333333333,
+      "derived_density_exponent_m_over_m_minus_1": 1.3333333333333333,
+      "screened_electron_energy_scale_keV": 99.11554749451136,
+      "observed_rhoT_fourth_root_keV": 96.3562987145747,
+      "derived_rho_T_em_g_cm3": 22.39116526861596
+    },
+    "two_branch_galactic_transition_density_derivation": {
+      "fiducial_crossing_acceleration_g_crit_ms2": 1.0308e-10,
+      "derived_rho_trans_at_median_Rdm_2p6kpc_Msun_pc3": 0.06790297091027046,
+      "derived_rho_trans_at_core_0p115kpc_Msun_pc3": 0.6687413801769061
+    },
+    "df2_df4_udg_hyperbolic_re_equilibration_and_efe": {
+      "R_e_kpc": 2.2,
+      "hyperbolic_group_speed_range_over_c": [
+        1.0,
+        1.7320508075688772
+      ],
+      "scalar_re_equilibration_timescale_kyr": [
+        4.14,
+        7.18
+      ],
+      "isolated_tep_sigma_los_km_s": 19.11,
+      "ngc1052_efe_screened_tep_sigma_los_km_s": 8.91,
+      "observed_df2_sigma_los_km_s": 8.5
+    }
+  },
   "kinetic_column_scale": {
     "Sigma_star_g_cm2": 0.12159857786034232,
     "statement": "the X|X|/Lambda_X^4 interior turns canonical below surface density ~ 0.1 g/cm^2 (~ 570 M_sun/pc^2): the kinetic scale supplies a column-density floor, not a volume-density scale."
@@ -67,6 +96,38 @@
       "two_param_R2": 0.9851601755316398,
       "one_param_anchored_L_c_vol_km": 3212.941382701969,
       "one_param_anchored_R2": 0.9814479891194529,
+      "nonlinear_two_branch_picard_bvp_convergence_audit": {
+        "damping_omega": 0.35,
+        "n_iterations": 100,
+        "final_relative_iterate_change_Linf": 2.67e-14,
+        "R_grad_nonlinear_km": 4809.89,
+        "R_grad_nonlinear_over_RT": 1.16,
+        "grid_doubling_1200_to_2400_shift_km": 3.7,
+        "grid_doubling_shift_pct": 0.0768,
+        "initial_guess_invariance_max_diff_km": 8.82e-11,
+        "projected_surface_Lc_nonlinear_km": 3956.8,
+        "full_volume_Lc_nonlinear_km": 3170.1,
+        "sidereal_diurnal_carrier_uHz": 11.61,
+        "constellation_orbital_carriers_uHz": {
+          "GPS_11p97hr": 23.21,
+          "GLONASS_11p26hr": 24.67,
+          "Galileo_14p08hr": 19.74
+        },
+        "conformal_clock_modulation_delta_y_rms": 6.95e-15,
+        "diurnal_timing_residual_rms_ns": 0.1,
+        "screened_temporal_shear_acceleration_ratio_earth_surface": 1.22e-11,
+        "screened_temporal_shear_acceleration_ratio_1AU": 2.02e-08,
+        "sfr_weighted_spiral_bbh_host_eps_prediction": {
+          "mean": 0.236,
+          "std": 0.054,
+          "median": 0.233,
+          "ci68": [
+            0.182,
+            0.29
+          ],
+          "composite_75spiral_25bulge_nsc_mean": 0.197
+        }
+      },
       "note": "Integrating across all interior shells r in [500, 6321] km weighted by r^2|du/dr| yields L_c = 3044-3213 km (R^2 = 0.981-0.985), matching the 25.3-yr isotropic CODE baseline (3210 +- 389 km, Paper 2) and ESA Final (3193 km), while the transition-centroid shell (R_grad = 4875 km) yields L_c = 4010 km matching the cross-sector/PPP baseline (4201 km)."
     },
     "rhoT_sensitivity_scan": {
@@ -75,6 +136,8 @@
         "fixed_quartic_lambda_L_c_km": 4010.244085759501,
         "rhoT_scaled_compton_km": 12394.201690202732,
         "rhoT_scaled_compton_L_c_km": 4105.429900618278,
+        "exact_3d_yukawa_convolution_lam_earth_km": 6044.672936060844,
+        "exact_3d_yukawa_convolution_L_c_km": 6329.127956202958,
         "saturation_core_kernel_L_c_km": 6900.598890200272
       },
       "rhoT_20_g_cm3": {
@@ -82,6 +145,8 @@
         "fixed_quartic_lambda_L_c_km": 4010.244085759501,
         "rhoT_scaled_compton_km": 7807.857803064519,
         "rhoT_scaled_compton_L_c_km": 4010.2322901871657,
+        "exact_3d_yukawa_convolution_lam_earth_km": 3807.9053359364525,
+        "exact_3d_yukawa_convolution_L_c_km": 3951.204622139999,
         "saturation_core_kernel_L_c_km": 4310.769719581927
       },
       "rhoT_50_g_cm3": {
@@ -89,6 +154,8 @@
         "fixed_quartic_lambda_L_c_km": 4010.244085759501,
         "rhoT_scaled_compton_km": 5752.878816678964,
         "rhoT_scaled_compton_L_c_km": 3904.3658961159304,
+        "exact_3d_yukawa_convolution_lam_earth_km": 2805.6886402861387,
+        "exact_3d_yukawa_convolution_L_c_km": 2888.1528932381243,
         "saturation_core_kernel_L_c_km": 3152.2977754581157
       },
       "rhoT_200_g_cm3": {
@@ -96,6 +163,8 @@
         "fixed_quartic_lambda_L_c_km": 4010.244085759501,
         "rhoT_scaled_compton_km": 3624.086559314068,
         "rhoT_scaled_compton_L_c_km": 3649.5131816309918,
+        "exact_3d_yukawa_convolution_lam_earth_km": 1767.4730886737157,
+        "exact_3d_yukawa_convolution_L_c_km": 1795.792888149141,
         "saturation_core_kernel_L_c_km": 1959.8304575430489
       }
     },
@@ -138,6 +207,428 @@
     "multi_gnss_combined_mean_km": 2140.75,
     "multi_gnss_isb_compression_factor": 1.8993966289073145,
     "debiased_mgex_pooled_scale_km": 3535.9167643738565,
+    "real_cddis_rinex3_single_constellation_reprocessing_2023_4q": {
+      "rtklib_pntpos_clk_column_fix": "In RTKLIB pntpos.c/rtkpos.c ($CLK record), dtr[0] (col 5) is GPS receiver clock (constrained to 0.0 when GPS is absent), dtr[1] (col 6) is GLONASS clock, and dtr[2] (col 7) is Galileo clock. Reading the constellation-matched $CLK column recovers 192-197 valid station-days across all 4 quarters of 2023 (DOY 010, 100, 190, 280; 3,706-3,927 station pairs per constellation).",
+      "constellation_results": {
+        "GPS_only_sys_G": {
+          "stepA_fullday_nperseg288_10_500uHz": {
+            "n_station_days": 197,
+            "n_pairs": 3927,
+            "L_c_km": 3765.7,
+            "L_c_err_km": 640.6,
+            "L_c_sqrtN_weighted_km": 4050.9,
+            "L_c_sqrtN_weighted_err_km": 699.3,
+            "R2_sqrtN_weighted": 0.963,
+            "amplitude_A": 1.494,
+            "offset_C0": -0.301,
+            "R2": 0.964
+          },
+          "stepA_cme_removed_fullday_nperseg288_10_500uHz": {
+            "n_station_days": 197,
+            "n_pairs": 3927,
+            "L_c_km": 2891.6,
+            "L_c_err_km": 376.0,
+            "L_c_sqrtN_weighted_km": 2953.3,
+            "L_c_sqrtN_weighted_err_km": 412.5,
+            "R2_sqrtN_weighted": 0.969,
+            "amplitude_A": 1.78,
+            "offset_C0": -0.478,
+            "R2": 0.97
+          },
+          "stepAprime_fullday_nperseg288_10_60uHz": {
+            "n_station_days": 197,
+            "n_pairs": 3927,
+            "L_c_km": 2745.8,
+            "L_c_err_km": 346.2,
+            "L_c_sqrtN_weighted_km": 2908.5,
+            "L_c_sqrtN_weighted_err_km": 379.2,
+            "R2_sqrtN_weighted": 0.969,
+            "amplitude_A": 1.488,
+            "offset_C0": -0.224,
+            "R2": 0.97
+          },
+          "stepB_12hr_nperseg144_unremoved": {
+            "n_station_days": 197,
+            "n_pairs": 3927,
+            "L_c_km": 3160.6,
+            "L_c_err_km": 528.9,
+            "L_c_sqrtN_weighted_km": 3267.3,
+            "L_c_sqrtN_weighted_err_km": 530.8,
+            "R2_sqrtN_weighted": 0.955,
+            "amplitude_A": 1.455,
+            "offset_C0": -0.22,
+            "R2": 0.956
+          },
+          "pos_jitter_unremoved": {
+            "n_station_days": 197,
+            "n_pairs": 3927,
+            "L_c_km": 2759.0,
+            "L_c_err_km": 564.5,
+            "L_c_sqrtN_weighted_km": 2784.7,
+            "L_c_sqrtN_weighted_err_km": 531.3,
+            "R2_sqrtN_weighted": 0.924,
+            "amplitude_A": 1.458,
+            "offset_C0": -0.183,
+            "R2": 0.925
+          },
+          "pos_jitter_datum_removed": {
+            "n_station_days": 197,
+            "n_pairs": 3927,
+            "L_c_km": 2163.2,
+            "L_c_err_km": 378.7,
+            "L_c_sqrtN_weighted_km": 2179.9,
+            "L_c_sqrtN_weighted_err_km": 380.4,
+            "R2_sqrtN_weighted": 0.929,
+            "amplitude_A": 1.857,
+            "offset_C0": -0.426,
+            "R2": 0.929
+          },
+          "clock_bias_unremoved": {
+            "n_station_days": 197,
+            "n_pairs": 3927,
+            "L_c_km": 2057.5,
+            "L_c_err_km": 615.8,
+            "L_c_sqrtN_weighted_km": 2005.2,
+            "L_c_sqrtN_weighted_err_km": 613.5,
+            "R2_sqrtN_weighted": 0.808,
+            "amplitude_A": 1.238,
+            "offset_C0": -0.105,
+            "R2": 0.812
+          }
+        },
+        "Galileo_only_sys_E": {
+          "stepA_fullday_nperseg288_10_500uHz": {
+            "n_station_days": 192,
+            "n_pairs": 3706,
+            "L_c_km": 2697.0,
+            "L_c_err_km": 507.9,
+            "L_c_sqrtN_weighted_km": 2815.5,
+            "L_c_sqrtN_weighted_err_km": 562.5,
+            "R2_sqrtN_weighted": 0.933,
+            "amplitude_A": 1.382,
+            "offset_C0": -0.108,
+            "R2": 0.934
+          },
+          "stepA_cme_removed_fullday_nperseg288_10_500uHz": {
+            "n_station_days": 192,
+            "n_pairs": 3706,
+            "L_c_km": 3106.4,
+            "L_c_err_km": 513.1,
+            "L_c_sqrtN_weighted_km": 3302.1,
+            "L_c_sqrtN_weighted_err_km": 549.7,
+            "R2_sqrtN_weighted": 0.955,
+            "amplitude_A": 1.59,
+            "offset_C0": -0.359,
+            "R2": 0.956
+          },
+          "stepAprime_fullday_nperseg288_10_60uHz": {
+            "n_station_days": 192,
+            "n_pairs": 3706,
+            "L_c_km": 3653.0,
+            "L_c_err_km": 1099.8,
+            "L_c_sqrtN_weighted_km": 3236.1,
+            "L_c_sqrtN_weighted_err_km": 989.9,
+            "R2_sqrtN_weighted": 0.889,
+            "amplitude_A": 1.139,
+            "offset_C0": -0.14,
+            "R2": 0.89
+          },
+          "stepB_12hr_nperseg144_unremoved": {
+            "n_station_days": 192,
+            "n_pairs": 3706,
+            "L_c_km": 2357.3,
+            "L_c_err_km": 353.6,
+            "L_c_sqrtN_weighted_km": 2432.1,
+            "L_c_sqrtN_weighted_err_km": 376.3,
+            "R2_sqrtN_weighted": 0.951,
+            "amplitude_A": 1.422,
+            "offset_C0": -0.113,
+            "R2": 0.951
+          },
+          "pos_jitter_unremoved": {
+            "n_station_days": 192,
+            "n_pairs": 3706,
+            "L_c_km": 1969.8,
+            "L_c_err_km": 291.6,
+            "L_c_sqrtN_weighted_km": 2054.9,
+            "L_c_sqrtN_weighted_err_km": 289.8,
+            "R2_sqrtN_weighted": 0.944,
+            "amplitude_A": 1.483,
+            "offset_C0": -0.096,
+            "R2": 0.945
+          },
+          "pos_jitter_datum_removed": {
+            "n_station_days": 192,
+            "n_pairs": 3706,
+            "L_c_km": 2152.9,
+            "L_c_err_km": 320.4,
+            "L_c_sqrtN_weighted_km": 2293.3,
+            "L_c_sqrtN_weighted_err_km": 335.6,
+            "R2_sqrtN_weighted": 0.947,
+            "amplitude_A": 1.662,
+            "offset_C0": -0.353,
+            "R2": 0.948
+          },
+          "clock_bias_unremoved": {
+            "n_station_days": 192,
+            "n_pairs": 3706,
+            "L_c_km": 1577.8,
+            "L_c_err_km": 447.4,
+            "L_c_sqrtN_weighted_km": 1475.8,
+            "L_c_sqrtN_weighted_err_km": 398.4,
+            "R2_sqrtN_weighted": 0.802,
+            "amplitude_A": 1.086,
+            "offset_C0": -0.016,
+            "R2": 0.804
+          }
+        },
+        "GLONASS_only_sys_R": {
+          "stepA_fullday_nperseg288_10_500uHz": {
+            "n_station_days": 193,
+            "n_pairs": 3756,
+            "L_c_km": 3806.2,
+            "L_c_err_km": 1419.7,
+            "L_c_sqrtN_weighted_km": 4692.8,
+            "L_c_sqrtN_weighted_err_km": 1820.7,
+            "R2_sqrtN_weighted": 0.846,
+            "amplitude_A": 1.135,
+            "offset_C0": -0.023,
+            "R2": 0.849
+          },
+          "stepA_cme_removed_fullday_nperseg288_10_500uHz": {
+            "n_station_days": 193,
+            "n_pairs": 3756,
+            "L_c_km": 3070.0,
+            "L_c_err_km": 494.8,
+            "L_c_sqrtN_weighted_km": 3210.2,
+            "L_c_sqrtN_weighted_err_km": 523.3,
+            "R2_sqrtN_weighted": 0.957,
+            "amplitude_A": 1.606,
+            "offset_C0": -0.412,
+            "R2": 0.957
+          },
+          "stepAprime_fullday_nperseg288_10_60uHz": {
+            "n_station_days": 193,
+            "n_pairs": 3756,
+            "L_c_km": 3685.9,
+            "L_c_err_km": 1898.5,
+            "L_c_sqrtN_weighted_km": 7001.3,
+            "L_c_sqrtN_weighted_err_km": 5335.4,
+            "R2_sqrtN_weighted": 0.725,
+            "amplitude_A": 0.98,
+            "offset_C0": 0.063,
+            "R2": 0.738
+          },
+          "stepB_12hr_nperseg144_unremoved": {
+            "n_station_days": 193,
+            "n_pairs": 3756,
+            "L_c_km": 3334.9,
+            "L_c_err_km": 854.0,
+            "L_c_sqrtN_weighted_km": 3384.6,
+            "L_c_sqrtN_weighted_err_km": 785.9,
+            "R2_sqrtN_weighted": 0.908,
+            "amplitude_A": 1.179,
+            "offset_C0": 0.018,
+            "R2": 0.908
+          },
+          "pos_jitter_unremoved": {
+            "n_station_days": 193,
+            "n_pairs": 3756,
+            "L_c_km": 3822.5,
+            "L_c_err_km": 1106.1,
+            "L_c_sqrtN_weighted_km": 4032.9,
+            "L_c_sqrtN_weighted_err_km": 1164.8,
+            "R2_sqrtN_weighted": 0.903,
+            "amplitude_A": 1.255,
+            "offset_C0": -0.071,
+            "R2": 0.904
+          },
+          "pos_jitter_datum_removed": {
+            "n_station_days": 193,
+            "n_pairs": 3756,
+            "L_c_km": 2152.3,
+            "L_c_err_km": 291.5,
+            "L_c_sqrtN_weighted_km": 2211.7,
+            "L_c_sqrtN_weighted_err_km": 297.2,
+            "R2_sqrtN_weighted": 0.956,
+            "amplitude_A": 1.747,
+            "offset_C0": -0.365,
+            "R2": 0.957
+          },
+          "clock_bias_unremoved": {
+            "n_station_days": 193,
+            "n_pairs": 3756,
+            "L_c_km": 2465.4,
+            "L_c_err_km": 936.1,
+            "L_c_sqrtN_weighted_km": 2365.4,
+            "L_c_sqrtN_weighted_err_km": 937.5,
+            "R2_sqrtN_weighted": 0.76,
+            "amplitude_A": 1.399,
+            "offset_C0": -0.123,
+            "R2": 0.76
+          }
+        },
+        "Multi_GNSS_4const_sys_GREC": {
+          "stepA_fullday_nperseg288_10_500uHz": {
+            "n_station_days": 197,
+            "n_pairs": 3927,
+            "L_c_km": 2437.6,
+            "L_c_err_km": 416.2,
+            "L_c_sqrtN_weighted_km": 2462.1,
+            "L_c_sqrtN_weighted_err_km": 449.3,
+            "R2_sqrtN_weighted": 0.939,
+            "amplitude_A": 1.673,
+            "offset_C0": -0.241,
+            "R2": 0.939
+          },
+          "stepA_cme_removed_fullday_nperseg288_10_500uHz": {
+            "n_station_days": 197,
+            "n_pairs": 3927,
+            "L_c_km": 3289.8,
+            "L_c_err_km": 670.9,
+            "L_c_sqrtN_weighted_km": 3122.1,
+            "L_c_sqrtN_weighted_err_km": 640.2,
+            "R2_sqrtN_weighted": 0.938,
+            "amplitude_A": 1.825,
+            "offset_C0": -0.506,
+            "R2": 0.939
+          },
+          "stepAprime_fullday_nperseg288_10_60uHz": {
+            "n_station_days": 197,
+            "n_pairs": 3927,
+            "L_c_km": 2331.1,
+            "L_c_err_km": 439.9,
+            "L_c_sqrtN_weighted_km": 2325.8,
+            "L_c_sqrtN_weighted_err_km": 452.4,
+            "R2_sqrtN_weighted": 0.924,
+            "amplitude_A": 1.648,
+            "offset_C0": -0.226,
+            "R2": 0.924
+          },
+          "stepB_12hr_nperseg144_unremoved": {
+            "n_station_days": 197,
+            "n_pairs": 3927,
+            "L_c_km": 2342.6,
+            "L_c_err_km": 410.5,
+            "L_c_sqrtN_weighted_km": 2324.1,
+            "L_c_sqrtN_weighted_err_km": 449.8,
+            "R2_sqrtN_weighted": 0.933,
+            "amplitude_A": 1.624,
+            "offset_C0": -0.191,
+            "R2": 0.934
+          },
+          "pos_jitter_unremoved": {
+            "n_station_days": 197,
+            "n_pairs": 3927,
+            "L_c_km": 2302.7,
+            "L_c_err_km": 381.0,
+            "L_c_sqrtN_weighted_km": 2293.1,
+            "L_c_sqrtN_weighted_err_km": 417.0,
+            "R2_sqrtN_weighted": 0.939,
+            "amplitude_A": 1.628,
+            "offset_C0": -0.187,
+            "R2": 0.94
+          },
+          "pos_jitter_datum_removed": {
+            "n_station_days": 197,
+            "n_pairs": 3927,
+            "L_c_km": 2573.3,
+            "L_c_err_km": 419.1,
+            "L_c_sqrtN_weighted_km": 2494.3,
+            "L_c_sqrtN_weighted_err_km": 408.4,
+            "R2_sqrtN_weighted": 0.947,
+            "amplitude_A": 1.84,
+            "offset_C0": -0.449,
+            "R2": 0.947
+          },
+          "clock_bias_unremoved": {
+            "n_station_days": 197,
+            "n_pairs": 3927,
+            "L_c_km": 1477.5,
+            "L_c_err_km": 328.1,
+            "L_c_sqrtN_weighted_km": 1429.0,
+            "L_c_sqrtN_weighted_err_km": 310.5,
+            "R2_sqrtN_weighted": 0.865,
+            "amplitude_A": 1.114,
+            "offset_C0": -0.013,
+            "R2": 0.867
+          }
+        }
+      },
+      "stepA_fullday_nperseg288_sqrtN_weighted_single_constellation_mean_km": 3853.1,
+      "stepA_fullday_sqrtN_weighted_with_lowfreq_galileo_mean_km": 4132.2,
+      "stepA_fullday_nperseg288_single_constellation_mean_km": 3423.0,
+      "stepAprime_fullday_10_60uHz_single_constellation_mean_km": 3361.6,
+      "stepB_12hr_nperseg144_single_constellation_mean_km": 2950.9,
+      "total_empirical_compression_ratio_stepA_to_4const_isb": 2.32,
+      "single_constellation_pos_jitter_unremoved_mean_km": 2850.4,
+      "single_constellation_pos_jitter_datum_removed_mean_km": 2156.1,
+      "single_constellation_pos_jitter_datum_removed_cv_pct": 0.28,
+      "galileo_dual_freq_ionofree_lc_optimal100_km": 4556.7,
+      "stepA_cme_removed_fullday_nperseg288_10_500uHz_summary": {
+        "GPS_only_sqrtN_km": 2953.3,
+        "Galileo_only_sqrtN_km": 3302.1,
+        "GLONASS_only_sqrtN_km": 3210.2,
+        "three_constellation_cme_removed_mean_km": 3155.2,
+        "three_constellation_cme_removed_std_km": 180.8,
+        "three_constellation_cme_removed_cv_pct": 5.73,
+        "prem_full_volume_transfer_ratio_Lc_vol_over_RT": 0.7749,
+        "inferred_RT_from_cme_removed_3const_mean_km": 4071.8,
+        "inferred_rho_T_from_cme_removed_3const_mean_g_cm3": 21.12,
+        "inferred_rho_T_from_25yr_isotropic_code_3210km_g_cm3": 20.06,
+        "raw_unit_prefactor_inferred_rho_T_from_3155km_g_cm3": 45.39,
+        "funk_hecke_spherical_harmonic_power_fractions_pct": {
+          "closed_form_definition": "f_ell = ((2*ell + 1)/2) * int_0^pi exp(-alpha*theta) * P_ell(cos theta) * sin(theta) dtheta with alpha = R_earth/L_c = 6371/4200 = 1.5169, normalized by exact analytical zero-lag variance C(0) = sum_{ell=0}^infty f_ell = 1",
+          "ell_0_exact_closed_form_pct": 15.28,
+          "ell_1_exact_closed_form_pct": 23.6,
+          "ell_2_exact_closed_form_pct": 15.55,
+          "cumulative_ell_le_2_exact_pct": 54.43,
+          "ell_0_resolved_ell_le_14_band_pct": 16.99,
+          "ell_1_resolved_ell_le_14_band_pct": 26.25,
+          "ell_2_resolved_ell_le_14_band_pct": 17.29,
+          "cumulative_ell_le_2_resolved_band_pct": 60.53,
+          "cumulative_ell_le_2_parseval_L2_squared_norm_pct": 95.4
+        }
+      },
+      "station_geometry_and_continental_clustering_null_audit": {
+        "real_continental_igs_vs_isotropic_fibonacci_grid": {
+          "L_true_1000_km": {
+            "real_continental_igs_recovered_mean_km": 884.7,
+            "real_continental_igs_recovered_std_km": 81.8,
+            "isotropic_fibonacci_recovered_mean_km": 1018.7
+          },
+          "L_true_2000_km": {
+            "real_continental_igs_recovered_mean_km": 1923.8,
+            "real_continental_igs_recovered_std_km": 127.0,
+            "isotropic_fibonacci_recovered_mean_km": 1974.9
+          },
+          "L_true_3000_km": {
+            "real_continental_igs_recovered_mean_km": 2783.2,
+            "real_continental_igs_recovered_std_km": 209.9,
+            "isotropic_fibonacci_recovered_mean_km": 2912.0
+          },
+          "L_true_4200_km": {
+            "real_continental_igs_recovered_mean_km": 3599.9,
+            "real_continental_igs_recovered_std_km": 300.3,
+            "isotropic_fibonacci_recovered_mean_km": 4059.5
+          },
+          "L_true_6000_km": {
+            "real_continental_igs_recovered_mean_km": 4644.1,
+            "real_continental_igs_recovered_std_km": 434.0,
+            "isotropic_fibonacci_recovered_mean_km": 5720.9
+          }
+        },
+        "equal_pairs_per_bin_flat_histogram_bootstrap_L_c_mean_km": 3805.9,
+        "equal_pairs_per_bin_flat_histogram_bootstrap_L_c_std_km": 908.6,
+        "coordinate_scrambled_null_bin_std": 0.0634,
+        "coordinate_scrambled_null_slope_per_Mm": 0.00596
+      },
+      "cross_project_metrological_closures": {
+        "tep_gnss_mgex_step_2_8_space_segment_null": "656,684 within-constellation satellite-clock pairs across GPS (206,545), Galileo (141,831), GLONASS (96,705), and BeiDou (211,603) show zero terrestrial-scale spatial decay (R^2 <= 0.13, hitting 10^5 km boundary), excluding space-segment satellite-clock correlation as the source.",
+        "tep_gnss_rinex_step_2_12_precise_vs_broadcast": "Across 22,707 station-pair days (70 stations, 12 seasonal days of 2023), the precise SP3 shared-power channel recovers L_c = 4,474.8 km (R^2 = 0.664), confirming the ~4,200 km scale is not a broadcast ephemeris artifact.",
+        "tep_slr_paper_8_optical_retroreflector_bound": "11 years (2015-2025, 201,503 normal points across 46 ILRS stations) of two-way optical Satellite Laser Ranging to passive retroreflectors (LAGEOS-1/2, Etalon-1/2, LARES) bounds conformal timer wander to delta_A <= 2e-8 with cross-satellite turnover r = -0.23 (p = 0.046; -0.22 under ESA/ESOC orbits) at 5,000-7,500 km."
+      }
+    },
     "monte_carlo_injection_recovery_and_null_audit": {
       "n_trials": 100,
       "n_stations": 120,
@@ -205,7 +696,7 @@
         "daily_constant_rotating_visibility_isb_recovered_L_c_mean_km": 2485.0525389700165,
         "daily_constant_rotating_visibility_isb_recovered_L_c_std_km": 45.417926961675555,
         "daily_constant_isb_compression_ratio": 1.6242142449774704,
-        "note": "Per-epoch ISB projection yields 2,277 +- 47 km (1.77x compression, matching CNES/GRG 1,933 km), whereas daily-constant ISB with rotating constellation visibility yields 2,482 +- 46 km (1.63x compression, matching CODE matched-day MGEX 2,744 km). Both spatial ISB projection and wavenumber passband filtering describe the same removal of l=0,1 long-wavelength spherical-harmonic modes."
+        "note": "Per-epoch ISB projection yields 2,277 +- 47 km (1.77x compression, matching CNES/GRG 1,933 km), whereas daily-constant ISB with rotating constellation visibility yields 2,485 +- 45 km (1.62x compression, matching CODE matched-day MGEX 2,744 km). Both spatial ISB projection and wavenumber passband filtering describe the same removal of l=0,1 long-wavelength spherical-harmonic modes."
       }
     },
     "statement": "Forward Monte Carlo injection of a single L_c = 4200 km station-clock correlation field into a 120-station global network shows that 1-constellation GPS-only global datum removal recovers L_c = 4036 +- 113 km (R^2 = 0.999, bias -3.9%; white-noise null returns |C(d)| = 0.009 +- 0.001 with no spurious scale), whereas 4-constellation multi-GNSS common-view ISB projection compresses the same injected field to L_c = 2277 +- 47 km (derived compression ratio 1.77 +- 0.06, matching the empirical 4066 / 2141 = 1.90x ratio)."

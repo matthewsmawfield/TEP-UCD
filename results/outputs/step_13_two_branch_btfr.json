@@ -10,6 +10,9 @@
   ],
   "hi_factor": 1.33,
   "outer_edge": {
+    "median_vobs_over_vpred_coupled_additive": 0.9602971829084997,
+    "median_log10_resid_coupled_additive": -0.017594345164204925,
+    "rms_log10_resid_coupled_additive": 0.08405435326197278,
     "n_points": 405,
     "n_galaxies": 135,
     "median_vobs_over_vpred_quadrature": 1.0108759989765699,

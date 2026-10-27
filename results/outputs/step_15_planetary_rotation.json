@@ -52,8 +52,88 @@
       "inferred_rho_T_spin_geometric_mean_g_cm3": 20.871048921561876,
       "inferred_rho_T_spin_arithmetic_mean_g_cm3": 21.237447701203198,
       "inferred_rho_T_spin_std_g_cm3": 4.431483195548608,
-      "uranus_hst_2025_period_hr": 17.247778,
-      "uranus_hst_2025_v_obs_over_v_tep": 0.9933087560870157
+      "uranus_hst_2025_period_hr": 17.247864,
+      "uranus_hst_2025_v_obs_over_v_tep": 0.9937568973575985,
+      "uranus_voyager2_1986_period_hr": 17.24,
+      "uranus_voyager2_1986_v_obs_over_v_tep": 0.994210198067623,
+      "outer_3_unbraked_giant_planets_excluding_lunar_braked_earth": {
+        "names": [
+          "Uranus",
+          "Neptune",
+          "Saturn"
+        ],
+        "mean_v_obs_over_v_tep": 1.000296416299413,
+        "std_v_obs_over_v_tep": 0.08044071722176839,
+        "inferred_rho_T_spin_geometric_mean_g_cm3": 19.88917842321665,
+        "extended_8_outer_plus_substellar_without_earth_mean": 1.0013701174422627,
+        "extended_8_outer_plus_substellar_without_earth_std": 0.05964567943231265,
+        "extended_8_inferred_rho_T_geom_g_cm3": 19.990101799259183,
+        "earth_moon_primordial_vs_present_note": "Present-day Earth (23.93 hr, v_obs/v_TEP = 1.063) has transferred ~83% of its primordial spin angular momentum to the lunar orbit via tidal dissipation; its conserved primordial Earth+Moon spin (T_prim = 5.05 hr, J_EM = 3.45e34 kg m^2/s) sits on the small-body soliton capacity ceiling (eta_EM = 0.145 vs eta_0 = 0.129), while lunar braking has relaxed present-day Earth onto the ambient Galactic floor."
+      },
+      "nested_heliocentric_screening_shell_and_interior_audit": {
+        "r_star_over_a_4planets": {
+          "Earth": 7.237282417186316,
+          "Uranus": 1.4357489253083608,
+          "Neptune": 0.9953289952479707,
+          "Saturn": 7.367522290170758
+        },
+        "pearson_r_v_obs_over_v_tep_vs_ln_r_star_over_a": 0.96018806206538,
+        "pearson_p_v_obs_over_v_tep_vs_ln_r_star_over_a": 0.03981193793462001,
+        "spearman_rho_v_obs_over_v_tep_vs_r_star_over_a": 1.0,
+        "log_log_slope_dlnv_dln_rstar_a": 0.06605213390659936,
+        "zero_crossing_r_star_over_a": 2.3826095057320114,
+        "rms_residual_after_nested_shell_trend_pct": 1.8140742427055878,
+        "volumetric_deep_interior_4planet_ratios": {
+          "Earth": 1.0632004213671642,
+          "Saturn_ring_seismology_10p561hr": 1.0566135124531508,
+          "Uranus_deep_16p5hr": 1.0307923127548304,
+          "Neptune_deep_15p2hr": 0.972991646894179,
+          "mean_v_vol_int_over_v_tep": 1.0308994733673311,
+          "std_v_vol_int_over_v_tep": 0.04106048748710674,
+          "geometric_mean_rho_T_vol_int_g_cm3": 21.87200936561667
+        },
+        "lane_emden_polytropic_condensed_interior_moi_audit": {
+          "seven_condensed_giant_planets": [
+            "Mercury",
+            "Venus",
+            "Earth",
+            "Jupiter",
+            "Saturn",
+            "Uranus",
+            "Neptune"
+          ],
+          "polytropic_index_n_from_k_moi": {
+            "Mercury": 0.357,
+            "Venus": 0.47,
+            "Earth": 0.465,
+            "Jupiter": 0.979,
+            "Saturn": 1.375,
+            "Uranus": 1.313,
+            "Neptune": 1.181
+          },
+          "condensed_radius_ratio_R_cond_over_R_eq": {
+            "Mercury": 1.0262,
+            "Venus": 1.0,
+            "Earth": 1.0012,
+            "Jupiter": 0.8856,
+            "Saturn": 0.7986,
+            "Uranus": 0.8122,
+            "Neptune": 0.8411
+          },
+          "two_k_moi_over_S_cond_per_planet": {
+            "Mercury": 1.0969,
+            "Venus": 1.0313,
+            "Earth": 1.0186,
+            "Jupiter": 1.1811,
+            "Saturn": 1.109,
+            "Uranus": 0.9231,
+            "Neptune": 0.935
+          },
+          "mean_two_k_moi_over_S_cond_7planets": 1.042142857142857,
+          "std_two_k_moi_over_S_cond_7planets": 0.09407438293079323,
+          "geometric_mean_rho_T_moi_cond_g_cm3": 17.8572794149241
+        }
+      }
     },
     "two_branch_5_major_planets_model": {
       "names": [
@@ -78,7 +158,7 @@
         "v_obs_km_s": 0.24073066964586384,
         "v_ambient_tep_km_s": 0.0987581074482314,
         "v_soliton_cap_km_s": 0.9539309533332654,
-        "note": "Low-mass Mars (0.11 M_earth) sits in the transition region between the ambient curve (0.099 km/s) and the small-body soliton capacity curve (0.768 km/s) without a Mars-specific rule."
+        "note": "Low-mass Mars (0.11 M_earth) sits in the transition region between the ambient curve (0.099 km/s) and the small-body soliton capacity curve (0.954 km/s) without a Mars-specific rule."
       },
       "bryan_2020_pmo_breakup_envelope_test": {
         "n_objects_bryan_2020": 27,
@@ -87,9 +167,11 @@
           0.31
         ],
         "observed_v_over_v_breakup_median": 0.11,
-        "tep_soliton_capacity_breakup_ceiling": 0.45,
+        "simp_j0136_observed_v_over_v_breakup": 0.4643,
+        "simp_j0136_predicted_v_cap_over_v_breakup": 0.4778,
+        "saturated_degenerate_bd_ceiling_v_cap_over_v_breakup_at_S_ge_1": 0.6295,
         "n_exceeding_ceiling": 0,
-        "falsifier": "Any unbraked planetary-mass companion or brown dwarf with M > M_cap = 0.61 M_Jup and v_eq / v_breakup > 0.45 falsifies the soliton angular-momentum capacity bound."
+        "falsifier": "Any unbraked planetary-mass companion or brown dwarf with M > M_cap = 0.61 M_Jup exceeding v_cap / v_breakup = (eta_0 / k_MOI) sqrt(min(1, S)) (0.478 at SIMP J0136 S=0.76, and 0.630 at S>=1) falsifies the soliton angular-momentum capacity bound."
       },
       "substellar_rotational_speed_limit_and_period_floor_test": {
         "simp_j0136_12p7_Mjup": {
@@ -187,6 +269,53 @@
         "inferred_rho_T_moi_mean_g_cm3": 17.89264819459809,
         "inferred_rho_T_moi_std_g_cm3": 1.370083965641835
       },
+      "low_pressure_uncompressed_satellites_diagnostic": {
+        "Moon": {
+          "P_central_GPa": 4.71,
+          "k_moi": 0.393,
+          "S_screening": 0.5508,
+          "two_k_moi_over_S": 1.427
+        },
+        "Io": {
+          "P_central_GPa": 5.77,
+          "k_moi": 0.378,
+          "S_screening": 0.5608,
+          "two_k_moi_over_S": 1.348
+        },
+        "Europa": {
+          "P_central_GPa": 3.09,
+          "k_moi": 0.346,
+          "S_screening": 0.5321,
+          "two_k_moi_over_S": 1.3
+        },
+        "Ganymede": {
+          "P_central_GPa": 3.65,
+          "k_moi": 0.312,
+          "S_screening": 0.4596,
+          "two_k_moi_over_S": 1.358
+        },
+        "Titan": {
+          "P_central_GPa": 3.28,
+          "k_moi": 0.341,
+          "S_screening": 0.4548,
+          "two_k_moi_over_S": 1.5
+        },
+        "Callisto": {
+          "P_central_GPa": 2.73,
+          "k_moi": 0.355,
+          "S_screening": 0.451,
+          "two_k_moi_over_S": 1.574
+        }
+      },
+      "unconstrained_compositional_power_law_baseline_vs_tep": {
+        "fitted_slope_beta_emp": 0.2385779760457014,
+        "fitted_slope_err": 0.03786417422020839,
+        "fitted_normalization_C_emp": 0.23047788605653577,
+        "zero_param_tep_slope": 0.3333333333333333,
+        "zero_param_tep_normalization_C": 0.18420157493201933,
+        "rms_scatter_0param_tep_dex": 0.07523507174453885,
+        "rms_scatter_2param_free_fit_dex": 0.03080936253604305
+      },
       "juno_cassini_refined_2k_over_S": {
         "Jupiter_k_0p26393": 1.3336455412924697,
         "Saturn_k_0p2181": 1.388718845950143
@@ -226,6 +355,363 @@
       "uranus_spin_angle_to_tep9_tno_axis_deg": 28.607288141709375,
       "uranus_spin_angle_to_tep9_meridian_plane_deg": 20.363631985891224,
       "uranus_spin_angle_to_cmb_apex_deg": 87.59073779479591
+    },
+    "random_density_and_look_elsewhere_coincidence_null_test": {
+      "n_monte_carlo_trials": 100000,
+      "prior_density_range_g_cm3": [
+        0.1,
+        10000.0
+      ],
+      "five_independent_channels_earth_spin_excluded": {
+        "ch1_terrestrial_gnss_Lc_4200km": 19.244111417505167,
+        "ch2_outer_3_giant_planet_spin_uranus_neptune_saturn": 19.88917842321665,
+        "ch3_brown_dwarf_period_floor_1p150hr": 20.790092703554265,
+        "ch4_terrestrial_core_screened_moi": 17.89264819459809,
+        "ch5_solar_model_S_convection_base_0p713Rsun": 20.154855875746495
+      },
+      "inferred_rho_T_5channel_mean_g_cm3": 19.594177322924132,
+      "inferred_rho_T_5channel_std_g_cm3": 1.1010616693758877,
+      "inferred_rho_T_5channel_log10_std_dex": 0.024851844734649752,
+      "inferred_rho_T_5channel_log10_range_dex": 0.06518180295164644,
+      "observed_5channel_rms_fractional_error": 0.02043173966728357,
+      "observed_5channel_max_fractional_error": 0.039180450031707004,
+      "p_1d_random_density_rms_le_obs": 0.00169,
+      "p_1d_random_density_max_err_le_5pct": 0.00758,
+      "p_5channel_coincidence_no_look_elsewhere": 1.444093998556679e-07,
+      "p_5channel_coincidence_with_343_algebraic_factor_look_elsewhere": 0.00029,
+      "apriori_goldreich_soter_tidal_selection_and_jacobi_stability": {
+        "planetary_tidal_despinning_audit": {
+          "Mercury": {
+            "dominant_tide_source": "Solar tide",
+            "tau_tide_Gyr": 1.03605,
+            "tau_tide_over_t_SolarSystem": 0.23023394986309867,
+            "apriori_classification": "tidally_braked"
+          },
+          "Venus": {
+            "dominant_tide_source": "Solar tide",
+            "tau_tide_Gyr": 11.95738,
+            "tau_tide_over_t_SolarSystem": 2.657195081367589,
+            "apriori_classification": "tidally_unbraked"
+          },
+          "Earth": {
+            "dominant_tide_source": "Lunar tide (a^6 recession integral)",
+            "tau_tide_Gyr": 1.94245,
+            "tau_tide_over_t_SolarSystem": 0.43165600618478994,
+            "apriori_classification": "tidally_braked"
+          },
+          "Mars": {
+            "dominant_tide_source": "Solar tide",
+            "tau_tide_Gyr": 7453.08364,
+            "tau_tide_over_t_SolarSystem": 1656.2408094572447,
+            "apriori_classification": "tidally_unbraked"
+          },
+          "Jupiter": {
+            "dominant_tide_source": "Solar tide",
+            "tau_tide_Gyr": 1102807445.99822,
+            "tau_tide_over_t_SolarSystem": 245068321.33293784,
+            "apriori_classification": "tidally_unbraked"
+          },
+          "Saturn": {
+            "dominant_tide_source": "Solar tide",
+            "tau_tide_Gyr": 4429499528.89015,
+            "tau_tide_over_t_SolarSystem": 984333228.6422563,
+            "apriori_classification": "tidally_unbraked"
+          },
+          "Uranus": {
+            "dominant_tide_source": "Solar tide",
+            "tau_tide_Gyr": 328022372423.91974,
+            "tau_tide_over_t_SolarSystem": 72893860538.64883,
+            "apriori_classification": "tidally_unbraked"
+          },
+          "Neptune": {
+            "dominant_tide_source": "Solar tide",
+            "tau_tide_Gyr": 5760744359843.053,
+            "tau_tide_over_t_SolarSystem": 1280165413298.456,
+            "apriori_classification": "tidally_unbraked"
+          }
+        },
+        "chandrasekhar_jacobi_secular_bifurcation_eta": 0.137528,
+        "small_body_6object_median_eta": 0.13757922845088688,
+        "jacobi_vs_small_body_median_fractional_offset": -0.0003723559978034974,
+        "parameter_free_bd_period_floor_bracket_hr": [
+          1.1002,
+          1.2105
+        ],
+        "parameter_free_bd_period_floor_midpoint_hr": 1.1553,
+        "observed_tannock_bd_period_floor_mean_hr": 1.15,
+        "parameter_free_bd_inferred_rho_T_g_cm3": 20.187,
+        "classical_newtonian_jacobi_without_tep_saturation_periods_hr": [
+          0.585,
+          0.603,
+          0.393
+        ],
+        "classical_newtonian_jacobi_without_tep_saturation_mean_hr": 0.527,
+        "classical_newtonian_jacobi_rejection_sigma": 8.31
+      },
+      "prior_range_and_systematic_propagation_audit": {
+        "prior_width_sensitivity": {
+          "5dec_0p1_to_1e4_g_cm3": {
+            "prior_width_dex": 5.0,
+            "p_5channel_raw": 1.444093998556679e-07,
+            "p_5channel_after_343_trials": 4.9531201025798666e-05,
+            "p_3channel_unit_prefactor": 5.173509581661188e-05
+          },
+          "3dec_1_to_1e3_g_cm3": {
+            "prior_width_dex": 3.0,
+            "p_5channel_raw": 1.1142700606147218e-06,
+            "p_5channel_after_343_trials": 0.0003821218165966922,
+            "p_3channel_unit_prefactor": 0.00014370859949058856
+          },
+          "2dec_1_to_100_g_cm3": {
+            "prior_width_dex": 2.0,
+            "p_5channel_raw": 5.640992181862028e-06,
+            "p_5channel_after_343_trials": 0.0019329951295400383,
+            "p_3channel_unit_prefactor": 0.0003233443488538242
+          }
+        },
+        "v_gal_marginalized_220_to_236_km_s_5channel_audit": {
+          "marginalized_spin_rho_T_g_cm3": 22.17,
+          "five_channel_mean_vgal_marg_g_cm3": 20.05,
+          "five_channel_std_vgal_marg_g_cm3": 1.61,
+          "three_channel_mean_vgal_marg_g_cm3": 20.53,
+          "three_channel_std_vgal_marg_g_cm3": 1.49,
+          "p_5channel_raw_vgal_marg": 6.004987527018908e-07,
+          "p_5channel_after_343_trials_vgal_marg": 0.00020594992342892748
+        },
+        "combined_factor_and_subset_selection_trials_audit": {
+          "n_algebraic_factor_trials": 343,
+          "n_subset_and_radius_combinations": 18,
+          "n_total_combined_trials": 6174,
+          "p_5channel_after_6174_total_trials": 0.000891186356602125,
+          "p_3channel_after_6_subset_radius_trials": 0.00031037042986670205
+        },
+        "spin_channel_v_gal_propagation_g_cm3": {
+          "v_gal_220_km_s_iau": 19.89,
+          "v_gal_229_km_s_eilert2019": 22.43,
+          "v_gal_236_km_s_reid2019": 24.55
+        },
+        "forward_propagation_falsification_across_gnss_pipelines": {
+          "code_25yr_cross_sector_ppp_4201km": {
+            "L_c_km": 4201.0,
+            "implied_rho_T_g_cm3": 19.23,
+            "outer3_spin_fractional_error_pct": -1.12,
+            "bd_period_floor_pred_hr": 1.178,
+            "bd_period_floor_fractional_error_pct": 2.46,
+            "terrestrial_moi_fractional_error_pct": 2.44,
+            "solar_rcz_pred_R_sun": 0.724,
+            "solar_rcz_fractional_error_pct": 1.57,
+            "four_channel_joint_rms_error_pct": 1.98
+          },
+          "cddis_rinex3_gps_only_sqrtN_4051km": {
+            "L_c_km": 4050.9,
+            "implied_rho_T_g_cm3": 21.45,
+            "outer3_spin_fractional_error_pct": 2.55,
+            "bd_period_floor_pred_hr": 1.116,
+            "bd_period_floor_fractional_error_pct": -2.99,
+            "terrestrial_moi_fractional_error_pct": 6.23,
+            "solar_rcz_pred_R_sun": 0.698,
+            "solar_rcz_fractional_error_pct": -2.06,
+            "four_channel_joint_rms_error_pct": 3.82
+          },
+          "cddis_rinex3_3const_cme_removed_prem_vol_calibrated_4072km": {
+            "L_c_km": 4071.8,
+            "implied_rho_T_g_cm3": 21.12,
+            "outer3_spin_fractional_error_pct": 2.02,
+            "bd_period_floor_pred_hr": 1.124,
+            "bd_period_floor_fractional_error_pct": -2.23,
+            "terrestrial_moi_fractional_error_pct": 5.69,
+            "solar_rcz_pred_R_sun": 0.702,
+            "solar_rcz_fractional_error_pct": -1.55,
+            "four_channel_joint_rms_error_pct": 3.31
+          },
+          "cddis_rinex3_3const_cme_removed_raw_unit_prefactor_3155km": {
+            "L_c_km": 3155.2,
+            "implied_rho_T_g_cm3": 45.39,
+            "outer3_spin_fractional_error_pct": 31.66,
+            "bd_period_floor_pred_hr": 0.767,
+            "bd_period_floor_fractional_error_pct": -33.31,
+            "terrestrial_moi_fractional_error_pct": 36.39,
+            "solar_rcz_pred_R_sun": 0.544,
+            "solar_rcz_fractional_error_pct": -23.71,
+            "four_channel_joint_rms_error_pct": 31.62
+          },
+          "cddis_rinex3_3const_matched_band_sqrtN_3853km": {
+            "L_c_km": 3853.1,
+            "implied_rho_T_g_cm3": 24.92,
+            "outer3_spin_fractional_error_pct": 7.81,
+            "bd_period_floor_pred_hr": 1.035,
+            "bd_period_floor_fractional_error_pct": -10.0,
+            "terrestrial_moi_fractional_error_pct": 11.69,
+            "solar_rcz_pred_R_sun": 0.664,
+            "solar_rcz_fractional_error_pct": -6.84,
+            "four_channel_joint_rms_error_pct": 9.28
+          },
+          "cddis_rinex3_3const_unweighted_3423km": {
+            "L_c_km": 3423.0,
+            "implied_rho_T_g_cm3": 35.55,
+            "outer3_spin_fractional_error_pct": 21.36,
+            "bd_period_floor_pred_hr": 0.867,
+            "bd_period_floor_fractional_error_pct": -24.64,
+            "terrestrial_moi_fractional_error_pct": 25.72,
+            "solar_rcz_pred_R_sun": 0.59,
+            "solar_rcz_fractional_error_pct": -17.24,
+            "four_channel_joint_rms_error_pct": 22.48
+          },
+          "truncated_8hr_datum_removed_foil_2156km": {
+            "L_c_km": 2156.1,
+            "implied_rho_T_g_cm3": 142.25,
+            "outer3_spin_fractional_error_pct": 92.67,
+            "bd_period_floor_pred_hr": 0.433,
+            "bd_period_floor_fractional_error_pct": -62.33,
+            "terrestrial_moi_fractional_error_pct": 99.59,
+            "solar_rcz_pred_R_sun": 0.372,
+            "solar_rcz_fractional_error_pct": -47.87,
+            "four_channel_joint_rms_error_pct": 78.55
+          }
+        },
+        "gnss_channel_Lc_estimator_propagation_g_cm3": {
+          "Lc_4200_km_code_cross_sector": 19.24,
+          "Lc_4132_km_rinex3_sqrtN_lowfreq_galileo": 20.2,
+          "Lc_4051_km_rinex3_gps_sqrtN": 21.45,
+          "Lc_3853_km_rinex3_3const_sqrtN_mean": 24.92,
+          "Lc_3423_km_rinex3_3const_unweighted_mean": 35.55
+        },
+        "terrestrial_moi_pressure_vs_iron_core_split": {
+          "high_pressure_P_c_gt_100GPa_Venus_Earth_2k_over_S_mean": 1.0346,
+          "high_pressure_P_c_gt_100GPa_Venus_Earth_rho_T_mean_g_cm3": 18.09,
+          "mercury_iron_core_note": "Mercury (P_c = 24.5 GPa, rho = 5.427 g/cm^3) and Mars (P_c = 24.9 GPa, rho = 3.934 g/cm^3) share similar central pressures; Venus (141 GPa) and Earth (173 GPa) satisfy the strict P_c > K_0 (~100 GPa) silicate self-compression threshold independently (2k_MOI/S = 1.024 +- 0.008, rho_T = 18.6 +- 0.5 g/cm^3), whereas Mercury's low k_MOI = 0.346 reflects its ~70-85% iron core mass fraction (rho > 5.2 g/cm^3)."
+        }
+      },
+      "leave_one_channel_out_blind_prediction_audit": {
+        "five_channel_loco_blind_observable_rms_pct": 2.05,
+        "five_channel_loco_mean_abs_error_pct": 1.73,
+        "three_channel_zero_prefactor_loco_rms_pct": 1.2,
+        "five_channel_loco_vgal_marginalized_rms_pct": 3.02,
+        "three_channel_loco_vgal_marginalized_rms_pct": 3.04,
+        "individual_5channel_blind_errors_pct": {
+          "gnss_Lc": -0.49,
+          "outer3_planet_spin": -0.88,
+          "bd_period_floor": 2.28,
+          "terrestrial_moi": 3.55,
+          "solar_rcz": 1.45
+        },
+        "blind_predicted_observables": {
+          "rho_T_minus_gnss_g_cm3": 19.53,
+          "L_c_blind_km": 4179.3,
+          "P_min_bd_blind_hr": 1.176,
+          "r_cz_blind_R_sun": 0.723
+        }
+      },
+      "three_channel_zero_prefactor_coincidence_null": {
+        "channels_included": [
+          "ch1_gnss_Lc_19p24",
+          "ch2_outer3_giant_spin_19p89",
+          "ch3_parameter_free_bd_floor_20p18"
+        ],
+        "inferred_rho_T_3free_mean_g_cm3": 19.773,
+        "inferred_rho_T_3free_std_g_cm3": 0.482,
+        "inferred_rho_T_3free_log10_range_dex": 0.02076,
+        "p_3channel_zero_prefactor_coincidence": 5.173509581661188e-05
+      },
+      "gnss_free_4channel_external_catalog_isolation": {
+        "channels_included": [
+          "ch2_outer_3_giant_planet_spin",
+          "ch3_brown_dwarf_period_floor",
+          "ch4_terrestrial_core_screened_moi",
+          "ch5_solar_model_S_convection_base"
+        ],
+        "inferred_rho_T_no_gnss_mean_g_cm3": 19.681693799278875,
+        "inferred_rho_T_no_gnss_std_g_cm3": 1.2511547368203855,
+        "inferred_rho_T_no_gnss_sem_g_cm3": 0.6255773684101927,
+        "inferred_rho_T_no_gnss_log10_std_dex": 0.02831042798273095,
+        "gnss_Lc_4200km_inferred_rho_T_g_cm3": 19.244111417505167,
+        "gnss_vs_external_astrophysical_mean_fractional_offset": -0.022232963597357713
+      },
+      "four_channel_without_solar_prototype": {
+        "inferred_rho_T_4channel_mean_g_cm3": 19.454007684718544,
+        "inferred_rho_T_4channel_std_g_cm3": 1.2187967631481937,
+        "inferred_rho_T_4channel_log10_std_dex": 0.02747841014491288,
+        "inferred_rho_T_4channel_log10_range_dex": 0.06518180295164644,
+        "observed_4channel_rms_fractional_error": 0.022807087254120454,
+        "p_1d_random_density_rms_le_obs_4ch": 0.00229,
+        "p_4channel_coincidence_no_look_elsewhere": 8.861945715910592e-06,
+        "p_4channel_coincidence_with_49_algebraic_factor_look_elsewhere": 0.001
+      },
+      "small_body_eta_propagated_range": {
+        "eta_0_fiducial": 0.12905,
+        "eta_6body_median": 0.13757922845088688,
+        "eta_6body_iqr_25_75": [
+          0.12205372013233792,
+          0.15447009297543124
+        ],
+        "P_min_bd_at_eta_med6_hr": 1.0998062788258383,
+        "P_min_bd_iqr_25_75_hr": [
+          0.9795455959903258,
+          1.2397041165336045
+        ]
+      },
+      "algebraic_factor_dictionary_tested": [
+        0.5,
+        0.70710678,
+        1.0,
+        1.41421356,
+        1.73205081,
+        2.0,
+        3.14159265
+      ]
+    },
+    "solar_helioseismic_and_angular_momentum_audit": {
+      "R_T_sun_km": 287386.797430775,
+      "S_sun_R_T_over_R_sun": 0.4127104538454993,
+      "model_S_nuclear_core_rho_eq_rhoT_r_over_Rsun": 0.24891727818545697,
+      "model_S_nuclear_core_enclosed_mass_fraction": 0.44014813314005297,
+      "model_S_mean_density_rho_bar_eq_rhoT_r_over_Rsun": 0.36754436290860576,
+      "predicted_3D_convection_base_sqrt3_R_T_over_Rsun": 0.7148354748752149,
+      "observed_helioseismic_convection_base_r_cz_over_Rsun": 0.713,
+      "convection_base_fractional_agreement_percent": 0.25742985627137394,
+      "enclosed_mass_fraction_at_r_3D": 0.977688119187861,
+      "enclosed_mean_density_at_r_3D_g_cm3": 3.7642864583766125,
+      "inferred_rho_T_from_convection_base_g_cm3": 20.154855875746495,
+      "r_3D_range_across_rhoT_8_to_70_g_cm3": [
+        0.47081477374507497,
+        0.9701810029841345
+      ],
+      "prolate_tachocline_center_latitudinal_variation": {
+        "predicted_r_c_equator_0deg_over_Rsun": 0.6880707102775845,
+        "observed_r_c_equator_0deg_over_Rsun": 0.693,
+        "predicted_r_c_60deg_over_Rsun": 0.7081442837258073,
+        "observed_r_c_60deg_over_Rsun": 0.717,
+        "predicted_prolate_delta_r_c_60_minus_0": 0.020073573448222824,
+        "observed_prolate_delta_r_c_60_minus_0": 0.024
+      },
+      "bvp_gyration_threshold_y_eq_half_S_r_over_Rsun": 0.7227591727818545,
+      "local_gyration_threshold_S_A_eq_half_S_r_over_Rsun": 0.7227591727818545,
+      "zero_borrowing_harmonic_coefficients_a2_eq_a4": 0.1459151802903651,
+      "kic_8006161_hd173701_karoff_2018_solar_twin_check": {
+        "M_Msun": 1.0,
+        "R_Rsun": 0.93,
+        "S_star": 0.44377468155430033,
+        "predicted_Delta_Omega_S_over_sqrt2": 0.31379608664594644,
+        "observed_kepler_photometric_period_range_days": [
+          25.0,
+          35.0
+        ],
+        "observed_photometric_active_latitude_shear": 0.2857142857142857,
+        "note": "Karoff et al. (2018, ApJ 852, 46) report Kepler sliding-window photometric periods varying between 25 and 35 days ((35-25)/35 = 0.286 vs TEP S_*/sqrt(2) = 0.314), while asteroseismic splitting ratios across broader Kepler Sun-like stars (Benomar et al. 2018, Science 361, 1239) show larger convective shears with wide credible intervals."
+      },
+      "predicted_equatorial_v_eq_km_s": 1.9972507524432155,
+      "observed_carrington_v_eq_km_s": 1.9952,
+      "predicted_equatorial_Omega_nHz": 456.49011954698153,
+      "observed_helioseismic_equatorial_Omega_nHz": 460.7,
+      "predicted_radiative_lock_Omega_nHz": 426.8861914734926,
+      "observed_helioseismic_radiative_Omega_nHz": 432.0,
+      "predicted_differential_shear_S_sun_over_sqrt2": 0.2918303605807302,
+      "observed_helioseismic_differential_shear_a2_plus_a4": 0.2887,
+      "planetary_orbital_J_obs_kg_m2_s": 3.1355596423511185e+43,
+      "total_solar_system_J_obs_kg_m2_s": 3.1547596423511184e+43,
+      "predicted_solar_soliton_capacity_J_sol_eta_sec_kg_m2_s": 4.854280253661672e+43,
+      "predicted_solar_soliton_capacity_J_sol_eta0_kg_m2_s": 5.01155893388031e+43,
+      "total_solar_system_eta_sys": 0.08123654479908286
     }
   },
   "bodies": {

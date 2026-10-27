@@ -1,8 +1,8 @@
 {
   "name": "tep-ucd-site",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Temporal Topology Saturation Scale: Cross-Scale Consistency of \u03c1_T",
-  "comment": "Package version matches manuscript version v0.10 (New Delhi)",
+  "comment": "Package version matches manuscript version v0.11 (New Delhi)",
   "main": "index.html",
   "scripts": {
     "dev": "node dev-server.js",

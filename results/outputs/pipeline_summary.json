@@ -1,8 +1,8 @@
 {
   "pipeline": "TEP-UCD",
-  "version": "v0.10 (New Delhi)",
-  "date": "2026-10-25T20:25:52",
-  "elapsed_seconds": 19.93,
+  "version": "v0.11 (New Delhi)",
+  "date": "2026-10-26T13:20:17",
+  "elapsed_seconds": 20.94,
   "steps": {
     "step_0_download_data": {
       "status": "completed",
@@ -469,6 +469,45 @@
               "n_galaxies": 57,
               "resolved_ols_alpha_Rdm_vs_Mbar": 0.3563186917194647,
               "resolved_ols_alpha_Rdm_vs_Mbar_err": 0.05682435274314247,
+              "selection_sensitivity_decomposition": {
+                "full_discrete_sample_N": 169,
+                "full_discrete_alpha": 0.32805902125639086,
+                "full_discrete_alpha_err": 0.038406851539197866,
+                "uncensored_subset_discrete_grid_n": 57,
+                "uncensored_subset_discrete_alpha": 0.33454030867864937,
+                "uncensored_subset_discrete_alpha_err": 0.05250918809084154,
+                "uncensored_subset_interpolated_alpha": 0.3563186917194647,
+                "uncensored_subset_interpolated_alpha_err": 0.05682435274314247,
+                "shift_from_removing_left_censored_dwarfs": 0.006481287422258508,
+                "shift_from_subbin_log_interpolation": 0.021778383040815308
+              },
+              "prespecified_baryonic_regime_transition_test": {
+                "predicted_freeman_peak_crossover_log10_M_Msun": 10.839997933724629,
+                "predicted_freeman_peak_crossover_M_Msun": 69182767935.07603,
+                "analytical_freeman_slope_threshold_dlnV_dlnR_1p0_to_2p2_Rd": 0.2097287738159277,
+                "rising_baryon_disk_regime_predicted_1_over_3": {
+                  "n_galaxies": 28,
+                  "predicted_alpha": 0.3333333333333333,
+                  "observed_alpha": 0.24650894794013484,
+                  "observed_alpha_err": 0.08361820130238701,
+                  "pearson_r": 0.500523198328054,
+                  "z_vs_1_over_3": -1.0383431363133129,
+                  "z_vs_1_over_2": -3.031529596566781
+                },
+                "concentrated_keplerian_tail_regime_predicted_1_over_2": {
+                  "n_galaxies": 29,
+                  "predicted_alpha": 0.5,
+                  "observed_alpha": 0.3947675406234415,
+                  "observed_alpha_err": 0.09589230820153777,
+                  "pearson_r": 0.6209958655596829,
+                  "z_vs_1_over_2": -1.097402506522113,
+                  "z_vs_1_over_3": 0.6406583431174826
+                },
+                "regime_difference_delta_alpha": 0.14825859268330666,
+                "regime_difference_se": 0.1272294712763722,
+                "regime_difference_z": 1.1652849862218972,
+                "regime_difference_p": 0.2439036543745443
+              },
               "size_invariant_Rdm_over_Rd": {
                 "n": 57,
                 "median": 1.3665947610934577,
@@ -600,6 +639,45 @@
               "n_galaxies": 75,
               "resolved_ols_alpha_Rdm_vs_Mbar": 0.4173625657414538,
               "resolved_ols_alpha_Rdm_vs_Mbar_err": 0.04952873765962636,
+              "selection_sensitivity_decomposition": {
+                "full_discrete_sample_N": 168,
+                "full_discrete_alpha": 0.3694369491083948,
+                "full_discrete_alpha_err": 0.04096458091347211,
+                "uncensored_subset_discrete_grid_n": 75,
+                "uncensored_subset_discrete_alpha": 0.3967379463018546,
+                "uncensored_subset_discrete_alpha_err": 0.04494331018684069,
+                "uncensored_subset_interpolated_alpha": 0.4173625657414538,
+                "uncensored_subset_interpolated_alpha_err": 0.04952873765962636,
+                "shift_from_removing_left_censored_dwarfs": 0.027300997193459797,
+                "shift_from_subbin_log_interpolation": 0.0206246194395992
+              },
+              "prespecified_baryonic_regime_transition_test": {
+                "predicted_freeman_peak_crossover_log10_M_Msun": 10.160457853566575,
+                "predicted_freeman_peak_crossover_M_Msun": 14469644245.342112,
+                "analytical_freeman_slope_threshold_dlnV_dlnR_1p0_to_2p2_Rd": 0.2097287738159277,
+                "rising_baryon_disk_regime_predicted_1_over_3": {
+                  "n_galaxies": 38,
+                  "predicted_alpha": 0.3333333333333333,
+                  "observed_alpha": 0.25607772952294305,
+                  "observed_alpha_err": 0.06916746612190393,
+                  "pearson_r": 0.5251235751377044,
+                  "z_vs_1_over_3": -1.1169355788490418,
+                  "z_vs_1_over_2": -3.526546281848132
+                },
+                "concentrated_keplerian_tail_regime_predicted_1_over_2": {
+                  "n_galaxies": 37,
+                  "predicted_alpha": 0.5,
+                  "observed_alpha": 0.5810132648492987,
+                  "observed_alpha_err": 0.08550600510998728,
+                  "pearson_r": 0.754199530977467,
+                  "z_vs_1_over_2": 0.9474570206512455,
+                  "z_vs_1_over_3": 2.8966378583278694
+                },
+                "regime_difference_delta_alpha": 0.32493553532635566,
+                "regime_difference_se": 0.10997915838736855,
+                "regime_difference_z": 2.9545192024644145,
+                "regime_difference_p": 0.0031315666439630796
+              },
               "size_invariant_Rdm_over_Rd": {
                 "n": 75,
                 "median": 1.2361318490603441,
@@ -731,6 +809,45 @@
               "n_galaxies": 82,
               "resolved_ols_alpha_Rdm_vs_Mbar": 0.4911320913066803,
               "resolved_ols_alpha_Rdm_vs_Mbar_err": 0.045198958879316194,
+              "selection_sensitivity_decomposition": {
+                "full_discrete_sample_N": 162,
+                "full_discrete_alpha": 0.3999581375797094,
+                "full_discrete_alpha_err": 0.04243031542978838,
+                "uncensored_subset_discrete_grid_n": 82,
+                "uncensored_subset_discrete_alpha": 0.45505646398167315,
+                "uncensored_subset_discrete_alpha_err": 0.039813546888226074,
+                "uncensored_subset_interpolated_alpha": 0.4911320913066803,
+                "uncensored_subset_interpolated_alpha_err": 0.045198958879316194,
+                "shift_from_removing_left_censored_dwarfs": 0.05509832640196377,
+                "shift_from_subbin_log_interpolation": 0.03607562732500713
+              },
+              "prespecified_baryonic_regime_transition_test": {
+                "predicted_freeman_peak_crossover_log10_M_Msun": 9.664027318458283,
+                "predicted_freeman_peak_crossover_M_Msun": 4613465937.669702,
+                "analytical_freeman_slope_threshold_dlnV_dlnR_1p0_to_2p2_Rd": 0.2097287738159277,
+                "rising_baryon_disk_regime_predicted_1_over_3": {
+                  "n_galaxies": 44,
+                  "predicted_alpha": 0.3333333333333333,
+                  "observed_alpha": 0.3780779821523941,
+                  "observed_alpha_err": 0.07380925365265635,
+                  "pearson_r": 0.6200909956713619,
+                  "z_vs_1_over_3": 0.6062200415902786,
+                  "z_vs_1_over_2": -1.6518527395137537
+                },
+                "concentrated_keplerian_tail_regime_predicted_1_over_2": {
+                  "n_galaxies": 38,
+                  "predicted_alpha": 0.5,
+                  "observed_alpha": 0.545925085594119,
+                  "observed_alpha_err": 0.05776255543539612,
+                  "pearson_r": 0.8442434425358482,
+                  "z_vs_1_over_2": 0.7950667218226417,
+                  "z_vs_1_over_3": 3.6804422979270117
+                },
+                "regime_difference_delta_alpha": 0.16784710344172493,
+                "regime_difference_se": 0.09372469650625376,
+                "regime_difference_z": 1.7908524615017065,
+                "regime_difference_p": 0.07331697402045623
+              },
               "size_invariant_Rdm_over_Rd": {
                 "n": 82,
                 "median": 1.474571207962108,
@@ -2849,854 +2966,19 @@
     },
     "step_10_two_branch_sparc_rar": {
       "status": "completed",
-      "outputs": {
-        "step": "sparc_rar_two_branch",
-        "constants": {
-          "g_t": 3.4001944264419963e-10,
-          "k_star": 16.02867024193226,
-          "a_eff_predicted": 1.2e-10,
-          "Upsilon_disk": 0.5,
-          "Upsilon_bulge": 0.7
-        },
-        "n_points": 3389,
-        "n_galaxies": 175,
-        "rar_prediction": {
-          "n_points": 3389,
-          "primary_force_law": "g_obs = g_N + a_phi (action-derived additive force law from L_pp = -mc sqrt(-g_tilde_munu dx^mu dx^nu))",
-          "zero_gradient_regulator_eps_reg": 0.001,
-          "calibration_provenance": "k_star = 4 sqrt(2) g_t / a_0 = 16.03 calibrated to empirical scale a_0 = 1.2e-10 m/s^2 (not an independent prediction of a_0)",
-          "rms_log10_resid_two_branch": 0.21846221905980956,
-          "median_log10_resid_two_branch": -0.0861064060847398,
-          "frac_within_0p1dex_two_branch": 0.4470345234582473,
-          "rms_log10_resid_baseline": 0.2812372661274251,
-          "median_log10_resid_baseline": -0.031940483255782616,
-          "frac_within_0p1dex_baseline": 0.23517261729123634,
-          "rms_log10_resid_two_branch_quadrature": 0.19737528669193252,
-          "median_log10_resid_two_branch_quadrature": 0.023614035950993092,
-          "frac_within_0p1dex_two_branch_quadrature": 0.5101799940985542,
-          "rms_log10_resid_mond_reference": 0.19886339710301015,
-          "median_log10_resid_mond_reference": -0.014228411214360859,
-          "rms_log10_resid_exp_interp": 0.2749051659562611,
-          "frac_within_0p1dex_exp_interp": 0.2519917379758041,
-          "quality_controlled_sparc_sample": {
-            "selection_cuts": "Q <= 2, i >= 30 deg, e_Vobs / V_obs <= 0.10 (Lelli et al. 2017 standard SPARC RAR cuts)",
-            "n_points": 2700,
-            "n_galaxies": 149,
-            "rms_log10_resid_two_branch_add_ml05": 0.1522489443738529,
-            "rms_log10_resid_two_branch_add_ml035": 0.13923498967519812,
-            "frac_within_0p1dex_two_branch_add_ml035": 0.6062962962962963,
-            "rms_log10_resid_two_branch_quad_ml05": 0.13944600145573727,
-            "rms_log10_resid_baseline_ml05": 0.24903093856711228,
-            "rms_log10_resid_mond_reference_ml05": 0.132761707369115
-          }
-        },
-        "k_scan": {
-          "k_grid_min_rms": 30.632911392405063,
-          "k_fit_bounded": 30.89891276738952,
-          "a_eff_fit_m_s2": 6.224945335493668e-11,
-          "a_eff_predicted": 1.2e-10,
-          "ratio_fit_over_predicted": 0.5187454446244724,
-          "k_fit_quadrature": 15.781497490840746,
-          "a_eff_fit_quadrature_m_s2": 1.218794623354467e-10,
-          "ratio_fit_over_predicted_quadrature": 1.0156621861287225,
-          "rms_at_k_fit_quadrature": 0.1973582630986168,
-          "note": "Under the action-derived additive force law g_obs = g_N + a_phi (with zero-gradient regulator eps_reg = 1e-3), the calibrated k_star = 16.03 gives RMS = 0.2185 dex at Upsilon_d = 0.5 and 0.2004 dex at Upsilon_d = 0.35 (improving over the 0.2812 dex unit-term baseline and 0.2749 dex exp-interp rival by >60 mdex); the empirical quadrature comparator sqrt(g_N^2 + a_phi^2) (0.1974 dex) is recorded separately as a phenomenological interpolating reference rather than an action-derived force law."
-        },
-        "binned_rar": {
-          "log10_g_bar": [
-            -12.01758525034466,
-            -11.828158894261701,
-            -11.638732538178747,
-            -11.449306182095789,
-            -11.259879826012835,
-            -11.070453469929877,
-            -10.88102711384692,
-            -10.691600757763965,
-            -10.502174401681009,
-            -10.312748045598052,
-            -10.123321689515096,
-            -9.93389533343214,
-            -9.744468977349182,
-            -9.555042621266228,
-            -9.36561626518327,
-            -9.176189909100316,
-            -8.986763553017358,
-            -8.797337196934404,
-            -8.607910840851446,
-            -8.418484484768491,
-            -8.229058128685534
-          ],
-          "median_g_obs": [
-            1.1266446522441338e-11,
-            1.5165976556365523e-11,
-            1.6432964936638082e-11,
-            1.968467521287938e-11,
-            2.556370809287206e-11,
-            3.44098351236588e-11,
-            4.426897610442308e-11,
-            6.139160070278228e-11,
-            7.633051994685177e-11,
-            1.042709720609915e-10,
-            1.3711967493566126e-10,
-            1.8734150176908744e-10,
-            2.5674605933258135e-10,
-            3.930967747708363e-10,
-            5.092597763858862e-10,
-            7.019451963772553e-10,
-            1.0676696776524318e-09,
-            1.6152350565830799e-09,
-            2.6055079544329736e-09,
-            4.090362003518193e-09,
-            4.848779434003024e-09
-          ],
-          "median_g_pred_two_branch": [
-            1.2156563757224261e-11,
-            1.600653416043488e-11,
-            1.9469480682077296e-11,
-            2.456545629625477e-11,
-            3.112973465535812e-11,
-            4.0539195733627135e-11,
-            5.2323484817797594e-11,
-            6.903352938102189e-11,
-            9.286687028656483e-11,
-            1.237367684556717e-10,
-            1.7252293007802494e-10,
-            2.3097282607496484e-10,
-            3.1920626188343464e-10,
-            4.605528109027783e-10,
-            6.463785561267472e-10,
-            9.33851556083221e-10,
-            1.3286328961462165e-09,
-            2.02115251019043e-09,
-            2.9643923456159323e-09,
-            4.3405827045187735e-09,
-            6.880112519620301e-09
-          ],
-          "iqr": [
-            6.162122397904765e-12,
-            4.386836677493472e-12,
-            1.3139154655566649e-11,
-            1.0925252687937449e-11,
-            1.2089916224829726e-11,
-            1.749218058098967e-11,
-            1.9109349974989114e-11,
-            2.5877267846991948e-11,
-            3.693910612800569e-11,
-            3.5581463226662525e-11,
-            5.715046675237809e-11,
-            8.266067263533667e-11,
-            1.0520591514731716e-10,
-            1.3569392256986866e-10,
-            1.533830937924019e-10,
-            2.2017348517107107e-10,
-            3.403257095575072e-10,
-            6.758704678341751e-10,
-            8.340591743740224e-10,
-            2.4377250670312684e-09,
-            1.1084738431481557e-09
-          ]
-        },
-        "deep_tail": {
-          "n": 2061,
-          "median_log10_resid": 0.030624492757590282,
-          "rms_log10_resid": 0.21179315753721611
-        },
-        "btfr": {
-          "n_table1_parsed": 175,
-          "n_vflat_gt_0": 135,
-          "note": "V_flat^4 = G M_b a_eff with a_eff = 4 sqrt(2) g_t/k; M_b = Ups_d L3.6 + 1.33 M_HI. Full per-galaxy BTFR analysis is performed in step_13_two_branch_btfr.py."
-        },
-        "transition_shape_scan": {
-          "family": "P_X = k sqrt(xi) + 2 xi + c2 xi^{3/2}",
-          "n_transition_points": 1008,
-          "scan": [
-            {
-              "c2_xi32": 0.0,
-              "rms_log10_resid": 0.21857280860053888,
-              "median_log10_resid": -0.08614090239095694,
-              "median_log10_resid_transition": -0.0918861287240966,
-              "median_log10_resid_deep": -0.07396397063155394
-            },
-            {
-              "c2_xi32": 5.0,
-              "rms_log10_resid": 0.21840444721078187,
-              "median_log10_resid": -0.08583333291119734,
-              "median_log10_resid_transition": -0.09130260505212043,
-              "median_log10_resid_deep": -0.0739183124984583
-            },
-            {
-              "c2_xi32": 10.0,
-              "rms_log10_resid": 0.21824738339025382,
-              "median_log10_resid": -0.08572328024778891,
-              "median_log10_resid_transition": -0.09073222524687623,
-              "median_log10_resid_deep": -0.07387269091228069
-            },
-            {
-              "c2_xi32": 20.0,
-              "rms_log10_resid": 0.21795773927655823,
-              "median_log10_resid": -0.08468271063987409,
-              "median_log10_resid_transition": -0.0898186378267918,
-              "median_log10_resid_deep": -0.07378155712630859
-            },
-            {
-              "c2_xi32": 40.0,
-              "rms_log10_resid": 0.21744655134086535,
-              "median_log10_resid": -0.08335654102180338,
-              "median_log10_resid_transition": -0.08865251856134984,
-              "median_log10_resid_deep": -0.07359972533220456
-            },
-            {
-              "c2_xi32": 80.0,
-              "rms_log10_resid": 0.2165934562863624,
-              "median_log10_resid": -0.08096093183324098,
-              "median_log10_resid_transition": -0.0856984129735909,
-              "median_log10_resid_deep": -0.07312591077312483
-            }
-          ],
-          "note": "subleading xi^{3/2} term preserves both asymptotic branches; reported as a diagnostic of what mid-range suppression the SPARC distribution requires, not as a fitted sector"
-        },
-        "transition_qcoef_scan": {
-          "family": "P_X = k sqrt(xi) + (2 + c1) xi",
-          "scan": [
-            {
-              "c1_xi_coef": 0.0,
-              "rms_log10_resid": 0.21857280860053888,
-              "median_log10_resid": -0.08614090239095694,
-              "median_log10_resid_transition": -0.0918861287240966,
-              "median_log10_resid_deep": -0.07396397063155394
-            },
-            {
-              "c1_xi_coef": 5.0,
-              "rms_log10_resid": 0.2173586542866194,
-              "median_log10_resid": -0.08318960963134665,
-              "median_log10_resid_transition": -0.08789082023607053,
-              "median_log10_resid_deep": -0.07235614526499336
-            },
-            {
-              "c1_xi_coef": 10.0,
-              "rms_log10_resid": 0.21626302583574486,
-              "median_log10_resid": -0.08060146352545891,
-              "median_log10_resid_transition": -0.08456192583907475,
-              "median_log10_resid_deep": -0.07050948474305205
-            },
-            {
-              "c1_xi_coef": 20.0,
-              "rms_log10_resid": 0.21433913357619833,
-              "median_log10_resid": -0.0760931147409308,
-              "median_log10_resid_transition": -0.07875930963404856,
-              "median_log10_resid_deep": -0.06700911668345082
-            },
-            {
-              "c1_xi_coef": 40.0,
-              "rms_log10_resid": 0.21123322539301487,
-              "median_log10_resid": -0.06783811107970315,
-              "median_log10_resid_transition": -0.06834898356691188,
-              "median_log10_resid_deep": -0.060244073314124444
-            },
-            {
-              "c1_xi_coef": 80.0,
-              "rms_log10_resid": 0.20679393486153866,
-              "median_log10_resid": -0.055759304602607,
-              "median_log10_resid_transition": -0.052168228260172866,
-              "median_log10_resid_deep": -0.0492650487938589
-            }
-          ],
-          "note": "the xi coefficient controls suppression in the SPARC window (xi ~ 0.01-1); scanned to quantify the mid-range deformation the data would require if the offset were sector-internal"
-        },
-        "ambient_field_scan": {
-          "model": "g_obs = g_N + 2 g_t (ubar_solve(y) + u_amb)",
-          "scan": [
-            {
-              "u_ambient": 0.0,
-              "rms_log10_resid": 0.21846221905980956,
-              "median_log10_resid": -0.0861064060847398,
-              "median_log10_resid_deep": -0.07358580321517386
-            },
-            {
-              "u_ambient": 0.02,
-              "rms_log10_resid": 0.2829111713889271,
-              "median_log10_resid": -0.16324814587369896,
-              "median_log10_resid_deep": -0.21043979647675734
-            },
-            {
-              "u_ambient": 0.05,
-              "rms_log10_resid": 0.3766613203023035,
-              "median_log10_resid": -0.2563276001094725,
-              "median_log10_resid_deep": -0.3461112469142834
-            },
-            {
-              "u_ambient": 0.1,
-              "rms_log10_resid": 0.4966890311523771,
-              "median_log10_resid": -0.3770895786787975,
-              "median_log10_resid_deep": -0.5091746672267334
-            },
-            {
-              "u_ambient": 0.2,
-              "rms_log10_resid": 0.6598290567232722,
-              "median_log10_resid": -0.5547915748720185,
-              "median_log10_resid_deep": -0.7252489494428884
-            },
-            {
-              "u_ambient": 0.3,
-              "rms_log10_resid": 0.7729458354186648,
-              "median_log10_resid": -0.6779670635591508,
-              "median_log10_resid_deep": -0.8675802844503202
-            }
-          ],
-          "note": "positive u_amb raises the predicted curve; since the transition residual is already negative (obs below pred), the scan bounds the ambient shear allowed by SPARC"
-        },
-        "upsilon_disk_scan": {
-          "scan": [
-            {
-              "Upsilon_disk": 0.35,
-              "n_points": 3389,
-              "rms_log10_resid": 0.20043041081976226,
-              "median_log10_resid": -0.0200880267309291,
-              "median_log10_resid_transition": -0.01076880252930566
-            },
-            {
-              "Upsilon_disk": 0.5,
-              "n_points": 3389,
-              "rms_log10_resid": 0.21846221905980956,
-              "median_log10_resid": -0.0861064060847398,
-              "median_log10_resid_transition": -0.09183373372947279
-            },
-            {
-              "Upsilon_disk": 0.7,
-              "n_points": 3389,
-              "rms_log10_resid": 0.2568626516850621,
-              "median_log10_resid": -0.15050120836524747,
-              "median_log10_resid_transition": -0.1700009238077711
-            },
-            {
-              "Upsilon_disk": 1.0,
-              "n_points": 3389,
-              "rms_log10_resid": 0.31546092010693094,
-              "median_log10_resid": -0.22578709972231342,
-              "median_log10_resid_transition": -0.2633473728631472
-            }
-          ],
-          "note": "disk M/L rescales g_bar horizontally; reported to quantify how much of the transition offset is absorbed by the canonical M/L uncertainty rather than the sector shape"
-        },
-        "unit_term_scan": {
-          "family": "P_X = eps + k sqrt(xi) + 2 xi",
-          "scan": [
-            {
-              "eps_unit_term": 0.0,
-              "rms_log10_resid": 0.21857280860053888,
-              "median_log10_resid": -0.08614090239095694,
-              "median_log10_resid_deep": -0.07396397063155394
-            },
-            {
-              "eps_unit_term": 0.01,
-              "rms_log10_resid": 0.21748735292097993,
-              "median_log10_resid": -0.0837616232489471,
-              "median_log10_resid_deep": -0.07018572531772266
-            },
-            {
-              "eps_unit_term": 0.03,
-              "rms_log10_resid": 0.21545409087303313,
-              "median_log10_resid": -0.07906042829266599,
-              "median_log10_resid_deep": -0.0641197409170365
-            },
-            {
-              "eps_unit_term": 0.1,
-              "rms_log10_resid": 0.20981096018171208,
-              "median_log10_resid": -0.06300963506485871,
-              "median_log10_resid_deep": -0.04222364222809973
-            },
-            {
-              "eps_unit_term": 0.3,
-              "rms_log10_resid": 0.20565589446273178,
-              "median_log10_resid": -0.022352468405928735,
-              "median_log10_resid_deep": 0.020132802262375554
-            },
-            {
-              "eps_unit_term": 1.0,
-              "rms_log10_resid": 0.2563565014942504,
-              "median_log10_resid": 0.07485130932379865,
-              "median_log10_resid_deep": 0.1867599522395332
-            }
-          ],
-          "note": "eps <= 0.1 is observationally free and slightly improves the fit; eps ~ 0.3 reaches the MOND-reference rms but restores a linear (Keplerian) tail below g_N ~ (eps/k) g_t, conflicting with the flat-asymptote requirement that selects p=1/2.  The admissible regulator window is therefore small-eps (fixes the X->0 degeneracy at zero data cost), consistent with the step_62 growth scan where even eps = 1 shifts chi2 by < 0.1."
-        }
-      }
+      "outputs": "/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/results/outputs/step_10_two_branch_sparc_rar.json"
     },
     "step_11_kphi_sparc": {
       "status": "completed",
-      "outputs": {
-        "model": "J_i = K(psi) f(q) a_i, K = e^{c psi}, psi = inward-integrated pair-well depth per galaxy",
-        "note": "c=0 recovers step_10 two-branch pointwise result up to the radial integration convention",
-        "psi_interior_scale": {
-          "median": 0.34774952275304405,
-          "range": [
-            0.21952173932602642,
-            0.7301578508108322
-          ]
-        },
-        "c=-3.0": {
-          "c": -3.0,
-          "n": 3389,
-          "rms": 1.4214805402007393,
-          "median": -0.220706938980843,
-          "frac_01dex": 0.21894364119209206
-        },
-        "c=-1.0": {
-          "c": -1.0,
-          "n": 3389,
-          "rms": 0.23884717253806065,
-          "median": -0.11971320623685876,
-          "frac_01dex": 0.36795514901150783
-        },
-        "c=-0.5": {
-          "c": -0.5,
-          "n": 3389,
-          "rms": 0.2271888833915878,
-          "median": -0.10229199663471152,
-          "frac_01dex": 0.40956034228385957
-        },
-        "c=-0.25": {
-          "c": -0.25,
-          "n": 3389,
-          "rms": 0.22256348157522288,
-          "median": -0.09329937590439022,
-          "frac_01dex": 0.42992033048096784
-        },
-        "c=0.0": {
-          "c": 0.0,
-          "n": 3389,
-          "rms": 0.21857280860053888,
-          "median": -0.08614090239095694,
-          "frac_01dex": 0.44673945116553554
-        },
-        "c=0.005": {
-          "c": 0.005,
-          "n": 3389,
-          "rms": 0.2184988192277819,
-          "median": -0.08609644807773299,
-          "frac_01dex": 0.44791974033638243
-        },
-        "c=0.01": {
-          "c": 0.01,
-          "n": 3389,
-          "rms": 0.21842504667879137,
-          "median": -0.08602727461589797,
-          "frac_01dex": 0.4476246680436707
-        },
-        "c=0.02": {
-          "c": 0.02,
-          "n": 3389,
-          "rms": 0.2182781495443902,
-          "median": -0.08571750101003432,
-          "frac_01dex": 0.44939510179994097
-        },
-        "c=0.05": {
-          "c": 0.05,
-          "n": 3389,
-          "rms": 0.21784259720946658,
-          "median": -0.08489937423770656,
-          "frac_01dex": 0.4517556801416347
-        },
-        "c=0.1": {
-          "c": 0.1,
-          "n": 3389,
-          "rms": 0.2171335154264805,
-          "median": -0.08322380981672894,
-          "frac_01dex": 0.45529654765417527
-        },
-        "c=0.25": {
-          "c": 0.25,
-          "n": 3389,
-          "rms": 0.21512725423436677,
-          "median": -0.0786469257475475,
-          "frac_01dex": 0.4606078489229861
-        },
-        "c=0.5": {
-          "c": 0.5,
-          "n": 3389,
-          "rms": 0.212155387531637,
-          "median": -0.07210053323892963,
-          "frac_01dex": 0.470050162289761
-        },
-        "c=1.0": {
-          "c": 1.0,
-          "n": 3389,
-          "rms": 0.20740931103494376,
-          "median": -0.060403300195322515,
-          "frac_01dex": 0.49601652404839186
-        },
-        "c=2.0": {
-          "c": 2.0,
-          "n": 3389,
-          "rms": 0.2015821573265304,
-          "median": -0.03776557357102556,
-          "frac_01dex": 0.5081144880495722
-        },
-        "c=3.0": {
-          "c": 3.0,
-          "n": 3389,
-          "rms": 0.19918214857284533,
-          "median": -0.020306405084015607,
-          "frac_01dex": 0.5128356447329596
-        }
-      }
+      "outputs": "/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/results/outputs/step_11_kphi_sparc.json"
     },
     "step_12_onset_radius_law": {
       "status": "completed",
-      "outputs": {
-        "a_eff": 1.1998318433109229e-10,
-        "k": 16.03,
-        "g_t": 3.4e-10,
-        "n_galaxies_bracketed": 54,
-        "free_fit": {
-          "slope": 0.5021546474643844,
-          "intercept": -4.663503948125911,
-          "rms_dex": 0.2039122238578121
-        },
-        "inner_peak_mass_proxy_diagnostic": {
-          "slope": 0.27206370367802407,
-          "intercept": -2.0600348576823957,
-          "note": "Evaluating R*V_bar^2/G at argmax(V_bar^2) instead of R_max underestimates M_bar in bulge/compact spirals and flattens the apparent slope to 0.272; using R_max recovers slope = 0.5022, matching the two-branch prediction 0.500 to 0.4%."
-        },
-        "fixed_slope_half": {
-          "intercept_fitted": -4.640118316099268,
-          "intercept_predicted": -4.467400244355407,
-          "rms_dex": 0.20391400156186612
-        },
-        "zero_parameter": {
-          "rms_dex": 0.2672310841573073,
-          "mean_resid_dex": -0.1727180717438598,
-          "median_enclosed_mass_fraction_f_enc": 0.6471077676391588,
-          "mean_enclosed_mass_fraction_f_enc": 0.5930747565840457,
-          "rms_dex_with_median_f_enc": 0.21839678941779456,
-          "mean_resid_dex_with_median_f_enc": -0.07820637822471878,
-          "note": "The -0.173 dex intercept offset relative to sqrt(G M_bar(R_max)/a_eff) reflects the enclosed baryonic mass fraction f_enc = M_bar(<r_on)/M_bar(R_max) ~= 0.65 at the interior crossing radius r_on."
-        },
-        "samples": [
-          {
-            "galaxy": "ESO563-G021",
-            "M_msun": 210315137896.57034,
-            "r_onset_kpc": 2.759086461070044
-          },
-          {
-            "galaxy": "F571-8",
-            "M_msun": 6012813848.952779,
-            "r_onset_kpc": 1.5409970677069327
-          },
-          {
-            "galaxy": "IC4202",
-            "M_msun": 131936586162.11177,
-            "r_onset_kpc": 7.718052577013213
-          },
-          {
-            "galaxy": "NGC0289",
-            "M_msun": 83237760255.01912,
-            "r_onset_kpc": 6.169997943541237
-          },
-          {
-            "galaxy": "NGC0801",
-            "M_msun": 236241344381.54742,
-            "r_onset_kpc": 9.97180133948242
-          },
-          {
-            "galaxy": "NGC0891",
-            "M_msun": 87588242844.46376,
-            "r_onset_kpc": 9.672797497940374
-          },
-          {
-            "galaxy": "NGC1090",
-            "M_msun": 58669241662.656395,
-            "r_onset_kpc": 1.9724891013811945
-          },
-          {
-            "galaxy": "NGC2683",
-            "M_msun": 43997380815.16833,
-            "r_onset_kpc": 6.9437262633836125
-          },
-          {
-            "galaxy": "NGC2841",
-            "M_msun": 174334227978.0629,
-            "r_onset_kpc": 11.658443581247793
-          },
-          {
-            "galaxy": "NGC2903",
-            "M_msun": 47000639708.802704,
-            "r_onset_kpc": 7.216462796608435
-          },
-          {
-            "galaxy": "NGC2955",
-            "M_msun": 227928599153.50223,
-            "r_onset_kpc": 13.03523208346709
-          },
-          {
-            "galaxy": "NGC2998",
-            "M_msun": 123947028402.63654,
-            "r_onset_kpc": 6.300632375235968
-          },
-          {
-            "galaxy": "NGC3198",
-            "M_msun": 42909797110.813324,
-            "r_onset_kpc": 0.7866543528089018
-          },
-          {
-            "galaxy": "NGC3521",
-            "M_msun": 52138792373.45748,
-            "r_onset_kpc": 7.290742119075544
-          },
-          {
-            "galaxy": "NGC3769",
-            "M_msun": 18048306093.151764,
-            "r_onset_kpc": 2.3800471334702227
-          },
-          {
-            "galaxy": "NGC3877",
-            "M_msun": 49915221431.48772,
-            "r_onset_kpc": 1.8045451589467556
-          },
-          {
-            "galaxy": "NGC3893",
-            "M_msun": 40284791374.248146,
-            "r_onset_kpc": 5.8481657935699936
-          },
-          {
-            "galaxy": "NGC3949",
-            "M_msun": 23363918030.426937,
-            "r_onset_kpc": 4.850694378968479
-          },
-          {
-            "galaxy": "NGC3953",
-            "M_msun": 92338567983.83623,
-            "r_onset_kpc": 7.247909372699246
-          },
-          {
-            "galaxy": "NGC4013",
-            "M_msun": 48374534046.90829,
-            "r_onset_kpc": 7.5003817489329325
-          },
-          {
-            "galaxy": "NGC4051",
-            "M_msun": 44809746635.711815,
-            "r_onset_kpc": 2.8941004322462223
-          },
-          {
-            "galaxy": "NGC4085",
-            "M_msun": 14855430572.206913,
-            "r_onset_kpc": 2.8316199033967417
-          },
-          {
-            "galaxy": "NGC4088",
-            "M_msun": 70606507984.45052,
-            "r_onset_kpc": 8.57665245374343
-          },
-          {
-            "galaxy": "NGC4138",
-            "M_msun": 26710985440.982265,
-            "r_onset_kpc": 5.470485801014098
-          },
-          {
-            "galaxy": "NGC4157",
-            "M_msun": 67713030066.88928,
-            "r_onset_kpc": 8.851245520278109
-          },
-          {
-            "galaxy": "NGC4217",
-            "M_msun": 61747224976.15511,
-            "r_onset_kpc": 8.420022215119483
-          },
-          {
-            "galaxy": "NGC4389",
-            "M_msun": 12758043100.182194,
-            "r_onset_kpc": 2.046869022141455
-          },
-          {
-            "galaxy": "NGC5005",
-            "M_msun": 108239418170.0217,
-            "r_onset_kpc": 11.217455407772096
-          },
-          {
-            "galaxy": "NGC5033",
-            "M_msun": 81272842570.01709,
-            "r_onset_kpc": 7.837809211826888
-          },
-          {
-            "galaxy": "NGC5055",
-            "M_msun": 97932812802.67787,
-            "r_onset_kpc": 9.402736163599126
-          },
-          {
-            "galaxy": "NGC5371",
-            "M_msun": 200310943521.7496,
-            "r_onset_kpc": 8.63656833578277
-          },
-          {
-            "galaxy": "NGC5985",
-            "M_msun": 156626046046.75293,
-            "r_onset_kpc": 4.063291021932215
-          },
-          {
-            "galaxy": "NGC6195",
-            "M_msun": 255957009934.60123,
-            "r_onset_kpc": 13.436784533101925
-          },
-          {
-            "galaxy": "NGC6503",
-            "M_msun": 10042636533.923925,
-            "r_onset_kpc": 2.6260937001316367
-          },
-          {
-            "galaxy": "NGC6674",
-            "M_msun": 148085840404.67828,
-            "r_onset_kpc": 8.345271866538978
-          },
-          {
-            "galaxy": "NGC6946",
-            "M_msun": 42168755208.28698,
-            "r_onset_kpc": 6.197471568446374
-          },
-          {
-            "galaxy": "NGC7331",
-            "M_msun": 155004285015.2179,
-            "r_onset_kpc": 12.137081832169503
-          },
-          {
-            "galaxy": "NGC7814",
-            "M_msun": 51270916996.41156,
-            "r_onset_kpc": 7.350821183423039
-          },
-          {
-            "galaxy": "UGC02487",
-            "M_msun": 311255620049.2759,
-            "r_onset_kpc": 15.489954663429897
-          },
-          {
-            "galaxy": "UGC02885",
-            "M_msun": 363705728414.97284,
-            "r_onset_kpc": 11.360847215102861
-          },
-          {
-            "galaxy": "UGC02916",
-            "M_msun": 126277691997.13501,
-            "r_onset_kpc": 8.569726941673629
-          },
-          {
-            "galaxy": "UGC02953",
-            "M_msun": 151371522192.73706,
-            "r_onset_kpc": 13.557077937367362
-          },
-          {
-            "galaxy": "UGC03205",
-            "M_msun": 79192945623.46143,
-            "r_onset_kpc": 8.080777955599826
-          },
-          {
-            "galaxy": "UGC03546",
-            "M_msun": 62651575497.95443,
-            "r_onset_kpc": 7.558335243069089
-          },
-          {
-            "galaxy": "UGC03580",
-            "M_msun": 15101829859.19698,
-            "r_onset_kpc": 2.2413946952030757
-          },
-          {
-            "galaxy": "UGC05253",
-            "M_msun": 131672050641.59108,
-            "r_onset_kpc": 10.028128683325837
-          },
-          {
-            "galaxy": "UGC06614",
-            "M_msun": 133112315636.48183,
-            "r_onset_kpc": 7.534665812747351
-          },
-          {
-            "galaxy": "UGC06786",
-            "M_msun": 48777448422.279655,
-            "r_onset_kpc": 6.519070954028146
-          },
-          {
-            "galaxy": "UGC06787",
-            "M_msun": 70584119541.30623,
-            "r_onset_kpc": 7.875830033323048
-          },
-          {
-            "galaxy": "UGC06973",
-            "M_msun": 31504286499.769966,
-            "r_onset_kpc": 6.098452970566194
-          },
-          {
-            "galaxy": "UGC08699",
-            "M_msun": 36620738795.6102,
-            "r_onset_kpc": 4.809272432698889
-          },
-          {
-            "galaxy": "UGC09037",
-            "M_msun": 63145844640.9725,
-            "r_onset_kpc": 2.6374175425893784
-          },
-          {
-            "galaxy": "UGC09133",
-            "M_msun": 225747965310.21616,
-            "r_onset_kpc": 12.704699697532517
-          },
-          {
-            "galaxy": "UGC11455",
-            "M_msun": 229228899617.91187,
-            "r_onset_kpc": 14.555457307352919
-          }
-        ]
-      }
+      "outputs": "/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/results/outputs/step_12_onset_radius_law.json"
     },
     "step_13_two_branch_btfr": {
       "status": "completed",
-      "outputs": {
-        "step": "btfr_two_branch",
-        "k": 16.03,
-        "g_t": 3.4001944264419963e-10,
-        "a_eff_ms2": 1.1999004547921841e-10,
-        "a_eff_over_g_t": 0.3528917186208596,
-        "ups": [
-          0.5,
-          0.7
-        ],
-        "hi_factor": 1.33,
-        "outer_edge": {
-          "n_points": 405,
-          "n_galaxies": 135,
-          "median_vobs_over_vpred_quadrature": 1.0108759989765699,
-          "median_log10_resid_quadrature": 0.004697885301111044,
-          "rms_log10_resid_quadrature": 0.08119938026946287,
-          "median_vobs_over_vpred": 0.9101436545061856,
-          "median_log10_resid": -0.04089005445310795,
-          "rms_log10_resid": 0.09254978293043735,
-          "median_gN_over_gt": 0.019757469505757238
-        },
-        "asymptotic": {
-          "n": 135,
-          "median_vobs_over_vpred_deep_limit": 1.0616113897744934,
-          "rms_log10_deep_limit": 0.08977684252082106,
-          "empirical_slope_Mb_vs_v": 3.189204983649691,
-          "empirical_slope_inverse_ols_all": 3.6174187551267685,
-          "quality_filtered_Q_le_2_inc_ge_30": {
-            "n": 123,
-            "rms_log10_deep_limit": 0.06975173535047437,
-            "slope_ols_Mb_on_v": 3.4847050731221474,
-            "slope_inverse_ols_v_on_Mb": 3.752695784236947,
-            "slope_weighted_inverse_ols": 3.758729511397556
-          },
-          "high_quality_Q_eq_1_inc_ge_30": {
-            "n": 83,
-            "slope_inverse_ols_v_on_Mb": 3.839510305509417,
-            "slope_weighted_inverse_ols": 3.8572774248289536
-          },
-          "predicted_finite_radius_two_branch_slope": {
-            "additive": 3.5270491675688347,
-            "quadrature": 3.638576763446027,
-            "deep_tail_asymptote": 4.0
-          },
-          "median_implied_a_eff_ms2": 1.5240790567538562e-10,
-          "note": "deep-limit formula underpredicts v_flat at finite u (g_N/g_t ~ 0.02 at outer radii), where the two-branch finite-radius slope is 3.53-3.64 and inverse-OLS on the quality-filtered sample recovers 3.76-3.86; the outer-edge test is the direct finite-u comparison"
-        }
-      }
+      "outputs": "/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/results/outputs/step_13_two_branch_btfr.json"
     },
     "step_14_scale_audit": {
       "status": "completed",
@@ -3907,7 +3189,7 @@
               "daily_constant_rotating_visibility_isb_recovered_L_c_mean_km": 2485.0525389700165,
               "daily_constant_rotating_visibility_isb_recovered_L_c_std_km": 45.417926961675555,
               "daily_constant_isb_compression_ratio": 1.6242142449774704,
-              "note": "Per-epoch ISB projection yields 2,277 +- 47 km (1.77x compression, matching CNES/GRG 1,933 km), whereas daily-constant ISB with rotating constellation visibility yields 2,482 +- 46 km (1.63x compression, matching CODE matched-day MGEX 2,744 km). Both spatial ISB projection and wavenumber passband filtering describe the same removal of l=0,1 long-wavelength spherical-harmonic modes."
+              "note": "Per-epoch ISB projection yields 2,277 +- 47 km (1.77x compression, matching CNES/GRG 1,933 km), whereas daily-constant ISB with rotating constellation visibility yields 2,485 +- 45 km (1.62x compression, matching CODE matched-day MGEX 2,744 km). Both spatial ISB projection and wavenumber passband filtering describe the same removal of l=0,1 long-wavelength spherical-harmonic modes."
             }
           },
           "statement": "Forward Monte Carlo injection of a single L_c = 4200 km station-clock correlation field into a 120-station global network shows that 1-constellation GPS-only global datum removal recovers L_c = 4036 +- 113 km (R^2 = 0.999, bias -3.9%; white-noise null returns |C(d)| = 0.009 +- 0.001 with no spurious scale), whereas 4-constellation multi-GNSS common-view ISB projection compresses the same injected field to L_c = 2277 +- 47 km (derived compression ratio 1.77 +- 0.06, matching the empirical 4066 / 2141 = 1.90x ratio)."
@@ -3970,8 +3252,88 @@
             "inferred_rho_T_spin_geometric_mean_g_cm3": 20.871048921561876,
             "inferred_rho_T_spin_arithmetic_mean_g_cm3": 21.237447701203198,
             "inferred_rho_T_spin_std_g_cm3": 4.431483195548608,
-            "uranus_hst_2025_period_hr": 17.247778,
-            "uranus_hst_2025_v_obs_over_v_tep": 0.9933087560870157
+            "uranus_hst_2025_period_hr": 17.247864,
+            "uranus_hst_2025_v_obs_over_v_tep": 0.9937568973575985,
+            "uranus_voyager2_1986_period_hr": 17.24,
+            "uranus_voyager2_1986_v_obs_over_v_tep": 0.994210198067623,
+            "outer_3_unbraked_giant_planets_excluding_lunar_braked_earth": {
+              "names": [
+                "Uranus",
+                "Neptune",
+                "Saturn"
+              ],
+              "mean_v_obs_over_v_tep": 1.000296416299413,
+              "std_v_obs_over_v_tep": 0.08044071722176839,
+              "inferred_rho_T_spin_geometric_mean_g_cm3": 19.88917842321665,
+              "extended_8_outer_plus_substellar_without_earth_mean": 1.0013701174422627,
+              "extended_8_outer_plus_substellar_without_earth_std": 0.05964567943231265,
+              "extended_8_inferred_rho_T_geom_g_cm3": 19.990101799259183,
+              "earth_moon_primordial_vs_present_note": "Present-day Earth (23.93 hr, v_obs/v_TEP = 1.063) has transferred ~83% of its primordial spin angular momentum to the lunar orbit via tidal dissipation; its conserved primordial Earth+Moon spin (T_prim = 5.05 hr, J_EM = 3.45e34 kg m^2/s) sits on the small-body soliton capacity ceiling (eta_EM = 0.145 vs eta_0 = 0.129), while lunar braking has relaxed present-day Earth onto the ambient Galactic floor."
+            },
+            "nested_heliocentric_screening_shell_and_interior_audit": {
+              "r_star_over_a_4planets": {
+                "Earth": 7.237282417186316,
+                "Uranus": 1.4357489253083608,
+                "Neptune": 0.9953289952479707,
+                "Saturn": 7.367522290170758
+              },
+              "pearson_r_v_obs_over_v_tep_vs_ln_r_star_over_a": 0.96018806206538,
+              "pearson_p_v_obs_over_v_tep_vs_ln_r_star_over_a": 0.03981193793462001,
+              "spearman_rho_v_obs_over_v_tep_vs_r_star_over_a": 1.0,
+              "log_log_slope_dlnv_dln_rstar_a": 0.06605213390659936,
+              "zero_crossing_r_star_over_a": 2.3826095057320114,
+              "rms_residual_after_nested_shell_trend_pct": 1.8140742427055878,
+              "volumetric_deep_interior_4planet_ratios": {
+                "Earth": 1.0632004213671642,
+                "Saturn_ring_seismology_10p561hr": 1.0566135124531508,
+                "Uranus_deep_16p5hr": 1.0307923127548304,
+                "Neptune_deep_15p2hr": 0.972991646894179,
+                "mean_v_vol_int_over_v_tep": 1.0308994733673311,
+                "std_v_vol_int_over_v_tep": 0.04106048748710674,
+                "geometric_mean_rho_T_vol_int_g_cm3": 21.87200936561667
+              },
+              "lane_emden_polytropic_condensed_interior_moi_audit": {
+                "seven_condensed_giant_planets": [
+                  "Mercury",
+                  "Venus",
+                  "Earth",
+                  "Jupiter",
+                  "Saturn",
+                  "Uranus",
+                  "Neptune"
+                ],
+                "polytropic_index_n_from_k_moi": {
+                  "Mercury": 0.357,
+                  "Venus": 0.47,
+                  "Earth": 0.465,
+                  "Jupiter": 0.979,
+                  "Saturn": 1.375,
+                  "Uranus": 1.313,
+                  "Neptune": 1.181
+                },
+                "condensed_radius_ratio_R_cond_over_R_eq": {
+                  "Mercury": 1.0262,
+                  "Venus": 1.0,
+                  "Earth": 1.0012,
+                  "Jupiter": 0.8856,
+                  "Saturn": 0.7986,
+                  "Uranus": 0.8122,
+                  "Neptune": 0.8411
+                },
+                "two_k_moi_over_S_cond_per_planet": {
+                  "Mercury": 1.0969,
+                  "Venus": 1.0313,
+                  "Earth": 1.0186,
+                  "Jupiter": 1.1811,
+                  "Saturn": 1.109,
+                  "Uranus": 0.9231,
+                  "Neptune": 0.935
+                },
+                "mean_two_k_moi_over_S_cond_7planets": 1.042142857142857,
+                "std_two_k_moi_over_S_cond_7planets": 0.09407438293079323,
+                "geometric_mean_rho_T_moi_cond_g_cm3": 17.8572794149241
+              }
+            }
           },
           "two_branch_5_major_planets_model": {
             "names": [
@@ -3996,7 +3358,7 @@
               "v_obs_km_s": 0.24073066964586384,
               "v_ambient_tep_km_s": 0.0987581074482314,
               "v_soliton_cap_km_s": 0.9539309533332654,
-              "note": "Low-mass Mars (0.11 M_earth) sits in the transition region between the ambient curve (0.099 km/s) and the small-body soliton capacity curve (0.768 km/s) without a Mars-specific rule."
+              "note": "Low-mass Mars (0.11 M_earth) sits in the transition region between the ambient curve (0.099 km/s) and the small-body soliton capacity curve (0.954 km/s) without a Mars-specific rule."
             },
             "bryan_2020_pmo_breakup_envelope_test": {
               "n_objects_bryan_2020": 27,
@@ -4005,9 +3367,11 @@
                 0.31
               ],
               "observed_v_over_v_breakup_median": 0.11,
-              "tep_soliton_capacity_breakup_ceiling": 0.45,
+              "simp_j0136_observed_v_over_v_breakup": 0.4643,
+              "simp_j0136_predicted_v_cap_over_v_breakup": 0.4778,
+              "saturated_degenerate_bd_ceiling_v_cap_over_v_breakup_at_S_ge_1": 0.6295,
               "n_exceeding_ceiling": 0,
-              "falsifier": "Any unbraked planetary-mass companion or brown dwarf with M > M_cap = 0.61 M_Jup and v_eq / v_breakup > 0.45 falsifies the soliton angular-momentum capacity bound."
+              "falsifier": "Any unbraked planetary-mass companion or brown dwarf with M > M_cap = 0.61 M_Jup exceeding v_cap / v_breakup = (eta_0 / k_MOI) sqrt(min(1, S)) (0.478 at SIMP J0136 S=0.76, and 0.630 at S>=1) falsifies the soliton angular-momentum capacity bound."
             },
             "substellar_rotational_speed_limit_and_period_floor_test": {
               "simp_j0136_12p7_Mjup": {
@@ -4043,7 +3407,13 @@
                   "2M J0407+15"
                 ],
                 "mean_v_obs_over_v_2br": 1.0083718019728134,
-                "std_v_obs_over_v_2br": 0.05961642782792862
+                "std_v_obs_over_v_2br": 0.05961642782792862,
+                "secular_stability_eta_sec_1_over_8": {
+                  "eta_sec": 0.125,
+                  "jupiter_v_cap_eta_sec_km_s": 12.542887829257785,
+                  "simp_j0136_v_cap_eta_sec_km_s": 62.85325166844595,
+                  "brown_dwarf_P_min_eta_sec_hr": 1.2104839942903987
+                }
               }
             }
           },
@@ -4099,6 +3469,53 @@
               "inferred_rho_T_moi_mean_g_cm3": 17.89264819459809,
               "inferred_rho_T_moi_std_g_cm3": 1.370083965641835
             },
+            "low_pressure_uncompressed_satellites_diagnostic": {
+              "Moon": {
+                "P_central_GPa": 4.71,
+                "k_moi": 0.393,
+                "S_screening": 0.5508,
+                "two_k_moi_over_S": 1.427
+              },
+              "Io": {
+                "P_central_GPa": 5.77,
+                "k_moi": 0.378,
+                "S_screening": 0.5608,
+                "two_k_moi_over_S": 1.348
+              },
+              "Europa": {
+                "P_central_GPa": 3.09,
+                "k_moi": 0.346,
+                "S_screening": 0.5321,
+                "two_k_moi_over_S": 1.3
+              },
+              "Ganymede": {
+                "P_central_GPa": 3.65,
+                "k_moi": 0.312,
+                "S_screening": 0.4596,
+                "two_k_moi_over_S": 1.358
+              },
+              "Titan": {
+                "P_central_GPa": 3.28,
+                "k_moi": 0.341,
+                "S_screening": 0.4548,
+                "two_k_moi_over_S": 1.5
+              },
+              "Callisto": {
+                "P_central_GPa": 2.73,
+                "k_moi": 0.355,
+                "S_screening": 0.451,
+                "two_k_moi_over_S": 1.574
+              }
+            },
+            "unconstrained_compositional_power_law_baseline_vs_tep": {
+              "fitted_slope_beta_emp": 0.2385779760457014,
+              "fitted_slope_err": 0.03786417422020839,
+              "fitted_normalization_C_emp": 0.23047788605653577,
+              "zero_param_tep_slope": 0.3333333333333333,
+              "zero_param_tep_normalization_C": 0.18420157493201933,
+              "rms_scatter_0param_tep_dex": 0.07523507174453885,
+              "rms_scatter_2param_free_fit_dex": 0.03080936253604305
+            },
             "juno_cassini_refined_2k_over_S": {
               "Jupiter_k_0p26393": 1.3336455412924697,
               "Saturn_k_0p2181": 1.388718845950143
@@ -4138,6 +3555,115 @@
             "uranus_spin_angle_to_tep9_tno_axis_deg": 28.607288141709375,
             "uranus_spin_angle_to_tep9_meridian_plane_deg": 20.363631985891224,
             "uranus_spin_angle_to_cmb_apex_deg": 87.59073779479591
+          },
+          "random_density_and_look_elsewhere_coincidence_null_test": {
+            "n_monte_carlo_trials": 100000,
+            "prior_density_range_g_cm3": [
+              0.1,
+              10000.0
+            ],
+            "five_independent_channels_earth_spin_excluded": {
+              "ch1_terrestrial_gnss_Lc_4200km": 19.244111417505167,
+              "ch2_outer_3_giant_planet_spin_uranus_neptune_saturn": 19.88917842321665,
+              "ch3_brown_dwarf_period_floor_1p150hr": 20.790092703554265,
+              "ch4_terrestrial_core_screened_moi": 17.89264819459809,
+              "ch5_solar_model_S_convection_base_0p713Rsun": 20.154855875746495
+            },
+            "inferred_rho_T_5channel_mean_g_cm3": 19.594177322924132,
+            "inferred_rho_T_5channel_std_g_cm3": 1.1010616693758877,
+            "inferred_rho_T_5channel_log10_std_dex": 0.024851844734649752,
+            "inferred_rho_T_5channel_log10_range_dex": 0.06518180295164644,
+            "observed_5channel_rms_fractional_error": 0.02043173966728357,
+            "observed_5channel_max_fractional_error": 0.039180450031707004,
+            "p_1d_random_density_rms_le_obs": 0.00169,
+            "p_1d_random_density_max_err_le_5pct": 0.00758,
+            "p_5channel_coincidence_no_look_elsewhere": 1.444093998556679e-07,
+            "p_5channel_coincidence_with_343_algebraic_factor_look_elsewhere": 0.00029,
+            "four_channel_without_solar_prototype": {
+              "inferred_rho_T_4channel_mean_g_cm3": 19.454007684718544,
+              "inferred_rho_T_4channel_std_g_cm3": 1.2187967631481937,
+              "inferred_rho_T_4channel_log10_std_dex": 0.02747841014491288,
+              "inferred_rho_T_4channel_log10_range_dex": 0.06518180295164644,
+              "observed_4channel_rms_fractional_error": 0.022807087254120454,
+              "p_1d_random_density_rms_le_obs_4ch": 0.00229,
+              "p_4channel_coincidence_no_look_elsewhere": 8.861945715910592e-06,
+              "p_4channel_coincidence_with_49_algebraic_factor_look_elsewhere": 0.001
+            },
+            "small_body_eta_propagated_range": {
+              "eta_0_fiducial": 0.12905,
+              "eta_6body_median": 0.13757922845088688,
+              "eta_6body_iqr_25_75": [
+                0.12205372013233792,
+                0.15447009297543124
+              ],
+              "P_min_bd_at_eta_med6_hr": 1.0998062788258383,
+              "P_min_bd_iqr_25_75_hr": [
+                0.9795455959903258,
+                1.2397041165336045
+              ]
+            },
+            "algebraic_factor_dictionary_tested": [
+              0.5,
+              0.70710678,
+              1.0,
+              1.41421356,
+              1.73205081,
+              2.0,
+              3.14159265
+            ]
+          },
+          "solar_helioseismic_and_angular_momentum_audit": {
+            "R_T_sun_km": 287386.797430775,
+            "S_sun_R_T_over_R_sun": 0.4127104538454993,
+            "model_S_nuclear_core_rho_eq_rhoT_r_over_Rsun": 0.24891727818545697,
+            "model_S_nuclear_core_enclosed_mass_fraction": 0.44014813314005297,
+            "model_S_mean_density_rho_bar_eq_rhoT_r_over_Rsun": 0.36754436290860576,
+            "predicted_3D_convection_base_sqrt3_R_T_over_Rsun": 0.7148354748752149,
+            "observed_helioseismic_convection_base_r_cz_over_Rsun": 0.713,
+            "convection_base_fractional_agreement_percent": 0.25742985627137394,
+            "enclosed_mass_fraction_at_r_3D": 0.977688119187861,
+            "enclosed_mean_density_at_r_3D_g_cm3": 3.7642864583766125,
+            "inferred_rho_T_from_convection_base_g_cm3": 20.154855875746495,
+            "r_3D_range_across_rhoT_8_to_70_g_cm3": [
+              0.47081477374507497,
+              0.9701810029841345
+            ],
+            "prolate_tachocline_center_latitudinal_variation": {
+              "predicted_r_c_equator_0deg_over_Rsun": 0.6880707102775845,
+              "observed_r_c_equator_0deg_over_Rsun": 0.693,
+              "predicted_r_c_60deg_over_Rsun": 0.7081442837258073,
+              "observed_r_c_60deg_over_Rsun": 0.717,
+              "predicted_prolate_delta_r_c_60_minus_0": 0.020073573448222824,
+              "observed_prolate_delta_r_c_60_minus_0": 0.024
+            },
+            "bvp_gyration_threshold_y_eq_half_S_r_over_Rsun": 0.7227591727818545,
+            "local_gyration_threshold_S_A_eq_half_S_r_over_Rsun": 0.7227591727818545,
+            "zero_borrowing_harmonic_coefficients_a2_eq_a4": 0.1459151802903651,
+            "kic_8006161_hd173701_karoff_2018_solar_twin_check": {
+              "M_Msun": 1.0,
+              "R_Rsun": 0.93,
+              "S_star": 0.44377468155430033,
+              "predicted_Delta_Omega_S_over_sqrt2": 0.31379608664594644,
+              "observed_kepler_photometric_period_range_days": [
+                25.0,
+                35.0
+              ],
+              "observed_photometric_active_latitude_shear": 0.2857142857142857,
+              "note": "Karoff et al. (2018, ApJ 852, 46) report Kepler sliding-window photometric periods varying between 25 and 35 days ((35-25)/35 = 0.286 vs TEP S_*/sqrt(2) = 0.314), while asteroseismic splitting ratios across broader Kepler Sun-like stars (Benomar et al. 2018, Science 361, 1239) show larger convective shears with wide credible intervals."
+            },
+            "predicted_equatorial_v_eq_km_s": 1.9972507524432155,
+            "observed_carrington_v_eq_km_s": 1.9952,
+            "predicted_equatorial_Omega_nHz": 456.49011954698153,
+            "observed_helioseismic_equatorial_Omega_nHz": 460.7,
+            "predicted_radiative_lock_Omega_nHz": 426.8861914734926,
+            "observed_helioseismic_radiative_Omega_nHz": 432.0,
+            "predicted_differential_shear_S_sun_over_sqrt2": 0.2918303605807302,
+            "observed_helioseismic_differential_shear_a2_plus_a4": 0.2887,
+            "planetary_orbital_J_obs_kg_m2_s": 3.1355596423511185e+43,
+            "total_solar_system_J_obs_kg_m2_s": 3.1547596423511184e+43,
+            "predicted_solar_soliton_capacity_J_sol_eta_sec_kg_m2_s": 4.854280253661672e+43,
+            "predicted_solar_soliton_capacity_J_sol_eta0_kg_m2_s": 5.01155893388031e+43,
+            "total_solar_system_eta_sys": 0.08123654479908286
           }
         },
         "bodies": {

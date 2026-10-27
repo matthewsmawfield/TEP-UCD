@@ -1,3 +1,6 @@
-[22:17:38] [PROCESS] Executing Step 15: Planetary Rotational Kinematics & Wesson Law
-[22:17:38] [SUCCESS] Saved figure to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/results/figures/figure_9_planetary_rotation.png
-[22:17:38] [SUCCESS] Saved numerical outputs to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/results/outputs/step_15_planetary_rotation.json
+[0;34m[00:02:36] [PROCESS] Executing Step 15: Planetary Rotational Kinematics & Wesson Law[0m
+[1;32m[00:02:36] [SUCCESS] Saved figure to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/results/figures/figure_9_planetary_rotation.png[0m
+[1;32m[00:02:36] [SUCCESS] Saved solar helioseismology figure to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/results/figures/figure_11_solar_helioseismology.png[0m
+[1;32m[00:02:37] [SUCCESS] Saved numerical outputs to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/results/outputs/step_15_planetary_rotation.json[0m
+png
+[00:02:37] [SUCCESS] Saved numerical outputs to /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/results/outputs/step_15_planetary_rotation.json

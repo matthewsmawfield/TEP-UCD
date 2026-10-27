@@ -165,11 +165,22 @@ logresid_tb = np.log10(g_obs / pred_tb)
 logresid_tb_quad = np.log10(g_obs / pred_tb_quad)
 logresid_bl = np.log10(g_obs / pred_bl)
 
+
+# Exact coupled-gradient additive closure (Paper 0 §7; Paper 22 §6):
+# In the causal matter metric tilde_g_munu, the dielectric flux equation acts on the coupled gradient
+# a_phi * (a_phi + g_N) = g_N * a_eff -> a_phi = sqrt((g_N/2)^2 + g_N * a_eff) - g_N/2:
+pred_tb_coupled = 0.5 * g_bar + np.sqrt((0.5 * g_bar) ** 2 + g_bar * A0)
+logresid_tb_coupled = np.log10(g_obs / pred_tb_coupled)
+
 OUT["rar_prediction"] = {
     "n_points": NPTS,
     "primary_force_law": "g_obs = g_N + a_phi (action-derived additive force law from L_pp = -mc sqrt(-g_tilde_munu dx^mu dx^nu))",
     "zero_gradient_regulator_eps_reg": EPS_REG,
     "calibration_provenance": "k_star = 4 sqrt(2) g_t / a_0 = 16.03 calibrated to empirical scale a_0 = 1.2e-10 m/s^2 (not an independent prediction of a_0)",
+    "rms_log10_resid_coupled_gradient_additive": float(np.sqrt(np.mean(logresid_tb_coupled**2))),
+    "median_log10_resid_coupled_gradient_additive": float(np.median(logresid_tb_coupled)),
+    "frac_within_0p1dex_coupled_gradient_additive": float(np.mean(np.abs(logresid_tb_coupled) < 0.1)),
+    "derived_fiducial_velocity_ratio_at_a_eff": float(np.sqrt(0.5 + np.sqrt(1.25))),
     "rms_log10_resid_two_branch": float(np.sqrt(np.mean(logresid_tb**2))),
     "median_log10_resid_two_branch": float(np.median(logresid_tb)),
     "frac_within_0p1dex_two_branch":
@@ -238,6 +249,7 @@ for gid, R, Vobs, eV, Vgas, Vdisk, Vbul in rows:
 go_qc = np.array(go_qc)
 gb50_qc = np.array(gb50_qc)
 gb35_qc = np.array(gb35_qc)
+pred_qc_coupled50 = 0.5 * gb50_qc + np.sqrt((0.5 * gb50_qc) ** 2 + gb50_qc * A0)
 pred_qc_add50 = g_obs_curve(gb50_qc, PX_two_branch, quadrature=False)
 pred_qc_add35 = g_obs_curve(gb35_qc, PX_two_branch, quadrature=False)
 pred_qc_quad50 = g_obs_curve(gb50_qc, PX_two_branch, quadrature=True)
@@ -248,6 +260,9 @@ OUT["rar_prediction"]["quality_controlled_sparc_sample"] = {
     "selection_cuts": "Q <= 2, i >= 30 deg, e_Vobs / V_obs <= 0.10 (Lelli et al. 2017 standard SPARC RAR cuts)",
     "n_points": int(len(go_qc)),
     "n_galaxies": int(len(set(gids_qc))),
+    "rms_log10_resid_coupled_gradient_add_ml05": float(np.sqrt(np.mean(np.log10(go_qc / pred_qc_coupled50) ** 2))),
+    "median_log10_resid_coupled_gradient_add_ml05": float(np.median(np.log10(go_qc / pred_qc_coupled50))),
+    "frac_within_0p1dex_coupled_gradient_add_ml05": float(np.mean(np.abs(np.log10(go_qc / pred_qc_coupled50)) < 0.1)),
     "rms_log10_resid_two_branch_add_ml05": float(np.sqrt(np.mean(np.log10(go_qc / pred_qc_add50) ** 2))),
     "rms_log10_resid_two_branch_add_ml035": float(np.sqrt(np.mean(np.log10(go_qc / pred_qc_add35) ** 2))),
     "frac_within_0p1dex_two_branch_add_ml035": float(np.mean(np.abs(np.log10(go_qc / pred_qc_add35)) < 0.1)),

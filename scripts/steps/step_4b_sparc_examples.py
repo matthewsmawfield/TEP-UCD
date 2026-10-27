@@ -51,7 +51,7 @@ def compute_v_tep_two_branch(R_kpc, Vbar_kms, quadrature=False):
             hi *= 4.0
         ubar = brentq(f, 0.0, hi, xtol=1e-30, rtol=1e-12)
         a_phi = 2.0 * G_T * ubar
-        g_tot = np.hypot(g, a_phi) if quadrature else (g + a_phi)
+        g_tot = np.hypot(g, a_phi) if quadrature else (0.5 * g + np.sqrt((0.5 * g) ** 2 + g * A0_MOND))
         v_tep_kms[i] = np.sqrt(g_tot * R_m[i]) / KMS_MS
     return v_tep_kms
 

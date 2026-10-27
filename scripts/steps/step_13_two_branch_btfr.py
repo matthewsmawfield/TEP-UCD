@@ -104,7 +104,7 @@ def main():
     t1 = parse_table1(REPO / "Table1.mrt")
     t2 = parse_table2(REPO / "Table2.mrt")
 
-    outer_vobs, outer_vpred, outer_vpred_quad, outer_gN, names = [], [], [], [], []
+    outer_vobs, outer_vpred, outer_vpred_coupled, outer_vpred_quad, outer_gN, names = [], [], [], [], [], []
     for name, t1row in t1.items():
         curve = t2.get(name)
         if not curve or t1row["Vflat"] <= 0:
@@ -122,16 +122,22 @@ def main():
             gN = vbar2 * KMS ** 2 / (R * KPC)
             gp = g_obs_of_gN(gN)
             ap = gp - gN
+            gp_coupled = 0.5 * gN + np.sqrt((0.5 * gN) ** 2 + gN * A_EFF)
             gp_quad = np.hypot(gN, ap)
             vp = np.sqrt(gp * R * KPC) / KMS
+            vp_coupled = np.sqrt(gp_coupled * R * KPC) / KMS
             vp_quad = np.sqrt(gp_quad * R * KPC) / KMS
             outer_vobs.append(Vo); outer_vpred.append(vp)
+            outer_vpred_coupled.append(vp_coupled)
             outer_vpred_quad.append(vp_quad)
             outer_gN.append(gN / G_T); names.append(name)
 
     outer_vobs = np.array(outer_vobs)
     outer_vpred = np.array(outer_vpred)
+    outer_vpred_coupled = np.array(outer_vpred_coupled)
     outer_vpred_quad = np.array(outer_vpred_quad)
+    ratio_coupled = outer_vobs / outer_vpred_coupled
+    logres_coupled = np.log10(ratio_coupled)
     outer_gN = np.array(outer_gN)
     ratio = outer_vobs / outer_vpred
     logres = np.log10(ratio)
@@ -143,6 +149,9 @@ def main():
                float(A_EFF / G_T),
            "ups": [UPS_D, UPS_B], "hi_factor": HI_FAC,
            "outer_edge": {
+            "median_vobs_over_vpred_coupled_additive": float(np.median(ratio_coupled)),
+            "median_log10_resid_coupled_additive": float(np.median(logres_coupled)),
+            "rms_log10_resid_coupled_additive": float(np.sqrt(np.mean(logres_coupled ** 2))),
                "n_points": int(len(ratio)),
                "n_galaxies": int(len(set(names))),
                "median_vobs_over_vpred_quadrature": float(np.median(ratio_quad)),

@@ -1,9 +1,8 @@
-[20:25:36] [PROCESS] SPARC Example Rotation Curves
-[20:25:36] [PROCESS] Parsing SPARC tables
-[20:25:36] [INFO] Loaded 175 galaxies, 180 rotation curves
-[20:25:36] [PROCESS] Computing baryonic masses and R_dm for each galaxy
-[20:25:36] [INFO] Valid galaxies with R_dm: 172
-[20:25:36] [INFO] Selected 9 representative galaxies (log M_bar = 7.7 to 11.4)
-[20:25:37] [SUCCESS] Saved: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/scripts/steps/../../results/figures/figure_6_sparc_examples.png
-[20:25:37] [SUCCESS] Numerical outputs saved to results/outputs/step_4b_sparc_examples.json
-[20:25:37] [SUCCESS] Completed in 0.6s
+[16:38:10] [PROCESS] SPARC Example Rotation Curves
+[16:38:10] [PROCESS] Parsing SPARC tables
+[16:38:10] [INFO] Loaded 175 galaxies, 180 rotation curves
+[16:38:10] [PROCESS] Computing baryonic masses and R_dm for each galaxy
+[16:38:10] [INFO] Valid galaxies with R_dm: 172
+[16:38:10] [INFO] Selected 9 representative galaxies (log M_bar = 7.7 to 11.4)
+[16:38:11] [SUCCESS] Saved: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-UCD/scripts/steps/../../results/figures/figure_6_sparc_examples.png
+[16:38:11] [SUCCESS] Numerical outputs saved to results/outputs/step_4b_sparc_examples.json
