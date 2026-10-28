@@ -125,7 +125,13 @@
             0.182,
             0.29
           ],
-          "composite_75spiral_25bulge_nsc_mean": 0.197
+          "composite_75spiral_25bulge_nsc_mean": 0.197,
+          "freeman_disk_radial_sfr_integrated_mean": 0.243,
+          "freeman_disk_radial_sfr_integrated_std": 0.052,
+          "freeman_disk_radial_sfr_integrated_median": 0.24,
+          "freeman_disk_full_2d_M_R_dispersion_std": 0.1,
+          "composite_75spiral_disk_int_25bulge_nsc_mean": 0.202,
+          "progenitor_screening_rule": "Evaluated at the hydrostatic core configuration where the gravitational mass threshold M_* propto G_loc^(-3/2) is triggered: for Type Ia supernovae (M_Ch), a Chandrasekhar white dwarf has bulk density rho_WD ~ 2e6 g/cm^3 >> rho_T (S_WD = 46.4 => eps_SNIa = 0.0043 << 0.150), whereas for BBHs the e+e- pair-instability threshold (M_PISN; Fowler & Hoyle 1964, Woosley 2017) is triggered in radiation-pressure-supported high-entropy He/C-O cores at rho_PISN ~ 5-50 g/cm^3 ~ O(rho_T) (S_PISN ~ 0.63-1.36 ~ 1, alongside MS 0.01-0.1 g/cm^3, WR 1-10 g/cm^3, and wide binary orbits a_orb >> R_T >> R_S), leaving eps_BBH ~ eps_host unscreened."
         }
       },
       "note": "Integrating across all interior shells r in [500, 6321] km weighted by r^2|du/dr| yields L_c = 3044-3213 km (R^2 = 0.981-0.985), matching the 25.3-yr isotropic CODE baseline (3210 +- 389 km, Paper 2) and ESA Final (3193 km), while the transition-centroid shell (R_grad = 4875 km) yields L_c = 4010 km matching the cross-sector/PPP baseline (4201 km)."

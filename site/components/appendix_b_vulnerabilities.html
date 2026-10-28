@@ -98,7 +98,7 @@
 <p>
     <strong>Mitigation:</strong> The screening hierarchy verification
     (<code>scripts/steps/step_5_ultimate_screening.py</code> and <code>scripts/verification/verify_screening_claim.py</code>) performs object-by-object residual
-    analysis across the 11 dense objects (\(\rho > \rho_T\)), confirming \(\beta_{\rm scr} = 0.3338 \pm 0.0008\) (\(R^2 = 0.99995\)). While the density-ordered \(S = R_T/R_{\rm phys}\) relation is an internal consistency check by construction, the planetary rotational kinematics and moment-of-inertia test in Section 4.7 (<code>step_15_planetary_rotation.py</code>) breaks this algebraic circularity by testing \(R_T(M)\) and \(S\) against independent NASA/JPL ephemeris spin velocities (\(v_{\rm obs}/v_{\rm TEP} = 1.000 \pm 0.080\) across the three unbraked outer giant planets Uranus, Neptune, and Saturn [\(\hat\rho_T^{\rm spin} = 19.9\) g/cm³], and \(1.016 \pm 0.073\) with lunar-braked Earth), moments of inertia (\(2k_{\rm MOI}/S = 1.039 \pm 0.027\) across the three core-screened terrestrial planets and \(2k_{\rm MOI}/S_{\rm cond} = 1.042 \pm 0.094\) across all seven condensed/giant planets), Wesson's angular-momentum constant \(p_{\rm TEP} = G/(2v_{\rm gal})\), and a 100,000-trial random-density look-elsewhere coincidence null test across five independent channels (\(\hat\rho_T = 19.59 \pm 1.10\) g/cm³, \(p = 2.9 \times 10^{-4}\)).
+    analysis across the 11 dense objects (\(\rho > \rho_T\)), confirming \(\beta_{\rm scr} = 0.3338 \pm 0.0008\) (\(R^2 = 0.99995\)). While the density-ordered \(S = R_T/R_{\rm phys}\) relation is an internal consistency check by construction, the planetary rotational kinematics, moment-of-inertia, and satellite tests in Section 4.7 (<code>step_15_planetary_rotation.py</code>, <code>step_16_saturn_interior.py</code>) break this algebraic circularity by testing \(R_T(M)\) and \(S\) against independent NASA/JPL ephemeris spin velocities (\(v_{\rm obs}/v_{\rm TEP} = 1.000 \pm 0.080\) across the three unbraked outer giant planets Uranus, Neptune, and Saturn [\(\hat\rho_T^{\rm spin} = 19.9\) g/cm³], and \(1.016 \pm 0.073\) with lunar-braked Earth), moments of inertia (\(2k_{\rm MOI}/S = 1.039 \pm 0.027\) across the three core-screened terrestrial planets and \(2k_{\rm MOI}/S_{\rm cond} = 1.042 \pm 0.094\) across all seven condensed/giant planets), outer non-tidally-locked satellite soliton capacity (\(\bar\eta_{\rm moons} = 0.1320 \pm 0.0113\) across Phoebe, Himalia, and Nereid, \(\hat\rho_T^{\rm moons} = 19.8\text{--}20.6\) g/cm³), Wesson's angular-momentum constant \(p_{\rm TEP} = G/(2v_{\rm gal})\), and a 100,000-trial random-density look-elsewhere coincidence null test across five independent channels (\(\hat\rho_T = 19.59 \pm 1.10\) g/cm³, \(p = 2.9 \times 10^{-4}\); and \(19.77 \pm 0.48\) g/cm³, \(p = 5.2 \times 10^{-5}\) on the three-channel subset without algebraic prefactors).
 </p>
 
 <h3>B.5 Cross-Paper Parameter Drift</h3>
@@ -387,8 +387,8 @@
         <tr>
             <td>Earth not a soliton</td>
             <td>Low–Medium</td>
-            <td>4-layer PREM Earth BVP &amp; 1-D spherical nonlinear Picard solve ($\|\Delta u^{(100)}\|_\infty = 2.67\times 10^{-14}$) executed: recovers $R_{\rm grad} = 4{,}875$ km ($4{,}810$ km nonlinear), $L_c^{\rm PREM} = 4{,}010$ km ($3{,}957$ km nonlinear), and $L_c^{\rm vol} = 3{,}213$ km ($3{,}170$ km nonlinear; Step 14)</td>
-            <td>TEP-UCD v0.11 (3-D azimuthal EW/NS PDE in future work)</td>
+            <td>4-layer PREM Earth BVP, 1-D spherical nonlinear Picard solve ($\|\Delta u^{(100)}\|_\infty = 2.67\times 10^{-14}$; recovers $R_{\rm grad} = 4{,}875$ km [$4{,}810$ km nonlinear], $L_c^{\rm PREM} = 4{,}010$ km [$3{,}957$ km nonlinear], $L_c^{\rm vol} = 3{,}213$ km [$3{,}170$ km nonlinear]; Step 14), and 7-planet Lane–Emden unscreened-interior nonlinear Picard scan ($R_{\rm grad} \approx 0.75\text{--}0.83\,R_{\rm vol}$; Step 16)</td>
+            <td>Resolved in TEP-UCD v0.11–v0.12 (Steps 14, 16; 3-D azimuthal EW/NS PDE in future work)</td>
         </tr>
         <tr>
             <td>SPARC $M^{1/3} \to M^{1/2}$ transition &amp; $R_d$ confound</td>
@@ -399,8 +399,8 @@
         <tr>
             <td>Screening hierarchy algebraic</td>
             <td>Low</td>
-            <td>Supplemented by the fixed-input ambient planetary scaling relation and the one-parameter ($\eta_0 = 0.129$) two-branch planetary/substellar consistency test (§4.7, Step 15)</td>
-            <td>TEP-UCD v0.11</td>
+            <td>Supplemented by the fixed-input ambient planetary scaling relation, the two-branch planetary/substellar/outer-moon ($\bar\eta_{\rm moons} = 0.1320 \pm 0.0113$) rotational consistency tests, and the three-channel zero-prefactor convergence ($\hat\rho_T = 19.77 \pm 0.48$ g/cm³, $p = 5.2 \times 10^{-5}$; §4.7, Steps 15–16)</td>
+            <td>Resolved in TEP-UCD v0.11–v0.12 (Steps 15–16)</td>
         </tr>
         <tr>
             <td>Cross-paper parameter drift</td>

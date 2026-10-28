@@ -133,6 +133,412 @@
           "std_two_k_moi_over_S_cond_7planets": 0.09407438293079323,
           "geometric_mean_rho_T_moi_cond_g_cm3": 17.8572794149241
         }
+      },
+      "saturn_maximally_ambient_coupled_audit": {
+        "S_screening_lowest_of_major_planets": 0.3141024558513554,
+        "multi_clock_residual_table": {
+          "ring_seismology_deep_interior_10h33m38s": {
+            "period_hr": 10.5606,
+            "radius_km": 58232.0,
+            "v_eq_km_s": 9.624,
+            "v_obs_over_v_TEP": 1.0567,
+            "rho_T_spin_inferred_g_cm3": 23.6,
+            "source": "Mankovich et al. 2019 C-ring kronoseismology"
+          },
+          "potential_vorticity_SystemIIIw_10h34m13s": {
+            "period_hr": 10.5703,
+            "radius_km": 58232.0,
+            "v_eq_km_s": 9.615,
+            "v_obs_over_v_TEP": 1.0557,
+            "rho_T_spin_inferred_g_cm3": 23.53,
+            "source": "Read et al. 2009 Nature"
+          },
+          "voyager_SystemIII_SLS_10h39m24s_at_Rvol": {
+            "period_hr": 10.6567,
+            "radius_km": 58232.0,
+            "v_eq_km_s": 9.537,
+            "v_obs_over_v_TEP": 1.0471,
+            "rho_T_spin_inferred_g_cm3": 22.96,
+            "source": "Desch & Kaiser 1981 / Davies et al. 1995 (volumetric)"
+          },
+          "voyager_SystemIII_SLS_10h39m24s_at_Req": {
+            "period_hr": 10.6567,
+            "radius_km": 60268.0,
+            "v_eq_km_s": 9.871,
+            "v_obs_over_v_TEP": 1.0837,
+            "rho_T_spin_inferred_g_cm3": 25.46,
+            "source": "Desch & Kaiser 1981 / Davies et al. 1995 (1-bar equatorial, table convention)"
+          },
+          "cassini_SKR_fast_component_10h36m": {
+            "period_hr": 10.6,
+            "radius_km": 58232.0,
+            "v_eq_km_s": 9.588,
+            "v_obs_over_v_TEP": 1.0527,
+            "rho_T_spin_inferred_g_cm3": 23.33,
+            "source": "Kurth et al. 2008 / Gurnett et al. 2009 (~10.6 hr component)"
+          },
+          "cassini_SKR_slow_component_10h48m": {
+            "period_hr": 10.8,
+            "radius_km": 58232.0,
+            "v_eq_km_s": 9.411,
+            "v_obs_over_v_TEP": 1.0332,
+            "rho_T_spin_inferred_g_cm3": 22.06,
+            "source": "Kurth et al. 2008 / Gurnett et al. 2009 (~10.8 hr component)"
+          },
+          "ulysses_and_cassini_approach_SKR_10h45m45s": {
+            "period_hr": 10.7625,
+            "radius_km": 58232.0,
+            "v_eq_km_s": 9.443,
+            "v_obs_over_v_TEP": 1.0368,
+            "rho_T_spin_inferred_g_cm3": 22.29,
+            "source": "Galopeau & Lecacheux 2000 / Gurnett et al. 2005"
+          }
+        },
+        "all_clock_ratios_above_unity": true,
+        "v_obs_over_v_TEP_across_clocks_range": [
+          1.0332,
+          1.0837
+        ],
+        "rho_T_spin_inferred_across_clocks_range_g_cm3": [
+          22.06,
+          25.46
+        ],
+        "assessment": "Every independently measured Saturn clock exceeds v_TEP \u2014 the residual is structural and robust to the Saturn rotation-period ambiguity. The interior clocks (kronoseismology, PV frame) carry the claim (+5.7%); magnetospheric SKR rows are formal equatorial conversions included to show the sign is convention- and clock-independent (+3.3% to +8.4% across all conventions), and the ordering follows the r*/a nested-shell trend.",
+        "ambient_vs_soliton_clock_stability_dichotomy": {
+          "entries": [
+            {
+              "body": "Jupiter",
+              "branch": "soliton (M > M_cap)",
+              "abs_dP_over_P_pct_per_decade_est": 1e-05,
+              "note": "System III constant since 1960s; Io-DAM anchored (Desch et al. 1994)"
+            },
+            {
+              "body": "SIMP J0136",
+              "branch": "soliton (unscreened S<1)",
+              "abs_dP_over_P_pct_per_decade_est": 0.001,
+              "note": "2.414 hr photometric period stable across multi-epoch campaigns"
+            },
+            {
+              "body": "2M J0348-60",
+              "branch": "saturated (S>=1)",
+              "abs_dP_over_P_pct_per_decade_est": 0.001,
+              "note": "1.080 hr photometric period stable (Tannock et al. 2021)"
+            },
+            {
+              "body": "2M J1219+31",
+              "branch": "saturated (S>=1)",
+              "abs_dP_over_P_pct_per_decade_est": 0.001,
+              "note": "1.140 hr photometric period stable (Tannock et al. 2021)"
+            },
+            {
+              "body": "2M J0407+15",
+              "branch": "saturated (S>=1)",
+              "abs_dP_over_P_pct_per_decade_est": 0.001,
+              "note": "1.230 hr photometric period stable (Tannock et al. 2021)"
+            },
+            {
+              "body": "Uranus",
+              "branch": "ambient (M < M_cap)",
+              "abs_dP_over_P_pct_per_decade_est": 0.011,
+              "note": "Voyager 2 17.24 hr (1986) -> HST auroral 17h14m52s (Lamy et al. 2025): +28 s / 39.4 yr"
+            },
+            {
+              "body": "Neptune",
+              "branch": "ambient (M < M_cap)",
+              "abs_dP_over_P_pct_per_decade_est": 0.03,
+              "note": "Voyager radio 16.11 hr (1989); later radio detections wander ~0.1-0.5%"
+            },
+            {
+              "body": "Saturn",
+              "branch": "ambient (M < M_cap, lowest S)",
+              "abs_dP_over_P_pct_per_decade_est": 0.33,
+              "note": "SKR 10h39m24s (Voyager 1980) -> ~10h47m (Cassini 2017); dual N/S periods ~10.6/10.8 hr; equinox reversals 1995 & 2009"
+            },
+            {
+              "body": "Mars",
+              "branch": "transition (off-ambient)",
+              "abs_dP_over_P_pct_per_decade_est": 0.0001,
+              "note": "Rotation ultra-stable (VLBI/lander tracking); not on the ambient branch"
+            }
+          ],
+          "note": "Per-decade drift figures are literature compilations/estimates, not fits; the two computed anchors are Saturn (~0.43-0.45%/decade) and Uranus (~0.012%/decade).",
+          "saturn_drift_pct_per_decade_voyager_to_2003": 0.4317,
+          "saturn_drift_pct_per_decade_voyager_to_cassini_era": 0.4482,
+          "uranus_drift_pct_per_decade_voyager_to_hst2025": 0.0116,
+          "ordering": "Saturn (ambient, lowest S, no tilted-field fiducial) >> Neptune ~ Uranus (ambient but tilted fields anchor to interior) >> Jupiter ~ brown dwarfs ~ SIMP J0136 (soliton/saturated, ~0) \u2014 clock stability requires either the soliton branch or an interior fiducial; Saturn uniquely lacks both.",
+          "skr_equinox_reversal_falsifier": {
+            "observed": [
+              "1995-11-19 (Ulysses)",
+              "2009-08-11 (Cassini)"
+            ],
+            "next_equinox": "2025-05-06",
+            "prediction": "Ambient-branch coupling predicts renewed N/S SKR period-ordering reversal near the May 2025 equinox (observable by Wind/STEREO WAVES; SKR < 1.2 MHz is ground-blocked)."
+          }
+        },
+        "interior_boundary_atlas": {
+          "Saturn": {
+            "R_T_over_R_vol": 0.3251,
+            "diffuse_stably_stratified_core_extent_R": [
+              0.2,
+              0.6
+            ],
+            "helium_rain_stable_layer_above_dynamo_km": ">2500-3000 (Cao et al. 2020)",
+            "deep_wind_decay_depth_km": [
+              9000,
+              11000
+            ],
+            "wind_base_R": [
+              0.8,
+              0.85
+            ],
+            "assessment": "R_T = 0.325 R_S sits inside the diffuse core-envelope transition region that extends out to ~0.6 R_S (Mankovich & Fuller 2021); the separate thin (>2500-3000 km) He-rain stable layer that axisymmetrizes the dynamo field sits above it (Cao et al. 2020) \u2014 two distinct stratified structures."
+          },
+          "Jupiter": {
+            "R_T_over_R_vol": 0.4048,
+            "dilute_core_extent_R": [
+              0.4,
+              0.5
+            ],
+            "deep_wind_decay_depth_km": 3000,
+            "wind_base_R": 0.95,
+            "assessment": "R_T = 0.405 R_J lands at the outer boundary of the Juno dilute-core region (Wahl et al. 2017; Debras & Chabrier 2019)."
+          },
+          "Earth": {
+            "R_T_over_R": 0.6508,
+            "prem_nonlinear_gradient_centroid_km": 4810.0,
+            "centroid_over_R_T": 1.16,
+            "assessment": "PREM kernel centroid sits at 1.160 R_T in the lower mantle (Step 14 nonlinear Picard solution)."
+          },
+          "Sun": {
+            "R_T_over_R_sun": 0.4131,
+            "convection_zone_base_over_R_sun": 0.713,
+            "sqrt3_R_T_over_R_sun": 0.7155,
+            "assessment": "Tachocline at sqrt(3) R_T = 0.715 R_sun vs measured 0.713 R_sun (existing Ch5 channel)."
+          }
+        },
+        "titan_angular_momentum_budget_audit": {
+          "L_titan_over_J_saturn": 0.0132,
+          "titan_migration_rate_m_per_yr": 0.113,
+          "titan_migration_timescale_Gyr": 10.81,
+          "saturn_spin_perturbation_pct_per_Gyr": 0.1219,
+          "universal_tep_satellite_expansion_law": {
+            "t_H_Gyr": 13.97,
+            "t_mig_TEP_3_over_4_tH_Gyr": 10.48,
+            "t_mig_linear_1H0_3_over_2_tH_Gyr": 20.95,
+            "metric_lapse_derivation": "In an ambient-branch planet (M < M_cap) with an interior saturation core boundary at R_T(M) < R_p coupled to an exterior orbit a >> R_T (an inhomogeneous two-zone geometry where differential drift between R_T and a cannot be removed by a homogeneous time redefinition d tau = A(t) dt), the cosmological lapse/mode drift |d ln(omega_mode)/dt| = |d ln|g_00|/dt| = 2 H0 = 4 g_t / c paces the non-axisymmetric resonance-locked spin-to-orbit tidal torque Gamma_mode = -d Phi_mode/d phi = dL_orb/dt = -dJ_p/dt (Fuller et al. 2016; Lainey et al. 2020), yielding da/dt / a = +(2/3)|d ln(omega_mode)/dt| = +(4/3) H0 = 8 g_t / (3 c) = (10.48 Gyr)^(-1), dL_orb/L_orb = +(2/3) H0 dt = -dJ_p/L_orb, d ln|E_orb|/dt = -(4/3) H0 (signed dE_orb/|E_orb| = +(4/3) H0 dt), and <de/dt>_sec = 0.",
+            "earth_moon_LLR_obs_da_dt_cm_yr": 3.82,
+            "earth_moon_TEP_pred_da_dt_cm_yr": 3.67,
+            "earth_moon_residual_oceanic_tide_da_dt_cm_yr": 0.15,
+            "earth_moon_obs_t_mig_Gyr": 10.06,
+            "earth_moon_a_at_minus_4p5Gyr_pure_TEP_frac_a0": 0.6508,
+            "earth_moon_a_at_minus_4p5Gyr_coupled_TEP_plus_tide_frac_a0": 0.5587,
+            "earth_moon_classical_pure_tide_gerstenkorn_collision_age_Gyr": 1.55,
+            "saturn_titan_Cassini_obs_da_dt_cm_yr": 11.3,
+            "saturn_titan_TEP_pred_da_dt_cm_yr": 11.66,
+            "saturn_titan_linear_1H0_pred_da_dt_cm_yr": 5.83,
+            "saturn_titan_Cassini_obs_Q": "124 +- 22",
+            "saturn_titan_TEP_pred_Q": 119.4,
+            "saturn_titan_linear_1H0_pred_Q": 238.8,
+            "jupiter_soliton_branch_positive_control": "Jupiter (M = 317.8 M_earth > M_cap = 194.2 M_earth) sits on the rigid soliton branch rather than the drifting ambient branch; correspondingly, its Galilean moons in the 4:2:1 Laplace resonance retain high near-classical Q_Jup = (3.56 +- 0.56)e4 (Lainey et al. 2009) rather than the rapid ~10.5 Gyr ambient-branch expansion observed at Earth (Q ~ 12) and Saturn (Q_Titan = 124 +- 22).",
+            "saturn_6_moon_apparent_Q_spectrum": {
+              "Mimas": {
+                "a_orb_km": 185539.0,
+                "M_kg": 3.7493e+19,
+                "predicted_da_dt_TEP_cm_per_yr": 1.77,
+                "predicted_apparent_Q_TEP_at_10p48Gyr": 6965.6,
+                "predicted_apparent_Q_linear_1H0_at_20p95Gyr": 13931.2,
+                "cassini_measured_Q_Lainey2020": "unconstrained / >1000"
+              },
+              "Enceladus": {
+                "a_orb_km": 238042.0,
+                "M_kg": 1.08022e+20,
+                "predicted_da_dt_TEP_cm_per_yr": 2.27,
+                "predicted_apparent_Q_TEP_at_10p48Gyr": 3972.9,
+                "predicted_apparent_Q_linear_1H0_at_20p95Gyr": 7945.7,
+                "cassini_measured_Q_Lainey2020": "~1000 - 4000 (heating-dependent)"
+              },
+              "Tethys": {
+                "a_orb_km": 294672.0,
+                "M_kg": 6.17449e+20,
+                "predicted_da_dt_TEP_cm_per_yr": 2.81,
+                "predicted_apparent_Q_TEP_at_10p48Gyr": 5672.0,
+                "predicted_apparent_Q_linear_1H0_at_20p95Gyr": 11344.0,
+                "cassini_measured_Q_Lainey2020": ">3000 (astrometry; non-monotonic rise above Enceladus)"
+              },
+              "Dione": {
+                "a_orb_km": 377415.0,
+                "M_kg": 1.095452e+21,
+                "predicted_da_dt_TEP_cm_per_yr": 3.6,
+                "predicted_apparent_Q_TEP_at_10p48Gyr": 2014.2,
+                "predicted_apparent_Q_linear_1H0_at_20p95Gyr": 4028.4,
+                "cassini_measured_Q_Lainey2020": "~1500 - 4000"
+              },
+              "Rhea": {
+                "a_orb_km": 527068.0,
+                "M_kg": 2.306518e+21,
+                "predicted_da_dt_TEP_cm_per_yr": 5.03,
+                "predicted_apparent_Q_TEP_at_10p48Gyr": 483.8,
+                "predicted_apparent_Q_linear_1H0_at_20p95Gyr": 967.6,
+                "cassini_measured_Q_Lainey2020": "~300 (Lainey et al. 2017, 2020)"
+              },
+              "Titan": {
+                "a_orb_km": 1221870.0,
+                "M_kg": 1.3452e+23,
+                "predicted_da_dt_TEP_cm_per_yr": 11.66,
+                "predicted_apparent_Q_TEP_at_10p48Gyr": 119.4,
+                "predicted_apparent_Q_linear_1H0_at_20p95Gyr": 238.8,
+                "cassini_measured_Q_Lainey2020": "124 +- 22 (Cassini radio tracking) / 61 (+240,-31) (astrometry)"
+              }
+            }
+          },
+          "assessment": "Even under resonance-locked Q_eff = 124 +- 22 (Lainey et al. 2020), Titan transfers < ~0.6% of Saturn's spin angular momentum over Solar-System age \u2014 and its fractional orbital expansion rate da/dt / a = (10.81 +- 1.91 Gyr)^(-1) matches both Earth's Moon (10.06 Gyr) and the zero-parameter TEP cosmological drift law da/dt / a = (4/3) H0 = 8 g_t / (3 c) = (10.48 Gyr)^(-1), which simultaneously reproduces the 50x apparent-Q variation across all six measured Saturnian moons."
+        },
+        "decoupled_outer_moons_soliton_branch_and_ring_shell_audit": {
+          "outer_3_decoupled_moons": {
+            "Phoebe": {
+              "host": "Saturn",
+              "M_kg": 8.292e+18,
+              "R_km": 106.5,
+              "P_rot_hr": 9.2735,
+              "a_orb_km": 12955759.0,
+              "r_star_over_a_orb": 0.0985,
+              "R_T_km": 46.26,
+              "eta_rot_differentiated_k": 0.1392,
+              "eta_rot_uniform_k0p35": 0.1477,
+              "source": "Cassini flyby (Thomas et al. 2007; Castillo-Rogez et al. 2012)"
+            },
+            "Himalia": {
+              "host": "Jupiter",
+              "M_kg": 4.2e+18,
+              "R_km": 69.8,
+              "P_rot_hr": 7.782,
+              "a_orb_km": 11461000.0,
+              "r_star_over_a_orb": 0.0792,
+              "R_T_km": 36.87,
+              "eta_rot_differentiated_k": 0.119,
+              "eta_rot_uniform_k0p35": 0.119,
+              "source": "Cassini/Galileo astrometry & lightcurve (Emelyanov 2005; Pilcher et al. 2012)"
+            },
+            "Nereid": {
+              "host": "Neptune",
+              "M_kg": 3.1e+19,
+              "R_km": 178.5,
+              "P_rot_hr": 11.594,
+              "a_orb_km": 5513818.0,
+              "r_star_over_a_orb": 0.4474,
+              "R_T_km": 71.79,
+              "eta_rot_differentiated_k": 0.1377,
+              "eta_rot_uniform_k0p35": 0.1377,
+              "source": "Voyager 2 / Kepler K2 & Herschel (Kiss et al. 2016)"
+            }
+          },
+          "mean_eta_rot_differentiated_k": 0.132,
+          "std_eta_rot_differentiated_k": 0.0113,
+          "mean_eta_rot_uniform_k0p35": 0.1348,
+          "std_eta_rot_uniform_k0p35": 0.0146,
+          "chandrasekhar_jacobi_invariant": 0.137528,
+          "inferred_rho_T_moons_vs_jacobi_g_cm3": 20.61,
+          "inferred_rho_T_moons_vs_bracket_midpoint_g_cm3": 19.84,
+          "saturn_ring_moon_r_star_over_a_hierarchy": {
+            "Daphnis": {
+              "a_orb_km": 136505.0,
+              "M_kg": 77000000000000.0,
+              "r_star_over_a": 0.0285,
+              "regime": "ring-embedded moonlet (Keeler gap)"
+            },
+            "Pan": {
+              "a_orb_km": 133584.0,
+              "M_kg": 4950000000000000.0,
+              "r_star_over_a": 0.2333,
+              "regime": "ring-embedded moonlet (Encke gap)"
+            },
+            "Atlas": {
+              "a_orb_km": 137670.0,
+              "M_kg": 6600000000000000.0,
+              "r_star_over_a": 0.2614,
+              "regime": "ring-edge moonlet (A-ring outer edge)"
+            },
+            "Prometheus": {
+              "a_orb_km": 139380.0,
+              "M_kg": 1.595e+17,
+              "r_star_over_a": 1.2694,
+              "regime": "inner F-ring shepherd (first body with r_*/a > 1)"
+            },
+            "Pandora": {
+              "a_orb_km": 141720.0,
+              "M_kg": 1.371e+17,
+              "r_star_over_a": 1.1575,
+              "regime": "outer F-ring shepherd (r_*/a > 1)"
+            },
+            "Epimetheus": {
+              "a_orb_km": 151410.0,
+              "M_kg": 5.266e+17,
+              "r_star_over_a": 2.1233,
+              "regime": "co-orbital synchronous"
+            },
+            "Janus": {
+              "a_orb_km": 151460.0,
+              "M_kg": 1.898e+18,
+              "r_star_over_a": 4.0298,
+              "regime": "co-orbital synchronous"
+            },
+            "Mimas": {
+              "a_orb_km": 185539.0,
+              "M_kg": 3.7493e+19,
+              "r_star_over_a": 14.6209,
+              "regime": "regular synchronous"
+            },
+            "Enceladus": {
+              "a_orb_km": 238042.0,
+              "M_kg": 1.08022e+20,
+              "r_star_over_a": 19.3436,
+              "regime": "regular synchronous"
+            },
+            "Tethys": {
+              "a_orb_km": 294672.0,
+              "M_kg": 6.17449e+20,
+              "r_star_over_a": 37.359,
+              "regime": "regular synchronous"
+            },
+            "Dione": {
+              "a_orb_km": 377415.0,
+              "M_kg": 1.095452e+21,
+              "r_star_over_a": 38.8518,
+              "regime": "regular synchronous"
+            },
+            "Rhea": {
+              "a_orb_km": 527068.0,
+              "M_kg": 2.306518e+21,
+              "r_star_over_a": 40.3688,
+              "regime": "regular synchronous"
+            },
+            "Titan": {
+              "a_orb_km": 1221870.0,
+              "M_kg": 1.3452e+23,
+              "r_star_over_a": 132.9849,
+              "regime": "regular synchronous"
+            },
+            "Hyperion": {
+              "a_orb_km": 1481009.0,
+              "M_kg": 5.62e+18,
+              "r_star_over_a": 0.7092,
+              "regime": "SOLE r_*/a < 1 outer regular-zone moon \u2014 chaotic tumbler (Wisdom, Peale & Mignard 1984)"
+            },
+            "Iapetus": {
+              "a_orb_km": 3560820.0,
+              "M_kg": 1.805635e+21,
+              "r_star_over_a": 5.2869,
+              "regime": "regular synchronous"
+            },
+            "Phoebe": {
+              "a_orb_km": 12955759.0,
+              "M_kg": 8.292e+18,
+              "r_star_over_a": 0.0985,
+              "regime": "irregular decoupled (r_*/a = 0.098 < 1; soliton rotator eta_rot = 0.139)"
+            }
+          },
+          "roche_limit_R_T_cancellation_identity": "a_Roche(M_p, rho_m) = 2.456 R_p (rho_p/rho_m)^(1/3) === 2.456 R_T(M_p) (rho_T/rho_m)^(1/3): planet radius R_p and density rho_p cancel identically, fixing the porous-ice ring boundary at 6.90-7.50 R_T(M_p) (matching Saturn's A-ring edge 7.23 R_T = 136,775 km and F ring 7.41 R_T = 140,180 km)."
+        }
       }
     },
     "two_branch_5_major_planets_model": {
@@ -446,7 +852,18 @@
           0.393
         ],
         "classical_newtonian_jacobi_without_tep_saturation_mean_hr": 0.527,
-        "classical_newtonian_jacobi_rejection_sigma": 8.31
+        "classical_newtonian_jacobi_rejection_sigma": 8.31,
+        "classical_polytrope_envelope_jacobi_eta_sqrt_2kw_beta": 0.2198,
+        "classical_polytrope_envelope_jacobi_periods_hr": [
+          0.366,
+          0.377,
+          0.246
+        ],
+        "classical_polytrope_envelope_jacobi_mean_hr": 0.33,
+        "classical_polytrope_envelope_jacobi_rejection_sigma": 10.94,
+        "classical_polytrope_mass_shedding_eta": 0.1677,
+        "classical_polytrope_mass_shedding_mean_hr": 0.432,
+        "classical_polytrope_mass_shedding_rejection_sigma": 9.57
       },
       "prior_range_and_systematic_propagation_audit": {
         "prior_width_sensitivity": {

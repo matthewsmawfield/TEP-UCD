@@ -6,8 +6,8 @@
 ![Temporal Topology Saturation Scale](site/public/og-image.jpg)
 
 **Author:** Matthew Lukin Smawfield
-**Version:** v0.11 (New Delhi)
-**First published:** 28 December 2025 · **Last updated:** 26 October 2026
+**Version:** v0.12 (New Delhi)
+**First published:** 28 December 2025 · **Last updated:** 28 October 2026
 **Status:** Preprint
 **DOI:** [10.5281/zenodo.18064365](https://doi.org/10.5281/zenodo.18064365)
 **Website:** [https://mlsmawfield.com/tep/ucd/](https://mlsmawfield.com/tep/ucd/)
@@ -92,7 +92,7 @@ The current findings, numerical results and comparison assumptions are reported 
   journal={Zenodo},
   year={2025},
   doi={10.5281/zenodo.18064365},
-  note={Preprint v0.11 (New Delhi)}
+  note={Preprint v0.12 (New Delhi)}
 }
 ```
 

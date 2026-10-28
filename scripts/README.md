@@ -23,7 +23,8 @@ scripts/
 │   ├── step_12_onset_radius_law.py
 │   ├── step_13_two_branch_btfr.py
 │   ├── step_14_scale_audit.py
-│   └── step_15_planetary_rotation.py
+│   ├── step_15_planetary_rotation.py
+│   └── step_16_saturn_interior.py
 ├── utils/                # Shared utilities (style, logging)
 ├── verification/         # Verification audits
 │   └── verify_screening_claim.py
@@ -66,6 +67,7 @@ cd site && npm run build
 | `steps/step_13_two_branch_btfr.py` | `step_13_two_branch_btfr.json` | Two-branch BTFR outer-edge and deep-limit tests (migrated from Paper 0 step_66) |
 | `steps/step_14_scale_audit.py` | `step_14_scale_audit.json`, `figure_10_prem_earth_kernel.png` | Scalar-sector scale audit and 4-layer PREM Earth spatial-kernel integration (Figure 1) |
 | `steps/step_15_planetary_rotation.py` | `step_15_planetary_rotation.json`, `figure_9_planetary_rotation.png` | Planetary rotational kinematics, MOI screening scaling, and Wesson angular-momentum constant (Figure 6) |
+| `steps/step_16_saturn_interior.py` | `step_16_saturn_interior.json`, `figure_12_saturn_interior.png` | Unscreened-planet interior Picard solve across 7 planets and Saturn ring–moon co-rotation & microphysics audit |
 
 All migrated steps share the canonical shear scale `g_t = c·H0/(2·β_A²) ≈ 3.4e-10 m/s²` (H0 = 70 km/s/Mpc, β_A² = 1), so the BTFR asymptote `a_eff = 4√2·g_t/k` equals `a_0 = 1.2e-10 m/s²` exactly.
 | `verification/verify_screening_claim.py` | — | Verifies S ∝ rho^0.334 claim from object data |

@@ -81,7 +81,7 @@ def save_pipeline_summary(results, elapsed_total):
     """Save a JSON summary of the full pipeline run."""
     summary = {
         "pipeline": "TEP-UCD",
-        "version": "v0.11 (New Delhi)",
+        "version": "v0.12 (New Delhi)",
         "date": time.strftime("%Y-%m-%dT%H:%M:%S"),
         "elapsed_seconds": round(elapsed_total, 2),
         "steps": {}
@@ -206,6 +206,10 @@ def run_pipeline():
     )
     results["step_15_planetary_rotation"] = run_step(
         "step_15_planetary_rotation", steps_dir / "step_15_planetary_rotation.py",
+        "main", skip=args.skip_figures
+    )
+    results["step_16_saturn_interior"] = run_step(
+        "step_16_saturn_interior", steps_dir / "step_16_saturn_interior.py",
         "main", skip=args.skip_figures
     )
 

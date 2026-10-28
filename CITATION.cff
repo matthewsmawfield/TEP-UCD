@@ -2,9 +2,9 @@ cff-version: 1.2.0
 title: 'Temporal Topology Saturation Scale: Cross-Scale Consistency of ρ_T'
 message: If you use this software, please cite it as below.
 type: article
-version: v0.11 (New Delhi)
+version: v0.12 (New Delhi)
 date-released: 2025-12-28
-date-updated: 2026-10-26
+date-updated: 2026-10-28
 authors:
 - family-names: Smawfield
   given-names: Matthew Lukin
@@ -31,7 +31,7 @@ preferred-citation:
     value: 10.5281/zenodo.18064365
     description: Pre-print DOI
   url: https://doi.org/10.5281/zenodo.18064365
-  notes: Preprint v0.11 (New Delhi)
+  notes: Preprint v0.12 (New Delhi)
 keywords:
 - dark matter
 - gravitation

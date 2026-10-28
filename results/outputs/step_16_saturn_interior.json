@@ -1,0 +1,271 @@
+{
+  "step": "step_16_saturn_interior",
+  "results": {
+    "Saturn": {
+      "n_eff": 1.375,
+      "R_vol_km": 58232.0,
+      "R_eq_km": 60268.0,
+      "R_T_km": 18930.55,
+      "S_screening": 0.3141,
+      "S_screening_volumetric": 0.3251,
+      "rho_c_g_cm3": 3.533,
+      "rho_mean_g_cm3": 0.687,
+      "rho_c_over_rho_T": 0.177,
+      "interior_fully_unscreened_rho_below_rho_T_everywhere": true,
+      "picard_convergence_du_inf": 1.6497386183184663e-14,
+      "gradient_centroid_R_grad_km": 45182.8,
+      "R_grad_over_R_T": 2.3868,
+      "R_grad_over_R_vol": 0.7759,
+      "u_surface": 4.943700881273707e-10,
+      "u_at_marks": {
+        "R_T": 3.3339035619102255e-09,
+        "diffuse_core_outer_0.6R": 2.415868839829726e-09,
+        "wind_decay_base_0.825R": 1.3323019864678786e-09
+      },
+      "interior_clock_gradient_fractional": {
+        "R_T": 5.743740452701641,
+        "diffuse_core_outer_0.6R": 3.8867617557138603,
+        "wind_decay_base_0.825R": 1.6949486193926462
+      },
+      "interior_u_max_over_u_surf": 7.8095
+    },
+    "Jupiter": {
+      "n_eff": 0.979,
+      "R_vol_km": 69911.0,
+      "R_eq_km": 71492.0,
+      "R_T_km": 28296.7,
+      "S_screening": 0.3958,
+      "S_screening_volumetric": 0.4048,
+      "rho_c_g_cm3": 4.257,
+      "rho_mean_g_cm3": 1.326,
+      "rho_c_over_rho_T": 0.213,
+      "interior_fully_unscreened_rho_below_rho_T_everywhere": true,
+      "picard_convergence_du_inf": 1.2483102392213175e-14,
+      "gradient_centroid_R_grad_km": 57698.4,
+      "R_grad_over_R_T": 2.0391,
+      "R_grad_over_R_vol": 0.8253,
+      "u_surface": 7.698447209385025e-10,
+      "u_at_marks": {
+        "R_T": 3.6818465205384117e-09,
+        "dilute_core_0.45R": 3.5882696621089476e-09,
+        "wind_decay_base_0.95R": 1.1668683357176847e-09
+      },
+      "interior_clock_gradient_fractional": {
+        "R_T": 3.782583318945079,
+        "dilute_core_0.45R": 3.6610304188805225,
+        "wind_decay_base_0.95R": 0.5157190846164126
+      },
+      "interior_u_max_over_u_surf": 5.3366
+    },
+    "Uranus": {
+      "n_eff": 1.313,
+      "R_vol_km": 25362.0,
+      "R_eq_km": 25559.0,
+      "R_T_km": 10119.3,
+      "S_screening": 0.3959,
+      "S_screening_volumetric": 0.399,
+      "rho_c_g_cm3": 6.06,
+      "rho_mean_g_cm3": 1.27,
+      "rho_c_over_rho_T": 0.303,
+      "interior_fully_unscreened_rho_below_rho_T_everywhere": true,
+      "picard_convergence_du_inf": 4.385054943459046e-14,
+      "gradient_centroid_R_grad_km": 19144.0,
+      "R_grad_over_R_T": 1.8918,
+      "R_grad_over_R_vol": 0.7548,
+      "u_surface": 7.706895156657774e-10,
+      "u_at_marks": {
+        "R_T": 3.313723985504693e-09
+      },
+      "interior_clock_gradient_fractional": {
+        "R_T": 3.2996873814250067
+      },
+      "interior_u_max_over_u_surf": 5.9967
+    },
+    "Neptune": {
+      "n_eff": 1.181,
+      "R_vol_km": 24622.0,
+      "R_eq_km": 24764.0,
+      "R_T_km": 10692.49,
+      "S_screening": 0.4318,
+      "S_screening_volumetric": 0.4343,
+      "rho_c_g_cm3": 6.672,
+      "rho_mean_g_cm3": 1.638,
+      "rho_c_over_rho_T": 0.334,
+      "interior_fully_unscreened_rho_below_rho_T_everywhere": true,
+      "picard_convergence_du_inf": 2.8253122858434467e-14,
+      "gradient_centroid_R_grad_km": 18849.8,
+      "R_grad_over_R_T": 1.7629,
+      "R_grad_over_R_vol": 0.7656,
+      "u_surface": 9.062351803715512e-10,
+      "u_at_marks": {
+        "R_T": 3.468060375938329e-09
+      },
+      "interior_clock_gradient_fractional": {
+        "R_T": 2.826887822338175
+      },
+      "interior_u_max_over_u_surf": 5.266
+    },
+    "Earth_polytrope": {
+      "n_eff": 0.465,
+      "R_vol_km": 6371.0,
+      "R_eq_km": 6378.1,
+      "R_T_km": 4146.41,
+      "S_screening": 0.6501,
+      "S_screening_volumetric": 0.6508,
+      "rho_c_g_cm3": 9.71,
+      "rho_mean_g_cm3": 5.513,
+      "rho_c_over_rho_T": 0.486,
+      "interior_fully_unscreened_rho_below_rho_T_everywhere": true,
+      "picard_convergence_du_inf": 1.7910491732952672e-13,
+      "gradient_centroid_R_grad_km": 4954.5,
+      "R_grad_over_R_T": 1.1949,
+      "R_grad_over_R_vol": 0.7777,
+      "u_surface": 9.370057245162961e-10,
+      "u_at_marks": {
+        "R_T": 1.8535425996390796e-09
+      },
+      "interior_clock_gradient_fractional": {
+        "R_T": 0.978155043391993
+      },
+      "interior_u_max_over_u_surf": 5.7717
+    },
+    "Venus": {
+      "n_eff": 0.47,
+      "R_vol_km": 6051.8,
+      "R_eq_km": 6051.8,
+      "R_T_km": 3873.08,
+      "S_screening": 0.64,
+      "S_screening_volumetric": 0.64,
+      "rho_c_g_cm3": 9.288,
+      "rho_mean_g_cm3": 5.243,
+      "rho_c_over_rho_T": 0.464,
+      "interior_fully_unscreened_rho_below_rho_T_everywhere": true,
+      "picard_convergence_du_inf": 7.839397883786367e-14,
+      "gradient_centroid_R_grad_km": 4687.7,
+      "R_grad_over_R_T": 1.2103,
+      "R_grad_over_R_vol": 0.7746,
+      "u_surface": 8.471891807986398e-10,
+      "u_at_marks": {
+        "R_T": 1.7019746297326734e-09
+      },
+      "interior_clock_gradient_fractional": {
+        "R_T": 1.0089664366679387
+      },
+      "interior_u_max_over_u_surf": 6.2897
+    },
+    "Mercury": {
+      "n_eff": 0.357,
+      "R_vol_km": 2439.7,
+      "R_eq_km": 2439.7,
+      "R_T_km": 1579.48,
+      "S_screening": 0.6474,
+      "S_screening_volumetric": 0.6474,
+      "rho_c_g_cm3": 8.412,
+      "rho_mean_g_cm3": 5.427,
+      "rho_c_over_rho_T": 0.421,
+      "interior_fully_unscreened_rho_below_rho_T_everywhere": true,
+      "picard_convergence_du_inf": 3.3834555053858746e-14,
+      "gradient_centroid_R_grad_km": 1639.6,
+      "R_grad_over_R_T": 1.038,
+      "R_grad_over_R_vol": 0.672,
+      "u_surface": 2.523118199379394e-10,
+      "u_at_marks": {
+        "R_T": 5.13902227336895e-10
+      },
+      "interior_clock_gradient_fractional": {
+        "R_T": 1.0367742877178658
+      },
+      "interior_u_max_over_u_surf": 20.4328
+    }
+  },
+  "saturn_ring_corotation_audit": {
+    "kronoseismology_10h33m38s": 111569.494664734,
+    "voyager_SystemIII_10h39m24s": 112245.31691372384,
+    "SKR_slow_10h48m": 113249.3124737836,
+    "TEP_ambient_11h33m": 118425.1096211506,
+    "B_ring_outer_edge_km": 117580.0,
+    "Cassini_division_outer_edge_km": 122170.0,
+    "Mimas_2_1_ILR_km": 116882.24583822244,
+    "TEP_ambient_sync_inside_Cassini_division": true,
+    "TEP_ambient_sync_vs_B_edge_pct": 0.72,
+    "TEP_ambient_sync_vs_Mimas_2_1_pct": 1.32,
+    "interior_clock_sync_vs_B_edge_pct": -5.11,
+    "four_giant_planets_main_ring_vs_corotation": {
+      "Jupiter": {
+        "a_ring_outer_km": 129000.0,
+        "a_sync_TEP_km": 156886.4,
+        "main_rings_span_corotation": false
+      },
+      "Saturn": {
+        "a_ring_outer_km": 136775.0,
+        "a_sync_TEP_km": 118425.1,
+        "main_rings_span_corotation": true
+      },
+      "Uranus": {
+        "a_ring_outer_km": 51149.0,
+        "a_sync_TEP_km": 82366.9,
+        "main_rings_span_corotation": false,
+        "belinda_puck_gap_midpoint_km": 80629.5,
+        "a_sync_vs_belinda_puck_midpoint_pct": 2.15
+      },
+      "Neptune": {
+        "a_ring_outer_km": 62933.0,
+        "a_sync_TEP_km": 79182.3,
+        "main_rings_span_corotation": false
+      }
+    },
+    "roche_R_T_cancellation_A_ring_over_R_T": 7.225,
+    "roche_R_T_cancellation_F_ring_over_R_T": 7.405,
+    "compositional_sorting_and_ring_microphysics_audit": {
+      "roche_boundaries_from_R_T_km": {
+        "iron_core_5p0_g_cm3": 73804.0,
+        "C_ring_inner_edge_observed_km": 74658.0,
+        "silicate_rock_3p3_g_cm3": 84768.0,
+        "hydrated_silicate_2p7_g_cm3": 90632.0,
+        "C_to_B_ring_boundary_observed_km": 91975.0,
+        "solid_water_ice_0p92_g_cm3": 129759.0,
+        "porous_water_ice_0p75_g_cm3": 138904.0,
+        "A_ring_outer_edge_observed_km": 136775.0
+      },
+      "ring_mass_and_screening_shell": {
+        "M_rings_obs_kg_Iess2019": 1.54e+19,
+        "M_rings_obs_err_kg": 4.9e+18,
+        "M_rings_TEP_uT_M_Sat_kg": 1.2671194511773309e+19,
+        "M_rings_TEP_2k_over_S_uT_M_Sat_kg": 1.7596520205984123e+19,
+        "z_score_uT_M_Sat_vs_Iess2019": -0.56,
+        "r_star_M_rings_obs_km": 1738696.4,
+        "r_star_M_rings_1sigma_range_km": [
+          1435681.3,
+          1996233.9
+        ],
+        "r_star_M_rings_TEP_km": 1577147.0,
+        "Hyperion_a_orb_km": 1481009.0
+      },
+      "ring_surface_density_and_particle_size_window": {
+        "Sigma_TEP_mean_B_plus_A_g_cm2": 39.36,
+        "Sigma_obs_mean_B_plus_A_g_cm2": 47.83,
+        "R_min_grain_g_surf_eq_gt_mm_range": [
+          1.35,
+          2.43
+        ],
+        "R_max_wake_2pi_G_Sigma_over_Omega2_TEP_m": 5.04,
+        "R_max_wake_2pi_G_Sigma_over_Omega2_obs_m": 6.12,
+        "observed_particle_size_range": "1 mm - 1 cm lower cutoff to 5 - 10 m upper cutoff and vertical thickness (Zebker et al. 1985)",
+        "sheet_acceleration_2pi_G_Sigma_TEP_m_s2": 1.65e-07,
+        "sheet_acceleration_B_core_70_to_100_g_cm2_m_s2": [
+          2.936e-07,
+          4.194e-07
+        ],
+        "Cassini_Grand_Finale_empirical_acceleration_Iess2019_m_s2": 4e-07
+      }
+    },
+    "assessment": "Across the four ringed giant planets, ONLY Saturn has a_ring_outer > a_sync so that its dense main ring sheet physically spans the co-rotation zone (for Jupiter, Uranus, and Neptune, the main rings terminate inside a_sync). At Saturn, three radii converge within ~1.5%: Mimas 2:1 ILR (116,882 km), the ambient-clock co-rotation (118,425 km = 2.034 R_S), and the B-ring outer edge (117,580 km), placing the Cassini Division at the intersection of the moon-resonance and the ambient-branch co-rotation surface."
+  },
+  "comparison_earth_prem_step14": {
+    "S_earth": 0.651,
+    "R_grad_km": 4810.0,
+    "R_grad_over_R_T": 1.16,
+    "note": "Earth (screened-side, PREM) for reference from Step 14."
+  },
+  "interpretation": "For unscreened interiors (rho < rho_T everywhere), the field gradient tracks the density profile and the r^2-weighted gradient centroid R_grad marks where the interior temporal structure concentrates. Compare R_grad/R_T between Saturn (S=0.314, ambient branch) and Jupiter (S=0.405, soliton branch)."
+}
